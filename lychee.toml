@@ -1,0 +1,18 @@
+# Link checking configuration for lychee – https://lychee.cli.rs
+# `just check-links` checks local links; `just check-external-links` checks HTTP(S).
+
+# Sites that block automated checks (401/403/bot detection).
+exclude = [
+  'https://x\.com/.*',
+  'https://www\.linkedin\.com/.*',
+  # Add here: known-broken sources in different files (mention which)
+]
+
+# Theme templates contain Jinja placeholders; fixtures are tested in temporary builds.
+exclude_path = ["docs/theme", "tests/fixtures"]
+
+# Use the default successful status codes. Rate limiting (429) is unresolved,
+# so external checks report it as a failure instead of treating it as verified.
+max_retries = 2
+timeout = 20
+max_concurrency = 8
