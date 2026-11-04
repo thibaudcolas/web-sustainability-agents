@@ -8,9 +8,8 @@
 # ---------------------------------------------------------------------------
 
 site_name: Project workspace
-# Replace `thibaudcolas/research-workspace-template` with the real GitHub slug.
-repo_url: https://github.com/thibaudcolas/research-workspace-template
-site_url: https://thibaudcolas.github.io/research-workspace-template/
+repo_url: https://github.com/thibaudcolas/web-sustainability-agents
+site_url: https://thibaudcolas.github.io/web-sustainability-agent/
 docs_dir: docs
 # Shared abbreviation definitions are read by snippets, not rendered as a page.
 exclude_docs: |
@@ -25,7 +24,7 @@ watch:
 edit_uri: edit/main/docs
 
 site_description: A shared workspace for project documentation.
-repo_name: REPO
+repo_name: thibaudcolas/web-sustainability-agents
 # Avoid clashes with other docs servers running on the default 8000 port.
 dev_addr: localhost:8001
 
@@ -182,8 +181,8 @@ plugins:
           - contributing/architecture.md
         Knowledge base:
           - knowledge-base/*.md
-        Project A:
-          - project-a/*.md
+        Agentic sustainability audits:
+          - agentic-audits/*.md
   # Collect page and folder tags into the listing marked in tags.md.
   - tags
 
@@ -209,5 +208,13 @@ nav:
       - Project architecture: contributing/architecture.md
   - Knowledge base:
       - knowledge-base/README.md
-  - Project A:
-      - project-a/README.md
+      - WSG and STAR: knowledge-base/wsg-and-star.md
+  - Agentic sustainability audits:
+      - agentic-audits/README.md
+      - Local audit projects: agentic-audits/local-projects.md
+      - Deterministic tools: agentic-audits/deterministic-tools.md
+      - Audit architecture: agentic-audits/architecture.md
+      - Decision models: agentic-audits/decision-models.md
+      - Decision-model examples: agentic-audits/decision-model-examples.md
+      - Evaluation plan: agentic-audits/evaluation.md
+      - Sources and research method: agentic-audits/sources.md

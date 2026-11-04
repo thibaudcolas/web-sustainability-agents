@@ -38,12 +38,12 @@ tags:
 
 For tags shared by a section, create a `.meta.yml` file in that folder:
 
-```yaml title="docs/project-a/.meta.yml"
+```yaml title="docs/knowledge-base/.meta.yml"
 tags:
-  - project-a
+  - knowledge-base
 ```
 
-The `meta` plugin applies these values to the folder and its subfolders. Page tags and folder tags are merged and deduplicated. Rename the example project tag when adopting this template. Use a visible callout to explain draft status; tags alone do not describe what remains unfinished.
+The `meta` plugin applies these values to the folder and its subfolders. Page tags and folder tags are merged and deduplicated. Use a visible callout to explain draft status; tags alone do not describe what remains unfinished.
 
 ## Search controls
 
@@ -104,11 +104,11 @@ This example is relative to `docs/index.md`:
 
     [Browse the knowledge base](knowledge-base/README.md)
 
-- **Project A**
+- **Agentic sustainability audits**
 
-    Research and working documents for the example project.
+    Research and design proposals for sustainability audits.
 
-    [Read Project A documentation](project-a/README.md)
+    [Read the audit research](agentic-audits/README.md)
 
 </div>
 ```

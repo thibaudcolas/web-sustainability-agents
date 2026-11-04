@@ -85,7 +85,7 @@ Every docs page must be listed in `nav`, or explicitly opted out:
 
 ```yaml
 not_in_nav: |
-  /project-a/supporting-notes.md
+  /agentic-audits/supporting-notes.md
 ```
 
 This only suppresses navigation warnings; the page remains published and searchable. Use the [search controls](style-guide.md#search-controls) to adjust search separately.

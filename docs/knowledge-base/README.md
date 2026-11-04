@@ -2,4 +2,4 @@
 
 General-purpose information relevant for a wide range of tasks in this workspace.
 
-<!-- Replace this placeholder with your project's knowledge base: background research, reference material, and other information that isn't tied to a specific project. -->
+- [WSG and STAR as an audit foundation](wsg-and-star.md): publication status, methodology, machine-readable sources, and measurement limits.

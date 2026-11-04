@@ -8,7 +8,7 @@ We organize information across a small number of layers:
 
 1. [Contributing](README.md): guidance on how to work within this workspace.
 2. [Knowledge base](../knowledge-base/README.md): general-purpose information relevant for a wide range of tasks.
-3. Projects, like [Project A](../project-a/README.md): information about a specific project.
+3. [Agentic sustainability audits](../agentic-audits/README.md): project-specific research, design proposals, and sources.
 
 Each section folder uses a `README.md` as its landing page, so it also renders when browsing the folder on GitHub.
 
@@ -19,7 +19,7 @@ Each section folder uses a `README.md` as its landing page, so it also renders w
 The site is built with [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme, configured in `mkdocs.yml`. Beyond rendering Markdown to HTML, the build applies a few transforms contributors should be aware of:
 
 - **Last-modified dates** – each page footer shows the last commit date from git, taken via `mkdocs-git-revision-date-localized-plugin`.
-- **Folder metadata** – Material's `meta` plugin applies `.meta.yml` values to pages in that folder and its subfolders. The example project and knowledge base each define a shared tag. Page-specific tags are merged with folder tags.
+- **Folder metadata** – Material's `meta` plugin applies `.meta.yml` values to pages in that folder and its subfolders. The knowledge base defines a shared tag. Page-specific tags are merged with folder tags.
 - **Tag index** – the `tags` plugin collects page and folder tags into `tags.json` and renders the listing marker in the [Tags page](../tags.md). See the [style guide](style-guide.md#tags) for authoring syntax.
 - **`llms-full.txt`** – the `mkdocs-llmstxt` plugin concatenates select pages into `llms-full.txt` at the site root, so LLMs and agents can ingest the workspace in one file. The plugin's `sections` key in `mkdocs.yml` mirrors `nav`; keep both in sync when adding or removing sections.
 - **Abbreviation tooltips** – `contributing/abbreviations.md` is auto-appended to every page by `pymdownx.snippets`, so any abbreviation registered there is available as a hover tooltip across the site.

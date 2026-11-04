@@ -1,0 +1,59 @@
+{
+  "research_date": "2026-11-03",
+  "kind": "source-inventory-not-automation-coverage",
+  "sources": [
+    {
+      "id": "published_wsg",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/",
+      "historical_sha256": "2883a77d30990455f593f17b94a61b8baad8c2440032d74e1e5abe7d0b4ba0d6",
+      "historical_sha256_note": "Digest of the dated October 16 publication retrieved November 3, 2026; retained as historical provenance.",
+      "sha256": "2883a77d30990455f593f17b94a61b8baad8c2440032d74e1e5abe7d0b4ba0d6",
+      "retrieved_at": "2026-11-04",
+      "publication_date_observed": "2026-10-16"
+    },
+    {
+      "id": "star_html",
+      "url": "https://w3c.github.io/sustainableweb-ig/docs/star.html",
+      "sha256": "29e7148aa9c71b3a8b956973a4765e7a812b04aecee979f0185ad4cb82eeae06"
+    },
+    {
+      "id": "wsg_json",
+      "url": "https://raw.githubusercontent.com/w3c/sustainableweb-wsg/eb8f8af2178ddce3d28226f90a6e691ccc6af3c8/guidelines.json",
+      "sha256": "6e33f5788f98054f4c6c3c9b75e9114a05b43db65b4bfe4132b743b1bee473a6"
+    },
+    {
+      "id": "star_json",
+      "url": "https://raw.githubusercontent.com/w3c/sustainableweb-ig/393ed62a16580968e2de8af77c68fe9a2e2c675d/docs/star.json",
+      "sha256": "e9a300566258e563c4ab74084b089bc138cc79c208b84ea36c0506836474ac15"
+    }
+  ],
+  "repository_commits": {
+    "wsg": "eb8f8af2178ddce3d28226f90a6e691ccc6af3c8",
+    "star": "393ed62a16580968e2de8af77c68fe9a2e2c675d",
+    "claude_seo": "6be93f45064ffbadced572b5d5c95f55fd263af0",
+    "accessibility_agents": "decf6bac7f086c19afb242797b4974671ceff597"
+  },
+  "declared_last_modified": {
+    "wsg_json": "2026-08-25",
+    "star_json": "2026-08-04"
+  },
+  "counts": {
+    "guidelines": 71,
+    "criteria": 197,
+    "star_techniques": 116,
+    "techniques_with_test_suite_url": 116,
+    "technique_ids_matching_wsg_json_criterion_ids": 112
+  },
+  "unmatched_technique_ids": [
+    "avoiding-overburdening",
+    "printed-documents",
+    "optimized-documents",
+    "optimized-delivery"
+  ],
+  "missing_fixture_paths": [
+    "docs/test-suite/energy-relevant-apis.html",
+    "docs/test-suite/appropriate-implementation.html",
+    "docs/test-suite/disclosure-reporting.html"
+  ],
+  "fixture_http_status_on_research_date": 404
+}

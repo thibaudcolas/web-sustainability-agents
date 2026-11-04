@@ -64,6 +64,8 @@ convention = "google"
 ]
 
 [tool.mypy]
+# Reference checkouts are separate projects with their own typing configuration.
+exclude = ["^local/"]
 python_version = "3.14"
 # https://mypy.readthedocs.io/en/latest/config_file.html
 #### Additional opt-in checks of mypy.
