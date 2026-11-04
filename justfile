@@ -59,6 +59,28 @@ audit-install:
 audit-sites:
     uv run --locked --script audit/run.py --publish docs/initial-implementation/assets/staged-audit.json
 
+# Export per-site reports and long-form metrics from existing evidence.
+audit-reports:
+    uv run --locked --script audit/report.py
+
+# Collect metadata, preference, and recovery evidence; publish per-site registers.
+audit-scope:
+    uv run --locked --script audit/scope.py --publish docs/initial-implementation/assets/scope-extension.json
+    npx prettier --write docs/initial-implementation/assets/scope-extension.json
+    uv run --locked --script audit/coverage.py
+
+# Measure CPU-package energy with local/co2-runner; keep other workloads idle.
+audit-energy:
+    uv run --locked --script audit/energy.py
+
+# Retrieve the latest available public CrUX mirror and publish traffic scenarios.
+audit-traffic:
+    uv run --locked --script audit/traffic.py
+
+# Build the expanded evidence-review tasks; never run during an active campaign.
+benchmark-expanded-build:
+    uv run --locked --script benchmarks/build_expanded.py
+
 # Build six development tasks from measured controlled fixtures.
 benchmark-build:
     node benchmarks/build.js

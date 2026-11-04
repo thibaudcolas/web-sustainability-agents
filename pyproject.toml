@@ -25,6 +25,8 @@ dev = [
   "playwright==1.64.1",
   "httpx==0.28.1",
   "wappalyzer==2.0.4",
+  "defusedxml==0.7.1",
+  "types-defusedxml>=0.7.0.20260504",
 ]
 
 [tool.ruff]

@@ -2,7 +2,7 @@
 
 !!! note "Work in progress"
 
-    Two content pages and selected journeys have been reviewed. Organizational coverage and the measurement protocol need further validation.
+    Transfer measurements cover two pages; the broader metadata and preference sample covers six content pages and one missing path. Organizational coverage and the measurement protocol need further validation.
 
 **Overall assessment: small initial transfers and useful existing caching; the strongest next experiments concern screenshot loading and search resilience.**
 
@@ -24,7 +24,7 @@ The carbon figures use CO2.js 0.19.0, SWDM v4, first visits only, and a non-gree
 | Experiment           | **F04: Screenshots load before scrolling**               | Test deferral and responsive renditions while preserving legibility and zoom. |
 | Targeted improvement | **F08: Search is inaccessible with JavaScript disabled** | Test a usable server-search fallback.                                         |
 | Preserve             | **F05: Repeat visits reuse public assets**               | Keep cache reuse and compression in regression checks.                        |
-| Preserve             | **F07: Sampled search journey succeeds**                 | Retain the existing debounce; test more queries and input methods.            |
+| Targeted improvement | **G02: Error-page language is empty**                    | Supply a request-language fallback and test localized error recovery.         |
 | Clarify              | **G01: Published footprint context is project-wide**     | Identify guide-specific scope before attributing annual emissions.            |
 
 ## Quantitative evidence
@@ -80,7 +80,7 @@ These observations support narrow findings about delivery and repeat visits. The
 
 Opening guide search, typing “images” with 80 ms between keys, and selecting the result reached the expected article. One search JSON request was observed. Evidence: `guide-search-images`.
 
-**Source contribution:** `guide-search` shows a 150 ms debounce, consistent with one request for this typing pattern. That is more useful than a generic recommendation to debounce search that already does so. Slower typing, interrupted requests, no-results handling, stale response ordering, keyboard-only completion, and screen-reader usability have not been evaluated. Do not infer user satisfaction or population-wide task success from these two journeys.
+**Source contribution:** `guide-search` shows a 150 ms debounce, consistent with one request for this typing pattern. That is more useful than a generic recommendation to debounce search that already does so. Slower typing, interrupted requests, no-results handling, stale response ordering, keyboard-only completion, and screen-reader usability have not been evaluated. Do not infer user satisfaction or population-wide task success from this bounded journey.
 
 ### F08 — Offer a usable search fallback when JavaScript is unavailable
 
@@ -90,16 +90,26 @@ Without JavaScript, the guide retains the sampled main text and a visible naviga
 
 `guide-search-template` contains a GET search form within the hidden modal, providing a plausible reuse path. Expose a non-modal form or link when JavaScript is absent, then verify actual results and keyboard navigation. The direct server search response was not exercised in this audit; the template alone does not prove it works.
 
+### Additional findings from the broader sample
+
+**G02 — Give error pages a language fallback.** The deliberate missing-path response returned 404 with an empty HTML language attribute, while all six sampled content pages had one. It retained navigation, but complete recovery was not exercised. The supplied [base template](https://github.com/wagtail/guide/blob/31a4547eb1f6de55baea84269723313784f6b544/apps/core/templates/base.html#L7) uses `self.locale.language_code`; the error template does not override it. An active-request-language fallback is a plausible fix when there is no page object. Verify this against deployed templates and localized 404s. This is a concrete semantics issue, not a quantified emissions saving. See [WSG 3.6](https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices) and [4.4](https://www.w3.org/TR/web-sustainability-guidelines/#setup-necessary-error-pages-and-redirection-links).
+
+**G03 — Preserve preference support and broaden its regression checks.** The homepage changed to dark body colors after reloading with a dark preference. It did not change immediately when the OS preference was emulated in the loaded page. Source initialization in `blocking.js` corroborates this distinction. Reduced-motion CSS rules were present, but no active animation was observed to test their effect. Do not report dark mode as absent or claim measured energy savings. See [WSG 3.9](https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals).
+
+**G04 — Review localized metadata without assuming every variation is wrong.** Five of six content pages had nonempty descriptions; the sampled French accessibility article did not. The Icelandic-route release article had `lang="is"` with an English title and heading, which warrants a translation-intent review rather than a conclusion about all its content. All six had canonical links, titles, one H1, and one main landmark. Presence does not establish quality or user benefit. See [WSG 3.8](https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability).
+
+These observations and source hashes are in the [scope extension](scope-extension.md). The [per-site register](assets/coverage/guide.wagtail.org-432853f7b5d8.json) now records partial evidence for 14 guidelines, with 57 not assessed. None is declared a complete guideline pass. Working robots/sitemap/icon resources and supplied source licensing add useful context without proving all beneficial-file or organizational requirements.
+
 ## Scope and method
 
-This is a WIP audit of a bounded two-page sample, not whole-site WSG conformance. The [staged protocol](staged-auditing.md) records a fresh 1,280 × 800 desktop viewport, no initial interaction, then configured cookie choice and scrolling. All traffic figures use decimal KB/MB (1 KB = 1,000 B). Offscreen resources requested before scrolling remain in the initial figure. Three-second observation windows do not cover all eventual activity.
+This WIP audit combines a two-page transfer sample with the separately scoped metadata and preference observations above; it does not establish whole-site WSG conformance. The [staged protocol](staged-auditing.md) records a fresh 1,280 × 800 desktop viewport, no initial interaction, then configured cookie choice and scrolling. All traffic figures use decimal KB/MB (1 KB = 1,000 B). Offscreen resources requested before scrolling remain in the initial figure. Three-second observation windows do not cover all eventual activity.
 
 The [current evidence](assets/staged-audit.json) supports headline measurements. Historical finding IDs refer to the [earlier review evidence](assets/wagtail-review-evidence.json) unless stated otherwise. Earlier tests include warm-cache reuse, mobile observations, JavaScript-disabled behavior, and bounded journeys. Never mix measurements from different captures into a single total.
 
-The [WSG draft](https://www.w3.org/TR/web-sustainability-guidelines/), [STAR](https://w3c.github.io/sustainableweb-ig/docs/star.html), and [impact ratings](https://www.w3.org/TR/wsg-ir/) inform review. This sample is selected for development, not a representative random sample of a complete inventory. Public statements are claims to corroborate. Unobserved organizational practices remain unknown.
+The [WSG draft](https://www.w3.org/TR/web-sustainability-guidelines/), [STAR](https://w3c.github.io/sustainableweb-ig/docs/star.html), and [impact ratings](https://www.w3.org/TR/wsg-ir/) inform review. The broader sample combines purposeful pages with two reproducibly selected sitemap URLs; it remains a development sample rather than a complete or representative site evaluation. Public statements are claims to corroborate. Unobserved organizational practices remain unknown.
 
 ## Feedback and reproducibility
 
 Use the site name and finding ID when correcting an observation, interpretation, priority, or fix. The [feedback-to-pipeline backlog](backlog.md) records follow-up experiments. Run `just audit-sites` for fresh observations and `uv run --locked --script audit/report.py` for per-site chart data. Live recollection will vary.
 
-Model reviews are a separate frozen-evidence experiment, described in the [model checkpoint](review-checkpoint.md). The coordinator synthesized this report; it is not the output of a validated autonomous auditor. Source excerpts can locate plausible fixes without proving production deployment identity.
+Model reviews are a separate frozen-evidence experiment, described in the [model checkpoint](review-checkpoint.md) and [expanded comparison](expanded-benchmark.md). The coordinator synthesized this report; it is not the output of a validated autonomous auditor. Source excerpts can locate plausible fixes without proving production deployment identity.

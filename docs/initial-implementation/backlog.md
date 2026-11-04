@@ -44,6 +44,8 @@ The current task follows this sequence. It is not necessary to finish every futu
 
 **B18:** Keep traffic-scenario prerequisites deterministic. The expanded DeepSeek run assigned an unranked extrapolation after a top-million-only lookup. Require an explicit matched rank bucket or a separately justified unranked population before selecting a mapping row; test incomplete, stale, and cross-origin lookup results. A model calling a number a scenario is insufficient validation.
 
+**B19:** Turn the broader live sample into controlled interpretation cases before the next model campaign: initial versus live preference changes, root-path 404 versus a working declared manifest, policy-route redirects, localized error-page language, and licensing of code versus content. Add completed recovery tasks and owner-reviewed recommendations; keep development examples separate from held-out cases.
+
 | Owner feedback                            | Pipeline location                        | Regression                                                                  |
 | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------- |
 | First-load figures, KB/MB, separate sites | Collector phases and report export       | Origin isolation, units, immutable initial snapshot                         |

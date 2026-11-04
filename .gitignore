@@ -36,6 +36,8 @@ pids
 # -------------------------------------------------
 lib-cov
 coverage
+# Guideline evidence registers are published research artifacts, not test coverage.
+!/docs/initial-implementation/assets/coverage/
 .coverage
 coverage_html_report/
 .grunt

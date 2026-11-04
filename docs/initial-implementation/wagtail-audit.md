@@ -2,7 +2,7 @@
 
 !!! note "Work in progress"
 
-    The homepage and sustainability page have been reviewed. Traffic accounting remains partial, and organizational coverage is incomplete.
+    Transfer measurements cover the homepage and sustainability page; metadata and preference probes cover seven content pages and one missing path. Traffic accounting remains partial, and organizational coverage is incomplete.
 
 **Overall assessment: preserve caching and video deferral; investigate analytics choices and reconcile a public emissions average.**
 
@@ -24,7 +24,7 @@ Initial figures precede cookie interaction. Reported failed requests remain part
 | High review value       | **F01: Analytics loads before a choice**                               | Reconcile observed opt-out behavior with intended purpose and controls. |
 | Editorial clarification | **F03: Public average does not reconcile**                             | Confirm denominator/units and correct or explain the average.           |
 | Preserve                | **F06: Video is deferred until intent**                                | Retain deferral and verify playback accessibility separately.           |
-| Investigate             | **F09: Font-display behavior needs a user-impact test**                | Measure constrained-loading text visibility before changing fonts.      |
+| Editorial clarification | **F14: Privacy statement has unclear site scope**                      | Confirm whether Torchbox-specific wording describes Wagtail.org.        |
 | Corroborate             | **F12: Footprint and infrastructure claims need operational evidence** | Compare published assumptions with a matched measurement profile.       |
 
 ## Quantitative evidence
@@ -116,13 +116,25 @@ Visual inspection of the mobile screenshot showed readable primary content; it d
 
 Sampled static CSS, JavaScript, and fonts use long-lived caching, and HTML uses Brotli. These are useful delivery optimizations; they do not establish backend cache efficiency or safe invalidation. Keep them in regression checks. See [WSG 4.2](https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access) and [4.3](https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression).
 
+### F14 — Clarify the privacy statement's site scope
+
+**Priority: editorial clarification and operational corroboration.** The sampled [privacy page](https://wagtail.org/privacy/) repeatedly describes Torchbox and says its policy applies to the Torchbox website. That is ambiguous on Wagtail.org. Confirm the intended site and organization scope, then align the description with the actual collection and retention practices. The earlier analytics observations identify useful questions; they do not by themselves establish a contradiction in personal-data handling or a legal violation. See [WSG 5.18](https://www.w3.org/TR/web-sustainability-guidelines/#promote-responsible-data-practices).
+
+### F15 — Preserve preference, metadata, and recovery support
+
+The broader sample's seven content pages returned 200 and each had a title, canonical link, language, one H1, and one main landmark. The digital-emissions page lacked a nonempty description; review whether a useful summary would improve discovery. These checks do not validate semantic quality. See [WSG 3.6](https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices) and [3.8](https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability).
+
+The homepage adopted dark body colors after reloading with a dark preference, although changing the preference in the loaded page did not change those colors immediately. Runtime CSS included reduced-motion, forced-colors, and print queries. Source initialization and print styles provide plausible corroboration. Verify usable print output, contrast, and active-motion behavior before claiming comprehensive preference support or savings. See [WSG 3.9](https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals).
+
+Robots, sitemap, icon, security.txt, carbon.txt, and the homepage's declared manifest were retrievable. The manifest uses a hashed static path: the root-path 404 is not an absent-manifest finding. One deliberate missing path returned 404 with an explanatory heading and search form; successful recovery still needs a journey test. See [WSG 3.13](https://www.w3.org/TR/web-sustainability-guidelines/#include-expected-and-beneficial-files) and [4.4](https://www.w3.org/TR/web-sustainability-guidelines/#setup-necessary-error-pages-and-redirection-links). Evidence and protocol: [scope extension](scope-extension.md).
+
 ## Unresolved coverage
 
 ### F11 — Public sustainability reporting does not establish organizational implementation
 
 The sustainability page, linked methodology, and newly discovered site-specific digital-emissions statement provide useful transparency and uncertainty about estimates. That is positive evidence of public reporting. Neither those pages nor the inspected source establishes procurement criteria, retention/deletion execution, workforce practices, supplier assurance, disaster recovery, or all other organizational WSG requirements. These remain **not assessed or inconclusive**, not automatic failures and not passes inferred from a policy page.
 
-The [historical combined coverage register](assets/wsg-review-coverage.json) accounts for all 71 guidelines in the inspected WSG draft across both original site samples. It must not be interpreted as this site’s individual coverage. Partial evidence is not a guideline pass; no conformance percentage is calculated. An owner-reviewed service inventory and relevant operational records would determine the next sample and which organizational questions are applicable.
+The [per-site coverage register](assets/coverage/wagtail.org-fa043133d284.json) records partial evidence for 17 of the 71 guidelines, with 54 not assessed. The [historical combined register](assets/wsg-review-coverage.json) remains available for the earlier cross-site review. Partial evidence is not a guideline pass; no conformance percentage is calculated. An owner-reviewed service inventory and relevant operational records would determine the next sample and which organizational questions are applicable.
 
 ### F13 — Collection validity is a pipeline finding
 
@@ -130,14 +142,14 @@ Unresolved Wagtail request accounting prevents a complete carbon calculation und
 
 ## Scope and method
 
-This is a WIP audit of a bounded two-page sample, not whole-site WSG conformance. The [staged protocol](staged-auditing.md) records a fresh 1,280 × 800 desktop viewport, no initial interaction, then configured cookie choice and scrolling. All traffic figures use decimal KB/MB (1 KB = 1,000 B). Offscreen resources requested before scrolling remain in the initial figure. Three-second observation windows do not cover all eventual activity.
+This WIP audit combines a two-page transfer sample with the separately scoped metadata and preference observations above; it does not establish whole-site WSG conformance. The [staged protocol](staged-auditing.md) records a fresh 1,280 × 800 desktop viewport, no initial interaction, then configured cookie choice and scrolling. All traffic figures use decimal KB/MB (1 KB = 1,000 B). Offscreen resources requested before scrolling remain in the initial figure. Three-second observation windows do not cover all eventual activity.
 
 The [current evidence](assets/staged-audit.json) supports headline measurements. Historical finding IDs refer to the [earlier review evidence](assets/wagtail-review-evidence.json) unless stated otherwise. Earlier tests include warm-cache reuse, mobile observations, JavaScript-disabled behavior, and bounded journeys. Never mix measurements from different captures into a single total.
 
-The [WSG draft](https://www.w3.org/TR/web-sustainability-guidelines/), [STAR](https://w3c.github.io/sustainableweb-ig/docs/star.html), and [impact ratings](https://www.w3.org/TR/wsg-ir/) inform review. This sample is selected for development, not a representative random sample of a complete inventory. Public statements are claims to corroborate. Unobserved organizational practices remain unknown.
+The [WSG draft](https://www.w3.org/TR/web-sustainability-guidelines/), [STAR](https://w3c.github.io/sustainableweb-ig/docs/star.html), and [impact ratings](https://www.w3.org/TR/wsg-ir/) inform review. The broader sample combines purposeful pages with two reproducibly selected sitemap URLs; it remains a development sample rather than a complete or representative site evaluation. Public statements are claims to corroborate. Unobserved organizational practices remain unknown.
 
 ## Feedback and reproducibility
 
 Use the site name and finding ID when correcting an observation, interpretation, priority, or fix. The [feedback-to-pipeline backlog](backlog.md) records follow-up experiments. Run `just audit-sites` for fresh observations and `uv run --locked --script audit/report.py` for per-site chart data. Live recollection will vary.
 
-Model reviews are a separate frozen-evidence experiment, described in the [model checkpoint](review-checkpoint.md). The coordinator synthesized this report; it is not the output of a validated autonomous auditor. Source excerpts can locate plausible fixes without proving production deployment identity.
+Model reviews are a separate frozen-evidence experiment, described in the [model checkpoint](review-checkpoint.md) and [expanded comparison](expanded-benchmark.md). The coordinator synthesized this report; it is not the output of a validated autonomous auditor. Source excerpts can locate plausible fixes without proving production deployment identity.

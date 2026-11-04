@@ -45,6 +45,30 @@ The [staged workflow](staged-auditing.md) implements owner feedback in Python wi
 
 Regression tests exercise partial-byte replacement, redirects/cache, failed resources versus incomplete accounting, persistent coverage limits, publication sanitization, private checkpoints, bounded/malformed disclosure retrieval, technology guidance, action failures, and a real browser interaction. A Python specialist reviewed the collector; review findings informed fixes to URL sanitization, action errors, evidence preservation, frame coverage, excerpts, and total request deadlines.
 
-The shared evidence-review skill is now version 0.2.0. Historical model outputs remain tied to their original evidence and instructions. No new model-bearing evaluation has yet tested the revised collector and skill together; the next benchmark cases are specified in the staged workflow.
+The shared evidence-review skill at this stage was version 0.2.0. Historical model outputs remain tied to their original evidence and instructions. Model-bearing evaluation of the staged evidence followed in the expanded campaign below.
 
 Verification passed `just lint`, `just test` (25 Python and 9 JavaScript tests), `just build-docs`, `just check-links`, and `just check-external-links` (zero errors). The script lockfile check and skill metadata validation also passed. These checks establish implementation consistency; they do not independently validate the measurement protocol or recommendation quality.
+
+## Per-site reporting, energy, and traffic
+
+The [reporting contract](reporting.md) adapts the inspected claude-seo audit structure into separate site reports with key measures, top priorities, quantitative evidence, and qualitative findings. Review skill 0.3.0 requires those boundaries. JSON/CSV exports retain raw units, statuses, phase definitions, scenario bases, and exact source digests; human reports use decimal KB/MB. No aggregate WSG score is invented.
+
+The [energy experiment](energy-traffic-experiment.md) ran three valid homepage repetitions per site through the supplied co2-runner checkout. Its commit and dirty-file hashes identify the actual implementation, including the CPU-package counter selection. Linux RAPL observations cover whole-system package energy during Firefox startup, load, wait, and shutdown. The [methodology note](../knowledge-base/energy-and-traffic.md) cites Firefox documentation and sitespeed.io/Browsertime source. Sitespeed.io's hardware path was researched but not run; its CO2.js sustainability score is a distinct model.
+
+The CrUX adapter retrieved September 2026 monthly rank buckets from the [public mirror](https://github.com/crissyfield/crux-dumps) pinned at `5493dd425c47fc7895d7d92df688d70638fb2aa7`. Both exact HTTPS origins matched. The supplied [ranking-to-pageviews](https://github.com/thibaudcolas/ranking-to-pageviews) mapping is pinned at `e36613ef9dd2f7cee5557ea794d238af31acbaf7`; it models a different population and period. Published estimates remain traffic scenarios, with no annual emissions product. Raw compressed-file and mapping digests appear in the [traffic artifact](assets/traffic-scenarios.json).
+
+## Expanded model comparison
+
+The [12-case campaign](expanded-benchmark.md) uses Harbor 0.23.0, Codex CLI 0.166.0, skill 0.3.0, and separate Python verifiers. Both configured models receive matching input, instruction, skill, reference, and grader hashes. Revised oracle controls accept 12/12 and no-operation controls accept 0/12, with no control exceptions. References are coordinator-authored public development labels, not held-out owner judgments.
+
+Sol/low accepts 10/12; Neuralwatt DeepSeek V4.1 Flash/high accepts 10/12 completed cases. DeepSeek required one unchanged-input retry after Codex's platform binary was missing during setup. The original exception remains published. Three rejected reports reflect `fail`/`inconclusive` disagreements with correct uncertainty in their prose and metrics; the remaining DeepSeek rejection includes an unsupported traffic scenario after a limited lookup. All original scores are preserved. The [published campaign artifact](assets/expanded-benchmark-results.json) includes reports, diagnostic regrades, available usage, and error types. Inference energy and billing remain unreconciled.
+
+## Broader WSG and STAR sample
+
+The [scope extension](scope-extension.md) applies the [WSG draft](https://www.w3.org/TR/web-sustainability-guidelines/) and [STAR methodology](https://w3c.github.io/sustainableweb-ig/docs/star.html) to a larger, explicitly limited development sample. Separate registers preserve the inspected October 2026 WSG version and account for all 71 guidelines without conformance passes. Thirteen content pages and two missing paths produced 32 DOM snapshots. The complete advertised sitemap inventories contain 156 and 525 URLs; these are not complete inventories of states or user tasks.
+
+Read-only source inspection adds exact file hashes, repository revisions, dirty status, and candidate fix locations. The guide language fallback and both sites' initial theme selection are examples where source clarifies runtime evidence. Source deployment identity is still unknown. The policy review distinguishes publication from actual processing and identifies unclear site scope in Wagtail.org's privacy statement.
+
+Python review identified and corrected sitemap-extension URL contamination, malformed-pointer failures, missing total browser deadlines, failed recovery probes counted as evidence, and policy misclassification after redirects. Regression tests cover those boundaries. The final published collection was rerun with the corrected collector; initial private observations remain separate. The [backlog](backlog.md) preserves the next validation gates and deferred routing, calibration, scoring, and presentation work.
+
+Final verification passed `just lint`, `just test` (53 Python and 9 JavaScript tests), `just build-docs`, `just check-links`, and `just check-external-links` (zero errors). All eight new script lockfiles and the review skill's metadata validate. The published scope artifact matches its collector digest, and both per-site registers match the exact formatted scope artifact. These checks establish reproducibility and implementation consistency, not independent audit accuracy.
