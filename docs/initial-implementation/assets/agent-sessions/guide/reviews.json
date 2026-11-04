@@ -1,0 +1,246 @@
+{
+  "rubricSHA256": "5f809250d27c1b7d49091065fba6e80474c6ad19062a83d1696f564d06793c04",
+  "sourceSHA256": {
+    "staged.json": "9ddf7d9017579c275af6d2e61fc0eba8cedd3b7e89f8444f59c19652ff6c1691",
+    "probes.json": "6951794cb23ade6cdd93f34a1645ae657f82f018d4306e6deba8ee59592183e1",
+    "disclosures.json": "9a9c53f891c6d52a4f81b4f2a5ea84ae26183e3abeb4fa2611a6f86dbdecdd56"
+  },
+  "reviewFileSHA256": "5ef470290fb30600b0ffcb30ffc59c3fcac140106b27c76169c8084c52c48aa1",
+  "reviews": [
+    {
+      "site": "https://guide.wagtail.org",
+      "packetSHA256": "c64ba362ee08ed7659fdfb88c0367488c2e2099d25638846dcd6dc03e63dc5d3",
+      "reviewer": {
+        "harness": "Codex subagent",
+        "model": "gpt-6.1-sol",
+        "reasoning": "low"
+      },
+      "rows": [
+        {
+          "checkId": "distraction",
+          "guideline": "2.5",
+          "outcome": "fail",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "For finding image-management guidance, the homepage places a Wagtail Space conference promotion with attention-getting loudspeaker symbols before its task-category content (link y=569 at desktop). It competes with the editor's immediate task and is unrelated to managing images. The image article has no such promotion. The search modal is user-opened and therefore useful rather than an unsolicited interruption. This is a narrow content-priority failure, not evidence of engagement traps. The conference can benefit the Wagtail community, but its prominence before task routes is poorly matched to this specific editor task; this does not justify deleting event information site-wide.",
+          "confidence": "medium",
+          "nextEvidence": "Compare a collapsed or less prominent conference notice with the existing homepage in an editor find-images task; verify discovery improves without hiding navigation."
+        },
+        {
+          "checkId": "choice",
+          "guideline": "2.6",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "staged.json:runs:0",
+            "staged.json:runs:1"
+          ],
+          "rationale": "Both staged branches report no_banner and page snapshots show no consent overlay or accept/reject controls. Ordinary choices include theme, language and article feedback; no pressure wording is evident in the captured text. Their alternative paths, defaults and visual prominence were not exercised or visually compared, so the declared choice-path expectation remains unresolved. Absence of a banner is not itself a defect.",
+          "confidence": "medium",
+          "nextEvidence": "Exercise theme, language and helpfulness alternatives and inspect screenshots and persistent defaults; assess consent paths only if a consent prompt is encountered."
+        },
+        {
+          "checkId": "comprehension",
+          "guideline": "2.7",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1"
+          ],
+          "rationale": "For the stated Wagtail-editor audience, 'Manage images' matches the task and the article separates adding/editing/removing images, alt text, focal area, formats and file limits with descriptive headings. Instructions name the Images sidebar, edit screen, Save and Remove focal area controls; focal area and alt text are explained rather than left as unexplained jargon. The warning clearly states that changing an image file changes every page using it. This supports the sampled wording expectation, with no claim about comprehension for unrepresented users.",
+          "confidence": "medium",
+          "nextEvidence": "Validate the instructions with novice editors and an actual Wagtail image-upload task, including users unfamiliar with image formats."
+        },
+        {
+          "checkId": "consistency",
+          "guideline": "2.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1"
+          ],
+          "rationale": "The homepage and Manage images article repeat the same navigation taxonomy, including Manage documents, Manage images and Manage snippets, and the same search ('Toggle the search form'), theme ('Toggle between dark and light theme'), Copy page and English controls. The article title agrees with its navigation link and previous/next labels. This supports repeated naming across the two sampled pages; it does not establish ownership or existence of a documented design system.",
+          "confidence": "high",
+          "nextEvidence": "Extend comparison to other guide sections and opened menus; request component documentation only for a broader design-system judgment."
+        },
+        {
+          "checkId": "motion",
+          "guideline": "2.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "Both pages report zero active animations and no audio/video in desktop and live reduced-motion states; reducedMotion changes from false to true. No animation is captured whose purpose, playback controls or changed motion behavior can be assessed. The user-opened search state also does not establish transition behavior. Quiet short snapshots cannot resolve animation over interaction and scrolling.",
+          "confidence": "medium",
+          "nextEvidence": "Observe search, mobile menu, theme and feedback transitions with and without reduced motion, including timing and any controls for sustained motion."
+        },
+        {
+          "checkId": "notifications",
+          "guideline": "2.12",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "No permission request calls are observed (requestCalls=0) and no unsolicited notification or alert appears in the sampled initial, narrow, reduced-motion, print, no-JavaScript or search states. The search overlay follows an explicit click and is useful for the declared task. This is a scoped absence of unwanted notifications, not proof about later sessions. Browser permission is already denied, so permission-prompt behavior in a fresh default-permission profile remains outside this result.",
+          "confidence": "medium",
+          "nextEvidence": "Repeat the task with notification permission initially default and inspect any subsequent feedback/subscription flow before expanding the scope."
+        },
+        {
+          "checkId": "documents",
+          "guideline": "2.13",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1"
+          ],
+          "rationale": "The task guidance is HTML and no download links are detected, so there is no sampled downloadable file whose labeling or optimization can be judged. Print emulation retains the task headings and all four article images while removing the main sidebar (article navigation count falls from two to one, consistent with its contents navigation remaining). Search, theme and copy controls remain visible in print observations, and actual pagination and paper use were not inspected. These facts do not establish an efficient printable document.",
+          "confidence": "medium",
+          "nextEvidence": "Generate print previews for both pages and inspect pagination, clipped text, image legibility and redundant controls; inspect any download content if a download is later found."
+        },
+        {
+          "checkId": "unused-code",
+          "guideline": "3.2",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "Initial coverage contains unexecuted ranges in the shared main JavaScript bundle and jsi18n translation helpers, alongside CSS rule-usage observations. Main script source length is 89,576 positions, not transferred bytes. Search, theme, copying, language and article feedback are later-use candidates, and the search journey did not complete. Initial nonexecution therefore nominates bundle/helper investigation but does not demonstrate dead code or justify deletion.",
+          "confidence": "high",
+          "nextEvidence": "Capture coverage through successful search, mobile navigation, theme, copy, language and feedback journeys, then corroborate remaining unused ranges against deployed source before removal."
+        },
+        {
+          "checkId": "components",
+          "guideline": "3.3",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "Both pages initially request the shared main script, blocking script and language catalog. Visible later-use features include search, theme, Copy page and language options, while the article adds feedback. No video or other clearly bandwidth-heavy embedded component is present. Search opens but its result click times out, and neither module boundaries nor usable deferred activation is established; splitting recommendations would be premature.",
+          "confidence": "medium",
+          "nextEvidence": "Inspect deployed bundle composition and successful feature activation with request timing; split only a material optional component whose deferred loading retains usable activation."
+        },
+        {
+          "checkId": "layout",
+          "guideline": "3.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1"
+          ],
+          "rationale": "At 1280 and 360 CSS pixels both pages retain their task headings, the article retains four images, and horizontalOverflow is false; the main sidebar is hidden at narrow width and a Mobile menu toggle appears. However, that menu and other affected controls were not exercised. The homepage narrow English control begins at x=316.48 with width=91.02, extending beyond the 360-pixel viewport despite the overflow flag, a concrete clipping concern requiring visual and interaction checks. These snapshots cannot establish device compatibility.",
+          "confidence": "medium",
+          "nextEvidence": "At 360 pixels, inspect language/copy toolbar clipping and activate language, search and the mobile menu; complete the find-images task on a real touch device and with keyboard navigation."
+        },
+        {
+          "checkId": "impact-choice",
+          "guideline": "5.4",
+          "outcome": "inapplicable",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1"
+          ],
+          "rationale": "The declared visitor task is finding and reading image-management documentation. The sampled site offers navigation, search, copying, theme, language and feedback, but no consequential download, media-quality, purchase or upload decision requiring a contextual environmental comparison. The article discusses upload limits and developer-configured image compression, but it is guidance about a separate CMS workflow, not an upload choice on this service. No need for carbon labels on these reading controls is established.",
+          "confidence": "medium",
+          "nextEvidence": "If scope expands to an actual upload, download or media-selection workflow, identify its meaningful resource tradeoffs and assess useful, substantiated contextual information there."
+        },
+        {
+          "checkId": "journeys",
+          "guideline": "2.4",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:journeys:0",
+            "probes.json:pages:0",
+            "probes.json:pages:1"
+          ],
+          "rationale": "The search task explicitly requires opening image-management guidance. Search opening and filling 'images' complete, but clicking the search-modal Manage images link times out after 5000 ms. The final URL is still /en/, its title remains Wagtail user guide and the only modal text is Search. successSelectorVisible=true does not establish task completion because Manage images already appears in homepage navigation. A separately loaded article proves content exists, not that this search journey succeeds. A selector/timing issue versus site search failure remains unresolved.",
+          "confidence": "high",
+          "nextEvidence": "Inspect the opened search results, input events and requests, then repeat with an observed result locator and sufficient loading evidence; require final article URL/title/content and compare the direct navigation path."
+        },
+        {
+          "checkId": "disclosure-scope",
+          "guideline": "2.1",
+          "outcome": "pass",
+          "evidenceIds": [
+            "staged.json:discovery:0"
+          ],
+          "rationale": "The retrieved wagtail.org/sustainability/ statement explicitly names guide.wagtail.org among projects whose impact and carbon emissions it is working to reduce. It describes climate impact, smaller image formats, image-generation features, dark mode and a sustainability roadmap, establishing service relationship and disclosed mitigation intent. Its ecosystem footprint figures are broader than this origin and do not measure the guide. The guide-local fallback routes return 404, but that does not negate the explicitly scoped parent statement. This passes disclosure only, not execution or quantified service-specific performance.",
+          "confidence": "medium",
+          "nextEvidence": "Retrieve the complete roadmap and service-specific progress records to assess implementation; retain ecosystem and guide boundaries separately."
+        },
+        {
+          "checkId": "carbon-discovery",
+          "guideline": "3.13",
+          "outcome": "fail",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "rationale": "Root /carbon.txt and /.well-known/carbon.txt both return 404 HTML without redirects or Carbon-Location delegation; the successful homepage also supplies no Carbon-Location. DNS discovery is recorded as queried and no file relationship is established. Thus the sampled discovery routes do not expose the expected parseable file. With no retrieved carbon.txt there is no declared version, TOML syntax, schema or provider relationship to validate. This is a scoped file absence, not high emissions or failure of all guideline 3.13.",
+          "confidence": "high",
+          "nextEvidence": "Publish or locate a carbon.txt relationship for this origin, then validate its supported version, syntax/schema, service domains and evidence links through the same discovery routes."
+        },
+        {
+          "checkId": "hosting-evidence",
+          "guideline": "4.1",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "rationale": "No carbon.txt record identifies a provider/service relationship for guide.wagtail.org, and the retrieved sustainability statement describes CMS/community mitigation rather than independently corroborated hosting operations for this origin. The ecosystem footprint article concerns thousands of Wagtail sites, not this service's provider, electricity or infrastructure. Sustainable hosting therefore remains unknown; no green-hosting model flag follows from public intent or domain association.",
+          "confidence": "high",
+          "nextEvidence": "Obtain the origin's current hosting provider and service relationship plus dated independent operational evidence covering the actual infrastructure and electricity supply."
+        }
+      ],
+      "evidenceIndex": {
+        "staged.json:runs:0": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/0",
+          "sourceSHA256": "9ddf7d9017579c275af6d2e61fc0eba8cedd3b7e89f8444f59c19652ff6c1691"
+        },
+        "staged.json:runs:1": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/1",
+          "sourceSHA256": "9ddf7d9017579c275af6d2e61fc0eba8cedd3b7e89f8444f59c19652ff6c1691"
+        },
+        "staged.json:discovery:0": {
+          "artifact": "staged.json",
+          "jsonPointer": "/discovery/0",
+          "sourceSHA256": "9ddf7d9017579c275af6d2e61fc0eba8cedd3b7e89f8444f59c19652ff6c1691"
+        },
+        "probes.json:pages:0": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/0",
+          "sourceSHA256": "6951794cb23ade6cdd93f34a1645ae657f82f018d4306e6deba8ee59592183e1"
+        },
+        "probes.json:pages:1": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/1",
+          "sourceSHA256": "6951794cb23ade6cdd93f34a1645ae657f82f018d4306e6deba8ee59592183e1"
+        },
+        "probes.json:journeys:0": {
+          "artifact": "probes.json",
+          "jsonPointer": "/journeys/0",
+          "sourceSHA256": "6951794cb23ade6cdd93f34a1645ae657f82f018d4306e6deba8ee59592183e1"
+        },
+        "disclosures.json:sites:0": {
+          "artifact": "disclosures.json",
+          "jsonPointer": "/sites/0",
+          "sourceSHA256": "9a9c53f891c6d52a4f81b4f2a5ea84ae26183e3abeb4fa2611a6f86dbdecdd56"
+        }
+      }
+    }
+  ]
+}

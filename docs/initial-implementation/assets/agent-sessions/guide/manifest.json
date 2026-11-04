@@ -1,0 +1,18 @@
+{
+  "publicationNote": "Exact reviewed public-site JSON evidence. Logs and private skill copies omitted; their digests remain in receipts. Source URL query strings include only observed public navigation/search parameters; inspect before republication. Scores can be recalculated with audit/assess.py using these local artifacts. This is an expanded-check pilot, not a replacement for the earlier rubric's score.",
+  "files": {
+    "plan.json": "ea8bb7f3ebdfaf38184e9724668d0c8ad0ecfdb9ee3cbaeddbeca1df3a1e3272",
+    "receipt.json": "bc1563f30dc05d33182b3fac53c8386bdee82c2a488160b89bbcbe1b713caf0c",
+    "staged.json": "9ddf7d9017579c275af6d2e61fc0eba8cedd3b7e89f8444f59c19652ff6c1691",
+    "probes.json": "6951794cb23ade6cdd93f34a1645ae657f82f018d4306e6deba8ee59592183e1",
+    "disclosures.json": "9a9c53f891c6d52a4f81b4f2a5ea84ae26183e3abeb4fa2611a6f86dbdecdd56",
+    "checks.json": "386b6bf5df79fbf934530a5e290513d56b22d2c3fc380ce3d033a0f8df0557f9",
+    "rubric.json": "5f809250d27c1b7d49091065fba6e80474c6ad19062a83d1696f564d06793c04",
+    "impact-weights.json": "120d2e9c59c8ff0910ab6f1e6b034d695811e677eeeb258c14ab759162dd0dbc",
+    "packet.json": "c64ba362ee08ed7659fdfb88c0367488c2e2099d25638846dcd6dc03e63dc5d3",
+    "review.json": "5ef470290fb30600b0ffcb30ffc59c3fcac140106b27c76169c8084c52c48aa1",
+    "reviews.json": "4f7a9354c159031763ad7b78042aaaf3bf1611f2fe975af67468ece03d4d6bb0",
+    "scores.json": "b7f2760ba86088a9d536a0dcfcf6fdd6e4ce21118700649e679f0b7eccb1323e",
+    "score-receipt.json": "18c5351181f96f6813b5c2bee1588b6c1997912b622073be3741bd8af2a6a91a"
+  }
+}

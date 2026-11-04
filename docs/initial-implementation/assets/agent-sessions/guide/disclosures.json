@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "carbon-review-v1",
+  "sourceSHA256": "9ddf7d9017579c275af6d2e61fc0eba8cedd3b7e89f8444f59c19652ff6c1691",
+  "scriptSHA256": "cb57ab2b96ca9fb4d05a907ba4d4269274f31318e32244dcfdf8bc4877c9dd60",
+  "sites": [
+    {
+      "site": "https://guide.wagtail.org",
+      "presence": "not_established_within_discovery_scope",
+      "records": [],
+      "documentCount": 4,
+      "claimsVerified": false,
+      "scopeNote": "Presence, parseability, declared relationships, retrieval, and substantiation are separate results. Missing carbon.txt does not establish absence of a sustainability policy."
+    }
+  ]
+}

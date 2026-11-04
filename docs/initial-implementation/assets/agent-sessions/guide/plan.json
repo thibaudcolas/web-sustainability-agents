@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://guide.wagtail.org",
+  "purpose": "Review public content journeys and additional WSG checks for the repeatable audit pilot",
+  "pages": [
+    {
+      "id": "page-1",
+      "url": "https://guide.wagtail.org/en/",
+      "task": "Find image-management guidance for a Wagtail editor",
+      "statementUrls": [
+        "https://wagtail.org/sustainability/"
+      ]
+    },
+    {
+      "id": "page-2",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "task": "Learn how to upload and manage images"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "search-images",
+      "url": "https://guide.wagtail.org/en/",
+      "task": "Search for image-management guidance and open it",
+      "actions": [
+        {
+          "type": "click",
+          "selector": "[data-search-icon-button]"
+        },
+        {
+          "type": "fill",
+          "selector": "[data-search-input]",
+          "value": "images"
+        },
+        {
+          "type": "click",
+          "selector": "#search-modal a[href*=\"/manage-images/\"]"
+        }
+      ],
+      "successSelector": "h1"
+    }
+  ],
+  "checks": [],
+  "sourceRoots": [
+    "local/guide"
+  ],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped"
+  ],
+  "optionalEnergy": "none",
+  "ownerPriorities": [
+    "Content-focused site with prior sustainability improvements",
+    "First-load metrics headline; interactions supplementary",
+    "Source available for corroborating fixes"
+  ]
+}

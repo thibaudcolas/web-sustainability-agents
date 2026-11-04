@@ -1,0 +1,211 @@
+{
+  "site": "https://wagtail.org",
+  "packetSHA256": "9662c17f06dca0b333bf44cfdf33eeb329cc326e185fd7ab79fa48c534ee0b41",
+  "reviewer": {
+    "harness": "Codex subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low"
+  },
+  "rows": [
+    {
+      "checkId": "distraction",
+      "guideline": "2.5",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "For understanding the CMS and reading sustainability commitments, the static Wagtail Space event promotion is related to the community but competes with the reading task; cookie controls have a useful consent purpose and the video is paused. Desktop overlays are hidden. Geometry/text cannot establish the prominence or interruption cost of these prompts across the task, so neither a disruptive design failure nor full scoped success is established.",
+      "confidence": "medium",
+      "nextEvidence": "Observe screenshots and a complete reading journey, including dismissal and whether the event banner or cookie prompt obscures task content."
+    },
+    {
+      "checkId": "choice",
+      "guideline": "2.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:2",
+        "staged.json:runs:3"
+      ],
+      "rationale": "Cookie wording explains measurement and offers Opt in and Opt out; both controls are 319 by 57 CSS px in desktop observations, and all four staged accept/reject click actions completed. This supports clear wording and reachable paths, but equal dimensions do not establish color/prominence parity, consent defaults, or the resulting stored preference and tracking behavior.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect rendered button styles and consent state before/after both choices, then verify persistence and subsequent tracking requests."
+    },
+    {
+      "checkId": "comprehension",
+      "guideline": "2.7",
+      "outcome": "fail",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "staged.json:discovery:0"
+      ],
+      "rationale": "The homepage explains the Python CMS for content teams and the sustainability page uses descriptive headings and explains image formats. However /pages/1/states/0/observations/text says 5,173 tons CO2e/year for 6,431 sites with a 12 tCO2e/year average per site. The implied mean is about 0.804 tCO2e/site/year, so the unexplained average contradicts the stated population and obstructs the declared task of understanding public claims. This is a sampled content failure, not verification of the underlying inventory.",
+      "confidence": "high",
+      "nextEvidence": "Clarify whether 12 refers to another statistic or population and correct the wording; review the corrected summary with readers unfamiliar with the methodology."
+    },
+    {
+      "checkId": "consistency",
+      "guideline": "2.8",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "For the two sampled desktop pages, /states/0/observations/navigation repeats Project, Explore, Developers, Community and Support, while controls repeat the Search, Get started, Switch theme and Opt in/Opt out names. The sustainability route remains labeled Sustainability in both samples. This passes only the comparison of repeated names; it does not establish a documented design system.",
+      "confidence": "high",
+      "nextEvidence": "No additional evidence needed for the sampled name comparison; broader coverage would compare menu-open states and additional templates."
+    },
+    {
+      "checkId": "motion",
+      "guideline": "2.10",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "The homepage video is paused, non-autoplay and has native controls, a useful user-controlled introduction. Live reduced-motion snapshots nevertheless contain five running single-iteration DIV/IMG animations on the homepage and one on the statement. The snapshots do not expose animated properties, purpose, duration, or whether these are resize transitions; their presence alone cannot prove harmful motion or adequate reduced-motion handling.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect animation properties and durations and observe the same transitions with reduced motion enabled from initial load and changed live; exercise video controls."
+    },
+    {
+      "checkId": "notifications",
+      "guideline": "2.12",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:journeys:0"
+      ],
+      "rationale": "All captured page states report zero notification requestPermission calls and no visible alert overlays. The homepage Copied! alert is hidden and corresponds to explicit command-copy feedback, while newsletter forms invite voluntary signup. No unwanted alert or permission prompt appears in these observed reading states. This narrow pass does not establish newsletter unsubscribe behavior or future notification delivery.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence needed for observed states; test an opted-in messaging lifecycle before making a broader notification claim."
+    },
+    {
+      "checkId": "documents",
+      "guideline": "2.13",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "Both print states hide navigation (visibleNavigation 0) while retaining task text, and the homepage video is hidden in print. Both sampled pages report zero downloadable-document links, so download labels/content optimization are not applicable to this reading sample. This passes the limited print-visibility and labels check; retained images and print emulation do not establish optimized pagination or document equivalence.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect print preview pagination before claiming paper efficiency; inspect any downloadable document if one is added to the sampled task."
+    },
+    {
+      "checkId": "unused-code",
+      "guideline": "3.2",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "Initial codeCoverage includes unexecuted ranges in shared main JavaScript and CSS rule coverage, but its explicit scope is initial load plus 500 ms. Menus, search, theme, cookie choices and copy controls have later task needs. Unexecuted offsets therefore nominate shared bundles for investigation but cannot establish removable dead code or the site satisfying removal expectations.",
+      "confidence": "high",
+      "nextEvidence": "Collect coverage while using menus, search, theme, consent and responsive states, then corroborate remaining unused ranges against deployed source before proposing removal."
+    },
+    {
+      "checkId": "components",
+      "guideline": "3.3",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "Initial resources include shared main and blocking scripts plus analytics; the homepage has a paused preload=none promotional video, while the statement has no media. These facts support investigating shared loading but do not map bundle modules to deferred components or show usable activation. There is no evidence that a bandwidth-heavy component can safely be split.",
+      "confidence": "high",
+      "nextEvidence": "Map deployed bundle modules to controls and measure requests before/after activating deferred components; preserve the existing video preload behavior."
+    },
+    {
+      "checkId": "layout",
+      "guideline": "3.10",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "Desktop and 360 CSS px states retain task wording but document widths are 1290 and 370 respectively, each 10 px wider than the viewport. Narrow navigation count changes from two to one, indicating adaptation; no narrow menu/control action was exercised. The overflow is an investigation target, but the packet does not show clipped task content or establish usable affected controls, so compatibility remains unresolved.",
+      "confidence": "high",
+      "nextEvidence": "Identify the overflowing element, inspect whether task content is clipped, and exercise narrow navigation, consent and theme controls; test a real touch device for broader claims."
+    },
+    {
+      "checkId": "impact-choice",
+      "guideline": "5.4",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "staged.json:discovery:0"
+      ],
+      "rationale": "The consequential sampled choices are optional homepage video playback and theme selection. The statement explains an OLED-dependent dark-mode benefit and image-format tradeoffs, but the theme control itself has no contextual impact explanation and video playback was not exercised. A useful, accurate contextual explanation depends on the device and actual media impact; absence of carbon labels on these controls is not by itself a defect.",
+      "confidence": "medium",
+      "nextEvidence": "Measure the optional video path and assess whether concise size/duration information would help the visitor; validate any theme impact statement against device assumptions."
+    },
+    {
+      "checkId": "journeys",
+      "guideline": "2.4",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "The declared homepage-to-statement click failed because its selector matched three links. The after snapshot title is still Wagtail CMS - Django Content Management System, despite successSelectorVisible=true. The independently retrieved statement proves a destination exists but not successful navigation or an efficient user path. This is incomplete task evidence, not a demonstrated website journey failure.",
+      "confidence": "high",
+      "nextEvidence": "Repeat the task using a visible, uniquely identified Sustainability link and record final URL, statement heading/content and required actions, including the narrow menu route."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "guideline": "2.1",
+      "outcome": "pass",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "The retrieved HTTP 200 sustainability statement explicitly names Wagtail.org alongside docs.wagtail.org and guide.wagtail.org, describes software/climate impacts, image-format mitigations, measurement and a roadmap. The retrieved digital-emissions page separately scopes an April 2026 homepage estimate and methodology. This supports the declared disclosure expectation only; ecosystem estimates and historical 2023/2024 reports are not current measurements of this capture, and the arithmetic issue remains a separate content finding.",
+      "confidence": "high",
+      "nextEvidence": "No additional evidence needed for disclosure scope; implementation and current emissions require separate operational evidence."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "guideline": "3.13",
+      "outcome": "pass",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "rationale": "Root /carbon.txt returns HTTP 200 directly with no redirects or delegation, parses as TOML and declares version 0.4. It gives exact-host disclosure URLs with retrieved content and provider/service relationships (Cloudflare CDN, Heroku platform/database/cache, AWS storage, GitHub CI/CD). The review records no structural issues but schemaValidated=false under a v0.x common-fields profile: this is a discoverability/parseability and usable-declaration pass, not formal version/schema conformance, current validity of historical reports, or verification of providers.",
+      "confidence": "high",
+      "nextEvidence": "Validate against an explicit 0.4 schema before claiming schema conformance; update historical disclosure references if intended as current evidence."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "guideline": "4.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "rationale": "The carbon.txt declares provider/service relationships for this origin, but all provider relationships are self_declared and greenHostingVerified=false. Retrieved disclosure content does not independently corroborate the operational energy scope of these services. Sustainable hosting therefore remains unknown; no SWDM renewable-hosting flag is justified.",
+      "confidence": "high",
+      "nextEvidence": "Obtain independent origin-to-provider evidence plus current service/location-specific energy and environmental performance evidence covering CDN, application hosting and storage."
+    }
+  ],
+  "topFindings": [
+    {
+      "title": "Clarify the sustainability summary average",
+      "evidenceIds": [
+        "probes.json:pages:1",
+        "staged.json:discovery:0"
+      ],
+      "benefit": "Readers can reconcile the ecosystem total and per-site figure before relying on the claim.",
+      "validation": "Confirm the intended population/statistic and ensure the published arithmetic and linked report agree."
+    }
+  ]
+}

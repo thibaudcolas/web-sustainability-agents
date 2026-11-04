@@ -10,7 +10,7 @@ uv run --locked --script audit/probes.py \
   --output .audit-work/site-probes.json
 ```
 
-The [audit workflow](skill-audit-workflow.md) coordinates this evidence with initial-load measurements, disclosures, and source review. This collector runs separately from headline byte and energy measurement. Its instrumentation and repeated states must not be counted as ordinary page traffic.
+The [agent-triggered workflow](agent-driven-audits.md) coordinates this evidence with initial-load measurements, disclosures, and source review. This collector runs separately from headline byte and energy measurement. Its instrumentation and repeated states must not be counted as ordinary page traffic.
 
 ## Repeatable observations
 

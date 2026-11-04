@@ -2,6 +2,8 @@
 
 The audit now combines measured evidence with explicit qualitative review roles. Separate GPT-6.1 Sol/low reviewers applied three skills to raw evidence for each site, without reading the previous human report conclusions. A deterministic publisher resolves their evidence references to actual JSON locations, and a calculator aggregates their scoped judgments. The coordinator inspected the findings; they are not independent owner ground truth.
 
+The [agent-triggered extension](agent-driven-audits.md) adds a separate 15-check rubric and new live reviews. This page preserves the original score campaign; the union of defined review areas across both catalogs is now 32/71 groups, not a merged score or complete guideline coverage.
+
 ## Current score and expected WSG coverage
 
 | Measure                            |        Guide |  Wagtail.org |

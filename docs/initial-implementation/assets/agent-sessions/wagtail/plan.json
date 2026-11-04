@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://wagtail.org",
+  "purpose": "Review public content journeys and additional WSG checks for the repeatable audit pilot",
+  "pages": [
+    {
+      "id": "page-1",
+      "url": "https://wagtail.org/",
+      "task": "Understand Wagtail and find its sustainability commitments",
+      "branches": [
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-in]",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-out]",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-2",
+      "url": "https://wagtail.org/sustainability/",
+      "task": "Read the public sustainability claims and evidence",
+      "branches": [
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-in]",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-out]",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "sustainability-link",
+      "url": "https://wagtail.org/",
+      "task": "Find and open the sustainability statement from the homepage",
+      "actions": [
+        {
+          "type": "click",
+          "selector": "a[href=\"/sustainability/\"]"
+        }
+      ],
+      "successSelector": "h1"
+    }
+  ],
+  "checks": [],
+  "sourceRoots": [
+    "local/wagtail.org"
+  ],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped"
+  ],
+  "optionalEnergy": "none",
+  "ownerPriorities": [
+    "Content-focused site with prior sustainability improvements",
+    "First-load metrics headline; interactions supplementary",
+    "Source available for corroborating fixes"
+  ]
+}

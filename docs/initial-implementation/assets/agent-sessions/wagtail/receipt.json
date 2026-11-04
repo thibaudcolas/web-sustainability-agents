@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "0.1.0",
+  "executionStatus": "completed",
+  "commands": [
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/run.py",
+        "--targets",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-agent-run-1/targets.json",
+        "--output",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-agent-run-1/staged.json"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-04T10:58:43.834761+00:00",
+      "finishedAt": "2026-11-04T10:59:46.471968+00:00",
+      "exitCode": 0,
+      "logs": [
+        "staged.stdout.txt",
+        "staged.stderr.txt"
+      ]
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/probes.py",
+        "--plan",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-agent-run-1/plan.json",
+        "--output",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-agent-run-1/probes.json"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-04T10:59:46.472182+00:00",
+      "finishedAt": "2026-11-04T10:59:54.464336+00:00",
+      "exitCode": 0,
+      "logs": [
+        "probes.stdout.txt",
+        "probes.stderr.txt"
+      ]
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/disclosures.py",
+        "--input",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-agent-run-1/staged.json",
+        "--output",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-agent-run-1/disclosures.json"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-04T10:59:54.464604+00:00",
+      "finishedAt": "2026-11-04T10:59:54.545116+00:00",
+      "exitCode": 0,
+      "logs": [
+        "disclosures.stdout.txt",
+        "disclosures.stderr.txt"
+      ]
+    }
+  ],
+  "sourceSHA256": {
+    "audit/run.py": "be6ed209d107f91af87b7d60d94c840138252d41b347009e3f4c254eb4674ef0",
+    "audit/run.py.lock": "9b59f14a8d346545a9b45f9523bf16896f315e225c8f3913a47bfb6f8964e455",
+    "audit/probes.py": "264f97994cca6360f535ca432eee4fe8fe9f138c33aec0cfce5015b304e3e130",
+    "audit/probes.py.lock": "cebd7ae29b5c8c6d65ede2ca2854b241b70345dd653ba295a4de220ffd5e660e",
+    "audit/workflow.py": "faa9b6f309c3ade0beaa7634ce0b485e91e305d8b7c6061682b1ffe0dac97313",
+    "audit/workflow.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/assess.py": "e9b658cb111e9a6a1e5e72bbb8e0591e43a19419c4de8597c4604f302605d9bc",
+    "audit/assess.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/disclosures.py": "cb57ab2b96ca9fb4d05a907ba4d4269274f31318e32244dcfdf8bc4877c9dd60",
+    "audit/disclosures.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235"
+  },
+  "skillSHA256": {
+    "research-workspace/SKILL.md": "b6e024f437b683806e8e4985246e9c5281c99b412e8ffb8d4d978bfd79d87c37",
+    "sustainability-audit/SKILL.md": "4201fd18e6173d05b308badd0346980d2102a0c2f202d785f689a414ff74b367",
+    "sustainability-audit/references/agent-workflow.md": "51624dc576575a72bdd9522c939bf20c078d8b09ee49299a83c2c9c03481ed42",
+    "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+    "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+    "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+    "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+    "sustainability-guideline-review/references/assessment-crosswalk.json": "f030bb26c1f2af4ba2cb2727775335ef7eef73472414de83a3784a24d3e44b7d",
+    "sustainability-guideline-review/references/wsg.json": "b0a85a1f78b50aa6f04da077fac0c758212510c8bb97274f681672503427ad72"
+  },
+  "gitRevision": "2eb12095b1e4d713da24da728549dd97ee2ff684",
+  "planSHA256": "816b51b185aa98c3eb948bc94a46c1897b906876fd47f78fd0a26b556f22c581",
+  "limitations": [
+    "Live responses and LLM judgments can vary",
+    "Source roots are scope declarations, not deployment attestations or automatically collected source",
+    "Energy runs are separate and optional",
+    "Inspect captured text and logs before publishing; the session is private"
+  ]
+}

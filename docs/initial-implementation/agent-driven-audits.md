@@ -51,3 +51,17 @@ The [GreenFrame adapter](../knowledge-base/greenframe.md) prepares explicit init
 The next useful benchmark should test the workflow itself: selecting scope, asking a necessary question, running the right scripts, handling a failed action and preserving unknowns. Use controlled sites and owner-reviewed judgments before adding further live sites. Then run a paired Harbor campaign with Sol/low and Neuralwatt DeepSeek/high; the existing campaigns evaluate frozen evidence and do not establish the accuracy of this new orchestration.
 
 Historical methodology tasks now load frozen skill copies from `benchmarks/frozen-methodology-skills/`. Changing current skill instructions or references therefore does not silently change the inputs of an old benchmark. Cross-harness behavior, source evidence integration and skill/no-skill comparisons remain explicit [backlog items](backlog.md#repeatable-collection-and-broader-interpretation).
+
+## Pilot reproduction
+
+The coordinator executed the full collection workflow once for each known content site, using two pages and one explicit journey per site. Separate GPT-6.1 Sol/low reviewers applied the frozen skills without reading earlier human report conclusions. See the separate [guide findings](guide-audit.md#expanded-agent-review) and [Wagtail.org findings](wagtail-audit.md#expanded-agent-review). Both preserve uncertain journey results instead of treating collector failures as site defects. These are live development reviews, not a controlled model-comparison campaign or owner-validated ground truth.
+
+The published [guide manifest](assets/agent-sessions/guide/manifest.json) and [Wagtail manifest](assets/agent-sessions/wagtail/manifest.json) hash exact JSON artifacts. Formatting is intentionally excluded for these frozen files. Raw command logs and skill copies remain private; receipts retain their hashes. The scope and evidence were inspected before publication. Collection ran with uncommitted implementation changes, so the script hashes supplement the recorded base Git revision. Before review, packet construction was strengthened to pin scope, weights, receipt and skill files; this changed packet provenance, not site observations or review expectations.
+
+Recalculate either published score without network or model calls (use a new output path):
+
+```sh
+uv run --locked --script audit/assess.py   --reviews docs/initial-implementation/assets/agent-sessions/guide/reviews.json   --rubric docs/initial-implementation/assets/agent-sessions/guide/rubric.json   --weights docs/initial-implementation/assets/agent-sessions/guide/impact-weights.json   --assets docs/initial-implementation/assets/agent-sessions/guide   --output .audit-work/guide-agent-recalculated.json
+```
+
+Replace `guide` with `wagtail` for the second site. Recollecting the live site or rerunning a reviewer can produce different evidence or judgments and requires a new session. The existing annual scenarios and headline scores retain their original input captures; no mixed-campaign total is calculated.
