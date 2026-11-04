@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://guide.wagtail.org",
+  "reviewSHA256": "81b9b340955150748c990d2b225405e1d50a48e1d75ce91d26e73137bd511bcd",
+  "writer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "overview": "The six-page sample supports focused reading: system fonts avoid font downloads, core content remains available without JavaScript, text compression works, and desktop search reaches the image guide. The clearest visitor-facing defect is that already-open pages do not follow a system theme change, although fresh dark-mode visits work. Priorities also include trials for eager article images, verification of a duplicate CI trigger path in supplied source, and a mobile navigation task. Several wider practices remain unresolved because the needed evidence was outside this sample.",
+  "nextSteps": [
+    "Complete the 360-pixel menu/search task and extend keyboard checks to activation, reverse traversal and modal behavior. Include a representative real device.",
+    "Run controlled image-loading and rendition comparisons with screenshot readability at intended densities. Add independent cold narrow loads, warm repeat visits and autocomplete request traces; keep each measurement distinct.",
+    "Review the parent Wagtail sustainability policy against guide.wagtail.org, checking explicit service scope, impacts, mitigation and review date. The guide packet did not retrieve that policy; record this review separately before updating the unresolved disclosure result.",
+    "Obtain origin-to-hosting evidence and current provider disclosures. For advice based on supplied source, verify deployment identity, actual duplicate CI runs, lock resolution and the project’s concrete budget/enforcement procedure.",
+    "Broaden testing to translations and new editors when claiming wider usability. The current sample contains six English pages, one desktop journey and no authenticated CMS operations, direct energy measurement or traffic-weighted annual footprint."
+  ],
+  "findings": [
+    {
+      "checkId": "preference-behavior",
+      "title": "Follow system theme changes while a page is open",
+      "summary": "On all six sampled pages, a fresh dark-mode visit uses dark colors. Changing the device preference to dark while a page is already open leaves its light colors unchanged.",
+      "whyItMatters": "Visitors who change their device theme during a reading session do not receive the same adaptation as visitors who start in dark mode. The audit makes no energy claim from the theme colors.",
+      "action": "First verify with no saved manual override, then update deployed theme preference handling. Test light-to-dark and dark-to-light changes without reloading, fresh dark loads and persistence of an explicit visitor choice."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Trial deferred images and readable responsive variants",
+      "summary": "Manage images and the 8.1 release page receive about 233 kB and 354 kB on first load; images account for about 177 kB and 298 kB. All article images are fetched before scrolling, including those below the viewport. WebP delivery already works. The images are 800–900 pixels wide and scale to 320 pixels in the narrow probe, but smaller alternatives have not been compared.",
+      "whyItMatters": "Readers download images for later parts of long articles even if they stop early. Deferring some requests or offering appropriate variants could reduce initial traffic, but the task images contain interface labels that must stay readable. These totals are measured traffic, not demonstrated avoidable bytes.",
+      "action": "Trial native lazy loading below the first viewport while retaining dimensions and full-detail access. Compare responsive variants at intended pixel densities and inspect screenshot labels. Measure fresh narrow loads and subsequent scrolling before reporting a reduction."
+    },
+    {
+      "checkId": "source-automation",
+      "title": "Verify the duplicate Renovate CI path, then deduplicate it",
+      "summary": "The captured supplied workflow runs for renovate/** pushes and all pull requests. An update to an open Renovate pull request matches both triggers, with no equivalent filtering or superseded-run cancellation in the selected file. The current repository configuration and actual run history are unverified.",
+      "whyItMatters": "If both events run the same build and test checks for one commit, maintainers may repeat work without gaining distinct validation. The audit establishes the trigger path in the supplied workflow, without measuring CI energy or visitor savings.",
+      "action": "Verify actual duplicate runs for the same Renovate commit and identify required-check names before changing CI. If confirmed, filter duplicate events or cancel superseded runs while preserving necessary validation; check that required build and test results still arrive."
+    },
+    {
+      "checkId": "layout",
+      "title": "Complete the image-guide task through the mobile controls",
+      "summary": "All six pages fit the recorded 360-pixel width and retain task content. Their sidebar becomes hidden and a menu button appears, but the audit never opens that menu or narrow search. The completed search-to-guide journey is desktop only.",
+      "whyItMatters": "Content fitting the screen is useful, but visitors also need to reach it through the replacement controls. The missing interaction evidence leaves mobile navigation unresolved.",
+      "action": "At 360 pixels, open and close navigation and search, follow a section link and find Manage images. Check keyboard traversal and touch interaction, then repeat on a representative real device."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Reading stays focused",
+      "summary": "Across the six sampled pages, the recorded reading states contain no overlays, playing media or active animations. Search, navigation and page contents support the documentation task; feedback follows the article. Static conference promotion appears on the home and release pages without an observed forced detour.",
+      "nextStep": "Observe longer reading sessions and optional controls before extending this finding to other interactions."
+    },
+    {
+      "checkId": "choice",
+      "title": "Inspect optional choices in their open states",
+      "summary": "No consent banner, registration gate or transaction appears in the sample. Search, theme, language and feedback controls use direct wording, but their competing choices, defaults and visual prominence were not exercised. The audit does not establish a deceptive pattern or full choice parity.",
+      "nextStep": "Open the language, theme and feedback states and compare any competing options, defaults and visual prominence."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Instructions match the editor audience",
+      "summary": "The home page distinguishes tutorials, how-to guides, concepts and reference. Overview introduces the CMS and administrator login; Manage images names interface controls, explains alt text and warns that replacing a shared image affects all pages using it. Search places the relevant guide first. This supports the sampled English tasks.",
+      "nextStep": "Test these tasks with new editors and people using translations or assistive technology to assess understanding more broadly."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Navigation and control names repeat across pages",
+      "summary": "The six pages use the same documentation sections and search/theme controls. Content pages repeat page-copying, language, contents and feedback patterns where relevant. Selected templates also share a base, but a documented design system was not supplied.",
+      "nextStep": "Include additional languages and open menus in a wider consistency review."
+    },
+    {
+      "checkId": "motion",
+      "title": "Observed reading states stay still",
+      "summary": "No active animation or playing audio/video was recorded in the seven states tested on each page, including reduced-motion and fresh dark-mode loads. Supplied search code includes a later result transition, whose deployed behavior was not established.",
+      "nextStep": "Exercise autocomplete and menu transitions with reduced motion both on and off before judging those interactions."
+    },
+    {
+      "checkId": "notifications",
+      "title": "Reading needs no notification opt-in",
+      "summary": "The recorded page states show no notification permission requests, alert overlays or playing media. Browser notification permission was already denied, so the observation covers attempted requests in this session rather than all permission states.",
+      "nextStep": "If notification scope expands, use a fresh default-permission context and inspect any subscription journey."
+    },
+    {
+      "checkId": "documents",
+      "title": "Check actual print output and text alternatives",
+      "summary": "Print emulation hides global navigation while retaining article text and task images. About links Markdown, llms.txt, llms-full.txt and an agent skill with meaningful names, but their contents were not retrieved. Print emulation does not establish pagination, paper use or equivalent accessible documents.",
+      "nextStep": "Inspect an actual print preview or PDF of a long article and retrieve the linked text alternatives to compare content and size."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Measure interaction coverage before removing code",
+      "summary": "Every sampled page loads the shared main script and stylesheet. Many JavaScript functions were not executed in the initial half-second observation; supplied source also contains search, feedback, navigation and copying behavior used later. CSS observations list used rules rather than an unused-byte total. These records do not establish safely removable code.",
+      "nextStep": "Record coverage through autocomplete, mobile menus, feedback, copying, language and theme use; match the deployed build before selecting code to remove."
+    },
+    {
+      "checkId": "components",
+      "title": "Check which components can load later",
+      "summary": "All six pages load the same main bundle, whose compressed response body is about 26 kB. Supplied source initializes several interactions, and search is used in the executed journey. The audit does not identify a deployed component that can safely be deferred.",
+      "nextStep": "Attribute the deployed bundle to its modules, then test a deferred component prototype through activation, caching and slow-network use."
+    },
+    {
+      "checkId": "layout",
+      "title": "Complete the task through the mobile controls",
+      "summary": "At 360 pixels wide, all six pages retain the recorded task text, headings and images without horizontal overflow. Images scale to 320 pixels; the sidebar disappears and a named menu button appears. Neither the mobile menu nor narrow search was activated, so the completed desktop journey does not resolve mobile navigation.",
+      "nextStep": "At 360 pixels, open and close the menu and search, follow a section link and find Manage images using keyboard and touch; repeat on a representative real device."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "No consequential environmental choice was sampled",
+      "summary": "The audited tasks are finding and reading public documentation. They contain no demonstrated purchase, transport, media-quality or compute-intensive choice for which an impact comparison would help. Instructions about CMS image uploads describe a separate workflow.",
+      "nextStep": "Reassess contextual impact information if the scope later includes actual uploads, media playback or another resource-intensive task."
+    },
+    {
+      "checkId": "journeys",
+      "title": "Desktop search reaches the requested guide",
+      "summary": "The recorded journey opens home-page search, enters images, submits and opens Manage images. All four actions completed without errors; the destination URL, heading and article content identify the intended guide. This establishes completion of the declared desktop task, without proving an optimal step count or success for every visitor.",
+      "nextStep": "Repeat with new editors, less direct search terms and narrow navigation to assess efficiency more broadly."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Trial later image loading without losing useful detail",
+      "summary": "The sampled articles contain eleven images: one in Overview, four in Manage images and six in the 8.1 release page. They are delivered as WebP despite .png URLs. Their natural widths are 800–900 pixels, compared with 756 pixels on desktop and 320 pixels in the resized narrow state; no responsive alternatives are declared. Manage images receives about 177 kB of images and the release page about 298 kB, all during first load. The images include instructional screenshots and a release-page event graphic. Smaller renditions have not been compared for readability.",
+      "nextStep": "Trial native lazy loading for images below the first viewport, keeping dimensions and full-detail access. Compare responsive variants at intended pixel densities, then measure independent fresh narrow loads and scrolling before claiming a reduction."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "System fonts avoid extra font downloads",
+      "summary": "The six pages use a platform/system font stack with no recorded web-font entries or requests. English reading content remains present on desktop, at narrow width and without JavaScript. There is no sampled web-font payload to remove or subset.",
+      "nextStep": "When expanding coverage, check supported non-Latin languages and constrained devices for readable font fallbacks."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "Core reading structure and named controls are present",
+      "summary": "Each page declares English, has one main region and a meaningful primary heading. Search and feedback have labeling relationships, and icon controls have explicit names. Search results also show skipped heading levels and duplicate search labels; this bounded pass does not establish a correct heading hierarchy, unique IDs or full accessibility.",
+      "nextStep": "Audit the live search modal, result headings and duplicate search IDs with a screen-reader task."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Content metadata reflects page purpose",
+      "summary": "The five content pages have descriptive titles, descriptions and self-referencing HTTPS canonical URLs. Search has a descriptive title and deliberate noindex directive; it does not need the same canonical or description as an article. Each page has a structured-data block that parses as JSON, which does not establish schema validity.",
+      "nextStep": "Retrieve and validate the deployed structured-data meaning if schema quality becomes part of the audit."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Follow a system theme change while the page stays open",
+      "summary": "All six pages open in dark colors when dark mode is already selected before navigation. When the device preference changes to dark while a page is open, the preference query changes but the recorded light text/background colors remain unchanged. Reading content stays available in both cases. Manual theme activation was not tested, and no energy saving follows from these colors.",
+      "nextStep": "Verify the behavior with no saved manual override, then update deployed preference handling. Retest light-to-dark and dark-to-light changes without reload, saved choices and fresh loads; keep an explicit visitor choice in control."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Core reading survives without JavaScript",
+      "summary": "Fresh contexts with JavaScript disabled retain the same recorded text, headings and navigation as desktop across all six pages. This includes the directly loaded search results and Manage images instructions. Modal search, copying, mobile toggles and other interactive features were not established without scripts.",
+      "nextStep": "Execute a no-JavaScript navigation journey and check the narrow-screen fallback before extending the claim beyond core reading."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "Capture autocomplete before judging request efficiency",
+      "summary": "Initial network windows show no duplicate URL requests or Fetch/XHR polling, and scrolling adds no requests. Supplied code uses debounced search input, but the executed journey submits quickly and lacks a complete intermediate request trace. Autocomplete payloads, cancellation and stale results remain unresolved.",
+      "nextStep": "Record typing, pauses, clearing and repeated searches with request/response timings, payloads and cache/cancellation behavior; relate freshness to finding documentation."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Verify repeat-visit reuse and catalog freshness",
+      "summary": "Hashed CSS and JavaScript declare long-lived immutable caching and validators. Images expose ETag and Last-Modified. Translation-catalog cache/validation headers vary across sampled responses; the intended freshness policy is unresolved. These headers do not measure warm-cache reuse or offline access.",
+      "nextStep": "Confirm translation-catalog update and invalidation needs, then compare repeat visits and navigation using observed cache hits, revalidation and response bytes."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Text delivery already uses compression",
+      "summary": "Across the six sampled pages, HTML and translation catalogs use Brotli; shared scripts and styles use gzip. The main script and stylesheet have compressed body sizes of about 26 kB and 8 kB, compared with decoded sizes of about 90 kB and 44 kB. This is an observed delivery strength.",
+      "nextStep": "Retain compression for these material text assets; the sampled WebP images need no additional text-style compression."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "The initial Tab path has visible focus",
+      "summary": "Each twelve-Tab trace starts with the skip link, home link and search control, then reaches named documentation links. Every recorded focused element is visible and has a solid two-pixel blue outline against the light background. Activation, reverse traversal, modal traps and all controls were outside this bounded path.",
+      "nextStep": "Activate the skip link and menus, test reverse traversal, and inspect focus in dark and narrow states before claiming complete keyboard access."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "Review the parent policy against this guide origin",
+      "summary": "The guide packet’s bounded discovery found no usable sustainability statement: two common document paths ended at localized 404 pages, and About describes the guide and contribution routes. That does not establish that no policy exists elsewhere or that a parent policy applies to this origin.",
+      "nextStep": "Review the parent Wagtail sustainability policy against guide.wagtail.org, checking named service scope, impacts, mitigation and review date. Record that relationship as new evidence before changing this unresolved judgment."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "The tested carbon.txt locations return 404",
+      "summary": "Both /carbon.txt and /.well-known/carbon.txt returned 404 HTML. The recorded discovery found no supported header/DNS delegation or usable carbon records. This fails the declared optional-file discovery check; it does not establish high emissions or absent sustainability work.",
+      "nextStep": "If useful for transparency, publish a valid carbon.txt or supported delegation with clear service/provider relationships, inspect its linked evidence and retest the declared discovery profile."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Establish which hosting evidence covers this origin",
+      "summary": "The guide packet does not identify independently corroborated hosting scope for this origin. A supplied Dockerfile refers to Heroku production, but it is not deployment-verified. Cloudflare detection identifies neither the origin provider nor its electricity supply.",
+      "nextStep": "Obtain evidence linking this origin to its current provider and region, then inspect current operational disclosures or independently verified hosting evidence."
+    },
+    {
+      "checkId": "source-reuse",
+      "title": "Selected templates share repeated interface code",
+      "summary": "The selected supplied source has home and search templates extending a shared base, which includes common skip, theme, copy and search components. Mobile menu and copy controls use shared initialization. Similar modal and full-page search fields serve different contexts; they do not establish a harmful duplicate path.",
+      "nextStep": "Broaden concrete component call-site review only if assessing more of the project; the selected source is not verified as deployed."
+    },
+    {
+      "checkId": "source-dependencies",
+      "title": "Verify lock contents or a clean frozen install",
+      "summary": "The supplied manifests list direct Python and npm dependencies. Dockerfile and CI use npm ci and uv sync --frozen, but the captured lockfiles contain metadata only. Their resolved contents, consistency and successful installation were not reviewed, so repeatable resolution remains unresolved.",
+      "nextStep": "Capture bounded lockfile resolution evidence or a clean frozen-install receipt at the same revision. Verify deployed inventory separately before making version, vulnerability or removal claims."
+    },
+    {
+      "checkId": "source-runtime",
+      "title": "Selected runtime declarations agree",
+      "summary": "The selected supplied declarations consistently specify Python 3.14 through the manifest, version file, Dockerfile and README. Node 26 appears in the version file and frontend Docker image, and CI reads that version file. This checks declared consistency, without establishing deployed versions or latest stable releases.",
+      "nextStep": "Capture the unselected development Dockerfile and actual runtime attestations if extending the check beyond these declarations."
+    },
+    {
+      "checkId": "source-automation",
+      "title": "Verify duplicate Renovate runs before changing CI",
+      "summary": "The selected supplied workflow triggers for renovate/** pushes and all pull requests. Updating an open Renovate pull request therefore matches both events, with no filtering or cancellation in the captured workflow. This demonstrates a duplicate-trigger path in supplied source; current deployment, actual paired runs and energy use were not established.",
+      "nextStep": "First verify actual duplicate runs for the same Renovate commit and required-check names. If confirmed, filter duplicate events or cancel superseded runs while keeping necessary build, lint and test coverage; verify the resulting checks still complete."
+    },
+    {
+      "checkId": "source-maintenance",
+      "title": "Contributors have development and maintenance guidance",
+      "summary": "The supplied README and contributor instructions cover dependencies, local/container setup, linting, testing, content and translation coordination, releases and screenshot updates. CI declares lint and test commands. These are useful disclosures; they do not prove staffing, maintenance cadence or regular execution.",
+      "nextStep": "For broader operational claims, obtain the owner’s maintenance cadence, responsibility assignments and execution records."
+    },
+    {
+      "checkId": "source-change-docs",
+      "title": "Versioned release guidance explains user-facing changes",
+      "summary": "The live New in Wagtail 8.1 page describes changes and their practical effects, links technical release notes and is dated November 3, 2026. Navigation includes earlier releases, and About links historical guide copies. Supplied contributor instructions explain release-specific documentation and screenshot copying. This is product guidance, not a deployment log.",
+      "nextStep": "Expand the sample to translated and older releases when assessing change-history coverage."
+    },
+    {
+      "checkId": "source-budgets",
+      "title": "Request the concrete limit and response procedure",
+      "summary": "The selected manifests, Dockerfile, CI and contributor documentation do not expose a concrete asset/performance threshold with an exceedance response. Referenced build configuration was not captured. This is a limit of the selected evidence, leaving project budgets unresolved.",
+      "nextStep": "Provide build-budget configuration or the project budget document, including limits, warning/failure behavior, rationale and who responds when a limit is exceeded."
+    },
+    {
+      "checkId": "source-open-source",
+      "title": "Reuse terms and contribution routes are visible",
+      "summary": "The selected supplied license permits source and binary redistribution with stated conditions; project documentation explains code, issue, documentation and translation participation. Independently, the live footer declares CC0 for content and About links the repository and contribution routes. Ongoing upstream activity was not assessed.",
+      "nextStep": "No follow-up is needed for these selected disclosures. Review contribution history only if making a broader claim about ongoing upstream work."
+    }
+  ]
+}

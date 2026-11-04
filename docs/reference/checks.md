@@ -44,13 +44,13 @@ The workflow indexes these records in `packet.json`, so source citations receive
 
 These expectations are deliberately narrower than their guidelines. Dependency declarations cannot establish necessity, security or installed versions; documents cannot establish staffing or repeated operational execution. An unsuccessful selected-file search does not prove an organization has no policy or budget. Unknowns should lead to specific further evidence requests.
 
-## Live development sample
+## Historical development sample
 
-The new sample includes three pages per site: homepage, substantive task content, and search-results or emissions-disclosure content. It adds seventeen selected source files for the guide and thirteen for Wagtail.org. Two large lockfiles per repository provide identity metadata only; Wagtail's selected `CHANGELOG.md` path is unavailable. Those limitations remain in the packets.
+The original breadth campaign included three pages per site: homepage, substantive task content, and search-results or emissions-disclosure content. It adds seventeen selected source files for the guide and thirteen for Wagtail.org. Two large lockfiles per repository provide identity metadata only; Wagtail's selected `CHANGELOG.md` path is unavailable. Those limitations remain in the packets.
 
 Both revised journeys completed their declared postconditions: the guide uses Enter to submit search and then opens the image-management article; Wagtail uses the footer's sustainability link. This resolves the earlier collector-specific failures without rewriting that evidence or calling them site regressions. It does not establish optimal task efficiency or success for every user.
 
-See the separate [guide report](../initial-implementation/guide-breadth-audit.md) and [Wagtail.org report](../initial-implementation/wagtail-breadth-audit.md) for the resulting judgments. This campaign uses a new rubric and a different sample; its score must not be interpreted as improvement or deterioration relative to earlier scores.
+The [guide review](../initial-implementation/assets/breadth-sessions/guide/review.json) and [Wagtail review](../initial-implementation/assets/breadth-sessions/wagtail/review.json) retain the historical judgments; their report drafts have been removed. The [current reports](../reports/README.md) use fresh captures. Different samples and methods prevent interpreting their score differences as site improvement or deterioration.
 
 ## Review and eval breadth
 

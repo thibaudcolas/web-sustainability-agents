@@ -3,7 +3,7 @@ name: sustainability-report
 description: Turn a scored sustainability audit into a readable per-site report with clear priorities, illustrated findings, and a human-readable evidence appendix. Use after evidence review and scoring, or when revising report presentation.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Sustainability report

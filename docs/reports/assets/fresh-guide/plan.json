@@ -1,0 +1,233 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://guide.wagtail.org",
+  "purpose": "Fresh, broad sustainability audit of representative public visitor tasks using current live evidence and explicitly selected owner-supplied source",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://guide.wagtail.org/en/",
+      "task": "Find the right documentation section and orient a new CMS editor",
+      "rationale": "Landing page and global navigation",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "overview",
+      "url": "https://guide.wagtail.org/en/getting-started/overview/",
+      "task": "Learn the core Wagtail editor interface",
+      "rationale": "Introductory article with screenshot",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "manage-images",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "task": "Learn how to add and manage images in the CMS",
+      "rationale": "Illustrated how-to article and search destination",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "url": "https://guide.wagtail.org/en/search/?query=images",
+      "task": "Find image-management documentation through search",
+      "rationale": "Public search listing and pagination",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "release-notes",
+      "url": "https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/",
+      "task": "Understand changes in the current development release",
+      "rationale": "Long illustrated release notes",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "url": "https://guide.wagtail.org/en/about/",
+      "task": "Understand who maintains the guide and how to contribute",
+      "rationale": "About and project disclosure page",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "find-image-guide",
+      "url": "https://guide.wagtail.org/en/",
+      "task": "Search for images from the homepage and open the image-management guide",
+      "actions": [
+        {
+          "type": "click",
+          "selector": ".header__search-toggle"
+        },
+        {
+          "type": "fill",
+          "selector": "#search",
+          "value": "images"
+        },
+        {
+          "type": "press",
+          "selector": "#search",
+          "key": "Enter"
+        },
+        {
+          "type": "click",
+          "selector": "main a[href=\"/en/how-to-guides/manage-images/\"]"
+        }
+      ],
+      "success": {
+        "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+        "selector": "h1",
+        "text": "Manage images"
+      }
+    }
+  ],
+  "checks": [],
+  "sourceRoots": [
+    "local/guide"
+  ],
+  "sourceFiles": [
+    {
+      "root": "local/guide",
+      "path": "pyproject.toml"
+    },
+    {
+      "root": "local/guide",
+      "path": "package.json"
+    },
+    {
+      "root": "local/guide",
+      "path": "uv.lock"
+    },
+    {
+      "root": "local/guide",
+      "path": "package-lock.json"
+    },
+    {
+      "root": "local/guide",
+      "path": "Dockerfile"
+    },
+    {
+      "root": "local/guide",
+      "path": ".python-version"
+    },
+    {
+      "root": "local/guide",
+      "path": ".nvmrc"
+    },
+    {
+      "root": "local/guide",
+      "path": ".github/workflows/ci.yml"
+    },
+    {
+      "root": "local/guide",
+      "path": "README.md"
+    },
+    {
+      "root": "local/guide",
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "root": "local/guide",
+      "path": "LICENSE"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/core/templates/base.html"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/core/templates/core/home_page.html"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/core/templates/components/search_modal.html"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/search/templates/search/search.html"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/search/views.py"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/js/main.js"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/js/mobile-menu/index.js"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/js/theme-detect/index.js"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/scss/components/rich-text-image.scss"
+    }
+  ],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "English-language sample, public anonymous access, no authenticated or mutating flows",
+    "Cold first-load is the headline; post-consent, scrolling, repeat visit and supplementary probes remain separately labeled",
+    "Local source has no deployment attestation and may differ from live HTML",
+    "Exploratory setup observations select scope and do not establish audit measurements"
+  ],
+  "optionalEnergy": "none",
+  "ownerPriorities": [
+    "Complete a fresh full audit through the new skill workflow",
+    "Broad checks across a varied page sample",
+    "Use owner-supplied local source only as corroboration, with deployment uncertainty explicit"
+  ],
+  "sampling": {
+    "discovery": "Current public homepage navigation, current canonical URLs and rendered search controls; all selected URLs returned 200 during setup",
+    "selectedPageCount": 6,
+    "omissions": [
+      "Authenticated CMS administration, account operations, message submission and newsletter sign-up",
+      "Full crawl, all locale variants, all historic releases and blog posts",
+      "Server operations, traffic analytics, lifecycle inventory, direct hardware energy measurement"
+    ],
+    "cookieControls": "No cookie banner or consent controls observed across the six selected pages in rendered anonymous browsing",
+    "verifiedJourney": "Search overlay opened, query submitted, one matching result selector found, and destination URL with unique h1 verified during setup"
+  },
+  "execution": {
+    "harness": "Codex native subagent",
+    "role": "setup and sequential collection",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "mode": "native-subagents",
+    "energy": "none"
+  }
+}

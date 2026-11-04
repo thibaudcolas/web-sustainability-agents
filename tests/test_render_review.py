@@ -58,13 +58,9 @@ class RenderProvenanceTests(unittest.TestCase):
 
 class EditorialContractTests(unittest.TestCase):
     def setUp(self):
-        self.session = Path("docs/initial-implementation/assets/breadth-sessions/guide")
+        self.session = Path("docs/reports/assets/fresh-guide")
         self.review = json.loads((self.session / "review.json").read_text())
-        self.editorial = json.loads(
-            Path(
-                "docs/initial-implementation/assets/report-editions/guide/editorial.json"
-            ).read_text()
-        )
+        self.editorial = json.loads((self.session / "editorial.json").read_text())
         self.digest = hashlib.sha256(
             (self.session / "review.json").read_bytes()
         ).hexdigest()
@@ -105,11 +101,20 @@ class EditorialContractTests(unittest.TestCase):
         targets = re.findall(r"\]\(#(evidence-[^)]+)\)", body)
         for target in targets:
             self.assertIn('id="' + target + '"', body)
-        self.assertIn("**low reasoning**", body)
+        self.assertEqual(self.review["reviewer"]["reasoning"], "high")
+        self.assertEqual(self.editorial["writer"]["reasoning"], "high")
+        self.assertNotIn("**low reasoning**", body)
         self.assertIn("**high reasoning**", body)
-        self.assertIn("Complete within the test conditions", body)
-        self.assertNotIn("a Digital Carbon Rating is withheld", body)
-        self.assertIn("**Digital Carbon Ratings:** A+", body)
+        probes = json.loads((self.session / "probes.json").read_text())
+        self.assertGreaterEqual(len(probes["pages"]), 5)
+        self.assertIn(f"**{len(probes['pages'])} pages** reviewed", body)
+        self.assertNotIn("smaller sample than the default", body)
+        self.assertIn("## First-load page sizes", body)
+        self.assertIn("## After waiting and scrolling", body)
+        self.assertIn("No cookie banner was observed in this sample", body)
+        self.assertNotIn("Each cookie choice starts a separate fresh visit", body)
+        self.assertIn("New in Wagtail 8.1", body)
+        self.assertIn("**cumulative totals**", body)
         self.assertEqual(traffic(1000), "1.0 kB")
         self.assertEqual(traffic(1000000), "1.000 MB")
 
@@ -118,10 +123,14 @@ class EditorialContractTests(unittest.TestCase):
 
         from audit.render_review import illustrations
 
-        source = Path(
-            "docs/initial-implementation/assets/report-editions/guide/screenshots/manifest.json"
-        )
+        source = self.session / "screenshots/manifest.json"
         manifest = json.loads(source.read_text())
+        completed = [
+            index
+            for index, capture in enumerate(manifest["captures"])
+            if capture["status"] == "completed"
+        ]
+        self.assertTrue(completed, "The fresh report needs a usable illustration")
         ids = {row["checkId"] for row in self.review["rows"]}
         illustrations(source, self.review["site"], ids)
         with tempfile.TemporaryDirectory() as directory:
@@ -137,9 +146,9 @@ class EditorialContractTests(unittest.TestCase):
                     if mutation == "origin":
                         changed["origin"] = "https://another.example"
                     elif mutation == "hash":
-                        changed["captures"][0]["fileSHA256"] = "changed"
+                        changed["captures"][completed[0]]["fileSHA256"] = "changed"
                     else:
-                        changed["captures"][0]["file"] = "../outside.png"
+                        changed["captures"][completed[0]]["file"] = "../outside.png"
                     target.write_text(json.dumps(changed))
                     with self.assertRaises(ValueError):
                         illustrations(target, self.review["site"], ids)

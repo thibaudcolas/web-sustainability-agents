@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "createdAt": "2026-11-04T19:37:18.522431+00:00",
+  "site": "https://guide.wagtail.org",
+  "role": "report writer",
+  "taskIdentity": "/root/fresh_guide_report",
+  "execution": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "writer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "reviewSHA256": "81b9b340955150748c990d2b225405e1d50a48e1d75ce91d26e73137bd511bcd",
+  "packetSHA256": "49fb5b845b47930414721b698f5c4f18da5d07b58ded8f6d198db6538c010ed7",
+  "editorialSHA256": "bb8fc88acf53e244347df3adc5a42fd82e0850aea5bba0ac47a837d08584ce7e",
+  "skillSHA256": {
+    ".agents/skills/sustainability-report/SKILL.md": "5ec3d46e65f8b6a7b7e34363b86c17c5945c0bdcb1a1c6e947334e2e8a12638f",
+    ".agents/skills/sustainability-report/references/writing.md": "1a0689b813bdb0f3fd9234e114f63ce851c318a84a8ea773a890c70d3e536161",
+    ".agents/skills/sustainability-report/assets/report-template.md": "eb374597827e5fae5a2069e4bd7940f359ee617a0c234a2cb443d1b03d1fb27e",
+    ".agents/skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c"
+  },
+  "inputs": {
+    "scoredSession": ".audit-work/fresh-guide/session-1",
+    "advisoryReviewDirectory": ".audit-work/fresh-guide/review-tasks",
+    "resolutionsSHA256": "7629d15ec934036e7bbc284cad7650ed71423286c1c0db89cffb4da5f12555e7"
+  },
+  "workPerformed": [
+    "Read scored review, declared check expectations, specialist outputs and reconciliation resolutions; inspected relevant frozen qualitative, quantitative and supplied source evidence.",
+    "Authored all 33 check summaries and four priorities in the scored order without changing outcomes or scores.",
+    "Captured two supplemental illustrations through audit/cli.py tool screenshots and inspected both actual images with view_image before publication."
+  ],
+  "screenshots": {
+    "manifest": "screenshots/manifest.json",
+    "manifestSHA256": "622761f5c86af5bd895442534614112039f121ea916c166153914fb0d78ed7ce",
+    "inspectedFiles": [
+      "screenshots/manage-images-instruction.png",
+      "screenshots/manage-images-narrow.png"
+    ]
+  },
+  "limitations": [
+    "This receipt records the actual native report task identity and settings; it is not a literal tool transcript.",
+    "Illustrations are separate later captures and do not establish historical timing, live theme change, bytes or successful interactions.",
+    "The parent-policy follow-up is an investigation; evidence from another site packet has not been imported into the scored guide session."
+  ]
+}

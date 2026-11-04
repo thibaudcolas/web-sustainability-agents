@@ -177,12 +177,8 @@ plugins:
           - reference/*.md
         Reports:
           - reports/README.md
-          - initial-implementation/guide-breadth-audit.md
-          - initial-implementation/wagtail-breadth-audit.md
-          - initial-implementation/guide-audit.md
-          - initial-implementation/wagtail-audit.md
-          - initial-implementation/energy-traffic-experiment.md
-          - initial-implementation/scope-extension.md
+          - reports/guide.md
+          - reports/wagtail.md
         Knowledge base:
           - knowledge-base/*.md
         Feasibility study:
@@ -192,6 +188,8 @@ plugins:
           - initial-implementation/validation-roadmap.md
           - initial-implementation/backlog.md
           - initial-implementation/sources.md
+          - initial-implementation/energy-traffic-experiment.md
+          - initial-implementation/scope-extension.md
         Evaluation project:
           - evaluation/*.md
           - initial-implementation/breadth-benchmark.md
@@ -237,13 +235,8 @@ nav:
           - Reports and chart data: reference/reporting.md
   - Reports:
       - reports/README.md
-      - Guide audit: initial-implementation/guide-breadth-audit.md
-      - Wagtail.org audit: initial-implementation/wagtail-breadth-audit.md
-      - Earlier experiments:
-          - Earlier guide audit: initial-implementation/guide-audit.md
-          - Earlier Wagtail.org audit: initial-implementation/wagtail-audit.md
-          - Energy and traffic: initial-implementation/energy-traffic-experiment.md
-          - Broader page inventory: initial-implementation/scope-extension.md
+      - Guide audit: reports/guide.md
+      - Wagtail.org audit: reports/wagtail.md
   - Knowledge base:
       - knowledge-base/README.md
       - Methodology:
@@ -270,6 +263,8 @@ nav:
               - First executable slice: initial-implementation/first-slice.md
               - Model and real-site checkpoint: initial-implementation/review-checkpoint.md
               - Staged measurements: initial-implementation/staged-auditing.md
+              - Energy and traffic: initial-implementation/energy-traffic-experiment.md
+              - Broader page inventory: initial-implementation/scope-extension.md
               - First skill-guided scoring: initial-implementation/skill-audit-workflow.md
       - Evaluation:
           - evaluation/README.md

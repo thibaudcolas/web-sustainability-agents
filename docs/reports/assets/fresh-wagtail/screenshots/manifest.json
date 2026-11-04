@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "origin": "https://wagtail.org",
+  "startedAt": "2026-11-04T19:44:43.304305+00:00",
+  "status": "completed",
+  "planSHA256": "76e517ad497b718b7ad08041b3b380047df4f0edaf3f6c993a2b9c383b50e4d5",
+  "collectorSHA256": "9543f6b3b2ce60c8e26a391bc7147b5e2e76f0cdc0dc345570b20c512841cea7",
+  "playwrightVersion": "1.64.1",
+  "captures": [
+    {
+      "id": "release-video-preview",
+      "url": "https://wagtail.org/blog/wagtail-8-1/",
+      "selector": "iframe[src*='youtube.com/embed/']",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Release article section with an embedded YouTube player and surrounding article text.",
+      "caption": "Later illustration of the release article's optional video. This image does not measure player traffic or validate a replacement.",
+      "checkIds": [
+        "components"
+      ],
+      "captureMode": "viewport",
+      "status": "completed",
+      "capturedAt": "2026-11-04T19:44:45.795721+00:00",
+      "finalUrl": "https://wagtail.org/blog/wagtail-8-1/",
+      "documentStatus": 200,
+      "pageTitle": "Wagtail 8.1: automate more with an improved API and agent-ready tools | Wagtail CMS",
+      "file": "release-video-preview.png",
+      "fileSHA256": "988226e27edc876d9809851986ef73fbc3723feb530542c6d7abb6f9379ec625"
+    },
+    {
+      "id": "policy-impact-summary",
+      "url": "https://wagtail.org/sustainability/",
+      "selector": "h2:has-text(\"We're measuring Wagtail's impact\")",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Sustainability policy section showing the ecosystem total, site count and stated per-site average.",
+      "caption": "Later illustration of the public footprint summary; the numerical finding uses the frozen audit text. The website estimate and the ecosystem estimate have separate scopes.",
+      "checkIds": [
+        "comprehension"
+      ],
+      "captureMode": "viewport",
+      "status": "completed",
+      "capturedAt": "2026-11-04T19:44:47.462897+00:00",
+      "finalUrl": "https://wagtail.org/sustainability/",
+      "documentStatus": 200,
+      "pageTitle": "Sustainability | Wagtail CMS",
+      "file": "policy-impact-summary.png",
+      "fileSHA256": "284ed9540f923c84fb21269dc6f6630d82b488518f6b617826cec2831adbe6ae"
+    }
+  ],
+  "interpretation": "Supplemental visual illustrations captured separately from the scored audit. They do not establish historic appearance, transfer sizes, accessibility semantics, task completion or energy savings.",
+  "protocol": {
+    "captureMode": "viewport",
+    "deviceScaleFactor": 1,
+    "reducedMotion": "reduce",
+    "animations": "disabled",
+    "waitAfterLoadMs": 750,
+    "waitAfterScrollMs": 250,
+    "perCaptureDeadlineSeconds": 35,
+    "freshContextPerCapture": true,
+    "actions": "none"
+  },
+  "browserVersion": "156.0.8078.4",
+  "finishedAt": "2026-11-04T19:44:47.554019+00:00"
+}

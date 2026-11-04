@@ -11,7 +11,7 @@ search:
 
 The active baseline uses **Codex CLI 0.166.0 for both model arms**: GPT-6.1 Sol with low reasoning, and Neuralwatt DeepSeek V4.1 Flash with high reasoning. OpenCode is no longer the default benchmark harness. The historical Astra/low and OpenCode/DeepSeek/low results remain unchanged in the [first experiment](first-slice.md#initial-benchmark-results).
 
-The [WIP Wagtail audit](wagtail-audit.md) is the main owner-review artifact. This page records how the model comparison relates to it and what the experiment can establish.
+This page records the model comparison behind an earlier Wagtail audit draft and what the experiment can establish. That draft has since been removed; the [current reports](../reports/README.md) use separate fresh captures.
 
 ## Configuration and compatibility
 

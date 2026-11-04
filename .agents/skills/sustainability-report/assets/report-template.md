@@ -1,7 +1,5 @@
 # {Site name}: sustainability audit
 
-{Short assessment: useful strengths, highest-priority work and the main evidence limit.}
-
 ## At a glance
 
 {Scoped score and pass/problem/unknown counts; number of pages and journeys.}
@@ -11,6 +9,8 @@
 {Page name, observed size or range, and whether the measurement is complete. Define kB and first load.}
 
 ## Priorities
+
+{Short assessment: useful strengths, highest-priority work and the main evidence limit.}
 
 ### {Action or investigation title}
 

@@ -241,9 +241,7 @@ class DocumentationTests(unittest.TestCase):
                 browser = playwright.chromium.launch()
                 try:
                     page = browser.new_page(viewport={"width": 390, "height": 900})
-                    page.goto(
-                        f"http://127.0.0.1:{server.server_port}/initial-implementation/wagtail-breadth-audit/"
-                    )
+                    page.goto(f"http://127.0.0.1:{server.server_port}/reports/wagtail/")
                     page.locator("article summary").first.focus()
                     page.keyboard.press("Enter")
                     region = page.get_by_role(

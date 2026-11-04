@@ -1,0 +1,34 @@
+{
+  "origin": "https://guide.wagtail.org",
+  "captures": [
+    {
+      "id": "manage-images-instruction",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "selector": "main img:first-of-type",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "Manage images article showing the Wagtail image library screenshot beside the guide navigation.",
+      "caption": "Fresh desktop illustration of the instructional image, captured separately from the audit. Its small interface labels explain why a smaller rendition needs a visual comparison; this image does not measure transfer size or loading time.",
+      "checkIds": [
+        "media-delivery"
+      ]
+    },
+    {
+      "id": "manage-images-narrow",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "Manage images article at 360 pixels wide, with search and menu buttons above the title and page contents.",
+      "caption": "Fresh 360-pixel illustration of the article and replacement navigation controls. No controls were activated for this capture, so it does not resolve whether the mobile search journey works.",
+      "checkIds": [
+        "layout"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "schemaVersion": "source-evidence-v1",
+  "site": "https://guide.wagtail.org",
+  "capturedAt": "2026-11-04T19:22:45.690617+00:00",
+  "repositories": [
+    {
+      "root": "local/guide",
+      "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+      "trackedWorkingTreeDirty": false,
+      "deploymentVerified": false,
+      "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+    }
+  ],
+  "files": [
+    {
+      "id": "source-1",
+      "root": "local/guide",
+      "path": "pyproject.toml",
+      "deploymentVerified": false,
+      "observedBytes": 993,
+      "status": "captured",
+      "text": "[project]\nname = \"guide\"\nversion = \"0.1.0\"\ndescription = \"Wagtail User Guide\"\nreadme = \"README.md\"\nlicense = \"BSD-3-Clause\"\nrequires-python = \">=3.14\"\ndependencies = [\n  \"django==6.1.*\",\n  \"wagtail==8.0\",\n  \"django-manifest-loader>=1.0.0,<2.0.0\",\n  \"lxml>=4.9,<7\",\n  \"djangorestframework>=3.13.1,<4.0\",\n  \"dj-database-url>=2.1,<2.2\",\n  \"django-storages>=1.14,<1.15\",\n  \"whitenoise>=6.6,<6.7\",\n  \"psycopg>=3.2.10,<3.3\",\n  \"wagtail-localize>=1.13,<2.0\",\n  \"django-permissions-policy>=4.13.0,<5.0.0\",\n  \"sentry-sdk[django]>=2.45.0,<3.0.0\",\n  \"draftjs-exporter>=7.1.0,<8.0\",\n  \"jinja2>=3.1.6,<4.0.0\",\n  \"wagtail-ai>=3.1.1,<4.0.0\",\n  \"scout-apm>=3.5.3,<4.0.0\",\n]\n\n[dependency-groups]\ndev = [\n  \"ruff>=0.16.2,<0.17.0\",\n  \"django-extensions>=3.2.1,<4.0.0\",\n  \"wagtail-factories>=4.1.0,<5.0.0\",\n  \"coverage>=7.3.2,<8.0.0\",\n  \"wagtail-cli==0.3.0\",\n]\nproduction = [\n  \"gunicorn==21.2.0\",\n  \"django-redis>=5.4,<5.5\",\n  \"sentry-sdk>=2.45.0,<3.0.0\",\n  \"boto3>=1.24.93,<2.0.0\",\n]\n\n[tool.uv]\npackage = false\n",
+      "sha256": "24f5a67138241324ddfd4f7eec67223bfd7d6781f777447f0be94d9b45e3dffe",
+      "lines": 43,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-2",
+      "root": "local/guide",
+      "path": "package.json",
+      "deploymentVerified": false,
+      "observedBytes": 1238,
+      "status": "captured",
+      "text": "{\n  \"name\": \"guide\",\n  \"private\": true,\n  \"author\": \"\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"start\": \"vp build --watch --mode development --minify false --sourcemap inline\",\n    \"build\": \"vp build\",\n    \"format\": \"vp fmt\",\n    \"fix\": \"vp check --fix\",\n    \"lint:css\": \"stylelint \\\"**/*.scss\\\"\",\n    \"lint:js\": \"vp lint --report-unused-disable-directives\",\n    \"lint:format\": \"vp fmt --check\",\n    \"lint\": \"npm run lint:js && npm run lint:css && npm run lint:format\",\n    \"test\": \"vp test run\"\n  },\n  \"dependencies\": {\n    \"@popperjs/core\": \"^2.11.5\",\n    \"bootstrap\": \"^5.3.8\"\n  },\n  \"devDependencies\": {\n    \"@wagtail/stylelint-config-wagtail\": \"^2.0.1\",\n    \"browserslist\": \"^4.29.3\",\n    \"happy-dom\": \"^20.14.5\",\n    \"sass\": \"^1.49.8\",\n    \"stylelint\": \"^17.16.0\",\n    \"vite-plus\": \"^1.0.0\"\n  },\n  \"overrides\": {\n    \"vite\": \"npm:@voidzero-dev/vite-plus-core@latest\",\n    \"vitest\": \"5.0.1\"\n  },\n  \"browserslist\": [\n    \"Firefox ESR\",\n    \"last 2 Chrome versions\",\n    \"last 2 ChromeAndroid versions\",\n    \"last 2 Edge versions\",\n    \"last 1 Firefox version\",\n    \"last 2 iOS versions\",\n    \"last 3 Safari versions\",\n    \"not safari 13\",\n    \"not ie 11\"\n  ],\n  \"devEngines\": {\n    \"packageManager\": {\n      \"name\": \"npm\"\n    }\n  }\n}\n",
+      "sha256": "0921fa50aa3df9cf315d0e84680a42ed6a786f6c1e348eaa7e894cd532078745",
+      "lines": 49,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-3",
+      "root": "local/guide",
+      "path": "uv.lock",
+      "deploymentVerified": false,
+      "observedBytes": 217222,
+      "status": "metadata_only",
+      "text": null,
+      "sha256": "31e3db242f23ccbf5ac4e4fac548ba47add0a00f254b011c18fd8fb9f3e65d20",
+      "lines": 1789,
+      "interpretationLimit": "Identity and size only; contents are not exposed to the reviewer and naming alone does not prove a valid dependency lock",
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-4",
+      "root": "local/guide",
+      "path": "package-lock.json",
+      "deploymentVerified": false,
+      "observedBytes": 225117,
+      "status": "metadata_only",
+      "text": null,
+      "sha256": "4bdc702c16a29cd74c96b01b6455ca94a4f2dd303e6c2d9fdc5b0d893e5b3ea9",
+      "lines": 6697,
+      "interpretationLimit": "Identity and size only; contents are not exposed to the reviewer and naming alone does not prove a valid dependency lock",
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-5",
+      "root": "local/guide",
+      "path": "Dockerfile",
+      "deploymentVerified": false,
+      "observedBytes": 4471,
+      "status": "captured",
+      "text": "# syntax=docker/dockerfile:1.10\n# check=error=true\n\n# Opt into newer Dockerfile syntax, make `docker build .` fail on warnings\n# See https://docs.docker.com/reference/build-checks/.\n# Run `docker build --check .` for better error messages.\n\n# NOTE: Heroku builds this file with the legacy (non-BuildKit) Docker builder:\n#   - BuildKit-only features such as `RUN --mount=type=cache` aren't supported.\n#   - Every stage is built, even those unused by the final stage.\n# The development container is built from Dockerfile.dev instead, so this file\n# only contains stages needed for production.\n\n# frontend stages\n\n# Keep the Node version in sync with Dockerfile.dev and .nvmrc.\nFROM node:26 AS frontend-deps\n\n# Make build & post-install scripts behave as if in CI (e.g. logging verbosity).\nARG CI=true\n\n# Split from frontend-build so Dockerfile.dev can reuse node_modules without\n# needing to run the production build.\nCOPY package.json package-lock.json vite.config.ts ./\nRUN npm ci\n\nFROM frontend-deps AS frontend-build\n\nCOPY ./apps/frontend/static_src/ ./apps/frontend/static_src/\nRUN npm run build\n\n# base stage\n\n# Debian over alpine: it's considered more stable (different C compiler) and\n# ships with the packages commonly needed for image manipulation, at the\n# cost of a larger (~1.5GiB) image.\nFROM python:3.14 AS base\n\n# Keep this version in sync with the local `uv` used to generate uv.lock.\nCOPY --from=ghcr.io/astral-sh/uv:0.11.19 /uv /uvx /bin/\n\n# Use jemalloc as the system allocator: glibc's malloc fragments badly in\n# long-running Python processes, so memory use creeps up over time.\n# The symlink provides an architecture-independent path for LD_PRELOAD below,\n# which doesn't expand globs itself. The `test -e` check fails the build if\n# the glob ever stops matching: `ln -s` would otherwise silently create a\n# dangling symlink, and jemalloc would not be used.\nRUN apt-get update \\\n    && apt-get install -y --no-install-recommends libjemalloc2 \\\n    && rm -rf /var/lib/apt/lists/* \\\n    && ln -s /usr/lib/*/libjemalloc.so.2 /usr/local/lib/libjemalloc.so \\\n    && test -e /usr/local/lib/libjemalloc.so\n\nENV VIRTUAL_ENV=/venv\n\nRUN useradd guide --create-home && mkdir /app $VIRTUAL_ENV && chown -R guide /app $VIRTUAL_ENV\n\nWORKDIR /app\n\n# Defaults only: any environment variables set on Heroku override these.\n#  * UV_PROJECT_ENVIRONMENT - installs into $VIRTUAL_ENV instead of the\n#    project's default `.venv`, so it isn't clobbered by a bind mount in dev.\n#  * UV_LINK_MODE=copy - hardlinks break across Docker layers.\n#  * PYTHONUNBUFFERED - otherwise logs can be lost if the process crashes:\n#    https://docs.python.org/3.14/using/cmdline.html#envvar-PYTHONUNBUFFERED\n#  * LD_PRELOAD / MALLOC_ARENA_MAX - use jemalloc (installed above) instead of\n#    glibc's malloc, and limit the number of memory arenas glibc would\n#    otherwise create per core, to keep memory use stable over time.\n#  * PORT - read by Gunicorn; Heroku sets this itself and ignores EXPOSE.\nENV PATH=$VIRTUAL_ENV/bin:$PATH \\\n    UV_PROJECT_ENVIRONMENT=$VIRTUAL_ENV \\\n    UV_COMPILE_BYTECODE=1 \\\n    UV_LINK_MODE=copy \\\n    PYTHONUNBUFFERED=1 \\\n    LD_PRELOAD=/usr/local/lib/libjemalloc.so \\\n    MALLOC_ARENA_MAX=2 \\\n    PORT=8000\n\nEXPOSE 8000\n\n# Heroku doesn't run containers as root either:\n# https://devcenter.heroku.com/articles/container-registry-and-runtime#dockerfile-commands-and-runtime\nUSER guide\n\nRUN python -m venv $VIRTUAL_ENV\nCOPY --chown=guide pyproject.toml uv.lock ./\n\n\n# production stage\n\n# Runs in production on Heroku. Last stage so it's the default target for an untargeted `docker build .`\nFROM base AS production\n\n# Can be overridden at build time, e.g. by the dev stage above.\nARG UV_SYNC_ARGS=\"--no-dev --group production\"\n\nENV DJANGO_SETTINGS_MODULE=apps.guide.settings.production \\\n    WEB_CONCURRENCY=1\n\n# ARGs aren't available at runtime, so re-declare as an ENV to pass it through.\nARG BUILD_ENV\nENV BUILD_ENV=${BUILD_ENV}\n\nRUN uv sync --frozen ${UV_SYNC_ARGS}\n\nCOPY --chown=guide --from=frontend-build ./apps/frontend/static ./apps/frontend/static\nCOPY --chown=guide . .\n\nRUN SECRET_KEY=none python manage.py collectstatic --noinput --clear\n\n# Gunicorn config lives in gunicorn.conf.py (its default location), which\n# reads WEB_CONCURRENCY for the number of worker processes to spawn. Requests\n# are served by threads within each worker (see gunicorn.conf.py), so one\n# worker process is enough to serve many concurrent requests.\nCMD [\"gunicorn\"]\n",
+      "sha256": "fdbaf13ed36fa2d4c0b2fbc32e18bce6f6fb6f1f922e19d00de9c8e2716a3e78",
+      "lines": 115,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-6",
+      "root": "local/guide",
+      "path": ".python-version",
+      "deploymentVerified": false,
+      "observedBytes": 5,
+      "status": "captured",
+      "text": "3.14\n",
+      "sha256": "a876e0b10411037a012498b9fe18d9bc1df32ed8b722a13564dc944ddcfd9135",
+      "lines": 1,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-7",
+      "root": "local/guide",
+      "path": ".nvmrc",
+      "deploymentVerified": false,
+      "observedBytes": 3,
+      "status": "captured",
+      "text": "26\n",
+      "sha256": "20d2add851bf39edcc6b5e830930f962db7e19dffa2cab8610eed551eda6c302",
+      "lines": 1,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-8",
+      "root": "local/guide",
+      "path": ".github/workflows/ci.yml",
+      "deploymentVerified": false,
+      "observedBytes": 1529,
+      "status": "captured",
+      "text": "name: CI\n\non:\n  push:\n    branches:\n      - main\n      - 'renovate/**'\n  pull_request:\n\njobs:\n  docker-build-check:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v6\n      - run: docker build --check .\n      - run: docker build --check -f Dockerfile.dev .\n\n  test:\n    runs-on: ubuntu-latest\n\n    env:\n      DJANGO_SETTINGS_MODULE: apps.guide.settings.test\n      DATABASE_URL: postgres://postgres:postgres@localhost/postgres # pragma: allowlist secret\n      SECRET_KEY: iamnotsosecret\n      ALLOWED_HOSTS: localhost\n\n    services:\n      postgres:\n        image: postgres:17\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: postgres # pragma: allowlist secret\n          POSTGRES_DB: postgres\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - uses: actions/checkout@v6\n      - uses: actions/setup-node@v6\n        with:\n          node-version-file: '.nvmrc'\n      - run: npm ci\n      - run: npm run build\n      - run: npm run lint\n      - run: npm test\n      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0\n      - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0\n      - run: uv sync --frozen\n      - run: just lint-backend\n      - run: uv run python manage.py check\n      - run: uv run python manage.py createcachetable\n      - run: uv run python manage.py makemigrations --check\n      - run: just test-coverage\n",
+      "sha256": "7e15f05bd01556f88640acddd7cef3bd311e80676a5092bc2fc6fa4e330213e2",
+      "lines": 55,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-9",
+      "root": "local/guide",
+      "path": "README.md",
+      "deploymentVerified": false,
+      "observedBytes": 5422,
+      "status": "captured",
+      "text": "# Wagtail user guide\n\nThe user guide is a website to help content editors, moderators, administrators, and other users learn how to use the Wagtail content management system (CMS). It\u2019s a comprehensive documentation resource for CMS users, featuring hands-on learning material as well as reference content. It follows the [Di\u00e1taxis](https://diataxis.fr/) framework. For the Wagtail developer documentation, visit [docs.wagtail.org](https://docs.wagtail.org/en/stable/).\n\nThe Wagtail guide will ultimately include:\n\n- Tutorials\n- How-to articles\n- Reference materials\n- Walkthroughs and visual learning materials\n\nYou can learn more about the documentation system [here](https://documentation.divio.com/).\n\n# Table of Contents\n\n- [Installation](#installation)\n- [Contributing](#contributing)\n- [Other Notes](#other-notes)\n\n# Installation\n\nWe assume that you have basic knowledge of Node/Vite and Python/Django/Wagtail in these instructions. We recommend you develop Wagtail Guide locally on your machine using `venv` and [fnm](https://github.com/Schniz/fnm) to ensure you are on the correct Node version.\n\n#### Dependencies\n\n- Git\n- Python >= 3.14\n- uv\n- just\n- Node (see `.nvmrc` for version)\n\n### Setting up Wagtail guide in a virtual environment\n\nRun:\n\n    python -V\n\nConfirm that the output is showing version Python 3.14 (or higher). If not, you may have multiple versions of Python installed on your system and will need to switch to the appropriate version when creating the virtual environment.\n\nWith the Python version output confirmed, [install uv](https://docs.astral.sh/uv/).\n\nNow we're ready to set up the guide project:\n\n    cd ~/dev [or your preferred dev directory]\n    git clone https://github.com/wagtail/guide.git\n    cd guide\n    just backend\n    just frontend\n    just buildfixtures\n\nOnce the backend and frontend have been set up, you can run the development server with:\n\n    just run\n\nIf everything worked, [http://127.0.0.1:8000](http://127.0.0.1:8000) should show you a welcome page.\n\nYou can access the administrative area at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and log in using the credentials you created during the backend setup.\n\n`uv` manages the project's virtual environment automatically, so there's no need to activate it manually. To run a command in the environment, prefix it with `uv run`, for example `uv run python manage.py shell`.\n\nTo generate and compile translation strings, run:\n\n    just makemessages\n    just compilemessages\n\nOr both, in a single command:\n\n    just translations\n\n### Using the Wagtail CLI\n\nThe [Wagtail CLI](https://wagtail.github.io/wagtail-cli/) (`wt`, from the `wagtail-cli` package) lets you read and write content from the terminal, including via the Wagtail API.\n\nTo start, copy the example configuration and fill in the API base URL and a token (keep this private):\n\n```bash\ncp .wagtail-cli.example.toml .wagtail-cli.toml\n# Generate a token.\nuv run wt api_tokens create --user=<username> --name=<token name>\n\n```\n\n### Setting up development with Docker\n\n1. Optionally, create a `.env` file in the project root containing these variables, you can adjust the values to your preferences:\n   ```\n   ALLOWED_HOSTS=localhost\n   PORT=8000\n   SECRET_KEY=some-random-secret\n   DJANGO_SETTINGS_MODULE=apps.guide.settings.dev\n   ```\n2. Build and start the development container by running `docker compose up --remove-orphans`.\n   This starts the server in the foreground. To run it in the background, add `-d`.\n3. In another terminal, open a shell in the container: `docker compose exec web bash`\n4. From that shell, run `just backend` to set up the database, and `just frontend` to build the front-end assets. The container bundles Python and Node, so any other `just` recipe (`just test`, `just lint`, ...) works the same as it does on the host \u2014 you don't need either installed locally to use Docker.\n5. You should now have access to the project in your browser at `http://localhost:8000`\n6. To stop the container, run `docker compose down`\n\nCode changes are picked up automatically. Only rebuild the image when dependencies change: `docker compose build`.\n\n# Contributing\n\nIf you're a Python or Django developer, fork the repo and join us. You'll find answers to many common new contributor questions in our [contributing guidelines](https://docs.wagtail.org/en/stable/contributing/index.html).\n\n## Development\n\n- Run formatting (Ruff & Oxfmt) `just format`\n- Run linting (Ruff, Oxlint, Oxfmt, Stylelint) `just lint`\n- Run tests `just test`\n\n# Other Notes\n\n## Google Summer of Code\n\nThis project is one of three [Wagtail](https://wagtail.org/) projects being sponsored by Google as a part of [Google Summer of Code 2022](https://summerofcode.withgoogle.com/). The team for this project includes:\n\n### Contributor\n\n- [Hitansh Shah](https://github.com/Hitansh-Shah)\n\n### Mentors\n\n- [Thibaud Colas](https://github.com/thibaudcolas)\n- [Coen van der Kamp](https://github.com/allcaps)\n- [Meagen Voss](https://github.com/vossisboss)\n\nYou can learn more about our Google Summer of Code project in [Google Summer of Code: Wagtail Editor Guide](https://wagtail.org/blog/google-summer-of-code-wagtail-editor-guide/), [Wagtail CMS projects for Google Summer of Code 2022](https://wagtail.org/blog/wagtail-cms-projects-for-google-summer-of-code-2022/) or on our [wiki page](https://github.com/wagtail/wagtail/wiki/Google-Summer-of-Code-2022).\n",
+      "sha256": "9b45cfc720f9c6ddaeba2fbb7b6bd05eda9c0cbde87b2c64f6faf8e14acdc65b",
+      "lines": 127,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-10",
+      "root": "local/guide",
+      "path": "CONTRIBUTING.md",
+      "deploymentVerified": false,
+      "observedBytes": 4770,
+      "status": "captured",
+      "text": "# Contributing\n\nWe welcome all support for this User Guide, whether on bug reports, code, design, reviews, tests, documentation, translations or just feature requests.\n\nFor details on how to run this project locally, please read the [contributing section in the README](https://github.com/wagtail/guide#contributing).\n\n## Content contributions\n\nAll of the User Guide pages are maintained in Wagtail. We use [GitHub Discussions](https://github.com/wagtail/guide/discussions) to coordinate content improvements, with features requests and bug reports for the site in the [issue tracker](https://github.com/wagtail/guide/issues).\n\n### Writing content\n\nIf you want to help with content, reach out to us in [GitHub Discussions](https://github.com/wagtail/guide/discussions) or on the #editor-guide channel of the [Wagtail Slack workspace](https://github.com/wagtail/wagtail/wiki/Slack). We will then create an account for you in Wagtail, making sure you have access to the right parts of the content.\n\n### Translations\n\nWe want the guide to ultimately be available in as many languages as Wagtail itself. If you want to help with translations, start a thread in [GitHub Discussions](https://github.com/wagtail/guide/discussions) or join the #editor-guide channel of the [Wagtail Slack workspace](https://github.com/wagtail/wagtail/wiki/Slack). We will then create an account for you in Wagtail, making sure you have access to the right parts of the content.\n\n#### How to translate\n\nWe set up a separate translation team for each language, with their own Group able to submit changes to all pages and images in their locale. Translation teams reflect the changes in the \u201clatest\u201d version of the documentation, with legacy versions only being accessible to admin users.\n\nFor example, the _Translators: Icelandic (latest)_ group has access to:\n\n- Translation: Can submit translations\n- Can access Wagtail admin: Yes\n- Pages: Notendahandb\u00f3k Wagtail (latest homepage): Add, Edit, Lock, Unlock\n- Images: \"Icelandic (latest)\": Add, Edit, Choose\n\nWhen working on changes to the \"latest\" source content in English, make sure to avoid unnecessarily removing and adding StreamField blocks, so block references are stable between revisions.\n\n#### RTL support\n\nThe guide supports right-to-left languages, like Arabic and Hebrew. All layout and styling changes must work correctly in both LTR and RTL.\n\nIf you're unsure whether something should mirror or stay fixed, start a thread in [GitHub Discussions](https://github.com/wagtail/guide/discussions) or the #editor-guide channel of the [Wagtail Slack workspace](https://github.com/wagtail/wagtail/wiki/Slack).\n\n### Versioning\n\nOur default \"latest\" version of the guide corresponds to Wagtail\u2019s release currently in development. When Wagtail has a new release, we create a copy of the guide\u2019s \"latest\" content for that release. Here are the preliminary steps to do this:\n\n1. Add the new version in the CMS in [Locales](https://guide.wagtail.org/admin/locales/).\n2. Add the new version in the CMS in [Collections](https://guide.wagtail.org/admin/collections/) \u2013 with a parent collection matching the version number, and then a child collection for any language with translated images (currently English only).\n\nWe then review and update the website\u2019s content in the \"Latest\" version to match the current capabilities of Wagtail, before proceeding to make a copy of all content for the new release.\n\n#### Page content\n\nThen for every locale:\n\n1. Translate the \"latest\" homepage of the site (without child pages) to the new locale.\n2. Translate all child pages of the \"latest\" homepage (with child pages) to the new locale.\n3. For all pages of the new locale, manually publish changes for published pages only (page by page).\n4. Make sure to re-order the pages of the new locale so they show in the correct order in the site\u2019s sidebar.\n\n#### Images\n\nFirst, use the \"docs-screenshot\" suite of [wagtail-tooling](https://github.com/thibaudcolas/wagtail-tooling) to take new screenshots of the CMS with the [bakerydemo](https://github.com/wagtail/bakerydemo) project as the target. Screenshots all use standardized sizes, and a uniform style for highlights on the screen.\n\nThen, upload the new images in the CMS:\n\n1. Bulk-move all images in the \"English (latest)\" collection to the new collection.\n2. Create a new copy of every image in the new collection, assigning it to the \"English (latest)\" collection\n3. Go through all \"latest\" pages of the site and update them to use the new copies of the images\n4. For all pages of the \"latest\" locale, manually sync translations (without publishing).\n5. For all \"latest\" locales, go through the pages and publish the ones that have no translations missing, so they use the latest images.\n",
+      "sha256": "79513114d9793b17fe97c512631bbafd1e1cc489ad1ddfe223c49d44bd01dfdd",
+      "lines": 66,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-11",
+      "root": "local/guide",
+      "path": "LICENSE",
+      "deploymentVerified": false,
+      "observedBytes": 1533,
+      "status": "captured",
+      "text": "Copyright (c) 2022-present, Hitansh Shah and individual conributors\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its\n   contributors may be used to endorse or promote products derived from\n   this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n",
+      "sha256": "54a75e230e35138e9ad79f825f66f1fcde0aebcf15a265d82966e09a34a4a0c5",
+      "lines": 27,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-12",
+      "root": "local/guide",
+      "path": "apps/core/templates/base.html",
+      "deploymentVerified": false,
+      "observedBytes": 6326,
+      "status": "captured",
+      "text": "{% load core_tags wagtailcore_tags wagtailroutablepage_tags wagtailuserbar wagtail_cache manifest i18n %}\n\n{% wagtail_site as current_site %}\n{% get_current_language_bidi as LANGUAGE_BIDI %}\n{% get_current_language as LANGUAGE_CODE %}\n<!DOCTYPE html>\n<html lang=\"{% block lang %}{{ self.locale.language_code }}{% endblock %}\" dir=\"{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}\" class=\"no-js\">\n    <head>\n        <meta charset=\"utf-8\" />\n        <title>\n            {% block title %}\n                {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}\n            {% endblock %}\n            {% block title_suffix %}\n                {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}\n            {% endblock %}\n        </title>\n        {# always render the tag even if empty - picked up by our built-in check #}\n        <meta name=\"description\" content=\"{{ page.search_description }}\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n        <meta name=\"color-scheme\" content=\"light dark\">\n\n        {# WebMCP origin trial until Chrome 162 #}\n        <meta http-equiv=\"origin-trial\" content=\"AmXV/Pu7QOW0gCV9tEZDFAQ9hcSd+Hw42EpnR6d23qfJE8SuVEI1H3GYjhPU16+GGfwgycjFJ3rFLbjKD9lK7gcAAABReyJvcmlnaW4iOiJodHRwczovL2d1aWRlLndhZ3RhaWwub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJNQ1AiLCJleHBpcnkiOjE4MDYzNjQ4MDB9\">\n\n        {% comment %}\n        Prevent specific views indexing, with the robots=noindex meta tag.\n        {% endcomment %}\n        {% if SEO_NOINDEX %}\n        <meta name=\"robots\" content=\"noindex\">\n        {% endif %}\n\n        {# Open links in a new tab if the page is rendered in the preview panel #}\n        {% if request.in_preview_panel %}\n            <base target=\"_blank\">\n        {% endif %}\n\n        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{% manifest 'images/apple-touch-icon.png' %}\">\n        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"{% manifest 'images/favicon-32x32.png' %}\">\n        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"{% manifest 'images/favicon-16x16.png' %}\">\n\n        {# alternate tags #}\n        {% hreflangs %}\n\n        {% if page %}\n            <link rel=\"canonical\" href=\"{{ page.full_url }}\">\n        {% endif %}\n\n        <link rel=\"ai-catalog\" href=\"/.well-known/ai-catalog.json\">\n        <link rel=\"api-catalog\" href=\"/.well-known/api-catalog\">\n        <link rel=\"service-desc\" type=\"application/vnd.oai.openapi+json;version=3.1\" href=\"{% url 'wagtailapi_v3:openapi-json' %}\">\n\n        {% if page.has_markdown_route %}\n            <link rel=\"alternate\" type=\"text/markdown;charset=utf-8\" href=\"{{ page.get_site.root_url }}{% routablepageurl page 'markdown' %}\" />\n        {% endif %}\n\n        {% comment %}\n            Twitter summary card - see https://dev.twitter.com/cards/types/summary\n            and https://dev.twitter.com/cards/getting-started\n        {% endcomment %}\n        <meta name=\"twitter:card\" content=\"summary\" />\n        <meta name=\"twitter:site\" content=\"@wagtailcms\" />\n        <meta name=\"twitter:title\" content=\"{{ page.title }}\" />\n        <meta name=\"twitter:description\" content=\"{% if page.search_description %}{{ page.search_description }}{% endif %}\">\n        <meta name=\"twitter:image\" content=\"{{ current_site.root_url }}{% manifest 'images/social-image.png' %}\">\n\n        {# facebook opengraph tags #}\n        <meta property=\"og:type\" content=\"website\" />\n        <meta property=\"og:url\" content=\"{{ site.root_url }}{{ page.url }}\" />\n        <meta property=\"og:title\" content=\"{{ page.title }}\" />\n        <meta name=\"og:image\" content=\"{{ current_site.root_url }}{% manifest 'images/social-image.png' %}\">\n        <meta property=\"og:description\" content=\"{% if page.search_description %}{{ page.search_description }}{% endif %}\" />\n        <meta property=\"og:site_name\" content=\"{{ current_site.site_name }}\" />\n\n        {# Global stylesheets #}\n        <link rel=\"stylesheet\" href=\"{% manifest 'main.css' %}\">\n\n        {% block extra_css %}\n        {# Override this in templates to add extra stylesheets #}\n        {% endblock %}\n\n        <script type=\"application/ld+json\">\n        {\n          \"@context\": \"https://schema.org\",\n          \"@type\": \"WebPage\",\n          \"headline\": \"{{ page.title|escapejs }}\",\n          \"datePublished\": \"{{ page.first_published_at|date:'c' }}\",\n          \"dateModified\": \"{{ page.last_published_at|date:'c' }}\"\n        }\n        </script>\n    </head>\n\n    <body class=\"app\">\n\n        {# blocking js loaded first to ensure no flash of white on theme detection #}\n        <script src=\"{% manifest 'blocking.js' %}\"></script>\n\n        {% include \"components/skip_link.html\" %}\n        {% wagtailuserbar %}\n\n        <div class=\"grid\">\n            <div class=\"app__header\">\n                {# The header only varies by language - the active menu item is highlighted client-side. #}\n                {% wagtailcache 86400 header LANGUAGE_CODE %}\n                    {% header %}\n                {% endwagtailcache %}\n            </div>\n\n            <div class=\"app__content\">\n                <div class=\"page-tools\">\n                    {% include \"components/theme_toggle.html\" %}\n                    {% if page.has_markdown_route %}\n                        {% include \"components/copy_button.html\" %}\n                    {% endif %}\n                    {# The selector only changes when the page's translations do. #}\n                    {% wagtailcache 86400 language_selector LANGUAGE_CODE page.id %}\n                        {% language_selector %}\n                    {% endwagtailcache %}\n                </div>\n                <main id=\"main-content\">\n                    {% block content %}{% endblock %}\n                </main>\n            </div>\n        </div>\n\n        <footer class=\"app__footer\">\n            {% footer %}\n        </footer>\n\n        {% include \"components/search_modal.html\" %}\n\n        {# Global javascript #}\n        <script nonce=\"{{ csp_nonce }}\">var languageCode = '{{ self.locale.language_code }}';</script>\n        <script src=\"{% url 'javascript-catalog' %}\"></script>\n        <script src=\"{% manifest 'main.js' %}\"></script>\n\n        {% block extra_js %}\n        {# Override this in templates to add extra javascript #}\n        {% endblock %}\n    </body>\n</html>\n",
+      "sha256": "91cff509d83ac9b87499abf5ce20ef7de8c6f05e3115e7233e6b7c3a265a6941",
+      "lines": 141,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-13",
+      "root": "local/guide",
+      "path": "apps/core/templates/core/home_page.html",
+      "deploymentVerified": false,
+      "observedBytes": 632,
+      "status": "captured",
+      "text": "{% extends \"base.html\" %}\n{% load manifest wagtailimages_tags wagtailcore_tags i18n %}\n\n{% block content %}\n\n    <h1 class=\"heading heading--display\" dir=\"auto\">{{ page.title }}</h1>\n\n    <div class=\"introduction\">\n        {{ page.introduction|richtext }}\n    </div>\n\n    {# Simple events promotion, comment out or add back on as needed. #}\n    {# <p class=\"introduction\"><em>\ud83d\udc49\ufe0f Want to learn more about Wagtail\u2019s future?</em><br> Check out <a href=\"https://wagtail.org/wagtail-space-2025/\">Wagtail Space 2025</a> \ud83d\ude80 - free, online, October 8th - 10th.</p> #}\n\n    {% include_block page.sections %}\n\n{% endblock content %}\n",
+      "sha256": "e1edfdf9f327a217b490fce5c5a2b06c74e910c02eebadfc290db548853b377e",
+      "lines": 17,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-14",
+      "root": "local/guide",
+      "path": "apps/core/templates/components/search_modal.html",
+      "deploymentVerified": false,
+      "observedBytes": 970,
+      "status": "captured",
+      "text": "{% load manifest i18n %}\n\n<div class=\"search modal fade\" id=\"search-modal\" tabindex=\"-1\" aria-hidden=\"true\">\n    <div class=\"modal-dialog modal-lg\">\n        <div class=\"modal-content\">\n            <form action=\"{% url 'search' %}\" method=\"get\" toolname=\"search\" tooldescription=\"Search the Wagtail documentation site. Submits the query and returns the full search results page.\">\n                <div class=\"search__container modal-body\">\n                    <label for=\"search\" class=\"u-sr-only\">{% trans 'Search' %}</label>\n                    <input type=\"text\" id=\"search\" name=\"query\" data-search-input placeholder=\"{% trans 'Search' %}\u2026\" class=\"search__input\" toolparamdescription=\"Search query.\">\n                </div>\n            </form>\n            <div class=\"autocomplete\">\n                <div data-results-count-container></div>\n                <div class=\"autocomplete__container\" data-results></div>\n            </div>\n        </div>\n    </div>\n</div>\n",
+      "sha256": "56f3b4b77b068f58b44df9f8d668fbbc64a547ba1bea82c6805beb31a80518b4",
+      "lines": 18,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-15",
+      "root": "local/guide",
+      "path": "apps/search/templates/search/search.html",
+      "deploymentVerified": false,
+      "observedBytes": 1401,
+      "status": "captured",
+      "text": "{% extends \"base.html\" %}\n{% load static wagtailcore_tags i18n %}\n\n{% block title %}{% trans 'Search' %}{% endblock %}\n\n{% block content %}\n<h1>{% trans 'Search' %}</h1>\n\n<form action=\"{% url 'search' %}\" method=\"get\" toolname=\"search\" tooldescription=\"Search the Wagtail documentation site. Submits the query and returns the full search results page.\">\n    <label for=\"search\" class=\"u-sr-only\">Search</label>\n    <input type=\"text\" id=\"search\" name=\"query\" toolparamdescription=\"Search query.\"{% if search_query %} value=\"{{ search_query }}\"{% endif %}>\n    <button class=\"button\">\n        {% trans 'Search' %}\n    </button>\n</form>\n\n{% if search_results %}\n<ul>\n    {% for result in search_results %}\n    <li>\n        <h4 dir=\"auto\"><a href=\"{% pageurl result %}\">{{ result }}</a></h4>\n        {% if result.search_description %}\n        <div dir=\"auto\">{{ result.search_description }}</div>\n        {% endif %}\n    </li>\n    {% endfor %}\n</ul>\n\n{% if search_results.has_previous %}\n<a href=\"{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}\">{% trans 'Previous' %}</a>\n{% endif %}\n\n{% if search_results.has_next %}\n<a href=\"{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}\">{% trans 'Next' %}</a>\n{% endif %}\n{% elif search_query %}\n{% trans 'No results found' %}\n{% endif %}\n{% endblock %}\n",
+      "sha256": "f98bed7dcebea96c371dd31b06193c45ca1a2e89103d3dc0d83e92dc1b6471f7",
+      "lines": 39,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-16",
+      "root": "local/guide",
+      "path": "apps/search/views.py",
+      "deploymentVerified": false,
+      "observedBytes": 2326,
+      "status": "captured",
+      "text": "from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator\nfrom django.template.response import TemplateResponse\nfrom django.utils.translation import gettext as _\nfrom rest_framework import serializers\nfrom rest_framework.decorators import api_view\nfrom rest_framework.response import Response\nfrom wagtail.contrib.search_promotions.models import Query\nfrom wagtail.models import Locale, Page\n\n\ndef search(request):\n    search_query = request.GET.get(\"query\", None)\n    page = request.GET.get(\"page\", 1)\n\n    # Search\n    if search_query:\n        search_results = (\n            Page.objects.live()\n            .public()\n            .filter(locale=Locale.get_active())\n            .search(search_query)\n        )\n        query = Query.get(search_query)\n\n        # Record hit\n        query.add_hit()\n    else:\n        search_results = Page.objects.none()\n\n    # Pagination\n    paginator = Paginator(search_results, 10)\n    try:\n        search_results = paginator.page(page)\n    except PageNotAnInteger:\n        search_results = paginator.page(1)\n    except EmptyPage:\n        search_results = paginator.page(paginator.num_pages)\n\n    return TemplateResponse(\n        request,\n        \"search/search.html\",\n        {\n            \"search_query\": search_query,\n            \"search_results\": search_results,\n            \"SEO_NOINDEX\": True,\n        },\n    )\n\n\nclass PageSerializer(serializers.ModelSerializer):\n    parent_section = serializers.SerializerMethodField(\"get_parent_section\")\n\n    class Meta:\n        model = Page\n        fields = [\"id\", \"title\", \"search_description\", \"full_url\", \"parent_section\"]\n\n    def get_parent_section(self, page):\n        ancestors = page.get_ancestors()\n        if len(ancestors) >= 3:\n            return ancestors[2].title\n        else:\n            return _(\"Home\")\n\n\n@api_view([\"GET\"])\ndef search_json(request):\n    if search_query := request.GET.get(\"query\"):\n        search_results = (\n            Page.objects.live()\n            .public()\n            .filter(locale=Locale.get_active())\n            .autocomplete(search_query)\n        )\n        query = Query.get(search_query)\n\n        # Record hit\n        query.add_hit()\n    else:\n        search_results = Page.objects.none()\n    serializer = PageSerializer(search_results, many=True)\n    return Response(serializer.data)\n",
+      "sha256": "ebb9ce0f6e43db42ce2a404ff5dea0819335ee7594f9339338be22d258b48187",
+      "lines": 81,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-17",
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/js/main.js",
+      "deploymentVerified": false,
+      "observedBytes": 4272,
+      "status": "captured",
+      "text": "/* global ngettext, interpolate */\nimport { debounce } from './debounce';\nimport '../scss/main.scss';\nimport './theme-detect';\nimport { initSectionLink } from './section-link';\nimport { initActiveNavItem } from './active-nav-item';\nimport { handleFeedback } from './feedback';\nimport { initWebMcp } from './webmcp';\nimport MobileMenu from './mobile-menu';\nimport CopyButton from './copy-button';\n\ninitSectionLink();\ninitActiveNavItem();\nhandleFeedback();\ninitWebMcp();\n\nconst searchInput = document.querySelector('[data-search-input]');\nconst searchModal = document.getElementById('search-modal');\nconst resultsDiv = document.querySelector('[data-results]');\nconst resultsCountContainer = document.querySelector(\n  '[data-results-count-container]',\n);\n\nconst removeExistingChildren = (parent) => {\n  parent.innerHTML = '';\n};\n\nconst injectResultsInHTML = (results) => {\n  removeExistingChildren(resultsDiv);\n  removeExistingChildren(resultsCountContainer);\n\n  const resultsCountHeading = document.createElement('h2');\n  resultsCountHeading.dir = 'auto';\n  const resultHeadingString = ngettext(\n    '%s result found.',\n    '%s results found.',\n    results.length,\n  );\n  resultsCountHeading.innerText = interpolate(resultHeadingString, [\n    results.length,\n  ]);\n  resultsCountHeading.classList.add('autocomplete__count');\n  resultsCountContainer.appendChild(resultsCountHeading);\n\n  results.forEach((result, index) => {\n    const resultDiv = document.createElement('a');\n    resultDiv.dir = 'auto';\n    const resultHeading = document.createElement('h3');\n    resultHeading.dir = 'auto';\n    const resultDescription = document.createElement('div');\n    resultDescription.dir = 'auto';\n    const resultParentSection = document.createElement('div');\n    resultParentSection.dir = 'auto';\n    resultHeading.innerText = result.title;\n    resultDescription.innerText = result.search_description;\n    resultParentSection.innerText = result.parent_section;\n    resultDiv.href = result.full_url;\n    resultDiv.appendChild(resultParentSection);\n    resultDiv.appendChild(resultHeading);\n    resultDiv.appendChild(resultDescription);\n    resultParentSection.classList.add('autocomplete__meta');\n    resultDescription.classList.add('autocomplete__description');\n    resultDiv.classList.add('autocomplete__row');\n    resultHeading.classList.add('autocomplete__heading');\n    resultsDiv.appendChild(resultDiv);\n\n    requestAnimationFrame(() => {\n      setTimeout(() => {\n        resultDiv.classList.add('is-visible');\n      }, index * 400);\n    });\n  });\n};\n\nconst onSearchInputChange = async (event) => {\n  const query = event.target.value.trim();\n\n  if (!query) {\n    removeExistingChildren(resultsDiv);\n    removeExistingChildren(resultsCountContainer);\n    return;\n  }\n\n  document.querySelector('.search__container').classList.add('is-loading');\n\n  const minDelay = new Promise((resolve) => {\n    setTimeout(resolve, 200);\n  });\n\n  try {\n    const res = await fetch(\n      `${window.location.origin}${\n        window.languageCode ? `/${window.languageCode}` : ''\n      }/search_json/?${new URLSearchParams({\n        query,\n      }).toString()}`,\n    );\n    const data = await res.json();\n    injectResultsInHTML(data);\n  } catch (err) {\n    console.log(err);\n    window.alert(`Error: ${err}`);\n  } finally {\n    await minDelay; // wait for 300ms to pass if fetch was faster\n    document.querySelector('.search__container').classList.remove('is-loading');\n  }\n};\nconst onSearchInputKeyUp = debounce(onSearchInputChange, 150);\n\nsearchInput.addEventListener('keyup', (event) => {\n  if (event.key === 'Tab') return;\n  onSearchInputKeyUp(event);\n});\n\nsearchModal.addEventListener('shown.bs.modal', () => {\n  searchInput.focus();\n});\n\nsearchModal.addEventListener('hidden.bs.modal', () => {\n  searchInput.value = '';\n  removeExistingChildren(resultsDiv);\n  removeExistingChildren(resultsCountContainer);\n});\n\nfunction initComponent(ComponentClass) {\n  const items = document.querySelectorAll(ComponentClass.selector());\n  items.forEach((item) => new ComponentClass(item));\n}\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  // Remove no-js class if JS is enabled\n  document.documentElement.classList.remove('no-js');\n  initComponent(MobileMenu);\n  initComponent(CopyButton);\n});\n",
+      "sha256": "10f7ba203955005564b8134e7fcc0305497d554e46650c4363b8a2de1280668c",
+      "lines": 135,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-18",
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/js/mobile-menu/index.js",
+      "deploymentVerified": false,
+      "observedBytes": 1395,
+      "status": "captured",
+      "text": "class MobileMenu {\n  static selector() {\n    return '[data-mobile-menu-toggle]';\n  }\n\n  constructor(node) {\n    this.node = node;\n    this.body = document.querySelector('body');\n    this.mobileMenu = document.querySelector('[data-mobile-menu]');\n\n    this.state = {\n      open: false,\n    };\n\n    this.bindEventListeners();\n  }\n\n  bindEventListeners() {\n    this.node.addEventListener('click', () => {\n      this.toggle();\n    });\n  }\n\n  toggle() {\n    if (this.state.open) {\n      this.close();\n    } else {\n      this.open();\n    }\n  }\n\n  open() {\n    // Fire a custom event which is useful if we need any other items such as\n    // a search box to close when the mobile menu opens\n    // Can be listened to with\n    // document.addEventListener('onMenuOpen', () => {\n    //     // do stuff here...;\n    // });\n    const menuOpenEvent = new Event('onMenuOpen');\n    document.dispatchEvent(menuOpenEvent);\n    this.node.classList.add('is-open');\n    this.node.setAttribute('aria-expanded', 'true');\n    this.body.classList.add('no-scroll');\n    this.mobileMenu.classList.add('is-visible');\n\n    this.state.open = true;\n  }\n\n  close() {\n    this.node.classList.remove('is-open');\n    this.node.setAttribute('aria-expanded', 'false');\n    this.body.classList.remove('no-scroll');\n    this.mobileMenu.classList.remove('is-visible');\n\n    this.state.open = false;\n  }\n}\n\nexport default MobileMenu;\n",
+      "sha256": "f4129d69861f0648fba1ce9e119dff77f3721ec63c48ed3b581a1b1c7e14f403",
+      "lines": 59,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-19",
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/js/theme-detect/index.js",
+      "deploymentVerified": false,
+      "observedBytes": 196,
+      "status": "captured",
+      "text": "// Wire up light/dark mode button.\ndocument.getElementById('wagtail-theme').addEventListener('click', (event) => {\n  document.dispatchEvent(new CustomEvent('theme:toggle-theme-mode', event));\n});\n",
+      "sha256": "e412952684f8a0335c3a5bf504cfb1e91fc7184bebcf4edd7b9018d109103c4c",
+      "lines": 4,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-20",
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/scss/components/rich-text-image.scss",
+      "deploymentVerified": false,
+      "observedBytes": 273,
+      "status": "captured",
+      "text": ".richtext-image {\n  box-shadow: 2px 2px 50px 0 rgba($color--black, 0.05);\n  border-radius: $border-radius--m;\n\n  &.full-width {\n    display: block;\n    width: 100%;\n    height: auto;\n    margin-top: ($gutter * 2);\n  }\n\n  + h3,\n  + h4 {\n    margin-top: ($gutter * 2);\n  }\n}\n",
+      "sha256": "c072309bf0097a36d6f30b06efd288181533b720473f0e6167344b73cc5bd477",
+      "lines": 16,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/guide",
+        "revision": "31a4547eb1f6de55baea84269723313784f6b544",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    }
+  ],
+  "scope": "Only explicitly selected text files; no code execution, installed-package inventory, vulnerability scan, complete dependency audit or deployment attestation",
+  "planSHA256": "21796679551f4ea768e352b4bbe67a818a8aa918fb54111ce7edff1a3e3a223a",
+  "collectorSHA256": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a"
+}

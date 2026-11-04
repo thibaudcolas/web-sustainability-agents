@@ -84,9 +84,9 @@ class ReportDataTests(unittest.TestCase):
                     )
 
     def test_decimal_display_does_not_change_base_units(self):
-        self.assertEqual(display_bytes(58992), "59.0 KB")
+        self.assertEqual(display_bytes(58992), "59.0 kB")
         self.assertEqual(display_bytes(1107665), "1.11 MB")
-        self.assertEqual(display_bytes(0), "0.0 KB")
+        self.assertEqual(display_bytes(0), "0.0 kB")
 
     def test_export_names_do_not_merge_origins(self):
         origins = [

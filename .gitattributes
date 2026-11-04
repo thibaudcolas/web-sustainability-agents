@@ -1,0 +1,2 @@
+# Keep generated audit bundles downloadable while collapsing them in code review.
+docs/reports/assets/** linguist-generated=true

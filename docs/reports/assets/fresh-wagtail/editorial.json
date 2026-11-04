@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://wagtail.org",
+  "reviewSHA256": "04ebbd19b85ede13304facec78b14229ee60adc1e137bfb5e551e1fb0027968f",
+  "writer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "overview": "Wagtail.org already delivers compressed text, long-lived public assets, many WebP images and a home video that waits for playback. The clearest fixes are analytics requests sent before the stated measurement choice, contact email that disappears without JavaScript, inconsistent footprint quantities and live theme changes. Test an accessible on-demand YouTube player as the main transfer-reduction experiment. All fourteen measured visits have incomplete transfer measurements: the sizes below show captured data, not complete page weights. This report does not calculate a new emissions estimate or assign a Digital Carbon Rating from those partial measurements.",
+  "nextSteps": [
+    "Verify consent with fresh profiles across no choice, reject, accept, reload and withdrawal; inventory deployed analytics and align the privacy service/controller scope. Decide which measurements are needed before removing or repairing tags.",
+    "Test an accessible on-demand release player and legible responsive image variants. Compare complete fresh desktop and narrow visits at intended pixel densities; preserve existing WebP delivery, useful lazy loading and cache/compression policies.",
+    "Confirm contact/security email without scripts, live and fresh theme behavior, and narrow navigation/search. Diagnose the shared 10 px overflow and inspect motion properties rather than assuming content loss or uncontrolled animation.",
+    "Reconcile ecosystem quantities and baseline versions with their underlying datasets. Validate carbon.txt against its declared version if formal conformance is needed, and obtain independent hosting evidence before applying green-hosting assumptions. Public mobile homepage estimates remain separate from current partial desktop observations.",
+    "Match the supplied local revision to the deployed build before choosing source edits. Supply lockfile/build evidence, applicable license/contribution documents and the numerical DebugBear budget with its response owner and alert history."
+  ],
+  "findings": [
+    {
+      "checkId": "choice",
+      "title": "Make the measurement choice work before analytics starts",
+      "summary": "All seven sampled pages send Google Analytics page-view requests before the visitor chooses Opt in or Opt out. The analytics scripts also load before the choice in all fourteen separate visits. Both buttons work, but hiding the prompt does not demonstrate that optional measurement was prevented.",
+      "whyItMatters": "Visitors are offered a choice about measuring website use after the observed measurement requests have begun. This finding concerns the request sequence; cookie storage, all collection semantics and legal compliance were not established.",
+      "action": "Review the deployed tag/container configuration and the purpose of each analytics destination. Gate optional measurement as declared, then verify fresh no-choice, reject, accept, reload and withdrawal states using requests and storage. Align the banner and privacy wording with the resulting behavior."
+    },
+    {
+      "checkId": "components",
+      "title": "Test an accessible on-demand player for the release article",
+      "summary": "The Wagtail 8.1 article initializes YouTube before a play action, loading player scripts, fonts, thumbnail and ad/log requests. The initial reject visit captures 1.328 MB of associated traffic within 2.026 MB of recorded page traffic. These are incomplete observations with unresolved transfers and frame gaps, not a complete player footprint or a guaranteed saving.",
+      "whyItMatters": "A visitor reading the article currently initializes the third-party player without choosing playback. The home native video already avoids preloading, showing a useful existing pattern; an equally usable article alternative still needs validation.",
+      "action": "Prototype a clearly named thumbnail/play control that loads the existing player on request. Verify keyboard activation, captions, transcript or reading fallback and successful playback, then compare fresh-load transfers before quantifying savings."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Keep contact and security email available without scripts",
+      "summary": "In the fresh no-JavaScript Contact state, hello@wagtail.org and security@wagtail.org become [email protected] with Cloudflare decoder links. General/conduct and security visitors lose the readable email routes; FAQ and Slack links remain.",
+      "whyItMatters": "Someone finding a contact or security-reporting route needs a usable destination even when scripts are unavailable. The other six sampled reading pages retain their core content, so the demonstrated problem is specific to these contact routes.",
+      "action": "Render readable addresses and working mailto targets in baseline HTML, or provide an explicit equivalent that works without JavaScript. Verify each general, conduct and security route with scripts disabled."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Reconcile the footprint figures and clarify privacy scope",
+      "summary": "The policy gives 5,173 tCO2e/year across 6,431 sites and an average of 12 tCO2e/year per site. The displayed total divided by the count gives about 0.8044, so these cannot be the same mean and population. Separately, the privacy page describes the Torchbox website/company while being presented as the wagtail.org policy.",
+      "whyItMatters": "Readers need matching populations, units and periods to interpret an ecosystem footprint, and a clear service/controller scope to understand this website’s data handling. Differing 2024 baseline totals and median page weights in linked reports need explanation; a sample, method or data revision may account for them, so they are not established errors or proof of changed efficiency.",
+      "action": "Check the underlying 2025 dataset before changing the summary: about 0.80 tCO2e/site/year applies only if the displayed total/count define the intended mean. Label any different statistic explicitly, reconcile baseline versions and clarify wagtail.org privacy coverage and actual services. Keep ecosystem and website estimates separate."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Update the theme when the device preference changes",
+      "summary": "Fresh loads with a dark device preference work and preserve task text. Changing that preference while any of the seven pages is already open leaves the light colors unchanged.",
+      "whyItMatters": "Visitors whose device changes theme should receive the expected presentation without reloading, subject to their explicit website choice. The audit does not infer energy savings from dark colors or establish a separate motion failure.",
+      "action": "Confirm the manual-choice policy and deployed listener, then respond to system-theme changes when no override applies. Test both directions, persisted explicit choices and fresh loads."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Reading without unsolicited interruptions",
+      "summary": "The seven sampled pages provide relevant reading, search, policy and contact content. The home video is paused with controls and no autoplay; static conference and newsletter prompts did not interrupt the recorded tasks. Hidden dialogs and a hidden copy confirmation are not evidence of unsolicited popups.",
+      "nextStep": "Extend observation to longer visits, opened menus and player states if those are important visitor tasks."
+    },
+    {
+      "checkId": "choice",
+      "title": "Make the analytics choice effective",
+      "summary": "All seven initial page captures send Google Analytics page-view requests before the visitor chooses Opt in or Opt out. Google Tag Manager, gtag and analytics.js already load before either choice in all fourteen separate visits. Both choice buttons worked and the opt-out/search journey completed, but dismissal does not demonstrate that optional measurement was blocked. Storage, later visits and visual parity remain untested; this is not a legal compliance verdict.",
+      "nextStep": "Audit the deployed analytics destinations and consent configuration. Verify request payloads and storage in fresh no-choice, reject, accept, reload and withdrawal states, then align optional measurement with the stated choice."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Reconcile the footprint summary and privacy scope",
+      "summary": "The sustainability policy reports 5,173 tCO2e/year for 6,431 sites alongside a 12 tCO2e/year per-site average. Dividing the displayed total by the count gives about 0.8044 tCO2e/site/year; those quantities cannot describe the same mean. The privacy page describes the Torchbox website/company despite being presented as the wagtail.org policy, leaving its service/controller scope unclear. Other sampled task copy is reasonably explanatory; truncated heading lists do not establish a broken hierarchy.",
+      "nextStep": "Check the intended dataset, period, population and units before correcting the average or labeling a different statistic. Clarify the wagtail.org privacy scope and actual services, and review the resulting copy with its audience."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Keep the familiar navigation and control names",
+      "summary": "The same primary navigation, footer groups, search, Get started, theme and cookie-choice wording recur across all seven pages. Search and article pages add controls appropriate to their content. This supports consistency in the sample; it does not establish a documented design system or every expanded menu state.",
+      "nextStep": "Compare opened menus, narrow layouts and any additional content types when expanding the interface review."
+    },
+    {
+      "checkId": "motion",
+      "title": "Investigate transient motion before changing it",
+      "summary": "Initial desktop snapshots show no running animation and the home video is paused. Resizing and reduced-motion states record five, two and one one-iteration animations on Home, Features and Sustainability respectively. The captured records omit animated properties, duration and purpose, so they do not establish uncontrolled looping or harmful motion; embedded playback is also untested.",
+      "nextStep": "Inspect actual properties, purpose, duration and controls after resize, menus and scrolling. Compare settled and fresh reduced-motion states before deciding what to reduce."
+    },
+    {
+      "checkId": "notifications",
+      "title": "No notification request during the reading tasks",
+      "summary": "No browser notification permission request was recorded in the sampled states. Newsletter signup is optional and recorded dialogs/confirmation alerts are hidden. Browser permission was already denied, so this result covers attempted requests during these tasks rather than every subscription or external message.",
+      "nextStep": "Use default browser permission and a deliberately requested signup task if extending this check."
+    },
+    {
+      "checkId": "documents",
+      "title": "Readable HTML and a simpler print view",
+      "summary": "The sampled tasks use HTML, with no recorded PDF, office-file or download-attributed links. Print states retain the reading content while hiding navigation, cookie controls and unrelated recommendations; the article keeps eight of eleven images after related author images are removed. Actual pagination, paper use and downloadable-document accessibility were not inspected.",
+      "nextStep": "Inspect print preview and pagination for long feature and release pages before claiming paper savings or optimized printing."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Measure code across the interactions visitors use",
+      "summary": "The deployed main JavaScript is about 39.5 kB decoded and 11.3 kB gzip; CSS is about 125.7 kB decoded and 21.1 kB gzip. Initial unexecuted functions may serve later menus, search and copy actions. CSS records show used ranges rather than all unused rules, and article/frame coverage is incomplete. The separate analytics scripts account for 347.162 kB in the initial home reject visit; they are not the first-party bundle. Local production minification is useful source context but does not identify the live build.",
+      "nextStep": "Collect representative interaction coverage and match deployed bundles to source maps before deleting or splitting code. Review analytics and player requirements with their owners."
+    },
+    {
+      "checkId": "components",
+      "title": "Test loading the release player only on request",
+      "summary": "The release article initializes its YouTube iframe before playback, requesting player code, fonts, thumbnail and ad/log endpoints. The initial reject visit captures 1.328 MB of associated traffic within 2.026 MB of recorded page traffic; the separate accept visit captures 2.032 MB of page traffic. All are partial totals with unresolved transfers and frame gaps. The home native video already avoids preloading and has no observed MP4 request. A usable replacement for the article player has not yet been validated.",
+      "nextStep": "Prototype a named image/play preview that loads the existing player on activation. Verify keyboard access, captions, transcript or reading fallback and playback, then compare fresh-load transfers. Treat 1.328 MB as observed traffic, not a promised saving."
+    },
+    {
+      "checkId": "layout",
+      "title": "Find the shared horizontal overflow",
+      "summary": "All seven JavaScript desktop documents are 1,290 px wide in a 1,280 px viewport; resized narrow documents are 370 px in a 360 px viewport. Reading text remains and images shrink, but the records do not identify the extra 10 px or show content loss. No-JavaScript and print states have no overflow. Mobile menu/search controls were visible but not activated, and resizing is not a fresh mobile load.",
+      "nextStep": "Identify the overflowing element, inspect clipping and scrolling, then exercise narrow menu/search with keyboard and touch on a real device."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "Check useful context for optional video",
+      "summary": "Ordinary reading links do not all need carbon labels. Optional video is a more consequential resource choice: the home player defers downloading while the article initializes YouTube before activation. The packet does not inspect player quality, duration or data-use information. Policy descriptions of OLED themes and image capabilities concern CMS use rather than an executed upload task here.",
+      "nextStep": "Review the information visitors need to choose video playback, then test it alongside an accessible on-demand player."
+    },
+    {
+      "checkId": "journeys",
+      "title": "The opt-out and policy-search task completes",
+      "summary": "All five declared actions completed: opt out, open desktop search, enter sustainability, submit and follow the policy result. The final URL, title, heading and reading text identify the Sustainability page, and the separate results sample lists it first among 62 results. This confirms that task path; it does not establish optimal efficiency or analytics enforcement.",
+      "nextStep": "Repeat with new visitors and narrow navigation, and test consent enforcement independently of banner dismissal."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Compare responsive images while keeping readable detail",
+      "summary": "Many image URLs already deliver WebP, and scrolling confirms useful deferral of three home images, two feature images and one sustainability image. The home video also avoids preloading. None of the sampled images uses srcset/sizes: the 2,234 px home illustration renders at 1,280 px desktop and 360 px narrow, with a 370,360-byte response body; feature screenshots are 1,300 px for 660/300 px display and article screenshots 800–900 px for 660/300 px. These are investigation targets, not validated smaller replacements. Tests use DPR 1 and the same resized document. Two article screenshots actually remain PNG; four sustainability WebP resources render but use application/octet-stream. Early unloaded lazy images are not evidence of broken media.",
+      "nextStep": "Compare legible responsive variants at intended 1x/2x densities, retaining art direction and useful screenshot text. Test fresh narrow loads and deferred loading, and inspect the mixed MIME responses before changing formats or claiming savings."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "Test font fallback before trimming variants",
+      "summary": "The English content uses Kumbh Sans with a sans-serif fallback. Weights 400 and 700 load on every page; 600 loads only on the article. The ordinary-page local faces account for about 39.5–40.8 kB including reported overhead; the article local faces account for 61.172 kB in initial reject, separate from 40.678 kB of player Roboto. Regular declares font-display:block and other weights auto. Slow or blocked font loading and language needs were not tested, so no face is established as safely removable.",
+      "nextStep": "Test blocked/slow responses, fallback readability, layout changes and intended languages before changing font-display, removing weights or subsetting."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "Inspect visible headings and activated forms",
+      "summary": "All seven documents report English language, one main region and one H1. Search inputs have Search labels and the newsletter field has an Email name; textless controls are not automatically unnamed. The bounded heading inventories truncate inside duplicated hidden navigation before visible primary content, so counts alone cannot establish heading wording or hierarchy. Dialog activation and focus handling remain untested.",
+      "nextStep": "Capture visible main-region headings and resolved control names directly, then execute search, newsletter and modal tasks before making broader accessibility claims."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Useful page metadata matches the task",
+      "summary": "The six content pages have descriptive titles, matching HTTPS canonicals and relevant descriptions. Dynamic search has a query-specific title and noindex; its lack of canonical/description is appropriate to the sampled purpose. Home and the article contain parseable JSON-LD. Parsing is not schema validation or proof of search eligibility.",
+      "nextStep": "Validate declared schema meaning if structured-data eligibility becomes part of the scope."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Follow system theme changes on an open page",
+      "summary": "Fresh dark-preference loads work: text becomes white on a dark rgb(38,38,38) background and task content remains. In contrast, changing the device preference while each of the seven pages is open leaves the original light colors in place. Transient animation records do not independently prove a reduced-motion defect. No energy saving is inferred from the selected color scheme.",
+      "nextStep": "Confirm manual-override policy and the deployed theme listener. Test live light-to-dark and dark-to-light changes, explicit choices, persisted preferences and fresh loads."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Keep contact email readable without JavaScript",
+      "summary": "The fresh no-JavaScript Contact page replaces the general/conduct address hello@wagtail.org and security@wagtail.org with [email protected] and Cloudflare decoder links. FAQ and Slack remain, but neither supplies an explicit equivalent security-email route. Core reading/navigation on the other six pages remains available; no-JavaScript search submission and every interactive control were not tested.",
+      "nextStep": "Render readable email addresses and working mailto links in baseline HTML, or provide a tested explicit equivalent that needs no script. Verify the general, conduct and security routes with JavaScript disabled."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "Confirm which analytics and player requests are needed",
+      "summary": "Each initial page requests one small sitewide alert and three analytics page views: GA4 and two different Universal Analytics properties. Different property IDs mean similar paths are not proof of redundant events. The article also repeats player/log requests, with zero received bytes recorded for some later assets; this does not establish repeated downloads or backend waste. No long-duration polling test or destination requirements were supplied.",
+      "nextStep": "Inventory analytics destinations, event needs and owners; inspect consent behavior and repeated player initialization before removing work or changing dynamic search caching."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Keep the explicit public-asset cache policies",
+      "summary": "Hashed JavaScript, CSS and WOFF2 expose long public immutable caching and validators; remote media has long caching and validators, and sitewide alerts have an explicit shorter policy. Dynamic search and private analytics/log responses have different reuse needs. The observed policies pass this check; no warm-visit test establishes actual reuse or offline support.",
+      "nextStep": "Check repeat visits and invalidation after content changes before quantifying cache benefits or claiming offline capability."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Material text responses already use compression",
+      "summary": "Sampled HTML uses Brotli and common CSS/JavaScript gzip; material third-party text also has compression. Main CSS is 21,060 encoded bytes versus about 125.7 kB decoded, and main JavaScript is 11,338 versus about 39.5 kB. Unencoded tiny acknowledgments, helper responses and errors do not establish a material omission; already-compressed images and WOFF2 do not need blanket recompression. Partial traffic totals do not invalidate observed encoding headers.",
+      "nextStep": "Retain current material text compression. No additional evidence is needed for this sampled encoding check."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "Initial keyboard focus is visible",
+      "summary": "Bounded Tab traces reach visible event/skip/home links, named navigation and search, Get started and task controls. Recorded targets show a visible focus indicator, including a 1 px automatic outline on the sampled light background. This supports the initial path only; skip destinations, opened menus, reverse traversal, traps and full accessibility were not tested.",
+      "nextStep": "Activate skip, search and menu controls and check complete forward/reverse paths, including narrow and dark states."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "Public disclosures identify services and mitigation",
+      "summary": "The sustainability policy explicitly includes wagtail.org, docs.wagtail.org and guide.wagtail.org alongside CMS/ecosystem and community work. The linked Digital emissions statement separates homepage/website estimates and describes method, period and monitoring. This passes disclosure coverage, not execution or footprint accuracy. Its April 2026 mobile/Lighthouse SWD v4 estimate is a different scenario from these partial desktop captures and is not reproduced here. The 2025 ecosystem article uses differing 2024 totals (6,327 and 6,260 tons) and a median page weight differing from the earlier report. A sample, method or data revision could explain those baseline differences; the bounded excerpts do not establish one. The article itself warns that estimated pageview changes drive much of the headline reduction.",
+      "nextStep": "Explain comparable baseline versions and distinguish ecosystem, website and homepage estimates. Correct the policy average, obtain execution records for claimed reductions, and supply traffic period/count, first/repeat mix, page weighting and infrastructure inputs to reproduce the site estimate. Its 30–300 kg/year range is a methodological scenario range, not statistical bounds."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "carbon.txt is present and usable for discovery",
+      "summary": "The root carbon.txt returns 200 text/plain, parses with declared version 0.4 and supplies usable exact-host disclosure relationships without delegation ambiguity. All four declared disclosure URLs return 200. Common-field checks report no structural issue, but schemaValidated=false: this is neither full version-0.4 schema validation nor validation against the separate 1.0-RC1 profile. The 2023/2024 reports are historical and past their declared validity; last_updated is 2026-01-07. The newer 2025 report was reached through linked content, not directly declared. Provider entries remain self-declared relationships, and exact-host labels do not automatically cover subdomains.",
+      "nextStep": "Link the current report directly and refresh the update date when appropriate. Use a matching version-specific validator for formal syntax conformance; verify claims and hosting independently."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Verify hosting claims beyond provider names",
+      "summary": "carbon.txt declares Cloudflare for CDN, Heroku for platform/database/cache, AWS for object storage and GitHub for CI/CD. Local documentation also describes Heroku, and the public site estimate uses an Ireland factor. These do not independently establish this origin’s current region, electricity supply or operational metrics. No verified green-hosting assumption follows.",
+      "nextStep": "Obtain dated origin/provider/service/region correspondence and independent environmental evidence matching that operational scope."
+    },
+    {
+      "checkId": "source-reuse",
+      "title": "Selected local components share common behavior",
+      "summary": "The supplied local home template uses shared hero/button patterns and a common CTA button include. main.js has a shared component initializer, with dedicated cookie and desktop-search modules. This supports reuse in the selected files, not whole-project efficiency. The unselected base-page inheritance and live deployment identity remain unresolved.",
+      "nextStep": "Inspect additional concrete template call sites only if expanding the duplication review; match proposed edits to the deployed build."
+    },
+    {
+      "checkId": "source-dependencies",
+      "title": "Verify lockfile contents or a repeatable build",
+      "summary": "Local manifests inventory dependencies, while Docker/CI declare npm ci and Poetry installation. The selected lockfiles contain identity/size metadata only, so their resolutions and consistency with manifests cannot be checked. Clean tracked source does not establish installed/deployed versions, package necessity or vulnerability status.",
+      "nextStep": "Provide bounded lockfile/manifest checks or a clean-install receipt for this revision. Verify deployed versions separately where they affect a decision."
+    },
+    {
+      "checkId": "source-runtime",
+      "title": "Local runtime declarations agree",
+      "summary": "Selected local declarations agree on Python 3.14 and Node 24 across project metadata, runtime files, Docker and CI; Docker/CI also agree on Poetry 2.4.0. This passes declaration consistency. Unselected runtime paths and the deployed inventory are unknown, and no authoritative release check establishes a latest-version claim.",
+      "nextStep": "Capture other supported runtime paths and a deployed inventory if broader consistency is required."
+    },
+    {
+      "checkId": "source-automation",
+      "title": "CI already cancels superseded runs",
+      "summary": "The selected local workflow filters push runs to main/next, supports pull requests, groups concurrency by workflow/ref and sets cancel-in-progress=true. Lock/runtime-keyed caches and ordered checks are also present. The frozen evidence does not demonstrate redundant same-context jobs or measured CI savings; actual execution and possible cross-event overlap require history.",
+      "nextStep": "Inspect run history and the relevant hook contents before reducing validation. Keep needed lint, build and backend checks and retain the existing cancellation mechanism."
+    },
+    {
+      "checkId": "source-maintenance",
+      "title": "Local documentation explains maintenance tasks",
+      "summary": "The supplied README describes development setup, migrations, cache setup, controlled data/media retrieval, frontend commands and deployment; CI records explicit test commands. This passes the selected maintenance-documentation check. Staffing, cadence, operational execution and correctness of unselected auxiliary paths remain unverified.",
+      "nextStep": "Obtain maintenance ownership, cadence and operational records if assessing the wider maintenance strategy."
+    },
+    {
+      "checkId": "source-change-docs",
+      "title": "The release article explains product changes",
+      "summary": "The public Wagtail 8.1 article identifies the version and user-facing API/workflow/metadata/sitemap changes, labels preview or prototype features and links full release notes with upgrade implications. This passes the sampled product-change disclosure task. It is not a complete history of changes to the wagtail.org application or proof every affected user received the announcement.",
+      "nextStep": "Request a website-specific change history if the question concerns the wagtail.org implementation itself."
+    },
+    {
+      "checkId": "source-budgets",
+      "title": "Make the stated monitoring target reviewable",
+      "summary": "Selected local build/CI/docs do not expose a numerical asset/performance ceiling and response when exceeded. Linters, minification and a development statistics option do not establish one. The public Digital emissions page does state that weekly DebugBear monitoring alerts against a target, so this is missing reviewable detail rather than proof that no budget exists.",
+      "nextStep": "Supply the numeric target, relevant page/device protocol, alert/build configuration, response owner and exceedance procedure, with alert/history evidence."
+    },
+    {
+      "checkId": "source-open-source",
+      "title": "Clarify software and content reuse terms",
+      "summary": "Local Python metadata declares BSD-3-Clause and package metadata ISC, while the README links the public repository. Actual license and contribution documents were not selected, so the applicable terms and process remain unresolved. Public restrictions on website material have a separate scope; they do not automatically override software terms, and CMS open-source wording does not license all website media.",
+      "nextStep": "Provide applicable license/contribution documents, explain the scope of each manifest declaration, and distinguish source-code permissions from website content permissions."
+    }
+  ]
+}

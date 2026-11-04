@@ -1,0 +1,817 @@
+{
+  "rubricSHA256": "fe698d4f935d782181555cd9892a7987ba3e18e198dcba477a9710db72dd0091",
+  "sourceSHA256": {
+    "staged.json": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2",
+    "probes.json": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb",
+    "disclosures.json": "b03f03d8615fc580ff12bc99339187563be04cce670b89e2d8e8d1f4ba6a6b34",
+    "source.json": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+  },
+  "reviewFileSHA256": "81b9b340955150748c990d2b225405e1d50a48e1d75ce91d26e73137bd511bcd",
+  "reviews": [
+    {
+      "site": "https://guide.wagtail.org",
+      "packetSHA256": "49fb5b845b47930414721b698f5c4f18da5d07b58ded8f6d198db6538c010ed7",
+      "reviewer": {
+        "harness": "Codex native subagent",
+        "model": "gpt-6.1-sol",
+        "reasoning": "high"
+      },
+      "rows": [
+        {
+          "checkId": "distraction",
+          "guideline": "2.5",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "Across the six declared editor-documentation tasks, initial and emulated states show no overlays, playing media or active animations. Navigation, search and page contents support reading; feedback follows the article. The home and release pages contain static conference promotion, but no observed interruption or forced detour. The executed search-to-guide journey reaches the requested instructions. This is limited to observed states, not every later interaction.",
+          "confidence": "medium",
+          "nextEvidence": "Observe longer reading sessions and optional controls if expanding beyond this bounded sample."
+        },
+        {
+          "checkId": "choice",
+          "guideline": "2.6",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5"
+          ],
+          "rationale": "No consent banner, transaction, forced registration or accept/reject gate appears in the six sampled pages; ordinary search, theme, language and feedback controls have direct wording. However, the packet has no screenshots or exercised competing-choice states establishing visual prominence/default parity. It supports no demonstrated deceptive pattern, rather than a complete choice assessment.",
+          "confidence": "medium",
+          "nextEvidence": "Capture the rendered optional menus and feedback states, then inspect any materially competing choices and defaults."
+        },
+        {
+          "checkId": "comprehension",
+          "guideline": "2.7",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "The audience is explicitly editors, moderators and administrators. Home distinguishes tutorials, how-to guides, concepts and reference; Overview explains CMS, the sample site and /admin login. Manage images uses task headings, concrete interface names, alt-text guidance and an explicit warning about replacing shared images. Search lists Manage images first with a relevant description. Versioned release headings separate changes; About explains the guide and contribution routes. This supports the sampled English tasks, not comprehension for every audience or translation.",
+          "confidence": "medium",
+          "nextEvidence": "User testing with new editors and translated or assistive-technology audiences would expand confidence."
+        },
+        {
+          "checkId": "consistency",
+          "guideline": "2.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "source.json:files:11",
+            "source.json:files:12",
+            "source.json:files:14"
+          ],
+          "rationale": "All six pages repeat the same named documentation sections and search/theme controls; content pages repeat Copy page, language selection, in-page headings and feedback patterns where applicable. Search appropriately has its own query form. Candidate base.html is concretely extended by home_page.html and search.html and includes the shared theme and search components. Runtime consistency is independently observed; this does not prove a documented design system or candidate-source deployment.",
+          "confidence": "high",
+          "nextEvidence": "Review additional languages, menu-open states and design-system documentation for broader coverage."
+        },
+        {
+          "checkId": "motion",
+          "guideline": "2.10",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "No active animations or audio/video are recorded across all seven states of each page, including reduced-motion and cold-dark contexts. No observed moving content therefore needs playback controls for these reading states. Candidate main.js contains staggered search-result activation, but the packet does not establish that later animation in the deployed UI; this pass is confined to observed animation, not all possible motion.",
+          "confidence": "medium",
+          "nextEvidence": "Exercise live autocomplete and menu transitions with and without reduced motion before extending the judgment."
+        },
+        {
+          "checkId": "notifications",
+          "guideline": "2.12",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "All six pages and their recorded states show zero notification requestPermission calls and no alert overlays or playing media. Reading and the executed documentation journey require no notification opt-in. Browser permission was already denied, so this establishes absence of attempted requests in the bounded observation, not notification behavior for all permission states or external subscriptions.",
+          "confidence": "medium",
+          "nextEvidence": "Use a fresh default-permission context and any opt-in journey if expanding the notification scope."
+        },
+        {
+          "checkId": "documents",
+          "guideline": "2.13",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "Print emulation hides the global sidebar on all six pages while retaining reading text and task images; article in-page navigation remains. No download-attributed documents are recorded. About nevertheless links Markdown, llms.txt, llms-full.txt and an agent skill with meaningful labels; those linked alternatives were not retrieved. Emulation does not establish pagination, paper use, file size, accessibility or equivalence of the alternatives.",
+          "confidence": "medium",
+          "nextEvidence": "Inspect an actual print preview/PDF for representative long articles and retrieve linked alternative documents before judging their optimization or equivalence."
+        },
+        {
+          "checkId": "unused-code",
+          "guideline": "3.2",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "source.json:files:11",
+            "source.json:files:16",
+            "source.json:files:17",
+            "source.json:files:18"
+          ],
+          "rationale": "Every page loads the same approximately 89,577-decoded-byte main script, 43,659-decoded-byte stylesheet and translation catalog. Initial 500 ms coverage contains many unexecuted JavaScript functions, including 182\u2013191 zero-count ranges in main.js depending on page; CSS observations list only used ranges and are not an unused-byte total. Candidate main.js initializes search, feedback, mobile menu, theme, copying and other interactions, several absent from the initial snapshot. Neither coverage nor this undeployed source proves those branches are removable.",
+          "confidence": "high",
+          "nextEvidence": "Collect execution coverage through search autocomplete, mobile navigation, feedback, copying and language/theme interactions; inspect matched deployed source maps/build output before removing code."
+        },
+        {
+          "checkId": "components",
+          "guideline": "3.3",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:journeys:0",
+            "source.json:files:11",
+            "source.json:files:16"
+          ],
+          "rationale": "The same 26,385-byte gzip main bundle loads on all six initial pages. Candidate base.html includes global scripts and candidate main.js imports multiple interaction modules. Search is used later in the executed journey, but the packet lacks deployed bundle attribution and a tested deferred-activation implementation; it does not establish a particular bandwidth-heavy component that can safely be split.",
+          "confidence": "medium",
+          "nextEvidence": "Attribute deployed bundle modules and compare a deferred component prototype through search/menu activation, caching and slow-network use."
+        },
+        {
+          "checkId": "layout",
+          "guideline": "3.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:journeys:0",
+            "source.json:files:17"
+          ],
+          "rationale": "Desktop 1280 px and resized 360 px states have no horizontal overflow on any sampled page; task text, headings and image counts are retained, with images scaling to 320 px. The sidebar becomes hidden and a named Mobile menu toggle becomes visible. The only executed search journey is desktop; no narrow menu or search control was activated. Candidate menu logic is not deployment proof, so the affected responsive navigation remains unresolved rather than demonstrated broken.",
+          "confidence": "high",
+          "nextEvidence": "At 360 px, open and close the menu/search, follow a section link and complete the same image-guide task with keyboard and touch emulation. Then sample a real device."
+        },
+        {
+          "checkId": "impact-choice",
+          "guideline": "5.4",
+          "outcome": "inapplicable",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "The declared scope is reading and finding public documentation. No in-service purchase, transport, media-quality, compute-intensive operation or other materially consequential environmental choice is demonstrated. Theme, search, feedback and links to text alternatives do not alone justify carbon labels. Advice about uploading images describes another CMS workflow rather than an executed upload choice on this service.",
+          "confidence": "medium",
+          "nextEvidence": "Reassess if auditing actual CMS uploads, media playback or other resource-intensive choices."
+        },
+        {
+          "checkId": "journeys",
+          "guideline": "2.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:journeys:0",
+            "probes.json:pages:2",
+            "probes.json:pages:3"
+          ],
+          "rationale": "The recorded journey clicks homepage search, enters images, submits and opens the Manage images result, with all four actions completed and no errors. The final URL/title/primary heading identify the intended guide, and the final article text explains the Images interface, bulk operations, alt text, focal area and file requirements. The separate results sample also places the relevant guide first. This confirms the declared discovery task, not human usability, optimal step count or every sampled task.",
+          "confidence": "high",
+          "nextEvidence": "Repeat with representative new editors, narrow-screen controls and less direct search terms to evaluate efficiency more broadly."
+        },
+        {
+          "checkId": "media-delivery",
+          "guideline": "2.9",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "source.json:files:19"
+          ],
+          "rationale": "The 11 sampled task images occur on Overview (1), Manage images (4) and the 8.1 release (6). Natural widths are 800\u2013900 px versus 756 px desktop and 320 px narrow; none declares srcset/sizes and all use loading=auto. Responses are actually WebP despite .png URLs, with content lengths about 8.8\u201374.4 kB. Screenshots support the instructional content, but legibility at intended pixel densities and alternative renditions were not inspected visually. All article images are fetched initially, including images below the viewport: Manage images totals 233,091 received bytes and the release 354,332, with zero later-byte increase after scroll. These are concrete optimization candidates, not proof a smaller rendition preserves the task.",
+          "confidence": "high",
+          "nextEvidence": "Visually compare responsive renditions at 1x/2x densities; trial native lazy loading for below-fold instructional screenshots while preserving dimensions and full-detail access. Measure fresh narrow loads and scrolling."
+        },
+        {
+          "checkId": "font-delivery",
+          "guideline": "2.11",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5"
+          ],
+          "rationale": "All six pages report no document.fonts entries or font network requests. Their body font stack starts with platform/system fonts and includes general sans-serif and emoji fallbacks; visible English content remains present in desktop, narrow and no-JavaScript states. No downloadable web-font loading strategy is needed in this sample, and no font removal or subsetting is warranted.",
+          "confidence": "high",
+          "nextEvidence": "Sample supported non-Latin languages and constrained devices if expanding typography coverage."
+        },
+        {
+          "checkId": "semantic-forms",
+          "guideline": "3.6",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "Each sampled document has lang=en, one main region and one meaningful H1 matching its task. Search inputs have Search label relationships, feedback has Your feedback, and icon controls have explicit names such as Toggle the search form, Mobile menu toggle and Happy/Unhappy. Hidden inputs are not treated as unnamed interactive controls. Search result headings use H4 after H1 and duplicate Search labels are recorded, so this bounded pass does not claim valid heading hierarchy, unique IDs, full accessible names or WCAG compliance.",
+          "confidence": "medium",
+          "nextEvidence": "Audit the deployed search modal/result heading structure and duplicate search IDs separately, including a screen-reader task."
+        },
+        {
+          "checkId": "metadata",
+          "guideline": "3.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "The five content pages have descriptive task-specific titles, descriptions and self-referencing HTTPS canonical URLs. Search has a descriptive Search title and robots=noindex; omitting a canonical and description is appropriate for this query result page rather than a missing mandatory field. Each page records one structured-data object that parses as JSON. Parsing does not establish schema correctness or search eligibility; observed declaredType is null and is not silently repaired using undeployed source.",
+          "confidence": "high",
+          "nextEvidence": "Retrieve and validate deployed structured-data meaning if schema quality becomes an assessment target."
+        },
+        {
+          "checkId": "preference-behavior",
+          "guideline": "3.9",
+          "outcome": "fail",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "On all six pages desktop light colors are text rgb(38,38,38) on rgb(245,243,248). In live_dark, prefers-color-scheme reports dark=true but these colors and light-theme text remain unchanged. Fresh cold_dark contexts instead render light text on rgb(38,38,38) with task content retained. Thus initial system preference support works but in-page preference change does not meet the declared expectation. No motion is observed in either preference state; no energy saving is inferred from theme color.",
+          "confidence": "high",
+          "nextEvidence": "Verify a fresh unset user override, then update deployed theme handling for live system changes while preserving an explicit user choice; retest light\u2194dark and persistence."
+        },
+        {
+          "checkId": "no-js-content",
+          "guideline": "2.17",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "For each of the six fresh no-JavaScript contexts, the full recorded text, heading observations and navigation observations exactly match desktop. This includes the requested guide instructions and the directly loaded server-rendered search results. Core reading and navigation remain available without scripts; no claim is made that modal search, mobile toggles, copying or every other interaction works without JavaScript.",
+          "confidence": "high",
+          "nextEvidence": "Execute a no-JavaScript navigation journey and narrow-screen fallback if extending beyond core reading."
+        },
+        {
+          "checkId": "api-requests",
+          "guideline": "3.11",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "probes.json:journeys:0",
+            "source.json:files:15",
+            "source.json:files:16"
+          ],
+          "rationale": "Initial network windows contain documents, scripts, styles and images, with no duplicate URL requests or Fetch/XHR polling; scroll adds no requests/bytes in all six staged runs. Candidate main.js uses debounced task-triggered autocomplete rather than a polling loop. However, the journey submits quickly and provides only before/after resource snapshots, not a complete intermediate API trace, so autocomplete requests, stale-result handling and payload necessity cannot be judged from deployed behavior.",
+          "confidence": "high",
+          "nextEvidence": "Capture typing, pauses, clearing and repeated searches with request/response timings, payloads and cancellation/cache behavior; relate freshness to the documentation task."
+        },
+        {
+          "checkId": "public-cache-policy",
+          "guideline": "4.2",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5"
+          ],
+          "rationale": "Hashed public CSS and JS declare max-age=315360000, public, immutable with ETag/Last-Modified. All sampled remote images have ETag and Last-Modified, supporting validation even without explicit Cache-Control. The per-language /en/jsi18n/ script lacks client cache/validation headers on four page responses, while home/search observations include Age and Last-Modified. Its intended freshness and delivery policy are unresolved. Header-only observations also do not prove warm reuse or offline access.",
+          "confidence": "medium",
+          "nextEvidence": "Check catalog freshness/invalidation requirements and response consistency, then compare a warm repeat visit and navigation with observed request/304/cache reuse."
+        },
+        {
+          "checkId": "text-compression",
+          "guideline": "4.3",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5"
+          ],
+          "rationale": "Across all six sampled 200 responses, HTML and the translation catalog are delivered with Brotli and the shared CSS/main/blocking scripts with gzip. The main script and stylesheet have compressed content lengths of 26,385 and 8,247 bytes versus observed decoded sizes of 89,577 and 43,659 bytes. This supports beneficial compression of material sampled text assets; already-compressed WebP images and inline data images are not required to carry an additional content encoding.",
+          "confidence": "high",
+          "nextEvidence": "No further evidence needed for the sampled text-delivery expectation."
+        },
+        {
+          "checkId": "keyboard-path",
+          "guideline": "3.6",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "rationale": "All six twelve-Tab traces start with the visible Skip to main content link, named home link and search toggle, then meaningful documentation links including Manage images. Every recorded focused element is visible, focusVisible=true and has a solid 2 px blue outline rgb(49,120,250), a discernible indicator against the sampled light background. This establishes the bounded initial path, not activated skip-link behavior, modal traps, reverse navigation, every control or complete accessibility.",
+          "confidence": "high",
+          "nextEvidence": "Activate the skip link and modal/menu controls, test reverse traversal and capture visual focus in dark and narrow states for broader keyboard coverage."
+        },
+        {
+          "checkId": "disclosure-scope",
+          "guideline": "2.1",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0",
+            "probes.json:pages:5"
+          ],
+          "rationale": "Discovery retrieves no usable sustainability statement: the two common-path candidates redirect to localized paths returning 404, and carbon records are empty. About describes purpose/contribution rather than service impacts and mitigation. This bounded search does not establish that no public policy exists elsewhere or that a wider Wagtail policy covers this origin.",
+          "confidence": "high",
+          "nextEvidence": "Request the service-specific public statement or an explicit scoped relationship to a parent policy, then read its impacts, mitigation and review date."
+        },
+        {
+          "checkId": "carbon-discovery",
+          "guideline": "3.13",
+          "outcome": "fail",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "rationale": "Root /carbon.txt and /.well-known/carbon.txt return 404 HTML with no redirects or Carbon-Location; discovery records no DNS/header delegation or usable carbon records. The sampled v0.x discovery profile therefore does not expose a parseable carbon.txt relationship. This is only the declared optional-file check, not proof of high emissions, absent sustainability work or failure of all WSG 3.13.",
+          "confidence": "high",
+          "nextEvidence": "If beneficial for transparency, publish a valid carbon.txt or supported delegation with service/provider relationships and independently inspect the linked evidence; reassess using the declared profile."
+        },
+        {
+          "checkId": "hosting-evidence",
+          "guideline": "4.1",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "disclosures.json:sites:0",
+            "staged.json:discovery:0",
+            "source.json:files:4"
+          ],
+          "rationale": "No retrieved hosting sustainability evidence or carbon record identifies an independently corroborated operational scope for this origin. Candidate Dockerfile comments describe Heroku production, but this owner-supplied source has deploymentVerified=false and does not establish provider/account/region, energy mix, operational metrics or sustainable hosting. No green-hosting flag is justified.",
+          "confidence": "high",
+          "nextEvidence": "Obtain origin-to-provider/region deployment evidence plus current provider operational disclosures or independently verified hosting evidence."
+        },
+        {
+          "checkId": "source-reuse",
+          "guideline": "3.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:11",
+            "source.json:files:12",
+            "source.json:files:13",
+            "source.json:files:14",
+            "source.json:files:16",
+            "source.json:files:17"
+          ],
+          "rationale": "In clean candidate revision 31a4547eb1f6de55baea84269723313784f6b544, base.html lines 99\u2013132 includes shared skip/theme/copy/search components; home_page.html line 1 and search.html line 1 concretely extend that base. main.js uses component initialization for MobileMenu/CopyButton. The modal and full-page search forms serve different contexts, so similar fields alone do not prove a harmful duplicate maintenance path. This passes selected-source reuse only; deploymentVerified=false and unselected modules remain outside scope.",
+          "confidence": "high",
+          "nextEvidence": "Inspect more concrete component call sites only if extending the source scope."
+        },
+        {
+          "checkId": "source-dependencies",
+          "guideline": "3.12",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:2",
+            "source.json:files:3",
+            "source.json:files:4",
+            "source.json:files:7"
+          ],
+          "rationale": "The clean candidate revision lists direct Python and npm dependencies in pyproject.toml and package.json. Dockerfile/CI explicitly use npm ci and uv sync --frozen, demonstrating an intended repeatable resolution mechanism. However, uv.lock and package-lock.json are metadata_only: their validity, consistency and resolved contents are not exposed. Thus the complete repeatability expectation cannot pass from filenames alone. Installed/deployed versions, necessity, vulnerabilities and freshness are not established; deploymentVerified=false.",
+          "confidence": "high",
+          "nextEvidence": "Capture bounded lockfile root/manifest-resolution evidence or a clean frozen install receipt at the same revision, then separately verify deployed inventory if needed."
+        },
+        {
+          "checkId": "source-runtime",
+          "guideline": "3.15",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:4",
+            "source.json:files:5",
+            "source.json:files:6",
+            "source.json:files:7",
+            "source.json:files:8"
+          ],
+          "rationale": "At clean candidate revision 31a4547eb1f6de55baea84269723313784f6b544, pyproject requires Python >=3.14, .python-version declares 3.14 and Dockerfile uses python:3.14; README requests 3.14 or higher. .nvmrc declares 26, Dockerfile frontend uses node:26 and CI setup-node reads .nvmrc. These selected declarations are mutually consistent for the documented path. Dockerfile.dev is unselected, deploymentVerified=false, and no authoritative release reference supports a latest-stable or deployed-version claim.",
+          "confidence": "high",
+          "nextEvidence": "Capture Dockerfile.dev and deployed runtime attestations if expanding beyond selected declaration consistency."
+        },
+        {
+          "checkId": "source-automation",
+          "guideline": "4.6",
+          "outcome": "fail",
+          "evidenceIds": [
+            "source.json:files:7"
+          ],
+          "rationale": "In clean candidate revision 31a4547eb1f6de55baea84269723313784f6b544, ci.yml lines 3\u20138 runs on pushes to main and renovate/** as well as every pull_request. For a renovate branch with an open PR, the same update matches both events and runs both docker-build-check and test workflows. The 55-line selected workflow has no event exclusion, concurrency/cancel-in-progress or other equivalent control. This demonstrates a duplicate-trigger path in candidate automation; execution history/energy and its current repository deployment are not established. Necessary validation jobs should be retained.",
+          "confidence": "medium",
+          "nextEvidence": "Verify an open Renovate PR run pair and required checks, then deduplicate matching event contexts or cancel superseded runs without losing branch validation."
+        },
+        {
+          "checkId": "source-maintenance",
+          "guideline": "5.10",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:8",
+            "source.json:files:9",
+            "source.json:files:7"
+          ],
+          "rationale": "In the clean candidate revision, README lines 23\u2013103 documents dependencies, local/container setup and development commands; lines 105\u2013114 identify contribution, lint and test commands. CONTRIBUTING explains content/translation coordination, permissions, release copying and screenshot refresh. CI concretely invokes lint/tests. This passes documentation disclosure for selected candidate source, not proof of staffing, regular execution or a complete sustainability/security strategy; deploymentVerified=false.",
+          "confidence": "high",
+          "nextEvidence": "Owner maintenance cadence, staffing and operational records would support the broader guideline."
+        },
+        {
+          "checkId": "source-change-docs",
+          "guideline": "5.12",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "source.json:files:9"
+          ],
+          "rationale": "The live New in Wagtail 8.1 page gives identifiable versioned user-facing changes, practical effects and a link to full technical release notes; navigation lists earlier releases and the page is dated November 3, 2026. About links historical copies in the guide repository. Candidate CONTRIBUTING lines 37\u201365 explains matching latest documentation and screenshot copies to releases. Thus useful change documentation is actually visible; candidate deploymentVerified=false does not erase this independent runtime evidence, while receipt by every affected user is not proven.",
+          "confidence": "high",
+          "nextEvidence": "Review translated and older release guidance when expanding change-history coverage."
+        },
+        {
+          "checkId": "source-budgets",
+          "guideline": "5.24",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:4",
+            "source.json:files:7",
+            "source.json:files:8",
+            "source.json:files:9"
+          ],
+          "rationale": "None of the selected captured manifests, Dockerfile, CI workflow or contributor documentation defines a concrete asset/performance limit plus an exceedance response. The package build script and linters alone do not establish a relevant budget. Build configuration such as vite.config.ts is referenced but not captured; therefore this is a bounded search gap, not proof the project or organization lacks budgets. Candidate deploymentVerified=false.",
+          "confidence": "high",
+          "nextEvidence": "Capture build-budget configuration and its failing/warning threshold, enforcement behavior and owner-approved rationale, or obtain the relevant project budget document."
+        },
+        {
+          "checkId": "source-open-source",
+          "guideline": "5.25",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:8",
+            "source.json:files:9",
+            "source.json:files:10",
+            "probes.json:pages:5"
+          ],
+          "rationale": "The selected clean candidate LICENSE gives source/binary redistribution terms with conditions, while README/CONTRIBUTING explain code, documentation, issue and translation participation routes. Separately the live site footer declares CC0 for content, and About links its historical repository and contribution/issues routes. This supports scoped reuse terms and ways to contribute; it does not prove ongoing upstream contributions, and candidate code deployment is unverified.",
+          "confidence": "high",
+          "nextEvidence": "No further evidence needed for these selected reuse/contribution disclosures; verify upstream activity only for a broader claim."
+        }
+      ],
+      "topFindings": [
+        {
+          "checkId": "preference-behavior",
+          "priority": "medium",
+          "title": "Follow live system theme changes",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5"
+          ],
+          "summary": "Fresh dark loads work, but all six already-open pages retain light colors after the system preference changes.",
+          "recommendedAction": "Update theme preference handling while preserving explicit user overrides, then test light-to-dark and dark-to-light changes without reloading.",
+          "status": "observed defect"
+        },
+        {
+          "checkId": "media-delivery",
+          "priority": "medium",
+          "title": "Trial deferred screenshot loading and responsive renditions",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "staged.json:runs:2",
+            "staged.json:runs:4"
+          ],
+          "summary": "Instructional images are eagerly fetched at 800\u2013900 px even when rendered at 320 px. The image-guide and release pages receive about 233 kB and 354 kB initially, with no extra bytes after scroll. WebP delivery already works.",
+          "recommendedAction": "Trial native lazy loading below the first viewport and compare responsive variants at intended densities, preserving screenshot text legibility and full-detail access before claiming savings.",
+          "status": "investigation"
+        },
+        {
+          "checkId": "source-automation",
+          "priority": "medium",
+          "title": "Deduplicate the Renovate push and PR validation path",
+          "evidenceIds": [
+            "source.json:files:7"
+          ],
+          "summary": "The selected candidate workflow triggers on renovate/** pushes and all pull requests with no equivalent deduplication or superseded-run cancellation. An open Renovate PR update matches both.",
+          "recommendedAction": "Confirm the run pair and required-check names, then filter duplicate events or cancel superseded runs while retaining necessary build and test coverage.",
+          "status": "candidate source defect; deployment unverified"
+        },
+        {
+          "checkId": "layout",
+          "priority": "low",
+          "title": "Verify the mobile navigation task before accepting responsive support",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:journeys:0"
+          ],
+          "summary": "All six pages fit 360 px without horizontal overflow, but the sidebar is hidden and the replacement mobile menu was not activated. The recorded search journey is desktop only.",
+          "recommendedAction": "At 360 px, open and close navigation/search and complete the image-guide task, including keyboard traversal and a representative real device.",
+          "status": "evidence gap"
+        }
+      ],
+      "evidenceIndex": {
+        "staged.json:runs:0": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/0",
+          "sourceSHA256": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2"
+        },
+        "staged.json:runs:1": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/1",
+          "sourceSHA256": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2"
+        },
+        "staged.json:runs:2": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/2",
+          "sourceSHA256": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2"
+        },
+        "staged.json:runs:3": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/3",
+          "sourceSHA256": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2"
+        },
+        "staged.json:runs:4": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/4",
+          "sourceSHA256": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2"
+        },
+        "staged.json:runs:5": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/5",
+          "sourceSHA256": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2"
+        },
+        "staged.json:discovery:0": {
+          "artifact": "staged.json",
+          "jsonPointer": "/discovery/0",
+          "sourceSHA256": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2"
+        },
+        "probes.json:pages:0": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/0",
+          "sourceSHA256": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb"
+        },
+        "probes.json:pages:1": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/1",
+          "sourceSHA256": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb"
+        },
+        "probes.json:pages:2": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/2",
+          "sourceSHA256": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb"
+        },
+        "probes.json:pages:3": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/3",
+          "sourceSHA256": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb"
+        },
+        "probes.json:pages:4": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/4",
+          "sourceSHA256": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb"
+        },
+        "probes.json:pages:5": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/5",
+          "sourceSHA256": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb"
+        },
+        "probes.json:journeys:0": {
+          "artifact": "probes.json",
+          "jsonPointer": "/journeys/0",
+          "sourceSHA256": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb"
+        },
+        "disclosures.json:sites:0": {
+          "artifact": "disclosures.json",
+          "jsonPointer": "/sites/0",
+          "sourceSHA256": "b03f03d8615fc580ff12bc99339187563be04cce670b89e2d8e8d1f4ba6a6b34"
+        },
+        "source.json:files:0": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/0",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:1": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/1",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:2": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/2",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:3": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/3",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:4": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/4",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:5": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/5",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:6": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/6",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:7": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/7",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:8": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/8",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:9": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/9",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:10": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/10",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:11": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/11",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:12": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/12",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:13": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/13",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:14": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/14",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:15": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/15",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:16": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/16",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:17": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/17",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:18": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/18",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        },
+        "source.json:files:19": {
+          "artifact": "source.json",
+          "jsonPointer": "/files/19",
+          "sourceSHA256": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+        }
+      }
+    }
+  ]
+}

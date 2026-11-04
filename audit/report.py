@@ -26,7 +26,7 @@ def display_bytes(value: float) -> str:
     return (
         f"{value / 1_000_000:.2f} MB"
         if abs(value) >= 1_000_000
-        else f"{value / 1000:.1f} KB"
+        else f"{value / 1000:.1f} kB"
     )
 
 
@@ -56,7 +56,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                         "id": "phase-traffic",
                         "metric": "received_bytes",
                         "unit": "B",
-                        "displayUnit": "KB",
+                        "displayUnit": "kB",
                         "x": "phase",
                         "series": ["pageUrl", "branch"],
                         "aggregation": "none",
@@ -66,7 +66,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                         "id": "incremental-traffic",
                         "metric": "additional_bytes",
                         "unit": "B",
-                        "displayUnit": "KB",
+                        "displayUnit": "kB",
                         "x": "phase",
                         "series": ["pageUrl", "branch"],
                         "aggregation": "none",
@@ -76,7 +76,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                         "id": "resource-composition",
                         "metric": "resource_bytes",
                         "unit": "B",
-                        "displayUnit": "KB",
+                        "displayUnit": "kB",
                         "x": "category",
                         "series": ["runId", "phase"],
                         "aggregation": "sum within a run and phase only",

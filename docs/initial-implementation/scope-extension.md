@@ -1,6 +1,6 @@
 # Broader WSG and STAR evidence
 
-The expanded audit adds sitemap inventory, a reproducible page sample, metadata, preference states, expected files, error recovery, and public-policy review. It follows the [expanded model comparison](expanded-benchmark.md); its new observations have not themselves been through another model campaign. The coordinator reviewed them and updated the separate [guide report](guide-audit.md) and [Wagtail.org report](wagtail-audit.md).
+The expanded audit adds sitemap inventory, a reproducible page sample, metadata, preference states, expected files, error recovery, and public-policy review. It follows the [expanded model comparison](expanded-benchmark.md); its new observations have not themselves been through another model campaign. The coordinator reviewed them for the earlier audit drafts, which have since been removed. This page retains the experiment’s original observations; [current reports](../reports/README.md) use separate fresh captures.
 
 ## Scope and sampling
 

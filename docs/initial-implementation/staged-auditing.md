@@ -80,7 +80,7 @@ Raw confidence and version fields are retained as tool outputs, not calibrated p
 
 ## Executed observations
 
-The [staged evidence](assets/staged-audit.json) records actual measurements, carbon.txt discovery, and Wappalyzer results. The [WIP audit report](wagtail-audit.md) uses initial-load figures as its primary table and separates later interaction traffic. Earlier cold/warm captures and model reviews remain linked as historical evidence; the model arms have not yet been rerun against this revised collection protocol and skill.
+The [staged evidence](assets/staged-audit.json) records actual measurements, carbon.txt discovery, and Wappalyzer results. The earlier report draft used initial-load figures as its primary table and separated later interaction traffic; that draft has since been removed. Earlier cold/warm captures and model reviews remain linked as historical evidence; the model arms have not yet been rerun against this revised collection protocol and skill.
 
 ## Run and verify
 

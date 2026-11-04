@@ -1,0 +1,76 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://guide.wagtail.org/en/",
+      "task": "Find the right documentation section and orient a new CMS editor",
+      "rationale": "Landing page and global navigation",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "overview",
+      "url": "https://guide.wagtail.org/en/getting-started/overview/",
+      "task": "Learn the core Wagtail editor interface",
+      "rationale": "Introductory article with screenshot",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "manage-images",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "task": "Learn how to add and manage images in the CMS",
+      "rationale": "Illustrated how-to article and search destination",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "url": "https://guide.wagtail.org/en/search/?query=images",
+      "task": "Find image-management documentation through search",
+      "rationale": "Public search listing and pagination",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "release-notes",
+      "url": "https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/",
+      "task": "Understand changes in the current development release",
+      "rationale": "Long illustrated release notes",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "url": "https://guide.wagtail.org/en/about/",
+      "task": "Understand who maintains the guide and how to contribute",
+      "rationale": "About and project disclosure page",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ]
+}

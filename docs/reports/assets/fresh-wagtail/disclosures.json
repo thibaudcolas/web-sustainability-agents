@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "carbon-review-v1",
+  "sourceSHA256": "c41c6e1bb768b84f3b175788e433e424078083fa87e5aa4064c1c302b49d4528",
+  "scriptSHA256": "cb57ab2b96ca9fb4d05a907ba4d4269274f31318e32244dcfdf8bc4877c9dd60",
+  "sites": [
+    {
+      "site": "https://wagtail.org",
+      "presence": "present",
+      "records": [
+        {
+          "pointer": "/carbonAttempts/0",
+          "url": "https://wagtail.org/carbon.txt",
+          "finalUrl": "https://wagtail.org/carbon.txt",
+          "discoveredVia": "root",
+          "sha256": "b22e62c7365a4c9d4bc63878c3d5ce0ad709a39b9cb2e5cb54db0fca73569572",
+          "capturedAt": "2026-11-04T19:27:57.776273+00:00",
+          "review": {
+            "schemaVersion": "carbon-review-v1",
+            "declaredVersion": "0.4",
+            "interpretationProfile": "v0.x common fields; unknown versions retained without schema conformance claims",
+            "syntaxReference": "https://carbontxt.org/syntax",
+            "schemaValidated": false,
+            "structuralIssues": [],
+            "disclosures": [
+              {
+                "pointer": "/org/disclosures/0",
+                "declaration": {
+                  "doc_type": "sustainability-page",
+                  "url": "https://wagtail.org/sustainability/",
+                  "domain": "wagtail.org",
+                  "title": "Sustainability commitments"
+                },
+                "usableUrl": true,
+                "domainScope": "exact_host_match",
+                "validityAtCapture": "not_declared",
+                "unresolvedCertificationReferences": [],
+                "claimsVerified": false,
+                "interpretation": "Review document organization, audited service, method, period, and supporting evidence. A historical report remains historical evidence after its declared validity ends.",
+                "retrievalEvidence": [
+                  {
+                    "pointer": "/documents/0",
+                    "status": 200,
+                    "sha256": "48cfa9cfab552cf797d7cb7f7bedaa3f9eef9f98797838fb67c92305bbbfb344",
+                    "finalUrl": "https://wagtail.org/sustainability/",
+                    "truncated": false,
+                    "textAvailable": true
+                  }
+                ],
+                "retrievalStatus": "retrieved_within_discovery_scope"
+              },
+              {
+                "pointer": "/org/disclosures/1",
+                "declaration": {
+                  "doc_type": "annual-report",
+                  "url": "https://wagtail.org/blog/estimating-wagtail-websites-emissions/",
+                  "domain": "wagtail.org",
+                  "valid_until": "2023-12-31",
+                  "title": "Estimating Wagtail websites emissions in 2023"
+                },
+                "usableUrl": true,
+                "domainScope": "exact_host_match",
+                "validityAtCapture": "past_declared_validity",
+                "unresolvedCertificationReferences": [],
+                "claimsVerified": false,
+                "interpretation": "Review document organization, audited service, method, period, and supporting evidence. A historical report remains historical evidence after its declared validity ends.",
+                "retrievalEvidence": [
+                  {
+                    "pointer": "/documents/2",
+                    "status": 200,
+                    "sha256": "60cf4b2c73ca0313d197e2a4b577a6c7bd95a0f662b6a95f9f2272bad9918c3d",
+                    "finalUrl": "https://wagtail.org/blog/estimating-wagtail-websites-emissions/",
+                    "truncated": false,
+                    "textAvailable": true
+                  }
+                ],
+                "retrievalStatus": "retrieved_within_discovery_scope"
+              },
+              {
+                "pointer": "/org/disclosures/2",
+                "declaration": {
+                  "doc_type": "annual-report",
+                  "url": "https://wagtail.org/blog/wagtail-2024-carbon-footprint/",
+                  "domain": "wagtail.org",
+                  "valid_until": "2024-12-31",
+                  "title": "Wagtail 2024 carbon footprint"
+                },
+                "usableUrl": true,
+                "domainScope": "exact_host_match",
+                "validityAtCapture": "past_declared_validity",
+                "unresolvedCertificationReferences": [],
+                "claimsVerified": false,
+                "interpretation": "Review document organization, audited service, method, period, and supporting evidence. A historical report remains historical evidence after its declared validity ends.",
+                "retrievalEvidence": [
+                  {
+                    "pointer": "/documents/3",
+                    "status": 200,
+                    "sha256": "2c998834d5e2af462c119b718c672e0842454709b1c199364a9487433b698640",
+                    "finalUrl": "https://wagtail.org/blog/wagtail-2024-carbon-footprint/",
+                    "truncated": false,
+                    "textAvailable": true
+                  }
+                ],
+                "retrievalStatus": "retrieved_within_discovery_scope"
+              },
+              {
+                "pointer": "/org/disclosures/3",
+                "declaration": {
+                  "doc_type": "web-page",
+                  "url": "https://wagtail.org/digital-emissions/",
+                  "domain": "wagtail.org",
+                  "title": "Digital emissions"
+                },
+                "usableUrl": true,
+                "domainScope": "exact_host_match",
+                "validityAtCapture": "not_declared",
+                "unresolvedCertificationReferences": [],
+                "claimsVerified": false,
+                "interpretation": "Review document organization, audited service, method, period, and supporting evidence. A historical report remains historical evidence after its declared validity ends.",
+                "retrievalEvidence": [
+                  {
+                    "pointer": "/documents/4",
+                    "status": 200,
+                    "sha256": "ebd07d8e6660b212a4a685b6a41b2332ec66a8dd24f6b7ed56d56881f25483d3",
+                    "finalUrl": "https://wagtail.org/digital-emissions/",
+                    "truncated": false,
+                    "textAvailable": true
+                  }
+                ],
+                "retrievalStatus": "retrieved_within_discovery_scope"
+              }
+            ],
+            "providers": [
+              {
+                "pointer": "/upstream/services/0",
+                "declaration": {
+                  "domain": "cloudflare.com",
+                  "service_type": "content-delivery-network"
+                },
+                "relationshipStatus": "self_declared",
+                "greenHostingVerified": false
+              },
+              {
+                "pointer": "/upstream/services/1",
+                "declaration": {
+                  "domain": "heroku.com",
+                  "service_type": [
+                    "platform-as-a-service",
+                    "database",
+                    "cache"
+                  ]
+                },
+                "relationshipStatus": "self_declared",
+                "greenHostingVerified": false
+              },
+              {
+                "pointer": "/upstream/services/2",
+                "declaration": {
+                  "domain": "aws.amazon.com",
+                  "service_type": "object-storage"
+                },
+                "relationshipStatus": "self_declared",
+                "greenHostingVerified": false
+              },
+              {
+                "pointer": "/upstream/services/3",
+                "declaration": {
+                  "domain": "github.com",
+                  "service_type": "ci-cd"
+                },
+                "relationshipStatus": "self_declared",
+                "greenHostingVerified": false
+              }
+            ],
+            "certificationSchemes": [],
+            "hostingModelInput": "unchanged; self-declaration alone does not select renewable electricity in SWDM",
+            "reviewQuestions": [
+              "Which declarations cover this exact origin and service rather than its parent organization?",
+              "Do document methods, periods, boundaries, and arithmetic support the reported footprint?",
+              "Which declared provider serves the origin, CDN, storage, or build system, and what independent evidence supports its energy claim?",
+              "Are certification references and historical reports applicable to the current claim?"
+            ]
+          }
+        }
+      ],
+      "documentCount": 6,
+      "claimsVerified": false,
+      "scopeNote": "Presence, parseability, declared relationships, retrieval, and substantiation are separate results. Missing carbon.txt does not establish absence of a sustainability policy."
+    }
+  ]
+}

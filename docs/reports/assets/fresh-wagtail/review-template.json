@@ -1,0 +1,308 @@
+{
+  "site": "https://wagtail.org",
+  "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+  "reviewer": {
+    "harness": "",
+    "model": "",
+    "reasoning": ""
+  },
+  "rows": [
+    {
+      "checkId": "distraction",
+      "guideline": "2.5",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "choice",
+      "guideline": "2.6",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "comprehension",
+      "guideline": "2.7",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "consistency",
+      "guideline": "2.8",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "motion",
+      "guideline": "2.10",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "notifications",
+      "guideline": "2.12",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "documents",
+      "guideline": "2.13",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "unused-code",
+      "guideline": "3.2",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "components",
+      "guideline": "3.3",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "layout",
+      "guideline": "3.10",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "impact-choice",
+      "guideline": "5.4",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "journeys",
+      "guideline": "2.4",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "media-delivery",
+      "guideline": "2.9",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "font-delivery",
+      "guideline": "2.11",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "semantic-forms",
+      "guideline": "3.6",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "metadata",
+      "guideline": "3.8",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "preference-behavior",
+      "guideline": "3.9",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "no-js-content",
+      "guideline": "2.17",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "api-requests",
+      "guideline": "3.11",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "guideline": "4.2",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "text-compression",
+      "guideline": "4.3",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "keyboard-path",
+      "guideline": "3.6",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "guideline": "2.1",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "guideline": "3.13",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "guideline": "4.1",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-reuse",
+      "guideline": "3.4",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-dependencies",
+      "guideline": "3.12",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-runtime",
+      "guideline": "3.15",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-automation",
+      "guideline": "4.6",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-maintenance",
+      "guideline": "5.10",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-change-docs",
+      "guideline": "5.12",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-budgets",
+      "guideline": "5.24",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    },
+    {
+      "checkId": "source-open-source",
+      "guideline": "5.25",
+      "outcome": "untested",
+      "evidenceIds": [],
+      "rationale": "This check has not been reviewed yet.",
+      "confidence": "unknown",
+      "nextEvidence": "Apply the scoped check to the cited evidence."
+    }
+  ]
+}

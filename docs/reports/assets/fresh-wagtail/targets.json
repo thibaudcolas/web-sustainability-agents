@@ -1,0 +1,192 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://wagtail.org/",
+      "task": "Learn what Wagtail offers and choose the next step",
+      "rationale": "Marketing landing page with images and native video",
+      "branches": [
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-out-wagtail-cookie"
+            }
+          ]
+        },
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-in-wagtail-cookie"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://wagtail.org/sustainability/"
+      ]
+    },
+    {
+      "id": "features",
+      "url": "https://wagtail.org/features/",
+      "task": "Evaluate the CMS features and locate a relevant capability",
+      "rationale": "Feature overview with illustrated content",
+      "branches": [
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-out-wagtail-cookie"
+            }
+          ]
+        },
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-in-wagtail-cookie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release-article",
+      "url": "https://wagtail.org/blog/wagtail-8-1/",
+      "task": "Read the current release announcement and understand new capabilities",
+      "rationale": "Long-form blog article with images and embedded media",
+      "branches": [
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-out-wagtail-cookie"
+            }
+          ]
+        },
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-in-wagtail-cookie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "url": "https://wagtail.org/search/?query=sustainability",
+      "task": "Find the project sustainability policy through search",
+      "rationale": "Public search listing and pagination",
+      "branches": [
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-out-wagtail-cookie"
+            }
+          ]
+        },
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-in-wagtail-cookie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sustainability",
+      "url": "https://wagtail.org/sustainability/",
+      "task": "Understand the project sustainability policy and its scope",
+      "rationale": "Public sustainability claim and policy page",
+      "branches": [
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-out-wagtail-cookie"
+            }
+          ]
+        },
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-in-wagtail-cookie"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://wagtail.org/sustainability/"
+      ]
+    },
+    {
+      "id": "privacy",
+      "url": "https://wagtail.org/privacy/",
+      "task": "Understand data handling and tracking disclosures",
+      "rationale": "Public privacy policy",
+      "branches": [
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-out-wagtail-cookie"
+            }
+          ]
+        },
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-in-wagtail-cookie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "url": "https://wagtail.org/contact/",
+      "task": "Find the right way to contact the project",
+      "rationale": "Public contact task; no message or form submission",
+      "branches": [
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-out-wagtail-cookie"
+            }
+          ]
+        },
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#opt-in-wagtail-cookie"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

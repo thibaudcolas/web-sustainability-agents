@@ -161,13 +161,15 @@ def illustrations(path: Path | None, site: str, check_ids: set[str]) -> JSON:
     return manifest
 
 
-def page_name(url: str) -> str:
+def page_name(url: str, title: str | None = None) -> str:
     """Give public URLs short readable labels without dropping their link targets."""
     path = urlsplit(url).path.strip("/")
     if not path or re.fullmatch(r"[a-z]{2}(?:-[A-Za-z]{2})?", path):
         return "Homepage"
     if path.split("/")[-1] == "search":
         return "Search results"
+    if title:
+        return re.split(r" \| | [-–—] ", title, maxsplit=1)[0].strip()
     return path.split("/")[-1].replace("-", " ").capitalize()
 
 
@@ -285,6 +287,22 @@ def render(
     staged = read(session / "staged.json")
     probes = read(session / "probes.json")
     source = read(session / "source.json")
+    has_consent = any(run["branch"] != "no_banner" for run in staged["runs"])
+    page_labels = {
+        run["url"]: page_name(
+            run["url"],
+            next(
+                (
+                    phase.get("state", {}).get("title")
+                    for phase in run["phases"]
+                    if phase["phase"] == "initial"
+                ),
+                None,
+            ),
+        )
+        for run in staged["runs"]
+    }
+    repeated_visits = len(staged["runs"]) > len(page_labels)
     counts = score["counts"]
     titles = {row["number"]: row for row in score["guidelines"]}
     edited = {row["checkId"]: row for row in editorial["checks"]}
@@ -298,25 +316,28 @@ def render(
     lines = [
         f"# {urlsplit(packet['site']).netloc}: sustainability audit",
         "",
-        prose(editorial["overview"]),
-        "",
         "## At a glance",
         "",
         '<div class="grid cards" markdown="1">',
         "",
         f"- **{number}** — scoped audit score<br>{counts['pass']} passing, {counts['fail']} with problems, {counts['cantTell']} needing more evidence.",
         f"- **{len(probes['pages'])} pages** reviewed<br>{len(probes['journeys'])} {journey_label} and {len(source['files'])} selected source files.",
-        f"- **{score['checkedGuidelines']} of {score['totalGuidelines']} guideline groups** attempted<br>{counts['untested']} not assessed. Tests cover selected aspects of each guideline.",
+        f"- **{score['checkedGuidelines']} of {score['totalGuidelines']} guideline groups** scored<br>{counts['untested']} untested; {counts['inapplicable']} not applicable. Tests cover selected aspects of each guideline.",
         "",
         "</div>",
         "",
         '!!! info "What the score means"',
         "",
-        f"    {counts['pass']} of {score['checkedGuidelines']} attempted guideline groups passed this audit's selected checks. Unknowns stay in the denominator, so missing evidence lowers the score without becoming a site defect. This is not a full WSG conformance grade or a ranking against other sites.",
+        f"    {counts['pass']} of {score['checkedGuidelines']} scored guideline groups passed this audit's selected checks. Unknowns stay in the denominator, so missing evidence lowers the score without becoming a site defect. This is not a full WSG conformance grade or a ranking against other sites.",
         "",
         "## First-load page sizes",
         "",
-        "Data downloaded when a visitor first opens the page, before clicking a cookie banner or scrolling. **kB = 1,000 bytes; MB = 1,000,000 bytes.** Ranges show separate visits, not a modeled average.",
+        "Data downloaded when a visitor first opens the page, before clicking or scrolling. **kB = 1,000 bytes; MB = 1,000,000 bytes.** "
+        + (
+            "Ranges show separate visits, not a modeled average."
+            if repeated_visits
+            else "Each figure comes from one fresh visit."
+        ),
         "",
         *table_start(
             "First-load page sizes", ["Page", "First load", "Measurement completeness"]
@@ -343,7 +364,7 @@ def render(
         lines.append(
             table_row(
                 [
-                    anchor(page_name(url), url),
+                    anchor(page_labels[url], url),
                     size_range(values),
                     "Complete within the test conditions"
                     if complete
@@ -371,11 +392,20 @@ def render(
         if run.get("rating", {}).get("status") == "calculated"
     ]
     if ratings:
+        eligible = [
+            run["rating"]
+            for run in staged["runs"]
+            if run.get("rating", {}).get("status") == "calculated"
+        ]
+        footprint = [item["trace"]["co2"]["total"] for item in eligible]
+        profile = eligible[0]["profile"]
         lines += [
             f"**Digital Carbon Ratings:** {', '.join(dict.fromkeys(ratings))} for the eligible initial visits, using the fixed comparison model. This estimates a page-load footprint; it does not establish whole-site sustainability.",
             "",
+            f"The eligible visits model **{min(footprint):.3g}–{max(footprint):.3g} gCO₂e per first visit**, using Sustainable Web Design Model version {profile['version']} through `{profile['library']}`. The comparison assumes {profile['firstVisitPercentage']:.0%} first visits and gives no green-hosting credit. These are fixed model assumptions, not verified electricity-supply facts. The rating remains provisional because the capture protocol has not been independently validated.",
+            "",
         ]
-    lines += ["## Priorities", ""]
+    lines += ["## Priorities", "", prose(editorial["overview"]), ""]
     used_images: set[str] = set()
     for index, finding in enumerate(editorial["findings"], 1):
         original = review["topFindings"][index - 1]
@@ -420,20 +450,29 @@ def render(
             "",
         ]
     lines += [
-        "## After cookie choices and scrolling",
+        "## After cookie choices and scrolling"
+        if has_consent
+        else "## After waiting and scrolling",
         "",
-        "Each cookie choice starts a separate fresh visit. The sizes below are **cumulative totals**, including the first load. They help locate later downloads; they are not additional amounts to add together or guaranteed savings.",
+        (
+            "Each cookie choice starts a separate fresh visit. "
+            if has_consent
+            else "No cookie banner was observed in this sample. The intermediate checkpoint waits without clicking, then the page is scrolled to the bottom. "
+        )
+        + "The sizes below are **cumulative totals**, including the first load. They help locate later downloads; they are not additional amounts to add together or guaranteed savings.",
         "",
         '??? note "Compare the interaction measurements"',
         "",
         *[
             "    " + line
             for line in table_start(
-                "Cumulative data after cookie choices and scrolling",
+                "Cumulative data after cookie choices and scrolling"
+                if has_consent
+                else "Cumulative data after waiting and scrolling",
                 [
                     "Page",
-                    "Cookie choice tested",
-                    "After cookie choice",
+                    "Cookie choice tested" if has_consent else "Intermediate action",
+                    "After cookie choice" if has_consent else "After waiting",
                     "After scrolling to the bottom",
                 ],
             )
@@ -454,7 +493,7 @@ def render(
             "    "
             + table_row(
                 [
-                    anchor(page_name(run["url"]), run["url"]),
+                    anchor(page_labels[run["url"]], run["url"]),
                     html.escape(choice),
                     *values,
                 ]
@@ -548,6 +587,13 @@ def render(
         ("staged.json", "Recorded transfers and disclosures"),
         ("probes.json", "Browser observations"),
         ("source.json", "Selected source evidence"),
+        ("review-handoffs.json", "Specialist reviews and reconciliation"),
+        ("chart-data.json", "Chart-ready measurements and scoring data"),
+        ("chart-data.csv", "Measurement table for charts"),
+        (
+            "session.zip",
+            "Frozen session, skill snapshots and reproduction instructions",
+        ),
         ("manifest.json", "Publication hashes"),
     ]:
         if (session / name).exists():

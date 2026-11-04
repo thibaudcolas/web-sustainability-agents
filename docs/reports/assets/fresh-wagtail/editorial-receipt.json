@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://wagtail.org",
+  "task": "/root/fresh_wagtail_report",
+  "createdAt": "2026-11-04T19:47:33.715710+00:00",
+  "writer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "reviewSHA256": "04ebbd19b85ede13304facec78b14229ee60adc1e137bfb5e551e1fb0027968f",
+  "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+  "editorialSHA256": "ada73d1eebe96e44e5477a9322484d4c1844709a60185a52edf6ec002063739d",
+  "instructions": "Fresh owner-facing report from the reconciled seven-page, 33-check session; preserve original outcomes and top-five order. No new page audits, rescoring or inherited measurements.",
+  "skillsRead": [
+    {
+      "path": ".agents/skills/sustainability-report/SKILL.md",
+      "sha256": "5ec3d46e65f8b6a7b7e34363b86c17c5945c0bdcb1a1c6e947334e2e8a12638f"
+    },
+    {
+      "path": ".agents/skills/sustainability-report/references/writing.md",
+      "sha256": "1a0689b813bdb0f3fd9234e114f63ce851c318a84a8ea773a890c70d3e536161"
+    },
+    {
+      "path": ".agents/skills/sustainability-report/assets/report-template.md",
+      "sha256": "eb374597827e5fae5a2069e4bd7940f359ee617a0c234a2cb443d1b03d1fb27e"
+    },
+    {
+      "path": ".agents/skills/sustainability-report/references/editorial.schema.json",
+      "sha256": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c"
+    }
+  ],
+  "reviewInputs": [
+    {
+      "path": ".audit-work/fresh-wagtail/session-1/review.json",
+      "sha256": "04ebbd19b85ede13304facec78b14229ee60adc1e137bfb5e551e1fb0027968f"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/session-1/packet.json",
+      "sha256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/session-1/rubric.json",
+      "sha256": "fe698d4f935d782181555cd9892a7987ba3e18e198dcba477a9710db72dd0091"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/session-1/probes.json",
+      "sha256": "c741ecf24ee59087039d793306a8cc24e9cb9df39591406d21faaf51829d1853"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/session-1/staged.json",
+      "sha256": "c41c6e1bb768b84f3b175788e433e424078083fa87e5aa4064c1c302b49d4528"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/session-1/source.json",
+      "sha256": "dc1f47aa54f5093b4bb302467fcd73300179365bfa7b340bf57a3e6b8ed77999"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/session-1/disclosures.json",
+      "sha256": "562036b4d51d359a5ac5f11c421d16b9dfcbaa8adde4a3a44140a4f26cde8dc1"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/review-tasks/evidence.result.json",
+      "sha256": "7bcc7b7b73b077c4c0b41ad6d1416d8375a183eb2427173bf695b8c088d7545d"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/review-tasks/claims.result.json",
+      "sha256": "9e469942d7816cf071309a13eda25b64a653566cd65570056b41e72e6bf538df"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/review-tasks/guidelines.result.json",
+      "sha256": "d19fd1c22ddab4bd169913b7b10819b24dbcf6263f7c004ba6cae26a1b52fcce"
+    },
+    {
+      "path": ".audit-work/fresh-wagtail/review-tasks/resolutions.json",
+      "sha256": "2217dca295550c27dbc4c10b3acccb174b823af7f54294cd051b3a990cbf1eb4"
+    }
+  ],
+  "authority": "session-1/review.json is the reconciled authoritative review. guidelines.result.json is adviser input, not the final judgment.",
+  "editorialProcess": "Written directly by the actual Codex native subagent in this task using the recorded model and reasoning. The receipt records inputs and actions; no model transcript or separate model invocation is fabricated.",
+  "illustrations": {
+    "manifest": "screenshots/manifest.json",
+    "manifestSHA256": "1425ed1e8d11acfa3a7519b2e67cb839b4587eeeb2446b87b9dc4539b3dfc0ba",
+    "inspection": "Both completed PNG files opened with view_image before accepting their alt text and captions. The release view shows the unplayed player with a cookie prompt; the policy view shows the quantity summary. Neither illustrates no-JavaScript contact behavior."
+  },
+  "limitations": [
+    "All 14 staged visits and 42 phases have partial byte accounting; no current carbon rating or annual footprint is produced.",
+    "Local source is clean tracked revision 9fa65385f27c15b83c86a4f6e0e3ac18d4784609; deployed identity is unverified.",
+    "Screenshots are later passive illustrations, with no consent or playback action and no disabled-JavaScript state.",
+    "The root task performs the final themed desktop/narrow preview and publication checks."
+  ]
+}

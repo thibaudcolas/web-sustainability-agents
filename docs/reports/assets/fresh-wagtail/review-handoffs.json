@@ -1,0 +1,1499 @@
+{
+  "schemaVersion": "1.0",
+  "executionMode": "native-subagents",
+  "results": {
+    "guidelines": {
+      "site": "https://wagtail.org",
+      "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+      "reviewer": {
+        "harness": "Codex native subagent",
+        "model": "gpt-6.1-sol",
+        "reasoning": "high"
+      },
+      "rows": [
+        {
+          "checkId": "distraction",
+          "guideline": "2.5",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "The seven public tasks present relevant CMS information, article/search results, policy text and contact routes. Conference/newsletter prompts are static, and initially recorded dialogs and the Copied alert are hidden rather than unsolicited popups. The home video is paused, controls=true, autoplay=false and preload=none; it creates no observed playback interruption. The cookie prompt is a choice prompt rather than an engagement trap, and the opt-out/search journey reaches the policy. This is bounded observation, not every later interaction.",
+          "confidence": "medium",
+          "nextEvidence": "Review longer sessions and opened menus/embedded-player states if extending the sample."
+        },
+        {
+          "checkId": "choice",
+          "guideline": "2.6",
+          "outcome": "fail",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13",
+            "source.json:files:11",
+            "source.json:files:12"
+          ],
+          "rationale": "All seven initial networks send analytics page-view POSTs to Google Analytics before an explicit cookie choice: /g/collect with en=page_view and /j/collect with t=pageview for two different UA properties. Yet the visible prompt offers Opt in/Opt out specifically to measure website use. In all fourteen staged runs GTM, gtag and analytics.js already transfer in the initial phase; either choice adds zero bytes in the bounded after_consent phase. The measured sequence contradicts a meaningful opt-in to those observed measurement requests. This does not establish cookie storage, all collection semantics, visual parity or legal noncompliance. Candidate cookie code records a preference but is not deployment proof.",
+          "confidence": "high",
+          "nextEvidence": "Inspect fresh-profile storage and request payloads across no-choice, accept, reject, reload and withdrawal states. Align optional analytics initialization with the declared choice and verify rendered prominence."
+        },
+        {
+          "checkId": "comprehension",
+          "guideline": "2.7",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "rationale": "Home explains the CMS and next steps; Features organizes editor/developer capabilities; the release article explains API preview status and upgrade implications; search puts Sustainability first; Contact separates general, conduct and security routes. However, Privacy repeatedly describes the Torchbox website/company while metadata calls it the Wagtail.org policy, leaving the intended controller/service relationship unclear for the declared data-handling task. The sustainability page also presents 5,173 tCO2e for 6,431 sites alongside a 12 tCO2e/site average, which is arithmetically inconsistent unless different populations are explained. Full captured page text supports these concerns, while sampled heading arrays truncate before the visible primary content.",
+          "confidence": "medium",
+          "nextEvidence": "Clarify the privacy service/controller relationship and sustainability denominator/period. Capture visible main headings and test terminology with the intended prospective-user audience."
+        },
+        {
+          "checkId": "consistency",
+          "guideline": "2.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "All seven pages repeat Project, Explore, Developers, Community, Support, search and Get started controls, the same footer groups, Switch theme control and cookie option wording. Content types appropriately add search/pagination or article navigation. This observed naming/navigation consistency supports the sampled interface pattern, without proving a documented design system or consistency of all opened menus.",
+          "confidence": "high",
+          "nextEvidence": "Compare opened menus, mobile states and additional content types for broader coverage."
+        },
+        {
+          "checkId": "motion",
+          "guideline": "2.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "No animation is active in the initial desktop snapshots; the home native video is paused and user-controlled. After resize, Home/Features/Sustainability report 5/2/1 running animations, and the same counts remain in reduced_motion with one iteration each. Print transitions create additional transient animation records. The packet records generic targets and current time, but no animated properties, duration, purpose or controls; running entries alone do not establish harmful, decorative or uncontrolled motion. Child-frame playback is not traversed.",
+          "confidence": "medium",
+          "nextEvidence": "Inspect the actual animated properties, durations and purpose in resize/menu/scroll states, then compare settled and cold reduced-motion behavior and embedded-player controls."
+        },
+        {
+          "checkId": "notifications",
+          "guideline": "2.12",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "Every recorded page/state shows zero notification permission requests. Initial dialogs are hidden; the only additional home alert is a hidden Copied confirmation tied to a named copy action. Newsletter signup is optional and no notification is sent during the reading tasks. Browser permission is already denied, so this is bounded absence of attempted permission requests, not all external messaging/subscription behavior.",
+          "confidence": "medium",
+          "nextEvidence": "Use default permission and a deliberately requested signup flow if expanding notification scope."
+        },
+        {
+          "checkId": "documents",
+          "guideline": "2.13",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "The sampled visitor tasks are served as HTML and record no download-attributed or PDF/office/text-file links. Print states hide global navigation, footer/choice furniture and unrelated article recommendations while retaining policy/contact/article reading content; the article retains eight of eleven images after three related author images are removed. This passes print visibility and applicable labels in the declared sample only, not optimized pagination, paper savings or document accessibility. No uninspected downloadable document is claimed equivalent.",
+          "confidence": "medium",
+          "nextEvidence": "Inspect print preview/PDF pagination for long feature and release pages if judging actual paper use."
+        },
+        {
+          "checkId": "unused-code",
+          "guideline": "3.2",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "source.json:files:8",
+            "source.json:files:9",
+            "source.json:files:14"
+          ],
+          "rationale": "The common deployed main script is about 39.5 kB decoded/11.3 kB gzip and CSS about 125.7 kB decoded/21.1 kB gzip. Initial coverage records many unexecuted JavaScript functions, but they include later menu/search/copy interactions; CSS entries are used-rule observations, not a whole unused-byte measure. Article coverage is explicitly scriptsTruncated and child-frame incomplete. Candidate Webpack production mode and cssnano indicate intended minification, but deployed identity is unverified and do not justify deleting unexecuted code. Much larger third-party analytics/player scripts are concrete investigation targets.",
+          "confidence": "high",
+          "nextEvidence": "Collect journey-wide coverage and deployed bundle/source-map attribution, including menus, search, copying, consent and video activation, before removing code."
+        },
+        {
+          "checkId": "components",
+          "guideline": "3.3",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:2",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "source.json:files:10",
+            "source.json:files:15"
+          ],
+          "rationale": "The home native player is correctly user-activated with preload=none and no .mp4 request in staged observations. In contrast, the release article initializes a below-content YouTube iframe before playback is requested, loading embed/player code, fonts, thumbnail and ad/log endpoints. Initial received bytes are already at least 2,025,844/2,031,558 in reject/accept runs; both are partial with child-frame gaps, so these are lower bounds. The article text supports reading without a played video, making a click-to-load facade a strong candidate. However, a usable accessible activation alternative and player task requirements have not been tested, so safe splitting/deferment and exact savings are unresolved.",
+          "confidence": "high",
+          "nextEvidence": "Prototype a named thumbnail/play facade that loads the existing player on request; validate keyboard activation, captions, transcript/fallback and playback before comparing fresh-load transfer."
+        },
+        {
+          "checkId": "layout",
+          "guideline": "3.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "All seven desktop documents are 1290 px wide in a 1280 px viewport and narrow documents are 370 px in a 360 px viewport: a consistent 10 px horizontal overflow. Task text and image counts remain; images generally shrink from 660/440 px to 300 px and the mobile search/menu controls become visible. Recorded visible link/control/image boxes do not identify the overflow source. Only desktop search was activated; mobile menus and affected controls were not exercised. This is an observed overflow requiring diagnosis, not demonstrated content loss or real-device failure.",
+          "confidence": "high",
+          "nextEvidence": "Identify the overflowing deployed element, inspect clipping/scrolling, activate narrow navigation/search, then repeat the declared tasks with keyboard/touch and a real device."
+        },
+        {
+          "checkId": "impact-choice",
+          "guideline": "5.4",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:2",
+            "probes.json:pages:4"
+          ],
+          "rationale": "Most sampled choices are ordinary reading/navigation and do not need carbon labels. Optional video activation is a consequential resource choice: the home native player defers downloading, whereas the article initializes its third-party player before activation. The packet does not inspect embedded quality/duration/data-use choices or their contextual information. The sustainability page explains image-format and OLED-specific theme tradeoffs, but those describe CMS use rather than an executed upload workflow on this website.",
+          "confidence": "medium",
+          "nextEvidence": "Inspect user-facing duration/quality/data-use context for optional video and test a deferred player alternative; do not prescribe labels for every control."
+        },
+        {
+          "checkId": "journeys",
+          "guideline": "2.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:journeys:0",
+            "probes.json:pages:3",
+            "probes.json:pages:4"
+          ],
+          "rationale": "The declared task opts out, opens desktop search, enters sustainability, submits and follows the policy result; all five actions complete with no errors. Final URL/title/primary-heading postconditions identify Sustainability, and the after text actually contains the policy, mitigation examples, ecosystem estimate and explicit Wagtail.org scope. The cookie prompt is no longer in the after text. The separate results sample places the policy first among 62 results. This confirms the executed task, not optimal efficiency or whether consent controlled all network behavior.",
+          "confidence": "high",
+          "nextEvidence": "Repeat with new visitors and narrow navigation; independently test consent enforcement rather than inferring it from banner dismissal."
+        },
+        {
+          "checkId": "media-delivery",
+          "guideline": "2.9",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13",
+            "source.json:files:10",
+            "source.json:files:15",
+            "source.json:files:16"
+          ],
+          "rationale": "Images are task-relevant screenshots, illustration, people/logos and case-study material, with actual WebP delivery for many .png/.jpg URLs. Several page types already lazy-load images; the home video uses preload=none. None of the sampled images provides srcset/sizes. The home rocket illustration is 2234 px natural width, rendered 1280 px desktop/360 px narrow, and its response is 370,360 bytes despite WebP delivery. Feature screenshots are 1300 px natural versus 660/300 px, while article screenshots are 800\u2013900 px versus 660/300 px and eagerly loaded. Some lazy images have naturalWidth=0 because not yet loaded. Candidate dimensions and bytes nominate responsive/deferred-delivery work, but no alternate rendition or text legibility at intended density was visually checked.",
+          "confidence": "high",
+          "nextEvidence": "Compare responsive hero and screenshot variants at 1x/2x with content owners; preserve legibility, art direction and dimensions. Test cold narrow transfer and lazy-loading behavior before claiming savings."
+        },
+        {
+          "checkId": "font-delivery",
+          "guideline": "2.11",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13"
+          ],
+          "rationale": "The sampled English body uses Kumbh Sans with a sans-serif fallback. FontFace records declare weights 400/600/700: regular uses display=block, other weights auto; 400 and 700 load on all pages, and 600 additionally loads on the article. Two local WOFF2 files transfer 19,640 and 19,304 encoded bytes, with an extra 20,404-byte face on the article. These variants can serve normal/emphasized content; a web font is not itself a defect. But blocked/constrained font loading and required language coverage are not observed, so fallback readability and potential subsetting/removal cannot be established.",
+          "confidence": "high",
+          "nextEvidence": "Test slow/blocked font responses with the intended languages and inspect weight use before considering display or subsetting changes."
+        },
+        {
+          "checkId": "semantic-forms",
+          "guideline": "3.6",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "All seven documents report lang=en, one main and one H1. Task controls have meaningful text, explicit names or label relationships: both search forms, newsletter Email, cookie choices, theme and contact links. The search-page input has a Search label even though keyboard trace text is empty. However, heading lists are truncated at 100 entries by duplicated hidden navigation headings, before any visible H1; count presence cannot establish its meaningful text or the main content hierarchy. Dialog naming/focus activation is also untested. No missing accessible name is inferred from textless controls alone.",
+          "confidence": "high",
+          "nextEvidence": "Capture visible main-region headings and resolved naming relationships directly; execute modal and form tasks before expanding to semantic/WCAG claims."
+        },
+        {
+          "checkId": "metadata",
+          "guideline": "3.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "The six content pages have descriptive task-specific titles, HTTPS canonicals matching their URLs and relevant descriptions. Search uses a query-specific results title and robots=noindex; canonical/description absence is appropriate for this dynamic search page. Home and the release article declare JSON-LD objects that parse, including WebPage/Organization or BlogPosting. The other pages declare none; optional structured data is judged by purpose rather than a mandatory-field checklist. This is parseability/useful metadata, not schema validation or search eligibility.",
+          "confidence": "high",
+          "nextEvidence": "Validate declared schema meaning only if expanding beyond the sampled metadata check."
+        },
+        {
+          "checkId": "preference-behavior",
+          "guideline": "3.9",
+          "outcome": "fail",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "Every page starts with dark text rgb(38,38,38) on white. Changing the system preference in-page makes dark=true but leaves those colors and light-theme text unchanged on all seven pages. Fresh cold_dark contexts instead render white text on rgb(38,38,38), retaining task text. Initial preference support therefore works while live preference change fails the declared expectation. Reduced-motion states also retain transient animation records on three pages, but their purpose/properties are insufficient to independently judge motion respect. No energy saving is inferred from color alone.",
+          "confidence": "high",
+          "nextEvidence": "Verify unset manual overrides and update live system-theme listeners while preserving explicit choices; test both directions, persisted preferences and reduced-motion transitions."
+        },
+        {
+          "checkId": "no-js-content",
+          "guideline": "2.17",
+          "outcome": "fail",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "Core article/features/policy/search reading and navigation remain present without JavaScript; most text differences are omitted theme controls and cookie prompt. Contact is a concrete exception: hello@wagtail.org (general/conduct) and security@wagtail.org become [email protected] links to /cdn-cgi/l/email-protection instead of readable mailto addresses. The declared task is finding the right contact route, including security; generic FAQ/Slack links do not provide an explicit equivalent security-email fallback. This fails the sampled core content expectation, not all no-JavaScript behavior.",
+          "confidence": "high",
+          "nextEvidence": "Keep readable contact/security addresses and working mailto links in baseline HTML or provide a tested explicit equivalent that needs no script; verify with scripts disabled."
+        },
+        {
+          "checkId": "api-requests",
+          "guideline": "3.11",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13"
+          ],
+          "rationale": "Each initial page makes one small /sitewide_alert/ JSON request plus three analytics page-view requests. The two /j/collect calls use different UA property IDs, and /g/collect uses a GA4 ID, so URL/path similarity alone is not proof of duplicate events safe to remove. The article also shows repeated YouTube/ad/log requests, some repeated scripts with zero subsequent received bytes; these may involve cache/frame initialization rather than repeated transfer. No task freshness requirements, destination purposes or backend cost evidence justify all observed analytics/player work.",
+          "confidence": "high",
+          "nextEvidence": "Inventory the three analytics destinations and owners, inspect needed events and consent state, and trace repeated player initialization. Remove obsolete/redundant work only after preserving required measurements and playback."
+        },
+        {
+          "checkId": "public-cache-policy",
+          "guideline": "4.2",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13"
+          ],
+          "rationale": "Sampled hashed JS/CSS/WOFF2 assets expose max-age=315360000, public, immutable and validators. Remote media exposes max-age=31536000 plus ETag/Last-Modified; /sitewide_alert/ has explicit short client/longer shared caching. The contact decoder has public caching with Expires. Dynamic search and analytics/log responses legitimately use no-cache/no-store and are not reusable static resources; data URLs, zero-byte diagnostic endpoints and errors do not require the same policy. This passes observed public policy only, without asserting warm reuse or offline availability.",
+          "confidence": "high",
+          "nextEvidence": "Compare repeat visits and cache invalidation through content changes before claiming measured reuse or offline support."
+        },
+        {
+          "checkId": "text-compression",
+          "guideline": "4.3",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13"
+          ],
+          "rationale": "Across all seven sampled page responses, HTML has Brotli and common CSS/JS gzip; material third-party text assets likewise carry compression. Main CSS is 21,060 encoded bytes versus roughly 125.7 kB decoded, and main JS 11,338 versus roughly 39.5 kB decoded. Unencoded examples are tiny 2-byte JSON alerts, 3-byte analytics acknowledgments, 29-byte helper scripts or empty responses, not material compression omissions. Error responses and already-compressed WOFF2/images are not required to be compressed again. Partial accounting limits totals, not observed encoding headers.",
+          "confidence": "high",
+          "nextEvidence": "No further evidence needed for sampled material text encoding."
+        },
+        {
+          "checkId": "keyboard-path",
+          "guideline": "3.6",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "All seven bounded Tab traces reach the event link, visible skip link, named home link, meaningful primary-navigation buttons, named search and Get started, then page task controls/links. Every recorded focus target is visible and focusVisible=true with a 1 px automatic dark outline on the light sampled background. The textless search input has a Search label in control evidence. This supports the initial path and indicator only, not activated menus, skip-link destination, reverse traversal, traps or full accessibility.",
+          "confidence": "medium",
+          "nextEvidence": "Activate skip/search/menu controls and inspect full forward/reverse paths and focus in narrow/dark states."
+        },
+        {
+          "checkId": "disclosure-scope",
+          "guideline": "2.1",
+          "outcome": "pass",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0",
+            "probes.json:pages:4"
+          ],
+          "rationale": "The retrieved policy explicitly names Wagtail.org, docs.wagtail.org and guide.wagtail.org as projects whose impacts/emissions it intends to reduce, alongside CMS/ecosystem and community-event actions. The linked Digital emissions statement specifically scopes homepage/website estimates, states SWD v4, measurement method/period/grid factors, separates site from ecosystem and describes monitoring alerts. Thus service relationship, impacts and mitigation are disclosed. This does not verify execution, footprint accuracy or the policy arithmetic; the 12 t/site mismatch remains a separate claim-quality concern.",
+          "confidence": "high",
+          "nextEvidence": "Reconcile numerical statements and provide implementation records if assessing execution rather than disclosure."
+        },
+        {
+          "checkId": "carbon-discovery",
+          "guideline": "3.13",
+          "outcome": "pass",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "rationale": "Root /carbon.txt returns 200 text/plain and parses with declared version 0.4, exact-host disclosure relationships and usable URLs; there is no redirect/delegation ambiguity. All four declared disclosure URLs are retrieved with 200. Review reports no structural issues under its explicit v0.x common-field profile. schemaValidated=false means this is not full 0.4 schema or IETF 1.0-RC1 conformance. The 2023/2024 reports are marked past declared validity and remain historical evidence; they are not silently promoted to current certifications. Provider entries are self-declared relationships only.",
+          "confidence": "high",
+          "nextEvidence": "Consider adding the current 2025 report and refreshing last_updated; use a version-specific schema validator for a formal syntax-conformance claim."
+        },
+        {
+          "checkId": "hosting-evidence",
+          "guideline": "4.1",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0",
+            "source.json:files:4",
+            "source.json:files:7"
+          ],
+          "rationale": "carbon.txt self-declares Cloudflare CDN, Heroku platform/database/cache, AWS object storage and GitHub CI/CD. Digital emissions uses an Ireland data-center carbon factor; candidate README says Heroku hosts the site. These identify claimed relationships but do not independently attest account/region/service deployment or renewable-electricity/operational metrics for this origin. The source revision is clean but deploymentVerified=false. No independently corroborated sustainable-hosting judgment or SWDM green flag follows.",
+          "confidence": "high",
+          "nextEvidence": "Obtain current origin/provider/region attestations and independent provider environmental evidence with matching operational scope."
+        },
+        {
+          "checkId": "source-reuse",
+          "guideline": "3.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:9",
+            "source.json:files:10",
+            "source.json:files:11",
+            "source.json:files:12",
+            "source.json:files:13",
+            "source.json:files:14"
+          ],
+          "rationale": "In clean candidate revision 9fa65385f27c15b83c86a4f6e0e3ac18d4784609, home_page.html calls shared hero/button patterns and renders CTA items through one included button component; main.js uses one initComponent routine for selector-based CookieMessage, SiteSearchDesktop and other instances. Cookie/search behavior lives in dedicated modules rather than repeated handlers in the selected page. This supports selected-source reuse, not whole-project efficiency. Home extends unselected base_page.html, so no complete inheritance/deployed chain is claimed; deploymentVerified=false.",
+          "confidence": "medium",
+          "nextEvidence": "Inspect additional concrete template call sites only if expanding source-wide duplication review."
+        },
+        {
+          "checkId": "source-dependencies",
+          "guideline": "3.12",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:2",
+            "source.json:files:3",
+            "source.json:files:4",
+            "source.json:files:6"
+          ],
+          "rationale": "Candidate pyproject.toml/package.json inventory direct dependencies. Docker/CI use npm ci and Poetry install, with lockfiles explicitly selected. However, poetry.lock and package-lock.json expose metadata_only identity/size, not resolved contents or manifest consistency. Intended repeatable installation is visible but valid resolution cannot be established from filenames. Necessity, vulnerabilities, installed/deployed versions and ongoing updates remain outside scope; clean candidate revision is not deployment-verified.",
+          "confidence": "high",
+          "nextEvidence": "Capture bounded lockfile/manifest consistency or clean-install receipts at this revision, then separately verify deployed versions where needed."
+        },
+        {
+          "checkId": "source-runtime",
+          "guideline": "3.15",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:4",
+            "source.json:files:5",
+            "source.json:files:6",
+            "source.json:files:7"
+          ],
+          "rationale": "Selected candidate Python declarations agree on 3.14: pyproject ^3.14, Docker python:3.14-trixie and both CI setup-python paths 3.14. Node is 24 in .nvmrc, frontend Docker and development NodeSource setup; CI reads .nvmrc. Docker and CI also agree on Poetry 2.4.0. This passes selected declaration consistency only. README references additional unselected Vagrant paths, deploymentVerified=false, and no authoritative release reference establishes latest-stable/deployed versions.",
+          "confidence": "high",
+          "nextEvidence": "Capture any other supported deployment/runtime paths and deployed inventory if extending the consistency scope."
+        },
+        {
+          "checkId": "source-automation",
+          "guideline": "4.6",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:6"
+          ],
+          "rationale": "The selected clean candidate CI declares push triggers only for main/next and pull_request; workflow-level concurrency groups by workflow/ref and cancel-in-progress=true to stop superseded same-ref runs. Node installation is conditionally reused with lock/runtime-keyed caches and tests depend on lint. These are concrete filtering/cancellation controls, with no demonstrated duplicate same-context path in the frozen packet. This does not establish every job is necessary, rule out cross-event overlap in a specific next-branch PR, measure CI energy or attest current execution/deployment.",
+          "confidence": "medium",
+          "nextEvidence": "Inspect run history and pre-commit contents if investigating actual redundant validation; preserve necessary lint/build/backend checks."
+        },
+        {
+          "checkId": "source-maintenance",
+          "guideline": "5.10",
+          "outcome": "pass",
+          "evidenceIds": [
+            "source.json:files:7",
+            "source.json:files:6"
+          ],
+          "rationale": "Selected candidate README explains Docker/Vagrant setup, migrations, cache-table setup, access-controlled data/media retrieval, frontend watch/lint/format commands and production/staging deployment. CI gives explicit system/migration/test commands. This supports the narrow documentation disclosure for maintaining the service; it does not attest staffing, cadence, security/sustainability execution or correctness of every unselected auxiliary path. Source deployment remains unverified.",
+          "confidence": "high",
+          "nextEvidence": "Obtain owner maintenance cadence and operational records for the wider strategy."
+        },
+        {
+          "checkId": "source-change-docs",
+          "guideline": "5.12",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:2"
+          ],
+          "rationale": "The live dated Wagtail 8.1 release article identifies the version and user-facing API, workflow, metadata and multilingual-sitemap changes, distinguishes prototype/preview status, explains upgrade/deprecation implications and links full release notes. It therefore communicates the declared visitor task\u2019s product evolution, independently of candidate source deployment. This is public Wagtail product change documentation, not a comprehensive history of the wagtail.org implementation or proof every affected user receives it.",
+          "confidence": "medium",
+          "nextEvidence": "Capture a site-specific changelog if the question is changes to the wagtail.org application itself."
+        },
+        {
+          "checkId": "source-budgets",
+          "guideline": "5.24",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "source.json:files:1",
+            "source.json:files:6",
+            "source.json:files:7",
+            "source.json:files:8",
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "rationale": "Selected Webpack/build/CI/docs contain no explicit relevant asset/performance ceiling plus exceedance action. A development performance stats display option and linters are not a concrete budget. The public Digital emissions page says weekly DebugBear monitoring/alerts keep page weight within a target, but supplies no target value or captured alert configuration. Thus relevant enforcement is claimed but not reviewable; absence from the selected files is not organization-wide absence. Candidate deploymentVerified=false.",
+          "confidence": "high",
+          "nextEvidence": "Capture the owner-approved numeric budget, scope/device protocol, alert or build configuration and action when exceeded."
+        },
+        {
+          "checkId": "source-open-source",
+          "guideline": "5.25",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:7",
+            "probes.json:pages:5"
+          ],
+          "rationale": "Selected manifests declare BSD-3-Clause for the Python project and ISC for package metadata, and README links the public repository and explains development. No actual license or contribution-policy document is included, so reuse terms and the contribution process for this codebase cannot both be inspected. The live Privacy page restricts site content reuse; describing Wagtail CMS as open source does not automatically license this website\u2019s code/content. This is a selection gap, not proof those documents do not exist; candidate deploymentVerified=false.",
+          "confidence": "high",
+          "nextEvidence": "Capture the codebase LICENSE and contribution instructions, reconcile package-metadata scope, and distinguish website content terms from software licensing."
+        }
+      ],
+      "topFindings": [
+        {
+          "checkId": "choice",
+          "priority": "high",
+          "title": "Make the measurement choice effective before analytics initializes",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:1"
+          ],
+          "summary": "All seven initial page networks send GA4 and two UA page-view requests while the Opt in/Opt out measurement prompt is still present; analytics scripts already transfer before either branch action.",
+          "recommendedAction": "Audit current tag/container configuration and fresh consent states, gate optional measurement as declared, then verify no-choice/reject/accept/reload/withdrawal behavior. This is an observed request-sequence finding, not a legal compliance verdict.",
+          "status": "observed defect"
+        },
+        {
+          "checkId": "components",
+          "priority": "high",
+          "title": "Test a click-to-load facade for the release article player",
+          "evidenceIds": [
+            "probes.json:pages:2",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "source.json:files:15"
+          ],
+          "summary": "Before a play action, the release article initializes YouTube with player scripts, font, thumbnail and ad/log requests. Initial received totals exceed 2.02 MB in each consent branch and remain partial with child-frame limits.",
+          "recommendedAction": "Prototype an accessible named preview that loads the player on activation, preserve captions/transcript and playback, and measure actual savings after validation.",
+          "status": "investigation"
+        },
+        {
+          "checkId": "no-js-content",
+          "priority": "medium",
+          "title": "Keep contact and security email routes available without scripts",
+          "evidenceIds": [
+            "probes.json:pages:6"
+          ],
+          "summary": "The fresh no-JavaScript Contact state replaces readable general/conduct/security email addresses and mailto links with [email protected] and Cloudflare decoder links.",
+          "recommendedAction": "Render the addresses and mailto targets in baseline HTML, or provide an explicit equivalent security/contact fallback that works without JavaScript.",
+          "status": "observed defect"
+        },
+        {
+          "checkId": "preference-behavior",
+          "priority": "medium",
+          "title": "Respond when the system theme changes on an open page",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "summary": "Dark preference works on fresh loads but all seven open pages stay light after a live operating-system preference change.",
+          "recommendedAction": "Handle live media-query changes while respecting explicit overrides, then test both directions and persisted choices.",
+          "status": "observed defect"
+        },
+        {
+          "checkId": "media-delivery",
+          "priority": "medium",
+          "title": "Compare smaller responsive hero and screenshot delivery",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "staged.json:runs:0",
+            "staged.json:runs:1"
+          ],
+          "summary": "The home rocket remains a 2234 px, 370,360-byte WebP resource when rendered at 360 px. Feature/article screenshots similarly retain one large source as they shrink to 300 px, without srcset/sizes.",
+          "recommendedAction": "Compare variants at intended pixel densities and art direction, preserving screenshot text legibility and explicit dimensions; use fresh narrow-load measurements before stating savings.",
+          "status": "investigation"
+        }
+      ]
+    },
+    "evidence": {
+      "role": "evidence",
+      "site": "https://wagtail.org",
+      "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+      "reviewer": {
+        "harness": "Codex native subagent",
+        "model": "gpt-6.1-sol",
+        "reasoning": "high"
+      },
+      "issues": [
+        {
+          "id": "evidence-01-partial-accounting-and-ratings",
+          "checkIds": [
+            "api-requests",
+            "media-delivery"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13"
+          ],
+          "summary": "All 14 visits and all 42 cumulative phases have accountingStatus=partial; every rating is not_calculated. Each initial capture has unresolved receivedBytes=null for Plausible script (404, ERR_ABORTED) and GA collect (204, ERR_ABORTED). Both release-article initial captures additionally have two aborted YouTube XHRs without response status, and all six release phases declare Child frame observed; subframe traffic may be incomplete. finished=true on an aborted resource does not imply known byte accounting.",
+          "requestedChange": "Label every traffic figure as observed accounted bytes from a partial capture. Preserve not_calculated: do not assign a full-input SWDM result or Digital Carbon Rating, fill missing bytes with zero or Content-Length, or present the collection as complete. A declared partial-input scenario would remain explicitly partial and ineligible for a rating. Describe 404 resource failure separately from unresolved accounting and from GA 204 responses; do not make repairing analytics a prerequisite or the principal sustainability recommendation."
+        },
+        {
+          "id": "evidence-02-cookie-choice-and-phase-causation",
+          "checkIds": [
+            "choice",
+            "api-requests",
+            "impact-choice"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13",
+            "source.json:files:11",
+            "source.json:files:12",
+            "probes.json:pages:5"
+          ],
+          "summary": "Both actual Opt out and Opt in clicks complete on every sampled page, in separate fresh contexts. Every after_consent checkpoint adds 0 accounted bytes/requests. However GTM, gtag, analytics.js and collection requests are already requested in initial before either choice, on both branches. Initial differences between branches therefore cannot be caused by the later click. Candidate cookie code sets a wagtail_cookie value and changes banner classes; it does not show a tracking-gating change.",
+          "requestedChange": "Credit the available completed choice actions while investigating the relationship between the stated measurement choice, tracking loaded before choice, and persistence on later visits. Do not claim opt-out blocks every analytics request, cookie storage was verified, or banner visual parity is established from matching labels/classes. Do not subtract independent branch totals as causal consent savings, infer server-side handling from URL parameters, or turn this observation into a legal compliance conclusion."
+        },
+        {
+          "id": "evidence-03-embedded-player-initial-load",
+          "checkIds": [
+            "components",
+            "media-delivery",
+            "impact-choice"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "probes.json:pages:2",
+            "source.json:files:15"
+          ],
+          "summary": "Release-article initial reject records 2025844 accounted bytes and accept 2031558, both partial. In reject, direct www.youtube.com resources contribute 1156528 bytes, with a further 171780 captured bytes across associated player fonts, thumbnail, Google/DoubleClick and anti-abuse hosts: 1328308 observed related bytes in total. The iframe and player resources load before a playback action; two embed Document requests are observed, with cached zero-byte repeated assets later in the resource list. The main-document media list is empty because frame internals are not traversed.",
+          "requestedChange": "Prioritize testing an accessible user-activated player facade or delayed embed for the article, preserving a usable title, thumbnail, playback activation and any reading alternative. Present 1.328 MB as captured related initial traffic, not a complete iframe footprint or validated saving. Do not infer no video from the empty main-document media list, duplicate backend work from repeated URLs alone, or successful facade activation from the unmodified sample."
+        },
+        {
+          "id": "evidence-04-home-native-video-and-image-deferral",
+          "checkIds": [
+            "media-delivery",
+            "components"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:4",
+            "source.json:files:10"
+          ],
+          "summary": "Homepage native video is paused, controls=true, autoplay=false, preload=none at y=917, and no video/media response occurs in the captures. Several image lazy-loading paths also have actual timing evidence: home scrolling adds three images totaling 163394/163391 bytes; features adds two totaling 80608/80458 bytes; sustainability adds one totaling 42945/42950 bytes. Some lazy images load in initial within browser loading distance, and naturalWidth=0 on later images in the early probe is followed by measured image requests during scrolling.",
+          "requestedChange": "Credit native-video non-preloading and observed image deferral. Do not infer broken images from early naturalWidth=0, absence of all media bytes for every interaction, or failed lazy loading merely because near-fold lazy images load initially. Video playback and its loading/error behavior remain untested. Phase deltas are additional accounted traffic including possible background activity, not independent loads or isolated interaction savings."
+        },
+        {
+          "id": "evidence-05-responsive-image-candidates",
+          "checkIds": [
+            "media-delivery",
+            "layout"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:4",
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "source.json:files:16"
+          ],
+          "summary": "Homepage large screenshot is negotiated WebP but contributes 371314 accounted bytes in initial reject (39.3% of that incomplete total). Natural width is 2234px, rendered width 1280px desktop and 360px narrow, with no srcset. Feature screenshots are 1300px at 660px desktop/300px narrow, and article images are 800/900px at 660/300px. Every probe uses DPR 1 and narrow is the same document resized. No frozen screenshot pixels or tested alternative rendition establish legibility or savings.",
+          "requestedChange": "Investigate responsive candidates and representative quality/legibility comparisons, particularly the homepage screenshot, while preserving instructional details and intended device densities. Do not prescribe a 300px rendition solely from narrow CSS width, equate area ratios with byte savings, claim cold mobile transfer measurements, or name the selected generic image template as a verified deployed fix; its width-950 declaration does not explain all live variants."
+        },
+        {
+          "id": "evidence-06-image-mime-and-compression",
+          "checkIds": [
+            "media-delivery",
+            "text-compression"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:2",
+            "staged.json:runs:4",
+            "staged.json:runs:8"
+          ],
+          "summary": "Many .png/.jpg media URLs already negotiate image/webp with Vary: accept, accept-encoding, including the large homepage screenshot and feature screenshots. Two article code/schema screenshots remain image/png at 19869 and 32301 accounted bytes. Four sustainability .webp URLs are served as application/octet-stream but render with known dimensions. The first-party logo remains a small PNG. These are mixed delivered types, not universally PNG or universally WebP.",
+          "requestedChange": "Use response MIME and rendering evidence rather than file extensions. Do not recommend blanket PNG-to-WebP conversion or HTTP compression of already-compressed images. Alternative format/quality comparisons for the two real PNG screenshots require readability checks. Treat application/octet-stream as a response-type correctness investigation, not proof of a broken image or higher transfer size."
+        },
+        {
+          "id": "evidence-07-font-loading-strategy",
+          "checkIds": [
+            "font-delivery"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:4"
+          ],
+          "summary": "Main content uses Kumbh Sans with declared 400/600/700 faces. Weight 400 is loaded with display=block; 700 is loaded with display=auto; 600 remains unloaded on six pages and loads on the article. Two same-origin WOFF2 files account for about 39.5\u201340.8 kB on ordinary pages; the article has a third same-origin face, totaling 61.172 kB in initial reject, plus 40.678 kB of player Roboto outside the main document. No blocked-font or constrained-network readability probe exists.",
+          "requestedChange": "Investigate whether a nonblocking fallback/display strategy improves perceived reading without unacceptable layout changes. Do not fail the site merely for using web fonts, count declared-but-unloaded 600 as transferred, infer an unused safe-to-delete face, or recommend subsetting without language/content needs. Keep player font traffic distinct from main-document typography."
+        },
+        {
+          "id": "evidence-08-theme-and-motion-state-distinction",
+          "checkIds": [
+            "preference-behavior",
+            "motion"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "summary": "All seven live_dark states match preferences.dark=true but retain white body background; every fresh cold_dark state initializes rgb(38,38,38) and preserves task text with the theme label change. Initial desktop animation lists are empty, but home/features/sustainability show 5/2/1 one-iteration running animations after resizing and after reduced-motion emulation. Print emulation triggers further transient animation entries, up to 61 on home. The packet does not include animated properties or duration comparisons.",
+          "requestedChange": "Report cold initialization separately from live system preference handling, and investigate explicit-user-choice policy and the actual listener before naming a theme source fix. Do not claim either complete lack of dark support or no motion based on initial snapshots. One-iteration transitions after emulation do not establish an uncontrolled looping distraction, a reduced-motion violation, or measured energy use; request property/purpose/control evidence if needed."
+        },
+        {
+          "id": "evidence-09-ten-pixel-overflow",
+          "checkIds": [
+            "layout"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "summary": "Every JavaScript desktop state has document width 1290 at viewport 1280, and every narrow state has width 370 at viewport 360: horizontalOverflow=true by exactly 10px across the entire seven-page sample. Fresh no-JavaScript and print states have no overflow. Core reading text remains in the narrow snapshots, while desktop navigation is hidden; the mobile menu is not activated.",
+          "requestedChange": "Record the consistent scoped overflow and investigate the common layout/control causing it at both widths. Do not infer lost content, an unusable menu, a specific offending element or real-device failure without inspecting the overflow and exercising affected controls. A resized snapshot is not an independent narrow cold load. Preserve the no-JavaScript/print distinction as evidence for diagnosis."
+        },
+        {
+          "id": "evidence-10-heading-inventory-truncation",
+          "checkIds": [
+            "semantic-forms",
+            "comprehension",
+            "consistency"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "summary": "All seven semantic summaries report mainCount=1 and h1Count=1, with no positive tabindex. However the bounded headings inventories truncate at early hidden navigation headings: total heading counts are 138,143,126,124,129,121,116, all truncated=true, and the captured items omit h1. Full body text remains untruncated; the journey independently verifies the Sustainability h1.",
+          "requestedChange": "Do not fabricate missing primary headings or a broken hierarchy from the truncated list. Read body text for the task, use actual h1Count and journey evidence for presence, and request main-region or targeted heading content if exact wording/hierarchy is necessary. Counts alone do not establish correct semantics or WCAG compliance. Search fields have captured labels; newsletter Email has aria-label, so absent label elements alone do not prove unnamed controls."
+        },
+        {
+          "id": "evidence-11-no-js-contact-email-loss",
+          "checkIds": [
+            "no-js-content",
+            "journeys"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:6",
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "staged.json:runs:12"
+          ],
+          "summary": "Across six pages, fresh no-JavaScript body-text changes remove the JavaScript-dependent cookie/theme UI while retaining sampled task text. Contact additionally replaces both hello@wagtail.org occurrences and security@wagtail.org with [email protected] placeholders. The ordinary contact load requests Cloudflare email-decode.min.js. The main contact task therefore loses readable email addresses in the actual no-JavaScript snapshot, while other linked help/community routes remain visible.",
+          "requestedChange": "Raise a bounded progressive-enhancement improvement for readable contact addresses or an equivalent explicit contact alternative without JavaScript. Do not describe the whole site as blank or inaccessible without scripts, assert all contact routes fail, or claim the observed effect identifies the exact source configuration. No-JavaScript search submission and other controls were not exercised."
+        },
+        {
+          "id": "evidence-12-cache-compression-and-private-responses",
+          "checkIds": [
+            "public-cache-policy",
+            "text-compression"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13"
+          ],
+          "summary": "First-party public HTML exposes Brotli and s-maxage=14400, stale-while-revalidate=30, public. Hashed CSS/JS and WOFF2 expose long immutable caching with ETag; media images generally expose max-age=31536000 and ETag. Material first-party text uses Brotli/gzip; large GTM/gtag scripts use zstd. Some third-party logging/security responses use private/no-store or do not expose compression, and the Plausible 404 has Content-Length 9 with unknown received bytes.",
+          "requestedChange": "Credit observed compression and explicit reusable-public-asset policies. Do not recommend blanket cache-control/compression additions, fail private/no-store logging responses, or demand compression on WOFF2/images/tiny/error responses without context. No warm-load or offline test proves actual cache reuse. Cross-origin Resource Timing zeros are restricted or contextual evidence, not zero traffic; staged CDP remains the byte source."
+        },
+        {
+          "id": "evidence-13-coverage-and-script-attribution",
+          "checkIds": [
+            "unused-code",
+            "components",
+            "api-requests"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "staged.json:runs:0",
+            "staged.json:runs:4",
+            "source.json:files:14"
+          ],
+          "summary": "Coverage samples initial plus 500ms, main target only, before representative menu/search/video use. The article has scriptsTruncated=true. CSS rule-usage rows are an inventory of observed-used ranges, not all stylesheet rules. Main first-party JavaScript is about 11.8 kB received, while separate GTM/gtag/analytics.js scripts together contribute 347.162 kB in initial home reject, before any cookie click. Initial sitewide_alert fetch occurs once per observed page network, while later player logging repeats on the article.",
+          "requestedChange": "Do not call all transferred JavaScript the first-party bundle, extrapolate a complete unused-code percentage from truncated coverage, sum overlapping source offsets as compressed bytes, or promise safe code deletion/splitting. Evaluate later interaction requirements and owner analytics needs before recommending changes. Repeated player logging or identical URLs do not alone prove redundant APIs or backend waste; an initial bounded window is not a polling-duration test."
+        },
+        {
+          "id": "evidence-14-journey-keyboard-print-and-metadata",
+          "checkIds": [
+            "journeys",
+            "keyboard-path",
+            "documents",
+            "metadata",
+            "notifications"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6",
+            "probes.json:journeys:0"
+          ],
+          "summary": "The five-action opt-out/search/policy journey succeeds with all actions completed, actual target URL, one matching h1 and matching Sustainability text. The legacy successSelectorVisible field is null but explicit completion is satisfied. Twelve Tab steps show visible elements, focusVisible and 1px auto outlines. Print hides header/footer navigation and cookie controls while retaining task text; article visible image count changes 11 to 8. No permission-request calls occur in the sampled states. Search intentionally uses noindex and lacks canonical/description; content pages have descriptive metadata, and present JSON-LD parses.",
+          "requestedChange": "Credit bounded task completion and useful print/no-notification observations without claiming optimal usability, reverse keyboard paths, activated mobile menus, fully accessible dialogs, complete WCAG coverage, print pagination, or optimized downloadable documents. Do not misread the legacy null as failure, absent search metadata as mandatory-field defects, or JSON parsing as schema validation/search eligibility. Controls were not submitted and media playback was not activated."
+        },
+        {
+          "id": "evidence-15-disclosure-scope-and-arithmetic",
+          "checkIds": [
+            "disclosure-scope",
+            "carbon-discovery",
+            "hosting-evidence"
+          ],
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0",
+            "probes.json:pages:4"
+          ],
+          "summary": "carbon.txt is present, retrieved directly with 200 and parsed declared version 0.4; schemaValidated=false, structuralIssues=[] under the common-fields interpretation. Four declared disclosures retrieve successfully; 2023/2024 annual-report valid_until values are historical. Current policy says 5173 tCO2e/year for 6431 sites with 12 tCO2e/year average, whereas 5173/6431 is approximately 0.804. Digital-emissions text describes April 2026 mobile Lighthouse 507 kB first visit/41.9 kB return and 0.06g, different intensities/protocol from this capture. Providers are self-declared; no operational green hosting is verified.",
+          "requestedChange": "Credit discovery/parseability separately from schema conformance, applicability and verified claims. Flag the internally inconsistent per-site average for correction; do not substitute ecosystem figures for this origin. Keep historic reports historical and the mobile disclosure separate from fresh partial desktop measurements; they are not an apples-to-apples performance regression or usable current rating. Provider declarations and Cloudflare CDN fingerprint do not set green SWDM inputs."
+        },
+        {
+          "id": "evidence-16-candidate-source-and-technology-limits",
+          "checkIds": [
+            "source-reuse",
+            "source-dependencies",
+            "source-runtime",
+            "source-automation",
+            "source-maintenance",
+            "source-change-docs",
+            "source-budgets",
+            "source-open-source",
+            "hosting-evidence"
+          ],
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:2",
+            "source.json:files:3",
+            "source.json:files:6",
+            "source.json:files:7",
+            "source.json:files:9",
+            "staged.json:runs:0"
+          ],
+          "summary": "Owner-supplied selected source is clean tracked revision 9fa65385f27c15b83c86a4f6e0e3ac18d4784609, explicitly deploymentVerified=false; both lockfiles are metadata_only. Wappalyzer separately detects Wagtail/Python/Django/Plausible/GTM/GA4/Cloudflare/RSS/PWA/Open Graph heuristically, with no version for most. Plausible markup is detected even though the sampled script returns 404. The top-level technology object has no dedicated evidenceIndex item.",
+          "requestedChange": "Keep deployment uncertainty on inferred fixes and separate declarations from installed/deployed package/runtime versions. Selected-file absence does not prove organization-wide absence of budgets, contribution terms or maintenance practice. PWA detection does not establish offline support, especially with service workers blocked by the protocol; Cloudflare does not identify origin energy. Do not invent a technology evidence ID or treat a fingerprint as proof of successful integration."
+        }
+      ]
+    },
+    "claims": {
+      "role": "claims",
+      "site": "https://wagtail.org",
+      "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+      "reviewer": {
+        "harness": "Codex native subagent",
+        "model": "gpt-6.1-sol",
+        "reasoning": "high"
+      },
+      "issues": [
+        {
+          "id": "wagtail-carbon-presence-vs-conformance",
+          "checkIds": [
+            "carbon-discovery"
+          ],
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "summary": "The root carbon.txt returned 200 directly, text/plain, parsed TOML, declared version 0.4 and last_updated 2026-01-07. It has four usable exact-host disclosure relationships and four declared upstream service domains. No delegation or redirect is present in the retrieved route. schemaValidated=false and no structural issues in the common-fields review do not establish schema conformance or verified claims.",
+          "requestedChange": "Credit discoverable parseable carbon.txt at the supported bounded scope. State version 0.4 and explicitly separate syntax, common-field usability and unvalidated schema. If conformance is required, capture the applicable versioned schema validation. Do not judge it against the separate 1.0-RC1 draft or infer a missing alternative route from discovery stopping after success."
+        },
+        {
+          "id": "wagtail-carbon-historical-links",
+          "checkIds": [
+            "carbon-discovery",
+            "disclosure-scope"
+          ],
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "summary": "carbon.txt links 2023 and 2024 annual ecosystem reports with valid_until dates 2023-12-31 and 2024-12-31. They remain relevant historical disclosures but are past their declared validity at the November 2026 capture. A newer 2025 report was retrieved through linked sustainability content, rather than a direct carbon.txt declaration. Publication dates, reporting years and last-update dates differ.",
+          "requestedChange": "Keep historical reports labeled by reporting period and publication/update dates; do not call them current attestations or discard them as invalid history. Update carbon.txt to link the 2025 report and refresh last_updated if maintainers intend current discovery. Verify any parent/subdomain scope separately rather than extending exact-host domain labels automatically."
+        },
+        {
+          "id": "wagtail-sustainability-average-arithmetic",
+          "checkIds": [
+            "disclosure-scope",
+            "comprehension"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:4",
+            "staged.json:discovery:0"
+          ],
+          "summary": "The sustainability statement says 5,173 tons CO2e/year for 6,431 sites and an average of 12 tCO2e/year per site. The displayed total divided by site count is approximately 0.8044 tCO2e/year per site; 12 multiplied by 6,431 is 77,172 tons. These figures cannot describe the same arithmetic mean and population.",
+          "requestedChange": "Reconcile the average, unit and population with the underlying dataset. If the intended mean uses the displayed total and count, show about 0.80 tCO2e/year (804 kg) per site. If 12 describes another population/statistic, label its period and denominator explicitly. Check the linked report and all summary copy after correction before reusing this claim."
+        },
+        {
+          "id": "wagtail-annual-baseline-conflict",
+          "checkIds": [
+            "disclosure-scope"
+          ],
+          "evidenceIds": [
+            "staged.json:discovery:0"
+          ],
+          "summary": "The retrieved 2025 article uses 6,327 tons for 2024 in its opening comparison, then 6,260 tons in its year-by-year list. The 2024 article, marked updated 2026-01-11, gives 6,326.87 tons. The 2025 article also gives 2024 median homepage weight as 2,589 kb, whereas the retrieved 2024 article gives 1,878 kb. A methodological revision could explain changes, but the captured excerpts do not establish one.",
+          "requestedChange": "Reconcile the 2024 baseline and explain whether values were recalculated under a different sample, method, byte basis or data revision. Make year-over-year tables and headline comparisons use a documented comparable baseline. Preserve the 2025 article\u2019s warning that estimated pageviews drove much of the reduction; do not present an 18% ecosystem decrease as proof of improved site efficiency."
+        },
+        {
+          "id": "wagtail-statement-scope-and-execution",
+          "checkIds": [
+            "disclosure-scope",
+            "impact-choice"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:4",
+            "staged.json:discovery:0"
+          ],
+          "summary": "The public statement describes Wagtail CMS/ecosystem work and explicitly includes wagtail.org, docs.wagtail.org and guide.wagtail.org as reduction targets. The 5,173-ton figure is for a 6,431-site ecosystem, whereas digital-emissions describes this website. Standards pursuit, collaborations, image-format capabilities and future goals are disclosures, not evidence of certification, execution at this origin or realized savings.",
+          "requestedChange": "Keep ecosystem, project, individual website and homepage boundaries distinct. Attribute stated practices and plans, and distinguish them from observed behavior. Preserve conditional OLED dark-mode and image-quality/device requirements; do not infer universal display savings or recommend every control gain an impact label. Obtain execution evidence before crediting an actual reduction or standards compliance."
+        },
+        {
+          "id": "wagtail-digital-emissions-reproducibility",
+          "checkIds": [
+            "disclosure-scope",
+            "hosting-evidence"
+          ],
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "staged.json:runs:0",
+            "staged.json:runs:1"
+          ],
+          "summary": "The digital-emissions page discloses an April 2026 homepage estimate of 0.06 gCO2e/view, SWD v4, Lighthouse mobile first/repeat weights of 507/41.9 kb, world and Ireland grid factors, a 50% homepage visit share and a 30\u2013300 kg annual site estimate. These are attributed estimates. The captured disclosure does not supply the first/repeat mix, annual traffic period/count, full page mix, infrastructure inputs or rating calculation needed to reproduce them. Fresh desktop CDP captures use different assumptions and are partial.",
+          "requestedChange": "Retain the April 2026 date, homepage/mobile scope, model and grid factors when quoting the public estimate. Request the underlying calculator inputs and traffic/infrastructure scenario before endorsing the annual range or rating. Treat 30\u2013300 kg as the site\u2019s methodological scenario range, not statistical bounds, and avoid declaring the public estimate wrong merely because current desktop captures differ."
+        },
+        {
+          "id": "wagtail-hosting-self-declaration",
+          "checkIds": [
+            "hosting-evidence"
+          ],
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0",
+            "source.json:files:7"
+          ],
+          "summary": "carbon.txt self-declares Cloudflare CDN, Heroku platform/database/cache, AWS object storage and GitHub CI/CD, with no certification schemes or independently verified green hosting. Candidate README describes Heroku deployment and digital-emissions uses an Ireland data-center factor, but neither establishes current origin region, supplied electricity or independently corroborated operational scope.",
+          "requestedChange": "Keep sustainable hosting unresolved. Obtain a dated origin-to-provider/service/region relationship and independent evidence matching the electricity/operational claim. Distinguish CDN, application/database, object storage and build services. Do not set SWDM green hosting from provider names, a fingerprint, README or the Ireland modeling assumption."
+        },
+        {
+          "id": "wagtail-privacy-technology-reconciliation",
+          "checkIds": [
+            "choice",
+            "comprehension",
+            "api-requests"
+          ],
+          "evidenceIds": [
+            "probes.json:pages:5",
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "source.json:files:9",
+            "source.json:files:11",
+            "source.json:files:12"
+          ],
+          "summary": "The public privacy page says the policy applies only to the Torchbox website and says Torchbox does not transfer data to third parties. Fresh initial home/privacy captures request GTM, GA4 gtag, analytics.js and Google collection endpoints before the opt-in/out action; legacy collection requests show 200 and GA4 collection has a 204 response with aborted accounting. The selected base labels Plausible privacy-friendly, but its observed script returns 404. CookieMessage sets a choice cookie and hides the banner; this excerpt does not implement analytics gating. These observations warrant reconciliation, not an automatic legal determination or proof that every endpoint stored data.",
+          "requestedChange": "Give privacy-policy readers clear wagtail.org scope and a documented inventory of the services actually used, their purpose and choice behavior. Audit the deployed GTM/container/consent implementation, including fresh undecided, reject, accept and subsequent visits, before claiming effective opt-out. Remove unnecessary legacy tags only after establishing measurement requirements; align policy, banner and implementation. Treat Plausible as a failed observed request rather than working privacy-friendly analytics, and decide whether it is needed before repairing it."
+        },
+        {
+          "id": "wagtail-partial-model-and-annual-boundary",
+          "checkIds": [
+            "disclosure-scope",
+            "impact-choice"
+          ],
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:1",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "staged.json:runs:6",
+            "staged.json:runs:7",
+            "staged.json:runs:8",
+            "staged.json:runs:9",
+            "staged.json:runs:10",
+            "staged.json:runs:11",
+            "staged.json:runs:12",
+            "staged.json:runs:13"
+          ],
+          "summary": "All 14 fresh staged runs have rating.status=not_calculated because their cold capture accounting is partial. For example, the homepage reject initial phase records 944,428 received bytes with unresolved Plausible and GA4 requests. This is a positive partial observation, not zero bytes or a complete comparable page weight. Consent/scroll phases are cumulative checkpoints, not independent loads.",
+          "requestedChange": "Explain missing accounting and preserve observed byte totals. If producing a new estimate from those partial bytes, explicitly label incomplete model inputs, SWDM v4/@tgwf/co2 0.19.0, initial desktop/CDP scope, non-green hosting assumption and 100% first visits. Do not claim measured emissions or a validated DCR badge. Annual scenarios require matched-origin traffic/period/calibration and explicit page weighting; average accept/reject branches within each page before weighting pages, convert grams to kilograms once, and keep CPU-package energy separate."
+        },
+        {
+          "id": "wagtail-source-identity-limit",
+          "checkIds": [
+            "source-reuse",
+            "source-dependencies",
+            "source-runtime",
+            "source-automation",
+            "source-maintenance",
+            "source-change-docs",
+            "source-budgets",
+            "source-open-source"
+          ],
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:2",
+            "source.json:files:3",
+            "source.json:files:4",
+            "source.json:files:5",
+            "source.json:files:6",
+            "source.json:files:7",
+            "source.json:files:8",
+            "source.json:files:9",
+            "source.json:files:10",
+            "source.json:files:11",
+            "source.json:files:12",
+            "source.json:files:13",
+            "source.json:files:14",
+            "source.json:files:15",
+            "source.json:files:16",
+            "source.json:files:17"
+          ],
+          "summary": "All 18 selected source records belong to clean tracked revision 9fa65385f27c15b83c86a4f6e0e3ac18d4784609 in local/wagtail.org, explicitly a candidate source with deploymentVerified=false. poetry.lock and package-lock.json are metadata-only. Source comments, manifest versions and clean tracked status do not identify deployed artifacts or prove complete project practice.",
+          "requestedChange": "Carry revision/file identity and deployment uncertainty through every source recommendation. Use selected paths as candidate edit locations and validate a change against the deployed build/journey before promising savings. Do not infer installed versions, vulnerability status, whole-project dependency necessity or missing organizational practice from this bounded selection."
+        },
+        {
+          "id": "wagtail-dependency-runtime-ci-limits",
+          "checkIds": [
+            "source-dependencies",
+            "source-runtime",
+            "source-automation"
+          ],
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:2",
+            "source.json:files:3",
+            "source.json:files:4",
+            "source.json:files:5",
+            "source.json:files:6"
+          ],
+          "summary": "Manifests declare dependencies, npm ci/Poetry installation provide a declared lock-based path, and selected runtime declarations align at Python 3.14 and Node 24 (Poetry 2.4.0 in Docker/CI). Lock contents are unavailable. CI already cancels superseded runs by workflow/ref and caches node/pre-commit/Poetry inputs; lint and production-build jobs are distinct necessary work until otherwise demonstrated.",
+          "requestedChange": "Credit the declared resolution/consistency/cancellation mechanisms, with lock validity and deployed versions unresolved. Obtain lock contents or frozen-build receipts before stronger repeatability claims, captured authoritative release data before latest-stable/outdated claims, and run history before reducing CI jobs. Preserve relevant validation and do not prescribe a concurrency control already present or claim measured CI energy savings."
+        },
+        {
+          "id": "wagtail-maintenance-budget-disclosures",
+          "checkIds": [
+            "source-maintenance",
+            "source-change-docs",
+            "source-budgets"
+          ],
+          "evidenceIds": [
+            "source.json:files:7",
+            "source.json:files:8",
+            "source.json:files:6",
+            "probes.json:pages:2",
+            "staged.json:discovery:0"
+          ],
+          "summary": "README documents development/data access/deployment and CI declares checks. The sampled public release announcement communicates Wagtail 8.1 changes, which is product change disclosure rather than necessarily a deployed website changelog. webpack.config.js includes production minification but no explicit performance limit/exceedance rule; its development stats.performance=false only changes reporting. Public digital-emissions separately claims weekly DebugBear monitoring and target alerts, so an absence-of-budgets claim is unsupported.",
+          "requestedChange": "Preserve the positive development/product-change disclosures and attribute public monitoring claims without asserting execution. Request the concrete DebugBear target, response ownership and alert history to resolve the narrow budget check. Do not confuse a linter, default Webpack warning, hidden development stats, or minification with a defined budget; do not call a site changelog absent solely because none was selected."
+        },
+        {
+          "id": "wagtail-license-scope-conflict",
+          "checkIds": [
+            "source-open-source"
+          ],
+          "evidenceIds": [
+            "source.json:files:0",
+            "source.json:files:1",
+            "source.json:files:7",
+            "probes.json:pages:5"
+          ],
+          "summary": "pyproject.toml declares BSD-3-Clause while package.json declares ISC; no license/contribution document was selected to resolve those declarations. README identifies a public source repository. The public privacy page separately restricts copying site material. A public repo and product open-source wording do not settle this codebase\u2019s complete reuse terms, content permissions or ongoing upstream contribution.",
+          "requestedChange": "Request the actual applicable license and contribution documents, reconcile manifest license declarations if they refer to the same code, and state the scope of code versus content permissions. Keep the selected-source judgment bounded rather than saying no license or contribution process exists. Do not treat the restrictive public content policy as overriding source-code terms or BSD/ISC metadata as licensing all site media."
+        },
+        {
+          "id": "wagtail-visitor-change-prerequisites",
+          "checkIds": [
+            "source-reuse",
+            "unused-code",
+            "components",
+            "media-delivery",
+            "public-cache-policy",
+            "preference-behavior"
+          ],
+          "evidenceIds": [
+            "source.json:files:8",
+            "source.json:files:9",
+            "source.json:files:10",
+            "source.json:files:13",
+            "source.json:files:14",
+            "source.json:files:15",
+            "source.json:files:16",
+            "source.json:files:17",
+            "probes.json:journeys:0"
+          ],
+          "summary": "Selected templates/components show shared composition, selector-based component initialization, a homepage native video with preload=none and controls, a separate video block without that preload instruction, a width-950 image rendition and deliberately non-cacheable queried search to record hits and keep results fresh. The single main entry and initial code coverage do not prove components removable; the selected theme bootstrap is incomplete.",
+          "requestedChange": "Preserve homepage click-to-play delivery, production minification, shared components and intentional private/dynamic search behavior. Before deferring components, exercise search/menu/focus and narrow task activation. Match an observed video/image to its actual template, compare intended densities and legibility, and confirm playback expectations before changing preload or renditions. Establish query privacy/freshness/hit-count requirements before search caching. Request theme/blocking implementation when a preference fix needs source corroboration; do not infer missing behavior from unselected files."
+        }
+      ]
+    }
+  },
+  "acceptanceReceipts": {
+    "guidelines": {
+      "role": "guidelines",
+      "taskSHA256": "993a36e2f4b478b3d8e8a80f58c50663b7d349dca2bd68becc4271026ee798c9",
+      "resultSHA256": "d19fd1c22ddab4bd169913b7b10819b24dbcf6263f7c004ba6cae26a1b52fcce",
+      "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+      "executionMode": "native-subagents"
+    },
+    "evidence": {
+      "role": "evidence",
+      "taskSHA256": "6642ed485ba41c520c7853486aacff1106695eca751438189d773d22824b14f6",
+      "resultSHA256": "7bcc7b7b73b077c4c0b41ad6d1416d8375a183eb2427173bf695b8c088d7545d",
+      "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+      "executionMode": "native-subagents"
+    },
+    "claims": {
+      "role": "claims",
+      "taskSHA256": "846de4865dc657268f9acfa11dd2d2bdc9eba72f0eba39eee04f0b8657034b0e",
+      "resultSHA256": "9e469942d7816cf071309a13eda25b64a653566cd65570056b41e72e6bf538df",
+      "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+      "executionMode": "native-subagents"
+    }
+  },
+  "resolutions": {
+    "site": "https://wagtail.org",
+    "packetSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+    "reviewer": {
+      "harness": "Codex native subagent",
+      "model": "gpt-6.1-sol",
+      "reasoning": "high"
+    },
+    "resolutions": [
+      {
+        "issue": "evidence:evidence-01-partial-accounting-and-ratings",
+        "decision": "applied",
+        "reason": "All traffic claims are explicitly accounted partial observations/lower bounds. Review notes preserve all 14/42 partial states, not_calculated ratings, distinct aborted/error cases and no zero substitution, new model result or DCR badge; no analytics repair prerequisite is prescribed."
+      },
+      {
+        "issue": "evidence:evidence-02-cookie-choice-and-phase-causation",
+        "decision": "applied",
+        "reason": "Choice rationale now explicitly credits both completed actions and the opt-out journey. It keeps the observed pre-choice page-view request failure distinct from untested storage, visual parity, later persistence and legal compliance; independent initial branch differences are not treated as consent effects."
+      },
+      {
+        "issue": "evidence:evidence-03-embedded-player-initial-load",
+        "decision": "applied",
+        "reason": "Components remains cantTell while the high-priority facade experiment is retained. The row/top finding distinguish 1,328,308 captured related bytes and partial whole-page accounting from complete frame footprint or savings, require accessible activation/playback validation and do not infer absence from the main media list."
+      },
+      {
+        "issue": "evidence:evidence-04-home-native-video-and-image-deferral",
+        "decision": "applied",
+        "reason": "Media row adds actual staged image-deferral timing/deltas and preserves native video preload=none/no observed .mp4 request. Early naturalWidth=0 is not labeled broken. Deltas remain cumulative observations, with playback and isolated savings untested."
+      },
+      {
+        "issue": "evidence:evidence-05-responsive-image-candidates",
+        "decision": "applied",
+        "reason": "Responsive work remains in media-delivery as investigation with DPR 1, same-document resizing, content-length versus received-byte distinctions and untested legibility/densities. It is removed from the top five in favor of correcting public numerical/privacy clarity; no 300 px prescription or savings ratio is made."
+      },
+      {
+        "issue": "evidence:evidence-06-image-mime-and-compression",
+        "decision": "applied",
+        "reason": "Media rationale now records the actual mixed WebP/PNG/octet-stream delivery. Compression pass remains for material text; there is no blanket conversion or compressed-image recompression request. MIME and real PNG alternatives need rendering/legibility checks."
+      },
+      {
+        "issue": "evidence:evidence-07-font-loading-strategy",
+        "decision": "applied",
+        "reason": "Font row remains cantTell, separates encoded font sizes from staged received overhead, distinguishes declared-but-unloaded 600 and player Roboto, and requires constrained/blocked loading plus language evidence before any removal/subsetting."
+      },
+      {
+        "issue": "evidence:evidence-08-theme-and-motion-state-distinction",
+        "decision": "applied",
+        "reason": "Preference fail remains narrowly live versus working cold initialization. Motion stays cantTell for transient one-iteration entries without purpose/property/duration evidence; explicit override policy, deployed listener and both theme directions need validation. No looping or energy assertion is made."
+      },
+      {
+        "issue": "evidence:evidence-09-ten-pixel-overflow",
+        "decision": "applied",
+        "reason": "Layout stays cantTell for consistent 10 px overflow and unactivated mobile controls; rationale now explicitly preserves no overflow in no-JS/print as diagnostic evidence. No content-loss, exact-cause or real-device claim is made."
+      },
+      {
+        "issue": "evidence:evidence-10-heading-inventory-truncation",
+        "decision": "applied",
+        "reason": "Semantic-forms remains cantTell because counts/labels and body text support presence but every heading inventory truncates. Journey independently supplies target H1 evidence. Comprehension now fails on the demonstrated quantity contradiction, not fabricated headings or missing accessible labels."
+      },
+      {
+        "issue": "evidence:evidence-11-no-js-contact-email-loss",
+        "decision": "applied",
+        "reason": "No-js-content retains a bounded fail for missing readable general/conduct/security email addresses and decoder links. Other six reading tasks/navigation are credited, FAQ/Slack remain available and the exact source configuration is not claimed."
+      },
+      {
+        "issue": "evidence:evidence-12-cache-compression-and-private-responses",
+        "decision": "applied",
+        "reason": "Public cache/compression passes remain static-policy/encoding judgments. Warm reuse/offline support are untested; dynamic/private/no-store/tiny/error and compressed-font/image exceptions are preserved. CDP partial accounting governs bytes rather than Resource Timing zeros."
+      },
+      {
+        "issue": "evidence:evidence-13-coverage-and-script-attribution",
+        "decision": "applied",
+        "reason": "Unused-code/API/components remain cantTell. Rationale distinguishes first-party bundle from 347.162 kB analytics traffic, records used-only CSS ranges and article coverage truncation, and requires representative interactions/destination needs before removal or splitting."
+      },
+      {
+        "issue": "evidence:evidence-14-journey-keyboard-print-and-metadata",
+        "decision": "applied",
+        "reason": "Explicit completed journey postconditions, visible focused controls, print task content, zero permission requests and purposeful search metadata remain bounded passes. Legacy null is not a failure; no activation/reverse-path/WCAG/schema eligibility/pagination/document optimization claim is introduced."
+      },
+      {
+        "issue": "evidence:evidence-15-disclosure-scope-and-arithmetic",
+        "decision": "applied",
+        "reason": "Carbon common-field discovery passes separately from schema/claims; historical dates and self-declared providers stay qualified. Comprehension changes to fail for displayed total/count/average contradiction while disclosure-scope remains a scoped service/impact/mitigation pass. Mobile public estimates remain attributed and incomparable to partial fresh desktop traffic."
+      },
+      {
+        "issue": "evidence:evidence-16-candidate-source-and-technology-limits",
+        "decision": "applied",
+        "reason": "Review notes and all source rows retain exact clean candidate revision, selected-file and unverified deployment scope. Lock validity, budgets/terms, hosting and operational practice are not inferred from bounded absences/fingerprints; no technology evidence identifier or offline capability is invented."
+      },
+      {
+        "issue": "claims:wagtail-carbon-presence-vs-conformance",
+        "decision": "applied",
+        "reason": "Carbon discovery passes direct root retrieval, parsed declared 0.4 and usable exact-host common fields only. It explicitly preserves schemaValidated=false and does not apply the separate 1.0-RC1 profile or assert another route absent after successful discovery."
+      },
+      {
+        "issue": "claims:wagtail-carbon-historical-links",
+        "decision": "applied",
+        "reason": "Carbon row retains historical 2023/2024 report validity periods, adds last_updated and linked versus directly declared 2025 distinction, and requests updated direct discovery rather than discarding history. Exact-host relationships are not automatically extended to subdomains."
+      },
+      {
+        "issue": "claims:wagtail-sustainability-average-arithmetic",
+        "decision": "applied",
+        "reason": "Comprehension is now fail under demonstrated-failure precedence and top-five action corrects the mean/unit/population. It gives 0.8044 only as total/count arithmetic and conditions a public 0.80 replacement on verifying the intended dataset/statistic; disclosure coverage remains pass without numerical endorsement."
+      },
+      {
+        "issue": "claims:wagtail-annual-baseline-conflict",
+        "decision": "needs-new-evidence",
+        "reason": "Disclosure rationale and top action explicitly flag differing 2024 totals/median page weights as unresolved baseline comparability. A different sample/method/data revision could explain them, and the 3,000-character excerpts cannot settle that. Request source dataset/version history before calling them errors or an efficiency improvement; preserve pageview-estimation caveats."
+      },
+      {
+        "issue": "claims:wagtail-statement-scope-and-execution",
+        "decision": "applied",
+        "reason": "Disclosure-scope remains pass only for explicit service relationship, impacts and mitigation descriptions. Ecosystem, website, homepage and project/event boundaries stay distinct; plans, standards pursuit, OLED conditions and media capabilities are not treated as executed savings/certifications or grounds for labels on every control."
+      },
+      {
+        "issue": "claims:wagtail-digital-emissions-reproducibility",
+        "decision": "needs-new-evidence",
+        "reason": "The final disclosure row/notes attribute the April 2026 mobile SWD v4 scenario and request first/repeat mix, traffic period/count, page weighting and infrastructure inputs. The 30\u2013300 kg range is labeled methodological scenarios, not statistical bounds, and neither its rating nor its disagreement with current partial desktop inputs is endorsed as a confirmed error."
+      },
+      {
+        "issue": "claims:wagtail-hosting-self-declaration",
+        "decision": "needs-new-evidence",
+        "reason": "Hosting stays cantTell; provider/domain/role self-declarations and modeled Ireland factor do not attest deployment region or electricity. The next evidence requires dated origin/provider/service/region correspondence plus independent operational evidence; green-hosting flags remain unset."
+      },
+      {
+        "issue": "claims:wagtail-privacy-technology-reconciliation",
+        "decision": "applied",
+        "reason": "Numerical/privacy clarity is promoted to the top five and the choice finding requires deployed container/consent inventory across fresh and later states. Analytics requests, Plausible 404, local-source mismatch and policy scope are distinguished; no storage/server processing/legal verdict or unnecessary legacy-tag deletion/automatic repair is asserted."
+      },
+      {
+        "issue": "claims:wagtail-partial-model-and-annual-boundary",
+        "decision": "applied",
+        "reason": "No new footprint model or annual scenario is produced. Review notes preserve partial bytes, not_calculated ratings, cumulative phases, no complete-current badge and no inferred emissions regression. Any future model needs explicit parameters and matched traffic/page weights rather than recycling public ecosystem or mobile figures."
+      },
+      {
+        "issue": "claims:wagtail-source-identity-limit",
+        "decision": "applied",
+        "reason": "All selected-source rows now carry the clean tracked revision and deployment uncertainty; review notes record the same identity and missing lock bodies. Paths remain candidate edit locations only, with no installed/deployed version, vulnerability/necessity or organization-wide absence inference."
+      },
+      {
+        "issue": "claims:wagtail-dependency-runtime-ci-limits",
+        "decision": "applied",
+        "reason": "Dependency repeatability remains cantTell pending actual lock/frozen-build evidence; runtime declaration consistency passes without latest-stable/deployed claims. Existing CI filtering, caches and cancel-in-progress are credited and no duplicate-job reduction or new concurrency mechanism is prescribed without run history."
+      },
+      {
+        "issue": "claims:wagtail-maintenance-budget-disclosures",
+        "decision": "applied",
+        "reason": "Maintenance and sampled product-change disclosures remain scoped passes; a site implementation changelog is not inferred absent. Budget stays cantTell: public monitoring is attributed but no numeric ceiling/exceedance rule is exposed. Next evidence now explicitly requests DebugBear target, response owner and history."
+      },
+      {
+        "issue": "claims:wagtail-license-scope-conflict",
+        "decision": "needs-new-evidence",
+        "reason": "Source-open-source remains cantTell pending actual license/contribution documents. BSD/ISC metadata and restrictive public content language are separately scoped; no claim that source terms are overridden, site media universally licensed or contribution process absent is made."
+      },
+      {
+        "issue": "claims:wagtail-visitor-change-prerequisites",
+        "decision": "applied",
+        "reason": "Shared candidate components, minification, homepage non-preloaded video and dynamic queried-search policy remain credited. Proposed facade/rendition/theme work requires accessible activation, deployed attribution, task needs and missing listener/source context; no cache change, safe deletion or source-only deployed fix is prescribed."
+      }
+    ]
+  },
+  "reconciliationReceipt": {
+    "resolutionsSHA256": "2217dca295550c27dbc4c10b3acccb174b823af7f54294cd051b3a990cbf1eb4",
+    "acceptedSHA256": {
+      "evidence": "910febd0ce2051aa76e66c5e730234fe9b876cf6313d74061af62839b9600ce2",
+      "guidelines": "956ef988c19e8953728c9b83182e2f17ec939e8b39ba0c453bd4d312b5da4c9f",
+      "claims": "682defe12aacf76190d2930ce79c080112d42e3e54d2924d0b1d7ee2da91f7ec"
+    },
+    "next": "Coordinator writes review.json, preserving unresolved evidence; workflow score validates the final review. This receipt validates coverage of responses, not their semantic correctness."
+  },
+  "taskSHA256": {
+    "guidelines": "993a36e2f4b478b3d8e8a80f58c50663b7d349dca2bd68becc4271026ee798c9",
+    "evidence": "6642ed485ba41c520c7853486aacff1106695eca751438189d773d22824b14f6",
+    "claims": "846de4865dc657268f9acfa11dd2d2bdc9eba72f0eba39eee04f0b8657034b0e"
+  },
+  "finalReviewSHA256": "04ebbd19b85ede13304facec78b14229ee60adc1e137bfb5e551e1fb0027968f",
+  "finalReviewChange": "Sol/high guideline reviewer reconciled all30 advisory issues. Comprehension changed from cantTell to fail for demonstrated numerical contradiction; disclosure-scope retained pass for presence/scope, and numerical/privacy clarity entered the top five. Other outcomes unchanged. Root inspected and accepted reconciliation before scoring."
+}

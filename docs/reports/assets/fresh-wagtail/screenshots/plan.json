@@ -1,0 +1,35 @@
+{
+  "origin": "https://wagtail.org",
+  "captures": [
+    {
+      "id": "release-video-preview",
+      "url": "https://wagtail.org/blog/wagtail-8-1/",
+      "selector": "iframe[src*='youtube.com/embed/']",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Release article section with an embedded YouTube player and surrounding article text.",
+      "caption": "Later illustration of the release article's optional video. This image does not measure player traffic or validate a replacement.",
+      "checkIds": [
+        "components"
+      ]
+    },
+    {
+      "id": "policy-impact-summary",
+      "url": "https://wagtail.org/sustainability/",
+      "selector": "h2:has-text(\"We're measuring Wagtail's impact\")",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Sustainability policy section showing the ecosystem total, site count and stated per-site average.",
+      "caption": "Later illustration of the public footprint summary; the numerical finding uses the frozen audit text. The website estimate and the ecosystem estimate have separate scopes.",
+      "checkIds": [
+        "comprehension"
+      ]
+    }
+  ]
+}
