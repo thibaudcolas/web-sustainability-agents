@@ -258,6 +258,7 @@ nav:
           - GreenFrame: knowledge-base/greenframe.md
       - Agent engineering:
           - Existing audit projects: knowledge-base/local-projects.md
+          - Agent orchestration: knowledge-base/agent-orchestration.md
           - Providers and inference accounting: knowledge-base/provider-capabilities.md
   - Projects:
       - Implementation:

@@ -1,27 +1,31 @@
 # Agent skills
 
-This workspace publishes [Agent Skills](https://agentskills.io/) alongside its documentation. Audit skills contribute interpretation and investigation choices around deterministic measurements; they are not wrappers that turn every tool result into a pass.
+Install one entry point, `sustainability-audit`, then ask your agent to audit a URL. It loads version-matched role instructions progressively through the audit CLI. See [installation and your first audit](using/README.md).
 
-## Available skills
+## Entry point and specialist roles
 
-| Skill                             | Version | Role                                                                                              |
-| --------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
-| `sustainability-audit`            | 0.3.0   | Coordinate a per-site audit, bounded review roles, calculation, reporting and next auditing steps |
-| `sustainability-evidence-review`  | 0.5.0   | Interpret measurements, phases, partial accounting and model boundaries                           |
-| `sustainability-guideline-review` | 0.2.0   | Apply scoped expectations, distinguish applicability and unknowns, and explain score coverage     |
-| `sustainability-claims-review`    | 0.2.0   | Review footprint assumptions, disclosures, source corroboration and recommendation usefulness     |
-| `research-workspace`              | 1.0.0   | Maintain documentation structure, navigation and source citations                                 |
+| Skill                             | Version | Role                                                                    |
+| --------------------------------- | ------- | ----------------------------------------------------------------------- |
+| `sustainability-audit`            | 0.4.0   | Discover the installed workflow and coordinate the audit                |
+| `sustainability-setup`            | 0.1.0   | Prepare tools and select 5–10 representative pages and meaningful tasks |
+| `sustainability-collection`       | 0.1.0   | Execute the accepted plan once and explain incomplete collection        |
+| `sustainability-evidence-review`  | 0.5.0   | Check measurements, phases and numeric interpretation                   |
+| `sustainability-guideline-review` | 0.2.0   | Judge selected WSG expectations and preserve unknowns                   |
+| `sustainability-claims-review`    | 0.2.0   | Review disclosures, estimates and source-informed recommendations       |
+| `sustainability-report`           | 0.1.0   | Write readable findings, evidence explanations and illustrated reports  |
 
-The [agent-triggered workflow](using/workflow.md) adds scope clarification, editable plans, actual collector invocations, immutable evidence packets and scored reviews. The guideline skill packages a pinned WSG reference and an assessment crosswalk; read relevant entries progressively rather than putting the entire reference into every prompt.
+The entry point loads the CLI-only `core` orchestration workflow, which assigns the roles. Evidence, guideline and claims reviews can run as native subagents against the same frozen packet, then the coordinator reconciles them before scoring and report writing. A sequential fallback uses identical task contracts and records that execution mode.
 
-## Install and run
+The plugin registers only the entry skill. Specialist sources remain in `.agents/skills/` for compatibility with existing collectors and frozen-task builders; development checkout discovery may therefore expose more roles. A future package can move those internal sources without changing the public entry point. The contributor-only `research-workspace` skill is not part of the audit plugin.
 
-Follow [installation and your first audit](using/README.md) for the supported checkout setup, harness locations, invocation and proposed plugin experience. See [workflow and artifacts](using/workflow.md) for the collection-to-report handoffs. The same review roles can run sequentially or as authorized subagents.
+## Progressive discovery
 
-The [evaluation project](evaluation/README.md) distinguishes skill execution from evidence that skills improve results. Current skill changes do not rewrite the frozen copies used in historical campaigns.
+The installed workflow exposes `skills list`, `skills get <role>`, `skills get <role> --full` and `skills path <role>` through the provisional Typer CLI. Full output includes references and templates; use it only when needed. The guideline role includes pinned WSG text and direct links, and the report role includes writing guidance and an editorial schema.
 
-## Discovery and maintenance
+See [workflow and handoffs](using/workflow.md) for the actual interface. The [evaluation project](evaluation/README.md) distinguishes executing a skill from evidence that it improves accuracy. Historical cases preserve their own skill snapshots and model settings.
 
-The documentation publishes complete skill folders under `.well-known/agent-skills/`, with an index and AI Catalog metadata. These are discovery resources, not an installable Agent Plugin. Catalog-aware clients may use them; a checkout remains necessary for the collectors.
+## Documentation catalogs and maintenance
 
-See [skill maintenance](contributing/skills.md) for source layout, versioning, catalog formats and publishing checks.
+The documentation build publishes the complete source skill catalog under `.well-known/agent-skills/` with discovery metadata. This documentation catalog is broader than the plugin's single registered entry point; it does not install the collector runtime.
+
+[Skill maintenance](contributing/skills.md) covers metadata, versioning and publishing checks. Plugin entrypoint copies are checked against their canonical source so they cannot silently drift.

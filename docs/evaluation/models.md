@@ -1,6 +1,6 @@
 # Model comparison protocol
 
-Use Neuralwatt DeepSeek V4.1 Flash with high reasoning alongside GPT-6.1 Sol with low reasoning, both through Codex CLI. The [evaluation overview](README.md) links completed campaigns and current limits. Compare decision models on the same semantic tasks before adding them to an audit workflow; distinguish model, provider and harness effects.
+Use Neuralwatt DeepSeek V4.1 Flash with high reasoning alongside GPT-6.1 Sol with high reasoning, both through Codex CLI. Historical campaigns retain their recorded low-reasoning Sol settings; the high setting applies to new runs. The [evaluation overview](README.md) links completed campaigns and current limits. Compare decision models on the same semantic tasks before adding them to an audit workflow; distinguish model, provider and harness effects.
 
 The table below describes the planned comparison arms. Sol/DeepSeek evidence-review campaigns have run; Jev/Clef routing and cross-harness parity remain experiments to validate. Provider contracts and energy-accounting caveats live in the [knowledge base](../knowledge-base/provider-capabilities.md).
 
@@ -26,3 +26,5 @@ Hold evidence, criterion wording, allowed tools, and practical budgets constant.
 Verify account-visible model discovery, a bounded generative/tool round trip, schema-valid output, one three-label decision request, truncation/error handling, usage retention, and successful artifact production in Harbor. Check that credentials reach only the intended agent or adapter process and are absent from logs. Use synthetic/public fixtures for initial tests.
 
 The preflight must include DeepSeek V4.1 Flash and Codex. Add Clef and Jev once access and their contracts are verified. Keep a failed or inaccessible arm visible as incomplete; do not substitute a different model and reuse its label. Repeat this preflight when changing a provider or harness; the [validation roadmap](../initial-implementation/validation-roadmap.md) places the next work in sequence.
+
+Historical campaign reproduction uses `benchmarks/frozen-configs/codex-low.json`. The default `benchmarks/codex.json` now requests high reasoning; using it creates a new run rather than reproducing the earlier configuration.

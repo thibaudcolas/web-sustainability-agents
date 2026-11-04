@@ -1,25 +1,21 @@
 ---
 name: sustainability-audit
-description: Coordinate a per-site sustainability audit using measurement evidence, scoped WSG review, footprint scenarios, and an explicit plan for increasing audit coverage.
+description: Audit a live website for sustainability. Use when the user supplies a URL or asks for WSG findings, measurements, priorities or a sustainability report. Coordinate setup, sampling, collection and specialist review; the user does not need to operate the audit scripts.
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Sustainability audit
 
-Define one origin, relevant visitor tasks and states, available source or internal documents, and the audit purpose. Reuse the owner’s existing answers; ask concise clarifying questions when a missing priority or boundary changes the work. Record assumptions and unanswered questions without inventing agreement. Public exploration can continue while optional questions are pending.
+This is the entry point. A URL and the owner's priorities are enough to start. Load the workflow matching this installed version before doing the work.
 
-Read [the agent workflow](references/agent-workflow.md) before starting collection. The agent creates and refines the plan, triggers locked collector commands, checks execution and page-level failures, and hands frozen evidence to reviewers. Begin with existing evidence and its collection dates before recollecting. Separate hardware-energy runs from other workloads.
+Resolve the tool directory by running the `scripts/runtime.py doctor` helper beside this skill with `uv run --locked --script`. Its JSON identifies `root`. Then run:
 
-Use bounded review roles rather than asking one prompt to discover, measure, judge, and score everything:
+```sh
+uv run --locked --script <root>/audit/cli.py skills get core
+```
 
-- Quantitative evidence: apply `sustainability-evidence-review` to phases, completeness, units, cache/consent profiles, and technology context.
-- Guideline judgments: apply `sustainability-guideline-review` to a versioned rubric and the exact sample. Return row-level outcomes and evidence needs, not an intuitive grade.
-- Claims and recommendations: apply `sustainability-claims-review` to disclosures, annual scenarios, source corroboration, and recommendation usefulness.
+The placeholder is the resolved tool directory, not the user's project directory. The helper finds a plugin checkout automatically or the explicit location recorded by the project installer. Do not ask the user to copy a prompt or run the collector commands. If a host prerequisite is missing, explain that concrete requirement; otherwise own setup through delivery.
 
-When the harness supports subagents and the task authorizes delegation, assign these as independent bounded reviews with the same evidence inventory. Give each worker the relevant skill and output contract, then reconcile disagreements explicitly. Otherwise execute the same roles sequentially. Workers need not share a proprietary orchestration API. Do not treat reviewer agreement as new site evidence.
-
-Use repository calculation tools to aggregate judgments and annual scenarios. Publish one report with key measures and score, top priorities, quantitative evidence, qualitative interpretation, and detailed findings. A score must identify rubric version, pass/failed/unknown counts, checked and total guideline coverage, and excluded inapplicable/untested checks. Keep DCR, scoped audit score, and hardware energy distinct.
-
-End with “Next steps for auditing” and “Methodology and reproducibility.” Separate fixes to the site from work needed to improve audit confidence. Explain which additional public journeys, source evidence, internal records, or owner judgments would increase coverage; record what remains outside the current method. Link WSG areas directly. Preserve evidence hashes, source revisions, model/skill settings, commands, and limitations so another harness can reproduce the work.
+The CLI serves version-matched role instructions with `skills list`, `skills get <role>` and `skills path <role>`. Load only the relevant role and reference files. Native subagents are preferred when available and authorized; sequential execution uses the same role contracts. Do not create a second model-routing runtime.

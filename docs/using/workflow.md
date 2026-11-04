@@ -1,74 +1,93 @@
 # Audit workflow and artifacts
 
-The agent controls scope, invokes deterministic collectors, applies review skills, and renders a report. `audit/workflow.py` implements the file-based handoffs. For installation and a copyable agent request, start with [Run a sustainability audit](README.md).
+The agent owns the sequence below. The website owner only needs the [entry-point installation and a URL](README.md). These commands document the underlying interface for contributors, harness adapters and reproducibility.
 
-## 1. Define the scope
+The provisional Typer CLI runs as `uv run --locked --script audit/cli.py` from the checkout. An installed entry skill resolves its tool root through its bundled runtime helper. Other working directories should use that absolute CLI path and absolute output paths. This interface follows [Wagtail CLI's progressive skill loading](https://github.com/wagtail/wagtail-cli); it is not yet a published standalone package.
 
-Run from the audit checkout. The agent creates a plan, then refines the pages, visitor tasks, consent branches and journey completion conditions:
-
-```sh
-uv run --locked --script audit/workflow.py init \
-  --origin https://example.org --page https://example.org/ \
-  --plan .audit-work/example-plan.json
-```
-
-Reuse the owner's supplied context. Ask only about missing decisions that change the work, and record answers, assumptions and unresolved questions in the plan. Required unanswered questions block collection; optional questions do not prevent independent public exploration.
-
-A plan covers one exact origin. Select pages by content and functional diversity, not just URL count. A journey's `success` can specify URL, selector and expected text; all supplied postconditions and required actions must succeed. Discover consent selectors on the actual site. See [browser probes](../reference/browser-probes.md) for supported actions and states.
-
-An empty `checks` list selects the current default catalog: 25 public checks in 24 guideline groups, or 33 checks in 32 groups when `sourceFiles` is nonempty. This does not select every WSG criterion. To include source evidence, declare `sourceRoots` and select individual `{root, path}` records as described in the [check reference](../reference/checks.md).
-
-## 2. Collect and inspect
+## Discover the next role
 
 ```sh
-uv run --locked --script audit/workflow.py collect \
-  --plan .audit-work/example-plan.json --session .audit-work/example-run-1
+uv run --locked --script audit/cli.py skills list
+uv run --locked --script audit/cli.py skills get core
+uv run --locked --script audit/cli.py skills get report --full
+uv run --locked --script audit/cli.py skills path setup
 ```
 
-The session must be new. Collection freezes the plan and skills, runs the staged browser measurements, Wappalyzer scan, supplementary probes, disclosure interpretation and selected source capture, then assembles a review packet. Wappalyzer's separate scan is excluded from page-load totals.
+Only the small `sustainability-audit` entry point is registered by the plugin. The coordinator loads setup, collection, evidence, guideline, claims and report workflows as needed. The development checkout retains specialist source folders under `.agents/skills/` for existing collectors and benchmark builders; this differs from installed plugin discovery.
 
-Inspect command exit codes and page-level errors. A completed command can contain failed selectors, missing states or incomplete accounting. Keep those limits in the review. Preserve initial, consent and scroll observations separately; only initial-load figures lead the report.
+## Setup, sample and collect
 
-| Artifact                                                        | Purpose                                                      |
-| --------------------------------------------------------------- | ------------------------------------------------------------ |
-| `plan.json`, `receipt.json`                                     | Scope, assumptions, invocation and implementation provenance |
-| `skills/`, `checks.json`, `rubric.json`, `impact-weights.json`  | Frozen review instructions and scoring expectations          |
-| `staged.json`, `probes.json`, `disclosures.json`, `source.json` | Measurements and scoped supplementary evidence               |
-| `packet.json`                                                   | Review inventory with evidence IDs and artifact hashes       |
-| `review-template.json`                                          | Required row-level judgment structure                        |
-
-Source files are supplemental evidence, not deployment attestation. A carbon.txt declaration helps identify claims and supporting documents; it does not itself prove sustainable hosting. Keep additional evidence in a new traceable packet rather than silently amending a frozen session.
-
-Optional [GreenFrame measurements](../knowledge-base/greenframe.md) and hardware-energy experiments need their own validated runner and protocol. Run them separately while other workloads are idle. They are not automatic components of the public baseline.
-
-## 3. Review with the skills
-
-Give the reviewer the frozen packet, relevant raw evidence, rubric and skill resources. Apply the quantitative evidence, guideline and claims review roles from the [skill catalog](../agent-skills.md). Use sequential roles or authorized subagents; the output contract is the same.
-
-Write `review.json` from the session's template. Every selected check needs an outcome, actual evidence IDs, rationale, confidence and next evidence needs. Record the actual harness, model and reasoning settings. An unknown is a valid result; a cited node is not automatically sufficient support for a claim. Read relevant WSG criteria progressively from the guideline skill's pinned reference.
-
-The workflow has no built-in model API call. The agent supplies these qualitative judgments; the next command calculates the score.
-
-## 4. Calculate and render
+The setup role runs `doctor` and, when needed, `prepare` to install locked dependencies and Chromium. It discovers 5–10 representative pages including the homepage, records why they matter, and defines a complete visitor journey. Smaller samples need an explicit owner request or a reason such as a small or inaccessible site. The initial plan command supplies a skeleton; the agent completes the sample before collecting.
 
 ```sh
-uv run --locked --script audit/workflow.py score \
-  --session .audit-work/example-run-1 \
-  --review .audit-work/example-run-1/review.json
-uv run --locked --script audit/render_review.py \
-  --session .audit-work/example-run-1 \
-  --artifact-prefix . \
-  --output .audit-work/example-run-1/report.md
+uv run --locked --script audit/cli.py tool workflow init \
+  --origin https://example.org --plan /absolute/output/plan.json
+uv run --locked --script audit/cli.py tool workflow collect \
+  --plan /absolute/output/plan.json --session /absolute/output/session
 ```
 
-The scorer verifies packet and evidence hashes, requires the selected checks, and groups judgments once per guideline. Unknowns remain in the attempted denominator. The renderer supports the current `agent-breadth-v2` rubric and validates scored inputs before producing Markdown. It does not invent or rejudge findings.
+The plan records purpose, selected pages and tasks, consent branches, explicit journey postconditions, source selections, questions and assumptions. Required unanswered scope questions block dependent collection. Source access is optional. See [checks and coverage](../reference/checks.md) and [browser probes](../reference/browser-probes.md) for actual collection capabilities.
 
-The report uses `--artifact-prefix` to link its evidence files. The example keeps the report next to those files. This development renderer still includes campaign-specific methodology wording, a publication-manifest link and relative documentation links from the repository examples. The agent must adapt those passages to the actual run and create or omit publication-only links before sharing; rendering alone does not create a sanitized publication bundle. General report packaging remains part of the DX work.
+A single collection role owns the capture. Reviewers share its frozen packet instead of repeating the crawl. Inspect command failures and incomplete page observations; a successful process exit alone does not establish a complete measurement.
 
-See [reporting reference](../reference/reporting.md) for chart data, denominators and expected sections. Review the resulting priorities, recommendations and limits before sharing.
+## Dispatch bounded native reviews
 
-## Reproduce and extend a run
+```sh
+uv run --locked --script audit/cli.py tool orchestrate tasks \
+  --session /absolute/output/session --output /absolute/output/review-tasks \
+  --mode native-subagents
+```
 
-Recalculating from preserved reviews and inputs needs no new model calls. Recollecting a live site or rerunning a reviewer can change the evidence or judgments and requires a new campaign. Scores from different samples or rubrics are not before/after comparisons.
+The CLI writes evidence, guideline and claims task JSON files with role instructions, actual skill paths, output paths, selected check IDs, site and packet digest. The host agent dispatches native subagents with those contracts. Use `--mode sequential` when delegation is unavailable; the tasks remain the same.
 
-The [example reports](../reports/README.md) link their exact evidence bundles and reproduction commands. Earlier two-page pilots and their failed journeys remain in the [implementation evidence record](../initial-implementation/sources.md#original-agent-pilot-reproduction) and historical reports; the latest three-page runs have completed declared journeys.
+The guideline worker returns the complete row-level review. The evidence and claims workers return explicit issues with check IDs, evidence IDs and requested corrections. Workers record actual harness/model/reasoning settings. New Sol 6.1 and DeepSeek V4.1 Flash tasks require high reasoning.
+
+```sh
+uv run --locked --script audit/cli.py tool orchestrate accept \
+  --task /absolute/output/review-tasks/evidence.task.json
+uv run --locked --script audit/cli.py tool orchestrate status \
+  --tasks /absolute/output/review-tasks
+```
+
+Accept each role separately. Validation checks packet identity, model settings, selected-check coverage and resolvable references. A file's presence is only “needs validation”; changing a validated result invalidates its acceptance. This detects contract violations, not semantic correctness or actual delegation. Retain host traces when available.
+
+## Reconcile and score
+
+The coordinator addresses every evidence/claims issue in a separate resolutions file. Each response names `role:issue-id`, a decision (`applied`, `retained-with-reason` or `needs-new-evidence`) and its reason. Missing evidence stays unresolved; agreement between workers is not new evidence.
+
+```sh
+uv run --locked --script audit/cli.py tool orchestrate reconcile \
+  --tasks /absolute/output/review-tasks \
+  --resolutions /absolute/output/resolutions.json
+uv run --locked --script audit/cli.py tool workflow score \
+  --session /absolute/output/session --review /absolute/output/session/review.json
+```
+
+The coordinator writes the final review from the guideline worker's output plus explicit resolutions. The existing scorer validates that final review and calculates once per guideline group. The reconciliation receipt proves that every advisor issue received a response; it does not prove the response was correct. Keep the role outputs and resolutions beside the session for review.
+
+## Write and illustrate the report
+
+The report worker applies `sustainability-report` to the scored session and writes a separate editorial file. It keeps the score, check outcomes and finding priorities intact while producing plain-language explanations. Selected screenshots remain separate illustrations with their own capture time and state.
+
+```sh
+uv run --locked --script audit/cli.py tool render_review \
+  --session /absolute/output/session \
+  --editorial /absolute/output/editorial.json \
+  --artifact-prefix session --output /absolute/output/report.md
+```
+
+Use the renderer's screenshot options when the writer has selected and inspected illustrations. The [reporting reference](../reference/reporting.md) explains the report layout, technical appendix and chart export. The coordinator checks the rendered report before delivery, including whether its narrative matches the evidence.
+
+## Durable artifacts and recovery
+
+| Artifact                                             | Purpose                                                              |
+| ---------------------------------------------------- | -------------------------------------------------------------------- |
+| Plan and collection receipt                          | Scope, assumptions, commands, failures and implementation provenance |
+| Session packet, raw observations and skill snapshots | Frozen evidence and the exact review instructions                    |
+| Role tasks, results and acceptance receipts          | Assigned work, actual settings and validated handoffs                |
+| Resolutions and final review                         | Coordinator decisions and unresolved disagreements                   |
+| Scores, editorial file, screenshots and report       | Reproducible calculation and readable delivery                       |
+
+Use a new session for corrected collection or broader scope. Do not mutate observations behind a frozen packet. Preserve worker failures and allow a bounded retry rather than endless delegation. Store outputs in the user's working project, outside plugin caches. New plugin versions can change instructions while existing sessions keep their evidence and recorded settings.
+
+The [orchestration research](../knowledge-base/agent-orchestration.md) explains the host-native design and alternatives. The next validation gate is a complete task across multiple harnesses; current contract tests and local manifest checks are narrower evidence.

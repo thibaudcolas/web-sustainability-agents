@@ -97,7 +97,7 @@ harbor run -p .audit-work/site-tasks -a nop -n 2 \
 harbor run -c benchmarks/neuralwatt.json -p .audit-work/site-tasks \
   --jobs-dir "$PWD/.audit-work/jobs"
 CODEX_AUTH_JSON_PATH="${CODEX_AUTH_JSON_PATH:-${CODEX_HOME:-$HOME/.codex}/auth.json}" \
-  harbor run -c benchmarks/codex.json -p .audit-work/site-tasks \
+  harbor run -c benchmarks/frozen-configs/codex-low.json -p .audit-work/site-tasks \
   --jobs-dir "$PWD/.audit-work/jobs"
 ```
 

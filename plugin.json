@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "web-sustainability-agents",
+  "version": "0.1.0",
+  "description": "Agent-led web sustainability audits with progressive skills, bounded specialist tasks and evidence-linked reports.",
+  "author": {
+    "name": "Thibaud Colas"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/thibaudcolas/web-sustainability-agents",
+  "repository": "https://github.com/thibaudcolas/web-sustainability-agents"
+}

@@ -18,6 +18,8 @@ Reusable explanations of web sustainability methodology, evidence and tooling. S
 
 ## Agent engineering
 
+- [Portable agent orchestration](agent-orchestration.md): the Wagtail CLI precedent, native subagents, durable handoffs and remaining design decisions.
+
 - [Lessons from existing audit projects](local-projects.md): patterns from claude-seo and accessibility-agents.
 - [Model providers and inference accounting](provider-capabilities.md): API contracts, versioning, confidence and measurement boundaries.
 

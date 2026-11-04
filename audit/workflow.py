@@ -315,7 +315,10 @@ def collect(plan_path: Path, session: Path) -> None:
     shutil.copyfile(ROOT / "audit/rubric.json", session / "base-rubric.json")
     shutil.copyfile(ROOT / "audit/impact-weights.json", session / "impact-weights.json")
     shutil.copytree(ROOT / ".agents/skills", session / "skills")
+    shutil.copytree(ROOT / "skill-data/core", session / "skills/sustainability-core")
     scripts = [
+        "cli.py",
+        "orchestrate.py",
         "run.py",
         "probes.py",
         "workflow.py",
@@ -510,7 +513,7 @@ def validate_frozen_files(session: Path, packet: JSON) -> None:
     frozen = packet.get("frozenFiles", {})
     if not required.issubset(frozen):
         raise ValueError("Packet does not pin required session provenance")
-    for name, expected in frozen.items():
+    for name, expected in [*frozen.items(), *packet.get("sourceSHA256", {}).items()]:
         path = (session / name).resolve()
         if (
             not path.is_relative_to(session.resolve())

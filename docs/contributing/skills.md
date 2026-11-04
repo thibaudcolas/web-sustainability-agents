@@ -29,6 +29,8 @@ Use lowercase letters, digits, and single hyphens for the name, matching the dir
 
 Update `metadata.version` when releasing changes to the skill. Catalog versions come from skill metadata, independently of the workspace version. The catalog omits optional modification dates rather than reporting checkout time as a content update.
 
+The plugin exposes only `skills/sustainability-audit/`. Keep its entry-point `SKILL.md`, runtime helper and lockfile identical to `.agents/skills/sustainability-audit/`; the installation tests check these copies. Detailed roles stay in the canonical `.agents/skills/` folders and the coordinator lives in `skill-data/core/`. The CLI loads them progressively; do not copy every role into the plugin's auto-discovered `skills/` directory. Native Claude descriptors in `agents/` refer workers to the assigned skill and task file instead of duplicating the methodology.
+
 Run `just build-docs` and inspect `site/.well-known/`. Invalid metadata fails the build. The publishing hook in `scripts/publish_skills.py` generates catalogs from the skills and the `site_name` and `site_url` settings in `mkdocs.yml`. Update those settings when adopting this template. An empty skills directory produces empty catalogs.
 
 GitHub Actions includes hidden files in its Pages artifact so `.well-known/` is deployed with the documentation. Publishing uses the existing deployment on pushes to `main`; no separate release or package upload is needed.

@@ -84,13 +84,13 @@ harbor run -p .audit-work/breadth-tasks-v1 -a oracle -n 2 \
 harbor run -p .audit-work/breadth-tasks-v1 -a nop -n 2 \
   --jobs-dir "$PWD/.audit-work/jobs"
 CODEX_AUTH_JSON_PATH="${CODEX_AUTH_JSON_PATH:-${CODEX_HOME:-$HOME/.codex}/auth.json}" \
-  harbor run -c benchmarks/codex.json -p .audit-work/breadth-tasks-v1 \
+  harbor run -c benchmarks/frozen-configs/codex-low.json -p .audit-work/breadth-tasks-v1 \
   --jobs-dir "$PWD/.audit-work/jobs"
 harbor run -c benchmarks/neuralwatt.json -p .audit-work/breadth-tasks-v1 \
   --jobs-dir "$PWD/.audit-work/jobs"
 ```
 
-The required model arms remain GPT-6.1 Sol/low and Neuralwatt DeepSeek V4.1 Flash/high using the existing Codex harness configuration. Current review skills and all their references are copied into the tasks at build time. Do not rebuild or edit them during a campaign. The builder refuses a nonempty output directory.
+This historical campaign used GPT-6.1 Sol/low and Neuralwatt DeepSeek V4.1 Flash/high. Its reproduction command retains the frozen low configuration; new campaigns use Sol/high from `benchmarks/codex.json`. Current review skills and all their references are copied into the tasks at build time. Do not rebuild or edit them during a campaign. The builder refuses a nonempty output directory.
 
 Publish completed campaigns with `benchmarks/publish_expanded.py --breadth <job directories...>`. The publisher regrades saved reports and collection artifacts, verifies the unchanged base/breadth graders, and compares all task/skill/collector hashes across model arms. It exports allowlisted reports, diagnostics, usage and collection-artifact status without provider transcripts or credentials. Model results must be reported separately from oracle controls, setup failures and retries.
 

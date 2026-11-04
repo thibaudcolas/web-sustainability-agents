@@ -1,0 +1,19 @@
+{
+  "jobs_dir": ".audit-work/jobs",
+  "n_concurrent_trials": 2,
+  "n_attempts": 1,
+  "agents": [
+    {
+      "name": "codex",
+      "model_name": "openai/gpt-6.1-sol",
+      "env": {
+        "CODEX_AUTH_JSON_PATH": "${CODEX_AUTH_JSON_PATH}"
+      },
+      "kwargs": {
+        "version": "0.166.0",
+        "reasoning_effort": "low",
+        "web_search": "disabled"
+      }
+    }
+  ]
+}

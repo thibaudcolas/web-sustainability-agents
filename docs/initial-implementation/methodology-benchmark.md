@@ -50,7 +50,7 @@ harbor run -p .audit-work/methodology-tasks-v1 -a oracle -n 2 \
 harbor run -p .audit-work/methodology-tasks-v1 -a nop -n 2 \
   --jobs-dir "$PWD/.audit-work/jobs"
 CODEX_AUTH_JSON_PATH="${CODEX_AUTH_JSON_PATH:-${CODEX_HOME:-$HOME/.codex}/auth.json}" \
-  harbor run -c benchmarks/codex.json -p .audit-work/methodology-tasks-v1 \
+  harbor run -c benchmarks/frozen-configs/codex-low.json -p .audit-work/methodology-tasks-v1 \
   --jobs-dir "$PWD/.audit-work/jobs"
 harbor run -c benchmarks/neuralwatt.json -p .audit-work/methodology-tasks-v1 \
   --jobs-dir "$PWD/.audit-work/jobs"

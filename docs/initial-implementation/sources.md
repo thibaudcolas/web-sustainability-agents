@@ -142,3 +142,13 @@ uv run --locked --script audit/assess.py   --reviews docs/initial-implementation
 ```
 
 Replace `guide` with `wagtail` for the second site. Recollecting the live site or rerunning a reviewer can produce different evidence or judgments and requires a new session. The existing annual scenarios and headline scores retain their original input captures; no mixed-campaign total is calculated.
+
+## Readable reports and agent entry point
+
+The `sustainability-report` skill separates editorial wording from frozen audit judgments. Two Codex CLI 0.166.0 passes used GPT-6.1 Sol with high reasoning to write the guide and Wagtail report explanations from the original review and relevant evidence. They did not rescore either site or run a new model comparison. The renderer verifies the review digest, complete check set and unchanged priority order. [Guide editorial provenance](assets/report-editions/guide/editorial-receipt.json) and [Wagtail editorial provenance](assets/report-editions/wagtail/editorial-receipt.json) distinguish published skill-resource hashes from the prompt and raw output execution digests.
+
+The [guide illustrations](assets/report-editions/guide/screenshots/manifest.json) and [Wagtail illustration](assets/report-editions/wagtail/screenshots/manifest.json) were captured separately with the bounded screenshot collector and inspected visually. They retain URL, viewport, color preference, timestamps, browser version and image hashes. They illustrate current page appearance without attesting the earlier transfer measurements or changing audit outcomes.
+
+The [orchestration research](../knowledge-base/agent-orchestration.md) uses the supplied Wagtail CLI as the primary design precedent: one discoverable entry skill, progressively loaded instructions and a Python/Typer interface. The implemented plugin/CLI adds setup, collection and specialist handoffs around the existing file contracts. Manifest validation, temporary-project installation and deterministic handoff tests establish local consistency; a clean end-to-end audit under a second harness is still required before claiming portability. Historical low-reasoning campaigns keep their original configuration; new Sol and DeepSeek work uses high reasoning.
+
+Validation passed with `just lint`, `just test` (124 Python and nine JavaScript tests), `just build-docs`, `just check-links` and `just check-external-links`. Browser checks covered both rendered reports at narrow and desktop widths, image loading, table semantics and keyboard scrolling. A regression test preserves access to the final table column on narrow screens. These checks validate the implementation and presentation, not the accuracy of the original audit judgments; no screen reader session was performed.

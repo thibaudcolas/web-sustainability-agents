@@ -88,6 +88,8 @@ The broader Harbor campaign validates four collection handoffs per model under C
 
 ## Installation and report delivery
 
-**B28:** Implement the [proposed plugin experience](../using/README.md#proposed-agent-plugin-experience): versioned manifests, collector-path resolution, prerequisite checks, persistent session outputs, clean installation and update/uninstall tests. Keep the checkout/skills route available and validate another harness before claiming equivalent support.
+**B28:** Validate the [plugin and CLI experience](../using/README.md): versioned manifests, collector-path resolution, prerequisite checks, persistent session outputs, clean installation and update/uninstall tests. Follow the supplied Wagtail CLI design with one discoverable skill and progressively loaded role instructions. Keep the checkout/skills route available and validate another harness before claiming equivalent support.
 
 **B29:** Make the report renderer independent of the example campaign: derive methodology statements from receipts, handle missing publication manifests, resolve documentation links outside the repo, and export only explicitly matched chart enrichments. Verify a newly collected arbitrary-origin session can become a self-contained review bundle without copying provenance wording from a Wagtail run.
+
+The new report skill and renderer separate editorial wording from scored judgments, explain evidence in an appendix, use kB and named cookie choices, and validate optional screenshot provenance. Current reports keep their original three-page sample and low-reasoning judgments; the editorial pass used Sol/high. New audits default to 5–10 representative pages and Sol/high. Wider collection, complete agent-driven tasks and independent recommendation evaluation are still needed before claiming better audit accuracy.

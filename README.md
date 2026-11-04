@@ -1,47 +1,41 @@
 # Web sustainability agents
 
-Audit a live website with an agent: collect repeatable measurements, review evidence against the Web Sustainability Guidelines (WSG), and produce a per-site report with key measures, a scoped score, prioritized findings and next auditing steps. Add source code or internal documentation when available.
+Give your agent a website URL. It prepares the audit tools, samples representative pages, measures browsing behavior, coordinates specialist reviews, and produces a sustainability report with clear priorities and evidence.
 
-**Development preview.** The working distribution is this checkout plus Agent Skills. There is no released Agent Plugin or one-command installer yet. Codex has been exercised; Claude Code, OpenCode and pi compatibility still needs end-to-end validation.
+**Development preview:** the plugin and skill workflow are implemented; broader cross-harness and independent audit validation remain in progress.
 
-## Try an audit
+## Install and ask
 
-Use Git, uv `>=0.12.20,<0.13`, Node.js 26 with npm, and an authenticated agent with terminal access. uv manages Python 3.14.
-
-```sh
-git clone https://github.com/thibaudcolas/web-sustainability-agents.git
-cd web-sustainability-agents
-uv sync --locked
-npm ci
-uv run python -m playwright install chromium
-uv run --locked --script audit/workflow.py --help
-```
-
-Start your agent in the checkout and ask:
+Install the repository as a plugin in a compatible client. For Claude Code:
 
 ```text
-Use sustainability-audit to audit https://example.org. Start with three
-representative public pages and one visitor journey. Ask about missing scope
-that would materially change the work, run the collectors, apply the review
-skills, and produce one report with evidence, a scoped score and next steps.
-Keep the session under .audit-work/.
+/plugin marketplace add thibaudcolas/web-sustainability-agents
+/plugin install web-sustainability-agents@web-sustainability-agents
 ```
 
-Codex discovers the included `.agents/skills/` folders. For other harnesses, source-assisted audits, expected outputs and troubleshooting, follow **[installation and your first audit](docs/using/README.md)**. That guide also describes the proposed Agent Plugin experience and what remains to implement. Installing skills alone does not install collectors or browsers.
+Then ask:
+
+```text
+Use sustainability-audit to audit https://example.org.
+```
+
+The agent owns setup and execution. It defaults to 5–10 representative pages, uses native specialist subagents where supported, and asks only questions that materially affect the work. Source code and internal documents can strengthen an audit when available.
+
+See **[installation and your first audit](docs/using/README.md)** for Codex, project-skill installation, prerequisites, actual compatibility limits and expected outputs. The plugin registers one discovery skill; the version-matched CLI loads deeper instructions as needed. New Sol 6.1 and DeepSeek V4.1 Flash reviews use high reasoning.
 
 ## Explore
 
-- [Example reports](docs/reports/README.md): current guide.wagtail.org and wagtail.org audits, with linked evidence.
+- [Example reports](docs/reports/README.md): guide.wagtail.org and wagtail.org findings with readable evidence.
 - [Knowledge base](docs/knowledge-base/README.md): WSG/STAR, carbon, scoring, measurements and tools.
+- [Implementation project](docs/initial-implementation/README.md): capabilities, roadmap and backlog.
+- [Evaluation project](docs/evaluation/README.md): Harbor campaigns, comparisons and reviewable cases.
 - [Feasibility study](docs/feasibility-study/README.md): research and design rationale.
-- [Implementation project](docs/initial-implementation/README.md): current capabilities, roadmap and backlog.
-- [Evaluation project](docs/evaluation/README.md): Harbor campaigns, model comparisons and reviewable cases.
 
-The preview's scoped scores and development benchmarks do not establish full WSG conformance or general audit accuracy.
+Scoped scores and development benchmarks do not establish full WSG conformance or general audit accuracy.
 
 ## Contribute
 
-See [Contributing](docs/contributing/README.md) for `just init`, tests, lint and documentation commands. [Skill maintenance](docs/contributing/skills.md) covers publishing. The MkDocs workspace originated from [research-workspace-template](https://github.com/thibaudcolas/research-workspace-template).
+See [Contributing](docs/contributing/README.md) for development commands and [skill maintenance](docs/contributing/skills.md) for publishing. The MkDocs workspace originated from [research-workspace-template](https://github.com/thibaudcolas/research-workspace-template).
 
 ## License
 

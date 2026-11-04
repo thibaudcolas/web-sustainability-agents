@@ -5,127 +5,94 @@ search:
 
 # Run a sustainability audit with an agent
 
-Use an agent to investigate a live website, collect repeatable measurements, and produce one evidence-linked sustainability report per site. Start with a public URL; add source code or internal documents when available. The agent applies the Web Sustainability Guidelines (WSG), explains uncertainty, and identifies the next useful improvements and investigations.
+Install the audit entry point, then give your agent a URL. It prepares the tools, chooses a representative sample, collects evidence, coordinates specialist reviews and writes a readable report. You answer questions about your website; the agent operates the audit scripts.
 
-**Development preview:** the working installation is a repository checkout plus Agent Skills. There is no released Agent Plugin, standalone audit package, or one-command installer yet. Codex has been exercised; the other harnesses below have documented skill-loading mechanisms but still need an end-to-end compatibility test. See [example reports](../reports/README.md) before deciding whether this preview fits your needs.
+**Development preview:** plugin manifests, native specialist descriptors, a progressive skill CLI and validated review handoffs are implemented. Local manifest validation and fixture tests do not yet establish end-to-end parity across every harness. The [reports](../reports/README.md) show current output, and the [evaluation project](../evaluation/README.md) records validation limits.
 
-## Install the working preview
+## Install
 
-You need Git, uv `>=0.12.20,<0.13`, Node.js 26 with npm, and an agent with terminal access and its own model authentication. uv manages Python 3.14 and the pinned script dependencies. Commands below run from the audit checkout, not from the website's source repository.
+The host needs Git, uv `>=0.12.20,<0.13`, Node.js 26 with npm, and an authenticated agent with terminal access. The agent's setup role installs the locked Python dependencies and Playwright Chromium when needed. Browser system libraries may require runner-specific setup. Harbor, Docker and energy tools are not required for the baseline.
+
+### As a plugin
+
+The repository supplies an Agent Plugins manifest and a Claude-compatible marketplace. Install from `thibaudcolas/web-sustainability-agents` using your client's plugin mechanism. For example:
+
+```text
+Claude Code
+/plugin marketplace add thibaudcolas/web-sustainability-agents
+/plugin install web-sustainability-agents@web-sustainability-agents
+
+Codex CLI
+codex plugin marketplace add thibaudcolas/web-sustainability-agents
+codex plugin add web-sustainability-agents@web-sustainability-agents
+```
+
+The plugin registers **one entry skill**, `sustainability-audit`. Detailed roles are loaded only when needed. Native specialist definitions ship for Claude Code; other hosts can delegate the same task files through their native subagent tools. Do not assume that installing the plugin proves the whole workflow works in every client. The installed Codex CLI and the [Claude plugin reference](https://code.claude.com/docs/en/plugins-reference) establish the command/manifest mechanisms; this project still needs a clean end-to-end install-and-audit campaign.
+
+For local development, clone the repository and load it with your harness's local-plugin mechanism, such as `claude --plugin-dir /absolute/path/to/web-sustainability-agents`. The agent resolves tools from the plugin's location, so you can remain in the website's working directory.
+
+### As a project skill
+
+For a harness that reads project skills, use the supplied installer once:
 
 ```sh
 git clone https://github.com/thibaudcolas/web-sustainability-agents.git
-cd web-sustainability-agents
-uv sync --locked
-npm ci
-uv run python -m playwright install chromium
-uv run --locked --script audit/workflow.py --help
+uv run --locked --script web-sustainability-agents/scripts/install_audit.py \
+  --harness codex --project /absolute/path/to/your-project
 ```
 
-This installs the repository development environment and browser; reducing that dependency footprint is part of the packaging work. On a Linux runner missing browser system libraries, use Playwright's `install --with-deps chromium` setup for that runner. The baseline does not need Harbor, Docker, GreenFrame or provider API keys beyond those used by your agent. Optional energy adapters have separate prerequisites.
+Choose `codex`, `claude-code`, `opencode` or `pi`. The installer copies only the entry point and records the collector checkout's location. It refuses to overwrite existing skills; `--dry-run` previews paths. Keep the checkout available. Claude Code uses `.claude/skills/`; the other routes use `.agents/skills/`. Restart the agent after installation.
 
-Record `git rev-parse HEAD` when sharing a run. This preview follows repository revisions, rather than a published stable release. Python script lockfiles pin collector dependencies; the agent records its model and reasoning settings separately.
+This follows the progressive-disclosure approach in [Wagtail CLI](https://github.com/wagtail/wagtail-cli): a small discovery skill loads version-matched instructions from a CLI. This prototype's CLI is invoked from its checkout with uv; it is not yet a published standalone PyPI package. The provisional name `wsa` in CLI help is not a reserved or released command.
 
-## Load the audit skills
+## Give it a URL
 
-The four audit skills live in `.agents/skills/sustainability-*`. Keep each complete folder, including references and licenses. The fifth skill, `research-workspace`, is only for maintaining this repository's documentation.
-
-| Agent       | Local setup                                                                 | Start the audit                                           |
-| ----------- | --------------------------------------------------------------------------- | --------------------------------------------------------- |
-| Codex       | Start in this checkout; `.agents/skills/` is discovered directly            | Name `sustainability-audit` in your request               |
-| Claude Code | Copy the four complete audit folders into this checkout's `.claude/skills/` | Invoke `/sustainability-audit` or name it in your request |
-| OpenCode    | Start in this checkout; `.agents/skills/` is a supported location           | Ask it to load `sustainability-audit`                     |
-| pi          | Start in this checkout; `.agents/skills/` is a supported location           | Invoke `/skill:sustainability-audit`                      |
-
-These locations follow the official [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills), [Claude Code skills](https://code.claude.com/docs/en/skills#choose-where-skills-load), [OpenCode skills](https://opencode.ai/docs/skills/#place-files), and [pi skills](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/skills.md). Loading a skill is distinct from validating the full audit on that harness.
-
-For a fresh Claude Code setup, copy the folders from the checkout root:
-
-```sh
-mkdir -p .claude/skills
-cp -R .agents/skills/sustainability-audit .claude/skills/
-cp -R .agents/skills/sustainability-evidence-review .claude/skills/
-cp -R .agents/skills/sustainability-guideline-review .claude/skills/
-cp -R .agents/skills/sustainability-claims-review .claude/skills/
-```
-
-Check for existing customized copies before replacing them. Start a new agent session after setup. Keep these installation copies local unless your team intentionally shares them; the maintained originals remain under `.agents/skills/`.
-
-If your agent does not discover skills, ask it to read `.agents/skills/sustainability-audit/SKILL.md` and follow the referenced workflow. It needs file access, terminal execution, and network/browser access for collection. Native subagents are optional: the coordinator can apply the specialist roles sequentially. Installing a skill never installs the collector runtime automatically.
-
-## Ask for an audit
-
-Start your agent from this checkout and use a request like:
+In your agent, ask:
 
 ```text
 Use sustainability-audit to audit https://example.org.
-
-Prioritize reading an article and finding contact information. Start with
-three representative public pages and one complete visitor journey.
-Use public evidence only; no account access or form submissions.
-
-Measure first load without interaction, consent choices where available,
-and scrolling. Lead the report with first-load figures. Look for carbon.txt
-and public sustainability statements, and use technology detections as context.
-
-Ask about missing scope decisions that would materially change the work.
-Run the collectors, apply the review skills, and produce one Markdown report
-with a scoped score, key measures, top findings, detailed evidence, next auditing
-steps, and reproducibility information. Keep the session under .audit-work/.
 ```
 
-Replace the example origin and tasks. The agent should refine the sample, discover actual consent controls, define journey completion, and record assumptions before collecting. It should inspect failures, preserve unknowns, and use the deterministic scorer after reviewing the evidence. This is an instruction to perform the work; the Python workflow itself does not call a model or make qualitative judgments.
-
-Our comparison baseline uses GPT-6.1 Sol with low reasoning and Neuralwatt DeepSeek V4.1 Flash with high reasoning. Those are experiment settings, not mandatory requirements for using the skills. The [evaluation project](../evaluation/README.md) records what has been tested.
-
-## Add source code or internal context
-
-You can leave the agent in the audit checkout and point it at another accessible repository:
+Or add the context you already know:
 
 ```text
-Also inspect /absolute/path/to/site-source and its relevant documentation.
-Use it to corroborate likely fixes. Record the revision and whether it matches
-the live deployment. Select specific files for the audit packet; do not assume
-that a local declaration proves deployed behavior. Keep internal evidence private.
+Audit https://example.org for sustainability. Our main tasks are reading
+articles and finding contact information. The matching source is in this
+working directory. Use it to corroborate fixes, and keep internal evidence private.
 ```
 
-The agent puts declared roots and explicit `{root, path}` selections in the plan. Source checks join the default scope only when files are selected. The collector reads up to thirty selected files without executing project code; larger files may contribute identity metadata only. See the [check and source reference](../reference/checks.md#source-evidence-in-the-same-packet).
+Claude Code's plugin skill is also available as `/web-sustainability-agents:sustainability-audit`. Naming the skill in an ordinary request works with hosts that support discovery. You do not need to copy a workflow prompt, select technical checks or run collector commands yourself.
 
-If you start from the website's repository instead, provide the audit checkout's absolute path and ask the agent to run collector commands from there. Copying skill folders into the website repository is enough for discovery, but the collector checkout and its dependencies are still required. Internal evidence must be appropriate for the model/provider you choose.
+The default is **5–10 representative public pages**, including the homepage, plus a meaningful visitor journey. The agent discovers the other pages from navigation, site information and your priorities. It records why they were selected and explains any smaller sample. Ask for a narrower audit when that is what you need.
+
+Questions should be about decisions that change the audit: important tasks, audience requirements, source access or restricted flows. Already supplied answers should not be requested again. A public-only audit works without code or internal documents.
+
+## What the agent does
+
+| Role                  | Responsibility                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------- |
+| Coordinator           | Own the conversation, scope, handoffs, disagreements and final delivery                           |
+| Setup and sampling    | Check prerequisites and choose useful pages and journeys                                          |
+| Collection            | Run the agreed capture once and explain incomplete observations                                   |
+| Quantitative reviewer | Check measurement interpretation, units, phases and numeric claims                                |
+| Guideline reviewer    | Judge the scoped WSG checks against evidence and the versioned rubric                             |
+| Claims reviewer       | Check disclosures, source relationships and recommendation prerequisites                          |
+| Report writer         | Explain priorities in plain language, choose illustrations and build a readable evidence appendix |
+
+After collection, the three reviewers can work as independent native subagents on the same frozen packet. The coordinator reconciles their findings before scoring. If delegation is unavailable, the same tasks run sequentially and that mode is recorded. The CLI validates artifacts; it does not call models, run a second agent platform or hide a proprietary router.
+
+New GPT-6.1 Sol audit and report-writing runs use **high reasoning**; Neuralwatt DeepSeek V4.1 Flash remains high. Historical low-reasoning results keep their original labels and scores.
 
 ## What you receive
 
-A private session directory contains the frozen plan, evidence, skill snapshots, command receipts, review packet, model judgments and scoped scores. The agent prepares a Markdown report alongside them; a separate exporter produces chart-ready JSON/CSV. The [workflow reference](workflow.md) gives the exact commands and handoffs.
+The agent delivers one report per origin, with first-load page sizes in kB or MB, a scoped score, priorities, readable evidence explanations and next auditing steps. Cookie choices and scrolling appear separately from the headline numbers. Useful screenshots have alternative text, captions and their own capture context.
 
-The report starts with key measures, scoped score and up to five priorities, then separates quantitative observations from qualitative findings. It ends with coverage gaps and reproducibility. The score is a proportion of attempted guideline groups with scoped passes; it is not full WSG conformance. Digital Carbon Ratings, annual scenarios and measured energy have separate meanings and availability. See [report contents and data](../reference/reporting.md).
+A private session under your working project's `.audit-work/` retains the plan, source evidence, command receipts, worker outputs and exact scoring inputs. The report should be understandable without opening JSON. Technical reproduction files remain available in its appendix. Review any captured source, text and images before publishing them.
 
-Review the report and any evidence before publishing. A private session can contain copied source, page text and logs. Preserve the original session; publish a separate inspected copy when needed.
+The score describes the checks attempted, not full WSG conformance or a universal sustainability grade. Partial measurements and unanswered questions remain visible. The [workflow reference](workflow.md) documents the underlying commands for contributors and agents, rather than making them prerequisites for the owner.
 
 ## Updates and troubleshooting
 
-Use a clean checkout of the revision you want, rerun dependency setup, and refresh any copied skills together. Existing sessions retain their frozen inputs; use a new session directory for a new collection.
+Update the plugin through your client's mechanism, or update the checkout and reinstall the project entry point after preserving any local customization. Keep audit outputs outside the plugin cache so an update or removal does not delete them. Existing sessions retain frozen inputs.
 
-| Symptom                           | Next action                                                                                                          |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Skill not listed                  | Check the harness-specific location or explicitly load its `SKILL.md`                                                |
-| Collector file not found          | Run from the audit checkout, even when the website source is elsewhere                                               |
-| Browser cannot start              | Install the pinned browser and the host's required browser libraries                                                 |
-| A consent action or journey fails | Inspect the actual page and selectors; preserve the failed attempt and collect a new session after correction        |
-| Session directory already exists  | Choose a new directory; collection intentionally refuses to overwrite evidence                                       |
-| Scorer rejects the review         | Check every selected check ID, packet hash, evidence ID and reviewer setting against the session template            |
-| Many unknown findings             | Inspect whether the missing evidence needs another journey, selected source, or an owner answer; do not force passes |
-
-## Proposed Agent Plugin experience
-
-The intended experience is to install one audit package in a supported agent, name a URL and useful tasks, answer relevant scope questions, and receive a report plus reproducible evidence. Harness-specific installation should load the same skills and checks. A plugin should locate its own collectors so users do not need to switch working directories.
-
-**This is a design target, not an installation command available today.** Before documenting a plugin install command, we need:
-
-1. Versioned plugin manifests and distribution metadata, with the four audit skills and their references.
-2. Reliable collector-path resolution and explicit dependency/browser setup, including useful missing-prerequisite diagnostics.
-3. A stable output location independent of the plugin cache and a defined update/uninstall behavior that preserves audit sessions.
-4. A clean-install test and the same complete audit task under Codex and at least one other harness, including sequential review when subagents are unavailable.
-
-Claude Code's [plugin format](https://code.claude.com/docs/en/plugins) demonstrates packaging skills and optional agent integrations together. Codex CLI 0.166.0 also exposes plugin management, but this repository supplies no marketplace or plugin manifest. OpenCode/pi adapters can keep using skills without requiring identical packaging. No MCP server or automatic hooks are required by the current workflow.
-
-The [implementation roadmap](../initial-implementation/validation-roadmap.md) tracks this packaging work alongside the next audit validation steps.
+If a skill is not discovered, name its `SKILL.md` path explicitly. If the runtime location is missing, refresh the installation. If a prerequisite is unavailable, the agent should identify that exact blocker. Collector or worker failures remain recorded; the agent should not quietly turn them into passes or ask you to become its command runner.

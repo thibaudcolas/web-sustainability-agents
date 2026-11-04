@@ -1,0 +1,17 @@
+{
+  "name": "web-sustainability-agents",
+  "owner": {
+    "name": "Thibaud Colas"
+  },
+  "plugins": [
+    {
+      "name": "web-sustainability-agents",
+      "source": "./",
+      "version": "0.1.0",
+      "description": "Agent-led web sustainability audits with progressive skills, bounded specialist tasks and evidence-linked reports."
+    }
+  ],
+  "metadata": {
+    "description": "Install the sustainability audit entry point and its bounded specialist agents."
+  }
+}
