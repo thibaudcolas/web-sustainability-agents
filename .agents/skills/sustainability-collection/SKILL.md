@@ -3,7 +3,7 @@ name: sustainability-collection
 description: Execute an agreed sustainability audit plan once, inspect collector failures and hand a frozen evidence packet to review agents. Use after scope and setup are ready.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Collect the agreed evidence
@@ -18,7 +18,7 @@ Return the absolute packet and receipt paths, sample actually collected, complet
 
 A failed collection remains preserved. A corrected selector or wider sample belongs in a new linked session, not overwritten evidence. Energy readiness is part of collection by default. Inspect `energy/manifest.json` and report readiness or its precise missing prerequisite; unavailable energy is never zero. Use `--energy run --greenframe-binary <pinned-local-binary>` on `workflow collect` for the accepted energy sample, or `tool greenframe --plan <plan> --output-dir <new-energy-directory> --mode run --binary <pinned-local-binary>` as a later supplement with its own timestamp. Configure `plan.energy.pageIds` for 1–3 planned pages and `samples` (default 3); an empty list samples the first planned page. An explicit `--energy skip` records the opt-out. Install the pinned local tool and image within existing authorization when practical; never change host hardware permissions or global configuration to make a measurement pass.
 
-Run energy sequentially in a quiet window, after other browser collection and while local tests and model campaigns are paused. GreenFrame separates modeled browser-device CPU, memory, disk and screen energy from its modeled network energy, and excludes remote servers. Report the median and observed range across complete repetitions, actual browser/image versions, and the smaller energy sample. Keep these resource-model estimates separate from SWDM; they are not electricity-meter readings or total-device measurements. co2-runner's Linux counter instead measures the whole CPU package during a Firefox session, including background activity; it is not page-only energy.
+Run energy sequentially in a quiet window, after other browser collection and while local tests and model campaigns are paused. GreenFrame separates modeled browser-device CPU, memory, disk and screen energy from its modeled network energy, and excludes remote servers. Show the median of three matching complete repetitions in the report, with actual browser/image versions and the smaller energy sample. Keep individual values and their range in the technical artifacts. Keep these resource-model estimates separate from SWDM; they are not electricity-meter readings or total-device measurements. co2-runner's Linux counter instead measures the whole CPU package during a Firefox session, including background activity; it is not page-only energy.
 
 Keep hardware-energy runs separate from other browser/model work. Review workers share this captured evidence rather than each launching a duplicate crawl.
 

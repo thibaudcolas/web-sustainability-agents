@@ -45,17 +45,23 @@ def main() -> None:
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--methodology", action="store_true")
     modes.add_argument("--breadth", action="store_true")
+    modes.add_argument("--scope", action="store_true")
     args = parser.parse_args()
     if args.methodology and args.output == ROOT / ".audit-work/expanded-tasks-v2":
         args.output = ROOT / ".audit-work/methodology-tasks-v1"
     if args.breadth and args.output == ROOT / ".audit-work/expanded-tasks-v2":
         args.output = ROOT / ".audit-work/breadth-tasks-v1"
+    if args.scope and args.output == ROOT / ".audit-work/expanded-tasks-v2":
+        args.output = ROOT / ".audit-work/scope-tasks-v1"
+    collection_family = args.breadth or args.scope
     if args.output.exists() and any(args.output.iterdir()):
         raise ValueError(
             "Use a new output directory; frozen tasks must not be overwritten"
         )
     corpus_name = (
-        "breadth-cases.json"
+        "scope-cases.json"
+        if args.scope
+        else "breadth-cases.json"
         if args.breadth
         else "methodology-cases.json"
         if args.methodology
@@ -63,7 +69,7 @@ def main() -> None:
     )
     corpus = json.loads((ROOT / "benchmarks" / corpus_name).read_text())
     instruction = INSTRUCTION
-    if args.methodology or args.breadth:
+    if args.methodology or collection_family:
         instruction = (
             instruction.replace(
                 "Use /skills/sustainability-evidence-review/SKILL.md and read /app/input.json.",
@@ -78,6 +84,8 @@ def main() -> None:
                 "These are claim-validation questions: pass means the claim is supported; fail means it is unsupported (contradicted OR insufficient evidence). Use inconclusive only if the question explicitly asks for an unresolved direct state.",
             )
         )
+    if args.scope:
+        instruction += "\nFor contextual judgments, also read /skills/sustainability-context-review/SKILL.md and its contextual-review-v1 reference. The input facts substitute for context.json records in these bounded fixtures. The input question and any explicitly supplied scoring rubric define the requested claim; do not substitute a different site-score denominator.\n"
     manifest = {
         "schemaVersion": "0.1.0",
         "labelStatus": corpus["labelStatus"],
@@ -89,7 +97,7 @@ def main() -> None:
             (task / folder).mkdir(parents=True, exist_ok=True)
         input_data = dict(case["input"])
         reference = dict(case["reference"])
-        requires_collector = args.breadth and case.get("requiresCollector", False)
+        requires_collector = collection_family and case.get("requiresCollector", False)
         extra_instruction = ""
         if requires_collector:
             bundle = {"site": input_data["site"], "facts": input_data["facts"]}
@@ -134,10 +142,10 @@ def main() -> None:
         shutil.copyfile(
             ROOT
             / "benchmarks"
-            / ("grade_breadth.py" if args.breadth else "grade_expanded.py"),
+            / ("grade_breadth.py" if collection_family else "grade_expanded.py"),
             task / "tests/grade.py",
         )
-        if args.breadth:
+        if collection_family:
             shutil.copyfile(
                 ROOT / "benchmarks/grade_expanded.py", task / "tests/grade_expanded.py"
             )
@@ -146,7 +154,7 @@ def main() -> None:
                 ROOT
                 / (
                     ".agents/skills"
-                    if args.breadth
+                    if collection_family
                     else "benchmarks/frozen-methodology-skills"
                 )
                 / name
@@ -156,9 +164,11 @@ def main() -> None:
                     "sustainability-claims-review",
                 ]
             ]
-            if args.methodology or args.breadth
+            if args.methodology or collection_family
             else [ROOT / "benchmarks/frozen-skills/sustainability-evidence-review"]
         )
+        if args.scope:
+            skills.append(ROOT / ".agents/skills/sustainability-context-review")
         for skill in skills:
             shutil.copytree(
                 skill,
@@ -195,6 +205,7 @@ def main() -> None:
                 **(
                     {
                         "guidelines": case["guidelines"],
+                        **({"dimensions": case["dimensions"]} if args.scope else {}),
                         "requiresCollector": requires_collector,
                         "extraResources": {
                             str(p.relative_to(task)): hashlib.sha256(
@@ -208,7 +219,7 @@ def main() -> None:
                             if p.exists()
                         },
                     }
-                    if args.breadth
+                    if collection_family
                     else {}
                 ),
                 "skillResources": {
@@ -234,7 +245,9 @@ def main() -> None:
         ROOT
         / "docs/initial-implementation/assets"
         / (
-            "breadth-benchmark-manifest.json"
+            "scope-benchmark-manifest.json"
+            if args.scope
+            else "breadth-benchmark-manifest.json"
             if args.breadth
             else "methodology-benchmark-manifest.json"
             if args.methodology

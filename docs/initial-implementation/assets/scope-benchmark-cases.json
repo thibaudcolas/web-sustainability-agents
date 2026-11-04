@@ -1,0 +1,1959 @@
+{
+  "schemaVersion": "0.4.0",
+  "family": "scope-v1",
+  "labelStatus": "Coordinator-authored controlled development references. Public and reviewable, not held-out accuracy labels. Claim validation uses supported/unsupported semantics; no independent audit accuracy claim.",
+  "cases": [
+    {
+      "id": "energy-measured-modeled-boundaries",
+      "guidelines": ["3.1", "5.5"],
+      "dimensions": ["energy-boundary"],
+      "requiresCollector": true,
+      "referenceRationale": "A real counter observation does not isolate a site; unit conversion does not make a model a measurement.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "localRun": {
+                "cpuPackageJoules": 72,
+                "durationSeconds": 12,
+                "kind": "hardware counter observation",
+                "includes": "browser, collector, OS and background processes",
+                "idleBaselineMeasured": false
+              },
+              "siteIsolatedJoules": null
+            }
+          },
+          {
+            "id": "e2",
+            "value": {
+              "greenframe": {
+                "energyWh": 0.004,
+                "kind": "modeled browser scenario",
+                "sameVisit": true
+              },
+              "swdm": {
+                "gramsCO2e": 0.03,
+                "kind": "transfer-based model",
+                "overlapWithGreenframe": "not reconciled"
+              }
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The supplied CPU package counter observed 72 J across the local run."
+          },
+          {
+            "id": "q2",
+            "text": "The CPU package observation isolates site-only electricity consumption."
+          },
+          {
+            "id": "q3",
+            "text": "Adding the two model outputs and hardware reading establishes a measured site total."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "GreenFrame scenario energy converted to joules",
+            "unit": "J",
+            "basis": "modeled"
+          },
+          {
+            "id": "m2",
+            "text": "Site-only measured energy",
+            "unit": "J",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Retain the CPU observation and model estimates with their separate scopes in the report."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1", "e2"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1", "e2"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 14.4,
+            "unit": "J",
+            "basis": "modeled"
+          },
+          {
+            "id": "m2",
+            "value": null,
+            "unit": "J",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "preserve",
+            "evidenceIds": ["e1", "e2"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "inference-energy-missing-not-zero",
+      "guidelines": ["5.5"],
+      "dimensions": ["energy-missing"],
+      "requiresCollector": false,
+      "referenceRationale": "Missing provider telemetry remains unknown; local package energy and billing are separate quantities.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "modelCall": {
+                "inputTokens": 2100,
+                "outputTokens": 400,
+                "energyJoules": null,
+                "providerEnergyHeader": null,
+                "usageCostUSD": 0
+              },
+              "localEnergyMeasurement": {
+                "packageJoules": 34,
+                "boundary": "local browser and harness only; remote inference excluded"
+              }
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The zero harness cost establishes zero inference energy."
+          },
+          {
+            "id": "q2",
+            "text": "The remote inference energy is unresolved in the supplied evidence."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Remote inference energy",
+            "unit": "J",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m2",
+            "text": "Observed local CPU package energy",
+            "unit": "J",
+            "basis": "observed"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Publish zero joules for remote inference because no energy field was returned."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": null,
+            "unit": "J",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m2",
+            "value": 34,
+            "unit": "J",
+            "basis": "observed"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "not_supported",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "initial-first-visit-and-median-three",
+      "guidelines": ["3.1"],
+      "dimensions": ["repeat-selection"],
+      "requiresCollector": true,
+      "referenceRationale": "First headline is run a at 900 kB; the sorted three matching runs have median 1000 kB. These summaries must retain distinct selection rules.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "protocol": {
+                "page": "/",
+                "phase": "initial",
+                "profile": "fresh anonymous, no consent interaction",
+                "viewport": "1280x720",
+                "network": "unthrottled",
+                "headline": "first successful valid run",
+                "repeatStatistic": "median of three matching successful runs"
+              },
+              "runs": [
+                {
+                  "id": "a",
+                  "bytes": 900000,
+                  "status": "success"
+                },
+                {
+                  "id": "b",
+                  "bytes": 1100000,
+                  "status": "success"
+                },
+                {
+                  "id": "c",
+                  "bytes": 1000000,
+                  "status": "success"
+                }
+              ]
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The first-visit headline and the three-run median are distinct summaries under this protocol."
+          },
+          {
+            "id": "q2",
+            "text": "The minimum of the three is the requested repeat statistic."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "First successful initial-load headline",
+            "unit": "kB",
+            "basis": "observed"
+          },
+          {
+            "id": "m2",
+            "text": "Median initial-load transfer over the three matching runs",
+            "unit": "kB",
+            "basis": "calculated"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Preserve both the first-visit headline and labeled median with their run IDs."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 900,
+            "unit": "kB",
+            "basis": "observed"
+          },
+          {
+            "id": "m2",
+            "value": 1000,
+            "unit": "kB",
+            "basis": "calculated"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "preserve",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "median-cannot-mix-consent-and-cache",
+      "guidelines": ["3.1", "3.5"],
+      "dimensions": ["repeat-selection", "consent"],
+      "requiresCollector": false,
+      "referenceRationale": "Technical run success does not make cache and consent states interchangeable.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "requestedStatistic": "median of three fresh anonymous initial visits before consent interaction",
+              "runs": [
+                {
+                  "id": "a",
+                  "bytes": 100000,
+                  "state": "fresh before consent",
+                  "valid": true
+                },
+                {
+                  "id": "b",
+                  "bytes": 600000,
+                  "state": "fresh after accept all",
+                  "valid": true
+                },
+                {
+                  "id": "c",
+                  "bytes": 20000,
+                  "state": "warm cached before consent",
+                  "valid": true
+                }
+              ],
+              "remainingRuns": null
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The three successful runs form the requested matching-condition repeat sample."
+          },
+          {
+            "id": "q2",
+            "text": "Run a supplies a first fresh before-consent observation."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Requested median of three matching fresh before-consent visits",
+            "unit": "kB",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m2",
+            "text": "First fresh before-consent observation",
+            "unit": "kB",
+            "basis": "observed"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Collect two additional fresh before-consent visits under the same conditions before calculating that median."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": null,
+            "unit": "kB",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m2",
+            "value": 100,
+            "unit": "kB",
+            "basis": "observed"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "area-score-known-only-and-coverage",
+      "guidelines": ["5.5", "5.24"],
+      "dimensions": ["area-scores", "unknown-coverage"],
+      "requiresCollector": false,
+      "referenceRationale": "Known-only denominators and applicable coverage differ; no applicable business checks means undefined coverage, not 0 or 100.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "rubric": {
+                "pass": 1,
+                "fail": 0,
+                "cantTell": "exclude from score; include applicable coverage denominator",
+                "notApplicable": "exclude from both denominators",
+                "areaWeighting": "not supplied"
+              },
+              "areas": {
+                "userExperience": ["pass", "fail", "cantTell", "notApplicable"],
+                "development": ["pass", "pass", "cantTell", "cantTell"],
+                "hosting": ["cantTell", "notApplicable"],
+                "business": ["notApplicable"]
+              }
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "A hosting score of zero is established by its unknown and not-applicable checks."
+          },
+          {
+            "id": "q2",
+            "text": "The supplied rubric authorizes an overall score across the four areas."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "User experience known-only score",
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m2",
+            "text": "User experience assessed-applicable coverage",
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m3",
+            "text": "Development known-only score",
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m4",
+            "text": "Development assessed-applicable coverage",
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m5",
+            "text": "Hosting known-only score",
+            "unit": "percent",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m6",
+            "text": "Hosting assessed-applicable coverage",
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m7",
+            "text": "Business assessed-applicable coverage",
+            "unit": "percent",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Report area scores beside applicable coverage and explicit unknown counts."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 50,
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m2",
+            "value": 66.66666666666667,
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m3",
+            "value": 100,
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m4",
+            "value": 50,
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m5",
+            "value": null,
+            "unit": "percent",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m6",
+            "value": 0,
+            "unit": "percent",
+            "basis": "calculated"
+          },
+          {
+            "id": "m7",
+            "value": null,
+            "unit": "percent",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "preserve",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-priority-requires-applicability-evidence",
+      "guidelines": ["2.15", "5.24"],
+      "dimensions": ["priority", "applicability"],
+      "requiresCollector": false,
+      "referenceRationale": "The explicit queue rule makes priority evidence-dependent; numeric severity cannot promote unknowns or excluded checks into failures.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "priorityRule": "Include demonstrated applicable failures in CI remediation. cantTell requests evidence. notApplicable is excluded. Consider measured repeated exposure before prioritizing; severity numbers alone do not override applicability.",
+              "checks": [
+                {
+                  "id": "video-autoplay",
+                  "result": "notApplicable",
+                  "reason": "scoped pages have no video",
+                  "severity": 10
+                },
+                {
+                  "id": "mobile-transfer",
+                  "result": "fail",
+                  "reason": "all 3 scoped pages exceed supplied 500 kB budget",
+                  "severity": 7,
+                  "repeatedExposure": "all 3 initial visits"
+                },
+                {
+                  "id": "database-query",
+                  "result": "cantTell",
+                  "reason": "no backend query trace",
+                  "severity": 9
+                }
+              ]
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The not-applicable autoplay check is a demonstrated CI failure because its severity is highest."
+          },
+          {
+            "id": "q2",
+            "text": "The mobile-transfer check is eligible for the supplied CI remediation queue."
+          },
+          {
+            "id": "q3",
+            "text": "The unknown database check establishes inefficient deployed database queries."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Demonstrated applicable failing checks in this queue",
+            "unit": "checks",
+            "basis": "calculated"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Prioritize the demonstrated mobile-transfer budget regression in this CI queue."
+          },
+          {
+            "id": "r2",
+            "proposal": "Obtain a scoped backend trace to resolve the database check."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 1,
+            "unit": "checks",
+            "basis": "calculated"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "fix",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "r2",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "branch-link-not-immutable-source-proof",
+      "guidelines": ["3.12", "5.12"],
+      "dimensions": ["source-provenance"],
+      "requiresCollector": false,
+      "referenceRationale": "A mutable ref and requirement string support a bounded source claim, not reproducible commit/deployment evidence.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "sourceRecord": {
+                "url": "https://code.example/org/site/blob/main/package.json",
+                "ref": "main",
+                "retrievedCommit": null,
+                "excerpt": "{\"dependencies\":{\"widget\":\"^2.0.0\"}}",
+                "retrievedAt": "2026-10-01T10:00:00Z"
+              },
+              "deploymentCommit": null,
+              "lockfile": null
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The supplied branch URL is immutable commit-pinned provenance."
+          },
+          {
+            "id": "q2",
+            "text": "The excerpt establishes a declared widget requirement in the retrieved branch snapshot."
+          },
+          {
+            "id": "q3",
+            "text": "The exact deployed widget version is established by the excerpt."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Exact deployed widget version",
+            "unit": "version",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Capture the resolved commit, lockfile and deployment linkage before claiming an exact installed version."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": null,
+            "unit": "version",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "commit-pin-does-not-repair-snippet-mismatch",
+      "guidelines": ["3.2", "5.12"],
+      "dimensions": ["source-provenance", "snippet-match"],
+      "requiresCollector": false,
+      "referenceRationale": "A genuine commit and deployment match do not establish text absent from the verified file; no whole-site absence is asserted.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "source": {
+                "commit": "1111111111111111111111111111111111111111",
+                "path": "src/main.js",
+                "verifiedBytes": "import { render } from \"./render.js\";\nrender();",
+                "snippetClaimedAsExact": "import tracking from \"analytics-vendor\";\ntracking.start();",
+                "snippetMatchesVerifiedBytes": false
+              },
+              "deploymentMatchesCommit": true,
+              "networkCapture": null
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "Commit-pinned provenance by itself validates the mismatched tracking snippet."
+          },
+          {
+            "id": "q2",
+            "text": "The supplied source bytes establish that the claimed tracking import is present in this file."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Tracking imports established in the verified bytes",
+            "unit": "imports",
+            "basis": "observed"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Remove the claimed tracking import from this file on the strength of the mismatched snippet."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 0,
+            "unit": "imports",
+            "basis": "observed"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "not_supported",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "star-qualitative-scope-and-evidence",
+      "guidelines": ["2.2", "5.1", "5.6"],
+      "dimensions": [
+        "STAR",
+        "audience-needs",
+        "governance-practice",
+        "sustainability-goals"
+      ],
+      "requiresCollector": false,
+      "referenceRationale": "A bounded evaluation narrative can disclose the supplied scope, evidence and unknowns without claiming a completed STAR evaluation or inventing an official rating scale.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "reviewScope": {
+                "samples": ["public service home", "support page"],
+                "orgRecords": "public progress report only",
+                "requestedOutput": "qualitative evaluation narrative disclosing scope, sampling, methods, evidence and uncertainties; no rating scale supplied",
+                "sampling": {
+                  "advertisedContentPages": 120,
+                  "selectedPages": 2,
+                  "selection": "purposive development sample; no random sample",
+                  "completeProcessCoverage": false
+                }
+              },
+              "evidence": {
+                "strength": "accessible low-data HTML support route completed in 3 tests",
+                "tension": "owner targets 20% lower annual transfer but no baseline period supplied",
+                "action": "progress report names an owner for baseline definition",
+                "reservation": "no staff interviews or procurement records"
+              }
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The evidence supports a bounded qualitative STAR-style discussion with explicit reservations."
+          },
+          {
+            "id": "q2",
+            "text": "A numerical STAR rating of 4 out of 5 is established by the supplied review contract."
+          },
+          {
+            "id": "q3",
+            "text": "The public samples establish organization-wide sustainability performance."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Numeric STAR rating",
+            "unit": "score",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Keep the observed low-data support strength while requesting the missing target baseline."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": null,
+            "unit": "score",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "star-public-claim-missing-operations",
+      "guidelines": ["5.1", "5.9", "5.13"],
+      "dimensions": ["STAR", "impact-business-model", "service-necessity"],
+      "requiresCollector": false,
+      "referenceRationale": "Missing organizational records preserve unknowns; a tested route is a scoped strength and a slogan is not operational proof.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "publicClaim": "Our AI advice service is sustainable and benefits every community.",
+              "businessModelDocument": null,
+              "necessityAssessment": null,
+              "alternativeChannelsCompared": null,
+              "accessEvidence": {
+                "task": "read eligibility criteria",
+                "publicHTMLWorksWithoutAccount": true
+              },
+              "assessmentBoundary": "one anonymous public journey"
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The public claim establishes an evidenced impact business model and service necessity assessment."
+          },
+          {
+            "id": "q2",
+            "text": "The observed public HTML route supports a bounded strength for this one anonymous journey."
+          },
+          {
+            "id": "q3",
+            "text": "Missing necessity documents establish that the service has no social value."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Verified organization-wide STAR score",
+            "unit": "score",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Request a necessity assessment and theory of change before judging those organizational practices."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": null,
+            "unit": "score",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "audience-research-changes-low-data-journey",
+      "guidelines": ["2.2"],
+      "dimensions": ["audience-needs"],
+      "requiresCollector": true,
+      "referenceRationale": "Research linked to a concrete change and relevant test supports a partial audience-needs judgment; 12 people are not universal proof.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "research": {
+                "participants": 12,
+                "targetAudience": "rural service users on prepaid mobile data",
+                "finding": "8 participants reported exhausting data before completing downloads"
+              },
+              "implementedChange": {
+                "route": "/eligibility",
+                "change": "HTML summary before optional 6 MB PDF",
+                "testedWithSameAudience": true,
+                "completionsBefore": 4,
+                "completionsAfter": 10,
+                "testParticipants": 12
+              },
+              "scope": "eligibility prototype test only"
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The records show audience constraints informed a tested eligibility design change."
+          },
+          {
+            "id": "q2",
+            "text": "The test proves every production user can complete the service."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Improvement in observed prototype completions",
+            "unit": "participants",
+            "basis": "calculated"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Preserve the tested HTML-first eligibility path and track results in production."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 6,
+            "unit": "participants",
+            "basis": "calculated"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "preserve",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "inclusive-testing-attendance-not-coverage",
+      "guidelines": ["2.14", "5.13"],
+      "dimensions": ["inclusive-testing", "access-barriers"],
+      "requiresCollector": false,
+      "referenceRationale": "Absence from testing is a documented coverage gap, not proof of inaccessible behavior or total absence of user research.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "testPlan": {
+                "targetUsers": [
+                  "screen-reader users",
+                  "older phones on slow networks",
+                  "desktop users"
+                ],
+                "requiredTask": "apply for a travel pass"
+              },
+              "completedTesting": {
+                "participants": 5,
+                "allOn": "recent desktop browsers with mouse input",
+                "screenReaderSessions": 0,
+                "olderPhoneSessions": 0
+              },
+              "publicStatement": "We tested with users."
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The supplied testing record demonstrates participation from the two constrained target groups."
+          },
+          {
+            "id": "q2",
+            "text": "The evidence establishes that constrained target users cannot complete the task."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Completed sessions with either specified constrained group",
+            "unit": "sessions",
+            "basis": "observed"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Run the planned travel-pass task with screen-reader users and older-phone participants before judging those barriers."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 0,
+            "unit": "sessions",
+            "basis": "observed"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "governance-practice-public-operation-record",
+      "guidelines": ["5.1", "5.6"],
+      "dimensions": ["governance-practice", "sustainability-goals"],
+      "requiresCollector": false,
+      "referenceRationale": "Public operational records can support bounded governance and target judgments; internal source access is not a universal prerequisite. The exact governance-practice expectation is met for the two reported quarters by signed reviews, comparable monitored results and recorded continuation or next actions.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "policy": {
+                "ownerRole": "Service sustainability lead",
+                "reviewCadence": "quarterly",
+                "target": "reduce median initial transfer by 15% from Q1 2026"
+              },
+              "publishedReviews": [
+                {
+                  "quarter": "Q2 2026",
+                  "ownerSigned": true,
+                  "baselineKB": 1000,
+                  "currentKB": 900,
+                  "sameScopeAndMethod": true,
+                  "decision": "optimize image variants next quarter"
+                },
+                {
+                  "quarter": "Q3 2026",
+                  "ownerSigned": true,
+                  "baselineKB": 1000,
+                  "currentKB": 820,
+                  "sameScopeAndMethod": true,
+                  "decision": "retain budget; investigate consent-state variance"
+                }
+              ],
+              "internalBoardMinutes": null
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The published records demonstrate operation of the named review process for the two reported quarters."
+          },
+          {
+            "id": "q2",
+            "text": "The supplied Q3 transfer result meets the stated 15% target for its matched scope."
+          },
+          {
+            "id": "q3",
+            "text": "Missing internal board minutes invalidate the observed public review records."
+          },
+          {
+            "id": "q4",
+            "text": "Under contextual-review-v1 governance-practice, these public records satisfy the bounded expectation of accountable review, a monitored result and a resulting action over the two declared quarters."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Q3 transfer reduction from the stated baseline",
+            "unit": "percent",
+            "basis": "calculated"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Preserve the documented quarterly review and its scope and method disclosures."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q4",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 18,
+            "unit": "percent",
+            "basis": "calculated"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "preserve",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "impact-business-model-outputs-not-outcomes",
+      "guidelines": ["5.9"],
+      "dimensions": ["impact-business-model"],
+      "requiresCollector": false,
+      "referenceRationale": "A stated theory of change is useful scope evidence, while output counts alone do not verify outcomes or causality.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "publishedTheoryOfChange": {
+                "activity": "offer appointment booking reminders",
+                "intendedOutcome": "reduce missed appointments and unnecessary travel",
+                "outputs": {
+                  "remindersSent": 10000
+                },
+                "outcomeMeasures": null,
+                "counterfactualOrBaseline": null
+              },
+              "revenueModel": "annual service subscription",
+              "claim": "We saved 10000 journeys."
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The document articulates an activity and intended social/environmental outcome."
+          },
+          {
+            "id": "q2",
+            "text": "The count of reminders establishes 10000 journeys avoided."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Verified avoided journeys",
+            "unit": "journeys",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Measure attendance and travel outcomes against a defined baseline before claiming avoided journeys."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": null,
+            "unit": "journeys",
+            "basis": "unavailable"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "service-necessity-and-access-tradeoff",
+      "guidelines": ["5.13", "2.2"],
+      "dimensions": ["service-necessity", "access-barriers"],
+      "requiresCollector": false,
+      "referenceRationale": "Necessity and access require task and audience reasoning; a smaller digital artifact is not automatically the right service.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "ownerAssessment": {
+                "task": "renew a permit",
+                "alternatives": [
+                  {
+                    "channel": "in person",
+                    "medianTravelKm": 18
+                  },
+                  {
+                    "channel": "telephone",
+                    "taskCompletionTested": true
+                  },
+                  {
+                    "channel": "public HTML",
+                    "taskCompletionTested": true
+                  }
+                ],
+                "decision": "retain telephone support and HTML; reject mandatory native app",
+                "reason": "mandatory app excludes devices still used by target audience"
+              },
+              "appProposal": {
+                "purpose": "same renewal task",
+                "uniqueNeededCapability": null,
+                "accessibilityTest": null
+              }
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The owner assessment compares alternatives and documents an audience constraint relevant to necessity."
+          },
+          {
+            "id": "q2",
+            "text": "The supplied evidence establishes that a mandatory native app is needed to complete the renewal task."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Tested remote non-app channels",
+            "unit": "channels",
+            "basis": "observed"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Replace both tested remote channels with the proposed mandatory native app."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 2,
+            "unit": "channels",
+            "basis": "observed"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "not_supported",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "data-minimization-purpose-and-retention",
+      "guidelines": ["5.18"],
+      "dimensions": ["data-minimization"],
+      "requiresCollector": false,
+      "referenceRationale": "The proposal is bounded to extra fields whose absence was tested and whose purpose is explicitly unestablished; no legal conclusion is made.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "form": {
+                "task": "email a public checklist",
+                "requiredFields": [
+                  "email",
+                  "date of birth",
+                  "household income"
+                ],
+                "optionalFields": []
+              },
+              "ownerPurposeRecord": {
+                "email": "deliver checklist",
+                "date of birth": null,
+                "household income": null
+              },
+              "securityRetentionRecord": {
+                "deliveryEmailDeletionDays": 7,
+                "otherPersonalDataDeletionDays": null
+              },
+              "observedTask": "checklist delivery succeeds in test when the two extra fields are removed",
+              "legalOrOperationalNeedForExtraFields": null
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The record establishes a necessary purpose for collecting date of birth and household income for this task."
+          },
+          {
+            "id": "q2",
+            "text": "The supplied removal test supports a scoped opportunity to reduce data collection."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Required fields without a documented purpose in this record",
+            "unit": "fields",
+            "basis": "calculated"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Remove the two purpose-free required fields from this tested checklist task after confirming the supplied purpose record remains current."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 2,
+            "unit": "fields",
+            "basis": "calculated"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "fix",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "content-lifecycle-policy-and-stale-path",
+      "guidelines": ["5.18", "5.10"],
+      "dimensions": ["content-lifecycle"],
+      "requiresCollector": true,
+      "referenceRationale": "A concrete observed contradiction supports a sampled lifecycle failure; it does not justify a site-wide content verdict.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "policy": {
+                "reviewIntervalDays": 90,
+                "archiveRule": "obsolete guidance must redirect to the current equivalent"
+              },
+              "sample": {
+                "path": "/permit-2024",
+                "lastReviewedDaysAgo": 410,
+                "text": "Use the retired application form",
+                "currentEquivalent": "/permit",
+                "redirectsToCurrent": false,
+                "currentPageLinksBack": true
+              },
+              "siteInventoryCompleteness": "one sampled path only"
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The sampled retired guidance follows the supplied review and replacement policy."
+          },
+          {
+            "id": "q2",
+            "text": "This single stale path establishes that every page is obsolete."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Days beyond the supplied review interval for this path",
+            "unit": "days",
+            "basis": "calculated"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Replace the sampled retired form instruction with the current equivalent and repair its inbound link."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 320,
+            "unit": "days",
+            "basis": "calculated"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "fix",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "end-of-life-plan-versus-tested-retirement",
+      "guidelines": ["5.22", "5.26"],
+      "dimensions": ["service-end-of-life"],
+      "requiresCollector": false,
+      "referenceRationale": "A timed future obligation is not an observed present failure; partial implementation does not establish full completion.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "retirementPlan": {
+                "oldHost": "legacy.scope.example",
+                "successor": "scope.example",
+                "exportAvailable": true,
+                "retentionRule": "delete migrated personal data after verification and 30-day appeal window",
+                "owner": "service operations"
+              },
+              "executedChecks": {
+                "oldPublicGuideRedirects": true,
+                "exportTestPassed": true,
+                "migrationVerificationPassed": true,
+                "appealWindowElapsed": false,
+                "deletionCompleted": false
+              },
+              "expectedChecks": "verify migration, preserve export, honor appeal window, then execute approved deletion"
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The observed redirects and tested export demonstrate two implemented retirement measures."
+          },
+          {
+            "id": "q2",
+            "text": "The lack of deletion before the appeal window closes contradicts this supplied plan."
+          },
+          {
+            "id": "q3",
+            "text": "The supplied checks establish complete execution of the end-of-life plan."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Implemented observed retirement measures named in the first question",
+            "unit": "measures",
+            "basis": "calculated"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "Preserve personal data until the supplied appeal window closes and the approved deletion step becomes due."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": 2,
+            "unit": "measures",
+            "basis": "calculated"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "preserve",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-duplicate-trigger-unmeasured-priority",
+      "guidelines": ["2.15", "4.6"],
+      "dimensions": ["source-provenance", "priority", "ci-automation"],
+      "requiresCollector": false,
+      "referenceRationale": "Source confirms overlapping event configuration, but job frequency, actual duplication and runtime are unmeasured. A bounded check is justified; no quantified saving or high comparative priority follows from the candidate alone.",
+      "input": {
+        "schemaVersion": "0.2.0",
+        "site": "https://scope.example",
+        "source": "Controlled synthetic scope-v1 development evidence; no live measurement or real organizational assessment",
+        "facts": [
+          {
+            "id": "e1",
+            "value": {
+              "source": {
+                "repository": "https://code.example/org/site",
+                "commit": "2222222222222222222222222222222222222222",
+                "workflowPath": ".github/workflows/ci.yml",
+                "excerptMatchesPinnedSource": true,
+                "events": ["push", "pull_request"],
+                "job": "run lint and unit tests",
+                "sourceComment": "Renovate branches can trigger both event families"
+              },
+              "operationalEvidence": {
+                "workflowRunHistory": null,
+                "runsPerMonth": null,
+                "medianRuntimeMinutes": null,
+                "actualDuplicateRunsConfirmed": false,
+                "branchFilteringAndConcurrencyInspected": false
+              },
+              "visitorFinding": {
+                "observation": "optional map bundle loads before interaction on all 3 sampled mobile visits",
+                "receivedBytesPerVisit": 1800000,
+                "ownerTaskNeedsMapBeforeIntent": false
+              },
+              "priorityRule": "Investigate unmeasured internal automation candidates at low provisional priority before asserting avoidable runs. Prioritize demonstrated visitor-path regressions over candidates without run frequency or runtime."
+            }
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "text": "The source event configuration establishes a candidate for duplicate CI work, pending branch filtering and operational checks."
+          },
+          {
+            "id": "q2",
+            "text": "The candidate establishes a quantified monthly CI energy saving."
+          },
+          {
+            "id": "q3",
+            "text": "The evidence justifies ranking this unmeasured CI candidate above the demonstrated visitor-path map transfer finding."
+          }
+        ],
+        "metricRequests": [
+          {
+            "id": "m1",
+            "text": "Verified avoidable monthly CI runtime",
+            "unit": "minutes/month",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m2",
+            "text": "Observed initial map bundle transfer per sampled mobile visit",
+            "unit": "kB",
+            "basis": "observed"
+          }
+        ],
+        "recommendationRequests": [
+          {
+            "id": "r1",
+            "proposal": "At low provisional priority, inspect branch filters, concurrency and run history to establish whether Renovate events duplicate avoidable CI work."
+          }
+        ]
+      },
+      "reference": {
+        "site": "https://scope.example",
+        "allowedEvidenceIds": ["e1"],
+        "answers": [
+          {
+            "id": "q1",
+            "outcome": "pass",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q2",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          },
+          {
+            "id": "q3",
+            "outcome": "fail",
+            "evidenceIds": ["e1"]
+          }
+        ],
+        "metrics": [
+          {
+            "id": "m1",
+            "value": null,
+            "unit": "minutes/month",
+            "basis": "unavailable"
+          },
+          {
+            "id": "m2",
+            "value": 1800,
+            "unit": "kB",
+            "basis": "observed"
+          }
+        ],
+        "recommendations": [
+          {
+            "id": "r1",
+            "action": "investigate",
+            "evidenceIds": ["e1"]
+          }
+        ]
+      }
+    }
+  ]
+}

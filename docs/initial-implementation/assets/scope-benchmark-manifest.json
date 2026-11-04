@@ -1,0 +1,475 @@
+{
+  "schemaVersion": "0.1.0",
+  "labelStatus": "Coordinator-authored controlled development references. Public and reviewable, not held-out accuracy labels. Claim validation uses supported/unsupported semantics; no independent audit accuracy claim.",
+  "cases": [
+    {
+      "id": "energy-measured-modeled-boundaries",
+      "guidelines": ["3.1", "5.5"],
+      "dimensions": ["energy-boundary"],
+      "requiresCollector": true,
+      "extraResources": {
+        "environment/bundle.json": "2e85b14bc449da74d516afd6556c83ebc488399d98da63d609808ca14c325a3c",
+        "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "3f5d373bf988572a7a1149a2adaf031da24b75f11c4cdc57cffcd51e4ce2f4aa",
+      "referenceSHA256": "bba9f10e4d4101facb6acdcee16adfd0fc81af064d3762f6ae6f445e924e15ea",
+      "instructionSHA256": "f09a36b1feae9ab9b3d106a7108ede85b9579bcc7a5c947234a4df7278887f1e",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "inference-energy-missing-not-zero",
+      "guidelines": ["5.5"],
+      "dimensions": ["energy-missing"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "0642b97cb1a9e3ce061fc8e372f251696e8a0876c995ac8c4ac30f93a4a2ae2f",
+      "referenceSHA256": "64cc1d6a4e1e6649a03e9996c415cfb032b018050ccde21887aa1b5eca42a828",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "initial-first-visit-and-median-three",
+      "guidelines": ["3.1"],
+      "dimensions": ["repeat-selection"],
+      "requiresCollector": true,
+      "extraResources": {
+        "environment/bundle.json": "e4bcf2c8fb7819d4d9801d5f0c48935cd478c77334e08d649910d91f636684e4",
+        "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "4f3e2e47de7d77d403133e63486012e5ef46ed319fbaeeeb0d7e63909a17dc2d",
+      "referenceSHA256": "01d35c38a13e14bb41428154bb6a269161317869429933145fad8d92ccad92ea",
+      "instructionSHA256": "f09a36b1feae9ab9b3d106a7108ede85b9579bcc7a5c947234a4df7278887f1e",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "median-cannot-mix-consent-and-cache",
+      "guidelines": ["3.1", "3.5"],
+      "dimensions": ["repeat-selection", "consent"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "c78e84c183f0795d385227d07a0e18b4efff333e77b68ea3a5b8e7c4e4fcead5",
+      "referenceSHA256": "e2c187bdb83006c48265f319fab23145ea75d220e5c7179a45f446f956318d9d",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "area-score-known-only-and-coverage",
+      "guidelines": ["5.5", "5.24"],
+      "dimensions": ["area-scores", "unknown-coverage"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "66c2b4529ede685ff5a2137216706564faf2c6e6366df3d1e18e46d3b9d23cbc",
+      "referenceSHA256": "244a41d57e1f14c59641c9c3f1146226fd0c784f30e7b26515aca914054a3792",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "ci-priority-requires-applicability-evidence",
+      "guidelines": ["2.15", "5.24"],
+      "dimensions": ["priority", "applicability"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "be755b26aa32fbcb2bd31fdcc4cb225bccf833dba427f2501d3c9598adbbcfb5",
+      "referenceSHA256": "2e767828c88e8211ded856d36a5677a3b05ded6a6d48e776ac7f25a0ae129d39",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "branch-link-not-immutable-source-proof",
+      "guidelines": ["3.12", "5.12"],
+      "dimensions": ["source-provenance"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "7cb07431b4e4aa3830a0bc797a22822d836b9766199ef568b8d0aedce3c36454",
+      "referenceSHA256": "2f946a375facb1e305bb14b4f47fd60d7fc939fe8c6bbca3a2bbbe6042f9b2b3",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "commit-pin-does-not-repair-snippet-mismatch",
+      "guidelines": ["3.2", "5.12"],
+      "dimensions": ["source-provenance", "snippet-match"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "ec6bdf6094f45a687b52f6abd1d6708cc7c6d2ab5d2fc624f99c81040d2e6198",
+      "referenceSHA256": "338ef0e44f534370d68d4d3d9f4d54ff35d38e8770924ed394f0053847101bb6",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "star-qualitative-scope-and-evidence",
+      "guidelines": ["2.2", "5.1", "5.6"],
+      "dimensions": [
+        "STAR",
+        "audience-needs",
+        "governance-practice",
+        "sustainability-goals"
+      ],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "e7405a3ca09b76aa8f9be62fe97e85abc1035272909c094a0ca33b961a15f3ff",
+      "referenceSHA256": "f5ff5cc6a258f7972f9303a016aaac71122f49a0431e3fff5b594456cca3bbac",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "star-public-claim-missing-operations",
+      "guidelines": ["5.1", "5.9", "5.13"],
+      "dimensions": ["STAR", "impact-business-model", "service-necessity"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "1f4d0868f01c1f3a2738f38b9947dc98a5fc1073bfd6dd42a18b82b4b68a7367",
+      "referenceSHA256": "58e4f4b4c17d82115b36fe556fba8c8c2bda409bc3b4c1949f76b148696295f5",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "audience-research-changes-low-data-journey",
+      "guidelines": ["2.2"],
+      "dimensions": ["audience-needs"],
+      "requiresCollector": true,
+      "extraResources": {
+        "environment/bundle.json": "f94a376175986bbaaa9a1fa669601ba964c8b2c67034193fed0a85173945f252",
+        "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "14ddfe673607155d475fea5907898c3cf7d38417090e820f48c2093f1ade2846",
+      "referenceSHA256": "7eb8c465e4f427a1831186e9854139c55ce93c6e5e54c1414e5b7b5ffc4a9996",
+      "instructionSHA256": "f09a36b1feae9ab9b3d106a7108ede85b9579bcc7a5c947234a4df7278887f1e",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "inclusive-testing-attendance-not-coverage",
+      "guidelines": ["2.14", "5.13"],
+      "dimensions": ["inclusive-testing", "access-barriers"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "bb3f041a2f8a5325672fe0a7a67e3af58e7fb7d48a2115925200930005a16253",
+      "referenceSHA256": "77cd42e77668b5e0d7429b9984adda2a777d6a535f875ac855cf4d29d9c39c70",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "governance-practice-public-operation-record",
+      "guidelines": ["5.1", "5.6"],
+      "dimensions": ["governance-practice", "sustainability-goals"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "aaaf34d9634727e8161109c466564fb7114f365d3db3caf5e1427b3400418734",
+      "referenceSHA256": "af936f9b3d73bbd5d0aaa1e91483a3d5d5ee0cee9a101391243cad4d83892be0",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "impact-business-model-outputs-not-outcomes",
+      "guidelines": ["5.9"],
+      "dimensions": ["impact-business-model"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "ce13fc35272368cf118aed86f67b593db4bd6d7e6636271c8a177f087d972a0e",
+      "referenceSHA256": "18e57ccce9ad90c547769f0c8d37843e0f2d20bc6ad3bb42d9ec2c841792da12",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "service-necessity-and-access-tradeoff",
+      "guidelines": ["5.13", "2.2"],
+      "dimensions": ["service-necessity", "access-barriers"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "202a392d239b43700e49875adb176b7ff378323f7fbbd9604efe758c7a35a69b",
+      "referenceSHA256": "6999dee6a3fe9c748e50cfefde0a2c0fc2d314b8dfd19b960e952e76aba2ea24",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "data-minimization-purpose-and-retention",
+      "guidelines": ["5.18"],
+      "dimensions": ["data-minimization"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "7485d71d945f4fe17bb3b370cbc2cf9235274f48e62056c6599a018ce38d8015",
+      "referenceSHA256": "d795f95aaad6f1fc49bfeadee0cda21b641b345deff38763d3116fba977c893b",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "content-lifecycle-policy-and-stale-path",
+      "guidelines": ["5.18", "5.10"],
+      "dimensions": ["content-lifecycle"],
+      "requiresCollector": true,
+      "extraResources": {
+        "environment/bundle.json": "07caceb37945bfe83b42aef4c4a4840633e3efd03c3bed8888f9933f4a4ff164",
+        "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "f58d31514f149cfe95072958de54188f0ee21ccca0912a6c8f211a411b1cef9c",
+      "referenceSHA256": "db17db2a9535efaa049d9b7038186d94bbc2f99704df5a916e56fa29c75e5ed2",
+      "instructionSHA256": "f09a36b1feae9ab9b3d106a7108ede85b9579bcc7a5c947234a4df7278887f1e",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "end-of-life-plan-versus-tested-retirement",
+      "guidelines": ["5.22", "5.26"],
+      "dimensions": ["service-end-of-life"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "61f0876d275bd5b6aaeb64d671e34dbaa2034a685a1f1b3ebc78d61066342b34",
+      "referenceSHA256": "aa2e74dd99631328ad9d566bb217e27b67d8b9058aa9aea4b14cce0b2eb5656d",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    },
+    {
+      "id": "ci-duplicate-trigger-unmeasured-priority",
+      "guidelines": ["2.15", "4.6"],
+      "dimensions": ["source-provenance", "priority", "ci-automation"],
+      "requiresCollector": false,
+      "extraResources": {
+        "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+      },
+      "skillResources": {
+        "sustainability-claims-review/SKILL.md": "b88b36d84afbab3898a0f8b310890c1b920aecf9cb96d76402d2d75733a23b0f",
+        "sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+        "sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+        "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+        "sustainability-guideline-review/SKILL.md": "66bf35c751bc76a4b1dfde0696f17456e229d6d00a74eb89f1a596ba33eb555c",
+        "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+        "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+        "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+      },
+      "inputSHA256": "f0c129b65735bdb2cafe948171a7d20c58aebf4c57a3e111f021dc7098c93a57",
+      "referenceSHA256": "89e123c04d5318becb9a9224bd05e608d6eab703eb192919848baa3e675b717d",
+      "instructionSHA256": "9d15ec56f535f2528f9b8300c30707fcc26b7affa190c8442c29a98171455d40",
+      "skillSHA256": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+      "graderSHA256": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+    }
+  ]
+}

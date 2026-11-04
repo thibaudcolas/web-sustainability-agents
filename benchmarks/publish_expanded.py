@@ -176,17 +176,21 @@ def main() -> None:
         default=ROOT
         / "docs/initial-implementation/assets/expanded-benchmark-results.json",
     )
-    parser.add_argument("--breadth", action="store_true")
+    families = parser.add_mutually_exclusive_group()
+    families.add_argument("--breadth", action="store_true")
+    families.add_argument("--scope", action="store_true")
     args = parser.parse_args()
     if (
-        args.breadth
+        (args.breadth or args.scope)
         and args.output
         == ROOT / "docs/initial-implementation/assets/expanded-benchmark-results.json"
     ):
-        args.output = (
-            ROOT / "docs/initial-implementation/assets/breadth-benchmark-results.json"
+        args.output = ROOT / (
+            "docs/initial-implementation/assets/scope-benchmark-results.json"
+            if args.scope
+            else "docs/initial-implementation/assets/breadth-benchmark-results.json"
         )
-    campaigns = [campaign(path, args.breadth) for path in args.jobs]
+    campaigns = [campaign(path, args.breadth or args.scope) for path in args.jobs]
     paired: dict[str, JSON] = {}
     models = set()
     model_cases: dict[str, set[str]] = {}

@@ -13,7 +13,7 @@ uv run --locked --script audit/cli.py skills get report --full
 uv run --locked --script audit/cli.py skills path setup
 ```
 
-Only the small `sustainability-audit` entry point is registered by the plugin. The coordinator loads setup, collection, evidence, guideline, claims and report workflows as needed. The development checkout retains specialist source folders under `.agents/skills/` for existing collectors and benchmark builders; this differs from installed plugin discovery.
+Only the small `sustainability-audit` entry point is registered by the plugin. The coordinator loads setup, context review, collection, evidence, guideline, claims and report workflows as needed. The development checkout retains specialist source folders under `.agents/skills/` for existing collectors and benchmark builders; this differs from installed plugin discovery.
 
 ## Setup, sample and collect
 
@@ -27,6 +27,10 @@ uv run --locked --script audit/cli.py tool workflow collect \
 ```
 
 The plan records purpose, selected pages and tasks, consent branches, explicit journey postconditions, source selections, questions and assumptions. Required unanswered scope questions block dependent collection. Source access is optional. See [checks and coverage](../reference/checks.md) and [browser probes](../reference/browser-probes.md) for actual collection capabilities.
+
+The setup role also selects relevant `contextChecks`: access barriers for an important task, content and data lifecycle questions, or published goals and governance. It freezes attributed public documents, owner records or task observations in `contextEvidence`, retaining explicit requests when evidence is unavailable. Source access is not required. These selected checks extend the session to `agent-breadth-v3`; intentionally context-free sessions retain v2.
+
+Energy readiness is recorded by default. An accepted energy sample can use `plan.energy.mode: run`, up to three planned page IDs and three repetitions. Missing prerequisites produce a reason, not zero. Run the bounded GreenFrame experiment while other local workloads are paused and keep its model estimates separate from the transfer capture. See [the energy experiment and protocol](../initial-implementation/energy-traffic-experiment.md).
 
 A single collection role owns the capture. Reviewers share its frozen packet instead of repeating the crawl. Inspect command failures and incomplete page observations; a successful process exit alone does not establish a complete measurement.
 
@@ -67,7 +71,7 @@ The coordinator writes the final review from the guideline worker's output plus 
 
 ## Write and illustrate the report
 
-The report worker applies `sustainability-report` to the scored session and writes a separate editorial file. It keeps the score, check outcomes and finding priorities intact while producing plain-language explanations. Selected screenshots remain separate illustrations with their own capture time and state.
+The report worker applies `sustainability-report` to the scored session and writes a separate editorial file. It keeps the score and check outcomes intact while producing plain-language explanations. Owner feedback may revise priorities through a separate review-bound presentation supplement with an explicit reason. Selected screenshots remain separate illustrations with their own capture time and state.
 
 ```sh
 uv run --locked --script audit/cli.py tool render_review \

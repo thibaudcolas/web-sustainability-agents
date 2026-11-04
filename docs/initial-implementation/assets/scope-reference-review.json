@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "0.1.0",
+  "family": "scope-v1",
+  "method": "Before task freezing and model execution, a separate parent agent inspected all nineteen case facts, claim contracts, expected labels, requested numeric values and recommendation operations. The contextual-skill agent corroborated scoped governance and lifecycle semantics.",
+  "status": "Accepted as internally coherent controlled development references; not owner validation, independent real-world ground truth, or held-out audit accuracy.",
+  "casesReviewed": [
+    "energy-measured-modeled-boundaries",
+    "inference-energy-missing-not-zero",
+    "initial-first-visit-and-median-three",
+    "median-cannot-mix-consent-and-cache",
+    "area-score-known-only-and-coverage",
+    "ci-priority-requires-applicability-evidence",
+    "branch-link-not-immutable-source-proof",
+    "commit-pin-does-not-repair-snippet-mismatch",
+    "star-qualitative-scope-and-evidence",
+    "star-public-claim-missing-operations",
+    "audience-research-changes-low-data-journey",
+    "inclusive-testing-attendance-not-coverage",
+    "governance-practice-public-operation-record",
+    "impact-business-model-outputs-not-outcomes",
+    "service-necessity-and-access-tradeoff",
+    "data-minimization-purpose-and-retention",
+    "content-lifecycle-policy-and-stale-path",
+    "end-of-life-plan-versus-tested-retirement",
+    "ci-duplicate-trigger-unmeasured-priority"
+  ],
+  "casebookSHA256": "8b4f4a23fac5b72859e11fa127d6ea6781e7b1590e97ef19cd747ebd12c28e64",
+  "limitations": [
+    "Reviewer agents share the same project context and are not independent human auditors.",
+    "The first eighteen cases were reviewed before the final exact-governance-expectation question was added; the contextual-skill agent separately corroborated that expectation.",
+    "No explanation-usefulness score or external label validation was performed."
+  ]
+}

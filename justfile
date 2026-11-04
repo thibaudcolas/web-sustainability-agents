@@ -120,3 +120,7 @@ docs:
 # Freeze broader interpretation and collection-handoff tasks.
 benchmark-breadth-build:
     uv run --locked --script benchmarks/build_expanded.py --breadth
+
+# Freeze the nineteen scope and contextual review cases in a new directory.
+benchmark-scope-build:
+    uv run --locked --script benchmarks/build_expanded.py --scope

@@ -6,7 +6,7 @@ Keep accepted feedback attached to the evidence, collector, review rule, or eval
 
 1. Establish per-site report and data contracts, so judgments have stable scope and units.
 2. Add bounded energy and traffic enrichment with explicit provenance and uncertainty.
-3. Freeze expanded development cases; validate oracle and negative controls; compare Sol/low and Neuralwatt DeepSeek/high on identical inputs.
+3. Freeze expanded development cases; validate oracle and negative controls; compare Sol/high and Neuralwatt DeepSeek/high on identical inputs.
 4. Broaden WSG/STAR investigation using the tested distinctions, retaining unknowns and sample limits.
 5. Independently review labels, scoped-score expectations and recommendations before claiming quality improvements or calibrated site rankings.
 
@@ -72,7 +72,7 @@ Historical artifacts and model outcomes stay frozen. Corrections create a new ru
 
 ## Repeatable collection and broader interpretation
 
-**B23:** Validate GreenFrame with its pinned CLI on an available runner, capture the runner image digest/browser version, then compare repeated initial and interaction scenarios under idle conditions. The client-only adapter and preflight exist; no GreenFrame energy result is claimed. Do this before using its numbers to rank recommendations.
+**B23:** The pinned GreenFrame run now has three complete repetitions for three pages on each site, with image/browser provenance and separate client-device and network estimates. Next validate matched interaction scenarios, a current browser and sensitivity to the synthetic screen/CPU coefficients under controlled idle conditions. The shared-workstation sample and its older browser support reproducible model experiments, not device-independent rankings. See the [energy experiment](energy-traffic-experiment.md).
 
 **B24:** Add carbon.txt schema validation and scoped provider corroboration after the current declaration interpreter. Test DNS/header delegation, conflicting documents, expired reporting periods, unknown versions and parent/subdomain relationships. A schema-valid declaration still cannot establish green hosting by itself.
 
@@ -80,7 +80,7 @@ Historical artifacts and model outcomes stay frozen. Corrections create a new ru
 
 **B26:** Extend the new session packet's provenance resolver to source excerpts, screenshots and independently retrieved proof documents before including them in its score. Retain source revision, dirty status and deployment relationship. Public observations and supplemental source recommendations already remain distinguishable.
 
-The expanded catalog now implements ten additional browser checks and eight source checks. Both live reports include a completed public journey and selected source evidence with revision, dirty status, content hashes and unknown deployment identity. This advances B25/B26; full task recovery, screenshot provenance, independently retrieved proof documents and organizational execution records remain open.
+The expanded catalog now includes ten contextual skill checks alongside browser and source checks. These cover eight more guideline groups, with bounded public or owner-record evidence and unresolved requests. Both live reports include a completed public journey and selected source evidence with revision, dirty status, content hashes and unknown deployment identity. This advances B25/B26; full task recovery, screenshot provenance, independently retrieved proof documents and organizational execution records remain open.
 
 **B27:** Run the same frozen agent-triggered task through Codex and another harness, then evaluate with Harbor using Sol/high and Neuralwatt DeepSeek/high. Include scope clarification, actual tool invocation, partial failures and evidence citation in the verifier; the prior frozen-evidence campaigns do not test these behaviors. Preserve the existing benchmark skills in `benchmarks/frozen-methodology-skills/` when current skills evolve.
 
@@ -95,3 +95,7 @@ The broader Harbor campaign validates four collection handoffs per model under C
 The new report skill and renderer separate editorial wording from scored judgments, explain evidence in an appendix, use kB and named cookie choices, and validate optional screenshot provenance. The current reports use fresh six-page and seven-page collections, independent Sol/high quantitative, guideline and claims reviewers, explicit reconciliation, and separate Sol/high report writing. Earlier drafts have been removed. Clean installation under another harness and independent recommendation evaluation remain necessary before claiming portability or better audit accuracy.
 
 **B30:** Carry newly discovered, relevant cross-origin disclosures into a linked review supplement without rewriting frozen captures. The fresh main-site sustainability statement names the guide, while the guide’s own bounded discovery did not find that statement. Preserve retrieval provenance and explicit service scope, then re-review affected checks; do not silently transfer a parent policy or score between sites.
+
+## Report feedback validation
+
+**B31:** Evaluate proportionate priority, concise explanations and source excerpts with owner judgments. The current reports use visible WSG descriptions, per-area results, first-visit transfer headlines, median-of-three energy, short captions and a low-priority CI investigation. The new benchmark tests the underlying distinctions, but synthetic answer agreement does not measure how useful the finished report is to an owner.

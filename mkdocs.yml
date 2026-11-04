@@ -268,6 +268,7 @@ nav:
               - First skill-guided scoring: initial-implementation/skill-audit-workflow.md
       - Evaluation:
           - evaluation/README.md
+          - Scope and qualitative review: evaluation/scope-benchmark.md
           - Review the cases: initial-implementation/breadth-review-cases.md
           - Current campaign: initial-implementation/breadth-benchmark.md
           - Benchmark design: evaluation/design.md
