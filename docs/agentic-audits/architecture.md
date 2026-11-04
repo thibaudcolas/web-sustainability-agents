@@ -6,18 +6,20 @@ This is a design proposal informed by the [standards research](../knowledge-base
 
 Use this sequence, with bounded returns to evidence collection when a reviewer identifies a specific gap:
 
-1. Define scope, methodology version, authorized journeys, available internal evidence, and resource budgets.
+1. Define scope, methodology version, authorized journeys, evidence mode, available project roots/internal documents, and resource budgets.
 2. Discover pages, templates, states, and relevant documents; select and record the sample.
 3. Capture evidence once under recorded conditions.
 4. Run deterministic tests and identify remaining semantic questions.
 5. Send narrow judgments to decision models and bounded investigations to specialist LLMs.
-6. Validate findings, preserve disagreements, and obtain human adjudication where needed.
-7. Render a coverage report and prioritized action plan from validated records.
+6. Corroborate likely fixes against available project evidence; validate findings, preserve contradictions, and obtain human adjudication where needed.
+7. Render a coverage report and prioritized action plan from validated records, with Digital Carbon Ratings shown as a separate calculation where applicable.
 8. Re-test implemented changes and compare both findings and underlying measurements.
 
 The orchestrator owns state transitions, budgets, retries, and aggregation. A model can propose an additional capture, but code checks its scope and remaining budget. No agent may silently redefine a criterion, change a measurement, or promote a suggestion into an established finding.
 
 Decision models can also select bounded discovery actions before or during collection, as illustrated by [jev-ultrafast](decision-model-examples.md). Keep this adaptive phase distinct from repeatable baseline measurements. The [deterministic tool review](deterministic-tools.md) specifies candidate engines, capture conditions, and instrumentation effects; a tool's output is not automatically a WSG conclusion.
+
+Public-only collection is the default. The [portable audit contract](portable-audits.md) adds source-assisted and organization-assisted modes without assuming the working directory represents the deployed site. Shared skills and result schemas are portable; native sub-agent configuration belongs in harness adapters with a sequential fallback. Evaluate these modes through the [Harbor benchmark](benchmark.md).
 
 ## Candidate checks
 
@@ -123,6 +125,8 @@ On rate limits, malformed responses, missing tools, or budget exhaustion, save p
 ## Report and recurring assessment
 
 Generate the report from validated records. Include scope, version manifest, sample, measured results, findings, unknowns, limitations, and prioritized actions. Separate **test outcomes** from **criterion conclusions**, with an explicit aggregation rule for any criterion conclusion.
+
+Add a separately labeled [Digital Carbon Rating](../knowledge-base/digital-carbon-ratings.md) for suitable page-view captures. Preserve its SWDM/library version, assumptions, raw values, and capture completeness. Keep contextual estimates based on internal data distinct from the comparison profile, and keep both separate from the auditor's own resource accounting.
 
 Show counts of applicable, inapplicable, undetermined, completed, and incomplete checks. A rate such as “18 of 20 completed checks passed” must also disclose the unfinished checks and must not be labeled “90% sustainable.”
 

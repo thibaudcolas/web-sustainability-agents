@@ -23,6 +23,8 @@ Research date: November 4, 2026. This extends the [initial local project review]
 
 This is a proposed selection, not a ranking established by testing. The [source ledger](sources.md#deterministic-tool-follow-up) records the reviewed versions and documentation.
 
+The next design update adds [Digital Carbon Ratings through a pinned CO2.js adapter](../knowledge-base/digital-carbon-ratings.md). Optional repository/source analysis belongs in the [source-assisted audit mode](portable-audits.md), where code findings are corroborated against the deployed observations rather than assumed to describe production.
+
 ### Existing performance engines
 
 Lighthouse CI already provides URL lists, repeated collection, assertions, budgets, and report storage. Reuse those capabilities instead of rebuilding a performance dashboard. Retain audit details, browser and Lighthouse versions, and individual measurements; an aggregate score can hide the exact tradeoff being investigated. [Lighthouse CI configuration](https://googlechrome.github.io/lighthouse-ci/docs/configuration.html).

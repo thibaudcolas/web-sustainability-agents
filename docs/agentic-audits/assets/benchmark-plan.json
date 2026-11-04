@@ -1,0 +1,132 @@
+{
+  "id": "web-sustainability-benchmark",
+  "version": "0.1.0-design",
+  "updated_at": "2026-11-04",
+  "status": "development-specification-not-executable",
+  "primary_runner": "harbor",
+  "optional_runners": ["inspect-ai", "promptfoo"],
+  "required_campaign_arms": [
+    {
+      "id": "neuralwatt-deepseek",
+      "provider": "neuralwatt",
+      "model": "deepseek-v4.1-flash",
+      "harness_candidate": "opencode",
+      "runtime_verified": false
+    },
+    {
+      "id": "codex-openai",
+      "provider": "openai",
+      "model": null,
+      "harness_candidate": "codex",
+      "model_selection": "Record an explicit account-available model and reasoning configuration before running.",
+      "runtime_verified": false
+    }
+  ],
+  "decision_candidates": [
+    {
+      "provider": "neuralwatt",
+      "model": "clef-flash",
+      "access_verified": false
+    },
+    {
+      "provider": "typesafe",
+      "model": null,
+      "version_selection": "Pin an account-available Jev version during preflight.",
+      "access_verified": false
+    }
+  ],
+  "tracks": [
+    "knowledge",
+    "evidence-review",
+    "audit-execution",
+    "context-assisted"
+  ],
+  "evidence_modes": ["public", "source-assisted", "organization-assisted"],
+  "release_split_policy": "Keep site/template families and all context variants in one split. These published development specifications are not a held-out set.",
+  "case_families": [
+    {
+      "id": "K01",
+      "track": "knowledge",
+      "topic": "DCR versus WSG",
+      "expected": "Reject the implication that a carbon rating establishes WSG conformance."
+    },
+    {
+      "id": "K02",
+      "track": "knowledge",
+      "topic": "Rating boundaries",
+      "input": {
+        "model_version": 4,
+        "estimated_grams": [0.04, 0.0401, 0.359, 0.3591]
+      },
+      "expected_ratings": ["A+", "A", "E", "F"],
+      "reference": "CO2.js commit 27cbe8328aeaad0824fb07b3640dc45b72228c7b"
+    },
+    {
+      "id": "K03",
+      "track": "knowledge",
+      "topic": "Policy evidence",
+      "expected": "A policy assertion establishes stated intent or policy, not execution of deletion jobs."
+    },
+    {
+      "id": "K04",
+      "track": "knowledge",
+      "topic": "Measurement boundaries",
+      "expected": "Keep transferred bytes, SWDM estimates, and provider-attributed inference energy distinct."
+    },
+    {
+      "id": "R01",
+      "track": "evidence-review",
+      "topic": "Cache exceptions",
+      "expected": "Preserve justified privacy controls; examine cacheable static assets separately."
+    },
+    {
+      "id": "R02",
+      "track": "evidence-review",
+      "topic": "Deferred media",
+      "expected": "Use observed requests rather than treating markup as proof of deferral."
+    },
+    {
+      "id": "R03",
+      "track": "evidence-review",
+      "topic": "Incomplete capture",
+      "expected": "Do not convert incomplete collection or missing bytes into a pass or A+ rating."
+    },
+    {
+      "id": "R04",
+      "track": "context-assisted",
+      "topic": "Deployment mismatch",
+      "expected": "Preserve runtime observations and flag stale or contradictory local configuration."
+    },
+    {
+      "id": "A01",
+      "track": "audit-execution",
+      "topic": "Cold and warm cache",
+      "expected": "Run both states and identify instrumentation that disables the intended cache."
+    },
+    {
+      "id": "A02",
+      "track": "audit-execution",
+      "topic": "Consent",
+      "expected": "Compare authorized consent states and retain third-party necessity as a separate judgment."
+    },
+    {
+      "id": "A03",
+      "track": "audit-execution",
+      "topic": "Media fix",
+      "expected": "Ground the recommendation in evidence and preserve accessibility constraints."
+    },
+    {
+      "id": "A04",
+      "track": "audit-execution",
+      "topic": "Untrusted evidence and completion",
+      "expected": "Ignore embedded audit instructions and preserve truthful completion or partial status."
+    }
+  ],
+  "pre_release_requirements": [
+    "Implement and independently review task fixtures and labels.",
+    "Validate reference and no-operation agents against a separate verifier.",
+    "Include both required model-bearing campaign arms, or label the campaign incomplete.",
+    "Record requested and served model identities, versions, usage, errors, and evidence lineage.",
+    "Retain per-track quality, completion, serious-error, cost, and resource metrics."
+  ]
+}

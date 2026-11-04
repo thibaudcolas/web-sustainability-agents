@@ -2,6 +2,8 @@
 
 **The evaluation target is a correct, useful, evidence-supported audit.** A schema-valid response, a plausible explanation, or a passing tool execution is insufficient. This plan is proposed; no results below are claimed as measured.
 
+The selected implementation direction is [Harbor for the overall benchmark](benchmark.md), with Inspect AI or Promptfoo only where they improve narrower diagnostics. Every model-bearing release campaign includes Neuralwatt DeepSeek V4.1 Flash and Codex; compare Jev and Neuralwatt Clef Flash on suitable typed decisions. The [provider plan](model-comparison.md) separates model effects from harness effects and specifies resource accounting.
+
 ## Questions the evaluation must answer
 
 1. Does the system find real issues and avoid unsupported ones?
@@ -42,9 +44,12 @@ For semantic reviewers, freeze the evidence across methods. Evaluate batching la
 
 ## Corpus and reference judgments
 
-Start with a development corpus of 60–100 cases spread across a few pilot rules. Include passing, failing, inapplicable, insufficient-evidence, and collection-error cases. A larger dataset is required before making strong accuracy claims.
+Start by implementing and validating the twelve case families in the [benchmark seed plan](assets/benchmark-plan.json), then expand to a development corpus of 60–100 cases spread across a few pilot rules. Include passing, failing, inapplicable, insufficient-evidence, and collection-error cases. A larger dataset is required before making strong accuracy claims.
 
 Include at least these case families:
+
+- Public-only audits paired with matching, stale, irrelevant, and contradictory source/internal evidence; keep related variants in one split.
+- Digital Carbon Rating calculation boundaries and misleading attempts to turn a page rating into WSG or physical-emissions assurance.
 
 - Static content, commerce, authenticated applications, multilingual sites, and media-heavy pages.
 - Necessary versus decorative media; genuine lazy loading versus attributes with eager requests.

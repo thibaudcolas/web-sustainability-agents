@@ -9,7 +9,7 @@ search:
 
 # Agentic audits for web sustainability
 
-Initial research: November 3, 2026. Tooling and local decision-model follow-up: November 4, 2026.
+Initial research: November 3, 2026. Tooling, benchmark, provider, portability, and carbon-rating updates: November 4, 2026.
 
 **Recommendation: build an evidence-based audit assistant around a versioned methodology, with deterministic checks first and bounded model reviews where interpretation is necessary.** This looks useful for finding improvements, assembling evidence, and maintaining an audit over time. Its suitability for autonomous sustainability assurance is unproven.
 
@@ -25,18 +25,25 @@ The Web Sustainability Guidelines (WSG) cover user experience, development, host
 
 The strongest initial product would answer: **“What can we substantiate, what should we investigate, and what should we change next?”** Each answer should identify its evidence, scope, methodology version, and uncertainty.
 
+The accepted direction is a public-site audit that also uses supplied source code and internal documents when relevant. Use Harbor for the benchmark, with Neuralwatt DeepSeek V4.1 Flash and Codex in model-bearing release comparisons. Share skills across Codex, Claude Code, OpenCode, and pi through small host adapters. Add Digital Carbon Ratings as a distinct deterministic reporting layer. The [validation roadmap](validation-roadmap.md) identifies what to establish before expanding implementation.
+
 ## Read the research
 
-| Document                                              | Purpose                                                                                   |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [WSG and STAR](../knowledge-base/wsg-and-star.md)     | Standards status, methodology, data inspection, and measurement limits                    |
-| [Local audit projects](local-projects.md)             | Concrete patterns from claude-seo and accessibility-agents                                |
-| [Deterministic tools](deterministic-tools.md)         | Executable local tools, existing measurement engines, Playwright, and agent-browser       |
-| [Audit architecture](architecture.md)                 | Division of work, candidate checks, sub-agents, skills, evidence, and reporting           |
-| [Decision models](decision-models.md)                 | Jev/Clef suitability, narrow judgments, escalation, and model comparison                  |
-| [Decision-model examples](decision-model-examples.md) | jevotron evidence review, Jev-ultrafast browser decisions, and an offline request preview |
-| [Evaluation plan](evaluation.md)                      | Datasets, baselines, metrics, release gates, and methodology changes                      |
-| [Sources and research method](sources.md)             | Dated sources, pinned repositories, reproducible observations, and limitations            |
+| Document                                                              | Purpose                                                                                     |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [WSG and STAR](../knowledge-base/wsg-and-star.md)                     | Standards status, methodology, data inspection, and measurement limits                      |
+| [Digital Carbon Ratings](../knowledge-base/digital-carbon-ratings.md) | SWDM v4 ratings, calculation profiles, thresholds, and reporting limits                     |
+| [Local audit projects](local-projects.md)                             | Concrete patterns from claude-seo and accessibility-agents                                  |
+| [Deterministic tools](deterministic-tools.md)                         | Executable local tools, existing measurement engines, Playwright, and agent-browser         |
+| [Audit architecture](architecture.md)                                 | Division of work, candidate checks, sub-agents, skills, evidence, and reporting             |
+| [Portable audits and project evidence](portable-audits.md)            | Shared skills, harness adapters, public-only and internally assisted audits                 |
+| [Decision models](decision-models.md)                                 | Jev/Clef suitability, narrow judgments, escalation, and model comparison                    |
+| [Decision-model examples](decision-model-examples.md)                 | jevotron evidence review, Jev-ultrafast browser decisions, and an offline request preview   |
+| [Evaluation plan](evaluation.md)                                      | Datasets, baselines, metrics, release gates, and methodology changes                        |
+| [Harbor benchmark](benchmark.md)                                      | Overall tracks, twelve initial case families, grader design, and optional Inspect/Promptfoo |
+| [Model and provider comparisons](model-comparison.md)                 | DeepSeek/Neuralwatt, Codex, Clef/Jev, API contracts, and energy accounting                  |
+| [Validation roadmap](validation-roadmap.md)                           | Implementation sequence and evidence needed for the next decisions                          |
+| [Sources and research method](sources.md)                             | Dated sources, pinned repositories, reproducible observations, and limitations              |
 
 ## Where to use each method
 
@@ -53,8 +60,8 @@ Use a fixed workflow for known checks. Allow agents to investigate only bounded 
 
 1. **Reconcile the methodology.** Pin the WSG publication, STAR commit, and a small mapping of criteria to tests. Resolve the identifier and missing-fixture issues documented in the knowledge base.
 2. **Build the evidence baseline.** Capture a few representative journeys once. Implement roughly ten narrow checks spanning media, caching, compression, third parties, budgets, and policy evidence. Include honest unknown results for inaccessible infrastructure and governance.
-3. **Label evaluation cases.** Start with 60–100 deliberately varied cases, including compliant examples, ambiguous evidence, and adversarial inputs. This is a development corpus; reserve independent sites for later validation.
-4. **Compare methods.** Run rules alone, one LLM reviewer, specialist LLM reviewers, decision models alone on semantic tasks, and decision-model cascades with escalation. Give each the same evidence and scope.
+3. **Build and validate the benchmark.** Implement the twelve initial Harbor case families and validate their graders before expanding to 60–100 deliberately varied development cases. Include public/source-assisted pairs, ambiguity, and adversarial inputs; reserve independent sites for later validation.
+4. **Compare methods.** Start with rules, Neuralwatt DeepSeek V4.1 Flash, and Codex. Evaluate Jev/Clef on the same semantic cases, then test escalation and specialist delegation. Separate model, harness, and complete-system comparisons.
 5. **Decide on measured value.** Keep the extra machinery only if it improves finding quality or reduces review effort at acceptable cost, latency, and resource use. Use separate gates for false reassurance and harmful recommendations.
 
 Avoid starting with one agent per WSG criterion. A small set of specialists sharing captured evidence is easier to evaluate and less likely to duplicate browsing. Make a multi-agent design earn its complexity against a single-reviewer baseline.

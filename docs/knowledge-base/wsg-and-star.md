@@ -25,6 +25,8 @@ WSG's conformance section is explicitly work in progress. It describes claims at
 
 **Implementation recommendation:** call the result a “WSG-aligned assessment” with explicit coverage until the methodology and claim have been reviewed. A useful optimization finding does not require claiming full conformance.
 
+[Digital Carbon Ratings](digital-carbon-ratings.md) provides an additional estimate-based page rating. Keep it separate from WSG conclusions and WSG impact ratings: these describe different things and have different calculation and evidence requirements.
+
 ## STAR methodology and its limits
 
 STAR organizes evaluation around scope, exploration, testing or sampling, auditing, and reporting. It addresses page states, third parties, internal information, and non-interference with other requirements. Its techniques are informative: a technique test is not automatically a complete criterion test. [STAR methodology and techniques](https://w3c.github.io/sustainableweb-ig/docs/star.html).

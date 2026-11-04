@@ -209,12 +209,17 @@ nav:
   - Knowledge base:
       - knowledge-base/README.md
       - WSG and STAR: knowledge-base/wsg-and-star.md
+      - Digital Carbon Ratings: knowledge-base/digital-carbon-ratings.md
   - Agentic sustainability audits:
       - agentic-audits/README.md
       - Local audit projects: agentic-audits/local-projects.md
       - Deterministic tools: agentic-audits/deterministic-tools.md
       - Audit architecture: agentic-audits/architecture.md
+      - Portable audits and project evidence: agentic-audits/portable-audits.md
       - Decision models: agentic-audits/decision-models.md
       - Decision-model examples: agentic-audits/decision-model-examples.md
       - Evaluation plan: agentic-audits/evaluation.md
+      - Harbor benchmark: agentic-audits/benchmark.md
+      - Model and provider comparisons: agentic-audits/model-comparison.md
+      - Validation roadmap: agentic-audits/validation-roadmap.md
       - Sources and research method: agentic-audits/sources.md
