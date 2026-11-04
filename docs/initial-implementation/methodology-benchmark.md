@@ -19,7 +19,27 @@ The [manifest](assets/methodology-benchmark-manifest.json) hashes every input, i
 
 Questions now explicitly ask whether a claim is supported. `fail` means unsupported, whether contradicted or insufficiently evidenced; it does not automatically identify a site defect. This separates evidence sufficiency from direct-state uncertainty without retroactively changing the earlier campaign. Numeric score requests appear in the metric fields; the mini-task summary remains unscored because a synthetic question set is not a site audit.
 
-All ten oracle controls passed and all ten no-operation controls failed, with no harness exceptions. Both model arms use Harbor 0.23.0 and Codex CLI 0.166.0: GPT-6.1 Sol/low and Neuralwatt DeepSeek V4.1 Flash/high. The campaign results are recorded separately from controls and retain any setup failures.
+All ten oracle controls passed and all ten no-operation controls failed, with no harness exceptions. The [control artifact](assets/methodology-benchmark-controls.json) preserves those runs. Both model arms use Harbor 0.23.0 and Codex CLI 0.166.0: GPT-6.1 Sol/low and Neuralwatt DeepSeek V4.1 Flash/high.
+
+## Completed model comparison
+
+The [published results](assets/methodology-benchmark-results.json) include both model arms, controls, full reports, diagnostic regrades, usage fields and matching hashes for every supplied skill resource. Neither model campaign had a harness exception or required a retry.
+
+| Configured system                    | Accepted reports | Supported/unsupported claim labels | Numeric values, units and bases | Recommendation action labels |
+| ------------------------------------ | ---------------: | ---------------------------------: | ------------------------------: | ---------------------------: |
+| GPT-6.1 Sol, low                     |            10/10 |                              19/19 |                           12/12 |                        10/10 |
+| Neuralwatt DeepSeek V4.1 Flash, high |             8/10 |                              19/19 |                           12/12 |                         8/10 |
+
+Both systems reject the unsupported unranked traffic extrapolation, calculate the requested footprint and score values, distinguish partial estimates from DCR eligibility, and preserve coverage limits. This is performance against author-created references, not independently established audit accuracy.
+
+DeepSeek's two rejected reports retain the intended advice in prose but use different action labels:
+
+- `partial-footprint`: `preserve` instead of reference `fix`, while explicitly supporting publication of the labeled partial-input estimate.
+- `preference-initialization`: `preserve` instead of reference `investigate`, while recommending the proposed investigation and retention of initial theme support.
+
+These expose a weakness in the recommendation schema. “Publish” does not fit remediation verbs cleanly, and a proposal combining preservation and investigation invites more than one action. The coordinator's review identifies label disagreements, not observed numeric mistakes or harmful recommendations. Original scores remain unchanged; future automation must not route actions solely from such ambiguous verbs. Backlog B22 calls for single-action cases or an explicit action set and independent label review.
+
+Do not infer model superiority or a causal skill improvement from these totals. This campaign changes cases, question semantics and supplied skills together, has one attempt per case, and lacks a no-skill ablation. It also does not validate an autonomous full audit. Billing and remote inference energy remain unreconciled; local hardware measurements do not cover model inference. Keep these results separate from the [earlier campaign](expanded-benchmark.md).
 
 ## Reproduce
 

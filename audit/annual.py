@@ -113,9 +113,18 @@ def model_pages(staged: JSON) -> dict[str, list[JSON]]:
     """Use pinned CO2.js without assigning ratings to partial traffic inputs."""
     samples = []
     for run in staged["runs"]:
+        if (
+            run.get("navigationError")
+            or not 200 <= (run.get("documentStatus") or 0) < 400
+        ):
+            raise ValueError(
+                "A failed document navigation cannot represent a normal annual page view"
+            )
         phase = next(p for p in run["phases"] if p["phase"] == "initial")
-        if not nonnegative(phase["receivedBytes"]):
-            raise ValueError("Invalid observed traffic")
+        if not nonnegative(phase["receivedBytes"]) or phase["receivedBytes"] == 0:
+            raise ValueError(
+                "Annual page proxies require positive observed traffic; no bytes is not a zero-footprint site"
+            )
         samples.append(
             {
                 "url": run["url"],

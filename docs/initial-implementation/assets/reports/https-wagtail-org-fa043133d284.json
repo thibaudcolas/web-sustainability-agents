@@ -1935,7 +1935,7 @@
       "status": "estimated",
       "transferInputs": "partial",
       "sourceId": "annual/https://wagtail.org",
-      "sourceSHA256": "84a18e6414c50a1fb118176be3ccf596377a650cb49956bdd3f81b7a8e172f71",
+      "sourceSHA256": "882369a9f5a525a8a4f85a0e9c61c520e1f1bc225fe79193deb83fb41f753c87",
       "sensitivityLow": 50.098921078888495,
       "sensitivityHigh": 80.1929115056472
     }

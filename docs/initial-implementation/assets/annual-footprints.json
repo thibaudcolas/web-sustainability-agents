@@ -4,7 +4,7 @@
     "staged": "8b5aa1b5cfc15b8a6b900148739562110c860174d24de114bdabab0a853fcb7c",
     "traffic": "91c3039acc01f8fe6b790149adc5c634ae014575f820f75bdd051e489a43bc78"
   },
-  "calculatorSHA256": "9ba9104e84e21a4e59b9b7e103c62a61506769aa3450bc5c2e4759323598d4ac",
+  "calculatorSHA256": "5a6cf0e1f9db6350abd62c74f39d5b684e6ef5a36ebf76b5ec7fb876a33fcdd7",
   "dependencyLockSHA256": "ec953293d1f0ba8dccd1585b196daddb52b351b47f4c6d52958c794088f0519e",
   "model": "CO2.js 0.19.0 / SWDM v4, global model electricity factors, no DCR assigned by this scenario calculator",
   "trafficDatasetMonth": "202609",

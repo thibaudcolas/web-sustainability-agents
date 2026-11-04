@@ -209,6 +209,18 @@ class AnnualTests(unittest.TestCase):
             all(len(p["branches"]) == 2 for p in pages["https://wagtail.org"])
         )
 
+    def test_failed_or_empty_capture_cannot_represent_annual_site_traffic(self):
+        staged = json.loads(
+            Path("docs/initial-implementation/assets/staged-audit.json").read_text()
+        )
+        failed = copy.deepcopy(staged)
+        failed["runs"][0]["documentStatus"] = 404
+        with self.assertRaises(ValueError):
+            model_pages(failed)
+        staged["runs"][0]["phases"][0]["receivedBytes"] = 0
+        with self.assertRaises(ValueError):
+            model_pages(staged)
+
 
 class EvidenceResolverTests(unittest.TestCase):
     def test_resource_id_is_scoped_to_its_capture(self):
