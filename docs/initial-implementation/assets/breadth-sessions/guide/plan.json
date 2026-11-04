@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://guide.wagtail.org",
+  "purpose": "Expanded public and source-assisted WSG review: test interactions and inspect maintainability evidence",
+  "pages": [
+    {
+      "id": "page-1",
+      "url": "https://guide.wagtail.org/en/",
+      "task": "Find image-management guidance for a Wagtail editor",
+      "statementUrls": [
+        "https://wagtail.org/sustainability/"
+      ]
+    },
+    {
+      "id": "page-2",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "task": "Learn how to upload and manage images"
+    },
+    {
+      "id": "page-3",
+      "url": "https://guide.wagtail.org/en/search/?query=images",
+      "task": "Find image-management instructions among search results"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "search-images-enter",
+      "url": "https://guide.wagtail.org/en/",
+      "task": "Use search to open image-management guidance",
+      "actions": [
+        {
+          "type": "click",
+          "selector": "[data-search-icon-button]"
+        },
+        {
+          "type": "fill",
+          "selector": "[data-search-input]",
+          "value": "images"
+        },
+        {
+          "type": "press",
+          "selector": "[data-search-input]",
+          "key": "Enter"
+        },
+        {
+          "type": "click",
+          "selector": "main a[href=\"/en/how-to-guides/manage-images/\"]"
+        }
+      ],
+      "success": {
+        "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+        "selector": "h1",
+        "text": "Manage images"
+      }
+    }
+  ],
+  "checks": [],
+  "sourceRoots": [
+    "local/guide"
+  ],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "Existing source checkouts are candidate production source; no deployment identity attestation is available"
+  ],
+  "optionalEnergy": "none",
+  "ownerPriorities": [
+    "Content-focused site with prior sustainability improvements",
+    "First-load metrics headline; interactions supplementary",
+    "Source available for corroborating fixes"
+  ],
+  "sourceFiles": [
+    {
+      "root": "local/guide",
+      "path": "pyproject.toml"
+    },
+    {
+      "root": "local/guide",
+      "path": "package.json"
+    },
+    {
+      "root": "local/guide",
+      "path": "package-lock.json"
+    },
+    {
+      "root": "local/guide",
+      "path": "README.md"
+    },
+    {
+      "root": "local/guide",
+      "path": "Dockerfile"
+    },
+    {
+      "root": "local/guide",
+      "path": ".nvmrc"
+    },
+    {
+      "root": "local/guide",
+      "path": ".github/workflows/ci.yml"
+    },
+    {
+      "root": "local/guide",
+      "path": "uv.lock"
+    },
+    {
+      "root": "local/guide",
+      "path": ".python-version"
+    },
+    {
+      "root": "local/guide",
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "root": "local/guide",
+      "path": "LICENSE"
+    },
+    {
+      "root": "local/guide",
+      "path": "vite.config.ts"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/core/templates/base.html"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/core/templates/components/header.html"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/core/templates/components/search_modal.html"
+    },
+    {
+      "root": "local/guide",
+      "path": "apps/frontend/static_src/js/main.js"
+    },
+    {
+      "root": "local/guide",
+      "path": "content/en/releases/new-in-wagtail-8-0.md"
+    }
+  ],
+  "sampleRationale": "Home, substantive task content, and task-result/disclosure page; source selection covers manifests, runtime, automation, shared templates and maintenance documents. Not a complete service inventory."
+}

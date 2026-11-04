@@ -1,0 +1,259 @@
+{
+  "schemaVersion": "source-evidence-v1",
+  "site": "https://wagtail.org",
+  "capturedAt": "2026-11-04T13:41:31.977271+00:00",
+  "repositories": [
+    {
+      "root": "local/wagtail.org",
+      "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+      "trackedWorkingTreeDirty": false,
+      "deploymentVerified": false,
+      "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+    }
+  ],
+  "files": [
+    {
+      "id": "source-1",
+      "root": "local/wagtail.org",
+      "path": "pyproject.toml",
+      "deploymentVerified": false,
+      "observedBytes": 1044,
+      "status": "captured",
+      "text": "[tool.poetry]\nname = \"wagtail-org\"\nversion = \"2.2.0\"\ndescription = \"The wagtail.org Wagtail site\"\nauthors = [\"Torchbox <hello@torchbox.com>\"]\nlicense = \"BSD-3-Clause\"\nreadme = \"README.md\"\npackages = [{include = \"wagtailio\"}]\n\n[build-system]\nrequires = [\"poetry-core\"]\nbuild-backend = \"poetry.core.masonry.api\"\n\n[tool.poetry.dependencies]\npython = \"^3.14\"\ndjango = \"~6.1.1\"\nwagtail = \"~8.0.0\"\npsycopg = \"~3.3\"\ngunicorn = \"~26.0.0\"\ndj-database-url = \"~3.0.0\"\ndjango-basic-auth-ip-whitelist = \"~0.8\"\ndjango-manifest-loader = \"~1.0.0\"\ndjango-pattern-library = \"~1.6.0\"\ndjango-permissions-policy = \"~4.28\"\ndjango-storages = { version =\"~1.14\", extras = [\"s3\"] }\nmarkdown = \"~3.10\"\npygments = \"~2.19\"\nrequests = \"~2.32.3\"\nscout-apm = \"~3.5\"\nsentry-sdk = \"~2.61\"\nwagtail-font-awesome-svg = \"~2.0\"\n\nwagtailmedia = \"~0.19.1\"\nwhitenoise = \"~6.11\"\ndjango-redis = \"~6.0\"\ntzdata = \"^2026.2\"\nwagtail-schema-org = \"~5.0\"\n\n[tool.poetry.group.dev.dependencies]\npre-commit = \"4.5.0\"\ndjhtml = \"3.0.10\"\nruff = \"0.15.2\"  # keep in sync with .pre-commit-config.yaml\n",
+      "sha256": "95c4ac1da1348720eee7ab87ba8d6d15f836b511791828c699225553fe157702",
+      "lines": 42,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-2",
+      "root": "local/wagtail.org",
+      "path": "package.json",
+      "deploymentVerified": false,
+      "observedBytes": 2334,
+      "status": "captured",
+      "text": "{\n  \"name\": \"wagtail.org\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"description\": \"This is the source code to [Wagtail's website](https://wagtail.org)\",\n  \"scripts\": {\n    \"//[ Linting & formatting ]//\": \"\",\n    \"lint:css\": \"stylelint --report-needless-disables './wagtailio/static/sass'\",\n    \"lint:js\": \"eslint --ext .js,.ts,.tsx --report-unused-disable-directives .\",\n    \"lint:format\": \"prettier --check '**/?(.)*.{md,css,scss,mjs,js,ts,tsx,json,yaml,yml}'\",\n    \"lint\": \"npm run lint:format && npm run lint:js && npm run lint:css\",\n    \"format\": \"prettier --write '**/?(.)*.{md,css,scss,mjs,js,ts,tsx,json,yaml,yml}'\",\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n    \"//[ Build tasks ]//\": \"\",\n    \"build\": \"webpack --mode development --progress\",\n    \"build:prod\": \"webpack --mode production\",\n    \"start\": \"webpack --mode development --progress --watch\",\n    \"start:reload\": \"webpack-dev-server\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/wagtail/wagtail.org.git\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"bugs\": {\n    \"url\": \"https://github.com/wagtail/wagtail.org/issues\"\n  },\n  \"homepage\": \"https://github.com/wagtail/wagtail.org#readme\",\n  \"browserslist\": [\n    \"Firefox ESR\",\n    \"last 2 Chrome versions\",\n    \"last 2 ChromeAndroid versions\",\n    \"last 2 Edge versions\",\n    \"last 1 Firefox version\",\n    \"last 2 iOS versions\",\n    \"last 3 Safari versions\",\n    \"not safari 13\",\n    \"not ie 11\"\n  ],\n  \"devDependencies\": {\n    \"@wagtail/eslint-config-wagtail\": \"^0.4.0\",\n    \"@wagtail/stylelint-config-wagtail\": \"^2.0.0\",\n    \"autoprefixer\": \"^10.4.7\",\n    \"clean-webpack-plugin\": \"^4.0.0\",\n    \"copy-webpack-plugin\": \"^11.0.0\",\n    \"css-loader\": \"^6.7.1\",\n    \"cssnano\": \"^7.0.6\",\n    \"eslint\": \"^8.20.0\",\n    \"eslint-webpack-plugin\": \"^3.2.0\",\n    \"mini-css-extract-plugin\": \"^2.6.1\",\n    \"postcss-loader\": \"^7.0.1\",\n    \"prettier\": \"^3.8.3\",\n    \"sass\": \"^1.53.0\",\n    \"sass-loader\": \"^16.0.2\",\n    \"stylelint\": \"^17.4.0\",\n    \"stylelint-webpack-plugin\": \"^5.1.0\",\n    \"ts-loader\": \"^9.3.1\",\n    \"typescript\": \"^5.6.3\",\n    \"webpack\": \"^5.73.0\",\n    \"webpack-cli\": \"^5.1.2\",\n    \"webpack-dev-server\": \"^5.0.2\",\n    \"webpack-manifest-plugin\": \"^5.0.0\"\n  },\n  \"dependencies\": {\n    \"focus-trap\": \"^7.0.0\",\n    \"js-cookie\": \"^3.0.5\",\n    \"micromodal\": \"^0.4.10\"\n  }\n}\n",
+      "sha256": "225d5a86dc3893e2a22e7f441ae90863f4a163a93ac077011e9e977460d7a6e0",
+      "lines": 70,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-3",
+      "root": "local/wagtail.org",
+      "path": "package-lock.json",
+      "deploymentVerified": false,
+      "observedBytes": 397987,
+      "status": "metadata_only",
+      "text": null,
+      "sha256": "8bdfe5a1c93c7d56713722009faef184f7f56eb9913ff3c18c4adc8f24eb5240",
+      "lines": 11355,
+      "interpretationLimit": "Identity and size only; contents are not exposed to the reviewer and naming alone does not prove a valid dependency lock",
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-4",
+      "root": "local/wagtail.org",
+      "path": "README.md",
+      "deploymentVerified": false,
+      "observedBytes": 6538,
+      "status": "captured",
+      "text": "# Wagtail.org\n\nThis is the source code to [Wagtail's website](https://wagtail.org)\n\n[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/wagtail/wagtail.org)\n\n## Requirements\n\n- Docker or Vagrant (see below)\n- [Fabric](https://www.fabfile.org/), [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) (only for downloading production / staging data)\n\n## Installation (Docker Compose)\n\nYou first need to install [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/). Once they are installed, run the following commands to get up and running:\n\n```\ngit clone https://github.com/wagtail/wagtail.org.git\ncd wagtail.org\nmake setup\n```\n\nThis will create a set of Docker containers on your local machine and also create a blank database.\n\n### Starting the development environment\n\nRun the following command to start the Docker containers:\n\n```\nmake start\n```\n\nThen, to start the development server, open a new terminal window and run:\n\n```\nmake runserver\n```\n\nThis will launch `django-admin runserver` in the web container, which serves the site on http://localhost:8000/, with the admin at http://localhost:8000/admin/.\n\nTo run migrations within Docker you'll need to run:\n\n```\nmake migrate\n```\n\n### Creating a superuser\n\nTo create a new superuser locally, run:\n\n```\nmake superuser\n```\n\n### Setting up the cache table\n\nThis should only need to be done the first time you set up a new database:\n\n```\nmake sh\npython manage.py createcachetable\n```\n\n### Pulling production data / media\n\nIf you'd like to work with production data and have access, run the following commands:\n\n```\nfab pull-production-data\nfab pull-production-media\n```\n\n### Pulling staging data\n\nIf you'd like to work with staging data and have been granted access, run the following commands if you're on Mac/Linux (POSIX):\n\n```\nfab pull-staging-data\n```\n\nAccess will only be given when absolutely necessary.\n\nIf you're on Windows, we recommend you follow the [specific steps for Windows.](#pulling-staging-data-on-windows)\n\n## Installation (Vagrant)\n\nYou first need to install [Vagrant](https://www.vagrantup.com/) and [Virtualbox](https://www.virtualbox.org/). Once they are installed, run the following commands to get up and running:\n\n```\ngit clone https://github.com/wagtail/wagtail.org.git\ncd wagtail.org\nvagrant up\n```\n\nThis will download the base image and provision a local VM that will run the site locally.\n\nYou will need to apply migrations, create a super user, and create a cache table once the vagrant environment is setup.\n\n```\nvagrant ssh\n./manage.py migrate\n./manage.py createsuperuser\n./manage.py createcachetable\n```\n\n## Usage (Vagrant)\n\nCommon Vagrant commands:\n\n- `vagrant up` starts the VM\n- `vagrant halt` stops the VM\n- `vagrant ssh` opens a shell in the VM\n- `vagrant destroy` deletes the VM\n\nShortcut commands:\n\nWithin the VM shell, you can run `./manage.py` to run any Django management command. But we have added a couple of shortcuts to save on typing:\n\n- `dj <command> [args]` - Runs a management command (eg, `dj shell`)\n- `djrun` - Starts the webserver on port 8000\n\n## Frontend tooling (Docker and Vagrant)\n\nDuring the initial setup, you will need to build the frontend assets:\n\n- `nvm use` to use the suggested node version (requires [nvm](https://github.com/nvm-sh/nvm), [fnm](https://github.com/Schniz/fnm) or similar. You'll also need to run `nvm install` to install and activate the version of node required for the project)\n- `npm i` to install dependencies\n- `npm run build` to compile CSS & JS\n\nIf you are editing frontend assets, you will also need to rebuild assets while\nyou edit:\n\n- `npm run start` start the Webpack build in watch mode, without live-reload\n- `npm run start:reload` start the Webpack server build on port 3000 with live-reload\n\nOther common commands:\n\n- `npm run lint` lint JS & CSS files\n- `npm run format` format files\n\nFor more info see [Frontend general info](docs/frontend/general-info.md)\n\n## Pulling staging data on Windows\n\nThe `fab pull-staging-data` command does not currently work on Windows due to the way quotes are handled.\n\nThe recommended workaround is to run the necessary commands manually. It's important to note that there are 3 categories of commands to run:\n\n1. The ones to be run on the `web` container.\n2. The ones to be run on the `db` container.\n3. The ones to be run directly on a local terminal.\n\nYou will need two separate terminal instances for the `web` and local. We suggest using the VS code editor, and the terminal in it. The `db` container instructions should be done from within the Docker Desktop terminal because that is one of the easiest ways to [activate a shell within Docker](https://docs.docker.com/desktop/use-desktop/container/#open-the-integrated-terminal).\n\nThe commands, the location, and the order in which to run them are as follows:\n\n1. Run the following on your local terminal instance: `heroku pg:backups:download --output=here.dump --app wagtail-org-staging`.\n2. In the `db` container terminal, run: `dropdb --if-exists --host db --username=wagtailorg wagtailorg`.\n3. Afterwards, still in the `db` container, run `createdb --host db --username=wagtailorg wagtailorg`.\n4. To connect the local postgres DB, run the following in the `db` container: `psql -d wagtailorg -U wagtailorg -c \"CREATE SCHEMA heroku_ext;\"`\n5. Still in the `db` container, run: `pg_restore --clean --no-acl --if-exists --no-owner --host db --username=wagtailorg -d wagtailorg /app/here.dump `.\n6. In your `web` container, run: `psql -c \"UPDATE wagtailcore_site SET hostname = 'localhost', port = 8000 WHERE is_default_site IS TRUE;\"`.\n7. Finally, in the local terminal, run: `rm here.dump`.\n\nWith `npm` installed, you can run `npm install` directly, since nvm isn't supported for Windows (non-POSIX). Optionally, `fnm` can be used to first switch to the appropriate version of node.\n\nAfterwards, the recommended next step would be setting up your [frontend tooling.](#frontend-tooling-docker-and-vagrant)\n\n## Deployment\n\nThe site is hosted on Heroku, and is deployed automatically. `main` deploys to production, and `staging` deploys to staging.\n\n## docs.wagtail.org\n\nWagtail documentation is hosted at [readthedocs](https://readthedocs.org/). A Cloudflare worker is in place to rewrite canonical URLs on old versions of the documentation - see `conf/wagtaildocs-cloudflare-worker.js`.\n",
+      "sha256": "c98c70a313f2c2ba13fe17532bdfdd99a192d6ff833391a04b84c9b196ee67fc",
+      "lines": 174,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-5",
+      "root": "local/wagtail.org",
+      "path": "Dockerfile",
+      "deploymentVerified": false,
+      "observedBytes": 2781,
+      "status": "captured",
+      "text": "# (Keep the version in sync with the node install below)\nFROM node:24 AS frontend\n\n# Install front-end dependencies.\nCOPY package.json package-lock.json tsconfig.json webpack.config.js ./\nRUN npm ci --no-optional --no-audit --progress=false\n\n# Compile static files\nCOPY ./wagtailio/static/ ./wagtailio/static/\nRUN npm run build:prod\n\n\n# Build Python app - this stage is a common base for the prod and dev stages\nFROM python:3.14-trixie AS backend\n\nARG POETRY_VERSION=2.4.0\nARG UID=1000\nARG GID=1000\n\nENV DJANGO_SETTINGS_MODULE=wagtailio.settings.production \\\n    GUNICORN_CMD_ARGS=\"--max-requests 1200 --max-requests-jitter 50 --access-logfile -\" \\\n    PATH=/home/wagtailio/.local/bin:/venv/bin:$PATH \\\n    PORT=8000 \\\n    PYTHONUNBUFFERED=1 \\\n    VIRTUAL_ENV=/venv \\\n    WEB_CONCURRENCY=3\n\n# Install operating system dependencies.\nRUN apt-get update --yes --quiet && \\\n    apt-get install -y apt-transport-https rsync libmagickwand-dev unzip postgresql-client-17 \\\n    jpegoptim pngquant gifsicle libjpeg-progs webp && \\\n    rm -rf /var/lib/apt/lists/*\n\nWORKDIR /app\nEXPOSE 8000\n\n# Create a virtual environment and install Poetry\nRUN python -m venv /venv \\\n    && /venv/bin/pip install --upgrade pip wheel \\\n    && /usr/local/bin/python -m pip install poetry==$POETRY_VERSION\n\n# Create a non-root application user.\nRUN groupadd --gid $GID --force wagtailio \\\n    && useradd --create-home --uid $UID -g wagtailio wagtailio\nRUN chown --recursive $UID:$GID /app /venv\n\n\n# This stage builds the image that will run in production\nFROM backend AS prod\n\n# Switch to application user\nUSER wagtailio\n\n# Install production dependencies\nCOPY --chown=wagtailio pyproject.toml poetry.lock ./\nRUN poetry install --only main --no-root\n\n# Copy in application code and install the root package\nCOPY --chown=wagtailio . .\nRUN poetry install --only-root\n\n# Collect static files\nCOPY --chown=wagtailio --from=frontend ./wagtailio/static_compiled ./wagtailio/static_compiled\nRUN SECRET_KEY=none django-admin collectstatic --noinput --clear\n\n# Run application\nCMD [\"gunicorn\", \"wagtailio.wsgi:application\"]\n\n\n# This stage builds the image that we use for development\nFROM backend AS dev\n\n# Install Node.js because newer versions of Heroku CLI have a node binary dependency\nRUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash -\nRUN DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs tzdata\n\n# Switch to the application user\nUSER wagtailio\n\n# Install development dependencies\nCOPY --chown=wagtailio pyproject.toml poetry.lock ./\nRUN poetry install --no-root\n\n# Pull in the node modules for the frontend\nCOPY --chown=wagtailio --from=frontend ./node_modules ./node_modules\n\n# Make sure the working directory is on PYTHONPATH (so django-admin etc. can\n# import wagtailio)\nENV PYTHONPATH=/app\n",
+      "sha256": "ba07e653a611df22885b58b6aaf80fb87819a65cfe28e6a011bf2ab4121178b5",
+      "lines": 89,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-6",
+      "root": "local/wagtail.org",
+      "path": ".nvmrc",
+      "deploymentVerified": false,
+      "observedBytes": 3,
+      "status": "captured",
+      "text": "24\n",
+      "sha256": "68ca3fba3b7e864770cb61aeb306d4bd4354b68ab4dd38450860c5d823e42a53",
+      "lines": 1,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-7",
+      "root": "local/wagtail.org",
+      "path": ".github/workflows/ci.yml",
+      "deploymentVerified": false,
+      "observedBytes": 2698,
+      "status": "captured",
+      "text": "name: CI\non:\n  push:\n    branches:\n      - main\n      - next\n  pull_request:\n\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  lint:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - name: Set up Python\n        uses: actions/setup-python@v3\n        with:\n          python-version: '3.14'\n      - uses: actions/setup-node@v3\n        with:\n          node-version-file: '.nvmrc'\n      - id: node-cache\n        uses: actions/cache@v3\n        with:\n          path: node_modules\n          key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}\n      - if: steps.node-cache.outputs.cache-hit != 'true'\n        run: npm ci --no-audit\n      - uses: actions/cache@v3\n        with:\n          path: ${{ env.HOME }}/.cache/pre-commit\n          key: ${{ runner.os }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n      - uses: pre-commit/action@v3.0.1\n  test_js:\n    runs-on: ubuntu-latest\n    needs: lint\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version-file: '.nvmrc'\n      - id: node-cache\n        uses: actions/cache@v3\n        with:\n          path: node_modules\n          key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}\n      - if: steps.node-cache.outputs.cache-hit != 'true'\n        run: npm ci --no-audit\n      - run: npm run lint\n      - run: npm run build:prod\n  test_python:\n    runs-on: ubuntu-latest\n    needs: lint\n    env:\n      DJANGO_SETTINGS_MODULE: wagtailio.settings.test\n      DATABASE_URL: postgres://postgres:postgres@localhost/postgres\n      SECRET_KEY: iamnotsosecret\n      ALLOWED_HOSTS: localhost\n    services:\n      postgres:\n        image: postgres:16\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: postgress\n          POSTGRES_DB: postgres\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n    steps:\n      - uses: actions/checkout@v4\n      - name: Install Poetry\n        run: pipx install poetry==2.4.0 # Make sure this matches POETRY_VERSION in the Dockerfile\n      - name: Set up Python\n        uses: actions/setup-python@v4\n        with:\n          python-version: '3.14'\n          cache: 'poetry'\n      - name: Install Python dependencies\n        run: poetry install\n      - name: System checks\n        run: poetry run ./manage.py check\n      - name: Check for missing migrations\n        run: poetry run ./manage.py makemigrations --check --noinput\n      - name: Test\n        run: poetry run ./manage.py test\n",
+      "sha256": "058bf63161bd34073793f802718c3c5e77ecf3daf51d7a1b69e88dac739a167d",
+      "lines": 88,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-8",
+      "root": "local/wagtail.org",
+      "path": "poetry.lock",
+      "deploymentVerified": false,
+      "observedBytes": 178050,
+      "status": "metadata_only",
+      "text": null,
+      "sha256": "5729c0fb2b7f715832b31af6e3645d381e4bec726eb3e5bb6bb604a6cf10b26a",
+      "lines": 2124,
+      "interpretationLimit": "Identity and size only; contents are not exposed to the reviewer and naming alone does not prove a valid dependency lock",
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-9",
+      "root": "local/wagtail.org",
+      "path": "webpack.config.js",
+      "deploymentVerified": false,
+      "observedBytes": 5720,
+      "status": "captured",
+      "text": "const path = require('path');\nconst autoprefixer = require('autoprefixer');\nconst cssnano = require('cssnano');\nconst CopyPlugin = require('copy-webpack-plugin');\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\nconst sass = require('sass');\nconst ESLintPlugin = require('eslint-webpack-plugin');\nconst StylelintPlugin = require('stylelint-webpack-plugin');\nconst { CleanWebpackPlugin } = require('clean-webpack-plugin');\nconst { WebpackManifestPlugin } = require('webpack-manifest-plugin');\n\nconst projectRoot = 'wagtailio';\n\nconst options = {\n    entry: {\n        blocking: `./${projectRoot}/static/js/blocking.js`,\n        main: `./${projectRoot}/static/js/main.js`,\n    },\n    resolve: {\n        extensions: ['.ts', '.tsx', '.js'],\n    },\n    output: {\n        path: path.resolve(`./${projectRoot}/static_compiled/`),\n        filename: 'js/[name].js',\n    },\n    plugins: [\n        new CopyPlugin({\n            patterns: [\n                {\n                    from: 'img',\n                    context: path.resolve(`./${projectRoot}/static/`),\n                    to: path.resolve(`./${projectRoot}/static_compiled/img`),\n                },\n            ],\n        }),\n        new MiniCssExtractPlugin({\n            filename: 'css/[name].css',\n        }),\n        new ESLintPlugin({\n            failOnError: false,\n            lintDirtyModulesOnly: true,\n            emitWarning: true,\n        }),\n        new StylelintPlugin({\n            failOnError: false,\n            lintDirtyModulesOnly: true,\n            emitWarning: true,\n            extensions: ['scss'],\n        }),\n        //  Automatically remove all unused webpack assets on rebuild\n        new CleanWebpackPlugin(),\n        new WebpackManifestPlugin(),\n    ],\n    module: {\n        rules: [\n            {\n                test: /\\.(js|ts|tsx)$/,\n                exclude: /node_modules/,\n                use: {\n                    loader: 'ts-loader',\n                },\n            },\n            {\n                test: /\\.(scss|css)$/,\n                use: [\n                    MiniCssExtractPlugin.loader,\n                    {\n                        loader: 'css-loader',\n                        options: {\n                            sourceMap: true,\n                        },\n                    },\n                    {\n                        loader: 'postcss-loader',\n                        options: {\n                            postcssOptions: {\n                                sourceMap: true,\n                                plugins: () => [\n                                    autoprefixer(),\n                                    cssnano({\n                                        preset: 'default',\n                                    }),\n                                ],\n                            },\n                        },\n                    },\n                    {\n                        loader: 'sass-loader',\n                        options: {\n                            sourceMap: true,\n                            implementation: sass,\n                            sassOptions: {\n                                outputStyle: 'compressed',\n                            },\n                        },\n                    },\n                ],\n            },\n        ],\n    },\n};\n\nconst webpackConfig = (environment, argv) => {\n    const isProduction = argv.mode === 'production';\n\n    options.mode = isProduction ? 'production' : 'development';\n\n    if (!isProduction) {\n        // https://webpack.js.org/configuration/stats/\n        const stats = {\n            // Tells stats whether to add the build date and the build time information.\n            builtAt: false,\n            // Add chunk information (setting this to `false` allows for a less verbose output)\n            chunks: false,\n            // Add the hash of the compilation\n            hash: false,\n            // `webpack --colors` equivalent\n            colors: true,\n            // Add information about the reasons why modules are included\n            reasons: false,\n            // Add webpack version information\n            version: false,\n            // Add built modules information\n            modules: false,\n            // Show performance hint when file size exceeds `performance.maxAssetSize`\n            performance: false,\n            // Add children information\n            children: false,\n            // Add asset Information.\n            assets: false,\n        };\n\n        options.stats = stats;\n\n        // Create JS source maps in the dev mode\n        // See https://webpack.js.org/configuration/devtool/ for more options\n        options.devtool = 'inline-source-map';\n\n        // See https://webpack.js.org/configuration/dev-server/.\n        options.devServer = {\n            // Enable gzip compression for everything served.\n            compress: true,\n            host: '0.0.0.0',\n            port: 3000,\n            proxy: [\n                {\n                    context: () => true,\n                    target: 'http://localhost:8000',\n                },\n            ],\n            client: {\n                logging: 'error',\n                // Shows a full-screen overlay in the browser when there are compiler errors.\n                overlay: true,\n            },\n            static: {\n                directory: path.resolve(__dirname, 'static'),\n            },\n            devMiddleware: {\n                // Write compiled files to disk. This makes live-reload work on both port 3000 and 8000.\n                writeToDisk: true,\n                stats,\n                index: false,\n                publicPath: '/static/',\n            },\n        };\n    }\n\n    return options;\n};\n\nmodule.exports = webpackConfig;\n",
+      "sha256": "f7656a1cf2f7c34ce3958fb784d114ff7c96f2d16644f5bd269da6beb0c0528a",
+      "lines": 172,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-10",
+      "root": "local/wagtail.org",
+      "path": "wagtailio/project_styleguide/templates/patterns/base.html",
+      "deploymentVerified": false,
+      "observedBytes": 2377,
+      "status": "captured",
+      "text": "{% load static manifest wagtailcore_tags wagtailuserbar wagtailspace_tags wagtailschemaorg_tags %}\n{% wagtail_site as current_site %}\n<!DOCTYPE html>\n<html class=\"no-js\" lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\" />\n\n        {% if request.in_preview_panel %}\n            <base target=\"_blank\">\n        {% endif %}\n\n        <title>{% block title %}{% firstof page.seo_title page.title %}{% endblock %}{% block title_suffix %}{% if current_site.site_name %}- {{ current_site.site_name }}{% endif %}{% endblock %}</title>\n\n        {% block meta_tags %}\n            <meta name=\"description\" content=\"\" />\n            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n            <meta name=\"google-site-verification\" content=\"VvODzdadJFXP83bFsdQw3q909jhng_zodu6hvG_-4ws\" />\n        {% endblock %}\n\n        {% ld_for_site %}\n\n        {# Global stylesheets #}\n        <link rel=\"stylesheet\" href=\"{% manifest \"css/main.css\" %}\">\n\n        {# Global iconography #}\n        {% include \"patterns/includes/svg_sprites.html\" %}\n\n        {% block extra_css %}\n            {# Override this in templates to add extra stylesheets #}\n        {% endblock %}\n\n        <!-- Privacy-friendly analytics by Plausible -->\n        <script async src=\"https://plausible.io/js/pa-ngavQ28VQSDP3hrszIVgI.js\"></script>\n        <script nonce=\"{{ csp_nonce }}\">\n            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};\n            plausible.init()\n        </script>\n\n\n    </head>\n\n    <body class=\"app {% block body_class %}{% endblock %}\">\n\n        {# blocking js loaded first to ensure no flash of white on theme detection #}\n        <script src=\"{% manifest 'js/blocking.js' %}\"></script>\n\n        {% block body_top %}{% endblock %}\n        {% wagtailuserbar %}\n\n        {% block header %}{% endblock %}\n\n        <main id=\"main-content\" class=\"app__content\">\n            {% block content %}\n                {{ pattern_library_rendered_pattern }}\n            {% endblock %}\n        </main>\n\n        {% block footer %}{% endblock %}\n\n        {# Global javascript #}\n        <script src=\"{% manifest 'js/main.js' %}\"></script>\n\n        {% block extra_js %}\n            {# Override this in templates to add extra javascript #}\n        {% endblock %}\n    </body>\n</html>\n",
+      "sha256": "e8a6e2b98bdadb2885b15e1978c3bc09ebc20a870392beeb72e549b96f9afa22",
+      "lines": 67,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-11",
+      "root": "local/wagtail.org",
+      "path": "wagtailio/project_styleguide/templates/patterns/includes/header.html",
+      "deploymentVerified": false,
+      "observedBytes": 3325,
+      "status": "captured",
+      "text": "{% load navigation_tags %}\n\n<header class=\"app__header header\">\n    {% include \"patterns/components/skip-link/skip-link.html\" %}\n\n    <div class=\"header__identity\">\n        <a class=\"header__link\" href=\"/\" aria-label=\"Wagtail.org homepage\">\n            <svg class=\"header__logo header__logo--dark\" aria-hidden=\"true\">\n                <use xlink:href=\"#wagtail-dark\" />\n            </svg>\n            <svg class=\"header__logo header__logo--light\" aria-hidden=\"true\">\n                <use xlink:href=\"#wagtail-light\" />\n            </svg>\n        </a>\n    </div>\n\n    <div class=\"header__actions\">\n\n        <div class=\"header__nav header__nav--desktop\" data-desktop-menu>\n            {% main_navigation %}\n        </div>\n\n        <div class=\"header__search\">\n            {# Desktop Search #}\n            <button class=\"header__button header__button--search u-desktop-only\" aria-controls=\"site-search-modal\" aria-label=\"Open the search\" data-site-search-desktop>\n                <svg class=\"header__search-icon\" aria-hidden=\"true\">\n                    <use xlink:href=\"#magnifying-glass\"></use>\n                </svg>\n            </button>\n\n            {# Mobile Search #}\n            <button class=\"header__button header__button--search u-mobile-only\" aria-expanded=\"false\" aria-controls=\"mobile-search-form\" aria-label=\"Open the search\" data-site-search-mobile>\n                <svg class=\"header__search-icon header__search-icon--open\" aria-hidden=\"true\">\n                    <use xlink:href=\"#magnifying-glass\"></use>\n                </svg>\n                <svg class=\"header__search-icon header__search-icon--close\" aria-hidden=\"true\">\n                    <use xlink:href=\"#cross\"></use>\n                </svg>\n            </button>\n        </div>\n\n        <div class=\"header__menu-toggle\">\n            <button class=\"burger\" data-mobile-menu-toggle aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"Mobile menu toggle\">\n                <span class=\"burger__line\"></span>\n                <span class=\"burger__line\"></span>\n                <span class=\"burger__line\"></span>\n                <span class=\"burger__line\"></span>\n            </button>\n        </div>\n\n        <div class=\"header__nav header__nav--mobile\" data-mobile-menu>\n            {% main_navigation %}\n            {% if settings.navigation.NavigationSettings.get_started_menu %}\n                <a href=\"/get-started/\" class=\"header__button header__button--get-started button\">\n                    Get started\n                </a>\n            {% endif %}\n        </div>\n\n        {% if settings.navigation.NavigationSettings.get_started_menu %}\n            <button class=\"header__button header__button--get-started button\" data-get-started>\n                Get started\n                <svg class=\"header__get-started-icon\" aria-hidden=\"true\">\n                    <use xlink:href=\"#chevron\"></use>\n                </svg>\n            </button>\n        {% endif %}\n\n        {# Mobile search #}\n        {% include \"patterns/includes/search-form.html\" with classes=\"search--mobile is-hidden u-mobile-only\" data_attrs=\"data-search-mobile\" form_id=\"mobile-search-form\" input_id=\"search-input-mobile\" %}\n\n    </div>\n</header>\n\n{% get_started_menu %}\n\n{# Desktop search #}\n{% include \"patterns/includes/search-modal.html\" with input_id=\"search-input-desktop\" %}\n",
+      "sha256": "cdcdd14dcb8edb64adc94ce02ab31b83a8b1edfb344c64fc92e3e135d07dedba",
+      "lines": 78,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-12",
+      "root": "local/wagtail.org",
+      "path": "wagtailio/static/js/components/site-search-desktop.js",
+      "deploymentVerified": false,
+      "observedBytes": 537,
+      "status": "captured",
+      "text": "import MicroModal from 'micromodal';\n\nclass SiteSearchDesktop {\n    static selector() {\n        return '[data-site-search-desktop]';\n    }\n\n    constructor(node) {\n        this.node = node;\n        this.modalId = 'site-search-modal';\n        this.bindEvents();\n    }\n\n    bindEvents() {\n        this.node.addEventListener('click', () => {\n            this.openMenu();\n        })\n    }\n\n    openMenu() {\n        MicroModal.show(this.modalId, {\n            awaitCloseAnimation: true,\n        });\n    }\n}\n\nexport default SiteSearchDesktop;\n",
+      "sha256": "577be43823720997f29c745a3d94a870c6c37ec9e7262bc29e176fec40cd99fa",
+      "lines": 27,
+      "trackedInRepository": true,
+      "repository": {
+        "root": "local/wagtail.org",
+        "revision": "9fa65385f27c15b83c86a4f6e0e3ac18d4784609",
+        "trackedWorkingTreeDirty": false,
+        "deploymentVerified": false,
+        "relationship": "Owner-supplied candidate source for this origin; deployment identity unknown"
+      }
+    },
+    {
+      "id": "source-13",
+      "root": "local/wagtail.org",
+      "path": "CHANGELOG.md",
+      "deploymentVerified": false,
+      "status": "unavailable",
+      "error": "FileNotFoundError",
+      "text": null,
+      "sha256": null
+    }
+  ],
+  "scope": "Only explicitly selected text files; no code execution, installed-package inventory, vulnerability scan, complete dependency audit or deployment attestation",
+  "planSHA256": "12ee136390002ffa0693b34be472d517258a4a2253e2504ec64a1cb9ab3b3b6f",
+  "collectorSHA256": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a"
+}

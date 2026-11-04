@@ -1,0 +1,24 @@
+{
+  "publicationNote": "Exact inspected public-site observations and selected owner-supplied source. No source code executed; deployment remains unverified. Large files can be identity-only. Private command logs and copied skills are omitted; hashes remain in receipts. Scores and chart data derive only from this campaign, without older annual or energy enrichments.",
+  "files": {
+    "charts/https-guide-wagtail-org-432853f7b5d8.csv": "7d3c4619bf591bad451c722e1f49ed6647ab9ec0c32bbf5190b57bd1e3bb28a3",
+    "charts/https-guide-wagtail-org-432853f7b5d8.json": "d095506eddb7bcf26f9491340bafe58b5d6c0b950cea34094c45a1bc6a5826d5",
+    "checks.json": "6196ee2dd9ffd04273c0bb3716d9849cb030882d59e1215ad16d23778f51268e",
+    "disclosures.json": "dcaf0e7b6b262fbe613baca7cb28ddcc637efd7851dfd59a16104748686b3026",
+    "impact-weights.json": "120d2e9c59c8ff0910ab6f1e6b034d695811e677eeeb258c14ab759162dd0dbc",
+    "packet.json": "9a5a92cbf5740172b14c5705733572fe5fed52e8fc36b235a43c7ea5160dc2d1",
+    "plan.json": "7206056575a0a307cbaab1766bd695e7bec3c1456222cdc1188c63d4d8a3c184",
+    "probes.json": "f19f52643e447bd51b036e00338a68499b756795c9114bdb4abc419a87d3f28f",
+    "receipt.json": "f4c4a87a54c551d258617ee20ceb51e48fbee0bffd4a5eda905c9565a319353e",
+    "review-procedure.json": "1068055533c7d2fbaebe4a0089c382b88d07997a5867765f83a3e8fc3aa5e96b",
+    "review-prompt.txt": "27031430a62ebcf6385ff8f6dc35fc759ecda3a848dba498c039efebfac5d78b",
+    "review-schema.json": "9e047337a9cdc17dfd3cfa646ad50e055027f632c7ea3d518eb4657fb0bc6b6b",
+    "review.json": "d0bae2201ee5f8e0fe269ac10ed57e6ad07ea841cc0109a20768384a8b970a5f",
+    "reviews.json": "b3fcfa013c2ecbee0597bc97b791a60d2e9a95a04ffa2fa204dd7ad2b0e51c74",
+    "rubric.json": "fe698d4f935d782181555cd9892a7987ba3e18e198dcba477a9710db72dd0091",
+    "score-receipt.json": "5e8ecb48e35347259f8e741ffefc12893330c171bf0f1614b8dd395e7bd8e1a8",
+    "scores.json": "3abf6bf6949e5ba01951ad0139a15705a2139e0499d0e5146a5c3ad272bedc9f",
+    "source.json": "de691536a3a9399c4b11b9e7a04bfe6c7f88ac633f193db41e3a82abf3801ea0",
+    "staged.json": "84ac00985108effd8f0f5b6cc73aa7aae17b511b94e298388b1b2a364aafbc27"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "harness": "Codex CLI 0.166.0",
+  "requestedModel": "gpt-6.1-sol",
+  "reasoning": "low",
+  "userConfigLoaded": false,
+  "toolSandbox": "read-only",
+  "webSearch": "disabled",
+  "ephemeral": true,
+  "prompt": "review-prompt.txt",
+  "outputSchema": "review-schema.json",
+  "output": "review.json",
+  "execution": "codex exec --ignore-user-config --ephemeral --model gpt-6.1-sol -c model_reasoning_effort=low -c web_search=disabled --sandbox read-only --json --output-schema <schema> --output-last-message <review.json> - < <prompt>",
+  "traceStatus": "Raw CLI events retained privately; output and input digests published"
+}

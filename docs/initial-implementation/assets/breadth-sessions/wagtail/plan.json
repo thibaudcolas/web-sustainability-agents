@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://wagtail.org",
+  "purpose": "Expanded public and source-assisted WSG review: test interactions and inspect maintainability evidence",
+  "pages": [
+    {
+      "id": "page-1",
+      "url": "https://wagtail.org/",
+      "task": "Understand Wagtail and find its sustainability commitments",
+      "branches": [
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-in]",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-out]",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-2",
+      "url": "https://wagtail.org/sustainability/",
+      "task": "Read the public sustainability claims and evidence",
+      "branches": [
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-in]",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-out]",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-3",
+      "url": "https://wagtail.org/digital-emissions/",
+      "task": "Inspect the method and scope of Wagtail public emissions claims",
+      "branches": [
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-in]",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-out]",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "sustainability-footer",
+      "url": "https://wagtail.org/",
+      "task": "Open the sustainability statement from the footer",
+      "actions": [
+        {
+          "type": "click",
+          "selector": "footer a[href=\"/sustainability/\"]"
+        }
+      ],
+      "success": {
+        "url": "https://wagtail.org/sustainability/",
+        "selector": "h1",
+        "text": "Sustainability"
+      }
+    }
+  ],
+  "checks": [],
+  "sourceRoots": [
+    "local/wagtail.org"
+  ],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "Existing source checkouts are candidate production source; no deployment identity attestation is available"
+  ],
+  "optionalEnergy": "none",
+  "ownerPriorities": [
+    "Content-focused site with prior sustainability improvements",
+    "First-load metrics headline; interactions supplementary",
+    "Source available for corroborating fixes"
+  ],
+  "sourceFiles": [
+    {
+      "root": "local/wagtail.org",
+      "path": "pyproject.toml"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "package.json"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "package-lock.json"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "README.md"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "Dockerfile"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": ".nvmrc"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": ".github/workflows/ci.yml"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "poetry.lock"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "webpack.config.js"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "wagtailio/project_styleguide/templates/patterns/base.html"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "wagtailio/project_styleguide/templates/patterns/includes/header.html"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "wagtailio/static/js/components/site-search-desktop.js"
+    },
+    {
+      "root": "local/wagtail.org",
+      "path": "CHANGELOG.md"
+    }
+  ],
+  "sampleRationale": "Home, substantive task content, and task-result/disclosure page; source selection covers manifests, runtime, automation, shared templates and maintenance documents. Not a complete service inventory."
+}

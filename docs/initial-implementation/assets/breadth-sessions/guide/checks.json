@@ -1,0 +1,267 @@
+{
+  "checks": [
+    {
+      "id": "distraction",
+      "guideline": "2.5",
+      "expectation": "Assess visible distractions against the declared visitor task; distinguish useful prompts from interruptions.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "choice",
+      "guideline": "2.6",
+      "expectation": "Inspect choice wording, defaults, prominence and the observed accept/reject paths for undue steering. DOM text alone does not establish visual parity.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "comprehension",
+      "guideline": "2.7",
+      "expectation": "Assess the sampled task's wording, headings and terminology for its stated audience; retain uncertainty about unrepresented users.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "consistency",
+      "guideline": "2.8",
+      "expectation": "Compare repeated navigation and control names across sampled pages; consistent samples do not prove a documented design system.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "motion",
+      "guideline": "2.10",
+      "expectation": "Assess observed animation purpose, playback controls and reduced-motion behavior. A quiet snapshot does not prove no motion occurs elsewhere.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "notifications",
+      "guideline": "2.12",
+      "expectation": "Assess observed alerts and notification permission requests for user value and choice; absence is limited to observed states.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "documents",
+      "guideline": "2.13",
+      "expectation": "Review print layout visibility and download labels for the declared task. Fetch and inspect document content before asserting optimization or equivalence.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "unused-code",
+      "guideline": "3.2",
+      "expectation": "Use initial JS/CSS execution observations to nominate investigation targets; require representative journeys or source corroboration before recommending removal.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "components",
+      "guideline": "3.3",
+      "expectation": "Relate initial script resources to visible components and later task needs; recommend splitting only when a component's deferred use and usable activation are corroborated.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "layout",
+      "guideline": "3.10",
+      "expectation": "Compare narrow and desktop task content and overflow, then exercise affected controls; width emulation alone is not real-device compatibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "impact-choice",
+      "guideline": "5.4",
+      "expectation": "Identify consequential user choices in the sample and assess whether contextual impact information is useful and supported. Do not prescribe carbon labels on every control.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "journeys",
+      "guideline": "2.4",
+      "expectation": "Execute declared task actions and inspect completion evidence; an expected selector is one observable, not proof of user success or optimal journey length.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "media-delivery",
+      "guideline": "2.9",
+      "expectation": "The sampled task images preserve useful content and provide proportionate intrinsic dimensions and delivery choices for their rendered size and pixel density. A large image is an investigation candidate until legibility and task value are checked; absent srcset alone is not a failure.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop/narrow image dimensions, srcset/sizes, delivered MIME types, loading state, and task content. Confirm any proposed rendition at intended pixel densities before asserting savings."
+    },
+    {
+      "id": "font-delivery",
+      "guideline": "2.11",
+      "expectation": "Observed web fonts and variants serve the sampled content, with a declared fallback/loading strategy where needed. Do not fail a site merely for using a web font; recommend removal or subsetting only after language and readability requirements are established.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect document.fonts family/weight/style/display/status, font responses and visible body text. Missing font-blocking/constrained-loading or language evidence can leave the scoped judgment unresolved."
+    },
+    {
+      "id": "semantic-forms",
+      "guideline": "3.6",
+      "expectation": "The sampled document has a meaningful language, primary heading and main region, and task controls have visible labels or an explicit naming relationship. Count/attribute presence alone does not establish semantic correctness or WCAG compliance.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Read title/lang/headings/mainCount, form control labels and task content. aria-labelledby references need resolution before claiming a missing accessible name."
+    },
+    {
+      "id": "metadata",
+      "guideline": "3.8",
+      "expectation": "The sampled content has a descriptive title and usable canonical metadata when applicable; declared structured-data blocks parse as JSON. Judge description and other optional metadata according to page purpose, not a mandatory-field checklist.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect metadata and document title, resolving canonical URLs and applicability. JSON parsing does not establish schema validity or search-engine eligibility."
+    },
+    {
+      "id": "preference-behavior",
+      "guideline": "3.9",
+      "expectation": "The sampled page respects applicable dark/reduced-motion preferences both before navigation and when they change in-page, without losing task content. Distinguish intentional design choices and absence of applicable motion from unsupported behavior.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop, reduced_motion, live_dark and cold_dark observations, colors, visible text and actual animations. A matching media query alone is insufficient; theme initialization and live change are distinct."
+    },
+    {
+      "id": "no-js-content",
+      "guideline": "2.17",
+      "expectation": "The sampled core reading content and navigation remain available without JavaScript, or an explicit alternative supports the task. This bounded check does not establish no-JavaScript search, every interaction, or all browser compatibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop and fresh no_javascript text/headings/navigation. Explain task-critical missing content and legitimate progressive enhancements rather than demanding every feature without scripts."
+    },
+    {
+      "id": "api-requests",
+      "guideline": "3.11",
+      "expectation": "Repeated observed API requests are justified by the sampled task and its update needs. Identify redundant-looking requests for investigation without inferring backend cost or safe removal from URL repetition alone.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect bounded network.requests methods/types/timestamps and explicit journey resource entries. Establish polling purpose, cache behavior and task freshness needs; initial-only windows may remain cantTell."
+    },
+    {
+      "id": "public-cache-policy",
+      "guideline": "4.2",
+      "expectation": "Reusable public scripts/styles/media expose an appropriate caching or validation policy in the sample. Distinguish dynamic/private responses and note that headers alone do not prove cache reuse or offline support.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Review allowlisted response cache-control/etag/last-modified/age/vary headers and public resource purpose. Require a warm-load test before claiming measured reuse; private no-store is a legitimate exception."
+    },
+    {
+      "id": "text-compression",
+      "guideline": "4.3",
+      "expectation": "Material sampled text assets are delivered with compression where beneficial. Do not demand compression for already-compressed images, tiny bodies or error responses without context.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Review text/script/style response MIME types, status and content-encoding, alongside transfer magnitude when available. Header absence for a material text response supports investigation; missing response evidence stays unknown."
+    },
+    {
+      "id": "keyboard-path",
+      "guideline": "3.6",
+      "expectation": "The sampled initial keyboard path reaches visible task navigation/controls in a meaningful order with a discernible focus indicator. A bounded Tab trace cannot establish complete keyboard support, reverse navigation, traps or screen-reader accessibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect keyboardFocus steps, names/label relationships, element geometry, focus-visible and outline clues. A zero outline is not proof of invisible focus because borders or shadows may supply it; verify the actual indicator before a failure."
+    },
+    {
+      "id": "disclosure-scope",
+      "guideline": "2.1",
+      "expectation": "A retrieved public sustainability statement identifies the audited service and describes its impacts and mitigation. Judge disclosure only, not execution; an unresolved relationship is cantTell."
+    },
+    {
+      "id": "carbon-discovery",
+      "guideline": "3.13",
+      "expectation": "The sampled service exposes a discoverable, parseable carbon.txt with usable declared relationships. Missing carbon.txt is a scoped absence, not proof of high emissions or failure of the entire guideline. Judge redirects, delegation, supported versions and schema findings explicitly."
+    },
+    {
+      "id": "hosting-evidence",
+      "guideline": "4.1",
+      "expectation": "Hosting claims identify provider, service and supporting evidence with a relationship to this origin. Self-declaration without independently corroborated operational scope remains cantTell for sustainable hosting; do not set SWDM green-hosting flags from this check."
+    },
+    {
+      "id": "source-reuse",
+      "guideline": "3.4",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-redundancy-and-duplication-in-code",
+      "expectation": "Selected templates or modules use shared components for the same repeated interface behavior. A demonstrated duplicated maintenance path can fail this narrow check; shared imports alone cannot establish whole-project efficiency. Inspect concrete call sites and tradeoffs before recommending consolidation.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-dependencies",
+      "guideline": "3.12",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-dependencies-sparingly-and-maintain-them",
+      "expectation": "The selected manifests document direct dependencies and a repeatable version-resolution mechanism. Distinguish declared dependencies from installed or deployed versions; necessity, vulnerability status and up-to-date maintenance require further evidence.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-runtime",
+      "guideline": "3.15",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-latest-stable-language-version",
+      "expectation": "The selected runtime declarations are mutually consistent for the documented build/deployment path. This checks consistency only; a latest-stable-version claim needs a separately captured authoritative release reference and deployment evidence.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-automation",
+      "guideline": "4.6",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-automation-wisely",
+      "expectation": "The selected CI workflows declare triggers and avoid demonstrably duplicate or superseded work through relevant filtering, cancellation or equivalent controls. Evaluate the same workflow and necessary validation before prescribing fewer jobs; this does not measure CI energy.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-maintenance",
+      "guideline": "5.10",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#follow-a-product-management-and-maintenance-strategy",
+      "expectation": "Selected project documentation explains how maintainers develop, test or maintain the service. A document can pass this disclosure expectation without proving staffing, regular execution or a complete sustainability maintenance strategy.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-change-docs",
+      "guideline": "5.12",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#document-updates-and-evolutions",
+      "expectation": "The selected change/release documentation communicates user-facing changes with identifiable versions or change history. Git metadata alone does not prove that affected users receive useful change documentation.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-budgets",
+      "guideline": "5.24",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-performance-environmental-and-human-budgets",
+      "expectation": "Selected build or project documentation defines a concrete asset/performance limit and what happens when it is exceeded. A linter or default warning without an explicit relevant limit is insufficient. No selected document is a bounded search result, not proof that the organization has no budgets.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-open-source",
+      "guideline": "5.25",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-and-contribute-to-open-source",
+      "expectation": "Selected license and contribution documents identify reuse terms and how to contribute to this codebase. Code licensing does not automatically license site content or prove ongoing upstream contribution.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    }
+  ]
+}

@@ -1,0 +1,1348 @@
+{
+  "schemaVersion": "0.1.0",
+  "sourceSHA256": {
+    "reviews": "b3fcfa013c2ecbee0597bc97b791a60d2e9a95a04ffa2fa204dd7ad2b0e51c74",
+    "rubric": "fe698d4f935d782181555cd9892a7987ba3e18e198dcba477a9710db72dd0091",
+    "impactWeights": "120d2e9c59c8ff0910ab6f1e6b034d695811e677eeeb258c14ab759162dd0dbc"
+  },
+  "scores": [
+    {
+      "site": "https://guide.wagtail.org",
+      "rubricVersion": "agent-breadth-v2",
+      "label": "Scoped WSG audit score",
+      "value": 46.875,
+      "unit": "percent",
+      "formula": "100 * passed / (passed + failed + cantTell), grouped once per guideline",
+      "counts": {
+        "cantTell": 13,
+        "fail": 4,
+        "inapplicable": 0,
+        "pass": 15,
+        "untested": 39
+      },
+      "checkedGuidelines": 32,
+      "totalGuidelines": 71,
+      "checkedCoveragePercent": 45.070422535211264,
+      "supportedByMethod": 32,
+      "fullGuidelinesVerified": 0,
+      "impactWeighted": {
+        "value": 42.94871794871795,
+        "passedWeight": 67,
+        "checkedWeight": 156,
+        "status": "Experimental project convention using WSG impact priority points; not a W3C site score"
+      },
+      "interpretation": "Passes satisfy only the declared scoped expectations; unknowns earn no points but are not defects. Compare only matching rubric, sample, and evidence profiles.",
+      "guidelines": [
+        {
+          "number": "2.1",
+          "title": "Identify, assess, disclose, review, and mitigate sustainability impacts",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#identify-assess-disclose-review-and-mitigate-sustainability-impacts",
+          "role": "agent-review",
+          "expectation": "A retrieved public sustainability statement identifies the audited service and describes its impacts and mitigation. Judge disclosure only, not execution; an unresolved relationship is cantTell.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 1,
+          "judgments": [
+            {
+              "checkId": "disclosure-scope",
+              "guideline": "2.1",
+              "outcome": "pass",
+              "evidenceIds": [
+                "staged.json:discovery:0"
+              ],
+              "rationale": "documents/0 retrieves wagtail.org/sustainability/ with HTTP 200. Its excerpt explicitly names guide.wagtail.org among projects whose impacts and emissions are being reduced and describes mitigation through image formats, documentation and dark mode. This is scoped public disclosure, not verified execution; ecosystem estimates are not this service's measured footprint.",
+              "confidence": "high",
+              "nextEvidence": "Retrieve the complete roadmap to identify dated, guide-specific mitigation commitments."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.2",
+          "title": "Understand user requirements or constraints",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#understand-user-requirements-or-constraints",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 5,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.3",
+          "title": "Integrate sustainability into every stage of the ideation process",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#integrate-sustainability-into-every-stage-of-the-ideation-process",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 2,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.4",
+          "title": "Design efficient and streamlined user journeys",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys",
+          "role": "agent-review",
+          "expectation": "Execute declared task actions and inspect completion evidence; an expected selector is one observable, not proof of user success or optimal journey length.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 6,
+          "judgments": [
+            {
+              "checkId": "journeys",
+              "guideline": "2.4",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:journeys:0"
+              ],
+              "rationale": "search-images-enter records completed search-toggle click, images fill, Enter and result click. completion records actionsSucceeded=true, the exact Manage images URL, one matching h1 and matching text; after content contains image-management instructions. This establishes the declared observable journey, not optimal efficiency or user comprehension.",
+              "confidence": "high",
+              "nextEvidence": "Repeat the task with a representative editor and note unnecessary steps."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.5",
+          "title": "Design to assist and not to distract",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract",
+          "role": "agent-review",
+          "expectation": "Assess visible distractions against the declared visitor task; distinguish useful prompts from interruptions.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 7,
+          "judgments": [
+            {
+              "checkId": "distraction",
+              "guideline": "2.5",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:journeys:0"
+              ],
+              "rationale": "Desktop observations contain no overlays; search opens through an explicit action. Home text includes a conference promotion unrelated to finding image guidance. Its visual competition with the task is not established by text and geometry alone.",
+              "confidence": "medium",
+              "nextEvidence": "Inspect the home viewport visually while locating image guidance."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.6",
+          "title": "Avoid being manipulative or deceptive",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive",
+          "role": "agent-review",
+          "expectation": "Inspect choice wording, defaults, prominence and the observed accept/reject paths for undue steering. DOM text alone does not establish visual parity.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 7,
+          "judgments": [
+            {
+              "checkId": "choice",
+              "guideline": "2.6",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1"
+              ],
+              "rationale": "Observed controls include theme, copy options and Happy/Unhappy feedback; no consent overlay appears. Defaults, visual prominence and alternative choice paths were not exercised sufficiently to assess steering.",
+              "confidence": "medium",
+              "nextEvidence": "Inspect and exercise the applicable feedback and copy-option choices, including their visual prominence."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.7",
+          "title": "Make deliverables understandable and reusable",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable",
+          "role": "agent-review",
+          "expectation": "Assess the sampled task's wording, headings and terminology for its stated audience; retain uncertainty about unrepresented users.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 4,
+          "judgments": [
+            {
+              "checkId": "comprehension",
+              "guideline": "2.7",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Desktop text identifies the editor audience, explains CMS, and organizes Manage images into concrete actions, alt text, focal area and format requirements. Search result descriptions connect clearly to the declared image-management task. This supports the sampled wording, not understanding by every user.",
+              "confidence": "high",
+              "nextEvidence": "Ask a representative new editor to follow the focal-area instructions."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.8",
+          "title": "Use a design system for interface consistency",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency",
+          "role": "agent-review",
+          "expectation": "Compare repeated navigation and control names across sampled pages; consistent samples do not prove a documented design system.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 5,
+          "judgments": [
+            {
+              "checkId": "consistency",
+              "guideline": "2.8",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Desktop navigation repeats Getting started, How-to guides and Manage images across the three pages; search and theme controls retain the same names. Page-specific feedback and copy controls have contextual purposes. This does not establish a documented design system.",
+              "confidence": "high",
+              "nextEvidence": "Compare the same controls after opening their menus on narrow screens."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.9",
+          "title": "Optimize media to reduce resource use",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use",
+          "role": "agent-review",
+          "expectation": "The sampled task images preserve useful content and provide proportionate intrinsic dimensions and delivery choices for their rendered size and pixel density. A large image is an investigation candidate until legibility and task value are checked; absent srcset alone is not a failure.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 9,
+          "judgments": [
+            {
+              "checkId": "media-delivery",
+              "guideline": "2.9",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:1"
+              ],
+              "rationale": "Four task screenshots have 900\u00d7666 intrinsic dimensions, render at 756\u00d7559 desktop and 320\u00d7237 narrow, and lack srcset. Responses negotiate image/webp despite .png URLs. Their interface details plausibly support instructions, but readability at intended pixel densities and smaller rendition equivalence are unverified.",
+              "confidence": "high",
+              "nextEvidence": "Compare one candidate smaller screenshot with the current rendition at narrow 1\u00d7 and 2\u00d7 densities, preserving WebP negotiation."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.10",
+          "title": "Ensure animation is proportionate and easy to control",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control",
+          "role": "agent-review",
+          "expectation": "Assess observed animation purpose, playback controls and reduced-motion behavior. A quiet snapshot does not prove no motion occurs elsewhere.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 9,
+          "judgments": [
+            {
+              "checkId": "motion",
+              "guideline": "2.10",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "source.json:files:14",
+                "source.json:files:15"
+              ],
+              "rationale": "Desktop and reduced_motion snapshots list no active animations, but search_modal.html:3 declares modal fade and main.js:67\u201371 staggers result visibility. The snapshots do not establish transition purpose, duration or reduced-motion behavior during activation.",
+              "confidence": "high",
+              "nextEvidence": "Observe modal opening and autocomplete results with reduced motion enabled and disabled."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.11",
+          "title": "Use optimized web typography",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography",
+          "role": "agent-review",
+          "expectation": "Observed web fonts and variants serve the sampled content, with a declared fallback/loading strategy where needed. Do not fail a site merely for using a web font; recommend removal or subsetting only after language and readability requirements are established.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 5,
+          "judgments": [
+            {
+              "checkId": "font-delivery",
+              "guideline": "2.11",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "document fonts lists are empty, initial networks contain no font responses, and bodyFont uses an explicit system/sans-serif stack with emoji fallbacks at 18px/28.8px. The sampled English content therefore avoids a web-font loading dependency.",
+              "confidence": "high",
+              "nextEvidence": "Check readability and fallback rendering in another supported operating system."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.12",
+          "title": "Avoid unwanted notifications",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications",
+          "role": "agent-review",
+          "expectation": "Assess observed alerts and notification permission requests for user value and choice; absence is limited to observed states.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 5,
+          "judgments": [
+            {
+              "checkId": "notifications",
+              "guideline": "2.12",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2",
+                "probes.json:journeys:0"
+              ],
+              "rationale": "Sampled notification observations record requestCalls=0 with permission denied; the completed search journey records no errors or unwanted notification interaction. This supports only the observed anonymous reading and search states, not later or account messaging.",
+              "confidence": "medium",
+              "nextEvidence": "Observe a longer reading session with notification permission initially unset."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.13",
+          "title": "Reduce the impact of downloadable and physical documents",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents",
+          "role": "agent-review",
+          "expectation": "Review print layout visibility and download labels for the declared task. Fetch and inspect document content before asserting optimization or equivalence.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 5,
+          "judgments": [
+            {
+              "checkId": "documents",
+              "guideline": "2.13",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Print states hide primary navigation and retain task headings; Manage images retains four images. Download lists are empty. Print pagination, clipping and image readability are not captured, so an efficient usable printed document is unresolved.",
+              "confidence": "high",
+              "nextEvidence": "Inspect print preview of Manage images for page breaks, clipping and readable screenshots."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.14",
+          "title": "Involve users early in the project",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#involve-users-early-in-the-project",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 3,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.15",
+          "title": "Audit and test for bugs or issues requiring resolution",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#audit-and-test-for-bugs-or-issues-requiring-resolution",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 2,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.16",
+          "title": "Validate usability through testing and real-world usage",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#validate-usability-through-testing-and-real-world-usage",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 5,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "2.17",
+          "title": "Provide cross-platform compatibility support",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support",
+          "role": "agent-review",
+          "expectation": "The sampled core reading content and navigation remain available without JavaScript, or an explicit alternative supports the task. This bounded check does not establish no-JavaScript search, every interaction, or all browser compatibility.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 7,
+          "judgments": [
+            {
+              "checkId": "no-js-content",
+              "guideline": "2.17",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Fresh no_javascript states retain desktop text character counts of 1923, 4446 and 2380, including reading headings, navigation and search results. Core reading and linked guidance remain available. This does not establish JavaScript-free modal search or every enhancement.",
+              "confidence": "high",
+              "nextEvidence": "Follow the Manage images navigation link in a fresh no-JavaScript session."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.1",
+          "title": "Set goals based on performance and energy impact",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#set-goals-based-on-performance-and-energy-impact",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 1,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.2",
+          "title": "Minify and remove unused code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code",
+          "role": "agent-review",
+          "expectation": "Use initial JS/CSS execution observations to nominate investigation targets; require representative journeys or source corroboration before recommending removal.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 7,
+          "judgments": [
+            {
+              "checkId": "unused-code",
+              "guideline": "3.2",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "source.json:files:15"
+              ],
+              "rationale": "codeCoverage contains unexecuted main-script and jsi18n function ranges within initial load plus 500 ms; some function lists are truncated. main.js includes later search, mobile-menu and copy behavior. These observations nominate investigation but do not demonstrate safely removable code.",
+              "confidence": "high",
+              "nextEvidence": "Capture coverage through search, mobile menu, copy and feedback interactions before identifying dead code."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.3",
+          "title": "Modularize bandwidth-heavy components",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components",
+          "role": "agent-review",
+          "expectation": "Relate initial script resources to visible components and later task needs; recommend splitting only when a component's deferred use and usable activation are corroborated.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 4,
+          "judgments": [
+            {
+              "checkId": "components",
+              "guideline": "3.3",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:journeys:0",
+                "source.json:files:12",
+                "source.json:files:15"
+              ],
+              "rationale": "base.html:130\u2013135 includes the search modal and global scripts; main.js initializes several interactive features. Search activation works in the recorded journey, but no deferred component boundary or alternative loading behavior is demonstrated.",
+              "confidence": "high",
+              "nextEvidence": "Map bundle modules to initially needed behavior and prototype one deferred component with usable activation."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.4",
+          "title": "Avoid redundancy and duplication in code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-redundancy-and-duplication-in-code",
+          "role": "agent-review",
+          "expectation": "Selected templates or modules use shared components for the same repeated interface behavior. A demonstrated duplicated maintenance path can fail this narrow check; shared imports alone cannot establish whole-project efficiency. Inspect concrete call sites and tradeoffs before recommending consolidation.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 3,
+          "judgments": [
+            {
+              "checkId": "source-reuse",
+              "guideline": "3.4",
+              "outcome": "pass",
+              "evidenceIds": [
+                "source.json:files:12",
+                "source.json:files:13",
+                "source.json:files:14",
+                "source.json:files:15"
+              ],
+              "rationale": "At clean tracked revision 31a4547eb1f6de55baea84269723313784f6b544, base.html:96\u2013130 centralizes header, theme, footer and search composition; header.html:35\u201336 reuses navigation, and main.js:125\u2013134 shares component initialization. These concrete call sites support selected-source reuse. Deployment identity remains unverified.",
+              "confidence": "high",
+              "nextEvidence": "Compare deployed artifact identity with this revision before treating these as production implementation locations."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.5",
+          "title": "Treat third parties the same as first parties",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#treat-third-parties-the-same-as-first-parties",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 5,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.6",
+          "title": "Ensure code follows good semantic practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+          "role": "agent-review",
+          "expectation": "The sampled document has a meaningful language, primary heading and main region, and task controls have visible labels or an explicit naming relationship. Count/attribute presence alone does not establish semantic correctness or WCAG compliance. The sampled initial keyboard path reaches visible task navigation/controls in a meaningful order with a discernible focus indicator. A bounded Tab trace cannot establish complete keyboard support, reverse navigation, traps or screen-reader accessibility.",
+          "fullGuidelineCoverage": false,
+          "outcome": "fail",
+          "impactWeight": 4,
+          "judgments": [
+            {
+              "checkId": "semantic-forms",
+              "guideline": "3.6",
+              "outcome": "fail",
+              "evidenceIds": [
+                "probes.json:pages:2",
+                "source.json:files:14"
+              ],
+              "rationale": "Pages have meaningful English language, primary headings and main regions, but search-page controls contain two text inputs with id=search. The visible input receives both Search labels while the modal input has labels=[] and no ariaLabel or labelledBy. search_modal.html:8\u20139 corroborates the reused label target. This contradicts the explicit naming expectation for the modal task control.",
+              "confidence": "high",
+              "nextEvidence": "Open the search modal on the search-results page and inspect its input's computed accessible name."
+            },
+            {
+              "checkId": "keyboard-path",
+              "guideline": "3.6",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "keyboardFocus steps reach the visible skip link, named home link, named search toggle and ordered navigation including Manage images. Each recorded step has focusVisible=true and a solid 2px blue outline. This supports the initial bounded path, not modal operation, reverse navigation or absence of traps.",
+              "confidence": "high",
+              "nextEvidence": "Complete search with keyboard only, including modal close and return focus."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.7",
+          "title": "Defer the loading of non-critical resources",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#defer-the-loading-of-non-critical-resources",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 7,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.8",
+          "title": "Structure metadata for machine readability",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability",
+          "role": "agent-review",
+          "expectation": "The sampled content has a descriptive title and usable canonical metadata when applicable; declared structured-data blocks parse as JSON. Judge description and other optional metadata according to page purpose, not a mandatory-field checklist.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 2,
+          "judgments": [
+            {
+              "checkId": "metadata",
+              "guideline": "3.8",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Home and Manage images have descriptive titles, matching absolute canonicals and relevant descriptions. Search has title Search - Wagtail Guide and noindex; missing canonical/description is reasonable for this query page. Each sampled structured-data block parses as JSON, without establishing schema validity.",
+              "confidence": "high",
+              "nextEvidence": "Validate one structured-data block against its intended schema if machine consumption is a requirement."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.9",
+          "title": "Use media queries that support sustainability goals",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals",
+          "role": "agent-review",
+          "expectation": "The sampled page respects applicable dark/reduced-motion preferences both before navigation and when they change in-page, without losing task content. Distinguish intentional design choices and absence of applicable motion from unsupported behavior.",
+          "fullGuidelineCoverage": false,
+          "outcome": "fail",
+          "impactWeight": 5,
+          "judgments": [
+            {
+              "checkId": "preference-behavior",
+              "guideline": "3.9",
+              "outcome": "fail",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Across all three pages, live_dark matches dark=true but retains light colors: foreground rgb(38,38,38), background rgb(245,243,248). Fresh cold_dark reverses these colors successfully. Task text remains present. The site initializes the dark preference but does not follow its captured live change; reduced-motion snapshots contain no active motion to judge.",
+              "confidence": "high",
+              "nextEvidence": "Repeat a live OS theme change with no stored override, then test preservation of an explicit user-selected theme."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.10",
+          "title": "Ensure layouts work for different devices and requirements",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements",
+          "role": "agent-review",
+          "expectation": "Compare narrow and desktop task content and overflow, then exercise affected controls; width emulation alone is not real-device compatibility.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 4,
+          "judgments": [
+            {
+              "checkId": "layout",
+              "guideline": "3.10",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Narrow states retain task content, hide primary navigation and report no horizontal overflow; images shrink from 756 to 320 CSS pixels. The English control extends to approximately x=407.5 in home/content narrow observations, and mobile navigation was not exercised. Width snapshots cannot establish usable controls.",
+              "confidence": "high",
+              "nextEvidence": "Open mobile navigation and language options at the captured narrow width and verify clipping and activation."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.11",
+          "title": "Use sustainable JavaScript and APIs",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis",
+          "role": "agent-review",
+          "expectation": "Repeated observed API requests are justified by the sampled task and its update needs. Identify redundant-looking requests for investigation without inferring backend cost or safe removal from URL repetition alone.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 3,
+          "judgments": [
+            {
+              "checkId": "api-requests",
+              "guideline": "3.11",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2",
+                "source.json:files:15"
+              ],
+              "rationale": "Initial network.requests contain no Fetch/XHR requests. main.js:75\u2013108 declares a debounced search_json request, but the journey does not supply a bounded request trace establishing request repetition, cancellation or freshness needs during typing. Initial absence does not establish efficient interactive API use.",
+              "confidence": "high",
+              "nextEvidence": "Trace requests while typing and revising one search query, including pending-request handling."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.12",
+          "title": "Use dependencies sparingly and maintain them",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-dependencies-sparingly-and-maintain-them",
+          "role": "agent-review",
+          "expectation": "The selected manifests document direct dependencies and a repeatable version-resolution mechanism. Distinguish declared dependencies from installed or deployed versions; necessity, vulnerability status and up-to-date maintenance require further evidence.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 3,
+          "judgments": [
+            {
+              "checkId": "source-dependencies",
+              "guideline": "3.12",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "source.json:files:0",
+                "source.json:files:1",
+                "source.json:files:2",
+                "source.json:files:7",
+                "source.json:files:4"
+              ],
+              "rationale": "Clean revision 31a4547 documents dependencies in pyproject.toml:8\u201339 and package.json:17\u201331; Dockerfile:25,104 invokes npm ci and uv sync --frozen. Both lock files are metadata_only: names, sizes and hashes cannot establish valid resolutions. Installed/deployed versions and deployment identity remain unverified.",
+              "confidence": "high",
+              "nextEvidence": "Expose lock headers and relevant dependency-resolution entries, then validate manifest consistency without inferring deployed versions."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.13",
+          "title": "Include expected and beneficial files",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#include-expected-and-beneficial-files",
+          "role": "agent-review",
+          "expectation": "The sampled service exposes a discoverable, parseable carbon.txt with usable declared relationships. Missing carbon.txt is a scoped absence, not proof of high emissions or failure of the entire guideline. Judge redirects, delegation, supported versions and schema findings explicitly.",
+          "fullGuidelineCoverage": false,
+          "outcome": "fail",
+          "impactWeight": 3,
+          "judgments": [
+            {
+              "checkId": "carbon-discovery",
+              "guideline": "3.13",
+              "outcome": "fail",
+              "evidenceIds": [
+                "staged.json:discovery:0",
+                "disclosures.json:sites:0"
+              ],
+              "rationale": "carbonAttempts records HTTP 404 at both /carbon.txt and /.well-known/carbon.txt with no delegation or redirects; homepage carbonLocation is null. Disclosure parsing has no records and reports presence not established within scope. The sampled discoverable carbon.txt expectation fails, without implying high emissions or failure of all beneficial files.",
+              "confidence": "high",
+              "nextEvidence": "Confirm an intended discovery/delegation route with the owner before adding a validated carbon.txt."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.14",
+          "title": "Use the most efficient solution for your service",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-most-efficient-solution-for-your-service",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 8,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.15",
+          "title": "Use the latest stable language version",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-latest-stable-language-version",
+          "role": "agent-review",
+          "expectation": "The selected runtime declarations are mutually consistent for the documented build/deployment path. This checks consistency only; a latest-stable-version claim needs a separately captured authoritative release reference and deployment evidence.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 3,
+          "judgments": [
+            {
+              "checkId": "source-runtime",
+              "guideline": "3.15",
+              "outcome": "pass",
+              "evidenceIds": [
+                "source.json:files:0",
+                "source.json:files:3",
+                "source.json:files:4",
+                "source.json:files:5",
+                "source.json:files:6",
+                "source.json:files:8"
+              ],
+              "rationale": "At clean revision 31a4547, pyproject.toml:7 and README.md:27 require Python >=3.14, .python-version:1 selects 3.14 and Dockerfile:37 uses Python 3.14. .nvmrc:1 and Dockerfile:17 select Node 26; CI:43 reads .nvmrc. Selected declarations are consistent; latest-stable status and actual deployment remain unverified.",
+              "confidence": "high",
+              "nextEvidence": "Capture authoritative release references and deployed runtime versions before making a latest-stable claim."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "3.16",
+          "title": "Reduce the number and complexity of database queries",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-number-and-complexity-of-database-queries",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 5,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.1",
+          "title": "Use sustainable hosting",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-hosting",
+          "role": "agent-review",
+          "expectation": "Hosting claims identify provider, service and supporting evidence with a relationship to this origin. Self-declaration without independently corroborated operational scope remains cantTell for sustainable hosting; do not set SWDM green-hosting flags from this check.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 9,
+          "judgments": [
+            {
+              "checkId": "hosting-evidence",
+              "guideline": "4.1",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "staged.json:discovery:0",
+                "disclosures.json:sites:0",
+                "source.json:files:4"
+              ],
+              "rationale": "No parsed carbon relationships or independently verified hosting claims are supplied. Dockerfile comments identify a candidate Heroku production path, but deploymentVerified=false and public sustainability text does not establish this origin's operational provider, region or energy scope.",
+              "confidence": "high",
+              "nextEvidence": "Obtain deployment identity and provider evidence covering the service's actual hosting region and period."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.2",
+          "title": "Optimize caching and support offline access",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access",
+          "role": "agent-review",
+          "expectation": "Reusable public scripts/styles/media expose an appropriate caching or validation policy in the sample. Distinguish dynamic/private responses and note that headers alone do not prove cache reuse or offline support.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 8,
+          "judgments": [
+            {
+              "checkId": "public-cache-policy",
+              "guideline": "4.2",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Versioned public CSS and scripts expose public immutable max-age=315360000 with validators. Task-image responses expose ETag and Last-Modified plus Vary: accept, accept-encoding, supporting validation of negotiated variants. Headers establish the scoped policy, not measured warm reuse or offline access.",
+              "confidence": "high",
+              "nextEvidence": "Perform one warm reload and verify reuse and negotiated image variant correctness."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.3",
+          "title": "Reduce data transfer with compression",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression",
+          "role": "agent-review",
+          "expectation": "Material sampled text assets are delivered with compression where beneficial. Do not demand compression for already-compressed images, tiny bodies or error responses without context.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 8,
+          "judgments": [
+            {
+              "checkId": "text-compression",
+              "guideline": "4.3",
+              "outcome": "pass",
+              "evidenceIds": [
+                "probes.json:pages:0",
+                "probes.json:pages:1",
+                "probes.json:pages:2"
+              ],
+              "rationale": "Successful HTML and jsi18n responses use Brotli; main CSS and JavaScript use gzip. Material main-script and stylesheet encoded lengths are 26385 and 8247 bytes. Already compressed WebP images do not require additional text compression.",
+              "confidence": "high",
+              "nextEvidence": "Check compression again when a new material text asset is introduced."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.4",
+          "title": "Setup necessary error pages and redirection links",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#setup-necessary-error-pages-and-redirection-links",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 6,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.5",
+          "title": "Avoid maintaining unnecessary virtualized environments or containers",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-maintaining-unnecessary-virtualized-environments-or-containers",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 6,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.6",
+          "title": "Use automation wisely",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-automation-wisely",
+          "role": "agent-review",
+          "expectation": "The selected CI workflows declare triggers and avoid demonstrably duplicate or superseded work through relevant filtering, cancellation or equivalent controls. Evaluate the same workflow and necessary validation before prescribing fewer jobs; this does not measure CI energy.",
+          "fullGuidelineCoverage": false,
+          "outcome": "fail",
+          "impactWeight": 4,
+          "judgments": [
+            {
+              "checkId": "source-automation",
+              "guideline": "4.6",
+              "outcome": "fail",
+              "evidenceIds": [
+                "source.json:files:6"
+              ],
+              "rationale": "At clean revision 31a4547, ci.yml:3\u20138 triggers on renovate/** pushes and all pull requests, allowing the same Renovate update to run both docker-build-check and test twice. The selected workflow has no concurrency cancellation or event guard. This is a source-level duplicate path; execution frequency, CI energy and deployment identity are unverified.",
+              "confidence": "high",
+              "nextEvidence": "Inspect one Renovate PR's paired workflow runs to confirm overlap before choosing an event guard."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.7",
+          "title": "Define the frequency of data refreshes",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-the-frequency-of-data-refreshes",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 3,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.8",
+          "title": "Back up critical data at routine intervals",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#back-up-critical-data-at-routine-intervals",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 7,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.9",
+          "title": "Assess the impact and requirements of data processing",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#assess-the-impact-and-requirements-of-data-processing",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 10,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.10",
+          "title": "Use Content Delivery Networks (CDNs) when beneficial",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-content-delivery-networks-cdns-when-beneficial",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 7,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.11",
+          "title": "Ensure infrastructure fits project requirements",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-infrastructure-fits-project-requirements",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 7,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "4.12",
+          "title": "Store data according to the needs of your users",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#store-data-according-to-the-needs-of-your-users",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 7,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.1",
+          "title": "Have an ethical and sustainable product strategy",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#have-an-ethical-and-sustainable-product-strategy",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 2,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.2",
+          "title": "Assign a sustainability advocate",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#assign-a-sustainability-advocate",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 2,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.3",
+          "title": "Inform, raise awareness, and train for sustainability",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#inform-raise-awareness-and-train-for-sustainability",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 3,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.4",
+          "title": "Communicate the environmental impact of user choices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices",
+          "role": "agent-review",
+          "expectation": "Identify consequential user choices in the sample and assess whether contextual impact information is useful and supported. Do not prescribe carbon labels on every control.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 5,
+          "judgments": [
+            {
+              "checkId": "impact-choice",
+              "guideline": "5.4",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "probes.json:pages:1",
+                "probes.json:pages:0"
+              ],
+              "rationale": "Manage images explains formats, compression defaults and upload limits; theme choice is available. The packet does not establish a consequential resource-use decision in this reading task needing additional impact information. Missing carbon labels alone are not a defect.",
+              "confidence": "medium",
+              "nextEvidence": "Identify one actual editor decision where supported resource-use guidance would change the outcome."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.5",
+          "title": "Calculate the environmental impact",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#calculate-the-environmental-impact",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 5,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.6",
+          "title": "Define clear organizational sustainability goals and metrics",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-clear-organizational-sustainability-goals-and-metrics",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 2,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.7",
+          "title": "Validate web sustainability efforts through external verification",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#validate-web-sustainability-efforts-through-external-verification",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 5,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.8",
+          "title": "Support mandatory disclosures and reporting",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#support-mandatory-disclosures-and-reporting",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 3,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.9",
+          "title": "Create one or more impact business models",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#create-one-or-more-impact-business-models",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 1,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.10",
+          "title": "Follow a product management and maintenance strategy",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#follow-a-product-management-and-maintenance-strategy",
+          "role": "agent-review",
+          "expectation": "Selected project documentation explains how maintainers develop, test or maintain the service. A document can pass this disclosure expectation without proving staffing, regular execution or a complete sustainability maintenance strategy.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 5,
+          "judgments": [
+            {
+              "checkId": "source-maintenance",
+              "guideline": "5.10",
+              "outcome": "pass",
+              "evidenceIds": [
+                "source.json:files:3",
+                "source.json:files:9"
+              ],
+              "rationale": "At clean revision 31a4547, README.md:20\u201399 documents installation and development, and :105\u2013109 names format, lint and test commands. CONTRIBUTING.md:7\u201345 explains content coordination, translations and version maintenance. This passes documentation scope, without proving staffing or execution; deployment remains unverified.",
+              "confidence": "high",
+              "nextEvidence": "Ask a maintainer to verify the documented setup and release procedure against one recent change."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.11",
+          "title": "Implement continuous improvement procedures",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#implement-continuous-improvement-procedures",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 1,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.12",
+          "title": "Document updates and evolutions",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#document-updates-and-evolutions",
+          "role": "agent-review",
+          "expectation": "The selected change/release documentation communicates user-facing changes with identifiable versions or change history. Git metadata alone does not prove that affected users receive useful change documentation.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 1,
+          "judgments": [
+            {
+              "checkId": "source-change-docs",
+              "guideline": "5.12",
+              "outcome": "pass",
+              "evidenceIds": [
+                "source.json:files:16",
+                "probes.json:pages:0"
+              ],
+              "rationale": "At clean revision 31a4547, new-in-wagtail-8-0.md:1\u201313 identifies version 8.0, modification date and intended page URL; :27\u201344 explains guide navigation/versioning changes and editor-facing improvements. Runtime navigation exposes versioned release entries. Exact publication of this source text remains unverified.",
+              "confidence": "high",
+              "nextEvidence": "Compare the published 8.0 release page with the captured source."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.13",
+          "title": "Evaluate if a digital product or service is necessary",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#evaluate-if-a-digital-product-or-service-is-necessary",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 3,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.14",
+          "title": "Provide a supplier standards of practice document",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-a-supplier-standards-of-practice-document",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 1,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.15",
+          "title": "Share economic benefits",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#share-economic-benefits",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 7,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.16",
+          "title": "Share decision-making power with affected parties",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#share-decision-making-power-with-affected-parties",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 3,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.17",
+          "title": "Use Diversity, Equity, Justice, Inclusion (DEJI) practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-diversity-equity-justice-inclusion-deji-practices",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 4,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.18",
+          "title": "Promote responsible data practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#promote-responsible-data-practices",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 1,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.19",
+          "title": "Establish responsible practices around AI and emerging or disruptive technologies",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#establish-responsible-practices-around-ai-and-emerging-or-disruptive-technologies",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 1,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.20",
+          "title": "Adopt responsible financial practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-responsible-financial-practices",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 5,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.21",
+          "title": "Adopt organizational philanthropy practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-organizational-philanthropy-practices",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 2,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.22",
+          "title": "Plan for a digital product or service's care and end-of-life",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#plan-for-a-digital-product-or-service-s-care-and-end-of-life",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 3,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.23",
+          "title": "Repair, reuse, refurbish, recycle or reduce e-waste",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#repair-reuse-refurbish-recycle-or-reduce-e-waste",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 10,
+          "judgments": [],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.24",
+          "title": "Define performance, environmental, and human budgets",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-performance-environmental-and-human-budgets",
+          "role": "agent-review",
+          "expectation": "Selected build or project documentation defines a concrete asset/performance limit and what happens when it is exceeded. A linter or default warning without an explicit relevant limit is insufficient. No selected document is a bounded search result, not proof that the organization has no budgets.",
+          "fullGuidelineCoverage": false,
+          "outcome": "cantTell",
+          "impactWeight": 1,
+          "judgments": [
+            {
+              "checkId": "source-budgets",
+              "guideline": "5.24",
+              "outcome": "cantTell",
+              "evidenceIds": [
+                "source.json:files:11",
+                "source.json:files:1",
+                "source.json:files:3"
+              ],
+              "rationale": "At clean revision 31a4547, vite.config.ts defines build outputs and perf lint errors, while package.json and README name build/lint/test commands. Selected text supplies no concrete asset/performance cap with exceedance behavior. This bounded selection cannot establish project-wide absence; deployment remains unverified.",
+              "confidence": "high",
+              "nextEvidence": "Request the project's explicit performance-budget configuration or owner-confirmed budget policy."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.25",
+          "title": "Use and contribute to open source",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-and-contribute-to-open-source",
+          "role": "agent-review",
+          "expectation": "Selected license and contribution documents identify reuse terms and how to contribute to this codebase. Code licensing does not automatically license site content or prove ongoing upstream contribution.",
+          "fullGuidelineCoverage": false,
+          "outcome": "pass",
+          "impactWeight": 4,
+          "judgments": [
+            {
+              "checkId": "source-open-source",
+              "guideline": "5.25",
+              "outcome": "pass",
+              "evidenceIds": [
+                "source.json:files:10",
+                "source.json:files:9",
+                "source.json:files:3"
+              ],
+              "rationale": "At clean revision 31a4547, LICENSE:4\u201316 grants source/binary redistribution under three conditions; CONTRIBUTING.md:3\u201317 provides code, content and translation contribution routes, with setup in README. This establishes selected-code reuse terms and contribution guidance, not all content licensing or ongoing upstream contribution; deployment remains unverified.",
+              "confidence": "high",
+              "nextEvidence": "Confirm licensing boundaries for content and media separately when reusing them."
+            }
+          ],
+          "conformance": "not_determined"
+        },
+        {
+          "number": "5.26",
+          "title": "Create a business continuity and disaster recovery plan",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#create-a-business-continuity-and-disaster-recovery-plan",
+          "role": "unsupported",
+          "expectation": null,
+          "fullGuidelineCoverage": false,
+          "outcome": "untested",
+          "impactWeight": 1,
+          "judgments": [],
+          "conformance": "not_determined"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "site": {
+      "type": "string"
+    },
+    "packetSHA256": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "harness": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "reasoning": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "harness",
+        "model",
+        "reasoning"
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "checkId": {
+            "type": "string"
+          },
+          "guideline": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "cantTell",
+              "inapplicable",
+              "untested"
+            ]
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          },
+          "nextEvidence": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "checkId",
+          "guideline",
+          "outcome",
+          "evidenceIds",
+          "rationale",
+          "confidence",
+          "nextEvidence"
+        ]
+      }
+    },
+    "topFindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "checkId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "recommendation": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "checkId",
+          "title",
+          "evidenceIds",
+          "summary",
+          "recommendation",
+          "priority"
+        ]
+      }
+    }
+  },
+  "required": [
+    "site",
+    "packetSHA256",
+    "reviewer",
+    "rows",
+    "topFindings"
+  ]
+}

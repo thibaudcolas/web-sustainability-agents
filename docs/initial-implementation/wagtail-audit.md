@@ -1,5 +1,7 @@
 # Wagtail.org: WIP sustainability audit
 
+The [expanded audit](wagtail-breadth-audit.md) uses a broader rubric and source evidence. This page preserves the earlier campaigns and their scores.
+
 !!! note "Work in progress"
 
     Transfer measurements cover the homepage and sustainability page; metadata and preference probes cover seven content pages and one missing path. Traffic accounting remains partial, and organizational coverage is incomplete.

@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--locked",
+    "--script",
+    "audit/assess.py",
+    "--reviews",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-breadth-run-1/reviews.json",
+    "--rubric",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-breadth-run-1/rubric.json",
+    "--weights",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-breadth-run-1/impact-weights.json",
+    "--assets",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-breadth-run-1",
+    "--output",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/wagtail-breadth-run-1/scores.json"
+  ],
+  "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+  "startedAt": "2026-11-04T13:49:59.224762+00:00",
+  "finishedAt": "2026-11-04T13:49:59.351970+00:00",
+  "exitCode": 0,
+  "logs": [
+    "score.stdout.txt",
+    "score.stderr.txt"
+  ],
+  "scorerSHA256": "e9b658cb111e9a6a1e5e72bbb8e0591e43a19419c4de8597c4604f302605d9bc",
+  "scorerLockSHA256": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235"
+}

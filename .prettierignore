@@ -9,3 +9,4 @@ site/
 docs/contributing/abbreviations.md
 # Preserve exact evidence and review hashes in frozen agent sessions.
 docs/initial-implementation/assets/agent-sessions/
+docs/initial-implementation/assets/breadth-sessions/

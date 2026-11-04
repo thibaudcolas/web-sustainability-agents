@@ -211,6 +211,8 @@ nav:
       - Sources and research method: feasibility-study/sources.md
   - Initial implementation work:
       - initial-implementation/README.md
+      - Expanded guide audit: initial-implementation/guide-breadth-audit.md
+      - Expanded Wagtail.org audit: initial-implementation/wagtail-breadth-audit.md
       - WIP guide audit: initial-implementation/guide-audit.md
       - WIP Wagtail.org audit: initial-implementation/wagtail-audit.md
       - Energy and traffic experiment: initial-implementation/energy-traffic-experiment.md

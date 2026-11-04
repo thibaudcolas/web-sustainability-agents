@@ -1,5 +1,7 @@
 # Guide.wagtail.org: WIP sustainability audit
 
+The [expanded audit](guide-breadth-audit.md) uses a broader rubric and source evidence. This page preserves the earlier campaigns and their scores.
+
 !!! note "Work in progress"
 
     Transfer measurements cover two pages; the broader metadata and preference sample covers six content pages and one missing path. Organizational coverage and the measurement protocol need further validation.
