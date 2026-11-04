@@ -1,10 +1,13 @@
 """Exercise the real documentation configuration without publishing test pages."""
 
 import copy
+import functools
 import shutil
 import tempfile
+import threading
 import unittest
 from html.parser import HTMLParser
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 from urllib.parse import unquote, urlparse
@@ -14,6 +17,7 @@ import yaml
 from mkdocs.commands.build import build
 from mkdocs.config import load_config
 from mkdocs.config.defaults import MkDocsConfig
+from playwright.sync_api import sync_playwright
 from pymdownx.snippets import SnippetMissingError  # type: ignore[import-untyped]
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -222,3 +226,54 @@ class DocumentationTests(unittest.TestCase):
                 heading = content(next(document.iter("h1"))).rstrip("¶")
                 self.assertIn(heading, exported)
         self.assertIn("research evidence", exported)
+
+    def test_audit_table_keyboard_region_reaches_last_column(self):
+        class QuietHandler(SimpleHTTPRequestHandler):
+            def log_message(self, format, *args):
+                pass
+
+        handler = functools.partial(QuietHandler, directory=str(self.site))
+        server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            with sync_playwright() as playwright:
+                browser = playwright.chromium.launch()
+                try:
+                    page = browser.new_page(viewport={"width": 390, "height": 900})
+                    page.goto(
+                        f"http://127.0.0.1:{server.server_port}/initial-implementation/wagtail-breadth-audit/"
+                    )
+                    page.locator("article summary").first.focus()
+                    page.keyboard.press("Enter")
+                    region = page.get_by_role(
+                        "region",
+                        name="Cumulative data after cookie choices and scrolling",
+                    )
+                    region.focus()
+                    for _ in range(25):
+                        page.keyboard.press("ArrowRight")
+                    page.wait_for_timeout(350)
+                    geometry = region.evaluate("""element => ({
+                        regionRight: element.getBoundingClientRect().right,
+                        lastCellRight: element.querySelector('tbody tr td:last-child').getBoundingClientRect().right,
+                        documentWidth: document.documentElement.scrollWidth,
+                        viewportWidth: innerWidth
+                    })""")
+                    self.assertLessEqual(
+                        geometry["lastCellRight"], geometry["regionRight"] + 2
+                    )
+                    self.assertLessEqual(
+                        geometry["documentWidth"], geometry["viewportWidth"]
+                    )
+                    self.assertEqual(region.locator("caption").count(), 1)
+                    self.assertEqual(
+                        region.locator("tbody tr").count(),
+                        region.locator('tbody th[scope="row"]').count(),
+                    )
+                finally:
+                    browser.close()
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join()

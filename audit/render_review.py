@@ -11,7 +11,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
+import os
+import re
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
@@ -33,11 +36,11 @@ def cell(value: Any) -> str:
 
 
 def traffic(value: float) -> str:
-    """Display decimal KB or MB without changing artifact base units."""
+    """Display decimal kB or MB without changing artifact base units."""
     return (
         f"{value / 1_000_000:.3f} MB"
         if value >= 1_000_000
-        else f"{value / 1000:.1f} KB"
+        else f"{value / 1000:.1f} kB"
     )
 
 
@@ -72,8 +75,196 @@ def validate_inputs(session: Path, score_document: JSON, review: JSON) -> None:
             raise ValueError("Scored source evidence changed")
 
 
-def render(session: Path, prefix: str) -> str:
-    """Present scoped judgments and their evidence without recomputing model decisions."""
+LABELS = {
+    "pass": "Passed this check",
+    "fail": "Problem found",
+    "cantTell": "Needs investigation",
+    "inapplicable": "Not relevant here",
+    "untested": "Not reviewed",
+}
+
+
+def prose(value: Any) -> str:
+    """Escape HTML in editorial text while retaining ordinary Markdown formatting."""
+    return html.escape(str(value), quote=False).strip()
+
+
+def validate_editorial(editorial: JSON, review: JSON, review_sha: str) -> None:
+    """Bind a presentation revision to its exact judgments and complete check set."""
+    if (
+        editorial.get("schemaVersion") != "1.0"
+        or editorial.get("site") != review["site"]
+        or editorial.get("reviewSHA256") != review_sha
+    ):
+        raise ValueError("Editorial draft must match the original site and review hash")
+    expected = [row["checkId"] for row in review["rows"]]
+    actual = [row["checkId"] for row in editorial["checks"]]
+    if len(actual) != len(set(actual)) or set(actual) != set(expected):
+        raise ValueError("Editorial draft needs every check exactly once")
+    if [row["checkId"] for row in editorial["findings"]] != [
+        row["checkId"] for row in review.get("topFindings", [])[:5]
+    ]:
+        raise ValueError(
+            "Editorial draft must preserve the priority finding IDs and order"
+        )
+    for field in ["model", "reasoning", "harness"]:
+        if not editorial.get("writer", {}).get(field):
+            raise ValueError("Record actual editorial model, reasoning and harness")
+    for row in editorial["checks"]:
+        if any(
+            not isinstance(row.get(key), str) or not row[key].strip()
+            for key in ["title", "summary", "nextStep"]
+        ):
+            raise ValueError("Every check needs readable title, summary and next step")
+    for row in editorial["findings"]:
+        if any(
+            not isinstance(row.get(key), str) or not row[key].strip()
+            for key in ["title", "summary", "whyItMatters", "action"]
+        ):
+            raise ValueError(
+                "Every finding needs readable observations, consequence and action"
+            )
+    if not editorial.get("overview") or not editorial.get("nextSteps"):
+        raise ValueError("Supply an overview and next auditing steps")
+
+
+def illustrations(path: Path | None, site: str, check_ids: set[str]) -> JSON:
+    """Validate optional, separately captured images before adding them to a report."""
+    if path is None:
+        return {"captures": []}
+    manifest = read(path)
+    if manifest.get("origin") != site:
+        raise ValueError("Screenshot origin does not match the audited site")
+    for capture in manifest["captures"]:
+        if capture["status"] != "completed":
+            continue
+        name = capture["file"]
+        file = (path.parent / name).resolve()
+        if (
+            Path(name).name != name
+            or file.parent != path.parent.resolve()
+            or file.suffix not in {".png", ".webp"}
+            or hashlib.sha256(file.read_bytes()).hexdigest() != capture["fileSHA256"]
+        ):
+            raise ValueError("Screenshot file path or digest is invalid")
+        if (
+            not capture.get("alt")
+            or not capture.get("caption")
+            or not capture.get("capturedAt")
+        ):
+            raise ValueError("Screenshot needs alt text, caption and capture time")
+        if not set(capture["checkIds"]) <= check_ids:
+            raise ValueError("Screenshot refers to an unknown check")
+        final = urlsplit(capture["finalUrl"])
+        if f"{final.scheme}://{final.netloc}" != site:
+            raise ValueError("Screenshot redirected outside the audited origin")
+    return manifest
+
+
+def page_name(url: str) -> str:
+    """Give public URLs short readable labels without dropping their link targets."""
+    path = urlsplit(url).path.strip("/")
+    if not path or re.fullmatch(r"[a-z]{2}(?:-[A-Za-z]{2})?", path):
+        return "Homepage"
+    if path.split("/")[-1] == "search":
+        return "Search results"
+    return path.split("/")[-1].replace("-", " ").capitalize()
+
+
+def size_range(values: list[float]) -> str:
+    """Preserve independent observations as a range, not an invented average."""
+    if not values:
+        return "Not measured"
+    low, high = traffic(min(values)), traffic(max(values))
+    return low if low == high else f"{low}–{high}"
+
+
+def pointer(document: Any, location: str) -> Any:
+    """Resolve a packet's JSON pointer to describe evidence in human terms."""
+    current = document
+    for piece in location.lstrip("/").split("/") if location else []:
+        key = piece.replace("~1", "/").replace("~0", "~")
+        current = current[int(key)] if isinstance(current, list) else current[key]
+    return current
+
+
+def source_descriptions(session: Path, packet: JSON, ids: list[str]) -> list[str]:
+    """Describe inspected pages/files without sending readers to raw JSON."""
+    descriptions: list[str] = []
+    for identifier in ids:
+        reference = packet["evidenceIndex"][identifier]
+        item = pointer(read(session / reference["artifact"]), reference["jsonPointer"])
+        name = reference["artifact"]
+        if name == "source.json":
+            description = (
+                f"Selected local file `{prose(item.get('path', 'unavailable path'))}`"
+            )
+            repository = item.get("repository") or {}
+            if repository.get("revision"):
+                description += f" at revision `{repository['revision'][:12]}`"
+            if item.get("status") not in {"captured", "completed"}:
+                description += (
+                    f" ({prose(item.get('status', 'unavailable')).replace('_', ' ')})"
+                )
+        else:
+            url = item.get("url") or item.get("origin") or item.get("site")
+            if isinstance(url, str) and url.startswith(("https://", "http://")):
+                label = (
+                    "Browser observations"
+                    if name == "probes.json"
+                    else "Captured public evidence"
+                )
+                description = f"{label} for [{page_name(url)}]({url})"
+            else:
+                description = (
+                    "Retrieved sustainability and hosting disclosures for this site"
+                )
+        if description not in descriptions:
+            descriptions.append(description)
+    return descriptions
+
+
+def anchor(label: str, target: str) -> str:
+    """Render an escaped link inside a semantic HTML table."""
+    return f'<a href="{html.escape(target, quote=True)}">{html.escape(label)}</a>'
+
+
+def table_start(caption: str, headings: list[str]) -> list[str]:
+    """Name a simple data table and identify its column headers."""
+    return [
+        '<div class="audit-table-scroll" tabindex="0" role="region" aria-label="'
+        + html.escape(caption, quote=True)
+        + '">',
+        "<table>",
+        "<caption>" + html.escape(caption) + "</caption>",
+        "<thead><tr>"
+        + "".join(f'<th scope="col">{html.escape(h)}</th>' for h in headings)
+        + "</tr></thead>",
+        "<tbody>",
+    ]
+
+
+def table_row(cells: list[str]) -> str:
+    """Associate measurements/statuses with their page or check row header."""
+    return (
+        '<tr><th scope="row">'
+        + cells[0]
+        + "</th>"
+        + "".join(f"<td>{value}</td>" for value in cells[1:])
+        + "</tr>"
+    )
+
+
+def render(
+    session: Path,
+    prefix: str,
+    editorial: JSON,
+    screenshot_path: Path | None = None,
+    image_prefix: str = "",
+    editorial_link: str | None = None,
+    receipt_link: str | None = None,
+) -> str:
+    """Render readable findings with calculations and provenance kept deterministic."""
     packet = read(session / "packet.json")
     review = read(session / "review.json")
     assessment = read(session / "scores.json")
@@ -85,138 +276,319 @@ def render(session: Path, prefix: str) -> str:
         raise ValueError("This report template targets agent-breadth-v2")
     if {packet["site"], review["site"], score["site"]} != {packet["site"]}:
         raise ValueError("Review and score must match the packet origin")
+    review_sha = hashlib.sha256((session / "review.json").read_bytes()).hexdigest()
+    validate_editorial(editorial, review, review_sha)
+    rules = {row["id"]: row for row in packet["checks"]}
+    images = illustrations(screenshot_path, packet["site"], set(rules))
+    if screenshot_path and not image_prefix:
+        raise ValueError("Provide the screenshot link prefix for the report location")
     staged = read(session / "staged.json")
     probes = read(session / "probes.json")
     source = read(session / "source.json")
     counts = score["counts"]
-    rules = {row["id"]: row for row in packet["checks"]}
     titles = {row["number"]: row for row in score["guidelines"]}
-
-    def artifact(name: str, label: str) -> str:
-        return f"[{label}]({prefix}/{name})"
-
-    def citations(ids: list[str]) -> str:
-        return ", ".join(
-            artifact(packet["evidenceIndex"][identifier]["artifact"], identifier)
-            for identifier in ids
-        )
-
+    edited = {row["checkId"]: row for row in editorial["checks"]}
+    judgments = {row["checkId"]: row for row in review["rows"]}
     number = (
         f"{score['value']:.1f}/100" if score["value"] is not None else "Unavailable"
     )
+    journey_label = (
+        "visitor journey" if len(probes["journeys"]) == 1 else "visitor journeys"
+    )
     lines = [
-        f"# {urlsplit(packet['site']).netloc}: expanded WIP audit",
+        f"# {urlsplit(packet['site']).netloc}: sustainability audit",
         "",
-        '!!! note "Scoped development audit"',
+        prose(editorial["overview"]),
         "",
-        f"    This report applies `{score['rubricVersion']}` to {len(probes['pages'])} public pages, {len(probes['journeys'])} declared journey and {len(source['files'])} selected source files. The new rubric and sample differ from earlier audits; scores are not a time trend.",
+        "## At a glance",
         "",
-        f"**Scoped score: {number} — {counts['pass']}/{score['checkedGuidelines']} passing guideline groups**, with {counts['fail']} failed and {counts['cantTell']} unresolved. {len(review['rows'])} check judgments aggregate into {score['checkedGuidelines']}/{score['totalGuidelines']} checked groups ({score['checkedCoveragePercent']:.1f}%).",
+        '<div class="grid cards" markdown="1">',
         "",
-        f"Unknowns stay in the denominator but are not defects. {counts['inapplicable']} groups are inapplicable and {counts['untested']} untested. **No full WSG guideline is verified.** See {artifact('scores.json', 'the score calculation')} and the [scoring method](../knowledge-base/audit-scoring.md).",
+        f"- **{number}** — scoped audit score<br>{counts['pass']} passing, {counts['fail']} with problems, {counts['cantTell']} needing more evidence.",
+        f"- **{len(probes['pages'])} pages** reviewed<br>{len(probes['journeys'])} {journey_label} and {len(source['files'])} selected source files.",
+        f"- **{score['checkedGuidelines']} of {score['totalGuidelines']} guideline groups** attempted<br>{counts['untested']} not assessed. Tests cover selected aspects of each guideline.",
         "",
-        "## Key measures",
+        "</div>",
         "",
-        "| Page / branch | Initial load | After consent | After scrolling | Accounting |",
-        "| --- | ---: | ---: | ---: | --- |",
+        '!!! info "What the score means"',
+        "",
+        f"    {counts['pass']} of {score['checkedGuidelines']} attempted guideline groups passed this audit's selected checks. Unknowns stay in the denominator, so missing evidence lowers the score without becoming a site defect. This is not a full WSG conformance grade or a ranking against other sites.",
+        "",
+        "## First-load page sizes",
+        "",
+        "Data downloaded when a visitor first opens the page, before clicking a cookie banner or scrolling. **kB = 1,000 bytes; MB = 1,000,000 bytes.** Ranges show separate visits, not a modeled average.",
+        "",
+        *table_start(
+            "First-load page sizes", ["Page", "First load", "Measurement completeness"]
+        ),
+    ]
+    urls = list(dict.fromkeys(run["url"] for run in staged["runs"]))
+    for url in urls:
+        initial = [
+            phase
+            for run in staged["runs"]
+            if run["url"] == url
+            for phase in run["phases"]
+            if phase["phase"] == "initial"
+        ]
+        values = [
+            phase["receivedBytes"]
+            for phase in initial
+            if phase.get("receivedBytes") is not None
+        ]
+        complete = bool(initial) and all(
+            phase.get("accountingStatus") == "complete_within_protocol"
+            for phase in initial
+        )
+        lines.append(
+            table_row(
+                [
+                    anchor(page_name(url), url),
+                    size_range(values),
+                    "Complete within the test conditions"
+                    if complete
+                    else "Some data could not be measured",
+                ]
+            )
+        )
+    lines += ["</tbody></table></div>"]
+    incomplete = any(
+        phase.get("accountingStatus") != "complete_within_protocol"
+        for run in staged["runs"]
+        for phase in run["phases"]
+        if phase["phase"] == "initial"
+    )
+    lines += [
+        "",
+        "Some requests failed or did not finish in the observation window. Their transferred size is uncertain, so these figures are incomplete and a Digital Carbon Rating is withheld. The audit measures the site as it behaved; a failed analytics request is context, not automatically a priority fix."
+        if incomplete
+        else "The collector recorded the requests within its observation window. Later downloads and untested journeys are outside these first-load figures.",
+        "",
+    ]
+    ratings = [
+        run["rating"]["trace"]["co2"]["rating"]
+        for run in staged["runs"]
+        if run.get("rating", {}).get("status") == "calculated"
+    ]
+    if ratings:
+        lines += [
+            f"**Digital Carbon Ratings:** {', '.join(dict.fromkeys(ratings))} for the eligible initial visits, using the fixed comparison model. This estimates a page-load footprint; it does not establish whole-site sustainability.",
+            "",
+        ]
+    lines += ["## Priorities", ""]
+    used_images: set[str] = set()
+    for index, finding in enumerate(editorial["findings"], 1):
+        original = review["topFindings"][index - 1]
+        identifier = finding["checkId"]
+        guideline = rules[identifier]["guideline"]
+        lines += [
+            f"### {index}. {prose(finding['title'])}",
+            "",
+            '<div class="audit-finding" markdown="1">',
+            "",
+            f"**{original['priority'].capitalize()} priority** · {LABELS[judgments[identifier]['outcome']]} · [WSG {guideline}]({titles[guideline]['url']})",
+            "",
+            f"**What we found.** {prose(finding['summary'])}",
+            "",
+            f"**Why it matters.** {prose(finding['whyItMatters'])}",
+            "",
+            f"**Next step.** {prose(finding['action'])}",
+            "",
+        ]
+        for capture in images["captures"]:
+            if (
+                capture["status"] != "completed"
+                or identifier not in capture["checkIds"]
+                or capture["id"] in used_images
+            ):
+                continue
+            used_images.add(capture["id"])
+            src = f"{image_prefix}/{capture['file']}"
+            lines += [
+                '<figure class="audit-illustration" markdown="1">',
+                "",
+                f"[![{prose(capture['alt']).replace(']', '&#93;')} ]({src})]({src})",
+                "",
+                f"<figcaption>{html.escape(capture['caption'])} Captured {html.escape(capture['capturedAt'][:10])}, {capture['viewport']['width']} × {capture['viewport']['height']} pixels. This later illustration is separate from the scored measurements.</figcaption>",
+                "</figure>",
+                "",
+            ]
+        lines += [
+            f"[How we checked this: {prose(finding['title'])}](#evidence-{identifier})",
+            "",
+            "</div>",
+            "",
+        ]
+    lines += [
+        "## After cookie choices and scrolling",
+        "",
+        "Each cookie choice starts a separate fresh visit. The sizes below are **cumulative totals**, including the first load. They help locate later downloads; they are not additional amounts to add together or guaranteed savings.",
+        "",
+        '??? note "Compare the interaction measurements"',
+        "",
+        *[
+            "    " + line
+            for line in table_start(
+                "Cumulative data after cookie choices and scrolling",
+                [
+                    "Page",
+                    "Cookie choice tested",
+                    "After cookie choice",
+                    "After scrolling to the bottom",
+                ],
+            )
+        ],
     ]
     for run in staged["runs"]:
-        phases = {row["phase"]: row for row in run["phases"]}
+        phases = {phase["phase"]: phase for phase in run["phases"]}
+        choice = {
+            "accept": "Accept cookies",
+            "reject": "Reject optional cookies",
+            "no_banner": "No banner interaction",
+        }.get(run["branch"], run["branch"].replace("_", " ").capitalize())
         values = [
-            traffic(phases[name]["receivedBytes"]) if name in phases else "Unavailable"
-            for name in ["initial", "after_consent", "after_scroll"]
+            traffic(phases[name]["receivedBytes"]) if name in phases else "Not measured"
+            for name in ["after_consent", "after_scroll"]
         ]
-        status = phases.get("initial", {}).get("accountingStatus", "unavailable")
         lines.append(
-            f"| {cell(run['url'])} / {cell(run['branch'])} | {' | '.join(values)} | {status} |"
+            "    "
+            + table_row(
+                [
+                    anchor(page_name(run["url"]), run["url"]),
+                    html.escape(choice),
+                    *values,
+                ]
+            )
         )
-    ratings = [run.get("rating", {}) for run in staged["runs"]]
-    calculated = [
-        rating["trace"]["co2"]["rating"]
-        for rating in ratings
-        if rating.get("status") == "calculated"
-    ]
     lines += [
+        "    </tbody></table></div>",
         "",
-        f"Digital Carbon Ratings: {', '.join(calculated) if calculated else 'unavailable for these captures'}. Ratings use the fixed SWDM profile; incomplete capture prevents a badge. No new hardware-energy or annual-footprint result is included in this campaign.",
+        "## Further checks",
         "",
-        "## Top findings",
+        "These outcomes apply to the selected checks and sample. Open a check's explanation for the observation, limitations and useful follow-up.",
         "",
-    ]
-    for index, finding in enumerate(review.get("topFindings", [])[:5], 1):
-        rule = rules[finding["checkId"]]
-        lines += [
-            f"### {index}. {finding['title']}",
-            "",
-            f"**{finding['priority'].capitalize()} priority · `{finding['checkId']}` · [WSG {rule['guideline']}]({titles[rule['guideline']]['url']})**",
-            "",
-            finding["summary"],
-            "",
-            finding["recommendation"],
-            "",
-            f"Evidence: {citations(finding['evidenceIds'])}.",
-            "",
-        ]
-    lines += [
-        "## Quantitative evidence",
+        '??? note "Browse all check outcomes"',
         "",
-        f"The {artifact('staged.json', 'staged capture')} preserves fresh above-the-fold measurements before interaction, then actual cookie choice and scrolling in each context. Later totals are cumulative; differences include background activity and are not measured causal savings. Technology detection and the supplementary probes are separate from headline traffic.",
-        "",
-        f"The {artifact('probes.json', 'supplementary observations')} contain seven page states and bounded keyboard, request, response-header and code-coverage evidence. Code offsets are not removable transfer bytes; a dozen forward Tab observations do not establish complete keyboard accessibility. No energy test ran alongside the model campaigns.",
-        "",
-        "## Qualitative and source review",
-        "",
-        f"{artifact('disclosures.json', 'Carbon.txt interpretation')} separates discovery and declared relationships from verified claims. {artifact('source.json', 'Source evidence')} retains the selected files, hashes, revision and tracked working-tree state. Large files may have identity metadata only. The supplied source is a candidate implementation; **deployment remains unverified**.",
-        "",
-        "The table below preserves every reviewer judgment. Passing narrow checks does not establish the entire linked guideline. Read the next-evidence column when a conclusion depends on task context, untested controls, source identity or internal records.",
-        "",
-        "## Detailed check judgments",
-        "",
-        "| Check / WSG | Outcome | Rationale | Next evidence or validation |",
-        "| --- | --- | --- | --- |",
+        *[
+            "    " + line
+            for line in table_start("All selected check outcomes", ["Check", "Outcome"])
+        ],
     ]
     for row in review["rows"]:
-        rule = rules[row["checkId"]]
-        url = titles[rule["guideline"]]["url"]
+        identifier = row["checkId"]
         lines.append(
-            f"| `{row['checkId']}` · [WSG {row['guideline']}]({url}) | {row['outcome']} | {cell(row['rationale'])} | {cell(row['nextEvidence'])} |"
+            "    "
+            + table_row(
+                [
+                    anchor(edited[identifier]["title"], f"#evidence-{identifier}"),
+                    LABELS[row["outcome"]],
+                ]
+            )
         )
+    lines += ["    </tbody></table></div>", "", "## Next steps for auditing", ""]
+    lines += [f"{i}. {prose(step)}" for i, step in enumerate(editorial["nextSteps"], 1)]
     lines += [
         "",
-        f"Full confidence labels and exact citations: {artifact('review.json', 'original model review')}. Evidence locations and scoped expectations: {artifact('packet.json', 'review packet')}. The scorer groups repeated checks once per guideline; a demonstrated failure takes precedence over an unresolved check in the same group.",
+        "Future audits normally sample 5–10 representative pages, including the homepage, selected from the site's navigation, sitemap and important visitor tasks. This report retains its original smaller sample; its findings have not been relabeled as a wider audit.",
         "",
-        "## Next steps for auditing",
+        "## How we checked this",
         "",
-        "1. Review the proposed priorities and task assumptions with the site owner. Validate source-candidate fixes against the deployed revision before editing production.",
-        "2. Complete keyboard, form, narrow-layout and triggered-media journeys. Test constrained font/media delivery and readability, including intended pixel densities and assistive use.",
-        "3. Obtain scoped hosting, monitoring-budget, maintenance and operational records where public or selected source evidence remains insufficient. Do not infer organization-wide absence from this sample.",
-        "4. Expand representative templates, languages and states, and use the [broader benchmark](breadth-benchmark.md) to test the interpretation changes before adopting them.",
+        "This appendix explains the evidence in ordinary language. Local source files help identify possible fixes, but we have not confirmed that the live site uses the same code revision. A missing selected file or document does not mean the organization has none.",
         "",
-        f"The [current catalog](../reference/checks.md) defines partial review methods in 39/71 groups across all catalogs; this individual campaign attempts {score['checkedGuidelines']}. STAR scope, inventory, sampling, page review and reporting are represented, but the sample and process coverage remain incomplete. No full-guideline conformance percentage is claimed.",
-        "",
+    ]
+    for row in review["rows"]:
+        identifier = row["checkId"]
+        item = edited[identifier]
+        guideline = rules[identifier]["guideline"]
+        lines += [
+            f'<h3 id="evidence-{identifier}">{html.escape(item["title"])}</h3>',
+            "",
+            f"**{LABELS[row['outcome']]}** · [WSG {guideline}]({titles[guideline]['url']})",
+            "",
+            prose(item["summary"]),
+            "",
+            f"**Next step:** {prose(item['nextStep'])}",
+            "",
+        ]
+        descriptions = source_descriptions(session, packet, row.get("evidenceIds", []))
+        if descriptions:
+            lines += (
+                ["**Where we looked:**", ""]
+                + [f"- {description}." for description in descriptions]
+                + [""]
+            )
+    protocol = staged.get("protocol", {})
+    viewport = protocol.get("viewport", {})
+    reviewer = review["reviewer"]
+    writer = editorial["writer"]
+    lines += [
         "## Methodology and reproducibility",
         "",
-        f"{artifact('plan.json', 'The plan')} fixes tasks, pages, consent branches, source selection and journey postconditions. {artifact('receipt.json', 'Command receipts')} record locked Python collectors, script hashes, collection timestamps and the base Git revision; uncommitted implementation changes are identified by their hashes. Frozen skill and input hashes remain in the packet.",
+        f"The browser measurements were captured from **{staged.get('startedAt', 'unrecorded')}** to **{staged.get('finishedAt', 'unrecorded')}**. Initial-load tests used a {viewport.get('width', 'recorded')} × {viewport.get('height', 'recorded')} desktop viewport and a {protocol.get('observationMs', 0) / 1000:g}-second observation window. Cookie choices and scrolling were recorded afterward. Supplementary tests covered narrow layouts, color and motion preferences, print, JavaScript availability and bounded keyboard navigation.",
         "",
-        f"Reviewer: {review['reviewer']['harness']}, `{review['reviewer']['model']}`, {review['reviewer']['reasoning']} reasoning. It used the session's frozen skills and indexed evidence without consulting prior reports. These are development judgments, not owner-validated reference labels or a calibrated sustainability ranking.",
+        f"**Audit judgments:** {prose(reviewer['harness'])}, {prose(reviewer['model'])}, **{prose(reviewer['reasoning'])} reasoning**. **Report wording:** {prose(writer['harness'])}, {prose(writer['model'])}, **{prose(writer['reasoning'])} reasoning**. The editorial pass changes explanations, not the original outcomes, priorities or calculated score.",
         "",
-        "Measurements use a 1280 × 800 fresh desktop context and three-second staged observation windows. Supplemental page states use the separate bounded probe protocol. The two live-site collection jobs and model campaigns can overlap; elapsed timings are not controlled performance or energy comparisons. KB/MB are decimal units. Failed resources stay in the as-is evidence, and unavailable measurements remain unknown.",
+        f"The scoring method is `{score['rubricVersion']}`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. {counts['inapplicable']} groups were excluded as not applicable; {counts['untested']} were untested. No new annual footprint or measured energy result is inferred from this report.",
         "",
-        f"{artifact('manifest.json', 'The publication manifest')} hashes exact artifacts. Logs and private skill copies are omitted. Recalculate with `audit/assess.py` using this bundle's `reviews.json`, `rubric.json`, `impact-weights.json` and evidence directory. Recollection and LLM judgments can vary; deterministic aggregation of the same evidence and judgments reproduces exactly.",
+        "Illustrations, when present, were captured separately and show their own date and viewport. They do not change the earlier transfer measurements or prove that an interaction, accessible name, or energy saving was tested.",
+        "",
+        '??? note "Technical files for reproducing this report"',
+        "",
+        "    The report above can be read without these files. They retain exact evidence, original judgments and calculation inputs for independent reproduction.",
+        "",
+    ]
+    for name, label in [
+        ("plan.json", "Audit scope and tasks"),
+        ("receipt.json", "Collector commands and versions"),
+        ("review.json", "Original judgments"),
+        ("scores.json", "Score calculation"),
+        ("packet.json", "Evidence index"),
+        ("staged.json", "Recorded transfers and disclosures"),
+        ("probes.json", "Browser observations"),
+        ("source.json", "Selected source evidence"),
+        ("manifest.json", "Publication hashes"),
+    ]:
+        if (session / name).exists():
+            lines.append(f"    - [{label}]({prefix}/{name})")
+    if editorial_link:
+        lines.append(f"    - [Report wording and check explanations]({editorial_link})")
+    if receipt_link:
+        lines.append(f"    - [Editorial model and input provenance]({receipt_link})")
+    lines += [
+        "",
+        f"    Original review SHA-256: `{review_sha}`. Recalculate with `audit/assess.py` using the preserved reviews, rubric, weights and evidence. New collection or model review requires a new session; it can produce different results.",
         "",
     ]
     return "\n".join(lines)
 
 
 def main() -> None:
-    """Render an inspected session with caller-selected publication links."""
+    """Render a scored session with a separately validated editorial draft."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--session", type=Path, required=True)
     parser.add_argument("--artifact-prefix", required=True)
+    parser.add_argument("--editorial", type=Path, required=True)
+    parser.add_argument("--screenshots", type=Path)
+    parser.add_argument("--image-prefix", default="")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(render(args.session, args.artifact_prefix))
+    args.output.write_text(
+        render(
+            args.session,
+            args.artifact_prefix,
+            read(args.editorial),
+            args.screenshots,
+            args.image_prefix,
+            os.path.relpath(args.editorial.resolve(), args.output.parent.resolve()),
+            os.path.relpath(
+                args.editorial.with_name("editorial-receipt.json").resolve(),
+                args.output.parent.resolve(),
+            )
+            if args.editorial.with_name("editorial-receipt.json").exists()
+            else None,
+        )
+    )
 
 
 if __name__ == "__main__":

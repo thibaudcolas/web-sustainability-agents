@@ -1,0 +1,35 @@
+{
+  "origin": "https://guide.wagtail.org",
+  "captures": [
+    {
+      "id": "image-instructions-narrow",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "selector": "main img[alt=\"Images listing with header and images grid\"]",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "The image-management guide at a narrow width, with an instructional screenshot of the Wagtail image library.",
+      "caption": "The guide uses a detailed interface screenshot to explain image management. This later illustration shows the reading context at 360 pixels wide; it is not a test of a smaller replacement image.",
+      "checkIds": [
+        "media-delivery"
+      ]
+    },
+    {
+      "id": "image-instructions-desktop",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "selector": "main img[alt=\"Images listing with header and images grid\"]",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "The image-management guide at desktop width, with an instructional screenshot of the Wagtail image library.",
+      "caption": "The same instructional image in its desktop reading context at 1280 pixels wide. Keeping small interface details legible matters when assessing a smaller image version.",
+      "checkIds": [
+        "media-delivery"
+      ]
+    }
+  ]
+}

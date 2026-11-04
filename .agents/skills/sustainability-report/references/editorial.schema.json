@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": ["1.0"]
+    },
+    "site": {
+      "type": "string"
+    },
+    "reviewSHA256": {
+      "type": "string"
+    },
+    "writer": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string"
+        },
+        "reasoning": {
+          "type": "string"
+        },
+        "harness": {
+          "type": "string"
+        }
+      },
+      "required": ["model", "reasoning", "harness"],
+      "additionalProperties": false
+    },
+    "overview": {
+      "type": "string"
+    },
+    "nextSteps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "checkId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "whyItMatters": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          }
+        },
+        "required": ["checkId", "title", "summary", "whyItMatters", "action"],
+        "additionalProperties": false
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "checkId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "nextStep": {
+            "type": "string"
+          }
+        },
+        "required": ["checkId", "title", "summary", "nextStep"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "site",
+    "reviewSHA256",
+    "writer",
+    "overview",
+    "nextSteps",
+    "findings",
+    "checks"
+  ],
+  "additionalProperties": false
+}

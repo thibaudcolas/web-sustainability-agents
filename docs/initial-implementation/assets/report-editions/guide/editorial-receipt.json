@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "purpose": "Presentation revision; original scored judgments unchanged",
+  "writer": {
+    "harness": "Codex CLI 0.166.0",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "originalReviewSHA256": "d0bae2201ee5f8e0fe269ac10ed57e6ad07ea841cc0109a20768384a8b970a5f",
+  "editorialSHA256": "8d79dd07ec185a09037c1479e01cc6e72702765d5c3f555cc94f720f5ebd3f11",
+  "rawOutputSHA256": "5591a2dab41edb5ca18f4c706568d582d55a461030ee4c787f8698e812b575f0",
+  "promptSHA256": "6114b1697f41efaf3b59fcfccde4d7ee1a90adcc80ef9cb6ca024beec1663f55",
+  "command": "codex exec --ignore-user-config --ephemeral --sandbox read-only --model gpt-6.1-sol -c model_reasoning_effort=high -c web_search=disabled --output-schema <editorial.schema.json> --output-last-message <editorial.json> --json - < <prompt.txt>",
+  "limitations": [
+    "Editorial wording is not a new audit judgment or a model comparison.",
+    "Illustrations were captured separately from the scored evidence.",
+    "Supporting references were formatted after the editorial run; resource hashes describe published files rather than byte-attesting every model input. Prompt and raw output digests retain the execution record."
+  ],
+  "skillFilesAtPublication": {
+    "SKILL.md": "5ec3d46e65f8b6a7b7e34363b86c17c5945c0bdcb1a1c6e947334e2e8a12638f",
+    "assets/report-template.md": "eb374597827e5fae5a2069e4bd7940f359ee617a0c234a2cb443d1b03d1fb27e",
+    "references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    "references/writing.md": "1a0689b813bdb0f3fd9234e114f63ce851c318a84a8ea773a890c70d3e536161"
+  }
+}

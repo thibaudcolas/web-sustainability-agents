@@ -75,3 +75,79 @@
   /* Body links follow the primary color. */
   --md-typeset-a-color: #9db8d8;
 }
+
+/* Audit reports use the existing theme colors and retain text status labels. */
+.md-typeset .audit-finding {
+  border-inline-start: 0.2rem solid var(--md-typeset-a-color);
+  padding: 0.1rem 0 0.1rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset .audit-illustration {
+  margin: 1.2rem 0;
+  text-align: start;
+}
+
+.md-typeset .audit-illustration img {
+  display: block;
+  max-height: 32rem;
+  width: auto;
+  max-width: 100%;
+  border: 1px solid var(--md-default-fg-color--light);
+}
+
+.md-typeset .audit-illustration figcaption {
+  max-width: 65ch;
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  font-style: normal;
+  color: var(--md-default-fg-color);
+}
+
+@media print {
+  .md-typeset .audit-finding {
+    border: 0;
+    padding: 0;
+  }
+}
+
+/* Native table semantics plus a named keyboard-scrollable region on narrow screens. */
+.md-typeset .audit-table-scroll {
+  overflow-x: auto;
+  margin-block: 1rem;
+}
+
+.md-typeset .audit-table-scroll:focus-visible {
+  outline: 2px solid var(--md-typeset-a-color);
+  outline-offset: 2px;
+}
+
+.md-typeset .audit-table-scroll caption {
+  text-align: start;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .audit-table-scroll tbody th {
+  font-weight: 400;
+  background: transparent;
+  color: var(--md-default-fg-color);
+}
+
+/* Material adds its own wrappers; keep one scroll owner for keyboard users. */
+.md-typeset .audit-table-scroll .md-typeset__scrollwrap {
+  overflow: visible;
+  margin: 0;
+}
+
+.md-typeset .audit-table-scroll .md-typeset__table {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.md-typeset .audit-table-scroll table:not([class]) {
+  display: table;
+  overflow: visible;
+}

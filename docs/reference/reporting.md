@@ -6,11 +6,11 @@ The structure adapts the local claude-seo audit's summary, prioritized findings,
 
 ## Reading order
 
-1. **Overall assessment and key measures:** scoped score and coverage, initial transfer, eligible Digital Carbon Ratings, estimated annual footprint, measured energy when available, sample size, and accounting status.
+1. **Overall assessment and key measures:** scoped score and coverage, initial transfer, eligible Digital Carbon Ratings, estimated annual footprint and measured energy when available, sample size, and a plain explanation of measurement completeness.
 2. **Top five findings:** useful changes, experiments, and existing optimizations worth preserving. Do not invent five defects or imply equal priority.
 3. **Quantitative evidence:** measurements and calculations with units, profile, denominator, and uncertainty.
 4. **Qualitative review:** purpose, user needs, technology context, disclosure interpretation, and source corroboration.
-5. **Detailed findings and coverage:** evidence-linked explanations, proposed checks, and unknowns.
+5. **Further checks and readable evidence:** a compact outcome index linking to named observations and useful follow-ups. Technical artifact downloads are optional reproduction detail.
 6. **Next steps for auditing:** additional public tests, source/internal evidence, applicability decisions, and owner validation needed to increase coverage.
 7. **Methodology and reproducibility:** versioned rubric, evidence and skill hashes, model settings, capture profiles, calculation assumptions, commands, and limitations.
 
@@ -18,7 +18,13 @@ The [scoped audit score](../knowledge-base/audit-scoring.md) is now implemented 
 
 ## Implemented data export
 
-`audit/render_review.py` renders the current session's scored judgments into a Markdown draft. See [the workflow](../using/workflow.md#4-calculate-and-render) for invocation and its remaining portability limits.
+The `sustainability-report` skill now owns the editorial pass: plain finding titles, observations, consequences, actions, readable evidence and optional screenshots. It packages a writing guide, editorial schema and report template. The agent writes a separate editorial file bound to the original review digest; `audit/render_review.py` validates that binding, every check and the priority order before rendering. The report writer cannot silently replace the scored judgments.
+
+The renderer uses the existing [Material cards](https://squidfunk.github.io/mkdocs-material/reference/grids/), [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/) and [PyMdown expandable details](https://facelessuser.github.io/pymdown-extensions/extensions/details/). Findings have explicit headings and text priority labels. Evidence links target readable sections in the same report. Raw JSON downloads appear only in the collapsed technical appendix. A separate bespoke HTML application is unnecessary for this version; the MkDocs output already supplies themed HTML and accessible native disclosure controls.
+
+For an existing scored session, the renderer accepts `--session`, `--editorial`, `--artifact-prefix` and `--output`. Optional `--screenshots` and `--image-prefix` attach a separately validated screenshot manifest. The [agent workflow](../using/workflow.md) coordinates these handoffs; normal users ask the agent for an audit rather than running each command themselves.
+
+Screenshots come from `audit/screenshots.py`, with a bounded plan, exact origin, viewport, state, capture timestamp and file digest. Captions and alternative text describe inspected images. A later screenshot illustrates current appearance without changing the older scored capture. The renderer rejects wrong-origin, altered or unrecognized-check images. It does not use screenshots as proof of network size, semantic accessibility or energy savings.
 
 `audit/report.py` separately exports chart-ready JSON and CSV. Always provide the current session's inputs and optional enrichment paths so its historical defaults cannot attach an older campaign's data:
 
@@ -34,7 +40,9 @@ uv run --locked --script audit/report.py \
 
 The three optional energy, traffic and annual files may be absent; absent files contribute no enrichment. Supply them only when their scope and protocol match the intended report. Running the exporter without arguments instead reproduces the older published report-data experiment under `docs/initial-implementation/assets/reports/`.
 
-Exact base units remain in machine data; human traffic tables use decimal KB or MB. Each observation records site, page URL, run, branch, phase, capture time, metric, category, unit, status, evidence ID, and source digest. Carbon calculations remain separate, labeled `modeled`, with their original trace. Unknown values must be null or absent with a reason, never converted to zero.
+Exact base units remain in machine data; human traffic tables use decimal **kB** or **MB** (1,000 and 1,000,000 bytes). Use **KiB** only for 1,024-byte units; lowercase `k` is the SI prefix for kilo. [NIST prefix reference](https://www.nist.gov/pml/owm/metric-si-prefixes). Historical benchmark unit labels remain frozen rather than changing old task contracts.
+
+Each observation records site, page URL, run, branch, phase, capture time, metric, category, unit, status, evidence ID, and source digest. The human report translates `branch` to the actual cookie choice and `accountingStatus` to measurement completeness. Carbon calculations remain separate, labeled `modeled`, with their original trace. Unknown values must be null or absent with a reason, never converted to zero.
 
 The initial chart contracts cover phase traffic, incremental traffic, and resource composition. They specify dimensions and aggregation before any rendering implementation. Cumulative phases must not be stacked. Resource categories can be stacked only within the same run and phase. Fresh accept/reject branches are separate trajectories. Partial accounting stays visible in tables and chart descriptions.
 

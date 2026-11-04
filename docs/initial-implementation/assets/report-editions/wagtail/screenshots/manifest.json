@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "origin": "https://wagtail.org",
+  "startedAt": "2026-11-04T18:20:04.972717+00:00",
+  "status": "completed",
+  "planSHA256": "a75c0e96f0e3d17e0ec4bde9c60766af21f1db67ed9bbeb703385e7dbb8c0e1c",
+  "collectorSHA256": "9543f6b3b2ce60c8e26a391bc7147b5e2e76f0cdc0dc345570b20c512841cea7",
+  "playwrightVersion": "1.64.1",
+  "captures": [
+    {
+      "id": "ecosystem-emissions",
+      "url": "https://wagtail.org/sustainability/",
+      "selector": "p.highlight__description:has-text(\"5173 tons\")",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "The sustainability page states 5,173 tons of yearly emissions across 6,431 sites and a 12-ton average per site.",
+      "caption": "The published paragraph places the total, site count and per-site average together. This later screenshot illustrates why those figures need a clearer explanation; it does not verify the underlying emissions estimate.",
+      "checkIds": [
+        "comprehension"
+      ],
+      "captureMode": "viewport",
+      "status": "completed",
+      "capturedAt": "2026-11-04T18:20:07.182456+00:00",
+      "finalUrl": "https://wagtail.org/sustainability/",
+      "documentStatus": 200,
+      "pageTitle": "Sustainability | Wagtail CMS",
+      "file": "ecosystem-emissions.png",
+      "fileSHA256": "1d08d141ab9b09f907e25e7f673e865b80adb2ba30a73158c52ce17a9524025f"
+    }
+  ],
+  "interpretation": "Supplemental visual illustrations captured separately from the scored audit. They do not establish historic appearance, transfer sizes, accessibility semantics, task completion or energy savings.",
+  "protocol": {
+    "captureMode": "viewport",
+    "deviceScaleFactor": 1,
+    "reducedMotion": "reduce",
+    "animations": "disabled",
+    "waitAfterLoadMs": 750,
+    "waitAfterScrollMs": 250,
+    "perCaptureDeadlineSeconds": 35,
+    "freshContextPerCapture": true,
+    "actions": "none"
+  },
+  "browserVersion": "156.0.8078.4",
+  "finishedAt": "2026-11-04T18:20:07.288334+00:00"
+}

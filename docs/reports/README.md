@@ -14,6 +14,8 @@ Read one report per site. The current WIP reports use the same versioned check c
 
 Each report leads with first-load measures and a scoped score, then priorities, quantitative evidence, qualitative findings, next auditing steps and reproducibility. Linked bundles preserve the evidence and judgments behind the report. See [how to read the score](../knowledge-base/audit-scoring.md) and [current check coverage](../reference/checks.md).
 
+The current presentation adds plain-language findings, kB units, separate cookie-choice measurements, screenshot illustrations and a readable evidence appendix. Sol/high rewrote the explanations; the original three-page, Sol/low audit judgments and scores remain unchanged. New audit requests default to 5–10 representative pages and high reasoning.
+
 For feedback, identify the site and check ID, then explain whether the problem is the observed fact, missing evidence, interpretation, priority or proposed fix. We can trace that feedback to a collector, skill, rubric or eval case.
 
 ## Earlier experiments

@@ -10,3 +10,5 @@ docs/contributing/abbreviations.md
 # Preserve exact evidence and review hashes in frozen agent sessions.
 docs/initial-implementation/assets/agent-sessions/
 docs/initial-implementation/assets/breadth-sessions/
+# Screenshot manifests preserve the exact plan and image hashes.
+docs/initial-implementation/assets/report-editions/**/screenshots/
