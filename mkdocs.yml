@@ -211,7 +211,10 @@ nav:
       - Sources and research method: feasibility-study/sources.md
   - Initial implementation work:
       - initial-implementation/README.md
-      - WIP Wagtail audit: initial-implementation/wagtail-audit.md
+      - WIP guide audit: initial-implementation/guide-audit.md
+      - WIP Wagtail.org audit: initial-implementation/wagtail-audit.md
+      - Per-site reports and chart data: initial-implementation/reporting.md
+      - Implementation backlog: initial-implementation/backlog.md
       - Staged measurements and context: initial-implementation/staged-auditing.md
       - Model and real-site review checkpoint: initial-implementation/review-checkpoint.md
       - First executable slice and results: initial-implementation/first-slice.md

@@ -1,0 +1,46 @@
+import json
+import unittest
+from pathlib import Path
+
+from audit.report import display_bytes, export_reports
+
+
+class ReportDataTests(unittest.TestCase):
+    def test_origins_and_phase_totals_remain_separate(self):
+        evidence = json.loads(
+            Path("docs/initial-implementation/assets/staged-audit.json").read_text()
+        )
+        reports = export_reports(evidence, "source-digest")
+        self.assertEqual(
+            set(reports), {"https://guide.wagtail.org", "https://wagtail.org"}
+        )
+        for origin, report in reports.items():
+            self.assertIsNone(report["overallScore"]["value"])
+            for row in report["observations"]:
+                self.assertEqual(row["site"], origin)
+                self.assertTrue(row["pageUrl"].startswith(origin + "/"))
+            for headline in report["headline"]:
+                self.assertEqual(headline["phase"], "initial")
+            for run in evidence["runs"]:
+                if not run["url"].startswith(origin + "/"):
+                    continue
+                for phase in run["phases"]:
+                    rows = [
+                        r
+                        for r in report["observations"]
+                        if r["runId"] == run["id"] and r["phase"] == phase["phase"]
+                    ]
+                    self.assertEqual(
+                        sum(
+                            r["value"] for r in rows if r["metric"] == "resource_bytes"
+                        ),
+                        phase["receivedBytes"],
+                    )
+                    self.assertEqual(
+                        {r["status"] for r in rows}, {phase["accountingStatus"]}
+                    )
+
+    def test_decimal_display_does_not_change_base_units(self):
+        self.assertEqual(display_bytes(58992), "59.0 KB")
+        self.assertEqual(display_bytes(1107665), "1.11 MB")
+        self.assertEqual(display_bytes(0), "0.0 KB")

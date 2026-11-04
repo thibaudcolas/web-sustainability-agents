@@ -3,15 +3,18 @@ name: sustainability-evidence-review
 description: Review collected web sustainability evidence, distinguish observations from claims, and produce scoped findings with explicit unknowns. Use for audit evidence review, including supplied source corroboration.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Sustainability evidence review
 
 Read the requested report contract and evidence inventory first. Tie each outcome to specific evidence IDs and the observed page state. An observation can support a narrow finding without establishing whole-site WSG conformance.
 
+For human reports, use one site per report. Lead with key measures and an overall assessment, then up to five prioritized findings, quantitative evidence, qualitative review, and detail. Display traffic in decimal KB/MB while retaining exact base units in artifacts. Do not invent an aggregate WSG score or five defects.
+
 Keep these distinctions when reviewing evidence:
 
+- Hardware energy, byte-based emissions estimates, and rank-derived traffic scenarios have different boundaries. Never sum overlapping energy domains or add measured device energy to an SWDM total. Missing counters or missing rank lookup are unknown, not zero.
 - A public policy describes intent; it does not prove implementation.
 - Lead with the fresh, above-the-fold initial load without interaction. Report post-cookie-choice and post-scroll cumulative totals separately, including the actual choice and whether it succeeded. Phase differences include background activity and late completions; they do not by themselves measure savings caused by an interaction.
 - Measure the site as found. Note failed resources without treating site configuration repair as a prerequisite or the primary sustainability recommendation. Distinguish resource errors from incomplete byte accounting; a fully measured HTTP error response still contributes traffic.
