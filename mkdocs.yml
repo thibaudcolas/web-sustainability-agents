@@ -219,6 +219,7 @@ nav:
       - Staged measurements and context: initial-implementation/staged-auditing.md
       - Model and real-site review checkpoint: initial-implementation/review-checkpoint.md
       - First executable slice and results: initial-implementation/first-slice.md
+      - Expanded evidence benchmark: initial-implementation/expanded-benchmark.md
       - Harbor benchmark: initial-implementation/benchmark.md
       - Demo sites and benchmark targets: initial-implementation/test-sites.md
       - Model comparison plan: initial-implementation/model-comparison.md

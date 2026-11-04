@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "0.1.0",
+  "labelStatus": "Coordinator-authored public development labels; not independently owner-validated or held out.",
+  "cases": [
+    {
+      "id": "phases",
+      "inputSHA256": "62d9428341f26fc993fe46733dc5175980d8d7f6ba5dbe34208f4f4313ccbd47",
+      "referenceSHA256": "901f7b2dc677991006bcb1b185ac30d7c6fefcc03fc41bfd0cb3cb6812fbdde3",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "consent-absent",
+      "inputSHA256": "ee9c9fc846c4a210424b4b74d225fe57a4ff50fcbb4ab0e40b4c4c6df5c960b5",
+      "referenceSHA256": "924fbf3df9890ea2ee56e49ef463d3082b8b720e15bc48580d2bd89e49040102",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "resource-errors",
+      "inputSHA256": "3053d231eacad80210f6d8b18df638230f21135e978a5ab3a0054b6823ad0913",
+      "referenceSHA256": "0550dad1214f4ff0aff542bf9b7c95e052b341e7e13fbe78e83e14a2ccb3feed",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "disclosure-scope",
+      "inputSHA256": "187301b05ca337db27d7c84a3ff0f1c6389bf0a95e682d66bc1b06f5feccbd38",
+      "referenceSHA256": "b38fdf9f26abc7d51a28837c776de54f8aeeeaccf6585bbafa305c67e997ec15",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "fingerprints",
+      "inputSHA256": "e3dac2dfeac0a5f6fa806b53932c7e5ccf19f67d523d66ad6a79a8fc40a7f106",
+      "referenceSHA256": "7a05d2209e8d14494d7910cb747f8c13b0bcded80cc2ba82809c38713f278d6c",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "energy-boundary",
+      "inputSHA256": "f0b7f1539bc70f8a7533a0292d36d32d2d2c2389615aedd7eeaa753eb618cbae",
+      "referenceSHA256": "9cadbae286004a11c5e63d6091ccf049875761a7735212d70faf9ac228010f3d",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "energy-missing",
+      "inputSHA256": "d2e4fae6f19486cfcd57092cdd9c82201767b21a725570f24a14428bf1d2cae5",
+      "referenceSHA256": "d43b716998a49c7ad85d49ae8599c4dea4693c900d233d6a8abe4e97b40b4419",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "traffic-scenario",
+      "inputSHA256": "0c80204b5070319dc6baa27f39a379e3b5229e57a236a204ef81d86a216588c2",
+      "referenceSHA256": "a054f411206353706435ae4793bb91dc6ae30225ebb2493abe30a41a9d18476d",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "traffic-missing",
+      "inputSHA256": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+      "referenceSHA256": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "media-source",
+      "inputSHA256": "eb5e973a795a3366d7092285cbbfa362c226cc9e4bc72ac7c86cd282ef19af6d",
+      "referenceSHA256": "7f466e798bd1563704ff0a111b2669505f1151ac94a737c20823cbe3eaaafcd6",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "preserve-and-attest",
+      "inputSHA256": "026a967ef64f745d1aa62a03b971a05ed61b2cf65ad65d68738239d60eb674d4",
+      "referenceSHA256": "eb99d235e0b1601f2feb40a3209d952b4f0dd1f1d56d16b3d7e83af0e7d75c25",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    },
+    {
+      "id": "policy-and-coverage",
+      "inputSHA256": "26f91b346080a065f056fe45d9aa4748870601be3b3643c3f139219b0dce99af",
+      "referenceSHA256": "c6a110b5791e330efc4f396af25a1dedef7181dad7d23cdeb1090dca5d78f7fe",
+      "instructionSHA256": "60f589ac25290c1b09f809d56e254f607f9654f7b911ed3a6c0f12392f002bc3",
+      "skillSHA256": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+      "graderSHA256": "d338d6c5a210b581c675bc90c9fc1da462f9a0d8395573407a3671db6af1dfe4"
+    }
+  ]
+}
