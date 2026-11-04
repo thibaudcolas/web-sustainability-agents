@@ -34,9 +34,15 @@ The current task follows this sequence. It is not necessary to finish every futu
 
 ## Benchmark execution efficiency
 
-**B16:** Preinstall the pinned Codex adapter dependencies in a reusable environment image. The expanded campaign repeatedly installs OS packages in each trial; setup currently dominates model review time. Validate that the rebuilt environment preserves task inputs, reference isolation, and model settings before comparing its runtime or energy. Do not change task images during an active campaign.
+**B16:** Preinstall the pinned Codex adapter dependencies in a reusable environment image. The expanded campaign repeatedly installs OS packages in each trial; setup currently dominates model review time. Validate that the rebuilt environment preserves task inputs, reference isolation, and model settings before comparing its runtime or energy. Do not change task images during an active campaign. One trial also failed before inference because npm omitted Codex’s platform binary; record setup failures separately and allow a bounded unchanged-input retry.
+
+## Judgment labels
+
+**B17:** Separate direct site-state propositions from evidence-sufficiency questions in the benchmark schema. Both model arms can preserve the correct unknown value and sensible advice while choosing different `fail`/`inconclusive` labels for phrases such as “known to be zero” or “attributable solely.” Preserve original scores and explanations; independently review the question contract before accepting alternative labels or rerunning models. A label mismatch is not automatically a harmful recommendation.
 
 ## Feedback routing
+
+**B18:** Keep traffic-scenario prerequisites deterministic. The expanded DeepSeek run assigned an unranked extrapolation after a top-million-only lookup. Require an explicit matched rank bucket or a separately justified unranked population before selecting a mapping row; test incomplete, stale, and cross-origin lookup results. A model calling a number a scenario is insufficient validation.
 
 | Owner feedback                            | Pipeline location                        | Regression                                                                  |
 | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------- |

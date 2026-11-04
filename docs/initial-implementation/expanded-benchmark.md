@@ -29,6 +29,27 @@ References and the verifier run in a separate Python container. The agent receiv
 
 All 12 revised oracle tasks passed and all 12 revised no-operation tasks failed as intended, with zero harness exceptions. The [published controls](assets/expanded-benchmark-controls.json) retain reports, diagnostic regrades, and task hashes. The initial control run also passed before review clarified epistemic question wording and aligned numeric precision; only the revised tasks are used for the model comparison.
 
+## Model comparison results
+
+The [published results](assets/expanded-benchmark-results.json) contain both controls, both model campaigns, the unchanged-input setup retry, reports, diagnostic regrades, and matching task hashes. The original grader and reference labels remain unchanged.
+
+| Configured system                               | Accepted reports      | Answer labels | Numeric fields, units, and bases | Recommendation actions |
+| ----------------------------------------------- | --------------------- | ------------- | -------------------------------- | ---------------------- |
+| GPT-6.1 Sol, low, Codex CLI                     | 10/12                 | 33/35         | 14/14                            | 12/12                  |
+| Neuralwatt DeepSeek V4.1 Flash, high, Codex CLI | 10/12 completed cases | 33/35         | 13/14                            | 12/12                  |
+
+DeepSeek's initial campaign accepted 10 reports, rejected one, and had one setup exception before inference: npm omitted Codex's platform binary. A single retry of that case with identical inputs completed and was rejected. The published artifact retains the original exception and retry separately; the table uses the completed response for case comparison. Sol had no harness exceptions. These are contract-check counts, not independently validated accuracy estimates.
+
+The coordinator reviewed the rejected reports and recommendation explanations:
+
+- Sol's `resource-errors/q2` and `energy-missing/q1` chose `inconclusive` where the reference expects `fail` for a claim that zero was established. Both retain null measurements and appropriate advice. These expose a judgment-label ambiguity rather than an observed numeric or recommendation failure.
+- DeepSeek's `energy-boundary/q2` similarly chooses `inconclusive` for sole-site attribution, while explaining the whole-system boundary correctly and preserving the correct conversion and unknown savings.
+- DeepSeek's `traffic-missing/q1` and `m1` assign 31,867 annual pageviews from an unranked extrapolation after a lookup limited to the top million. That lookup does not establish that the origin is unranked: the appropriate value is unknown. Calling the estimate a scenario does not establish its prerequisite. The recommendation to extend the lookup is useful, but does not repair the unsupported numeric assignment.
+
+The two systems therefore have equal all-or-nothing report acceptance with different failure consequences. This does not support choosing a winner. Keep deterministic prerequisites around traffic estimation, and separate evidence sufficiency from direct site-state judgments in the next rubric version. Independently review those labels before changing accepted answers; do not retrospectively improve these scores. Recommendation action matches also do not establish the quality of full audit prose or implementation advice.
+
+Usage fields preserve available harness accounting. Provider billing and inference energy were not reconciled for this campaign; missing values are unknown. The local browser-energy experiment does not measure remote model inference.
+
 ## Reproduce
 
 ```sh

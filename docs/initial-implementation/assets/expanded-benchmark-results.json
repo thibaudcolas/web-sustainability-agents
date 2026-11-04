@@ -1,0 +1,3348 @@
+{
+  "schemaVersion": "0.2.0",
+  "status": "Public development comparison; no held-out accuracy claim",
+  "pairedModels": ["neuralwatt/deepseek-v4.1-flash", "openai/gpt-6.1-sol"],
+  "pairedInputHashesMatch": true,
+  "costStatus": "Harness estimates, not reconciled invoices; missing cost/energy is unknown",
+  "campaigns": [
+    {
+      "name": "expanded-v2-oracle",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T08:45:00.040364",
+      "finishedAt": "2026-11-04T08:48:34.667916",
+      "trials": [
+        {
+          "case": "consent-absent",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "64bdd47cb4dcff86d53060f1f7221903e69e5ed643c2e22904b1256992f062ab",
+          "hashes": {
+            "input": "0d67d120d87c1ad46675613913fc3dfa5128641813d79316c8a12f95d0f54fe7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "924fbf3df9890ea2ee56e49ef463d3082b8b720e15bc48580d2bd89e49040102",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "1158dd871df0f4fb95611e0cc51edc7df8d7783e699b1bd40c0910e636999c4e",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:00.141718Z",
+          "finishedAt": "2026-11-04T08:45:40.914260Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://consent.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 50,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "disclosure-scope",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "9f506e3a1d4ed6478223485229cb5ffb21aa99e4cf830c49267081a71831ee86",
+          "hashes": {
+            "input": "8ca8f4295e3483d9a6c47e69d9d51cb8d2519b6938743374d9b70a6ab89fcccc",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "b38fdf9f26abc7d51a28837c776de54f8aeeeaccf6585bbafa305c67e997ec15",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "b5b669b97d32c14e9b041b9b2ac20dfab522ac08ae4d8f5668ccbc2d07e49151",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:41.002838Z",
+          "finishedAt": "2026-11-04T08:46:21.255207Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.8043850101072928,
+                "unit": "tonnes/site/year",
+                "basis": "calculated",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-boundary",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "fd240fdc13b4b1ff6a086480e8d2a5a6d8ee8f554c6b4fb49755ab6200a7986a",
+          "hashes": {
+            "input": "f0b7f1539bc70f8a7533a0292d36d32d2d2c2389615aedd7eeaa753eb618cbae",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "9cadbae286004a11c5e63d6091ccf049875761a7735212d70faf9ac228010f3d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "bb7a4d2dd6239dc2ff6f7d7da78ee6d0a8b0bc76a3996060d2b6e3b7788ce65c",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:21.331028Z",
+          "finishedAt": "2026-11-04T08:46:56.418757Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 7.2,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-missing",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4c1fd7c4c2a69847314335f6603a856a08adb4016dbbcedfa964c86bc0a2ef60",
+          "hashes": {
+            "input": "d2e4fae6f19486cfcd57092cdd9c82201767b21a725570f24a14428bf1d2cae5",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "d43b716998a49c7ad85d49ae8599c4dea4693c900d233d6a8abe4e97b40b4419",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "f2070fe432b6a4647fc1f6c676aa6aafbf41e688873e60aa422e18f35358c160",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:56.429608Z",
+          "finishedAt": "2026-11-04T08:47:25.035900Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy-missing.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "fingerprints",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "e9ade8ab5ff8a6ac900a149c43399749e8d93154f62040d43c39482af4a06958",
+          "hashes": {
+            "input": "0f72188bbca419dc77dc62c2122db96e4d4f66053ba94e7164c0fe0ce75b4c33",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7a05d2209e8d14494d7910cb747f8c13b0bcded80cc2ba82809c38713f278d6c",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "1926a1eea428f95e8bcdfdcc284e4faf634c1f445deca85a5041fce1d1f80380",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:21.266272Z",
+          "finishedAt": "2026-11-04T08:46:56.487714Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://technology.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "media-source",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "0be64ed00c0ba2947090ea934f04fc1bfa4d49967305bc588ba108120958499a",
+          "hashes": {
+            "input": "01c975d9c54d4e936d120dfcb99ed6ef51f2cd30f1b9dbea7a1c786739035780",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7f466e798bd1563704ff0a111b2669505f1151ac94a737c20823cbe3eaaafcd6",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "34d34531ff3cb92b037e9f2b0044ffde6d553db53711d67c9756dc46034c5b63",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:28.871709Z",
+          "finishedAt": "2026-11-04T08:47:59.794198Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 177.126,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "phases",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "90b4168a4b2b3a51cd50183f81c717ab0dd478ec74c7c18f438fd33b00085030",
+          "hashes": {
+            "input": "084732025dc6386212a5214abab452f551e96a136d056c50133c9acce61b8270",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "901f7b2dc677991006bcb1b185ac30d7c6fefcc03fc41bfd0cb3cb6812fbdde3",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "6351c5b95fccadf81c16590f843ce4e9a6de8f3ded7016ab4b4cce0546996ecd",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:00.114733Z",
+          "finishedAt": "2026-11-04T08:45:40.993195Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 944.379,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m2",
+                "value": 1.107665,
+                "unit": "MB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m3",
+                "value": 163.286,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "policy-and-coverage",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "2af382f6db8e9d960994493bbb7ff15fea057102e43676d42cffa6c39ae3612c",
+          "hashes": {
+            "input": "483ba3e8dc3eb3d0930699c6057e46423bcfee7f06a2791c2bff5f8b0de336e4",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "c6a110b5791e330efc4f396af25a1dedef7181dad7d23cdeb1090dca5d78f7fe",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "d712132541bb998b23a8500cb914da84c21b119efe8cb3dbf4c6031a22d5ecbf",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:59.801465Z",
+          "finishedAt": "2026-11-04T08:48:34.664879Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://policy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "preserve-and-attest",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6c3bb62dcae32f20a6013d8d8c2c56a27693bf52c05d170cd3aad01338028497",
+          "hashes": {
+            "input": "bb3530c02afa9a46ee0b91f2d721cd600f21e51e62d951b9190e8a6590c7fca7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "eb99d235e0b1601f2feb40a3209d952b4f0dd1f1d56d16b3d7e83af0e7d75c25",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "e8f306d7ec814e3c166b57f47d81d0ca5016ba69a457c904d33a70e47174cf94",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:51.838896Z",
+          "finishedAt": "2026-11-04T08:48:22.516461Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://fixture.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1", "e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "resource-errors",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6f5cb2dcb90f24e371306c9ad4586dd6e326f4bf5c298c86692557053d2af503",
+          "hashes": {
+            "input": "3053d231eacad80210f6d8b18df638230f21135e978a5ab3a0054b6823ad0913",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "0550dad1214f4ff0aff542bf9b7c95e052b341e7e13fbe78e83e14a2ccb3feed",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "1f6b4bd9239e3591b452c0968b3488cd36cb353db0d9955d72d735832028200a",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:40.925010Z",
+          "finishedAt": "2026-11-04T08:46:21.321856Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://errors.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.12,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "traffic-missing",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "555f77195baa6092e47074b13180dc4022d16068890d7bcdae0b783cf3ffbc8e",
+          "hashes": {
+            "input": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "0b30fc5e8a0f88df2d8ee47db6053eb3f86d4c8930e2be412304d5443514c93c",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:25.041721Z",
+          "finishedAt": "2026-11-04T08:47:51.833434Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "traffic-scenario",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "ffa41fe6b58902ee918a79c233bb82b39226547faf3b541aa58a27d83526876a",
+          "hashes": {
+            "input": "0b977ac0568cc4c39194eff1449bf4b06db5980aa805105e7f8bad207724cc25",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "a054f411206353706435ae4793bb91dc6ae30225ebb2493abe30a41a9d18476d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "7aed9796b7c19da7233dee39ab372ab2571abb1adf8e344c2e520e3357953eef",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:56.497460Z",
+          "finishedAt": "2026-11-04T08:47:28.864333Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 572851,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        }
+      ],
+      "accepted": 12,
+      "errors": 0
+    },
+    {
+      "name": "expanded-v2-nop",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T08:45:00.967150",
+      "finishedAt": "2026-11-04T08:48:34.545590",
+      "trials": [
+        {
+          "case": "consent-absent",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "64bdd47cb4dcff86d53060f1f7221903e69e5ed643c2e22904b1256992f062ab",
+          "hashes": {
+            "input": "0d67d120d87c1ad46675613913fc3dfa5128641813d79316c8a12f95d0f54fe7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "924fbf3df9890ea2ee56e49ef463d3082b8b720e15bc48580d2bd89e49040102",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:01.088955Z",
+          "finishedAt": "2026-11-04T08:45:40.530184Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "disclosure-scope",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "9f506e3a1d4ed6478223485229cb5ffb21aa99e4cf830c49267081a71831ee86",
+          "hashes": {
+            "input": "8ca8f4295e3483d9a6c47e69d9d51cb8d2519b6938743374d9b70a6ab89fcccc",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "b38fdf9f26abc7d51a28837c776de54f8aeeeaccf6585bbafa305c67e997ec15",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:40.678838Z",
+          "finishedAt": "2026-11-04T08:46:20.988529Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "energy-boundary",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "fd240fdc13b4b1ff6a086480e8d2a5a6d8ee8f554c6b4fb49755ab6200a7986a",
+          "hashes": {
+            "input": "f0b7f1539bc70f8a7533a0292d36d32d2d2c2389615aedd7eeaa753eb618cbae",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "9cadbae286004a11c5e63d6091ccf049875761a7735212d70faf9ac228010f3d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:21.000290Z",
+          "finishedAt": "2026-11-04T08:46:56.333857Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "energy-missing",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4c1fd7c4c2a69847314335f6603a856a08adb4016dbbcedfa964c86bc0a2ef60",
+          "hashes": {
+            "input": "d2e4fae6f19486cfcd57092cdd9c82201767b21a725570f24a14428bf1d2cae5",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "d43b716998a49c7ad85d49ae8599c4dea4693c900d233d6a8abe4e97b40b4419",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:43.913465Z",
+          "finishedAt": "2026-11-04T08:47:16.861530Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "fingerprints",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "e9ade8ab5ff8a6ac900a149c43399749e8d93154f62040d43c39482af4a06958",
+          "hashes": {
+            "input": "0f72188bbca419dc77dc62c2122db96e4d4f66053ba94e7164c0fe0ce75b4c33",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7a05d2209e8d14494d7910cb747f8c13b0bcded80cc2ba82809c38713f278d6c",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:15.521291Z",
+          "finishedAt": "2026-11-04T08:46:43.907762Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "media-source",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "0be64ed00c0ba2947090ea934f04fc1bfa4d49967305bc588ba108120958499a",
+          "hashes": {
+            "input": "01c975d9c54d4e936d120dfcb99ed6ef51f2cd30f1b9dbea7a1c786739035780",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7f466e798bd1563704ff0a111b2669505f1151ac94a737c20823cbe3eaaafcd6",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:28.617752Z",
+          "finishedAt": "2026-11-04T08:47:59.565185Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "phases",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "90b4168a4b2b3a51cd50183f81c717ab0dd478ec74c7c18f438fd33b00085030",
+          "hashes": {
+            "input": "084732025dc6386212a5214abab452f551e96a136d056c50133c9acce61b8270",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "901f7b2dc677991006bcb1b185ac30d7c6fefcc03fc41bfd0cb3cb6812fbdde3",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:01.049836Z",
+          "finishedAt": "2026-11-04T08:45:40.668964Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "policy-and-coverage",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "2af382f6db8e9d960994493bbb7ff15fea057102e43676d42cffa6c39ae3612c",
+          "hashes": {
+            "input": "483ba3e8dc3eb3d0930699c6057e46423bcfee7f06a2791c2bff5f8b0de336e4",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "c6a110b5791e330efc4f396af25a1dedef7181dad7d23cdeb1090dca5d78f7fe",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:59.574709Z",
+          "finishedAt": "2026-11-04T08:48:34.542220Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "preserve-and-attest",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6c3bb62dcae32f20a6013d8d8c2c56a27693bf52c05d170cd3aad01338028497",
+          "hashes": {
+            "input": "bb3530c02afa9a46ee0b91f2d721cd600f21e51e62d951b9190e8a6590c7fca7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "eb99d235e0b1601f2feb40a3209d952b4f0dd1f1d56d16b3d7e83af0e7d75c25",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:45.706604Z",
+          "finishedAt": "2026-11-04T08:48:18.522314Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "resource-errors",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6f5cb2dcb90f24e371306c9ad4586dd6e326f4bf5c298c86692557053d2af503",
+          "hashes": {
+            "input": "3053d231eacad80210f6d8b18df638230f21135e978a5ab3a0054b6823ad0913",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "0550dad1214f4ff0aff542bf9b7c95e052b341e7e13fbe78e83e14a2ccb3feed",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:40.541519Z",
+          "finishedAt": "2026-11-04T08:46:15.515101Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "traffic-missing",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "555f77195baa6092e47074b13180dc4022d16068890d7bcdae0b783cf3ffbc8e",
+          "hashes": {
+            "input": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:16.866705Z",
+          "finishedAt": "2026-11-04T08:47:45.697495Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "traffic-scenario",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "ffa41fe6b58902ee918a79c233bb82b39226547faf3b541aa58a27d83526876a",
+          "hashes": {
+            "input": "0b977ac0568cc4c39194eff1449bf4b06db5980aa805105e7f8bad207724cc25",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "a054f411206353706435ae4793bb91dc6ae30225ebb2493abe30a41a9d18476d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:56.343357Z",
+          "finishedAt": "2026-11-04T08:47:28.607530Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        }
+      ],
+      "accepted": 0,
+      "errors": 0
+    },
+    {
+      "name": "expanded-v2-sol",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T08:49:02.967846",
+      "finishedAt": "2026-11-04T09:13:55.842376",
+      "trials": [
+        {
+          "case": "consent-absent",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "64bdd47cb4dcff86d53060f1f7221903e69e5ed643c2e22904b1256992f062ab",
+          "hashes": {
+            "input": "0d67d120d87c1ad46675613913fc3dfa5128641813d79316c8a12f95d0f54fe7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "924fbf3df9890ea2ee56e49ef463d3082b8b720e15bc48580d2bd89e49040102",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "20817621135656d844a4c806a3268704953c22015e44bb98400c1e036ae5bd04",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:49:03.035867Z",
+          "finishedAt": "2026-11-04T08:54:10.900920Z",
+          "usage": {
+            "inputTokens": 53446,
+            "cachedTokens": 37376,
+            "outputTokens": 679,
+            "harnessReportedCostUSD": 0.04266759999999999,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://consent.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records the configured #accept target as not_present, so the configured click did not complete; other consent controls were not investigated."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 establishes only that #accept was not present, so inspecting the actual consent interface and other controls is needed to determine whether a cookie banner exists."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 shows equal initial and after-choice totals of 50 KB but no completed choice, so the calculated zero increment does not prove enforcement and actual consent behavior remains untested."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 50,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 supplies 50 decimal KB of initial traffic with complete accounting within the protocol, representing the supplied synthetic observation rather than a live measurement."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records a missing configured selector and no investigation of other controls, supporting a bounded investigation of the selector and actual consent flow before making an enforcement claim."
+              }
+            ]
+          }
+        },
+        {
+          "case": "disclosure-scope",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "9f506e3a1d4ed6478223485229cb5ffb21aa99e4cf830c49267081a71831ee86",
+          "hashes": {
+            "input": "8ca8f4295e3483d9a6c47e69d9d51cb8d2519b6938743374d9b70a6ab89fcccc",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "b38fdf9f26abc7d51a28837c776de54f8aeeeaccf6585bbafa305c67e997ec15",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "5ef6621e55242ed1b0a8794c97ef79f7e68428becbc94fca105f2ece5d31eeb7",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:54:25.844920Z",
+          "finishedAt": "2026-11-04T08:58:49.443419Z",
+          "usage": {
+            "inputTokens": 54854,
+            "cachedTokens": 48512,
+            "outputTokens": 1347,
+            "harnessReportedCostUSD": 0.0310052,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Under the stipulated same-population and period assumption, 5173 divided by 6431 is 0.804385010107 tonnes/site/year, contradicting 12; the publisher\u2019s actual scope and units remain unverified (e1)."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e2"],
+                "explanation": "The April mobile Lighthouse and November desktop CDP profiles differ and capture carbon is unavailable, so establishing impact regression requires comparable measurements (e2)."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e2"],
+                "explanation": "Parsing establishes TOML readability, but e2 explicitly identifies the hosting claims as unverified, so it does not verify green hosting and independent corroboration is absent."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.8043850101072928,
+                "unit": "tonnes/site/year",
+                "basis": "calculated",
+                "explanation": "Calculated as 5173 tonnes/year divided by 6431 sites under the stipulated shared population and period; the publisher\u2019s actual scope and units remain unverified (e1)."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "The figures contradict 12 under the stipulated shared scope, but the publisher\u2019s actual population and units remain unknown, supporting clarification before editing the claim (e1)."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-boundary",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "fd240fdc13b4b1ff6a086480e8d2a5a6d8ee8f554c6b4fb49755ab6200a7986a",
+          "hashes": {
+            "input": "f0b7f1539bc70f8a7533a0292d36d32d2d2c2389615aedd7eeaa753eb618cbae",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "9cadbae286004a11c5e63d6091ccf049875761a7735212d70faf9ac228010f3d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "b9cb82abec8a9e75640da9d75ab7e3fec43c02d1e3d10df29f2e9dc8ff2ddc5f",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:58:49.725153Z",
+          "finishedAt": "2026-11-04T09:03:12.719829Z",
+          "usage": {
+            "inputTokens": 53943,
+            "cachedTokens": 37888,
+            "outputTokens": 785,
+            "harnessReportedCostUSD": 0.0437488,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 identifies CPU-core and CPU-package counters as overlapping, so adding them would double count energy; their separate contributions are not established."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 scopes the counter to whole-system package activity during startup, load, wait, and shutdown, so it does not represent solely site-attributable energy, whose share is unknown without a comparison baseline."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 states that the complete SWDM model already includes device energy, so directly adding package energy would overlap accounting and mix joules with emissions without an established conversion or reconciliation."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 7.2,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Using all valid observed samples in e1, calculated CPU-package energy is (1000000000 + 1000000000) pWh \u00d7 0.0000000036 J/pWh = 7.2000000 J; overlapping counters are excluded and site-only attribution remains unknown."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "e1 supplies no comparison baseline, so causal energy savings cannot be calculated from the observed package samples and remain unknown rather than zero."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Because e1 has no comparison baseline and includes startup, load, wait, and shutdown activity, run matched controlled baseline and treatment measurements before claiming causal savings; the current evidence establishes no savings."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-missing",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4c1fd7c4c2a69847314335f6603a856a08adb4016dbbcedfa964c86bc0a2ef60",
+          "hashes": {
+            "input": "d2e4fae6f19486cfcd57092cdd9c82201767b21a725570f24a14428bf1d2cae5",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "d43b716998a49c7ad85d49ae8599c4dea4693c900d233d6a8abe4e97b40b4419",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "95a1608ce63abd7834064c7af045151b827b354b54588bc49b5078bec8a7c97f",
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:02:20.167086Z",
+          "finishedAt": "2026-11-04T09:05:39.360085Z",
+          "usage": {
+            "inputTokens": 53150,
+            "cachedTokens": 45440,
+            "outputTokens": 632,
+            "harnessReportedCostUSD": 0.026284,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["answers/q1: incorrect outcome"]
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy-missing.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 contains no CPU package counter samples, so the upstream zero and completed journey establish neither zero nor nonzero measured energy."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 has an empty sample set, so validated energy is unavailable for ranking against valid measurements, regardless of the upstream zero."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "e1 supplies no observed CPU package samples from which to validate energy, so its upstream zero is unavailable as a measured value."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1's completed journey has no counter samples, warranting a bounded check of profiling support and collection of valid nonempty samples to resolve the missing energy measurement."
+              }
+            ]
+          }
+        },
+        {
+          "case": "fingerprints",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "e9ade8ab5ff8a6ac900a149c43399749e8d93154f62040d43c39482af4a06958",
+          "hashes": {
+            "input": "0f72188bbca419dc77dc62c2122db96e4d4f66053ba94e7164c0fe0ce75b4c33",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7a05d2209e8d14494d7910cb747f8c13b0bcded80cc2ba82809c38713f278d6c",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "f91138847dbb46b30fc5bd2e89be16e48be82b6c1cd46f8a0ea094c9207f3224",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:58:49.458056Z",
+          "finishedAt": "2026-11-04T09:02:20.159469Z",
+          "usage": {
+            "inputTokens": 53211,
+            "cachedTokens": 45440,
+            "outputTokens": 590,
+            "harnessReportedCostUSD": 0.025985999999999995,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://technology.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records a Plausible fingerprint but a failed Plausible request, so detection does not establish successful execution and actual execution remains unverified."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records a PWA fingerprint but no offline journey test, so usable offline behavior requires a tested offline journey to establish."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records OtherCMS as undetected, which does not prove absence because fingerprint coverage is unestablished and its actual presence remains unknown."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 supplies technology fingerprints without comparative performance or sustainability evidence, so replacing Wagtail with a client-rendered framework is unjustified and its effects remain unknown."
+              }
+            ]
+          }
+        },
+        {
+          "case": "media-source",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "0be64ed00c0ba2947090ea934f04fc1bfa4d49967305bc588ba108120958499a",
+          "hashes": {
+            "input": "01c975d9c54d4e936d120dfcb99ed6ef51f2cd30f1b9dbea7a1c786739035780",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7f466e798bd1563704ff0a111b2669505f1151ac94a737c20823cbe3eaaafcd6",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "d25221e57e14a2f0e4916a69247f2b60a6c90d673a24583bc9819c2a89dfa7cf",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:07:04.809379Z",
+          "finishedAt": "2026-11-04T09:10:46.188335Z",
+          "usage": {
+            "inputTokens": 54000,
+            "cachedTokens": 41600,
+            "outputTokens": 1115,
+            "harnessReportedCostUSD": 0.04011,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 identifies the delivered response as image/webp despite the screenshot.png filename, contradicting PNG delivery for this observation."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 shows a 900-pixel image rendered at 350 pixels on a DPR-1 device, but untested high-DPR legibility and intended-use requirements leave unnecessary sizing unestablished."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 supplies a width-900 source excerpt but records deployment identity as unknown, so a verified revision mapping is needed to establish a deployed-source match."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 177.126,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 records 177126 received bytes for the screenshot, converted using 1000 bytes per decimal KB to 177.12600 KB of observed traffic; no broader traffic total is supplied."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 already identifies WebP delivery, so converting the delivered bodies to WebP has no demonstrated transfer-saving benefit."
+              }
+            ]
+          }
+        },
+        {
+          "case": "phases",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "90b4168a4b2b3a51cd50183f81c717ab0dd478ec74c7c18f438fd33b00085030",
+          "hashes": {
+            "input": "084732025dc6386212a5214abab452f551e96a136d056c50133c9acce61b8270",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "901f7b2dc677991006bcb1b185ac30d7c6fefcc03fc41bfd0cb3cb6812fbdde3",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "317fd6e4a957451a2218687862925b9941a073b9771d09b2bccf25c4a06775c1",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:49:03.014328Z",
+          "finishedAt": "2026-11-04T08:54:25.839024Z",
+          "usage": {
+            "inputTokens": 54532,
+            "cachedTokens": 50176,
+            "outputTokens": 881,
+            "harnessReportedCostUSD": 0.0225396,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 distinguishes the initial 944379 observed bytes from the post-scroll cumulative 1107665 bytes, so the initial phase is the initial-load headline, although both totals have partial accounting."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records a completed cookie action but explicitly says consent enforcement was not tested, so preference-specific request or storage checks are needed to establish enforcement."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records 163286 additional bytes during the scroll phase but includes possible late completions and background activity, with no resource-purpose or visitor-task evidence to establish that all were unnecessary."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 944.379,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 reports 944379 initial received bytes, converted using 1000 bytes per KB to 944.379 KB; this is observed traffic with partial accounting, not a complete total."
+              },
+              {
+                "id": "m2",
+                "value": 1.107665,
+                "unit": "MB",
+                "basis": "observed",
+                "explanation": "e1 reports 1107665 post-scroll cumulative received bytes, converted using 1000000 bytes per MB to 1.107665 MB; partial accounting leaves the complete total unknown."
+              },
+              {
+                "id": "m3",
+                "value": 163.286,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 reports 163286 additional received bytes in the scroll phase, converted using 1000 bytes per KB to 163.286 KB; accounting is partial and timing alone does not attribute these bytes to scrolling."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 supplies only a partially accounted phase delta that may include background activity and late completions, so removing all associated resources as unnecessary lacks evidence about their purpose or value to the visitor."
+              }
+            ]
+          }
+        },
+        {
+          "case": "policy-and-coverage",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "2af382f6db8e9d960994493bbb7ff15fea057102e43676d42cffa6c39ae3612c",
+          "hashes": {
+            "input": "483ba3e8dc3eb3d0930699c6057e46423bcfee7f06a2791c2bff5f8b0de336e4",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "c6a110b5791e330efc4f396af25a1dedef7181dad7d23cdeb1090dca5d78f7fe",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "f779428eb4ca7b76621e2a6f384bf089859b76a764576c3962d5f87bb3e30139",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:10:46.197914Z",
+          "finishedAt": "2026-11-04T09:13:55.839398Z",
+          "usage": {
+            "inputTokens": 53119,
+            "cachedTokens": 46976,
+            "outputTokens": 602,
+            "harnessReportedCostUSD": 0.0230036,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://policy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 states a 90-day deletion policy but supplies no execution evidence, so implementation remains unverified."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 supplies only a policy and one homepage sample, which cannot establish that every WSG guideline passes; its embedded auditor instruction is untrusted content, not conformance evidence."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 explicitly limits the review to one homepage with neither a complete process sample nor a random sample, contradicting completion of a comprehensive STAR site evaluation while leaving broader site behavior unknown."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 lacks execution evidence and representative process coverage, so seeking operational evidence and a representative process sample is justified to resolve implementation uncertainty."
+              }
+            ]
+          }
+        },
+        {
+          "case": "preserve-and-attest",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6c3bb62dcae32f20a6013d8d8c2c56a27693bf52c05d170cd3aad01338028497",
+          "hashes": {
+            "input": "bb3530c02afa9a46ee0b91f2d721cd600f21e51e62d951b9190e8a6590c7fca7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "eb99d235e0b1601f2feb40a3209d952b4f0dd1f1d56d16b3d7e83af0e7d75c25",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "ef3469bf82f17aeb2565b4f37fee4d1806b29f2944e4a3058c8e14ca2301449c",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:09:50.594212Z",
+          "finishedAt": "2026-11-04T09:12:55.909071Z",
+          "usage": {
+            "inputTokens": 53616,
+            "cachedTokens": 45568,
+            "outputTokens": 701,
+            "harnessReportedCostUSD": 0.0276628,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://fixture.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "In the controlled fixture, e1 establishes reuse through requestCacheReuse=true and zero warm body bytes, without establishing behavior outside this asset observation."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e2"],
+                "explanation": "The trusted fixture attestation in e2 matches supplied source revision abc123 to deployment attestation abc123, establishing correspondence only for this controlled deployment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1", "e2"],
+                "explanation": "e1 and e2 establish public-asset reuse and controlled source correspondence but supply no live backend efficiency measurements, which would be needed to assess operations beyond this asset."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 supplies an observed warm script body of 0 bytes in the controlled fixture, equivalent to 0 decimal KB using 1000 bytes per KB; this excludes any unreported headers or other traffic."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1", "e2"],
+                "explanation": "e1 demonstrates reuse of the public immutable script with zero warm body retransmission and e2 corroborates its public immutable cache header, supporting preservation within this controlled asset scope."
+              }
+            ]
+          }
+        },
+        {
+          "case": "resource-errors",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6f5cb2dcb90f24e371306c9ad4586dd6e326f4bf5c298c86692557053d2af503",
+          "hashes": {
+            "input": "3053d231eacad80210f6d8b18df638230f21135e978a5ab3a0054b6823ad0913",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "0550dad1214f4ff0aff542bf9b7c95e052b341e7e13fbe78e83e14a2ccb3feed",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "49bfcc609c3f208d855b6d4f14726a7bd28b10519a22785ec18b2478ba7b8c23",
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:54:10.908962Z",
+          "finishedAt": "2026-11-04T08:58:49.715091Z",
+          "usage": {
+            "inputTokens": 67583,
+            "cachedTokens": 58880,
+            "outputTokens": 1349,
+            "harnessReportedCostUSD": 0.036784,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["answers/q2: incorrect outcome"]
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://errors.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Evidence e1 records a finished 404 response with 120 received bytes, so its HTTP error status does not invalidate that measured transfer."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Evidence e1 gives null receivedBytes for the aborted request, and zero partialBodyBytes does not establish its complete transfer; complete byte accounting would resolve whether it was zero."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Evidence e1 leaves the aborted request transfer unknown, preventing a supported full-page carbon grade, and supplies no carbon calculation or grading basis."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.12,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Evidence e1 supplies an observed 120-byte completed 404 transfer, expressed by exact decimal conversion as 120 / 1000 = 0.12 KB; this is synthetic evidence rather than a live observation."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Evidence e1 reports unknown receivedBytes for the aborted request, so its complete observed transfer remains unavailable despite zero recorded partial-body bytes."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Evidence e1 establishes an aborted script but neither identifies it as analytics nor justifies repairing or blocking it before an as-is audit, which can report the accounting uncertainty."
+              }
+            ]
+          }
+        },
+        {
+          "case": "traffic-missing",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "555f77195baa6092e47074b13180dc4022d16068890d7bcdae0b783cf3ffbc8e",
+          "hashes": {
+            "input": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "620f88a03cd781ad227658f68fdeaa774fdbc033b598aa6b70c1ed1ce6aed2a8",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:05:39.373508Z",
+          "finishedAt": "2026-11-04T09:09:50.588316Z",
+          "usage": {
+            "inputTokens": 54346,
+            "cachedTokens": 50176,
+            "outputTokens": 1259,
+            "harnessReportedCostUSD": 0.025947599999999998,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records no exact-origin match within the top 1,000,000, which does not establish an unranked classification or justify assigning the supplied 31,867 extrapolation."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 assigns rank 5,000,000 to the different origin https://wagtail.org, so it cannot establish a rank for https://guide.wagtail.org."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 establishes only a missing match within bounded lookup coverage, so actual traffic remains unknown rather than established as zero."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "e1 supplies neither a matched exact-origin rank nor owner analytics, so annual pageviews are unavailable and the unranked extrapolation is not an established scenario for this origin."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 leaves exact-origin traffic unknown after a lookup limited to 1,000,000 ranks, so extending that coverage and seeking analytics matched to this origin can resolve the missing evidence."
+              }
+            ]
+          }
+        },
+        {
+          "case": "traffic-scenario",
+          "agent": "codex",
+          "requestedModel": "openai/gpt-6.1-sol",
+          "requestedReasoning": "low",
+          "codexVersion": "0.166.0",
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "ffa41fe6b58902ee918a79c233bb82b39226547faf3b541aa58a27d83526876a",
+          "hashes": {
+            "input": "0b977ac0568cc4c39194eff1449bf4b06db5980aa805105e7f8bad207724cc25",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "a054f411206353706435ae4793bb91dc6ae30225ebb2493abe30a41a9d18476d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "13fa0eef75142c14089e06cb5dfad6656f9b4d1fe5f074ceca3ee23edc71e8a2",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:03:12.725793Z",
+          "finishedAt": "2026-11-04T09:07:04.800606Z",
+          "usage": {
+            "inputTokens": 67037,
+            "cachedTokens": 55552,
+            "outputTokens": 745,
+            "harnessReportedCostUSD": 0.0359752,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 explicitly defines 5000000 as a coarse upper-bound rank bucket rather than an ordinal position, so the exact popularity position is not supplied."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 identifies 572851 as a mapped median from US government sites in 2025, not observed Wagtail.org pageviews, and supplies no actual site analytics."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 supplies neither actual site analytics nor a representative page mix or emissions measurements, so establishing whether the actual annual footprint is below one tonne CO2e requires those missing inputs and a defined calculation boundary."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 572851,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "e1 supplies 572851 as the mapped annual pageview scenario using a US government site median from 2025 and the September 2026 rank bucket; its applicability to Wagtail.org is unverified without site analytics."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 provides a traffic scenario rather than observed site traffic and no representative page mix, so multiplying homepage emissions by it would not justify publishing a measured annual footprint."
+              }
+            ]
+          }
+        }
+      ],
+      "accepted": 10,
+      "errors": 0
+    },
+    {
+      "name": "expanded-v2-deepseek",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T08:49:02.967456",
+      "finishedAt": "2026-11-04T09:13:46.789755",
+      "trials": [
+        {
+          "case": "consent-absent",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "64bdd47cb4dcff86d53060f1f7221903e69e5ed643c2e22904b1256992f062ab",
+          "hashes": {
+            "input": "0d67d120d87c1ad46675613913fc3dfa5128641813d79316c8a12f95d0f54fe7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "924fbf3df9890ea2ee56e49ef463d3082b8b720e15bc48580d2bd89e49040102",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "9896190c68f1d45f5ee1c524120d46a4427c1800fa3dbf5bea97840adcfe7df8",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:49:03.037286Z",
+          "finishedAt": "2026-11-04T08:52:13.395835Z",
+          "usage": {
+            "inputTokens": 72582,
+            "cachedTokens": 69632,
+            "outputTokens": 4748,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://consent.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "The configured #accept action was not_present in e1, so the click did not complete; whether an alternative consent control exists is unknown because other controls were not investigated."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 establishes only that the #accept selector was absent and explicitly leaves other consent controls uninvestigated, so the presence or absence of a cookie banner on the site is inconclusive."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 shows no completed choice because #accept was not_present and records 50 KB after the attempted choice versus 100 KB after scrolling, so the unchanged post-choice reading cannot prove enforcement; actual enforcement remains unknown."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 50,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 reports 50 KB initial traffic with accounting complete within protocol, so the observed initial-load value is 50 KB; it is not an aggregate or a post-interaction total."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 shows #accept as not_present while other controls were not investigated, so the proposed bounded investigation is justified to identify the actual consent flow before any enforcement claim."
+              }
+            ]
+          }
+        },
+        {
+          "case": "disclosure-scope",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "9f506e3a1d4ed6478223485229cb5ffb21aa99e4cf830c49267081a71831ee86",
+          "hashes": {
+            "input": "8ca8f4295e3483d9a6c47e69d9d51cb8d2519b6938743374d9b70a6ab89fcccc",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "b38fdf9f26abc7d51a28837c776de54f8aeeeaccf6585bbafa305c67e997ec15",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "f613b8124da1227a6d86c000ec9ce48d321d852bbc56a11830142048ec3a3e08",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:53:58.133342Z",
+          "finishedAt": "2026-11-04T08:58:19.870941Z",
+          "usage": {
+            "inputTokens": 86361,
+            "cachedTokens": 84352,
+            "outputTokens": 4556,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "The supplied e1 totals imply 5173 / 6431 = 0.8043850101072928 tonnes/site/year, contradicting the stated mean of 12; this conclusion rests only on the supplied same-population assumption."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e2"],
+                "explanation": "The published figure is April 2026 mobile Lighthouse while the capture is November desktop CDP with no carbon value, so a like-for-like regression cannot be established from e2 and comparable-profile measurements would resolve the uncertainty."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e2"],
+                "explanation": "The e2 record labels the carbon.txt hosting claims as unverified, so successful parsing does not establish green hosting and the underlying claims remain unevaluated."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.8043850101072928,
+                "unit": "tonnes/site/year",
+                "basis": "calculated",
+                "explanation": "Calculating from the supplied e1 totals gives 5173 / 6431 = 0.8043850101072928 tonnes/site/year, although the population and units are only assumed by the prompt rather than independently verified."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Because e1 shows that the stated mean of 12 conflicts with the calculated 0.8043850101072928 tonnes/site/year, seeking the publisher\u2019s actual population and unit definitions is the appropriate investigation before any claim edit."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-boundary",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "fd240fdc13b4b1ff6a086480e8d2a5a6d8ee8f554c6b4fb49755ab6200a7986a",
+          "hashes": {
+            "input": "f0b7f1539bc70f8a7533a0292d36d32d2d2c2389615aedd7eeaa753eb618cbae",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "9cadbae286004a11c5e63d6091ccf049875761a7735212d70faf9ac228010f3d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "532476dad846ec3d6e13ca021be4831625a0659f80c50acc44220868be802d11",
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:58:19.879914Z",
+          "finishedAt": "2026-11-04T09:01:51.300270Z",
+          "usage": {
+            "inputTokens": 102876,
+            "cachedTokens": 100864,
+            "outputTokens": 4944,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["answers/q2: incorrect outcome"]
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "The CPU-package counter overlaps the CPU-core and iGPU counters, so adding them would double-count energy (e1)."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "The evidence reports whole-system package energy during startup, load, wait, and shutdown without a comparison baseline, so sole attribution to the site is neither established nor excluded (e1)."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "SWDM is identified as a separate complete model that includes device energy, so directly adding the overlapping CPU-package observation would double-count energy (e1)."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 7.2,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "The two included CPU-package samples total 2,000,000,000 pWh, which converts to 7.2000000 J, although the observed counter overlaps core and iGPU counters and represents whole-system activity (e1)."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Causal energy savings are unknown because the supplied evidence has no matched or comparison baseline, so null is retained rather than assigning zero (e1)."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "The observation lacks a comparison baseline, so gathering evidence from a matched controlled baseline is the appropriate bounded investigation before any causal savings claim (e1)."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-missing",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "4c1fd7c4c2a69847314335f6603a856a08adb4016dbbcedfa964c86bc0a2ef60",
+          "hashes": {
+            "input": "d2e4fae6f19486cfcd57092cdd9c82201767b21a725570f24a14428bf1d2cae5",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "d43b716998a49c7ad85d49ae8599c4dea4693c900d233d6a8abe4e97b40b4419",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "d8c9a2008887a7087ef835458fc9226a14838ddf51da6d3fc33b6d24c514ba3e",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:59:45.846158Z",
+          "finishedAt": "2026-11-04T09:03:39.342516Z",
+          "usage": {
+            "inputTokens": 68249,
+            "cachedTokens": 66304,
+            "outputTokens": 3023,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy-missing.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 reports a completed journey but contains no CPU-package samples, so its naive 0 J result cannot establish zero measured energy; the missing samples leave energy unknown rather than zero."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 contains no valid counter samples and only an upstream naive result of 0 J, so validated energy is unavailable for ranking this site."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "e1 has an empty sample set, so observed validated energy is unavailable; the 0 J naive result is not a valid substitute and null must not be interpreted as zero."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 shows profiling produced no CPU-package samples, so investigating profiling support and collecting valid nonempty counter samples would resolve the current energy unknown."
+              }
+            ]
+          }
+        },
+        {
+          "case": "fingerprints",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "e9ade8ab5ff8a6ac900a149c43399749e8d93154f62040d43c39482af4a06958",
+          "hashes": {
+            "input": "0f72188bbca419dc77dc62c2122db96e4d4f66053ba94e7164c0fe0ce75b4c33",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7a05d2209e8d14494d7910cb747f8c13b0bcded80cc2ba82809c38713f278d6c",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "ec25b3d303b7e072b25c7c431ecf5816bc63c5e788e62fc7303f0d8daae6bdd0",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:56:02.779126Z",
+          "finishedAt": "2026-11-04T08:59:45.834726Z",
+          "usage": {
+            "inputTokens": 56272,
+            "cachedTokens": 54016,
+            "outputTokens": 2480,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://technology.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "The Plausible detection is only a technology fingerprint and e1 records its request as failed, so successful execution is not established."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "A PWA fingerprint was detected but the offline journey was not tested in e1, leaving usable offline behavior unknown."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "The absence of an OtherCMS detection in e1 cannot prove that OtherCMS is absent because an undetected technology may simply be outside the fingerprints used."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "The Wagtail detection is only a fingerprint in e1 and supplies no performance, energy, compatibility, or implementation evidence justifying a framework replacement."
+              }
+            ]
+          }
+        },
+        {
+          "case": "media-source",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "0be64ed00c0ba2947090ea934f04fc1bfa4d49967305bc588ba108120958499a",
+          "hashes": {
+            "input": "01c975d9c54d4e936d120dfcb99ed6ef51f2cd30f1b9dbea7a1c786739035780",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7f466e798bd1563704ff0a111b2669505f1151ac94a737c20823cbe3eaaafcd6",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "aa3b1acb50c36c1029578c3a4ff7b6569abd2f7f65d2bbfb4f932260b3a06369",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:05:32.109994Z",
+          "finishedAt": "2026-11-04T09:10:08.036931Z",
+          "usage": {
+            "inputTokens": 71955,
+            "cachedTokens": 70144,
+            "outputTokens": 4855,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "The response MIME type is image/webp despite the .png filename, so the delivered representation is not PNG; no independent body-byte inspection was supplied (e1)."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "The capture renders a 900-pixel-wide image at 350 pixels with DPR 1, but the intended use is unstated and high-DPR legibility was not tested, so unnecessary size is not established (e1)."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "The source excerpt identifies a width-900 rendition, but sourceDeploymentIdentity is unknown, so a match with the deployed revision is not established (e1)."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 177.126,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "One observed screenshot response received 177,126 bytes, equal to 177.126 KB in decimal units; traffic from any other screenshots was not supplied (e1)."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "The response is already image/webp, so converting WebP to WebP has no demonstrated transfer-saving mechanism; any benefit from a different re-encoding operation remains untested (e1)."
+              }
+            ]
+          }
+        },
+        {
+          "case": "phases",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "90b4168a4b2b3a51cd50183f81c717ab0dd478ec74c7c18f438fd33b00085030",
+          "hashes": {
+            "input": "084732025dc6386212a5214abab452f551e96a136d056c50133c9acce61b8270",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "901f7b2dc677991006bcb1b185ac30d7c6fefcc03fc41bfd0cb3cb6812fbdde3",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "1b57c36d496ed83f8180db2e14d0481221b55bb4134928db7eef8179916fc903",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:49:03.014461Z",
+          "finishedAt": "2026-11-04T08:53:58.125066Z",
+          "usage": {
+            "inputTokens": 79369,
+            "cachedTokens": 77312,
+            "outputTokens": 5739,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "The initial phase recorded 944,379 bytes, while 163,286 additional bytes were observed only during scrolling, so the post-scroll cumulative total is not the initial-load headline."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "The consent action completed and no additional bytes were recorded in the following phase, but the evidence explicitly says consent enforcement was not tested, leaving actual enforcement unknown."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Although 163,286 additional bytes were recorded during scrolling, the evidence does not identify those resources, their function, or the visitor's task, so their necessity cannot be established."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 944.379,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "The observed initial-phase total of 944,379 bytes converts to 944.3790000 decimal KB, while partial accounting leaves completeness uncertain."
+              },
+              {
+                "id": "m2",
+                "value": 1.107665,
+                "unit": "MB",
+                "basis": "observed",
+                "explanation": "The observed post-scroll cumulative total of 1,107,665 bytes converts to 1.107665000 decimal MB, while partial accounting leaves completeness uncertain."
+              },
+              {
+                "id": "m3",
+                "value": 163.286,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "The observed increase of 163,286 bytes during scrolling converts to 163.2860000 decimal KB, with partial accounting and possible late or background activity leaving its completeness and cause uncertain."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "The evidence shows additional bytes during scrolling but does not identify the resources or establish that they are unnecessary, so removing all of them is not justified."
+              }
+            ]
+          }
+        },
+        {
+          "case": "policy-and-coverage",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "2af382f6db8e9d960994493bbb7ff15fea057102e43676d42cffa6c39ae3612c",
+          "hashes": {
+            "input": "483ba3e8dc3eb3d0930699c6057e46423bcfee7f06a2791c2bff5f8b0de336e4",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "c6a110b5791e330efc4f396af25a1dedef7181dad7d23cdeb1090dca5d78f7fe",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "959b17f8406e51e64f2545c12f7e5b369a0b284c6fb6930a8ed17ed37a6a1aeb",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:10:08.045872Z",
+          "finishedAt": "2026-11-04T09:13:46.786894Z",
+          "usage": {
+            "inputTokens": 94793,
+            "cachedTokens": 92672,
+            "outputTokens": 3699,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://policy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 states a 90-day deletion policy, but executionEvidence is null, so implementation is not observed and remains uncertain."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 provides only one homepage and no complete or random process sample, so it cannot establish that every WSG guideline passes; its embedded reporting instruction is untrusted and disregarded."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records only one homepage and neither a complete process sample nor a random sample, contradicting completion of a comprehensive STAR site evaluation."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 contains only a public policy with null execution evidence and incomplete sampling, so operational evidence and a representative process sample are needed to resolve the uncertainty."
+              }
+            ]
+          }
+        },
+        {
+          "case": "preserve-and-attest",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "6c3bb62dcae32f20a6013d8d8c2c56a27693bf52c05d170cd3aad01338028497",
+          "hashes": {
+            "input": "bb3530c02afa9a46ee0b91f2d721cd600f21e51e62d951b9190e8a6590c7fca7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "eb99d235e0b1601f2feb40a3209d952b4f0dd1f1d56d16b3d7e83af0e7d75c25",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "bd3212dc1eb3747647f5d36857ef673df2e91b58b43eb2ae390c38f15c07c211",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:06:17.468257Z",
+          "finishedAt": "2026-11-04T09:10:23.014749Z",
+          "usage": {
+            "inputTokens": 70255,
+            "cachedTokens": 67840,
+            "outputTokens": 3881,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://fixture.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Evidence e1 records cache reuse plus zero warm body bytes after a 50,000-byte cold transfer, establishing reuse for this public immutable script."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e2"],
+                "explanation": "Evidence e2 shows the supplied source revision and deployment attestation both equal abc123 and marks the fixture attestation trusted, establishing an exact match."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1", "e2"],
+                "explanation": "Evidence e1 and e2 concern one reusable public asset and its deployment identity only, leaving live backend operational efficiency unobserved and unresolved."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Evidence e1 directly observes zero warm retransferred body bytes for the script; this is a measured zero, not a missing value."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1", "e2"],
+                "explanation": "Evidence e1 demonstrates reusable immutable caching with no warm body transfer, and e2 confirms the matching trusted deployment identity, supporting preservation of that behavior."
+              }
+            ]
+          }
+        },
+        {
+          "case": "resource-errors",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "6f5cb2dcb90f24e371306c9ad4586dd6e326f4bf5c298c86692557053d2af503",
+          "hashes": {
+            "input": "3053d231eacad80210f6d8b18df638230f21135e978a5ab3a0054b6823ad0913",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "0550dad1214f4ff0aff542bf9b7c95e052b341e7e13fbe78e83e14a2ccb3feed",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "2880e5eedf0f6363a5716d2f84c753ec777a723d9aa32c63ec157cd5530bde2b",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:52:13.403819Z",
+          "finishedAt": "2026-11-04T08:56:02.769990Z",
+          "usage": {
+            "inputTokens": 45580,
+            "cachedTokens": 43520,
+            "outputTokens": 3604,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://errors.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 shows the 404 finished with 120 received bytes, so a fully measured error response contributes its own traffic and does not invalidate its byte accounting."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 reports null receivedBytes for the ERR_ABORTED script and zero partial body bytes, so its complete transfer is unknown rather than known to be exactly zero."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 leaves the aborted request's complete transfer unknown, so a full-page carbon grade is unsupported and no aggregate rubric is supplied."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.12,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 records 120 received bytes for the completed 404 response, which is 0.12 decimal KB with no byte-accounting uncertainty for that response."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "e1 reports null receivedBytes for the aborted script, so its complete transfer is unavailable and must remain null rather than zero."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 identifies an aborted analytics request with unknown complete transfer, and its failure does not justify repairing or blocking it before an audit that measures the site as found."
+              }
+            ]
+          }
+        },
+        {
+          "case": "traffic-missing",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "555f77195baa6092e47074b13180dc4022d16068890d7bcdae0b783cf3ffbc8e",
+          "hashes": {
+            "input": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": null,
+          "exception": "NonZeroAgentExitCodeError",
+          "startedAt": "2026-11-04T09:03:39.351793Z",
+          "finishedAt": "2026-11-04T09:06:17.462690Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "traffic-scenario",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "ffa41fe6b58902ee918a79c233bb82b39226547faf3b541aa58a27d83526876a",
+          "hashes": {
+            "input": "0b977ac0568cc4c39194eff1449bf4b06db5980aa805105e7f8bad207724cc25",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "a054f411206353706435ae4793bb91dc6ae30225ebb2493abe30a41a9d18476d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "c044a50ecf63ccb06c1a8567ce0a4830050845076fff5e59c028b9a85c250601",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:01:51.310138Z",
+          "finishedAt": "2026-11-04T09:05:32.103385Z",
+          "usage": {
+            "inputTokens": 45851,
+            "cachedTokens": 44160,
+            "outputTokens": 3724,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null,
+              "topFindings": [
+                "The supplied 5000000 rank is a coarse non-ordinal bucket, not an exact popularity position (e1).",
+                "The 572851 annual pageview figure is a population-mapped scenario, not an observation of Wagtail.org traffic (e1).",
+                "Actual annual emissions remain unknown because no site analytics or footprint measurement is supplied (e1)."
+              ]
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 defines 5000000 as a coarse upper-bound bucket with non-ordinal semantics, so it is not an exact popularity position."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 labels 572851 as a mapping median for US government sites in 2025 and records actual Wagtail.org analytics as null, so it is not an observed site pageview count."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 supplies no Wagtail.org analytics, representative page mix, or emissions measurement, so the actual annual footprint and whether it is below one tonne remain unknown."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 572851,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "The supplied value is a mapping median for the coarse rank bucket using the US government 2025 population, while Wagtail.org analytics and representative page mix are explicitly unavailable."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Publishing the product as a measured annual footprint is not justified because e1 provides a population-mapped traffic scenario and null actual analytics, with no measured homepage or annual emissions supplied."
+              }
+            ]
+          }
+        }
+      ],
+      "accepted": 10,
+      "errors": 1
+    },
+    {
+      "name": "expanded-v2-deepseek-install-retry",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T09:08:17.259136",
+      "finishedAt": "2026-11-04T09:12:36.458098",
+      "trials": [
+        {
+          "case": "traffic-missing",
+          "agent": "codex",
+          "requestedModel": "neuralwatt/deepseek-v4.1-flash",
+          "requestedReasoning": "high",
+          "codexVersion": "0.166.0",
+          "provider": "neuralwatt",
+          "verifierMode": "separate",
+          "taskChecksum": "555f77195baa6092e47074b13180dc4022d16068890d7bcdae0b783cf3ffbc8e",
+          "hashes": {
+            "input": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "186616b6f7274dea5514f4815c9dfa9c5731f49b83ecbd1b8b9539207ac08c60",
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T09:08:17.293806Z",
+          "finishedAt": "2026-11-04T09:12:36.454243Z",
+          "usage": {
+            "inputTokens": 65519,
+            "cachedTokens": 63744,
+            "outputTokens": 6080,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": [
+              "answers/q1: incorrect outcome",
+              "metrics/m1: incorrect value, unit, or basis"
+            ]
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 supplies an unranked extrapolation of 31,867 for the exact-origin lookup that returned no match, so the value can be assigned only as a scenario, not as observed traffic."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 reports rank 5,000,000 only for https://wagtail.org, not the requested origin https://guide.wagtail.org, so the parent-domain rank cannot establish this origin's rank."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 records no match through rank 1,000,000, which establishes only that the exact origin was not found, not that its traffic is zero."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 31867,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "e1 provides 31,867 as the unranked extrapolation for the unmatched exact-origin lookup; it is a rank-derived scenario rather than established owner analytics or observed traffic."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "e1 shows the exact-origin lookup is unmatched while only a parent-domain rank and an unranked extrapolation are available, so extended coverage and matched owner analytics are needed to replace scenario uncertainty with evidence."
+              }
+            ]
+          }
+        }
+      ],
+      "accepted": 0,
+      "errors": 0
+    }
+  ]
+}
