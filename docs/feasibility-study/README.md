@@ -7,15 +7,15 @@ search:
   boost: 2
 ---
 
-# Agentic audits for web sustainability
+# Feasibility study
 
 Initial research: November 3, 2026. Tooling, benchmark, provider, portability, and carbon-rating updates: November 4, 2026.
 
 **Recommendation: build an evidence-based audit assistant around a versioned methodology, with deterministic checks first and bounded model reviews where interpretation is necessary.** This looks useful for finding improvements, assembling evidence, and maintaining an audit over time. Its suitability for autonomous sustainability assurance is unproven.
 
-!!! note "Research with an initial executable slice"
+!!! note "Research and proposed design"
 
-    The [first executable slice](first-slice.md) adds controlled browser fixtures, a six-case Harbor evidence-review benchmark, a shared skill, and initial Wagtail measurements. The broader architecture and evaluation targets remain proposals; the initial experiments do not establish audit accuracy or autonomous assurance.
+    This study assesses the suitability of agentic web sustainability audits. Its architecture and evaluation targets are proposals. Executed experiments, results, and the development roadmap are documented separately under [initial implementation work](../initial-implementation/README.md).
 
 ## Why this is promising
 
@@ -25,27 +25,20 @@ The Web Sustainability Guidelines (WSG) cover user experience, development, host
 
 The strongest initial product would answer: **“What can we substantiate, what should we investigate, and what should we change next?”** Each answer should identify its evidence, scope, methodology version, and uncertainty.
 
-The accepted direction is a public-site audit that also uses supplied source code and internal documents when relevant. Use Harbor for the benchmark, with Neuralwatt DeepSeek V4.1 Flash and Codex in model-bearing release comparisons. Share skills across Codex, Claude Code, OpenCode, and pi through small host adapters. Add Digital Carbon Ratings as a distinct deterministic reporting layer. The [validation roadmap](validation-roadmap.md) identifies what to establish before expanding implementation.
+The accepted direction is a public-site audit that also uses supplied source code and internal documents when relevant. Use Harbor for the benchmark, with Neuralwatt DeepSeek V4.1 Flash and Codex in model-bearing release comparisons. Share skills across Codex, Claude Code, OpenCode, and pi through small host adapters. Add Digital Carbon Ratings as a distinct deterministic reporting layer. The [validation roadmap](../initial-implementation/validation-roadmap.md) identifies what to establish before expanding implementation.
 
-## Read the research
+## Read the study
 
-For where to test the approach, start with [demo sites and benchmark targets](test-sites.md): STAR fixture seeds, a runnable application, and a small real-world sample.
+| Document                                                   | Purpose                                                                        |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [Proposed audit architecture](architecture.md)             | Workflow, candidate checks, skills, sub-agents, and evidence contracts         |
+| [Portable audits and project evidence](portable-audits.md) | Shared skills, harness adapters, and optional source/internal context          |
+| [Decision models](decision-models.md)                      | Jev/Clef suitability, narrow judgments, uncertainty, and escalation            |
+| [Decision-model examples](decision-model-examples.md)      | Lessons from jevotron and jev-ultrafast, including the offline request preview |
+| [Evaluation approach](evaluation.md)                       | Reference judgments, controlled comparisons, metrics, and release gates        |
+| [Sources and research method](sources.md)                  | Dated sources, inspected revisions, inventory reproduction, and limitations    |
 
-| Document                                                              | Purpose                                                                                     |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [WSG and STAR](../knowledge-base/wsg-and-star.md)                     | Standards status, methodology, data inspection, and measurement limits                      |
-| [Digital Carbon Ratings](../knowledge-base/digital-carbon-ratings.md) | SWDM v4 ratings, calculation profiles, thresholds, and reporting limits                     |
-| [Local audit projects](local-projects.md)                             | Concrete patterns from claude-seo and accessibility-agents                                  |
-| [Deterministic tools](deterministic-tools.md)                         | Executable local tools, existing measurement engines, Playwright, and agent-browser         |
-| [Audit architecture](architecture.md)                                 | Division of work, candidate checks, sub-agents, skills, evidence, and reporting             |
-| [Portable audits and project evidence](portable-audits.md)            | Shared skills, harness adapters, public-only and internally assisted audits                 |
-| [Decision models](decision-models.md)                                 | Jev/Clef suitability, narrow judgments, escalation, and model comparison                    |
-| [Decision-model examples](decision-model-examples.md)                 | jevotron evidence review, Jev-ultrafast browser decisions, and an offline request preview   |
-| [Evaluation plan](evaluation.md)                                      | Datasets, baselines, metrics, release gates, and methodology changes                        |
-| [Harbor benchmark](benchmark.md)                                      | Overall tracks, twelve initial case families, grader design, and optional Inspect/Promptfoo |
-| [Model and provider comparisons](model-comparison.md)                 | DeepSeek/Neuralwatt, Codex, Clef/Jev, API contracts, and energy accounting                  |
-| [Validation roadmap](validation-roadmap.md)                           | Implementation sequence and evidence needed for the next decisions                          |
-| [Sources and research method](sources.md)                             | Dated sources, pinned repositories, reproducible observations, and limitations              |
+For reusable methodology and tool references, use the [knowledge base](../knowledge-base/README.md). For runnable components, benchmark plans, test sites, and observed results, use [initial implementation work](../initial-implementation/README.md).
 
 ## Where to use each method
 
@@ -68,7 +61,7 @@ Use a fixed workflow for known checks. Allow agents to investigate only bounded 
 
 Avoid starting with one agent per WSG criterion. A small set of specialists sharing captured evidence is easier to evaluate and less likely to duplicate browsing. Make a multi-agent design earn its complexity against a single-reviewer baseline.
 
-The tooling follow-up recommends a small Playwright collector, axe-core safeguards, and imported Lighthouse diagnostics, with Sitespeed.io evaluated before building extensive measurement infrastructure. Use agent-browser or typed browser decisions for bounded discovery and journey authoring, then replay validated scenarios for comparisons. Measure collection quality independently from review quality. See the [tool selection and capture protocol](deterministic-tools.md).
+The tooling follow-up recommends a small Playwright collector, axe-core safeguards, and imported Lighthouse diagnostics, with Sitespeed.io evaluated before building extensive measurement infrastructure. Use agent-browser or typed browser decisions for bounded discovery and journey authoring, then replay validated scenarios for comparisons. Measure collection quality independently from review quality. See the [tool selection and capture protocol](../knowledge-base/deterministic-tools.md).
 
 ## Decisions to defer until the pilot
 

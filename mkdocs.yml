@@ -7,7 +7,7 @@
 # Convention: most changes to `markdown_extensions`, `plugins`, and theme `features` need a comment explaining what the option does.
 # ---------------------------------------------------------------------------
 
-site_name: Project workspace
+site_name: Web sustainability agents
 repo_url: https://github.com/thibaudcolas/web-sustainability-agents
 site_url: https://thibaudcolas.github.io/web-sustainability-agent/
 docs_dir: docs
@@ -23,7 +23,7 @@ watch:
 # "Edit on GitHub" links point to the source Markdown on the main branch.
 edit_uri: edit/main/docs
 
-site_description: A shared workspace for project documentation.
+site_description: Research and implementation of agentic web sustainability audits.
 repo_name: thibaudcolas/web-sustainability-agents
 # Avoid clashes with other docs servers running on the default 8000 port.
 dev_addr: localhost:8001
@@ -179,10 +179,12 @@ plugins:
           - contributing/style-guide.md
           - contributing/quality-assurance.md
           - contributing/architecture.md
+        Feasibility study:
+          - feasibility-study/*.md
+        Initial implementation work:
+          - initial-implementation/*.md
         Knowledge base:
           - knowledge-base/*.md
-        Agentic sustainability audits:
-          - agentic-audits/*.md
   # Collect page and folder tags into the listing marked in tags.md.
   - tags
 
@@ -199,6 +201,29 @@ validation:
 
 nav:
   - Home: index.md
+  - Feasibility study:
+      - feasibility-study/README.md
+      - Proposed audit architecture: feasibility-study/architecture.md
+      - Portable audits and project evidence: feasibility-study/portable-audits.md
+      - Decision models: feasibility-study/decision-models.md
+      - Decision-model examples: feasibility-study/decision-model-examples.md
+      - Evaluation approach: feasibility-study/evaluation.md
+      - Sources and research method: feasibility-study/sources.md
+  - Initial implementation work:
+      - initial-implementation/README.md
+      - First executable slice and results: initial-implementation/first-slice.md
+      - Harbor benchmark: initial-implementation/benchmark.md
+      - Demo sites and benchmark targets: initial-implementation/test-sites.md
+      - Model comparison plan: initial-implementation/model-comparison.md
+      - Validation roadmap: initial-implementation/validation-roadmap.md
+      - Sources and implementation evidence: initial-implementation/sources.md
+  - Knowledge base:
+      - knowledge-base/README.md
+      - WSG and STAR: knowledge-base/wsg-and-star.md
+      - Digital Carbon Ratings: knowledge-base/digital-carbon-ratings.md
+      - Deterministic audit tools: knowledge-base/deterministic-tools.md
+      - Lessons from existing audit projects: knowledge-base/local-projects.md
+      - Model providers and inference accounting: knowledge-base/provider-capabilities.md
   - Agent skills: agent-skills.md
   - Tags: tags.md
   - Contributing:
@@ -206,22 +231,3 @@ nav:
       - Documentation style guide: contributing/style-guide.md
       - Quality assurance: contributing/quality-assurance.md
       - Project architecture: contributing/architecture.md
-  - Knowledge base:
-      - knowledge-base/README.md
-      - WSG and STAR: knowledge-base/wsg-and-star.md
-      - Digital Carbon Ratings: knowledge-base/digital-carbon-ratings.md
-  - Agentic sustainability audits:
-      - agentic-audits/README.md
-      - Local audit projects: agentic-audits/local-projects.md
-      - Deterministic tools: agentic-audits/deterministic-tools.md
-      - Audit architecture: agentic-audits/architecture.md
-      - Portable audits and project evidence: agentic-audits/portable-audits.md
-      - Decision models: agentic-audits/decision-models.md
-      - Decision-model examples: agentic-audits/decision-model-examples.md
-      - Evaluation plan: agentic-audits/evaluation.md
-      - Harbor benchmark: agentic-audits/benchmark.md
-      - First executable slice: agentic-audits/first-slice.md
-      - Demo sites and benchmark targets: agentic-audits/test-sites.md
-      - Model and provider comparisons: agentic-audits/model-comparison.md
-      - Validation roadmap: agentic-audits/validation-roadmap.md
-      - Sources and research method: agentic-audits/sources.md

@@ -1,7 +1,7 @@
 [project]
-name = "project-workspace"
+name = "web-sustainability-agents"
 version = "0.0.0"
-description = "A shared workspace for project documentation."
+description = "Research and implementation of agentic web sustainability audits."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.14"

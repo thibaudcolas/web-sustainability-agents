@@ -1,59 +1,31 @@
-# Research workspace template
+# Web sustainability agents
 
-A reusable starting point workspace for research and documentation projects: site builder, link checking, linting and formatting, CI.
+Research and implementation of agentic web sustainability audits, combining deterministic checks, bounded model reviews, portable skills, and evaluations based on the Web Sustainability Guidelines (WSG).
 
-This is a template, with placeholder content in a few places like `docs/`. Replace it with real content when using the template.
+## Documentation
 
-## What's included
+- [Feasibility study](docs/feasibility-study/README.md): research findings, proposed architecture, decision models, and evaluation approach.
+- [Initial implementation work](docs/initial-implementation/README.md): the runnable audit slice, Harbor benchmark, observed results, and validation roadmap.
+- [Knowledge base](docs/knowledge-base/README.md): reusable methodology, tooling, and provider references.
 
-| Concern                 | Tool                                                                               |
-| ----------------------- | ---------------------------------------------------------------------------------- |
-| Documentation site      | [MkDocs](https://www.mkdocs.org/) + Material for MkDocs, built strictly in CI      |
-| Task runner             | [just](https://github.com/casey/just) (`justfile`)                                 |
-| Python deps             | [uv](https://github.com/astral-sh/uv) (`pyproject.toml`)                           |
-| Python lint/format      | [ruff](https://github.com/astral-sh/ruff)                                          |
-| Type checking           | [mypy](https://mypy-lang.org/) + [ty](https://docs.astral.sh/ty/)                  |
-| Formatting (non-Python) | [prettier](https://prettier.io)                                                    |
-| Git hooks               | [prek](https://prek.j178.dev/) (`prek.toml`)                                       |
-| Link checking           | [lychee](https://lychee.cli.rs) (`lychee.toml`)                                    |
-| CI + deploy             | GitHub Actions: lint, strict docs build, Pages deploy (`.github/workflows/ci.yml`) |
-
-## Site features
-
-Configured in `mkdocs.yml` (each option commented inline):
-
-- Light/dark themes with a custom local color palette (`docs/theme/theme.css`).
-- Last-modified dates from git history per page.
-- [Tag index](docs/tags.md): page tags and shared folder metadata group related documentation.
-- `llms.txt` / `llms-full.txt` generation for LLM consumption.
-- [Agent skill publishing](docs/agent-skills.md), with raw skill files and discovery catalogs under `.well-known/`.
-- Abbreviation tooltips: `docs/contributing/abbreviations.md` is auto-appended to every page.
-- Strict link and nav validation: pages must be in `nav` or opted out; broken anchors fail the build.
+The initial implementation is a development experiment. Its small benchmark does not establish general audit accuracy or autonomous sustainability assurance.
 
 ## Getting started
 
-Requirements: `uv`, `just`, `prek`, `lychee`, Node.js (`node-version` pins the version).
+Requirements: `uv`, `just`, `prek`, `lychee`, and Node.js (pinned in `.node-version`). Harbor and Docker are additional requirements for the model benchmarks.
 
 ```sh
-just init      # Install dependencies, set up hooks
-just docs      # Serve the docs locally on http://localhost:8001
-just build-docs  # Strict build (what CI runs)
-just lint      # ruff + mypy + ty + prettier checks
-just test      # Skill publishing tests
-just format    # Auto-format
-just check-links  # Link check (requires lychee)
+just init         # Install dependencies, browser, and hooks
+just docs         # Serve documentation on http://localhost:8001
+just build-docs   # Build the documentation strictly
+just lint         # Run lint, type, formatting, and prose checks
+just test         # Run documentation, publishing, collector, and grader tests
+just check-links  # Check local Markdown links
 ```
 
-## Customization checklist
+See [Contributing](docs/contributing/README.md) for the full workflow, [the executable slice](docs/initial-implementation/first-slice.md) for benchmark commands, and [Agent skills](docs/agent-skills.md) for skill installation and publishing.
 
-When starting a new project from this template:
-
-1. Rename the project in `pyproject.toml`, `package.json`, and `README.md`.
-2. Set `repo_url`, `site_url`, `repo_name` in `mkdocs.yml` (search for `thibaudcolas/research-workspace-template` placeholders).
-3. Replace `docs/` placeholder content with real content, and update `nav` plus the `llmstxt` `sections` in `mkdocs.yml` to match.
-4. Update `site_name`, `site_description`, logos, and favicon in `docs/theme/`.
-5. Enable GitHub Pages from GitHub Actions in the repository settings (the workflow deploys on push to `main`).
-6. Adapt the starter skill in `.agents/skills/research-workspace/` to your workspace. Every skill in `.agents/skills/` is published with the docs.
+The documentation uses MkDocs and Material, with search, tags, source links, and generated `llms.txt` / `llms-full.txt`. The workspace originated from [research-workspace-template](https://github.com/thibaudcolas/research-workspace-template).
 
 ## License
 

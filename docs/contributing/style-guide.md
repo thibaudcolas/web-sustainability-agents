@@ -104,11 +104,11 @@ This example is relative to `docs/index.md`:
 
     [Browse the knowledge base](knowledge-base/README.md)
 
-- **Agentic sustainability audits**
+- **Feasibility study**
 
-    Research and design proposals for sustainability audits.
+    Research and design proposals for agentic sustainability audits.
 
-    [Read the audit research](agentic-audits/README.md)
+    [Read the feasibility study](feasibility-study/README.md)
 
 </div>
 ```
@@ -133,6 +133,6 @@ print("Hello")
 
 ## Links
 
-Link to other docs pages with relative Markdown links (`[Contributing](../contributing/README.md)`). Avoid root-relative paths such as `/contributing/`: the strict build rejects them, and they omit the repository path on GitHub Pages. Use full URLs for external sources.
+Link to other docs pages with relative Markdown links (`[Contributing](README.md)`). Avoid root-relative paths such as `/contributing/`: the strict build rejects them, and they omit the repository path on GitHub Pages. Use full URLs for external sources.
 
 [Bulleted lists]: https://developers.google.com/tech-writing/one/lists-and-tables

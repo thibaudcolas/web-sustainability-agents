@@ -1,6 +1,6 @@
 # Proposed audit architecture
 
-This is a design proposal informed by the [standards research](../knowledge-base/wsg-and-star.md) and [local project review](local-projects.md). It has not been implemented or benchmarked.
+This is a design proposal informed by the [standards research](../knowledge-base/wsg-and-star.md) and [local project review](../knowledge-base/local-projects.md). It has not been implemented or benchmarked.
 
 ## Workflow and responsibilities
 
@@ -17,9 +17,9 @@ Use this sequence, with bounded returns to evidence collection when a reviewer i
 
 The orchestrator owns state transitions, budgets, retries, and aggregation. A model can propose an additional capture, but code checks its scope and remaining budget. No agent may silently redefine a criterion, change a measurement, or promote a suggestion into an established finding.
 
-Decision models can also select bounded discovery actions before or during collection, as illustrated by [jev-ultrafast](decision-model-examples.md). Keep this adaptive phase distinct from repeatable baseline measurements. The [deterministic tool review](deterministic-tools.md) specifies candidate engines, capture conditions, and instrumentation effects; a tool's output is not automatically a WSG conclusion.
+Decision models can also select bounded discovery actions before or during collection, as illustrated by [jev-ultrafast](decision-model-examples.md). Keep this adaptive phase distinct from repeatable baseline measurements. The [deterministic tool review](../knowledge-base/deterministic-tools.md) specifies candidate engines, capture conditions, and instrumentation effects; a tool's output is not automatically a WSG conclusion.
 
-Public-only collection is the default. The [portable audit contract](portable-audits.md) adds source-assisted and organization-assisted modes without assuming the working directory represents the deployed site. Shared skills and result schemas are portable; native sub-agent configuration belongs in harness adapters with a sequential fallback. Evaluate these modes through the [Harbor benchmark](benchmark.md).
+Public-only collection is the default. The [portable audit contract](portable-audits.md) adds source-assisted and organization-assisted modes without assuming the working directory represents the deployed site. Shared skills and result schemas are portable; native sub-agent configuration belongs in harness adapters with a sequential fallback. Evaluate these modes through the [Harbor benchmark](../initial-implementation/benchmark.md).
 
 ## Candidate checks
 

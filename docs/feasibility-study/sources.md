@@ -4,7 +4,7 @@ Initial research conducted November 3, 2026; tooling, local decision models, rat
 
 ## Scope and method
 
-The investigation combined primary-source web research, direct inspection of public source files, and read-only inspection of `local/claude-seo` and `local/accessibility-agents`. Both local working trees were clean at inspection. Their commit IDs appear in [the local project review](local-projects.md).
+The investigation combined primary-source web research, direct inspection of public source files, and read-only inspection of `local/claude-seo` and `local/accessibility-agents`. Both local working trees were clean at inspection. Their commit IDs appear in [the local project review](../knowledge-base/local-projects.md).
 
 The work included:
 
@@ -68,7 +68,7 @@ The November 4 investigation inspected executable collectors, wrappers, report a
 | `local/jevotron`             | `300a67b332dbb6bb6a18fc39532dffcb18fe8055` | Request/configuration schemas, cache, batching, reports, trace-evaluation example                |
 | `local/jev-ultrafast`        | `544b0b1d5db220c663d4ba41e217d122435a1054` | Browser loop, typed choices, state validation, accessibility probes, benchmark scope             |
 
-The [deterministic-tool review](deterministic-tools.md) and [decision-model examples](decision-model-examples.md) link each source-level finding to the relevant commit permalink. A source inspection identifies implementation behavior and possible defects; it is not a runtime reproduction or a complete security or quality review of those projects.
+The [deterministic-tool review](../knowledge-base/deterministic-tools.md) and [decision-model examples](decision-model-examples.md) link each source-level finding to the relevant commit permalink. A source inspection identifies implementation behavior and possible defects; it is not a runtime reproduction or a complete security or quality review of those projects.
 
 Additional primary documentation reviewed:
 
@@ -91,7 +91,7 @@ WSG and impact-rating links now point to the canonical latest published addresse
 
 ## Ratings, benchmark, providers, and portability follow-up
 
-The second November 4 extension follows the requested Harbor/Neuralwatt direction and adds optional project evidence to the audit design. The [validation roadmap](validation-roadmap.md) separates accepted design choices from unverified implementation behavior.
+The second November 4 extension follows the requested Harbor/Neuralwatt direction and adds optional project evidence to the audit design. The [validation roadmap](../initial-implementation/validation-roadmap.md) separates accepted design choices from unverified implementation behavior.
 
 | Sources                                                                                                                                                                                                                                                                                                                                                       | Research use                                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -107,15 +107,15 @@ The second November 4 extension follows the requested Harbor/Neuralwatt directio
 | [Claude skills](https://code.claude.com/docs/en/skills), [Claude subagents](https://code.claude.com/docs/en/sub-agents), [OpenCode skills](https://docs.opencode.ai/docs/skills/), [OpenCode agents](https://docs.opencode.ai/docs/agents/)                                                                                                                   | Host-specific discovery and delegation                                                   |
 | [pi skills](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/skills.md), [pi subagent extension](https://github.com/earendil-works/pi-subagent)                                                                                                                                                                                      | Standard skills support and optional delegation adapter                                  |
 
-Direct HTTPS retrieval supplied Harbor Markdown pages and CO2.js source where web extraction was incomplete. Some Neuralwatt Markdown endpoints returned 403; their ordinary HTML pages were readable. The public model catalog was retrieved without authentication; the [saved excerpt and response digest](assets/neuralwatt-model-snapshot.json) identify the observation. The local Codex CLI version/help were inspected before checking the current official documentation.
+Direct HTTPS retrieval supplied Harbor Markdown pages and CO2.js source where web extraction was incomplete. Some Neuralwatt Markdown endpoints returned 403; their ordinary HTML pages were readable. The public model catalog was retrieved without authentication; the [saved excerpt and response digest](../knowledge-base/assets/neuralwatt-model-snapshot.json) identify the observation. The local Codex CLI version/help were inspected before checking the current official documentation.
 
-No credentials were read, no authenticated provider calls were made, and no model comparisons were executed. CO2.js source was inspected but not run. Harbor/Inspect/Promptfoo integrations were researched, not installed or benchmarked. The [benchmark seed plan](assets/benchmark-plan.json) contains public development specifications and expected behaviors, not executable tasks or a hidden evaluation set. The workspace-assisted protocol is a proposed design to validate with paired evidence conditions.
+No credentials were read, no authenticated provider calls were made, and no model comparisons were executed. CO2.js source was inspected but not run. Harbor/Inspect/Promptfoo integrations were researched, not installed or benchmarked. The [benchmark seed plan](../initial-implementation/assets/benchmark-plan.json) contains public development specifications and expected behaviors, not executable tasks or a hidden evaluation set. The workspace-assisted protocol is a proposed design to validate with paired evidence conditions.
 
 ## Reproducing the inventory
 
-The November 4 [demo/test-site follow-up](test-sites.md) rechecked the STAR repository revision and JSON/tree mapping: 116 declared URLs, 113 corresponding files, and 119 total HTML files in the test directory. It inspected five fixture bodies, including consent and retention examples, and reviewed the primary bakerydemo, headless demo, archive, LOW←TECH, and GOV.UK sources linked on that page. These were source/document inspections, not executed browser tests or audited reference sites.
+The November 4 [demo/test-site follow-up](../initial-implementation/test-sites.md) rechecked the STAR repository revision and JSON/tree mapping: 116 declared URLs, 113 corresponding files, and 119 total HTML files in the test directory. It inspected five fixture bodies, including consent and retention examples, and reviewed the primary bakerydemo, headless demo, archive, LOW←TECH, and GOV.UK sources linked on that page. These were source/document inspections, not executed browser tests or audited reference sites.
 
-Download the [source inventory manifest](assets/source-inventory.json) for retrieval URLs, SHA-256 digests, repository revisions, counts, and missing paths. The JSON files retrieved from the live sites were byte-identical to their pinned raw GitHub versions. The published HTML was separately inspected; the JSON's declared date is not treated as its publication date.
+Download the [source inventory manifest](../knowledge-base/assets/source-inventory.json) for retrieval URLs, SHA-256 digests, repository revisions, counts, and missing paths. The JSON files retrieved from the live sites were byte-identical to their pinned raw GitHub versions. The published HTML was separately inspected; the JSON's declared date is not treated as its publication date.
 
 This Python snippet reproduces the structural counts and unmatched IDs from the pinned sources. It performs read-only network requests and prints derived data; it does not test any website's sustainability.
 
@@ -169,7 +169,7 @@ Useful follow-up research includes a complete criterion/technique crosswalk, rev
 
 ## Repository verification
 
-The subsequent [first executable slice](first-slice.md) records actual browser and provider experiments, their artifacts, and limitations. Earlier verification entries below describe the research stages at the time they were completed.
+The subsequent [first executable slice](../initial-implementation/first-slice.md) records actual browser and provider experiments, their artifacts, and limitations. Earlier verification entries below describe the research stages at the time they were completed.
 
 The documentation work was checked with `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`; all passed. The inventory reproduction snippet also returned the documented counts and unmatched IDs. Formatting, Ruff, `ty`, and Vale checks passed.
 
@@ -179,19 +179,4 @@ The first November 4 follow-up passed `just lint`, `just build-docs`, `just test
 
 The ratings/benchmark/provider/portability extension passed the same five checks, again with 11 tests. Its external check reported zero errors and four redirects. The benchmark-plan JSON was also checked for twelve unique case families, both required campaign arms, and explicit design-only status. These checks validate repository quality and source-link availability, not the proposed audit methodology or provider integrations.
 
-## Executable-slice evidence, November 4
-
-The subsequent implementation uses Playwright 1.64.1, CO2.js 0.19.0, Harbor 0.23.0, Codex CLI 0.166.0, and the npm-distributed OpenCode 1.19.5. The local `opencode --version` reported 2.2.5, but `opencode-ai@2.2.5` was unavailable in the registry used by Harbor. Record those as distinct installations rather than assuming interchangeable version numbers. Package versions were checked against the npm registry; runtime dependencies are recorded in `package-lock.json` and the benchmark configurations.
-
-| Evidence                       | Source and interpretation                                                                                                                                                                                                                                                                            |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Controlled observations        | `benchmarks/corpus.json`; actual cold/warm captures of original project-owned fixtures, with browser/protocol metadata and hashes                                                                                                                                                                    |
-| Live targets                   | [Guide homepage](https://guide.wagtail.org/en/), [image-management instructions](https://guide.wagtail.org/en/how-to-guides/manage-images/), [Wagtail homepage](https://wagtail.org/), [sustainability page](https://wagtail.org/sustainability/); [sanitized observations](assets/live-sample.json) |
-| Provider preflight             | [Sanitized DeepSeek tool-call response](assets/provider-preflight.json); one authenticated request, including provider-attributed energy and cost                                                                                                                                                    |
-| Harbor integration             | [Separate verifier documentation](https://docs.harborframework.com/tasks/separate-verifier), [environment-variable boundaries](https://docs.harborframework.com/jobs/environment-variables), and inspection of the installed 0.23.0 implementation                                                   |
-| Neuralwatt routing             | [OpenCode integration](https://docs.neuralwatt.com/integrations/opencode); actual model requests through its OpenAI-compatible adapter                                                                                                                                                               |
-| OpenCode failure investigation | [Harbor issue 4019](https://github.com/harbor-framework/harbor/issues/4019) describes a matching completed-output/nonzero-exit symptom. This similarity does not establish the underlying cause in our environment.                                                                                  |
-
-The source-assisted fixture uses a runner-supplied excerpt and deployment identity. It is a controlled context test, not independent verification of a production deployment. The incomplete case removes observations deliberately; it is distinct from the collector's actual HTTP-error test. The [checkpoint](first-slice.md) distinguishes these development cases from broader methodology and accuracy claims.
-
-The executable slice passed `just lint`, `just build-docs`, `just test` (11 Python tests and 7 JavaScript tests), `just check-links`, and `just check-external-links`. The skill metadata validator also passed. Six oracle controls passed, six no-operation controls failed their grader as intended, and both required model arms produced reports for all six revised cases. OpenCode's six execution errors and Harbor's historical Codex redaction corruption are recorded separately from grader acceptance. Published restored artifacts were regraded against their original references, with matching rewards; identical-input hashes were checked across model arms.
+See the [implementation evidence ledger](../initial-implementation/sources.md) for executed experiments and their validation.

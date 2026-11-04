@@ -6,6 +6,8 @@ Research date: November 4, 2026. This extends the [initial local project review]
 
 “Deterministic” describes a calculation or rule applied to supplied observations. It does not make the web, timing measurements, or a tool's interpretation deterministic. Preserve the observation separately from the rule result, and distinguish a failed capture from a failed check.
 
+The [initial implementation](../initial-implementation/README.md) records which components have actually been built and tested. The recommendations here remain a reusable tooling reference.
+
 ## What to adopt, adapt, and build
 
 | Component                             | Proposed use                                                          | Ownership decision                            | Important limit                                                |
@@ -21,9 +23,9 @@ Research date: November 4, 2026. This extends the [initial local project review]
 | Green Metrics Tool                    | Measure controlled workloads on owned infrastructure                  | Later laboratory investigation                | Host measurements have a specific hardware and system boundary |
 | agent-browser                         | Bounded exploration and creation of candidate journeys                | Compare with scripted collection              | An agent choosing commands is a separate source of variability |
 
-This is a proposed selection, not a ranking established by testing. The [source ledger](sources.md#deterministic-tool-follow-up) records the reviewed versions and documentation.
+This is a proposed selection, not a ranking established by testing. The [source ledger](../feasibility-study/sources.md#deterministic-tool-follow-up) records the reviewed versions and documentation.
 
-The next design update adds [Digital Carbon Ratings through a pinned CO2.js adapter](../knowledge-base/digital-carbon-ratings.md). Optional repository/source analysis belongs in the [source-assisted audit mode](portable-audits.md), where code findings are corroborated against the deployed observations rather than assumed to describe production.
+The next design update adds [Digital Carbon Ratings through a pinned CO2.js adapter](digital-carbon-ratings.md). Optional repository/source analysis belongs in the [source-assisted audit mode](../feasibility-study/portable-audits.md), where code findings are corroborated against the deployed observations rather than assumed to describe production.
 
 ### Existing performance engines
 
@@ -107,7 +109,7 @@ HAR and trace export make agent-browser a credible collection candidate, not jus
 
 Use an isolated browser profile for measurements. agent-browser's named sessions can isolate browser state when launching separate browsers, but attaching different sessions to the same existing CDP browser shares its profile. A different tab is not a clean cookie or cache boundary. [Session documentation](https://agent-browser.dev/sessions).
 
-The initial recommendation is therefore **scripted Playwright for the small pilot, with a time-boxed Sitespeed.io comparison before building extensive reporting**. Use agent-browser or the [Jev-ultrafast approach](decision-model-examples.md) to discover and propose journeys; validate those journeys, then replay stable scenarios for comparisons. Evaluate adaptive collection separately where a fixed script is genuinely inadequate.
+The initial recommendation is therefore **scripted Playwright for the small pilot, with a time-boxed Sitespeed.io comparison before building extensive reporting**. Use agent-browser or the [Jev-ultrafast approach](../feasibility-study/decision-model-examples.md) to discover and propose journeys; validate those journeys, then replay stable scenarios for comparisons. Evaluate adaptive collection separately where a fixed script is genuinely inadequate.
 
 ## Candidate checks and their evidence boundaries
 
@@ -126,7 +128,7 @@ The following are proposed implementation units, not an authoritative mapping to
 | Accessibility regression | Raw axe findings and explicit interaction assertions              | Manual checks and user impact beyond automation                 |
 | Policy evidence          | Document retrieval, dates, evidence spans, links                  | What the statement establishes and whether practice matches it  |
 
-A deterministic result can be as narrow as “this image was requested before scrolling in this state.” Whether that violates an applicable sustainability requirement is a separate decision. Conversely, a missing header is sometimes directly testable without any model call. The [architecture](architecture.md) explains how to retain both facts and criterion-level conclusions.
+A deterministic result can be as narrow as “this image was requested before scrolling in this state.” Whether that violates an applicable sustainability requirement is a separate decision. Conversely, a missing header is sometimes directly testable without any model call. The [architecture](../feasibility-study/architecture.md) explains how to retain both facts and criterion-level conclusions.
 
 ## Capture protocol before more tools
 
@@ -148,10 +150,10 @@ Separate request bytes attributable to the application from collector-introduced
 
 Capture once per required state and let skills consume the resulting artifacts. A network specialist, media reviewer, and policy reviewer should not each repeat the same page load. Raw artifacts may contain credentials or personal content, so store a restricted original where needed and generate a sanitized review bundle with stable evidence references.
 
-## First implementation and acceptance checks
+## Collector acceptance checks
 
-The smallest useful delivery is a capture manifest, request records, selected DOM facts, raw axe results, and a report distinguishing observations, findings, and unknowns. Add adapters for imported Lighthouse results before adding another crawler. Use JSON Schema validation and explicit adapter versions; a missing report, incompatible schema, or empty sample must never become a pass.
+A useful collector should supply a capture manifest, request records, selected DOM facts, raw accessibility diagnostics, and a report distinguishing observations, findings, and unknowns. Add adapters for imported Lighthouse results before adding another crawler. Use JSON Schema validation and explicit adapter versions; a missing report, incompatible schema, or empty sample must never become a pass.
 
 Build controlled fixtures for compressed/uncompressed resources, cache reuse/revalidation, delayed images, autoplay, consent-dependent requests, persistent polling, redirects, and service-worker responses. Include a fixture in which instrumentation changes behavior, so that invalid measurement profiles are detected. Check expected requests and state transitions first; exact wall-clock timing is not a stable fixture assertion.
 
-Then run the same small set of journeys through Playwright and one alternative. Compare capture completeness, repeated-run variability, task completion, failures, maintenance effort, browser launches, transferred bytes, runtime, and artifact size. Review disagreements against the fixture or application evidence. Only after that comparison should we claim that a tool is accurate enough for a particular check. The [evaluation plan](evaluation.md) separates these collection tests from model quality and WSG interpretation.
+Then run the same small set of journeys through Playwright and one alternative. Compare capture completeness, repeated-run variability, task completion, failures, maintenance effort, browser launches, transferred bytes, runtime, and artifact size. Review disagreements against the fixture or application evidence. Only after that comparison should we claim that a tool is accurate enough for a particular check. The [evaluation plan](../feasibility-study/evaluation.md) separates these collection tests from model quality and WSG interpretation.

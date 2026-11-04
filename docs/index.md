@@ -1,15 +1,23 @@
-# Project workspace
+# Web sustainability agents
 
-A research workspace for agentic web sustainability audits.
+Research and implementation of agentic web sustainability audits: deterministic evidence collection, bounded model reviews, portable skills, and evaluations grounded in the Web Sustainability Guidelines (WSG).
 
-Start with [Agentic audits for web sustainability](agentic-audits/README.md) for the research findings, proposed architecture, and evaluation plan.
+## Feasibility study
 
-## Contents
+Can agents improve sustainability audits, and which parts need deterministic checks, model judgment, or human review? The study covers the proposed architecture, decision models, portability, evaluation approach, and research sources.
 
-We organize information across a small number of layers:
+[Read the feasibility study](feasibility-study/README.md).
 
-1. [Contributing](./contributing/README.md): guidance on how to work within this workspace. Read this first, for all types of tasks.
-2. [Knowledge base](./knowledge-base/README.md): general-purpose information relevant for a wide range of tasks.
-3. [Agentic sustainability audits](agentic-audits/README.md): project-specific research, design proposals, and sources.
+## Initial implementation work
 
-<!-- Replace the layers above with the layers that fit your project. Keep this file, `docs/README.md`, and `docs/contributing/architecture.md` in sync. -->
+The first working slice includes browser fixtures, a Playwright collector, a carbon-rating adapter, a shared review skill, and a Harbor benchmark. This section records what has run, the results and limitations, and what to validate next.
+
+[Explore the implementation and results](initial-implementation/README.md).
+
+## Knowledge base
+
+Reusable reference material on WSG and STAR, Digital Carbon Ratings, deterministic tools, existing audit projects, provider APIs, and inference accounting.
+
+[Browse the knowledge base](knowledge-base/README.md).
+
+For workspace tooling and conventions, see [Contributing](contributing/README.md). Published instructions for agents are listed under [Agent skills](agent-skills.md).

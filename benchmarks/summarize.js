@@ -156,5 +156,8 @@ for (const key of [
   if (output.includes(key))
     throw new Error("Refusing to publish a credential in the summary");
 }
-await writeFile("docs/agentic-audits/assets/first-slice-results.json", output);
+await writeFile(
+  "docs/initial-implementation/assets/first-slice-results.json",
+  output,
+);
 console.log(`Published allowlisted results for ${campaigns.length} campaigns`);

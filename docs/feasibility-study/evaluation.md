@@ -2,7 +2,7 @@
 
 **The evaluation target is a correct, useful, evidence-supported audit.** A schema-valid response, a plausible explanation, or a passing tool execution is insufficient. This plan is proposed; no results below are claimed as measured.
 
-The selected implementation direction is [Harbor for the overall benchmark](benchmark.md), with Inspect AI or Promptfoo only where they improve narrower diagnostics. Every model-bearing release campaign includes Neuralwatt DeepSeek V4.1 Flash and Codex; compare Jev and Neuralwatt Clef Flash on suitable typed decisions. The [provider plan](model-comparison.md) separates model effects from harness effects and specifies resource accounting.
+The selected implementation direction is [Harbor for the overall benchmark](../initial-implementation/benchmark.md), with Inspect AI or Promptfoo only where they improve narrower diagnostics. Every model-bearing release campaign includes Neuralwatt DeepSeek V4.1 Flash and Codex; compare Jev and Neuralwatt Clef Flash on suitable typed decisions. The [provider plan](../initial-implementation/model-comparison.md) separates model effects from harness effects and specifies resource accounting.
 
 ## Questions the evaluation must answer
 
@@ -32,7 +32,7 @@ Run deterministic contract checks on every relevant change. Run small model regr
 
 ## Collection and instrumentation experiments
 
-The [tool review](deterministic-tools.md) and [local decision-model examples](decision-model-examples.md) identify a separate question: does the collector obtain valid, sufficient evidence? Compare scripted Playwright with an established measurement harness or an adaptive driver before attributing differences to the reviewer.
+The [tool review](../knowledge-base/deterministic-tools.md) and [local decision-model examples](decision-model-examples.md) identify a separate question: does the collector obtain valid, sufficient evidence? Compare scripted Playwright with an established measurement harness or an adaptive driver before attributing differences to the reviewer.
 
 Use controlled fixtures with known request/state behavior. Include cold/warm cache, revalidation, compression, deferred media, consent differences, service workers, persistent polling, and inaccessible or unsupported controls. Assert observed requests and task outcomes, with tolerances for noisy measurements. Test adapter failures and missing fields explicitly.
 
@@ -44,7 +44,7 @@ For semantic reviewers, freeze the evidence across methods. Evaluate batching la
 
 ## Corpus and reference judgments
 
-Start by implementing and validating the twelve case families in the [benchmark seed plan](assets/benchmark-plan.json), then expand to a development corpus of 60–100 cases spread across a few pilot rules. Include passing, failing, inapplicable, insufficient-evidence, and collection-error cases. A larger dataset is required before making strong accuracy claims.
+Start by implementing and validating the twelve case families in the [benchmark seed plan](../initial-implementation/assets/benchmark-plan.json), then expand to a development corpus of 60–100 cases spread across a few pilot rules. Include passing, failing, inapplicable, insufficient-evidence, and collection-error cases. A larger dataset is required before making strong accuracy claims.
 
 Include at least these case families:
 
@@ -65,7 +65,7 @@ Split by site, template family, and organization where possible. Near-identical 
 
 Have two reviewers independently label semantic cases, then adjudicate disagreements. Include sustainability expertise and relevant UX, accessibility, or infrastructure knowledge. Retain initial labels, disagreement reasons, and unresolved cases. An unresolved normative dispute should not be converted into a fabricated ground truth.
 
-Grade findings by rule, target, state, and evidence, with documented matching rules. Do not require exact wording. Independently inspect unmatched findings before calling them false positives. Test the grader with deliberately duplicated findings, wrong locations, and paraphrases. The [local accessibility evaluation](local-projects.md#accessibility-agents) provides a useful starting example and a warning about matching errors.
+Grade findings by rule, target, state, and evidence, with documented matching rules. Do not require exact wording. Independently inspect unmatched findings before calling them false positives. Test the grader with deliberately duplicated findings, wrong locations, and paraphrases. The [local accessibility evaluation](../knowledge-base/local-projects.md#accessibility-agents) provides a useful starting example and a warning about matching errors.
 
 ## Controlled comparisons
 

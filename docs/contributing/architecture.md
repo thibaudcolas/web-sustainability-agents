@@ -4,15 +4,15 @@ How the workspace is organized, and the tooling that supports it.
 
 ## Content layers
 
-We organize information across a small number of layers:
+The documentation has three subject areas:
 
-1. [Contributing](README.md): guidance on how to work within this workspace.
-2. [Knowledge base](../knowledge-base/README.md): general-purpose information relevant for a wide range of tasks.
-3. [Agentic sustainability audits](../agentic-audits/README.md): project-specific research, design proposals, and sources.
+1. [Feasibility study](../feasibility-study/README.md): the case for agentic auditing, proposed architecture, decision models, and evaluation approach.
+2. [Initial implementation work](../initial-implementation/README.md): runnable components, benchmark design, actual results, and the validation roadmap.
+3. [Knowledge base](../knowledge-base/README.md): reusable methodology, tool reviews, and provider references.
 
-Each section folder uses a `README.md` as its landing page, so it also renders when browsing the folder on GitHub.
+[Contributing](README.md) documents workspace tooling and conventions. [Agent skills](../agent-skills.md) explains the published skills and discovery catalogs. Each subject area uses a `README.md` landing page for both MkDocs and GitHub browsing.
 
-<!-- Update the layers above to match your project, and keep them in sync with `docs/README.md` and `docs/index.md`. -->
+Keep reference facts in the knowledge base, proposals in the feasibility study, and execution evidence in the implementation project. Link between them instead of duplicating material. Store supporting assets beside the section that owns them, and update any scripts that publish to those paths when moving files.
 
 ## Documentation build
 
@@ -33,7 +33,7 @@ The native MkDocs hook in `scripts/publish_skills.py` copies `.agents/skills/` t
 
 ## Continuous integration
 
-[`.github/workflows/ci.yml`](https://github.com/thibaudcolas/research-workspace-template/blob/main/.github/workflows/ci.yml) runs on every push to `main` and on pull requests:
+[`.github/workflows/ci.yml`](https://github.com/thibaudcolas/web-sustainability-agents/blob/main/.github/workflows/ci.yml) runs on every push to `main` and on pull requests:
 
 - Python linting and formatting checks (`ruff`), type checking (`mypy`, `ty`).
 - Non-Python formatting checks (`prettier`).

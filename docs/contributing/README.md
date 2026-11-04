@@ -20,8 +20,8 @@ See [Project architecture](architecture.md) for how the workspace and its toolin
 Clone the repository, configure the git hooks, then initialize with `just init`.
 
 ```sh
-git clone git@github.com:thibaudcolas/research-workspace-template.git
-cd REPO/
+git clone git@github.com:thibaudcolas/web-sustainability-agents.git
+cd web-sustainability-agents/
 # Install everything.
 just init
 ```
@@ -42,7 +42,7 @@ Initialization installs Python and npm dependencies and downloads the pinned Val
 - `just audit-install`: Install the pinned Playwright Chromium browser used by audit tests.
 - `just benchmark-build`: Build Harbor development tasks from frozen fixture observations.
 - `just benchmark-controls`: Run the reference and no-operation agents through Harbor.
-- `just benchmark-neuralwatt` / `just benchmark-codex`: Run the bounded model campaigns; see the [executable slice](../agentic-audits/first-slice.md) for authentication and interpretation.
+- `just benchmark-neuralwatt` / `just benchmark-codex`: Run the bounded model campaigns; see the [executable slice](../initial-implementation/first-slice.md) for authentication and interpretation.
 - `just docs`: Build the documentation and serve it locally.
 
 ## Coding style & conventions
@@ -89,7 +89,7 @@ Every docs page must be listed in `nav`, or explicitly opted out:
 
 ```yaml
 not_in_nav: |
-  /agentic-audits/supporting-notes.md
+  /feasibility-study/supporting-notes.md
 ```
 
 This only suppresses navigation warnings; the page remains published and searchable. Use the [search controls](style-guide.md#search-controls) to adjust search separately.

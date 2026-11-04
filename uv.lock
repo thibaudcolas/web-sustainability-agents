@@ -481,7 +481,7 @@ wheels = [
 ]
 
 [[package]]
-name = "project-workspace"
+name = "web-sustainability-agents"
 version = "0.0.0"
 source = { virtual = "." }
 

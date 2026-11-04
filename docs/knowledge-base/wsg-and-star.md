@@ -8,7 +8,7 @@ tags:
 
 Reviewed November 3, 2026. This page separates source observations from recommendations for an audit implementation.
 
-WSG and impact-rating links use their latest published `/TR/` addresses, rechecked November 4. Both still identified the October 16 draft at that check. These URLs can advance; retain publication dates, content digests, and pinned supporting data when reproducing an assessment. See the [source inventory](../agentic-audits/assets/source-inventory.json).
+WSG and impact-rating links use their latest published `/TR/` addresses, rechecked November 4. Both still identified the October 16 draft at that check. These URLs can advance; retain publication dates, content digests, and pinned supporting data when reproducing an assessment. See the [source inventory](assets/source-inventory.json).
 
 ## Documents and authority
 
@@ -72,7 +72,7 @@ Three declared fixture paths are absent from the pinned repository tree and retu
 - `docs/test-suite/appropriate-implementation.html`
 - `docs/test-suite/disclosure-reporting.html`
 
-The [source ledger](../agentic-audits/sources.md#reproducing-the-inventory) provides the method and a downloadable manifest. Exact ID overlap is an integration diagnostic. It does **not** prove semantic equivalence, technique completeness, or reliable automation.
+The [source ledger](../feasibility-study/sources.md#reproducing-the-inventory) provides the method and a downloadable manifest. Exact ID overlap is an integration diagnostic. It does **not** prove semantic equivalence, technique completeness, or reliable automation.
 
 ## What the test suite establishes
 
@@ -123,4 +123,4 @@ For intervention studies, compare resource use per **successful task**, not only
 
 The [2024 general policy framework for ecodesign of digital services](https://www.arcep.fr/uploads/tx_gspublication/general_policy_framework_for_the_ecodesign_of_digital_services_version_2024.pdf), often called RGESN, offers another structured ecodesign assessment reference. Its [declaration example](https://www.arcep.fr/fileadmin/user_upload/nos-sujets/environnement/rgesn_2024_ecodesign_declaration_example.html) is useful for designing evidence and disclosure outputs. A future crosswalk should compare the exact obligations and evidence, rather than assume that related WSG and RGESN criteria are interchangeable.
 
-The [agentic audit proposal](../agentic-audits/README.md) uses WSG as its primary requirements inventory, STAR as supporting methodology, and these other tools as evidence producers or design references.
+The [agentic audit proposal](../feasibility-study/README.md) uses WSG as its primary requirements inventory, STAR as supporting methodology, and these other tools as evidence producers or design references.
