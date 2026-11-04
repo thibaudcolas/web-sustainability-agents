@@ -1,23 +1,17 @@
 # Web sustainability agents
 
-Research and implementation of agentic web sustainability audits: deterministic evidence collection, bounded model reviews, portable skills, and evaluations grounded in the Web Sustainability Guidelines (WSG).
+An agent-assisted workflow for auditing live websites against the Web Sustainability Guidelines: deterministic measurements, evidence-backed interpretation, scoped scores and repeatable evaluation. Source code and internal documents can strengthen an audit when available.
 
-## Feasibility study
+**Development preview:** the checkout and skills work today; plugin packaging and broader validation are still in progress.
 
-Can agents improve sustainability audits, and which parts need deterministic checks, model judgment, or human review? The study covers the proposed architecture, decision models, portability, evaluation approach, and research sources.
+| You want to…                                 | Start here                                                 |
+| -------------------------------------------- | ---------------------------------------------------------- |
+| Install and run an audit                     | [Use the audit](using/README.md)                           |
+| See what an audit produces                   | [Example reports](reports/README.md)                       |
+| Understand methodology, scoring or tools     | [Knowledge base](knowledge-base/README.md)                 |
+| Understand the research and design rationale | [Feasibility study](feasibility-study/README.md)           |
+| Follow implementation and next steps         | [Implementation project](initial-implementation/README.md) |
+| Review model comparisons and benchmark cases | [Evaluation project](evaluation/README.md)                 |
+| Change the code, docs or skills              | [Contributing](contributing/README.md)                     |
 
-[Read the feasibility study](feasibility-study/README.md).
-
-## Initial implementation work
-
-The workflow includes browser fixtures, staged measurements, carbon and energy adapters, skill-guided qualitative reviews, scoped scores, annual footprint scenarios, and Harbor benchmarks. This section records what has run, current coverage, limitations, and what to validate next.
-
-[Explore the implementation and results](initial-implementation/README.md).
-
-## Knowledge base
-
-Reusable reference material on WSG and STAR, Digital Carbon Ratings, deterministic tools, existing audit projects, provider APIs, and inference accounting.
-
-[Browse the knowledge base](knowledge-base/README.md).
-
-For workspace tooling and conventions, see [Contributing](contributing/README.md). Published instructions for agents are listed under [Agent skills](agent-skills.md).
+The preview identifies scoped improvements and evidence gaps. Its scores and small development benchmarks do not establish whole-site conformance or autonomous sustainability assurance.

@@ -2,7 +2,7 @@
 
 **The evaluation target is a correct, useful, evidence-supported audit.** A schema-valid response, a plausible explanation, or a passing tool execution is insufficient. This plan is proposed; no results below are claimed as measured.
 
-The selected implementation direction is [Harbor for the overall benchmark](../initial-implementation/benchmark.md), with Inspect AI or Promptfoo only where they improve narrower diagnostics. Every model-bearing release campaign includes Neuralwatt DeepSeek V4.1 Flash and Codex; compare Jev and Neuralwatt Clef Flash on suitable typed decisions. The [provider plan](../initial-implementation/model-comparison.md) separates model effects from harness effects and specifies resource accounting.
+The selected implementation direction is [Harbor for the overall benchmark](../evaluation/design.md), with Inspect AI or Promptfoo only where they improve narrower diagnostics. Every model-bearing release campaign includes Neuralwatt DeepSeek V4.1 Flash and Codex; compare Jev and Neuralwatt Clef Flash on suitable typed decisions. The [provider plan](../evaluation/models.md) separates model effects from harness effects and specifies resource accounting.
 
 ## Questions the evaluation must answer
 

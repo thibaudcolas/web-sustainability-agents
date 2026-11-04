@@ -1,8 +1,8 @@
-# Model comparison plan
+# Model comparison protocol
 
-Use Neuralwatt DeepSeek V4.1 Flash with high reasoning alongside GPT-6.1 Sol with low reasoning, both through Codex CLI. The [current checkpoint](review-checkpoint.md) records the active configuration and real-site comparisons. Compare decision models on the same semantic tasks before adding them to a full audit workflow. Distinguish model, provider, and harness effects.
+Use Neuralwatt DeepSeek V4.1 Flash with high reasoning alongside GPT-6.1 Sol with low reasoning, both through Codex CLI. The [evaluation overview](README.md) links completed campaigns and current limits. Compare decision models on the same semantic tasks before adding them to an audit workflow; distinguish model, provider and harness effects.
 
-The follow-up [first executable slice](first-slice.md#initial-benchmark-results) records completed trials and integration failures. The broader comparison arms below remain a plan. Provider contracts and energy-accounting caveats are maintained in the [knowledge-base reference](../knowledge-base/provider-capabilities.md).
+The table below describes the planned comparison arms. Sol/DeepSeek evidence-review campaigns have run; Jev/Clef routing and cross-harness parity remain experiments to validate. Provider contracts and energy-accounting caveats live in the [knowledge base](../knowledge-base/provider-capabilities.md).
 
 ## Initial experimental arms
 
@@ -15,7 +15,7 @@ The follow-up [first executable slice](first-slice.md#initial-benchmark-results)
 | Jev      | Same semantic cases through TypeSafe Jev                         | How does another decision model compare?                           |
 | Cascade  | Best validated decision layer plus generative escalation         | Does total quality/cost improve at the chosen acceptance coverage? |
 
-The rules arm has no inference. Decision-only arms cover questions within their interface; they are not standalone browser agents. The full release campaign includes DeepSeek and Codex even if a narrow Jev/Clef experiment uses only frozen inputs. Use the [benchmark](benchmark.md) to distinguish model, harness, and complete-system comparisons.
+The rules arm has no inference. Decision-only arms cover questions within their interface; they are not standalone browser agents. The full release campaign includes DeepSeek and Codex even if a narrow Jev/Clef experiment uses only frozen inputs. Use the [benchmark](design.md) to distinguish model, harness, and complete-system comparisons.
 
 Compare per-class precision/recall, unsupported passes, abstention, calibration, decision stability, finding quality, total latency, review effort, and cost. A generative model's written confidence is not directly comparable with a decision model's probability distribution. If probability calibration is compared, specify and validate how each system supplies probabilities.
 
@@ -25,4 +25,4 @@ Hold evidence, criterion wording, allowed tools, and practical budgets constant.
 
 Verify account-visible model discovery, a bounded generative/tool round trip, schema-valid output, one three-label decision request, truncation/error handling, usage retention, and successful artifact production in Harbor. Check that credentials reach only the intended agent or adapter process and are absent from logs. Use synthetic/public fixtures for initial tests.
 
-The preflight must include DeepSeek V4.1 Flash and Codex. Add Clef and Jev once access and their contracts are verified. Keep a failed or inaccessible arm visible as incomplete; do not substitute a different model and reuse its label. The [validation roadmap](validation-roadmap.md) makes these checks the first implementation milestone.
+The preflight must include DeepSeek V4.1 Flash and Codex. Add Clef and Jev once access and their contracts are verified. Keep a failed or inaccessible arm visible as incomplete; do not substitute a different model and reuse its label. Repeat this preflight when changing a provider or harness; the [validation roadmap](../initial-implementation/validation-roadmap.md) places the next work in sequence.

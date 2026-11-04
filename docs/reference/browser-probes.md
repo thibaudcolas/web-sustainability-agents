@@ -10,7 +10,7 @@ uv run --locked --script audit/probes.py \
   --output .audit-work/site-probes.json
 ```
 
-The [agent-triggered workflow](agent-driven-audits.md) coordinates this evidence with initial-load measurements, disclosures, and source review. This collector runs separately from headline byte and energy measurement. Its instrumentation and repeated states must not be counted as ordinary page traffic.
+The [agent-triggered workflow](../using/workflow.md) coordinates this evidence with initial-load measurements, disclosures, and source review. This collector runs separately from headline byte and energy measurement. Its instrumentation and repeated states must not be counted as ordinary page traffic.
 
 ## Repeatable observations
 
@@ -92,6 +92,6 @@ These are narrow expectations, not complete guideline tests. An agent can gather
 
 The plan has one origin, 1–20 pages, and at most ten journeys with twenty actions each. Page collection is bounded to 50 seconds, each separate no-JavaScript and cold-dark load to 30 seconds, each journey to 90 seconds, and context cleanup to five seconds. Evidence checkpoints preserve completed pages when later work fails. The output records the plan hash, browser version, timestamps, states, errors, and check definitions. Raw output permissions are private because page text and supplied input values can need review before publication.
 
-The localhost fixture tests exercise actual Chromium behavior: desktop versus narrow overflow, print navigation visibility, reduced-motion changes, no-JavaScript fallback content, labels, download links, unused function observations, explicit search completion, strong postconditions despite a visible generic heading, optional journey viewport, metadata, preference initialization, real Tab movement, bounded header filtering, and stopping after a failed action. They verify the collector contract, not the correctness of an LLM's qualitative judgments. The [methodology benchmark](methodology-benchmark.md) remains a separate frozen campaign; changes to skills and check definitions need their own evaluation inputs and results.
+The localhost fixture tests exercise actual Chromium behavior: desktop versus narrow overflow, print navigation visibility, reduced-motion changes, no-JavaScript fallback content, labels, download links, unused function observations, explicit search completion, strong postconditions despite a visible generic heading, optional journey viewport, metadata, preference initialization, real Tab movement, bounded header filtering, and stopping after a failed action. They verify the collector contract, not the correctness of an LLM's qualitative judgments. The [methodology benchmark](../initial-implementation/methodology-benchmark.md) remains a separate frozen campaign; changes to skills and check definitions need their own evaluation inputs and results.
 
 The fixture received a focused keyboard-specialist review. Its dark-theme focus indicator was adjusted to preserve contrast; deliberate narrow overflow and motion remain controlled test conditions. The review and browser assertions do not substitute for an accessibility audit of live sites.

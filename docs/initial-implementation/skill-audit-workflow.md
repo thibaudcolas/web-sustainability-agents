@@ -1,10 +1,19 @@
+---
+search:
+  boost: 0.5
+---
+
 # Skill-guided audit, scores, and coverage
+
+!!! note "Historical experiment"
+
+    This page preserves an earlier method and its results. Use the [current audit guide](../using/README.md) for instructions, [reports](../reports/README.md) for the latest site findings, and [evaluation](../evaluation/README.md) for model comparisons.
 
 The audit now combines measured evidence with explicit qualitative review roles. Separate GPT-6.1 Sol/low reviewers applied three skills to raw evidence for each site, without reading the previous human report conclusions. A deterministic publisher resolves their evidence references to actual JSON locations, and a calculator aggregates their scoped judgments. The coordinator inspected the findings; they are not independent owner ground truth.
 
-The [agent-triggered extension](agent-driven-audits.md) adds a separate 15-check rubric and new live reviews. This page preserves the original score campaign; that extension defined review areas in 32/71 groups across its two catalogs, not a merged score or complete guideline coverage.
+The [agent-triggered extension](../using/workflow.md) adds a separate 15-check rubric and new live reviews. This page preserves the original score campaign; that extension defined review areas in 32/71 groups across its two catalogs, not a merged score or complete guideline coverage.
 
-The [latest broader catalog](broader-checks.md) raises the union of scoped review methods to 39/71 groups and scores a new 33-check campaign. Historical numbers below remain tied to their original inputs.
+The [latest broader catalog](../reference/checks.md) raises the union of scoped review methods to 39/71 groups and scores a new 33-check campaign. Historical numbers below remain tied to their original inputs.
 
 ## Current score and expected WSG coverage
 

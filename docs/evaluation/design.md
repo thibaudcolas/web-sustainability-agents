@@ -2,7 +2,7 @@
 
 **Use Harbor as the primary benchmark runner and task format.** Establish one versioned web sustainability benchmark with separate knowledge, evidence-review, and end-to-end audit tracks. Use narrower skill evaluations to diagnose failures and improve components without changing the overall benchmark's meaning.
 
-This page defines the broader benchmark to build, with a [machine-readable seed plan](assets/benchmark-plan.json). The [first executable slice](first-slice.md) implements six development cases covering part of this design. The twelve families below remain expansion specifications. The [evaluation methodology](../feasibility-study/evaluation.md) remains the source for metrics, labeling, and release gates.
+This page defines the broader benchmark to build, with a [machine-readable seed plan](../initial-implementation/assets/benchmark-plan.json). The [campaign index](README.md) distinguishes the original six tasks from the three later development families. The twelve families below describe design targets, not a current executed-case inventory. The [evaluation methodology](../feasibility-study/evaluation.md) remains the source for metrics, labeling, and release gates.
 
 The [test-site shortlist](test-sites.md) maps this design to concrete material: adapted STAR examples, a pinned Wagtail bakerydemo, and a separately reported real-world sample. One site can supply several case families; a published example is not automatically a reviewed reference answer.
 
@@ -108,7 +108,7 @@ Separate three comparisons:
 
 Start with a sequential single-reviewer baseline. Then test shared skills, optional internal evidence, decision-model review, and delegated specialists as separate additions. Do not run the full cross-product of all models, harnesses, evidence modes, and prompts before finding which factors matter. Repeat stochastic trials, pair cases, report uncertainty, and include all retries and escalation costs.
 
-The [model/provider plan](model-comparison.md) gives the Neuralwatt and TypeSafe adapter details and energy accounting requirements.
+The [model/provider plan](models.md) gives the Neuralwatt and TypeSafe adapter details and energy accounting requirements.
 
 ## Inspect AI and Promptfoo
 
@@ -124,4 +124,4 @@ Version task inputs, source pack, labels, graders, skills, collectors, browser/c
 
 Regrade saved artifacts when only the verifier changes, and rerun inference when the task, evidence, prompt, or model meaning changes. Harbor supports separate-verifier regrading, but a new score still needs an explanation and comparison against the previous rubric. [Harbor regrading](https://docs.harborframework.com/jobs/regrade).
 
-Build the twelve-family vertical slice, validate the grader and two required execution arms, then expand coverage and establish an independently reviewed release set. The [validation roadmap](validation-roadmap.md) states the evidence needed before choosing the production orchestration or making reliability claims.
+Preserve completed campaign results, validate a complete agent-driven task next, then establish an independently reviewed release set. The [validation roadmap](../initial-implementation/validation-roadmap.md) states the evidence needed before choosing the production orchestration or making reliability claims.

@@ -76,7 +76,7 @@ Historical artifacts and model outcomes stay frozen. Corrections create a new ru
 
 **B24:** Add carbon.txt schema validation and scoped provider corroboration after the current declaration interpreter. Test DNS/header delegation, conflicting documents, expired reporting periods, unknown versions and parent/subdomain relationships. A schema-valid declaration still cannot establish green hosting by itself.
 
-**B25:** Work through the [101-row assessment crosswalk](wsg-check-expansion.md) by check family. Prioritize completed public tasks, keyboard/forms, constrained media/font tests and document alternatives. Then add source/build/dependency evidence and owner records for organizational execution. Manual quantitative and qualitative checks belong in the agent workflow; they are not automatically excluded from automation.
+**B25:** Work through the [101-row assessment crosswalk](../knowledge-base/assessment-crosswalk.md) by check family. Prioritize completed public tasks, keyboard/forms, constrained media/font tests and document alternatives. Then add source/build/dependency evidence and owner records for organizational execution. Manual quantitative and qualitative checks belong in the agent workflow; they are not automatically excluded from automation.
 
 **B26:** Extend the new session packet's provenance resolver to source excerpts, screenshots and independently retrieved proof documents before including them in its score. Retain source revision, dirty status and deployment relationship. Public observations and supplemental source recommendations already remain distinguishable.
 
@@ -85,3 +85,9 @@ The expanded catalog now implements ten additional browser checks and eight sour
 **B27:** Run the same frozen agent-triggered task through Codex and another harness, then evaluate with Harbor using Sol/low and Neuralwatt DeepSeek/high. Include scope clarification, actual tool invocation, partial failures and evidence citation in the verifier; the prior frozen-evidence campaigns do not test these behaviors. Preserve the existing benchmark skills in `benchmarks/frozen-methodology-skills/` when current skills evolve.
 
 The broader Harbor campaign validates four collection handoffs per model under Codex, with actual collector calls corroborated in all eight trajectories. Another harness, live scope clarification and complete browser orchestration are still untested. Keep those requirements separate from artifact validation.
+
+## Installation and report delivery
+
+**B28:** Implement the [proposed plugin experience](../using/README.md#proposed-agent-plugin-experience): versioned manifests, collector-path resolution, prerequisite checks, persistent session outputs, clean installation and update/uninstall tests. Keep the checkout/skills route available and validate another harness before claiming equivalent support.
+
+**B29:** Make the report renderer independent of the example campaign: derive methodology statements from receipts, handle missing publication manifests, resolve documentation links outside the repo, and export only explicitly matched chart enrichments. Verify a newly collected arbitrary-origin session can become a self-contained review bundle without copying provenance wording from a Wagtail run.

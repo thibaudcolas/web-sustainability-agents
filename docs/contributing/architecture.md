@@ -4,15 +4,22 @@ How the workspace is organized, and the tooling that supports it.
 
 ## Content layers
 
-The documentation has three subject areas:
+Organize information by the reader's task, with one maintained home for each subject:
 
-1. [Feasibility study](../feasibility-study/README.md): the case for agentic auditing, proposed architecture, decision models, and evaluation approach.
-2. [Initial implementation work](../initial-implementation/README.md): runnable components, benchmark design, actual results, and the validation roadmap.
-3. [Knowledge base](../knowledge-base/README.md): reusable methodology, tool reviews, and provider references.
+| Location                       | Owns                                                                 | Does not own                                     |
+| ------------------------------ | -------------------------------------------------------------------- | ------------------------------------------------ |
+| `docs/using/`                  | Installation, invocation and the current audit workflow              | Experiment logs or speculative install commands  |
+| `docs/reference/`              | Implemented checks, browser protocols and report/data contracts      | General research or past campaign conclusions    |
+| `docs/reports/`                | Entry point to current and historical per-site reports               | Model benchmark rankings                         |
+| `docs/knowledge-base/`         | Reusable methodology, evidence interpretation and tool research      | A chronological account of implementation        |
+| `docs/feasibility-study/`      | Research questions, design rationale and proposed architecture       | Current setup instructions                       |
+| `docs/initial-implementation/` | Implementation scope, roadmap, detailed backlog and evidence history | The default home for every new page              |
+| `docs/evaluation/`             | Benchmark design, model protocol, case inventory and campaign index  | Live-site judgments presented as reference truth |
+| `docs/contributing/`           | Development, documentation and skill maintenance                     | End-user audit installation                      |
 
-[Contributing](README.md) documents workspace tooling and conventions. [Agent skills](../agent-skills.md) explains the published skills and discovery catalogs. Each subject area uses a `README.md` landing page for both MkDocs and GitHub browsing.
+Section `README.md` files serve both MkDocs and GitHub. Existing reports, campaign pages and immutable bundles retain their published paths under `initial-implementation/`; navigation and indexes give them their appropriate reader-facing home. Do not move or reformat hashed evidence for cosmetic consistency.
 
-Keep reference facts in the knowledge base, proposals in the feasibility study, and execution evidence in the implementation project. Link between them instead of duplicating material. Store supporting assets beside the section that owns them, and update any scripts that publish to those paths when moving files.
+Update the canonical guide or reference when behavior changes. Add a campaign page only for a distinct reproducible experiment, and link it from the evaluation or report index. Keep completed experiment observations intact, label them historical, and reduce their search prominence when superseded. The roadmap owns sequence; the backlog owns detailed follow-ups. Avoid another rolling checkpoint page that repeats both.
 
 ## Documentation build
 
@@ -29,7 +36,7 @@ The Markdown-facing syntax for these features is documented in the [style guide]
 
 ## Agent skill publishing
 
-The native MkDocs hook in `scripts/publish_skills.py` copies `.agents/skills/` to `site/.well-known/agent-skills/` and generates the discovery index and AI catalog after each build. Skill metadata provides descriptions and versions; MkDocs configuration provides publisher details. The Pages upload includes hidden files so the catalogs reach the deployed site. See [Agent skills](../agent-skills.md) for authoring and installation instructions.
+The native MkDocs hook in `scripts/publish_skills.py` copies `.agents/skills/` to `site/.well-known/agent-skills/` and generates the discovery index and AI catalog after each build. Skill metadata provides descriptions and versions; MkDocs configuration provides publisher details. The Pages upload includes hidden files so the catalogs reach the deployed site. See [skill maintenance](skills.md) for publishing and [the audit guide](../using/README.md) for installation.
 
 ## Continuous integration
 

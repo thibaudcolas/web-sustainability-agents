@@ -1,6 +1,6 @@
 # Per-site reports and chart data
 
-Each audited origin gets its own report: [guide.wagtail.org](guide-audit.md) and [wagtail.org](wagtail-audit.md). A later comparison can reference them without merging their evidence, scores, or denominators.
+Each audited origin gets its own report. The [report index](../reports/README.md) separates current examples from earlier experiments. A later comparison can reference reports without merging their evidence, scores, or denominators.
 
 The structure adapts the local claude-seo audit's summary, prioritized findings, category detail, and structured envelope. Its SEO category weights do not transfer to sustainability. Source: [claude-seo audit skill](https://github.com/AgriciDaniel/claude-seo/blob/6be93f45064ffbadced572b5d5c95f55fd263af0/skills/seo-audit/SKILL.md).
 
@@ -18,11 +18,21 @@ The [scoped audit score](../knowledge-base/audit-scoring.md) is now implemented 
 
 ## Implemented data export
 
-`audit/report.py` reads the frozen staged bundle and writes one JSON envelope and one CSV per origin under `docs/initial-implementation/assets/reports/`. Run:
+`audit/render_review.py` renders the current session's scored judgments into a Markdown draft. See [the workflow](../using/workflow.md#4-calculate-and-render) for invocation and its remaining portability limits.
+
+`audit/report.py` separately exports chart-ready JSON and CSV. Always provide the current session's inputs and optional enrichment paths so its historical defaults cannot attach an older campaign's data:
 
 ```sh
-uv run --locked --script audit/report.py
+uv run --locked --script audit/report.py \
+  --input .audit-work/example-run-1/staged.json \
+  --assessments .audit-work/example-run-1/scores.json \
+  --energy .audit-work/example-run-1/energy.json \
+  --traffic .audit-work/example-run-1/traffic.json \
+  --annual .audit-work/example-run-1/annual.json \
+  --output .audit-work/example-run-1/charts
 ```
+
+The three optional energy, traffic and annual files may be absent; absent files contribute no enrichment. Supply them only when their scope and protocol match the intended report. Running the exporter without arguments instead reproduces the older published report-data experiment under `docs/initial-implementation/assets/reports/`.
 
 Exact base units remain in machine data; human traffic tables use decimal KB or MB. Each observation records site, page URL, run, branch, phase, capture time, metric, category, unit, status, evidence ID, and source digest. Carbon calculations remain separate, labeled `modeled`, with their original trace. Unknown values must be null or absent with a reason, never converted to zero.
 
@@ -32,7 +42,7 @@ The initial chart contracts cover phase traffic, incremental traffic, and resour
 
 The exporter also reads the energy and traffic artifacts when available. Energy rows retain one observation per repetition, including joules, scope, protocol, duration, counter category, and validity. The linked energy artifact supplies full hardware/browser provenance. Show individual runs plus median and range; a range is not a confidence interval. Do not align a whole Firefox session with a Chromium phase as if they were equivalent measurements.
 
-Traffic rows retain origin, rank bucket, dataset month, estimated annual pageviews, and a `scenario` basis, with source hashes linking to lookup scope and mapping provenance. Missing lookup is not zero traffic or a known unranked bucket. Site analytics can replace the scenario only with matching scope and period. The [annual calculator](skill-audit-workflow.md#annual-footprint-scenarios) uses an explicitly assumed page mix and first-visit model when actual analytics are unavailable. A clearly labeled estimate is allowed; it is not a measured annual footprint.
+Traffic rows retain origin, rank bucket, dataset month, estimated annual pageviews, and a `scenario` basis, with source hashes linking to lookup scope and mapping provenance. Missing lookup is not zero traffic or a known unranked bucket. Site analytics can replace the scenario only with matching scope and period. The [annual calculator](../initial-implementation/skill-audit-workflow.md#annual-footprint-scenarios) uses an explicitly assumed page mix and first-visit model when actual analytics are unavailable. A clearly labeled estimate is allowed; it is not a measured annual footprint.
 
 The exporter also includes `scoped_audit_score` and `annual_browsing_footprint` series. Score rows retain rubric and checked/total coverage. Annual rows retain partial-input status and low/high sampled-page sensitivities, which must not be rendered as confidence intervals. Both link to exact source digests. Measured package energy remains a separate series and is never added to SWDM.
 

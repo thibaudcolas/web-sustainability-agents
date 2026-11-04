@@ -40,7 +40,7 @@ The existing [Wagtail bakerydemo archive](https://github.com/thibaudcolas/wagtai
 
 ## Real-world validation candidates
 
-The owner selected **guide.wagtail.org and wagtail.org**. They know both sites well and report prior sustainability-focused improvements. Prioritize these two content-focused sites for false-positive review and practical feedback; do not convert that history into passing labels. The [first executable slice](first-slice.md) records the initial bounded sample.
+The owner selected **guide.wagtail.org and wagtail.org**. They know both sites well and report prior sustainability-focused improvements. Prioritize these two content-focused sites for false-positive review and practical feedback; do not convert that history into passing labels. The [first executable slice](../initial-implementation/first-slice.md) records the initial bounded sample.
 
 Real sites help reveal missing assumptions; they do not arrive with reliable sustainability answer keys. Keep live-site results separate from the frozen benchmark and review findings before treating them as labels.
 
@@ -65,4 +65,4 @@ The case counts are an initial proposal, not a statistically sufficient release 
 
 No extra URLs are needed to begin. The most valuable optional contribution is one or two sites whose purpose and implementation the project owner knows, plus an important user journey and any known exceptions or past audit findings. Public-only sites are sufficient; a matching code snapshot or a few internal documents would additionally enable the paired-context experiment.
 
-The subsequent [executable slice](first-slice.md) implements original controlled fixtures and measures the two selected Wagtail sites. Bakerydemo remains a later application candidate. Live observations are not benchmark answer keys.
+The subsequent [executable slice](../initial-implementation/first-slice.md) implements original controlled fixtures and measures the two selected Wagtail sites. Bakerydemo remains a later application candidate. Live observations are not benchmark answer keys.

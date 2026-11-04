@@ -113,7 +113,7 @@ No credentials were read, no authenticated provider calls were made, and no mode
 
 ## Reproducing the inventory
 
-The [demo/test-site follow-up](../initial-implementation/test-sites.md) rechecked the STAR repository revision and JSON/tree mapping: 116 declared URLs, 113 corresponding files, and 119 total HTML files in the test directory. It inspected five fixture bodies, including consent and retention examples, and reviewed the primary bakerydemo, headless demo, archive, LOW←TECH, and GOV.UK sources linked on that page. These were source/document inspections, not executed browser tests or audited reference sites.
+The [demo/test-site follow-up](../evaluation/test-sites.md) rechecked the STAR repository revision and JSON/tree mapping: 116 declared URLs, 113 corresponding files, and 119 total HTML files in the test directory. It inspected five fixture bodies, including consent and retention examples, and reviewed the primary bakerydemo, headless demo, archive, LOW←TECH, and GOV.UK sources linked on that page. These were source/document inspections, not executed browser tests or audited reference sites.
 
 Download the [source inventory manifest](../knowledge-base/assets/source-inventory.json) for retrieval URLs, SHA-256 digests, repository revisions, counts, and missing paths. The JSON files retrieved from the live sites were byte-identical to their pinned raw GitHub versions. The published HTML was separately inspected; the JSON's declared date is not treated as its publication date.
 

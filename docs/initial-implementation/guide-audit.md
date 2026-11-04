@@ -41,7 +41,7 @@ The `scoped-wsg-v1` score comprises **10 passes, 2 failures, and 2 unresolved ch
 
 No cookie action was configured; the middle stage is inapplicable, not a successful consent decision. Both runs reached the bottom. Complete accounting means complete within this bounded protocol; child frames, service workers, and other profiles require separate validation. Zero additional traffic does not prove that eager loading is optimal.
 
-[Per-site structured report](assets/reports/https-guide-wagtail-org-432853f7b5d8.json) and [metric rows for charts](assets/reports/https-guide-wagtail-org-432853f7b5d8.csv) preserve exact values, units, phase, branch, status, capture time, and evidence hashes. The [reporting contract](reporting.md) defines valid aggregations.
+[Per-site structured report](assets/reports/https-guide-wagtail-org-432853f7b5d8.json) and [metric rows for charts](assets/reports/https-guide-wagtail-org-432853f7b5d8.csv) preserve exact values, units, phase, branch, status, capture time, and evidence hashes. The [reporting contract](../reference/reporting.md) defines valid aggregations.
 
 ### Additional quantitative context
 
@@ -111,7 +111,7 @@ These observations and source hashes are in the [scope extension](scope-extensio
 
 ## Expanded agent review
 
-A separate [agent-triggered pilot](agent-driven-audits.md) tested 15 additional scoped expectations on the homepage and image-management article. Its [review](assets/agent-sessions/guide/review.json) and [score](assets/agent-sessions/guide/scores.json) have **4 passes, 2 failures, 8 unknowns and 1 inapplicable check**: **28.6/100**, with 14/71 groups counted as attempted. This is a different, investigation-heavy rubric (`agent-public-v1`), not a decline from the headline `scoped-wsg-v1` score. Do not combine the two scores or interpret either as full conformance.
+A separate [agent-triggered pilot](../using/workflow.md) tested 15 additional scoped expectations on the homepage and image-management article. Its [review](assets/agent-sessions/guide/review.json) and [score](assets/agent-sessions/guide/scores.json) have **4 passes, 2 failures, 8 unknowns and 1 inapplicable check**: **28.6/100**, with 14/71 groups counted as attempted. This is a different, investigation-heavy rubric (`agent-public-v1`), not a decline from the headline `scoped-wsg-v1` score. Do not combine the two scores or interpret either as full conformance.
 
 The new [capture](assets/agent-sessions/guide/staged.json) observed 59.1 KB and 232.2 KB on initial load, still provisionally A+, with no extra measured scroll traffic. These are a separate repeat; the headline figures and annual scenario above remain tied to their original capture.
 
@@ -132,7 +132,7 @@ The failed scoped checks concern [no-JavaScript search](https://www.w3.org/TR/we
 3. Replace the assumed annual page mix with matched-origin analytics where available; sample heavily used pages and repeat/scroll states. Compare byte accounting and hardware energy against independent collectors under matched profiles.
 4. Corroborate production source identity, hosting and operational practices. Internal retention, procurement and maintenance records would open additional organizational areas that the public site cannot establish.
 
-The two current catalogs together define some scoped review method in **32/71 groups (45.1%)**, while the [older-assessment crosswalk](wsg-check-expansion.md) proposes routes into 40 groups. Neither figure is the coverage of this individual report. Next, fix and replay the failed journey selectors against a specific task postcondition, review the qualitative judgments with the owner, and extend the sample before scoring more criteria. Add print/document, keyboard/form and source-backed code investigations from the crosswalk. GreenFrame remains optional and unmeasured.
+The two current catalogs together define some scoped review method in **32/71 groups (45.1%)**, while the [older-assessment crosswalk](../knowledge-base/assessment-crosswalk.md) proposes routes into 40 groups. Neither figure is the coverage of this individual report. Next, fix and replay the failed journey selectors against a specific task postcondition, review the qualitative judgments with the owner, and extend the sample before scoring more criteria. Add print/document, keyboard/form and source-backed code investigations from the crosswalk. GreenFrame remains optional and unmeasured.
 
 The [coverage roadmap](skill-audit-workflow.md#current-score-and-expected-wsg-coverage) distinguishes supported checks from unimplemented areas; the [backlog](backlog.md) preserves the longer sequence. Owner review of recommendation usefulness and rubric applicability is the next validation gate.
 
@@ -150,4 +150,4 @@ The current score uses an independent GPT-6.1 Sol/low skill review of the raw ar
 
 To recalculate from published evidence, run `uv run --locked --script audit/assess.py`, `uv run --locked --script audit/annual.py`, then `uv run --locked --script audit/report.py`. The annual calculator uses CO2.js 0.19.0/SWDM v4 and the pinned September 2026 rank dataset/mapping; its output records input and dependency hashes. New live observations or LLM judgments require a new campaign, rather than silently changing this score’s evidence.
 
-The expanded pilot preserves its [plan](assets/agent-sessions/guide/plan.json), [command receipt](assets/agent-sessions/guide/receipt.json), [evidence manifest](assets/agent-sessions/guide/manifest.json), raw observations and exact review inputs. Separate Sol/low reviewers used frozen skills without reading earlier report conclusions. The public packet omits private logs and skill copies but preserves their hashes; deterministic scores can be reproduced using the commands in the [agent workflow](agent-driven-audits.md#pilot-reproduction). No GreenFrame result or new paired-model benchmark is claimed.
+The expanded pilot preserves its [plan](assets/agent-sessions/guide/plan.json), [command receipt](assets/agent-sessions/guide/receipt.json), [evidence manifest](assets/agent-sessions/guide/manifest.json), raw observations and exact review inputs. Separate Sol/low reviewers used frozen skills without reading earlier report conclusions. The public packet omits private logs and skill copies but preserves their hashes; deterministic scores can be reproduced using the commands in the [agent workflow](sources.md#original-agent-pilot-reproduction). No GreenFrame result or new paired-model benchmark is claimed.

@@ -9,6 +9,7 @@ How to write docs pages and posts for this workspace: tone, headings, callouts, 
 - Use git history and the generated last-modified footer for editorial dates. Do not add manual “Research date,” “Reviewed,” “Updated,” or “Checkpoint” datelines. Preserve dates that identify source publications, versions, measurements, or other substantive evidence; retain capture timestamps in evidence artifacts.
 - Run `just lint-prose` for the small set of automated terminology and spelling checks. See [Prose rules](quality-assurance.md#prose-rules) for scope and quotation exceptions.
 - Prefer linking to other pages over repeating content.
+- Give each topic one maintained home, following the [content architecture](architecture.md#content-layers). Update current guidance in place; preserve completed experiments as labeled historical evidence. Keep installation instructions separate from proposed plugin behavior.
 - Link WSG guideline and criterion references to their actual fragment identifiers in `https://www.w3.org/TR/web-sustainability-guidelines/`. A bare section number such as “WSG 2.11” is insufficient when the section can be linked directly.
 - Use [Bulleted lists] when describing more than two comparable things or steps.
 - One thing per paragraph; don't be afraid of whitespace.

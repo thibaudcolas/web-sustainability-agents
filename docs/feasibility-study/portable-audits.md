@@ -77,4 +77,4 @@ Create paired benchmark cases with identical public behavior and different evide
 
 Some internal evidence should legitimately change a recommendation while leaving a measured observation unchanged. Some should resolve an unknown. Some should be rejected as irrelevant or stale. Include all three outcomes so that “more documents” is not rewarded automatically.
 
-Cross these modes with skill/no-skill and sequential/delegated runs on a small common subset across harnesses. Claim portability only after artifact validity, unknown handling, evidence citations, and bounded execution work in each. The [Harbor benchmark design](../initial-implementation/benchmark.md) and [validation roadmap](../initial-implementation/validation-roadmap.md) define the initial experiments.
+Cross these modes with skill/no-skill and sequential/delegated runs on a small common subset across harnesses. Claim portability only after artifact validity, unknown handling, evidence citations, and bounded execution work in each. The [Harbor benchmark design](../evaluation/design.md) and [validation roadmap](../initial-implementation/validation-roadmap.md) define the initial experiments.

@@ -1,4 +1,13 @@
+---
+search:
+  boost: 0.5
+---
+
 # Staged measurements and contextual evidence
+
+!!! note "Historical experiment"
+
+    This page preserves an earlier method and its results. Use the [current audit guide](../using/README.md) for instructions, [reports](../reports/README.md) for the latest site findings, and [evaluation](../evaluation/README.md) for model comparisons.
 
 The active collection workflow is an executable Python script, `audit/run.py`, managed by uv. It measures the site as found, then discovers footprint documentation and runs the PyPI Wappalyzer package in a separate browser. The original JavaScript experiments and frozen benchmark artifacts remain available for historical reproduction.
 

@@ -129,7 +129,7 @@ Full confidence labels and exact citations: [original model review](assets/bread
 3. Obtain scoped hosting, monitoring-budget, maintenance and operational records where public or selected source evidence remains insufficient. Do not infer organization-wide absence from this sample.
 4. Expand representative templates, languages and states, and use the [broader benchmark](breadth-benchmark.md) to test the interpretation changes before adopting them.
 
-The [current catalog](broader-checks.md) defines partial review methods in 39/71 groups across all catalogs; this individual campaign attempts 32. STAR scope, inventory, sampling, page review and reporting are represented, but the sample and process coverage remain incomplete. No full-guideline conformance percentage is claimed.
+The [current catalog](../reference/checks.md) defines partial review methods in 39/71 groups across all catalogs; this individual campaign attempts 32. STAR scope, inventory, sampling, page review and reporting are represented, but the sample and process coverage remain incomplete. No full-guideline conformance percentage is claimed.
 
 ## Methodology and reproducibility
 

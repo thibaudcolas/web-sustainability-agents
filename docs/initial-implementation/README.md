@@ -2,56 +2,35 @@
 tags:
   - sustainability
   - implementation
-  - evaluation
 search:
   boost: 2
 ---
 
-# Initial implementation work
+# Initial implementation project
 
-This project turns the [feasibility study](../feasibility-study/README.md) into a small, executable audit workflow. It records implemented behavior and experimental results alongside the remaining development plan.
+This project turns the [feasibility study](../feasibility-study/README.md) into a repeatable audit workflow. Its current deliverable is a development preview: portable skills, bounded browser/source collectors, evidence-linked judgments, deterministic scoring and per-site reports.
 
-## Current checkpoint
+**To use the audit, start with [installation and your first audit](../using/README.md).** To review its outputs, use [example reports](../reports/README.md). Model campaigns now have their own [evaluation project](../evaluation/README.md).
 
-The latest per-site outputs are the [expanded guide audit](guide-breadth-audit.md) and [expanded Wagtail.org audit](wagtail-breadth-audit.md), each with 33 check judgments and source-assisted findings.
+## What works
 
-The [broader check catalog](broader-checks.md) adds ten browser checks and eight source-assisted checks, with source citations now part of the scored packet. The [broader benchmark](breadth-benchmark.md) adds sixteen controlled cases and four collection handoffs. Both required models accept 14/16 reports; the [case-by-case review](breadth-review-cases.md) exposes every reference and model response, including two shared disagreements about the question contract.
+The agent selects scope and triggers collection, then reviews a frozen packet using quantitative, guideline and claims roles. Current checks cover public browser behavior and disclosures, with optional selected source files. A deterministic scorer preserves pass, fail and unknown counts; the report includes coverage and next auditing steps.
 
-The [repeatable agent workflow](agent-driven-audits.md) moves collection and scope decisions into the coordinator skill. It adds a portable per-origin plan, [interaction checks](interaction-checks.md), deeper [carbon.txt interpretation](../knowledge-base/carbon-disclosures.md), an optional [GreenFrame client adapter](../knowledge-base/greenframe.md), and a [crosswalk of all 101 relevant older assessment rows](wsg-check-expansion.md).
+The [check reference](../reference/checks.md) is the source of truth for implemented breadth and limits. [Workflow and artifacts](../using/workflow.md) describes the current handoffs. [Reporting](../reference/reporting.md) defines human and machine outputs. Reusable measurement and interpretation principles live in the [knowledge base](../knowledge-base/README.md).
 
-The [skill-guided workflow](skill-audit-workflow.md) adds scoped scores, annual browsing-footprint estimates, evidence-resolved reviewer judgments and an explicit WSG/STAR coverage roadmap. Both site reports end with next auditing steps and reproducibility details. The [methodology benchmark](methodology-benchmark.md) adds ten cases for the new skills, estimates and aggregation rules.
+## What we are validating next
 
-The [staged Python workflow](staged-auditing.md) measures initial load, cookie-choice, and scrolling states; discovers carbon.txt and footprint statements; and adds Wappalyzer context. Initial-load numbers lead the updated WIP report.
+Review the current site recommendations and benchmark reference questions, then test the complete agent workflow on controlled sites. In parallel, define reliable installation and plugin packaging. Cross-harness parity, independently judged recommendation quality, skill/no-skill comparisons, and decision-model routing remain unproven.
 
-The separate [guide audit](guide-audit.md) and [Wagtail.org audit](wagtail-audit.md) lead with key measures and top findings, then separate quantitative evidence from qualitative review. The [reporting contract](reporting.md) defines chart-ready data; the [backlog](backlog.md) maps feedback to validation work.
+The [roadmap](validation-roadmap.md) states the next gates. The [backlog](backlog.md) keeps detailed ideas and feedback tied to pipeline components. The [evidence record](sources.md) preserves executed experiments and validation results.
 
-The [energy and traffic experiment](energy-traffic-experiment.md) adds actual co2-runner CPU-package measurements and exact-origin CrUX scenarios. The [expanded benchmark](expanded-benchmark.md) compares 12 cases per model: both accept 10 complete reports, but label disagreements and an unsupported traffic estimate have different implications. The [broader WSG/STAR sample](scope-extension.md) adds inventory, metadata, preferences, recovery, and policy review, with separate evidence registers for each site.
+## Historical implementation notes
 
-The [model and real-site checkpoint](review-checkpoint.md) switches the active baseline to Codex CLI for both GPT-6.1 Sol/low and Neuralwatt DeepSeek V4.1 Flash/high. It compares controlled fixtures and public/source-assisted Wagtail evidence. The [first executable slice](first-slice.md) preserves the original Astra/OpenCode experiment and its limitations.
+These explain how the prototype developed; they are not current getting-started instructions.
 
-## Implementation documents
+- [First executable slice](first-slice.md): original fixtures, Astra/OpenCode experiments and integration results.
+- [Model and real-site checkpoint](review-checkpoint.md): transition to Sol and DeepSeek under Codex.
+- [Staged measurement experiment](staged-auditing.md): first-load, consent, scrolling and disclosure collection.
+- [First skill-guided scoring campaign](skill-audit-workflow.md): the earlier 21-group rubric and annual scenarios.
 
-| Document                                                      | Purpose                                                                              |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [WIP guide audit](guide-audit.md)                             | Guide findings, measurements, source corroboration, and coverage                     |
-| [WIP Wagtail.org audit](wagtail-audit.md)                     | Wagtail.org findings, measurements, source corroboration, and coverage               |
-| [Energy and traffic experiment](energy-traffic-experiment.md) | Executed energy measurements and CrUX-derived traffic scenarios                      |
-| [Expanded benchmark](expanded-benchmark.md)                   | Paired model results, controls, substantive errors, and label disagreements          |
-| [Broader WSG and STAR evidence](scope-extension.md)           | Inventory, sampled states, additional findings, and per-site registers               |
-| [Skill-guided audit and coverage](skill-audit-workflow.md)    | Current scores, annual estimates, review roles and supported versus missing coverage |
-| [Methodology and skill benchmark](methodology-benchmark.md)   | New controlled cases, model results and skill-validation limits                      |
-| [Reporting contract](reporting.md)                            | Quantitative/qualitative structure and chart-ready data                              |
-| [Ordered backlog](backlog.md)                                 | Validation gates and later experiments                                               |
-| [Model and real-site checkpoint](review-checkpoint.md)        | Current settings, paired review experiments, and validation limits                   |
-| [First executable slice and results](first-slice.md)          | What runs, reproduction commands, measurements, model reports, and known limitations |
-| [Harbor benchmark](benchmark.md)                              | Benchmark tracks, planned case families, protected grading, and comparisons          |
-| [Demo sites and benchmark targets](test-sites.md)             | Controlled fixture ideas, Wagtail targets, and future application candidates         |
-| [Model comparison plan](model-comparison.md)                  | Required model arms, comparison controls, and provider preflight                     |
-| [Validation roadmap](validation-roadmap.md)                   | The next empirical checks and evidence needed before expanding                       |
-| [Sources and implementation evidence](sources.md)             | Executed experiments, pinned versions, provenance, and verification                  |
-
-## Boundaries and next work
-
-The implemented cases exercise frozen evidence review. The audits combine bounded browser journeys with a broader metadata and preference sample. They do not yet validate representative task success, autonomous investigation of a real project checkout, recommendation quality, or a benefit from decision-model routing and sub-agent orchestration. Prioritize independent review of reference judgments and recommendation usefulness, matched collector/energy comparisons, and complete user tasks before stronger quality claims or routing experiments.
-
-Reusable reference material lives in the [knowledge base](../knowledge-base/README.md), including [deterministic tools](../knowledge-base/deterministic-tools.md), [provider contracts and inference accounting](../knowledge-base/provider-capabilities.md), and [Digital Carbon Ratings](../knowledge-base/digital-carbon-ratings.md).
+Older reports and benchmark campaigns remain accessible through their own indexes. Historical source paths and immutable artifact bundles are retained for reproducibility.

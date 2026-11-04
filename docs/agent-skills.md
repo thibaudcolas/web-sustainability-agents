@@ -12,41 +12,16 @@ This workspace publishes [Agent Skills](https://agentskills.io/) alongside its d
 | `sustainability-claims-review`    | 0.2.0   | Review footprint assumptions, disclosures, source corroboration and recommendation usefulness     |
 | `research-workspace`              | 1.0.0   | Maintain documentation structure, navigation and source citations                                 |
 
-The [agent-triggered workflow](initial-implementation/agent-driven-audits.md) adds scope clarification, editable plans, actual collector invocations, immutable evidence packets and scored reviews. The guideline skill packages a pinned WSG reference and an assessment crosswalk; read relevant entries progressively rather than putting the entire reference into every prompt.
+The [agent-triggered workflow](using/workflow.md) adds scope clarification, editable plans, actual collector invocations, immutable evidence packets and scored reviews. The guideline skill packages a pinned WSG reference and an assessment crosswalk; read relevant entries progressively rather than putting the entire reference into every prompt.
 
-The [implemented skill workflow](initial-implementation/skill-audit-workflow.md) includes portable JSON review packets, actual per-site reviewer output, reproducible scores, and the remaining validation limits. Delegation is optional: the same roles can run sequentially when a harness lacks subagents.
+## Install and run
 
-## Use a skill
+Follow [installation and your first audit](using/README.md) for the supported checkout setup, harness locations, invocation and proposed plugin experience. See [workflow and artifacts](using/workflow.md) for the collection-to-report handoffs. The same review roles can run sequentially or as authorized subagents.
 
-Skills are maintained in the repository's `.agents/skills/` directory. Tools that support that directory can discover them locally. To use a skill in another repository, copy its complete folder into that repository's `.agents/skills/` directory.
+The [evaluation project](evaluation/README.md) distinguishes skill execution from evidence that skills improve results. Current skill changes do not rewrite the frozen copies used in historical campaigns.
 
-For a harness that uses another installation location, install the same complete folders using its own mechanism or explicitly load the named `SKILL.md` files. The skills do not require a proprietary subagent API. We have exercised the Codex-based workflow; equivalent behavior in Claude Code, OpenCode and pi still needs validation. Copying skills alone does not install this repository's Python/Node collectors or evidence artifacts.
+## Discovery and maintenance
 
-The documentation build also publishes these paths, relative to the site's base URL:
+The documentation publishes complete skill folders under `.well-known/agent-skills/`, with an index and AI Catalog metadata. These are discovery resources, not an installable Agent Plugin. Catalog-aware clients may use them; a checkout remains necessary for the collectors.
 
-- `.well-known/agent-skills/<name>/SKILL.md`: each skill as raw Markdown.
-- `.well-known/agent-skills/index.json`: skill descriptions, download URLs, and SHA-256 digests, following the [agent skills discovery proposal](https://github.com/cloudflare/agent-skills-discovery-rfc).
-- `.well-known/ai-catalog.json`: publisher information, skill versions, and absolute download URLs, following [AI Catalog](https://ai-catalog.io/).
-
-For a GitHub Pages project site, keep the repository path before `.well-known/`. Discovery requires a client that supports the relevant catalog format; publishing a catalog does not automatically install skills.
-
-## Publish a skill
-
-Create `.agents/skills/<name>/SKILL.md` with YAML front matter:
-
-```yaml
----
-name: my-skill
-description: Describe the task this skill supports and when an agent should use it.
-metadata:
-  version: "1.0.0"
----
-```
-
-Use lowercase letters, digits, and single hyphens for the name, matching the directory name. Add the instructions below the front matter. Keep supporting references, scripts, and assets inside the skill folder: the build copies the whole folder. Symlinks are rejected. Every skill in this directory is published, so keep local-only material elsewhere.
-
-Update `metadata.version` when releasing changes to the skill. Catalog versions come from skill metadata, independently of the workspace version. The catalog omits optional modification dates rather than reporting checkout time as a content update.
-
-Run `just build-docs` and inspect `site/.well-known/`. Invalid metadata fails the build. The publishing hook in `scripts/publish_skills.py` generates catalogs from the skills and the `site_name` and `site_url` settings in `mkdocs.yml`. Update those settings when adopting this template. An empty skills directory produces empty catalogs.
-
-GitHub Actions includes hidden files in its Pages artifact so `.well-known/` is deployed with the documentation. Publishing uses the existing deployment on pushes to `main`; no separate release or package upload is needed.
+See [skill maintenance](contributing/skills.md) for source layout, versioning, catalog formats and publishing checks.

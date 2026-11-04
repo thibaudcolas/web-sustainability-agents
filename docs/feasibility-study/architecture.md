@@ -19,7 +19,7 @@ The orchestrator owns state transitions, budgets, retries, and aggregation. A mo
 
 Decision models can also select bounded discovery actions before or during collection, as illustrated by [jev-ultrafast](decision-model-examples.md). Keep this adaptive phase distinct from repeatable baseline measurements. The [deterministic tool review](../knowledge-base/deterministic-tools.md) specifies candidate engines, capture conditions, and instrumentation effects; a tool's output is not automatically a WSG conclusion.
 
-Public-only collection is the default. The [portable audit contract](portable-audits.md) adds source-assisted and organization-assisted modes without assuming the working directory represents the deployed site. Shared skills and result schemas are portable; native sub-agent configuration belongs in harness adapters with a sequential fallback. Evaluate these modes through the [Harbor benchmark](../initial-implementation/benchmark.md).
+Public-only collection is the default. The [portable audit contract](portable-audits.md) adds source-assisted and organization-assisted modes without assuming the working directory represents the deployed site. Shared skills and result schemas are portable; native sub-agent configuration belongs in harness adapters with a sequential fallback. Evaluate these modes through the [Harbor benchmark](../evaluation/design.md).
 
 ## Candidate checks
 

@@ -1,4 +1,13 @@
+---
+search:
+  boost: 0.5
+---
+
 # Model and real-site review checkpoint
+
+!!! note "Historical experiment"
+
+    This page preserves an earlier method and its results. Use the [current audit guide](../using/README.md) for instructions, [reports](../reports/README.md) for the latest site findings, and [evaluation](../evaluation/README.md) for model comparisons.
 
 The active baseline uses **Codex CLI 0.166.0 for both model arms**: GPT-6.1 Sol with low reasoning, and Neuralwatt DeepSeek V4.1 Flash with high reasoning. OpenCode is no longer the default benchmark harness. The historical Astra/low and OpenCode/DeepSeek/low results remain unchanged in the [first experiment](first-slice.md#initial-benchmark-results).
 

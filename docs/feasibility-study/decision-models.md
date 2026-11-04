@@ -6,7 +6,7 @@ This is a proposed use, not evidence that either model is accurate on WSG. No pa
 
 The [local decision-model follow-up](decision-model-examples.md) adds two concrete patterns: jevotron for structured evidence review and jev-ultrafast for bounded browser action selection. It includes a successful offline request preview. Adaptive evidence collection is another candidate role, with its own evaluation requirements; the recommendation below focuses on semantic review of already captured evidence.
 
-The subsequent [provider comparison plan](../initial-implementation/model-comparison.md) selects Neuralwatt DeepSeek V4.1 Flash and Codex as required generative/end-to-end comparison arms, with Neuralwatt Clef Flash and TypeSafe Jev for typed decisions. Neuralwatt has a distinct System One endpoint and preview access requirements; provider-specific confidence semantics and telemetry must survive normalization.
+The subsequent [provider comparison plan](../evaluation/models.md) selects Neuralwatt DeepSeek V4.1 Flash and Codex as required generative/end-to-end comparison arms, with Neuralwatt Clef Flash and TypeSafe Jev for typed decisions. Neuralwatt has a distinct System One endpoint and preview access requirements; provider-specific confidence semantics and telemetry must survive normalization.
 
 ## Verified capabilities and caveats
 

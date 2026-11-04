@@ -43,7 +43,7 @@ The `scoped-wsg-v1` score comprises **10 passes, 4 failures, and 3 unresolved ch
 
 All four runs reached the bottom and completed their configured cookie clicks. No extra traffic was measured in the post-choice window; this does not prove that consent was enforced or that future behavior is identical. Branches use fresh contexts, so their different initial totals are single-run variation. Scroll-window deltas include background activity and late completions; they are not automatically avoidable savings.
 
-[Per-site structured report](assets/reports/https-wagtail-org-fa043133d284.json) and [metric rows for charts](assets/reports/https-wagtail-org-fa043133d284.csv) preserve exact values and provenance. Charts must label partial accounting and avoid stacking cumulative phase totals. See the [reporting contract](reporting.md).
+[Per-site structured report](assets/reports/https-wagtail-org-fa043133d284.json) and [metric rows for charts](assets/reports/https-wagtail-org-fa043133d284.csv) preserve exact values and provenance. Charts must label partial accounting and avoid stacking cumulative phase totals. See the [reporting contract](../reference/reporting.md).
 
 ### Additional quantitative context
 
@@ -159,7 +159,7 @@ Unresolved Wagtail request accounting prevents a complete carbon calculation und
 
 ## Expanded agent review
 
-A separate [agent-triggered pilot](agent-driven-audits.md) tested 15 scoped expectations on the homepage and sustainability page. Its [review](assets/agent-sessions/wagtail/review.json) and [score](assets/agent-sessions/wagtail/scores.json) have **5 passes, 1 failure and 9 unknowns**: **33.3/100**, with 15/71 groups attempted. This is the new `agent-public-v1` investigation rubric, not a decline from the headline `scoped-wsg-v1` score. The two rubrics and samples must not be merged into an apparent trend.
+A separate [agent-triggered pilot](../using/workflow.md) tested 15 scoped expectations on the homepage and sustainability page. Its [review](assets/agent-sessions/wagtail/review.json) and [score](assets/agent-sessions/wagtail/scores.json) have **5 passes, 1 failure and 9 unknowns**: **33.3/100**, with 15/71 groups attempted. This is the new `agent-public-v1` investigation rubric, not a decline from the headline `scoped-wsg-v1` score. The two rubrics and samples must not be merged into an apparent trend.
 
 The new [capture](assets/agent-sessions/wagtail/staged.json) observed initial loads of 944.5–945.5 KB for the homepage and 590.7–591.3 KB for the statement across accept/reject branches. Scroll totals reached 1.108–1.109 MB and 633.7–634.3 KB. All remain partial; no DCR was calculated. These are separate repeated captures, and do not replace the inputs of the annual scenario above.
 
@@ -195,4 +195,4 @@ The current score uses an independent GPT-6.1 Sol/low skill review of the raw ar
 
 To recalculate from published evidence, run `uv run --locked --script audit/assess.py`, `uv run --locked --script audit/annual.py`, then `uv run --locked --script audit/report.py`. The annual calculator uses CO2.js 0.19.0/SWDM v4 and the pinned September 2026 rank dataset/mapping; its output records input and dependency hashes. New live observations or LLM judgments require a new campaign, rather than silently changing this score’s evidence.
 
-The expanded pilot preserves its [plan](assets/agent-sessions/wagtail/plan.json), [command receipt](assets/agent-sessions/wagtail/receipt.json), [evidence manifest](assets/agent-sessions/wagtail/manifest.json), raw observations and exact review inputs. Separate Sol/low reviewers used frozen skills without reading earlier report conclusions. The public packet omits private logs and skill copies but preserves their hashes; deterministic scores can be reproduced using the commands in the [agent workflow](agent-driven-audits.md#pilot-reproduction). No GreenFrame result or new paired-model benchmark is claimed.
+The expanded pilot preserves its [plan](assets/agent-sessions/wagtail/plan.json), [command receipt](assets/agent-sessions/wagtail/receipt.json), [evidence manifest](assets/agent-sessions/wagtail/manifest.json), raw observations and exact review inputs. Separate Sol/low reviewers used frozen skills without reading earlier report conclusions. The public packet omits private logs and skill copies but preserves their hashes; deterministic scores can be reproduced using the commands in the [agent workflow](sources.md#original-agent-pilot-reproduction). No GreenFrame result or new paired-model benchmark is claimed.

@@ -1,4 +1,13 @@
+---
+search:
+  boost: 0.5
+---
+
 # First executable audit slice
+
+!!! note "Historical experiment"
+
+    This page preserves an earlier method and its results. Use the [current audit guide](../using/README.md) for instructions, [reports](../reports/README.md) for the latest site findings, and [evaluation](../evaluation/README.md) for model comparisons.
 
 **The repository now has a runnable evidence-review benchmark, controlled browser fixtures, a shared review skill, and initial measurements of the two owner-nominated Wagtail sites.** This is a development experiment, not a validated sustainability assurance product.
 
@@ -29,7 +38,7 @@ Each task asks six bounded questions and requires a JSON report with outcomes, e
 
 Harbor 0.23.0 runs the grader in a separate container. Only the report artifact crosses into it. The agent image does not contain the reference labels, verifier, or oracle solution. The grader checks outcomes, required evidence references, duplicate/missing answers, invented IDs, and preservation of the deterministic rating. It does **not** establish the semantic truth of every explanation or recommendation. A plausible but unsupported explanation with valid IDs can still pass; independent review and stronger claim-level checks remain necessary.
 
-These six related cases cover parts of the larger [benchmark design](benchmark.md). They are public development cases with hand-authored expectations, not six independent sites, a held-out test set, or all twelve planned case families.
+These six related cases cover parts of the larger [benchmark design](../evaluation/design.md). They are public development cases with hand-authored expectations, not six independent sites, a held-out test set, or all twelve planned case families.
 
 ## Reproduce the experiment
 
