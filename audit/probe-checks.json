@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "0.1.0",
+  "rubricVersion": "interaction-probes-v1",
+  "checks": [
+    {
+      "id": "distraction",
+      "guideline": "2.5",
+      "expectation": "Assess visible distractions against the declared visitor task; distinguish useful prompts from interruptions.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "choice",
+      "guideline": "2.6",
+      "expectation": "Inspect choice wording, defaults, prominence and the observed accept/reject paths for undue steering. DOM text alone does not establish visual parity.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "comprehension",
+      "guideline": "2.7",
+      "expectation": "Assess the sampled task's wording, headings and terminology for its stated audience; retain uncertainty about unrepresented users.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "consistency",
+      "guideline": "2.8",
+      "expectation": "Compare repeated navigation and control names across sampled pages; consistent samples do not prove a documented design system.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "motion",
+      "guideline": "2.10",
+      "expectation": "Assess observed animation purpose, playback controls and reduced-motion behavior. A quiet snapshot does not prove no motion occurs elsewhere.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "notifications",
+      "guideline": "2.12",
+      "expectation": "Assess observed alerts and notification permission requests for user value and choice; absence is limited to observed states.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "documents",
+      "guideline": "2.13",
+      "expectation": "Review print layout visibility and download labels for the declared task. Fetch and inspect document content before asserting optimization or equivalence.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "unused-code",
+      "guideline": "3.2",
+      "expectation": "Use initial JS/CSS execution observations to nominate investigation targets; require representative journeys or source corroboration before recommending removal.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "components",
+      "guideline": "3.3",
+      "expectation": "Relate initial script resources to visible components and later task needs; recommend splitting only when a component's deferred use and usable activation are corroborated.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "layout",
+      "guideline": "3.10",
+      "expectation": "Compare narrow and desktop task content and overflow, then exercise affected controls; width emulation alone is not real-device compatibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "impact-choice",
+      "guideline": "5.4",
+      "expectation": "Identify consequential user choices in the sample and assess whether contextual impact information is useful and supported. Do not prescribe carbon labels on every control.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "journeys",
+      "guideline": "2.4",
+      "expectation": "Execute declared task actions and inspect completion evidence; an expected selector is one observable, not proof of user success or optimal journey length.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    }
+  ]
+}

@@ -215,6 +215,9 @@ nav:
       - WIP Wagtail.org audit: initial-implementation/wagtail-audit.md
       - Energy and traffic experiment: initial-implementation/energy-traffic-experiment.md
       - Broader WSG and STAR evidence: initial-implementation/scope-extension.md
+      - Repeatable agent workflow: initial-implementation/agent-driven-audits.md
+      - WSG assessment crosswalk: initial-implementation/wsg-check-expansion.md
+      - Interaction checks: initial-implementation/interaction-checks.md
       - Skill-guided audit and coverage: initial-implementation/skill-audit-workflow.md
       - Methodology and skill benchmark: initial-implementation/methodology-benchmark.md
       - Per-site reports and chart data: initial-implementation/reporting.md
@@ -233,6 +236,8 @@ nav:
       - WSG and STAR: knowledge-base/wsg-and-star.md
       - Digital Carbon Ratings: knowledge-base/digital-carbon-ratings.md
       - Browser energy and traffic scenarios: knowledge-base/energy-and-traffic.md
+      - Carbon.txt evidence: knowledge-base/carbon-disclosures.md
+      - Optional GreenFrame measurements: knowledge-base/greenframe.md
       - Scoped audit scoring: knowledge-base/audit-scoring.md
       - Deterministic audit tools: knowledge-base/deterministic-tools.md
       - Lessons from existing audit projects: knowledge-base/local-projects.md

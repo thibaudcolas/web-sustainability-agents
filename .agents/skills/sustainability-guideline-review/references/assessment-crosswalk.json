@@ -1,0 +1,3415 @@
+{
+  "schemaVersion": "1.0",
+  "source": "https://thib.me/assessing-web-sustainability-guidelines-on-automated-testing",
+  "sourcePublication": "2023-11-04",
+  "sourceSha256": "ac749a8473b93f6b8ccc8ef9350438e54f5d6caf2c245d7a4405dd0a7defca26",
+  "sourceAttribution": "Thibaud Colas; criterion names and classifications reproduced from the user-provided assessment. Mapping, probes and interpretations are new project analysis.",
+  "wsgSourceVersion": "https://www.w3.org/TR/2026/DNOTE-web-sustainability-guidelines-20261016/",
+  "wsgSourceSha256": "2883a77d30990455f593f17b94a61b8baad8c2440032d74e1e5abe7d0b4ba0d6",
+  "categoryCounts": {
+    "automated": 35,
+    "manual, quantitative": 16,
+    "manual, qualitative": 50
+  },
+  "mappingStatus": "Reviewed semantic migration proposal; not W3C-endorsed, not an official equivalence mapping, and not audit results. Broad current criteria can require more evidence than the older row.",
+  "coverageMeaning": "All 101 requested legacy rows have a review route. This is capability planning, not 101 executed or passing checks. partial-existing-evidence means an earlier collector supplies some inputs, not the full probe or criterion.",
+  "checks": [
+    {
+      "oldGuideline": "2.6",
+      "oldGuidelineTitle": "Create a Frictionless Lightweight Experience By Default",
+      "oldCriterion": "Efficient Paths",
+      "classification": "manual, quantitative",
+      "id": "legacy-001",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "efficient-paths",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#efficient-paths"
+        }
+      ],
+      "family": "journey",
+      "access": "public",
+      "probe": "Choose a named user task and success condition. Record the start URL, meaningful actions, requests/KB at each state, elapsed task time and completion/recovery; repeat on a second representative template and with keyboard navigation.",
+      "interpretation": "Judge whether each step serves the user task; fewer clicks alone is not better usability. Distinguish an agent completing the task from evidence of real-user research.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.6",
+      "oldGuidelineTitle": "Create a Frictionless Lightweight Experience By Default",
+      "oldCriterion": "Patterns For Efficiency",
+      "classification": "manual, qualitative",
+      "id": "legacy-002",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "patterns-for-efficiency",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#patterns-for-efficiency"
+        }
+      ],
+      "family": "journey",
+      "access": "public",
+      "probe": "Choose a named user task and success condition. Record the start URL, meaningful actions, requests/KB at each state, elapsed task time and completion/recovery; repeat on a second representative template and with keyboard navigation.",
+      "interpretation": "Judge whether each step serves the user task; fewer clicks alone is not better usability. Distinguish an agent completing the task from evidence of real-user research.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.6",
+      "oldGuidelineTitle": "Create a Frictionless Lightweight Experience By Default",
+      "oldCriterion": "Distraction-Free Design",
+      "classification": "manual, qualitative",
+      "id": "legacy-003",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.5",
+          "criterion": "distraction-free-design",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#distraction-free-design"
+        }
+      ],
+      "family": "attention",
+      "access": "public",
+      "probe": "Capture initial, consent and post-scroll states. Inventory overlays, moving/looping content, automatic loads, promotional links and continuing feeds; record the sequence and controls needed to reach the agreed task.",
+      "interpretation": "Explain the observable interruption and user cost. Relevance and necessity require interpretation against purpose; do not equate decorative content or long pages with a failure.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.6",
+      "oldGuidelineTitle": "Create a Frictionless Lightweight Experience By Default",
+      "oldCriterion": "Eliminate The Non-Essential",
+      "classification": "manual, qualitative",
+      "id": "legacy-004",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "need-for-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#need-for-media"
+        },
+        {
+          "guideline": "2.5",
+          "criterion": "remove-engagement-traps",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#remove-engagement-traps"
+        }
+      ],
+      "family": "attention",
+      "access": "public",
+      "probe": "Capture initial, consent and post-scroll states. Inventory overlays, moving/looping content, automatic loads, promotional links and continuing feeds; record the sequence and controls needed to reach the agreed task.",
+      "interpretation": "Explain the observable interruption and user cost. Relevance and necessity require interpretation against purpose; do not equate decorative content or long pages with a failure.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.6",
+      "oldGuidelineTitle": "Create a Frictionless Lightweight Experience By Default",
+      "oldCriterion": "User-Initiated Actionable Content",
+      "classification": "manual, quantitative",
+      "id": "legacy-005",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "user-controlled-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#user-controlled-media"
+        },
+        {
+          "guideline": "2.12",
+          "criterion": "notification-settings",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#notification-settings"
+        }
+      ],
+      "family": "control",
+      "access": "public",
+      "probe": "Inspect media/notification permissions in a fresh context without granting browser permissions. Exercise visible pause, dismiss and preference controls; record default state, persistence and whether the task remains usable.",
+      "interpretation": "Judge consent, reversibility and task relevance from observed behavior. Absence in a short sample does not establish absence on all journeys; do not trigger real outbound notifications.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.7",
+      "oldGuidelineTitle": "Avoid Unnecessary Or An Overabundance Of Assets",
+      "oldCriterion": "Decorative Design",
+      "classification": "manual, qualitative",
+      "id": "legacy-006",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "need-for-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#need-for-media"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.8",
+      "oldGuidelineTitle": "Ensure Navigation And Way-finding Is Well-structured",
+      "oldCriterion": "Navigation And Search",
+      "classification": "manual, qualitative",
+      "id": "legacy-007",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "content-discovery",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#content-discovery"
+        }
+      ],
+      "family": "journey",
+      "access": "public",
+      "probe": "Choose a named user task and success condition. Record the start URL, meaningful actions, requests/KB at each state, elapsed task time and completion/recovery; repeat on a second representative template and with keyboard navigation.",
+      "interpretation": "Judge whether each step serves the user task; fewer clicks alone is not better usability. Distinguish an agent completing the task from evidence of real-user research.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.8",
+      "oldGuidelineTitle": "Ensure Navigation And Way-finding Is Well-structured",
+      "oldCriterion": "Navigable Sitemaps",
+      "classification": "manual, qualitative",
+      "id": "legacy-008",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "content-discovery",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#content-discovery"
+        }
+      ],
+      "family": "journey",
+      "access": "public",
+      "probe": "Choose a named user task and success condition. Record the start URL, meaningful actions, requests/KB at each state, elapsed task time and completion/recovery; repeat on a second representative template and with keyboard navigation.",
+      "interpretation": "Judge whether each step serves the user task; fewer clicks alone is not better usability. Distinguish an agent completing the task from evidence of real-user research.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.8",
+      "oldGuidelineTitle": "Ensure Navigation And Way-finding Is Well-structured",
+      "oldCriterion": "New Content",
+      "classification": "manual, qualitative",
+      "id": "legacy-009",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "content-discovery",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#content-discovery"
+        },
+        {
+          "guideline": "5.18",
+          "criterion": "outdated-content",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#outdated-content"
+        }
+      ],
+      "family": "content",
+      "access": "public",
+      "probe": "Select task-relevant passages and templates; capture language, headings, labels, update information and where the reader must go next. Compare concrete excerpts with the task/audience; use readability counts only as supporting data.",
+      "interpretation": "Explain comprehension obstacles with quoted evidence and a specific alternative. Reading level, page age and word count cannot alone establish clarity, obsolescence or task value.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.9",
+      "oldGuidelineTitle": "Respect The visitors Attention",
+      "oldCriterion": "Respecting Attention",
+      "classification": "manual, qualitative",
+      "id": "legacy-010",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.5",
+          "criterion": "respect-user-attention",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#respect-user-attention"
+        }
+      ],
+      "family": "attention",
+      "access": "public",
+      "probe": "Capture initial, consent and post-scroll states. Inventory overlays, moving/looping content, automatic loads, promotional links and continuing feeds; record the sequence and controls needed to reach the agreed task.",
+      "interpretation": "Explain the observable interruption and user cost. Relevance and necessity require interpretation against purpose; do not equate decorative content or long pages with a failure.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.9",
+      "oldGuidelineTitle": "Respect The visitors Attention",
+      "oldCriterion": "Avoid Attention-keeping",
+      "classification": "manual, qualitative",
+      "id": "legacy-011",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.5",
+          "criterion": "remove-engagement-traps",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#remove-engagement-traps"
+        }
+      ],
+      "family": "attention",
+      "access": "public",
+      "probe": "Capture initial, consent and post-scroll states. Inventory overlays, moving/looping content, automatic loads, promotional links and continuing feeds; record the sequence and controls needed to reach the agreed task.",
+      "interpretation": "Explain the observable interruption and user cost. Relevance and necessity require interpretation against purpose; do not equate decorative content or long pages with a failure.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.10",
+      "oldGuidelineTitle": "Use Recognized Design Patterns",
+      "oldCriterion": "Design Patterns",
+      "classification": "manual, qualitative",
+      "id": "legacy-012",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "patterns-for-efficiency",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#patterns-for-efficiency"
+        },
+        {
+          "guideline": "2.8",
+          "criterion": "design-system",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-system"
+        }
+      ],
+      "family": "consistency",
+      "access": "public-plus-optional-source",
+      "probe": "Compare navigation, labels, button semantics and control behavior across representative templates/states. Record a matrix of matching and inconsistent patterns; inspect a supplied design system if available.",
+      "interpretation": "Visual consistency is partial evidence. Do not infer that a governed design system exists from similar-looking pages or penalize a purposeful accessible variation.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.11",
+      "oldGuidelineTitle": "Avoid Manipulative Patterns",
+      "oldCriterion": "Dark Patterns",
+      "classification": "manual, qualitative",
+      "id": "legacy-013",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.6",
+          "criterion": "deceptive-design-patterns",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#deceptive-design-patterns"
+        }
+      ],
+      "family": "consent",
+      "access": "public",
+      "probe": "Use separate fresh profiles for no interaction, accept and reject. Record control prominence and labels, interaction count, reversibility and third-party requests/cookies before and after each choice; inspect linked explanatory text.",
+      "interpretation": "Flag demonstrated asymmetry or contradictory behavior with screenshots and requests. A third-party domain is not automatically tracking, and request blocking is not proof of correct consent implementation.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.11",
+      "oldGuidelineTitle": "Avoid Manipulative Patterns",
+      "oldCriterion": "Using Advertisements",
+      "classification": "manual, qualitative",
+      "id": "legacy-014",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.6",
+          "criterion": "advertisements",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#advertisements"
+        }
+      ],
+      "family": "consent",
+      "access": "public",
+      "probe": "Use separate fresh profiles for no interaction, accept and reject. Record control prominence and labels, interaction count, reversibility and third-party requests/cookies before and after each choice; inspect linked explanatory text.",
+      "interpretation": "Flag demonstrated asymmetry or contradictory behavior with screenshots and requests. A third-party domain is not automatically tracking, and request blocking is not proof of correct consent implementation.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.11",
+      "oldGuidelineTitle": "Avoid Manipulative Patterns",
+      "oldCriterion": "Page Tracking",
+      "classification": "manual, qualitative",
+      "id": "legacy-015",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.6",
+          "criterion": "analytics-and-tracking",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#analytics-and-tracking"
+        },
+        {
+          "guideline": "3.5",
+          "criterion": "third-party-preferences",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#third-party-preferences"
+        }
+      ],
+      "family": "consent",
+      "access": "public",
+      "probe": "Use separate fresh profiles for no interaction, accept and reject. Record control prominence and labels, interaction count, reversibility and third-party requests/cookies before and after each choice; inspect linked explanatory text.",
+      "interpretation": "Flag demonstrated asymmetry or contradictory behavior with screenshots and requests. A third-party domain is not automatically tracking, and request blocking is not proof of correct consent implementation.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.14",
+      "oldGuidelineTitle": "Write With Purpose, In An Accessible, Easy To Understand Format",
+      "oldCriterion": "Write Clearly",
+      "classification": "manual, qualitative",
+      "id": "legacy-016",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.7",
+          "criterion": "deliverables-readability",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#deliverables-readability"
+        }
+      ],
+      "family": "content",
+      "access": "public",
+      "probe": "Select task-relevant passages and templates; capture language, headings, labels, update information and where the reader must go next. Compare concrete excerpts with the task/audience; use readability counts only as supporting data.",
+      "interpretation": "Explain comprehension obstacles with quoted evidence and a specific alternative. Reading level, page age and word count cannot alone establish clarity, obsolescence or task value.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.14",
+      "oldGuidelineTitle": "Write With Purpose, In An Accessible, Easy To Understand Format",
+      "oldCriterion": "Content Formatting",
+      "classification": "manual, qualitative",
+      "id": "legacy-017",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.7",
+          "criterion": "deliverables-readability",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#deliverables-readability"
+        }
+      ],
+      "family": "content",
+      "access": "public",
+      "probe": "Select task-relevant passages and templates; capture language, headings, labels, update information and where the reader must go next. Compare concrete excerpts with the task/audience; use readability counts only as supporting data.",
+      "interpretation": "Explain comprehension obstacles with quoted evidence and a specific alternative. Reading level, page age and word count cannot alone establish clarity, obsolescence or task value.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.15",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Image Assets",
+      "oldCriterion": "Need For Images",
+      "classification": "automated",
+      "id": "legacy-018",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "need-for-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#need-for-media"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.15",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Image Assets",
+      "oldCriterion": "Optimize Images",
+      "classification": "automated",
+      "id": "legacy-019",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "optimized-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimized-media"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.15",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Image Assets",
+      "oldCriterion": "Sizing And Deactivation",
+      "classification": "manual, qualitative",
+      "id": "legacy-020",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "user-controlled-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#user-controlled-media"
+        },
+        {
+          "guideline": "2.9",
+          "criterion": "optimized-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimized-media"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.16",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Media Assets",
+      "oldCriterion": "Need For Media",
+      "classification": "automated",
+      "id": "legacy-021",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "need-for-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#need-for-media"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.16",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Media Assets",
+      "oldCriterion": "Optimize Media",
+      "classification": "automated",
+      "id": "legacy-022",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "optimized-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimized-media"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.16",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Media Assets",
+      "oldCriterion": "Labels And Choice",
+      "classification": "manual, qualitative",
+      "id": "legacy-023",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "user-controlled-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#user-controlled-media"
+        },
+        {
+          "guideline": "2.13",
+          "criterion": "labels-and-choice",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#labels-and-choice"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.17",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Animation",
+      "oldCriterion": "Need For Animation",
+      "classification": "manual, qualitative",
+      "id": "legacy-024",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.10",
+          "criterion": "need-for-animation",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#need-for-animation"
+        }
+      ],
+      "family": "motion",
+      "access": "public",
+      "probe": "Record animations/video duration, repetition, controls and ongoing network/CPU activity for an explicit observation window. Repeat with reduced motion set initially and changed in-page; capture whether the same task is still possible.",
+      "interpretation": "CSS query presence is not evidence of working controls. Distinguish essential feedback from decoration and an idle animation from GPU/energy costs that have actually been measured.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.17",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Animation",
+      "oldCriterion": "Avoid Overburdening",
+      "classification": "manual, qualitative",
+      "id": "legacy-025",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.10",
+          "criterion": "avoiding-overburdening",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoiding-overburdening"
+        }
+      ],
+      "family": "motion",
+      "access": "public",
+      "probe": "Record animations/video duration, repetition, controls and ongoing network/CPU activity for an explicit observation window. Repeat with reduced motion set initially and changed in-page; capture whether the same task is still possible.",
+      "interpretation": "CSS query presence is not evidence of working controls. Distinguish essential feedback from decoration and an idle animation from GPU/energy costs that have actually been measured.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.17",
+      "oldGuidelineTitle": "Take a More Sustainable Approach To Animation",
+      "oldCriterion": "Control Animation",
+      "classification": "manual, qualitative",
+      "id": "legacy-026",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.10",
+          "criterion": "control-animation",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#control-animation"
+        }
+      ],
+      "family": "motion",
+      "access": "public",
+      "probe": "Record animations/video duration, repetition, controls and ongoing network/CPU activity for an explicit observation window. Repeat with reduced motion set initially and changed in-page; capture whether the same task is still possible.",
+      "interpretation": "CSS query presence is not evidence of working controls. Distinguish essential feedback from decoration and an idle animation from GPU/energy costs that have actually been measured.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.19",
+      "oldGuidelineTitle": "Provide Suitable Alternatives To Web Assets",
+      "oldCriterion": "Open Formats",
+      "classification": "manual, quantitative",
+      "id": "legacy-027",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "optimized-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimized-media"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "non-standard-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#non-standard-code"
+        }
+      ],
+      "family": "formats",
+      "access": "public",
+      "probe": "Inventory delivered media and download formats/MIME types, fallback choices and supported browser behavior. Compare compatibility and byte cost for the actual task before suggesting alternatives.",
+      "interpretation": "An open format is not automatically smaller or usable for this audience; document licensing/compatibility facts separately from assumptions and test fallback behavior.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.19",
+      "oldGuidelineTitle": "Provide Suitable Alternatives To Web Assets",
+      "oldCriterion": "Font Subsetting",
+      "classification": "manual, quantitative",
+      "id": "legacy-028",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.11",
+          "criterion": "web-font-subsetting",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#web-font-subsetting"
+        }
+      ],
+      "family": "fonts",
+      "access": "public-plus-optional-source",
+      "probe": "List loaded fonts, byte sizes, glyph ranges, weight/style variants and fallback behavior. Exercise representative scripts/locales; inspect supplied font build/subsetting configuration if available.",
+      "interpretation": "A small Latin subset must not lose characters needed by other languages. Assess readability and layout stability before recommending system fonts or reducing variants.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.19",
+      "oldGuidelineTitle": "Provide Suitable Alternatives To Web Assets",
+      "oldCriterion": "Alternative Text",
+      "classification": "automated",
+      "id": "legacy-029",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "accessibility",
+      "access": "public",
+      "probe": "Run scoped accessibility rules and preserve rule IDs, nodes and applicability; then perform the relevant keyboard, names/roles, alternative text and reading-order checks on the complete task with screenshots/DOM evidence.",
+      "interpretation": "Automated success does not establish WCAG conformance or meaningful alternatives. Explain assistive-technology/user implications and remaining specialist or user-testing evidence needed.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.19",
+      "oldGuidelineTitle": "Provide Suitable Alternatives To Web Assets",
+      "oldCriterion": "Audio Alternatives",
+      "classification": "manual, quantitative",
+      "id": "legacy-030",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "user-controlled-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#user-controlled-media"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "alternatives",
+      "access": "public",
+      "probe": "Inventory audio/video and corresponding transcripts, captions, descriptions and low-bandwidth options. Follow each alternative and compare a bounded content segment for equivalent information and task completion.",
+      "interpretation": "Presence of a transcript/caption track is insufficient: inspect usefulness, coverage, language and timing. Do not remove media that provides a valuable accessible alternative.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.19",
+      "oldGuidelineTitle": "Provide Suitable Alternatives To Web Assets",
+      "oldCriterion": "Video Alternatives",
+      "classification": "manual, quantitative",
+      "id": "legacy-031",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "2.9",
+          "criterion": "user-controlled-media",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#user-controlled-media"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "alternatives",
+      "access": "public",
+      "probe": "Inventory audio/video and corresponding transcripts, captions, descriptions and low-bandwidth options. Follow each alternative and compare a bounded content segment for equivalent information and task completion.",
+      "interpretation": "Presence of a transcript/caption track is insufficient: inspect usefulness, coverage, language and timing. Do not remove media that provides a valuable accessible alternative.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.20",
+      "oldGuidelineTitle": "Provide Accessible, Usable, Minimal Web Forms",
+      "oldCriterion": "Form Simplicity",
+      "classification": "manual, qualitative",
+      "id": "legacy-032",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "efficient-paths",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#efficient-paths"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "forms",
+      "access": "public-plus-optional-source",
+      "probe": "Record visible fields, labels, purpose, instructions, paste support, keyboard interaction and client-side invalid-input feedback. Use a non-submitting test route or supplied fixture for completion/error recovery; inspect source contracts when available.",
+      "interpretation": "Evaluate necessity and error recovery for the task. Avoid purchases, contact messages or account changes on live sites. Distinguish a blocked submission from a tested successful backend path.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.20",
+      "oldGuidelineTitle": "Provide Accessible, Usable, Minimal Web Forms",
+      "oldCriterion": "Form Functionality",
+      "classification": "manual, qualitative",
+      "id": "legacy-033",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.4",
+          "criterion": "efficient-paths",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#efficient-paths"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "custom-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#custom-code"
+        }
+      ],
+      "family": "forms",
+      "access": "public-plus-optional-source",
+      "probe": "Record visible fields, labels, purpose, instructions, paste support, keyboard interaction and client-side invalid-input feedback. Use a non-submitting test route or supplied fixture for completion/error recovery; inspect source contracts when available.",
+      "interpretation": "Evaluate necessity and error recovery for the task. Avoid purchases, contact messages or account changes on live sites. Distinguish a blocked submission from a tested successful backend path.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.21",
+      "oldGuidelineTitle": "Support Non-Graphic Ways To Interact With Content",
+      "oldCriterion": "Alternative Interactions",
+      "classification": "manual, qualitative",
+      "id": "legacy-034",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.10",
+          "criterion": "alternative-browsing",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#alternative-browsing"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "accessibility",
+      "access": "public",
+      "probe": "Run scoped accessibility rules and preserve rule IDs, nodes and applicability; then perform the relevant keyboard, names/roles, alternative text and reading-order checks on the complete task with screenshots/DOM evidence.",
+      "interpretation": "Automated success does not establish WCAG conformance or meaningful alternatives. Explain assistive-technology/user implications and remaining specialist or user-testing evidence needed.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.22",
+      "oldGuidelineTitle": "Give Useful Notifications To Improve The visitors Journey",
+      "oldCriterion": "Notification Justification",
+      "classification": "manual, qualitative",
+      "id": "legacy-035",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.12",
+          "criterion": "need-for-notification",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#need-for-notification"
+        }
+      ],
+      "family": "control",
+      "access": "public",
+      "probe": "Inspect media/notification permissions in a fresh context without granting browser permissions. Exercise visible pause, dismiss and preference controls; record default state, persistence and whether the task remains usable.",
+      "interpretation": "Judge consent, reversibility and task relevance from observed behavior. Absence in a short sample does not establish absence on all journeys; do not trigger real outbound notifications.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.22",
+      "oldGuidelineTitle": "Give Useful Notifications To Improve The visitors Journey",
+      "oldCriterion": "Notification Control",
+      "classification": "manual, qualitative",
+      "id": "legacy-036",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.12",
+          "criterion": "notification-settings",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#notification-settings"
+        }
+      ],
+      "family": "control",
+      "access": "public",
+      "probe": "Inspect media/notification permissions in a fresh context without granting browser permissions. Exercise visible pause, dismiss and preference controls; record default state, persistence and whether the task remains usable.",
+      "interpretation": "Judge consent, reversibility and task relevance from observed behavior. Absence in a short sample does not establish absence on all journeys; do not trigger real outbound notifications.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.22",
+      "oldGuidelineTitle": "Give Useful Notifications To Improve The visitors Journey",
+      "oldCriterion": "Prompts And Responses",
+      "classification": "manual, qualitative",
+      "id": "legacy-037",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.12",
+          "criterion": "notification-settings",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#notification-settings"
+        },
+        {
+          "guideline": "2.5",
+          "criterion": "respect-user-attention",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#respect-user-attention"
+        }
+      ],
+      "family": "control",
+      "access": "public",
+      "probe": "Inspect media/notification permissions in a fresh context without granting browser permissions. Exercise visible pause, dismiss and preference controls; record default state, persistence and whether the task remains usable.",
+      "interpretation": "Judge consent, reversibility and task relevance from observed behavior. Absence in a short sample does not establish absence on all journeys; do not trigger real outbound notifications.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.23",
+      "oldGuidelineTitle": "Reduce The Impact Of Downloadable Or Physical Documents",
+      "oldCriterion": "Printing Documents",
+      "classification": "manual, quantitative",
+      "id": "legacy-038",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.13",
+          "criterion": "printed-documents",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#printed-documents"
+        }
+      ],
+      "family": "documents",
+      "access": "public",
+      "probe": "Inventory document links with file type, advertised/actual size and alternatives. Inspect print preview/media styles, downloaded document accessibility and content equivalence for selected documents; preserve tool versions and sample pages.",
+      "interpretation": "No print stylesheet is not itself a defect. Judge print output, document necessity and accessible alternatives; page count/size thresholds need a declared task-specific budget.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.23",
+      "oldGuidelineTitle": "Reduce The Impact Of Downloadable Or Physical Documents",
+      "oldCriterion": "Optimize Documents",
+      "classification": "manual, quantitative",
+      "id": "legacy-039",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.13",
+          "criterion": "optimized-documents",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimized-documents"
+        }
+      ],
+      "family": "documents",
+      "access": "public",
+      "probe": "Inventory document links with file type, advertised/actual size and alternatives. Inspect print preview/media styles, downloaded document accessibility and content equivalence for selected documents; preserve tool versions and sample pages.",
+      "interpretation": "No print stylesheet is not itself a defect. Judge print output, document necessity and accessible alternatives; page count/size thresholds need a declared task-specific budget.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.23",
+      "oldGuidelineTitle": "Reduce The Impact Of Downloadable Or Physical Documents",
+      "oldCriterion": "Labels And Choice",
+      "classification": "manual, quantitative",
+      "id": "legacy-040",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.13",
+          "criterion": "labels-and-choice",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#labels-and-choice"
+        }
+      ],
+      "family": "documents",
+      "access": "public",
+      "probe": "Inventory document links with file type, advertised/actual size and alternatives. Inspect print preview/media styles, downloaded document accessibility and content equivalence for selected documents; preserve tool versions and sample pages.",
+      "interpretation": "No print stylesheet is not itself a defect. Judge print output, document necessity and accessible alternatives; page count/size thresholds need a declared task-specific budget.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "2.29",
+      "oldGuidelineTitle": "Incorporate Compatibility Testing Into Each Release-cycle",
+      "oldCriterion": "Frequent Testing",
+      "classification": "manual, quantitative",
+      "id": "legacy-041",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "2.17",
+          "criterion": "maintaining-compatibility",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#maintaining-compatibility"
+        },
+        {
+          "guideline": "2.15",
+          "criterion": "ongoing-evaluation",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ongoing-evaluation"
+        }
+      ],
+      "family": "compatibility",
+      "access": "public-plus-optional-source",
+      "probe": "Repeat the same user task on desktop/mobile viewports, zoom/reflow, constrained network/CPU and JavaScript-disabled contexts; compare breakage, overflow, content availability and task outcomes. Record supported-platform claims.",
+      "interpretation": "A runtime sample can find incompatibilities but cannot prove frequent testing or a maintenance policy. Ask for CI/test records when the current criterion concerns ongoing practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.2",
+      "oldGuidelineTitle": "Minify Your HTML, CSS, And JavaScript",
+      "oldCriterion": "Minify Code",
+      "classification": "automated",
+      "id": "legacy-042",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.2",
+          "criterion": "minified-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#minified-code"
+        }
+      ],
+      "family": "code",
+      "access": "public-plus-optional-source",
+      "probe": "Capture served HTML/CSS/JS, compression, initiators and script scheduling; record coverage across the complete chosen journey and initial/later chunks. Inspect supplied build configuration and bundle analysis for corroboration.",
+      "interpretation": "Coverage unused during one journey is not globally dead code. Do not infer code-splitting or tree-shaking quality solely from file count or minified filenames; measure changes without breaking functionality.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.3",
+      "oldGuidelineTitle": "Use Code-splitting Within Projects",
+      "oldCriterion": "Code Splitting",
+      "classification": "automated",
+      "id": "legacy-043",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.3",
+          "criterion": "code-splitting",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#code-splitting"
+        }
+      ],
+      "family": "code",
+      "access": "public-plus-optional-source",
+      "probe": "Capture served HTML/CSS/JS, compression, initiators and script scheduling; record coverage across the complete chosen journey and initial/later chunks. Inspect supplied build configuration and bundle analysis for corroboration.",
+      "interpretation": "Coverage unused during one journey is not globally dead code. Do not infer code-splitting or tree-shaking quality solely from file count or minified filenames; measure changes without breaking functionality.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.4",
+      "oldGuidelineTitle": "Apply Tree Shaking To Code",
+      "oldCriterion": "Remove Redundancy",
+      "classification": "automated",
+      "id": "legacy-044",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.2",
+          "criterion": "remove-redundancy",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#remove-redundancy"
+        }
+      ],
+      "family": "code",
+      "access": "public-plus-optional-source",
+      "probe": "Capture served HTML/CSS/JS, compression, initiators and script scheduling; record coverage across the complete chosen journey and initial/later chunks. Inspect supplied build configuration and bundle analysis for corroboration.",
+      "interpretation": "Coverage unused during one journey is not globally dead code. Do not infer code-splitting or tree-shaking quality solely from file count or minified filenames; measure changes without breaking functionality.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.5",
+      "oldGuidelineTitle": "Ensure Your Solutions Are Accessible",
+      "oldCriterion": "Accessibility Compliance",
+      "classification": "automated",
+      "id": "legacy-045",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "accessibility",
+      "access": "public",
+      "probe": "Run scoped accessibility rules and preserve rule IDs, nodes and applicability; then perform the relevant keyboard, names/roles, alternative text and reading-order checks on the complete task with screenshots/DOM evidence.",
+      "interpretation": "Automated success does not establish WCAG conformance or meaningful alternatives. Explain assistive-technology/user implications and remaining specialist or user-testing evidence needed. WSG now addresses accessibility across criteria and the accessibility considerations; this mapping does not reduce accessibility to semantic markup.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.5",
+      "oldGuidelineTitle": "Ensure Your Solutions Are Accessible",
+      "oldCriterion": "Carbon Aware Design",
+      "classification": "manual, qualitative",
+      "id": "legacy-046",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.10",
+          "criterion": "carbon-aware-design",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#carbon-aware-design"
+        }
+      ],
+      "family": "preferences",
+      "access": "public",
+      "probe": "Run the task with light/dark, reduced-motion and relevant supported preference settings both before navigation and changed in-page; record computed behavior and controls, then compare payload/work changes where measurable.",
+      "interpretation": "Do not require unsupported browser APIs or presume dark mode saves energy on every display. Judge user constraints and functionality; distinguish preference support from measured energy reduction.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.8",
+      "oldGuidelineTitle": "Use HTML Elements Correctly",
+      "oldCriterion": "Semantic Code",
+      "classification": "automated",
+      "id": "legacy-047",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "accessibility",
+      "access": "public",
+      "probe": "Run scoped accessibility rules and preserve rule IDs, nodes and applicability; then perform the relevant keyboard, names/roles, alternative text and reading-order checks on the complete task with screenshots/DOM evidence.",
+      "interpretation": "Automated success does not establish WCAG conformance or meaningful alternatives. Explain assistive-technology/user implications and remaining specialist or user-testing evidence needed.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.8",
+      "oldGuidelineTitle": "Use HTML Elements Correctly",
+      "oldCriterion": "Custom Code",
+      "classification": "manual, qualitative",
+      "id": "legacy-048",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "custom-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#custom-code"
+        }
+      ],
+      "family": "forms",
+      "access": "public-plus-optional-source",
+      "probe": "Record visible fields, labels, purpose, instructions, paste support, keyboard interaction and client-side invalid-input feedback. Use a non-submitting test route or supplied fixture for completion/error recovery; inspect source contracts when available.",
+      "interpretation": "Evaluate necessity and error recovery for the task. Avoid purchases, contact messages or account changes on live sites. Distinguish a blocked submission from a tested successful backend path.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.9",
+      "oldGuidelineTitle": "Resolve Render Blocking Content",
+      "oldCriterion": "Asynchronous Code",
+      "classification": "automated",
+      "id": "legacy-049",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.7",
+          "criterion": "asynchronous-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#asynchronous-code"
+        }
+      ],
+      "family": "code",
+      "access": "public-plus-optional-source",
+      "probe": "Capture served HTML/CSS/JS, compression, initiators and script scheduling; record coverage across the complete chosen journey and initial/later chunks. Inspect supplied build configuration and bundle analysis for corroboration.",
+      "interpretation": "Coverage unused during one journey is not globally dead code. Do not infer code-splitting or tree-shaking quality solely from file count or minified filenames; measure changes without breaking functionality.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.9",
+      "oldGuidelineTitle": "Resolve Render Blocking Content",
+      "oldCriterion": "Priority Loading",
+      "classification": "manual, qualitative",
+      "id": "legacy-050",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.7",
+          "criterion": "optimized-loading",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimized-loading"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.10",
+      "oldGuidelineTitle": "Provide Code-based Way-finding Mechanisms",
+      "oldCriterion": "Metadata And Microdata",
+      "classification": "automated",
+      "id": "legacy-051",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.8",
+          "criterion": "structured-data",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structured-data"
+        }
+      ],
+      "family": "metadata",
+      "access": "public",
+      "probe": "Capture titles, language, canonical/meta tags, structured data and robots/sitemaps; parse syntax and check semantic consistency with visible content. Resolve declared icons/manifests/discovery alternatives before probing conventional paths.",
+      "interpretation": "Presence and syntactic validity are limited observations. Optional files/tags need an audience benefit; robots restrictions can be intentional and a root-path 404 can coexist with a working declared alternative.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.10",
+      "oldGuidelineTitle": "Provide Code-based Way-finding Mechanisms",
+      "oldCriterion": "Search Engines",
+      "classification": "automated",
+      "id": "legacy-052",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.8",
+          "criterion": "meta-tags",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#meta-tags"
+        },
+        {
+          "guideline": "2.4",
+          "criterion": "content-discovery",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#content-discovery"
+        }
+      ],
+      "family": "metadata",
+      "access": "public",
+      "probe": "Capture titles, language, canonical/meta tags, structured data and robots/sitemaps; parse syntax and check semantic consistency with visible content. Resolve declared icons/manifests/discovery alternatives before probing conventional paths.",
+      "interpretation": "Presence and syntactic validity are limited observations. Optional files/tags need an audience benefit; robots restrictions can be intentional and a root-path 404 can coexist with a working declared alternative.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.10",
+      "oldGuidelineTitle": "Provide Code-based Way-finding Mechanisms",
+      "oldCriterion": "Accessibility Aids",
+      "classification": "manual, qualitative",
+      "id": "legacy-053",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        },
+        {
+          "guideline": "3.10",
+          "criterion": "alternative-browsing",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#alternative-browsing"
+        }
+      ],
+      "family": "accessibility",
+      "access": "public",
+      "probe": "Run scoped accessibility rules and preserve rule IDs, nodes and applicability; then perform the relevant keyboard, names/roles, alternative text and reading-order checks on the complete task with screenshots/DOM evidence.",
+      "interpretation": "Automated success does not establish WCAG conformance or meaningful alternatives. Explain assistive-technology/user implications and remaining specialist or user-testing evidence needed.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.11",
+      "oldGuidelineTitle": "Validate Form Errors And External Input",
+      "oldCriterion": "Error Validation",
+      "classification": "manual, qualitative",
+      "id": "legacy-054",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "custom-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#custom-code"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "forms",
+      "access": "public-plus-optional-source",
+      "probe": "Record visible fields, labels, purpose, instructions, paste support, keyboard interaction and client-side invalid-input feedback. Use a non-submitting test route or supplied fixture for completion/error recovery; inspect source contracts when available.",
+      "interpretation": "Evaluate necessity and error recovery for the task. Avoid purchases, contact messages or account changes on live sites. Distinguish a blocked submission from a tested successful backend path.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.11",
+      "oldGuidelineTitle": "Validate Form Errors And External Input",
+      "oldCriterion": "Label Elements",
+      "classification": "manual, qualitative",
+      "id": "legacy-055",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "semantic-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#semantic-code"
+        }
+      ],
+      "family": "forms",
+      "access": "public-plus-optional-source",
+      "probe": "Record visible fields, labels, purpose, instructions, paste support, keyboard interaction and client-side invalid-input feedback. Use a non-submitting test route or supplied fixture for completion/error recovery; inspect source contracts when available.",
+      "interpretation": "Evaluate necessity and error recovery for the task. Avoid purchases, contact messages or account changes on live sites. Distinguish a blocked submission from a tested successful backend path.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.11",
+      "oldGuidelineTitle": "Validate Form Errors And External Input",
+      "oldCriterion": "Allow Paste",
+      "classification": "automated",
+      "id": "legacy-056",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "custom-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#custom-code"
+        },
+        {
+          "guideline": "3.10",
+          "criterion": "alternative-browsing",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#alternative-browsing"
+        }
+      ],
+      "family": "forms",
+      "access": "public-plus-optional-source",
+      "probe": "Record visible fields, labels, purpose, instructions, paste support, keyboard interaction and client-side invalid-input feedback. Use a non-submitting test route or supplied fixture for completion/error recovery; inspect source contracts when available.",
+      "interpretation": "Evaluate necessity and error recovery for the task. Avoid purchases, contact messages or account changes on live sites. Distinguish a blocked submission from a tested successful backend path.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.12",
+      "oldGuidelineTitle": "Use Metadata Correctly",
+      "oldCriterion": "Required Elements",
+      "classification": "automated",
+      "id": "legacy-057",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.8",
+          "criterion": "required-elements",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#required-elements"
+        }
+      ],
+      "family": "metadata",
+      "access": "public",
+      "probe": "Capture titles, language, canonical/meta tags, structured data and robots/sitemaps; parse syntax and check semantic consistency with visible content. Resolve declared icons/manifests/discovery alternatives before probing conventional paths.",
+      "interpretation": "Presence and syntactic validity are limited observations. Optional files/tags need an audience benefit; robots restrictions can be intentional and a root-path 404 can coexist with a working declared alternative.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.12",
+      "oldGuidelineTitle": "Use Metadata Correctly",
+      "oldCriterion": "Meta Tags",
+      "classification": "automated",
+      "id": "legacy-058",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.8",
+          "criterion": "meta-tags",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#meta-tags"
+        }
+      ],
+      "family": "metadata",
+      "access": "public",
+      "probe": "Capture titles, language, canonical/meta tags, structured data and robots/sitemaps; parse syntax and check semantic consistency with visible content. Resolve declared icons/manifests/discovery alternatives before probing conventional paths.",
+      "interpretation": "Presence and syntactic validity are limited observations. Optional files/tags need an audience benefit; robots restrictions can be intentional and a root-path 404 can coexist with a working declared alternative.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.12",
+      "oldGuidelineTitle": "Use Metadata Correctly",
+      "oldCriterion": "Structured Data",
+      "classification": "automated",
+      "id": "legacy-059",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.8",
+          "criterion": "structured-data",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structured-data"
+        }
+      ],
+      "family": "metadata",
+      "access": "public",
+      "probe": "Capture titles, language, canonical/meta tags, structured data and robots/sitemaps; parse syntax and check semantic consistency with visible content. Resolve declared icons/manifests/discovery alternatives before probing conventional paths.",
+      "interpretation": "Presence and syntactic validity are limited observations. Optional files/tags need an audience benefit; robots restrictions can be intentional and a root-path 404 can coexist with a working declared alternative.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.13",
+      "oldGuidelineTitle": "Use CSS Preference And Media Queries",
+      "oldCriterion": "CSS Preference Queries",
+      "classification": "automated",
+      "id": "legacy-060",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.9",
+          "criterion": "media-and-preference-queries",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#media-and-preference-queries"
+        }
+      ],
+      "family": "preferences",
+      "access": "public",
+      "probe": "Run the task with light/dark, reduced-motion and relevant supported preference settings both before navigation and changed in-page; record computed behavior and controls, then compare payload/work changes where measurable.",
+      "interpretation": "Do not require unsupported browser APIs or presume dark mode saves energy on every display. Judge user constraints and functionality; distinguish preference support from measured energy reduction.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.14",
+      "oldGuidelineTitle": "Develop A Mobile-first Layout",
+      "oldCriterion": "Mobile-First",
+      "classification": "manual, qualitative",
+      "id": "legacy-061",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.10",
+          "criterion": "device-adaptable",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#device-adaptable"
+        }
+      ],
+      "family": "compatibility",
+      "access": "public-plus-optional-source",
+      "probe": "Repeat the same user task on desktop/mobile viewports, zoom/reflow, constrained network/CPU and JavaScript-disabled contexts; compare breakage, overflow, content availability and task outcomes. Record supported-platform claims.",
+      "interpretation": "A runtime sample can find incompatibilities but cannot prove frequent testing or a maintenance policy. Ask for CI/test records when the current criterion concerns ongoing practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.14",
+      "oldGuidelineTitle": "Develop A Mobile-first Layout",
+      "oldCriterion": "Responsive Design",
+      "classification": "manual, qualitative",
+      "id": "legacy-062",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.10",
+          "criterion": "device-adaptable",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#device-adaptable"
+        }
+      ],
+      "family": "compatibility",
+      "access": "public-plus-optional-source",
+      "probe": "Repeat the same user task on desktop/mobile viewports, zoom/reflow, constrained network/CPU and JavaScript-disabled contexts; compare breakage, overflow, content availability and task outcomes. Record supported-platform claims.",
+      "interpretation": "A runtime sample can find incompatibilities but cannot prove frequent testing or a maintenance policy. Ask for CI/test records when the current criterion concerns ongoing practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.14",
+      "oldGuidelineTitle": "Develop A Mobile-first Layout",
+      "oldCriterion": "Alternative Browsing",
+      "classification": "manual, qualitative",
+      "id": "legacy-063",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.10",
+          "criterion": "alternative-browsing",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#alternative-browsing"
+        }
+      ],
+      "family": "accessibility",
+      "access": "public",
+      "probe": "Run scoped accessibility rules and preserve rule IDs, nodes and applicability; then perform the relevant keyboard, names/roles, alternative text and reading-order checks on the complete task with screenshots/DOM evidence.",
+      "interpretation": "Automated success does not establish WCAG conformance or meaningful alternatives. Explain assistive-technology/user implications and remaining specialist or user-testing evidence needed.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.15",
+      "oldGuidelineTitle": "Use Beneficial JavaScript And Its API’s",
+      "oldCriterion": "API Requests",
+      "classification": "manual, qualitative",
+      "id": "legacy-064",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.11",
+          "criterion": "api-requests",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#api-requests"
+        }
+      ],
+      "family": "requests",
+      "access": "public-plus-optional-source",
+      "probe": "Record request initiators, sizes, protocols and timing during task actions and a fixed idle interval; test explicit refresh/retry/cancel controls. Inspect supplied API/polling configuration for intended freshness constraints.",
+      "interpretation": "Polling or a protocol version alone is not a defect. Compare request frequency and payload with actual data freshness/user requirements; client timing cannot prove server processing efficiency.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.16",
+      "oldGuidelineTitle": "Ensure Your Scripts Are Secure",
+      "oldCriterion": "Script Security",
+      "classification": "automated",
+      "id": "legacy-065",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "3.12",
+          "criterion": "dependency-updates",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#dependency-updates"
+        },
+        {
+          "guideline": "3.5",
+          "criterion": "third-party-implementation",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#third-party-implementation"
+        }
+      ],
+      "family": "dependencies",
+      "access": "public-plus-optional-source",
+      "probe": "Inventory identifiable delivered libraries with confidence/version evidence; when source exists, inspect lockfiles, manifests, usage and supported runtime versions. Run pinned vulnerability/dependency tools only against identified versions and preserve advisory data versions.",
+      "interpretation": "Fingerprints are hypotheses until corroborated. Runtime assets cannot reveal every server dependency; a newer release is not automatically necessary or compatible. Necessity requires usage/context review, not package counts. Script security no longer has a standalone counterpart: consult the WSG security considerations and a dedicated security methodology, rather than treating these dependency criteria as a complete replacement.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.17",
+      "oldGuidelineTitle": "Manage Dependencies Appropriately",
+      "oldCriterion": "Dependency Management",
+      "classification": "automated",
+      "id": "legacy-066",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.12",
+          "criterion": "dependency-management",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#dependency-management"
+        }
+      ],
+      "family": "dependencies",
+      "access": "public-plus-optional-source",
+      "probe": "Inventory identifiable delivered libraries with confidence/version evidence; when source exists, inspect lockfiles, manifests, usage and supported runtime versions. Run pinned vulnerability/dependency tools only against identified versions and preserve advisory data versions.",
+      "interpretation": "Fingerprints are hypotheses until corroborated. Runtime assets cannot reveal every server dependency; a newer release is not automatically necessary or compatible. Necessity requires usage/context review, not package counts.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.17",
+      "oldGuidelineTitle": "Manage Dependencies Appropriately",
+      "oldCriterion": "Dependency Necessity",
+      "classification": "automated",
+      "id": "legacy-067",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.12",
+          "criterion": "dependency-necessity",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#dependency-necessity"
+        }
+      ],
+      "family": "dependencies",
+      "access": "public-plus-optional-source",
+      "probe": "Inventory identifiable delivered libraries with confidence/version evidence; when source exists, inspect lockfiles, manifests, usage and supported runtime versions. Run pinned vulnerability/dependency tools only against identified versions and preserve advisory data versions.",
+      "interpretation": "Fingerprints are hypotheses until corroborated. Runtime assets cannot reveal every server dependency; a newer release is not automatically necessary or compatible. Necessity requires usage/context review, not package counts.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.17",
+      "oldGuidelineTitle": "Manage Dependencies Appropriately",
+      "oldCriterion": "Dependency Updates",
+      "classification": "automated",
+      "id": "legacy-068",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.12",
+          "criterion": "dependency-updates",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#dependency-updates"
+        }
+      ],
+      "family": "dependencies",
+      "access": "public-plus-optional-source",
+      "probe": "Inventory identifiable delivered libraries with confidence/version evidence; when source exists, inspect lockfiles, manifests, usage and supported runtime versions. Run pinned vulnerability/dependency tools only against identified versions and preserve advisory data versions.",
+      "interpretation": "Fingerprints are hypotheses until corroborated. Runtime assets cannot reveal every server dependency; a newer release is not automatically necessary or compatible. Necessity requires usage/context review, not package counts.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.18",
+      "oldGuidelineTitle": "Include Files That Are Automatically Expected",
+      "oldCriterion": "Expected File Formats",
+      "classification": "automated",
+      "id": "legacy-069",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.13",
+          "criterion": "expected-files",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#expected-files"
+        }
+      ],
+      "family": "metadata",
+      "access": "public",
+      "probe": "Capture titles, language, canonical/meta tags, structured data and robots/sitemaps; parse syntax and check semantic consistency with visible content. Resolve declared icons/manifests/discovery alternatives before probing conventional paths.",
+      "interpretation": "Presence and syntactic validity are limited observations. Optional files/tags need an audience benefit; robots restrictions can be intentional and a root-path 404 can coexist with a working declared alternative.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.19",
+      "oldGuidelineTitle": "Use Plaintext Formats When Appropriate",
+      "oldCriterion": "Beneficial File Formats",
+      "classification": "automated",
+      "id": "legacy-070",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.13",
+          "criterion": "beneficial-files",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#beneficial-files"
+        }
+      ],
+      "family": "metadata",
+      "access": "public",
+      "probe": "Capture titles, language, canonical/meta tags, structured data and robots/sitemaps; parse syntax and check semantic consistency with visible content. Resolve declared icons/manifests/discovery alternatives before probing conventional paths.",
+      "interpretation": "Presence and syntactic validity are limited observations. Optional files/tags need an audience benefit; robots restrictions can be intentional and a root-path 404 can coexist with a working declared alternative.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.20",
+      "oldGuidelineTitle": "Avoid Using Deprecated Or Proprietary Code",
+      "oldCriterion": "Deprecated Code",
+      "classification": "automated",
+      "id": "legacy-071",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.6",
+          "criterion": "non-standard-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#non-standard-code"
+        },
+        {
+          "guideline": "3.12",
+          "criterion": "dependency-updates",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#dependency-updates"
+        }
+      ],
+      "family": "dependencies",
+      "access": "public-plus-optional-source",
+      "probe": "Inventory identifiable delivered libraries with confidence/version evidence; when source exists, inspect lockfiles, manifests, usage and supported runtime versions. Run pinned vulnerability/dependency tools only against identified versions and preserve advisory data versions.",
+      "interpretation": "Fingerprints are hypotheses until corroborated. Runtime assets cannot reveal every server dependency; a newer release is not automatically necessary or compatible. Necessity requires usage/context review, not package counts.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.20",
+      "oldGuidelineTitle": "Avoid Using Deprecated Or Proprietary Code",
+      "oldCriterion": "Outdated Code",
+      "classification": "automated",
+      "id": "legacy-072",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.12",
+          "criterion": "dependency-updates",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#dependency-updates"
+        },
+        {
+          "guideline": "3.15",
+          "criterion": "versioning",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#versioning"
+        }
+      ],
+      "family": "dependencies",
+      "access": "public-plus-optional-source",
+      "probe": "Inventory identifiable delivered libraries with confidence/version evidence; when source exists, inspect lockfiles, manifests, usage and supported runtime versions. Run pinned vulnerability/dependency tools only against identified versions and preserve advisory data versions.",
+      "interpretation": "Fingerprints are hypotheses until corroborated. Runtime assets cannot reveal every server dependency; a newer release is not automatically necessary or compatible. Necessity requires usage/context review, not package counts.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.22",
+      "oldGuidelineTitle": "Use The Latest Stable Language Version",
+      "oldCriterion": "Versioning",
+      "classification": "automated",
+      "id": "legacy-073",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.15",
+          "criterion": "versioning",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#versioning"
+        }
+      ],
+      "family": "dependencies",
+      "access": "public-plus-optional-source",
+      "probe": "Inventory identifiable delivered libraries with confidence/version evidence; when source exists, inspect lockfiles, manifests, usage and supported runtime versions. Run pinned vulnerability/dependency tools only against identified versions and preserve advisory data versions.",
+      "interpretation": "Fingerprints are hypotheses until corroborated. Runtime assets cannot reveal every server dependency; a newer release is not automatically necessary or compatible. Necessity requires usage/context review, not package counts.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.23",
+      "oldGuidelineTitle": "Take Advantage Of Native Features",
+      "oldCriterion": "Native Over Custom",
+      "classification": "manual, qualitative",
+      "id": "legacy-074",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.14",
+          "criterion": "interface-components",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#interface-components"
+        },
+        {
+          "guideline": "3.6",
+          "criterion": "custom-code",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#custom-code"
+        }
+      ],
+      "family": "forms",
+      "access": "public-plus-optional-source",
+      "probe": "Record visible fields, labels, purpose, instructions, paste support, keyboard interaction and client-side invalid-input feedback. Use a non-submitting test route or supplied fixture for completion/error recovery; inspect source contracts when available.",
+      "interpretation": "Evaluate necessity and error recovery for the task. Avoid purchases, contact messages or account changes on live sites. Distinguish a blocked submission from a tested successful backend path.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "3.24",
+      "oldGuidelineTitle": "Run Fewer, Simpler Queries As Possible",
+      "oldCriterion": "Database Queries",
+      "classification": "manual, qualitative",
+      "id": "legacy-075",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "3.16",
+          "criterion": "efficient-database-querying",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#efficient-database-querying"
+        },
+        {
+          "guideline": "3.16",
+          "criterion": "reuse-of-retrieved-data",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reuse-of-retrieved-data"
+        },
+        {
+          "guideline": "3.16",
+          "criterion": "data-minimization-in-queries",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#data-minimization-in-queries"
+        }
+      ],
+      "family": "database",
+      "access": "source-or-owner-evidence",
+      "probe": "First inspect public task/API response patterns for a scoped hypothesis. For a database judgment request supplied query traces or inspect read-only ORM/query code and caching paths; count queries and repeated data under the same task.",
+      "interpretation": "Public network requests cannot establish database query counts or complexity. The agent can review this criterion, but without source/traces the backend conclusion remains cantTell rather than an inferred pass.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.1",
+      "oldGuidelineTitle": "Choose A Sustainable Hosting Provider",
+      "oldCriterion": "Renewable Electricity",
+      "classification": "automated",
+      "id": "legacy-076",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.1",
+          "criterion": "low-carbon-electricity",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#low-carbon-electricity"
+        },
+        {
+          "guideline": "4.1",
+          "criterion": "provider-selection",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provider-selection"
+        }
+      ],
+      "family": "hosting",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover carbon.txt and public hosting/CDN evidence; record named providers, covered services, geographical/temporal boundaries and linked verification. Compare DNS/request evidence with the declarations and requested audience geography.",
+      "interpretation": "Self-published renewable claims do not prove energy procurement, matching or the actual served infrastructure. A CDN and local server are tradeoffs; deployment/source relationship and provider evidence must be scoped.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.2",
+      "oldGuidelineTitle": "Optimize Browser Caching",
+      "oldCriterion": "Server-side Caching",
+      "classification": "automated",
+      "id": "legacy-077",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.2",
+          "criterion": "client-side-caching",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#client-side-caching"
+        },
+        {
+          "guideline": "4.2",
+          "criterion": "server-side-caching",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#server-side-caching"
+        }
+      ],
+      "family": "cache",
+      "access": "public-plus-optional-source",
+      "probe": "Record response cache directives, validators and fresh/warm reload transfers using a declared cache state. Check an explicit offline task; distinguish private/dynamic responses from public assets and inspect supplied cache configuration.",
+      "interpretation": "Browser cache behavior cannot establish origin-side query caching. Avoid caching sensitive or time-critical data; a service worker file alone does not prove useful offline access.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.2",
+      "oldGuidelineTitle": "Optimize Browser Caching",
+      "oldCriterion": "Offline Access",
+      "classification": "automated",
+      "id": "legacy-078",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.2",
+          "criterion": "offline-access",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#offline-access"
+        }
+      ],
+      "family": "cache",
+      "access": "public-plus-optional-source",
+      "probe": "Record response cache directives, validators and fresh/warm reload transfers using a declared cache state. Check an explicit offline task; distinguish private/dynamic responses from public assets and inspect supplied cache configuration.",
+      "interpretation": "Browser cache behavior cannot establish origin-side query caching. Avoid caching sensitive or time-critical data; a service worker file alone does not prove useful offline access.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.3",
+      "oldGuidelineTitle": "Compress Your Files",
+      "oldCriterion": "Server-side Compression",
+      "classification": "automated",
+      "id": "legacy-079",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.3",
+          "criterion": "server-side-compression",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#server-side-compression"
+        }
+      ],
+      "family": "compression",
+      "access": "public",
+      "probe": "Inspect successful text response Content-Encoding, encoded transfer and decoded size; account for HTTP/browser caching and partial capture. Compare representative text and already-compressed formats.",
+      "interpretation": "Compressible uncompressed responses are candidates; do not recompress every media type or equate a missing header on a cached/failed response with a demonstrated server issue.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.3",
+      "oldGuidelineTitle": "Compress Your Files",
+      "oldCriterion": "Media Compression",
+      "classification": "automated",
+      "id": "legacy-080",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.3",
+          "criterion": "media-compression",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#media-compression"
+        }
+      ],
+      "family": "media",
+      "access": "public",
+      "probe": "Record media format, transfer KB, intrinsic/rendered dimensions, device pixel ratio, location relative to the viewport, loading/preload attributes and timing across initial/consent/scroll states. Exercise available controls and alternative delivery choices.",
+      "interpretation": "Judge media purpose and legibility before recommending removal, resizing or a codec. Modern formats and lazy attributes alone do not establish optimal delivery; instructional screenshots may need more detail than logos.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.4",
+      "oldGuidelineTitle": "Use Error Pages And Redirects Carefully",
+      "oldCriterion": "Error Pages",
+      "classification": "manual, quantitative",
+      "id": "legacy-081",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.4",
+          "criterion": "error-pages",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#error-pages"
+        }
+      ],
+      "family": "recovery",
+      "access": "public",
+      "probe": "Request one agreed missing path, inspect its HTTP status and content, then follow recovery navigation to complete the original task. Record bounded redirect chains for existing changed URLs if supplied.",
+      "interpretation": "A correct 404 status is not useful recovery by itself. Do not invent obsolete URLs to infer a redirect policy or crawl unlimited broken paths; distinguish intentional deletion from broken navigation.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.4",
+      "oldGuidelineTitle": "Use Error Pages And Redirects Carefully",
+      "oldCriterion": "Redirection",
+      "classification": "manual, qualitative",
+      "id": "legacy-082",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.4",
+          "criterion": "redirection",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#redirection"
+        }
+      ],
+      "family": "recovery",
+      "access": "public",
+      "probe": "Request one agreed missing path, inspect its HTTP status and content, then follow recovery navigation to complete the original task. Record bounded redirect chains for existing changed URLs if supplied.",
+      "interpretation": "A correct 404 status is not useful recovery by itself. Do not invent obsolete URLs to infer a redirect policy or crawl unlimited broken paths; distinguish intentional deletion from broken navigation.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.7",
+      "oldGuidelineTitle": "Frequency For Refresh Is Relevant To Visitor Needs",
+      "oldCriterion": "Refresh Frequency",
+      "classification": "manual, quantitative",
+      "id": "legacy-083",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.7",
+          "criterion": "refresh-frequency",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#refresh-frequency"
+        }
+      ],
+      "family": "requests",
+      "access": "public-plus-optional-source",
+      "probe": "Record request initiators, sizes, protocols and timing during task actions and a fixed idle interval; test explicit refresh/retry/cancel controls. Inspect supplied API/polling configuration for intended freshness constraints.",
+      "interpretation": "Polling or a protocol version alone is not a defect. Compare request frequency and payload with actual data freshness/user requirements; client timing cannot prove server processing efficiency.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.9",
+      "oldGuidelineTitle": "Enable Asynchronous Processing And Communication",
+      "oldCriterion": "Protocol Usage",
+      "classification": "automated",
+      "id": "legacy-084",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.9",
+          "criterion": "protocol-efficiency",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#protocol-efficiency"
+        }
+      ],
+      "family": "requests",
+      "access": "public-plus-optional-source",
+      "probe": "Record request initiators, sizes, protocols and timing during task actions and a fixed idle interval; test explicit refresh/retry/cancel controls. Inspect supplied API/polling configuration for intended freshness constraints.",
+      "interpretation": "Polling or a protocol version alone is not a defect. Compare request frequency and payload with actual data freshness/user requirements; client timing cannot prove server processing efficiency.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.10",
+      "oldGuidelineTitle": "Use Edge Computing",
+      "oldCriterion": "Content Delivery Network’s (CDN’s)",
+      "classification": "automated",
+      "id": "legacy-085",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.10",
+          "criterion": "global-cdns",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#global-cdns"
+        }
+      ],
+      "family": "hosting",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover carbon.txt and public hosting/CDN evidence; record named providers, covered services, geographical/temporal boundaries and linked verification. Compare DNS/request evidence with the declarations and requested audience geography.",
+      "interpretation": "Self-published renewable claims do not prove energy procurement, matching or the actual served infrastructure. A CDN and local server are tradeoffs; deployment/source relationship and provider evidence must be scoped.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.10",
+      "oldGuidelineTitle": "Use Edge Computing",
+      "oldCriterion": "Sustainability Commitment",
+      "classification": "automated",
+      "id": "legacy-086",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.10",
+          "criterion": "sustainability-commitment",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#sustainability-commitment"
+        }
+      ],
+      "family": "hosting",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover carbon.txt and public hosting/CDN evidence; record named providers, covered services, geographical/temporal boundaries and linked verification. Compare DNS/request evidence with the declarations and requested audience geography.",
+      "interpretation": "Self-published renewable claims do not prove energy procurement, matching or the actual served infrastructure. A CDN and local server are tradeoffs; deployment/source relationship and provider evidence must be scoped.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.10",
+      "oldGuidelineTitle": "Use Edge Computing",
+      "oldCriterion": "Local Servers",
+      "classification": "manual, qualitative",
+      "id": "legacy-087",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.9",
+          "criterion": "efficient-location",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#efficient-location"
+        },
+        {
+          "guideline": "4.10",
+          "criterion": "global-cdns",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#global-cdns"
+        }
+      ],
+      "family": "hosting",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover carbon.txt and public hosting/CDN evidence; record named providers, covered services, geographical/temporal boundaries and linked verification. Compare DNS/request evidence with the declarations and requested audience geography.",
+      "interpretation": "Self-published renewable claims do not prove energy procurement, matching or the actual served infrastructure. A CDN and local server are tradeoffs; deployment/source relationship and provider evidence must be scoped.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "4.10",
+      "oldGuidelineTitle": "Use Edge Computing",
+      "oldCriterion": "Avoid Dynamic Resources",
+      "classification": "manual, quantitative",
+      "id": "legacy-088",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "4.10",
+          "criterion": "inappropriate-resources",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#inappropriate-resources"
+        }
+      ],
+      "family": "cache",
+      "access": "public-plus-optional-source",
+      "probe": "Record response cache directives, validators and fresh/warm reload transfers using a declared cache state. Check an explicit offline task; distinguish private/dynamic responses from public assets and inspect supplied cache configuration.",
+      "interpretation": "Browser cache behavior cannot establish origin-side query caching. Avoid caching sensitive or time-critical data; a service worker file alone does not prove useful offline access.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.1",
+      "oldGuidelineTitle": "Have An Ethical And Sustainability Product Strategy",
+      "oldCriterion": "Statement Availability",
+      "classification": "manual, quantitative",
+      "id": "legacy-089",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.1",
+          "criterion": "public-documents",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#public-documents"
+        }
+      ],
+      "family": "policy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover and read the relevant public statement and linked evidence. Record exact site/organization scope, accountable role, goals/baseline/time horizon, claimed actions, publication version and verification references; ask for missing implementation records when material.",
+      "interpretation": "A public document supports the existence/content of a commitment, not its execution. Evaluate scope and concrete commitments; lack of public evidence is not proof the organization has no practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.1",
+      "oldGuidelineTitle": "Have An Ethical And Sustainability Product Strategy",
+      "oldCriterion": "Achievements And Compliance",
+      "classification": "manual, qualitative",
+      "id": "legacy-090",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.1",
+          "criterion": "achievements-and-compliance",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#achievements-and-compliance"
+        }
+      ],
+      "family": "policy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover and read the relevant public statement and linked evidence. Record exact site/organization scope, accountable role, goals/baseline/time horizon, claimed actions, publication version and verification references; ask for missing implementation records when material.",
+      "interpretation": "A public document supports the existence/content of a commitment, not its execution. Evaluate scope and concrete commitments; lack of public evidence is not proof the organization has no practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.1",
+      "oldGuidelineTitle": "Have An Ethical And Sustainability Product Strategy",
+      "oldCriterion": "Governance Over Time",
+      "classification": "manual, qualitative",
+      "id": "legacy-091",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.1",
+          "criterion": "governance-over-time",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#governance-over-time"
+        }
+      ],
+      "family": "policy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover and read the relevant public statement and linked evidence. Record exact site/organization scope, accountable role, goals/baseline/time horizon, claimed actions, publication version and verification references; ask for missing implementation records when material.",
+      "interpretation": "A public document supports the existence/content of a commitment, not its execution. Evaluate scope and concrete commitments; lack of public evidence is not proof the organization has no practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.1",
+      "oldGuidelineTitle": "Have An Ethical And Sustainability Product Strategy",
+      "oldCriterion": "Documentation",
+      "classification": "manual, qualitative",
+      "id": "legacy-092",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.1",
+          "criterion": "public-documents",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#public-documents"
+        },
+        {
+          "guideline": "2.7",
+          "criterion": "deliverables-documentation",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#deliverables-documentation"
+        }
+      ],
+      "family": "policy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover and read the relevant public statement and linked evidence. Record exact site/organization scope, accountable role, goals/baseline/time horizon, claimed actions, publication version and verification references; ask for missing implementation records when material.",
+      "interpretation": "A public document supports the existence/content of a commitment, not its execution. Evaluate scope and concrete commitments; lack of public evidence is not proof the organization has no practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.1",
+      "oldGuidelineTitle": "Have An Ethical And Sustainability Product Strategy",
+      "oldCriterion": "Renewable Showcasing",
+      "classification": "manual, qualitative",
+      "id": "legacy-093",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.1",
+          "criterion": "public-documents",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#public-documents"
+        },
+        {
+          "guideline": "4.1",
+          "criterion": "low-carbon-electricity",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#low-carbon-electricity"
+        }
+      ],
+      "family": "hosting",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover carbon.txt and public hosting/CDN evidence; record named providers, covered services, geographical/temporal boundaries and linked verification. Compare DNS/request evidence with the declarations and requested audience geography.",
+      "interpretation": "Self-published renewable claims do not prove energy procurement, matching or the actual served infrastructure. A CDN and local server are tradeoffs; deployment/source relationship and provider evidence must be scoped.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.4",
+      "oldGuidelineTitle": "Communicate The Ecological Impact Of User Choices",
+      "oldCriterion": "Impact Communication",
+      "classification": "manual, qualitative",
+      "id": "legacy-094",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.4",
+          "criterion": "communication-of-impact",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#communication-of-impact"
+        }
+      ],
+      "family": "claims",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Capture exact impact statements, units, methodology, baseline, reporting period, traffic denominator and organizational boundaries; recompute published arithmetic and follow evidence references. Compare statements with audit observations only within matched scope.",
+      "interpretation": "Separate observed, modeled, estimated and verified claims. Public arithmetic can be checked, but operational/embodied/system boundaries and annual estimates need explicit assumptions; avoid implying certification.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.6",
+      "oldGuidelineTitle": "Define Clear Organizational Sustainability Goals And Metrics",
+      "oldCriterion": "Sustainability Goals",
+      "classification": "manual, qualitative",
+      "id": "legacy-095",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.6",
+          "criterion": "web-sustainability-goals",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#web-sustainability-goals"
+        }
+      ],
+      "family": "policy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover and read the relevant public statement and linked evidence. Record exact site/organization scope, accountable role, goals/baseline/time horizon, claimed actions, publication version and verification references; ask for missing implementation records when material.",
+      "interpretation": "A public document supports the existence/content of a commitment, not its execution. Evaluate scope and concrete commitments; lack of public evidence is not proof the organization has no practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.9",
+      "oldGuidelineTitle": "Support Mandatory Disclosures And Reporting",
+      "oldCriterion": "Impact Report",
+      "classification": "manual, qualitative",
+      "id": "legacy-096",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.8",
+          "criterion": "impact-reports",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#impact-reports"
+        }
+      ],
+      "family": "claims",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Capture exact impact statements, units, methodology, baseline, reporting period, traffic denominator and organizational boundaries; recompute published arithmetic and follow evidence references. Compare statements with audit observations only within matched scope.",
+      "interpretation": "Separate observed, modeled, estimated and verified claims. Public arithmetic can be checked, but operational/embodied/system boundaries and annual estimates need explicit assumptions; avoid implying certification.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.9",
+      "oldGuidelineTitle": "Support Mandatory Disclosures And Reporting",
+      "oldCriterion": "Standards And Policies",
+      "classification": "manual, qualitative",
+      "id": "legacy-097",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.8",
+          "criterion": "policies-and-practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#policies-and-practices"
+        }
+      ],
+      "family": "policy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover and read the relevant public statement and linked evidence. Record exact site/organization scope, accountable role, goals/baseline/time horizon, claimed actions, publication version and verification references; ask for missing implementation records when material.",
+      "interpretation": "A public document supports the existence/content of a commitment, not its execution. Evaluate scope and concrete commitments; lack of public evidence is not proof the organization has no practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.19",
+      "oldGuidelineTitle": "Use Justice, Equity, Diversity, Inclusion (JEDI) Practices",
+      "oldCriterion": "Accessibility Policy",
+      "classification": "manual, quantitative",
+      "id": "legacy-098",
+      "mappingRelation": "related-current-criteria",
+      "targets": [
+        {
+          "guideline": "5.17",
+          "criterion": "deji-practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#deji-practices"
+        },
+        {
+          "guideline": "5.1",
+          "criterion": "public-documents",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#public-documents"
+        }
+      ],
+      "family": "policy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Discover and read the relevant public statement and linked evidence. Record exact site/organization scope, accountable role, goals/baseline/time horizon, claimed actions, publication version and verification references; ask for missing implementation records when material.",
+      "interpretation": "A public document supports the existence/content of a commitment, not its execution. Evaluate scope and concrete commitments; lack of public evidence is not proof the organization has no practice.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.20",
+      "oldGuidelineTitle": "Promote Responsible Data Practices",
+      "oldCriterion": "Privacy Policy",
+      "classification": "manual, qualitative",
+      "id": "legacy-099",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.18",
+          "criterion": "data-practices",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#data-practices"
+        }
+      ],
+      "family": "privacy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Read the privacy/data-ownership statement; identify controller, services/domains covered, purposes, retention and user controls. Compare the sampled consent/request behavior and optional source against those claims.",
+      "interpretation": "A policy for a related organization may not cover this origin. Surface ambiguity or contradiction with evidence; a sustainability audit is not a legal compliance determination.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.21",
+      "oldGuidelineTitle": "Implement Appropriate Data Management Procedures",
+      "oldCriterion": "Data Controllers",
+      "classification": "manual, qualitative",
+      "id": "legacy-100",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.18",
+          "criterion": "data-ownership",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#data-ownership"
+        }
+      ],
+      "family": "privacy",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Read the privacy/data-ownership statement; identify controller, services/domains covered, purposes, retention and user controls. Compare the sampled consent/request behavior and optional source against those claims.",
+      "interpretation": "A policy for a related organization may not cover this origin. Surface ambiguity or contradiction with evidence; a sustainability audit is not a legal compliance determination.",
+      "status": "partial-existing-evidence",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    },
+    {
+      "oldGuideline": "5.22",
+      "oldGuidelineTitle": "Promote Responsible Emerging Technology Practices",
+      "oldCriterion": "Emerging Technologies",
+      "classification": "manual, quantitative",
+      "id": "legacy-101",
+      "mappingRelation": "semantic-successor-or-merged",
+      "targets": [
+        {
+          "guideline": "5.19",
+          "criterion": "ai-and-data-collection",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ai-and-data-collection"
+        },
+        {
+          "guideline": "5.19",
+          "criterion": "environmental-responsibilities",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#environmental-responsibilities"
+        },
+        {
+          "guideline": "5.19",
+          "criterion": "automated-tooling",
+          "url": "https://www.w3.org/TR/web-sustainability-guidelines/#automated-tooling"
+        }
+      ],
+      "family": "ai",
+      "access": "public-plus-owner-corroboration",
+      "probe": "Identify visible AI/emerging-technology features and disclosures, user alternatives and data collection. Request supplied model/provider settings, energy/impact rationale, evaluation records and mitigation ownership for a scoped review.",
+      "interpretation": "Public UI may not reveal AI use or its environmental cost. No visible feature is not proof of absence; distinguish observed behavior, declared governance and inaccessible operational evidence.",
+      "status": "candidate",
+      "resultContract": {
+        "required": [
+          "scope",
+          "steps",
+          "evidenceIds",
+          "outcome",
+          "rationale",
+          "confidence",
+          "nextEvidenceNeeded"
+        ],
+        "outcomes": ["pass", "fail", "cantTell", "inapplicable", "untested"]
+      }
+    }
+  ]
+}

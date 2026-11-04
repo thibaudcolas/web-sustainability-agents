@@ -3,7 +3,7 @@ name: sustainability-evidence-review
 description: Review collected web sustainability evidence, distinguish observations from claims, and produce scoped findings with explicit unknowns. Use for audit evidence review, including supplied source corroboration.
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # Sustainability evidence review
@@ -15,6 +15,7 @@ For human reports, use one site per report. Lead with key measures and the suppl
 Keep these distinctions when reviewing evidence:
 
 - Hardware energy, byte-based emissions estimates, and rank-derived traffic scenarios have different boundaries. Never sum overlapping energy domains or add measured device energy to an SWDM total. Missing counters or missing rank lookup are unknown, not zero.
+- Initial JavaScript/CSS coverage describes code unused in that captured state, not code safe to delete. Preference, print, narrow-layout and no-JavaScript snapshots are supplementary evidence, not additional headline transfer measurements. Absence of observed movement or a notification in one short state does not establish behavior over a complete journey.
 - A public policy describes intent; it does not prove implementation.
 - Lead with the fresh, above-the-fold initial load without interaction. Report post-cookie-choice and post-scroll cumulative totals separately, including the actual choice and whether it succeeded. Phase differences include background activity and late completions; they do not by themselves measure savings caused by an interaction.
 - Measure the site as found. Note failed resources without treating site configuration repair as a prerequisite or the primary sustainability recommendation. Distinguish resource errors from incomplete byte accounting; a fully measured HTTP error response still contributes traffic.

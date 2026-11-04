@@ -6,11 +6,13 @@ This workspace publishes [Agent Skills](https://agentskills.io/) alongside its d
 
 | Skill                             | Version | Role                                                                                              |
 | --------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
-| `sustainability-audit`            | 0.1.0   | Coordinate a per-site audit, bounded review roles, calculation, reporting and next auditing steps |
-| `sustainability-evidence-review`  | 0.4.0   | Interpret measurements, phases, partial accounting and model boundaries                           |
-| `sustainability-guideline-review` | 0.1.0   | Apply scoped expectations, distinguish applicability and unknowns, and explain score coverage     |
-| `sustainability-claims-review`    | 0.1.0   | Review footprint assumptions, disclosures, source corroboration and recommendation usefulness     |
+| `sustainability-audit`            | 0.2.0   | Coordinate a per-site audit, bounded review roles, calculation, reporting and next auditing steps |
+| `sustainability-evidence-review`  | 0.5.0   | Interpret measurements, phases, partial accounting and model boundaries                           |
+| `sustainability-guideline-review` | 0.2.0   | Apply scoped expectations, distinguish applicability and unknowns, and explain score coverage     |
+| `sustainability-claims-review`    | 0.2.0   | Review footprint assumptions, disclosures, source corroboration and recommendation usefulness     |
 | `research-workspace`              | 1.0.0   | Maintain documentation structure, navigation and source citations                                 |
+
+The [agent-triggered workflow](initial-implementation/agent-driven-audits.md) adds scope clarification, editable plans, actual collector invocations, immutable evidence packets and scored reviews. The guideline skill packages a pinned WSG reference and an assessment crosswalk; read relevant entries progressively rather than putting the entire reference into every prompt.
 
 The [implemented skill workflow](initial-implementation/skill-audit-workflow.md) includes portable JSON review packets, actual per-site reviewer output, reproducible scores, and the remaining validation limits. Delegation is optional: the same roles can run sequentially when a harness lacks subagents.
 

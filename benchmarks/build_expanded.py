@@ -104,7 +104,7 @@ def main() -> None:
         shutil.copyfile(ROOT / "benchmarks/grade_expanded.py", task / "tests/grade.py")
         skills = (
             [
-                ROOT / ".agents/skills" / name
+                ROOT / "benchmarks/frozen-methodology-skills" / name
                 for name in [
                     "sustainability-evidence-review",
                     "sustainability-guideline-review",

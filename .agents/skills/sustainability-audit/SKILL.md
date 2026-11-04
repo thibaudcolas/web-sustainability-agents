@@ -3,12 +3,14 @@ name: sustainability-audit
 description: Coordinate a per-site sustainability audit using measurement evidence, scoped WSG review, footprint scenarios, and an explicit plan for increasing audit coverage.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Sustainability audit
 
-Define one origin, relevant paths/states, available source or internal documents, and the audit purpose. Begin with existing evidence and its collection dates before recollecting. Follow the repository's reproducible collector commands when available; separate hardware-energy runs from other workloads.
+Define one origin, relevant visitor tasks and states, available source or internal documents, and the audit purpose. Reuse the owner’s existing answers; ask concise clarifying questions when a missing priority or boundary changes the work. Record assumptions and unanswered questions without inventing agreement. Public exploration can continue while optional questions are pending.
+
+Read [the agent workflow](references/agent-workflow.md) before starting collection. The agent creates and refines the plan, triggers locked collector commands, checks execution and page-level failures, and hands frozen evidence to reviewers. Begin with existing evidence and its collection dates before recollecting. Separate hardware-energy runs from other workloads.
 
 Use bounded review roles rather than asking one prompt to discover, measure, judge, and score everything:
 

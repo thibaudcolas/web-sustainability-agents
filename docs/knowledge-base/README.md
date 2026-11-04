@@ -9,3 +9,8 @@ Reusable methodology and engineering reference material for web sustainability a
 - [Scoped audit scoring](audit-scoring.md): ACT outcome mapping, WSG impact points, STAR scoring context, explicit denominators and coverage limits.
 - [Lessons from existing audit projects](local-projects.md): reusable patterns and limitations from claude-seo and accessibility-agents.
 - [Model providers and inference accounting](provider-capabilities.md): generative and decision APIs, versioning, confidence semantics, and measurement boundaries.
+
+## Disclosure and client measurement references
+
+- [Using carbon.txt as audit evidence](carbon-disclosures.md): discovery, provider relationships, scope and corroboration.
+- [Optional GreenFrame client measurements](greenframe.md): scenario boundaries, agent invocation and remaining integration validation.

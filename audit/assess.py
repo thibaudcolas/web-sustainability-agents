@@ -133,17 +133,22 @@ def main() -> None:
         type=Path,
         default=ROOT / "docs/initial-implementation/assets/scored-audits.json",
     )
+    parser.add_argument("--rubric", type=Path, default=ROOT / "audit/rubric.json")
+    parser.add_argument(
+        "--weights", type=Path, default=ROOT / "audit/impact-weights.json"
+    )
+    parser.add_argument(
+        "--assets", type=Path, default=ROOT / "docs/initial-implementation/assets"
+    )
     args = parser.parse_args()
     paths = {
         "reviews": args.reviews,
-        "rubric": ROOT / "audit/rubric.json",
-        "impactWeights": ROOT / "audit/impact-weights.json",
+        "rubric": args.rubric,
+        "impactWeights": args.weights,
     }
     raw = {key: path.read_bytes() for key, path in paths.items()}
     data = {key: json.loads(value) for key, value in raw.items()}
-    validate_provenance(
-        data["reviews"], raw["rubric"], ROOT / "docs/initial-implementation/assets"
-    )
+    validate_provenance(data["reviews"], raw["rubric"], args.assets)
     sites = [review["site"] for review in data["reviews"]["reviews"]]
     if len(set(sites)) != len(sites):
         raise ValueError("Each site needs one reconciled review")

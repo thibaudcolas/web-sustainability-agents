@@ -65,3 +65,15 @@ The [methodology benchmark](methodology-benchmark.md) implements ten new develop
 | Rank-derived traffic looks implausible    | Traffic enrichment and calibration       | Origin mismatch, restricted lookup coverage, cross-population extrapolation |
 
 Historical artifacts and model outcomes stay frozen. Corrections create a new rubric or case version; they do not rewrite old results. A benchmark success on author-created development cases is not an independent accuracy estimate.
+
+## Repeatable collection and broader interpretation
+
+**B23:** Validate GreenFrame with its pinned CLI on an available runner, capture the runner image digest/browser version, then compare repeated initial and interaction scenarios under idle conditions. The client-only adapter and preflight exist; no GreenFrame energy result is claimed. Do this before using its numbers to rank recommendations.
+
+**B24:** Add carbon.txt schema validation and scoped provider corroboration after the current declaration interpreter. Test DNS/header delegation, conflicting documents, expired reporting periods, unknown versions and parent/subdomain relationships. A schema-valid declaration still cannot establish green hosting by itself.
+
+**B25:** Work through the [101-row assessment crosswalk](wsg-check-expansion.md) by check family. Prioritize completed public tasks, keyboard/forms, constrained media/font tests and document alternatives. Then add source/build/dependency evidence and owner records for organizational execution. Manual quantitative and qualitative checks belong in the agent workflow; they are not automatically excluded from automation.
+
+**B26:** Extend the new session packet's provenance resolver to source excerpts, screenshots and independently retrieved proof documents before including them in its score. Retain source revision, dirty status and deployment relationship. Public observations and supplemental source recommendations already remain distinguishable.
+
+**B27:** Run the same frozen agent-triggered task through Codex and another harness, then evaluate with Harbor using Sol/low and Neuralwatt DeepSeek/high. Include scope clarification, actual tool invocation, partial failures and evidence citation in the verifier; the prior frozen-evidence campaigns do not test these behaviors. Preserve the existing benchmark skills in `benchmarks/frozen-methodology-skills/` when current skills evolve.

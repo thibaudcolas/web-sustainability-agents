@@ -152,11 +152,30 @@ class DiscoveryTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result["carbonStatus"], "disclosures_found")
         self.assertEqual(result["carbonAttempts"][0]["parseStatus"], "not_toml")
         self.assertFalse(result["carbonAttempts"][1]["schemaValidated"])
+        self.assertEqual(result["carbonAttempts"][1]["discoveredVia"], "well-known")
+        self.assertEqual(result["carbonPresence"], "present")
         self.assertEqual(
             result["documents"][0]["textExcerpt"],
             "Our footprint is a modeled estimate.",
         )
         self.assertIn("/disclosure", requests)
+
+    async def test_present_file_without_usable_disclosures_is_not_absent(self):
+        def handler(request):
+            if request.url.path == "/carbon.txt":
+                return httpx.Response(
+                    200, text='version = "0.6"\n[org]\ndisclosures = []'
+                )
+            return httpx.Response(404)
+
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+            with patch(
+                "audit.run.dns.asyncresolver.resolve", new=AsyncMock(return_value=[])
+            ):
+                result = await discover(client, "https://site.test/", [])
+        self.assertEqual(result["carbonPresence"], "present")
+        self.assertEqual(result["carbonStatus"], "not_found_within_discovery_scope")
+        self.assertTrue(result["documents"])
 
     async def test_missing_carbon_uses_supplied_statement_and_retains_unknown_scope(
         self,

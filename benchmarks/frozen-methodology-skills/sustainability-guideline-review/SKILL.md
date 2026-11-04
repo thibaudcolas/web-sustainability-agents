@@ -1,0 +1,19 @@
+---
+name: sustainability-guideline-review
+description: Judge scoped WSG checks from evidence and a versioned rubric, preserving applicability, unknowns, coverage limits, and actionable follow-up work.
+license: MIT
+metadata:
+  version: "0.1.0"
+---
+
+# Sustainability guideline review
+
+Read the supplied rubric, requested scope, and evidence before assigning outcomes. A rubric expectation is the test being judged; its WSG mapping supplies context, not permission to claim the entire guideline is satisfied.
+
+For each requested guideline group, return its ID, outcome, evidence IDs, rationale, confidence, and next evidence needed. Use `pass` only when every declared expectation is supported for the declared sample; `fail` for a demonstrated contradiction; `cantTell` for missing observations or unresolved applicability; `inapplicable` only with an applicability reason; and `untested` when the check was not attempted. When several rules map to one guideline, any demonstrated failure takes precedence, otherwise unresolved expectations remain `cantTell`; all applicable rules must pass for a scoped pass. Do not multiply a guideline's weight by its number of rules or pages.
+
+The project score is `100 × passed / (passed + failed + cantTell)`, after grouping by guideline. Inapplicable and untested groups are displayed separately. Unknowns earn no points but are not reported as defects. The optional impact-weighted variant uses the same groups and declared WSG Impact Ratings weights; it is a project convention, not an official W3C site score. Keep coverage out of all 71 guidelines adjacent to either score. A zero checked denominator is unavailable, not zero or 100.
+
+Do not infer full-guideline conformance from passing narrow tests. A language attribute check cannot establish semantic quality; a policy route cannot establish policy contents or operational implementation; an initial theme probe cannot establish response to an in-page preference change. Read linked-file alternatives before concluding a resource is absent. Assess remediation prerequisites and user value before prioritizing a missing optional feature.
+
+If the request supplies an external evaluation schema, use that schema. For claim-validation questions, follow its declared semantics: “unsupported” includes insufficient evidence and need not mean a site defect. Keep direct state uncertainty distinct from whether evidence supports a claim.

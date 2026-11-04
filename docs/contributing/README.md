@@ -42,6 +42,7 @@ Initialization installs Python and npm dependencies and downloads the pinned Val
 - `just audit-install`: Install the pinned Playwright Chromium browser used by audit tests.
 - `just audit-sites`: Run the Python staged collector, footprint-document discovery, and Wappalyzer; publish sanitized evidence.
 - `just audit-reports`: Export per-site report JSON and CSV from existing evidence; see the [reporting contract](../initial-implementation/reporting.md).
+- `uv run --locked --script audit/workflow.py init|collect|score`: Create a per-origin plan, run collectors, and score agent reviews; see the [agent workflow](../initial-implementation/agent-driven-audits.md).
 - `just audit-review-packets`: Prepare bounded evidence packets for the [audit skills](../agent-skills.md); reviewers produce judgments, not aggregate scores.
 - `just audit-assess`: Recalculate scoped scores, annual footprint scenarios and report exports from published evidence/reviews. This does not call models or recollect sites.
 - `just audit-scope`: Collect broader metadata/preference/recovery observations and generate per-site guideline registers.

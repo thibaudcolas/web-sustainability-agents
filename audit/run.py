@@ -47,7 +47,7 @@ JSON = dict[str, Any]
 ROOT = Path(__file__).resolve().parent.parent
 LOG = logging.getLogger(__name__)
 PROTOCOL: JSON = {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "viewport": {"width": 1280, "height": 800},
     "deviceScaleFactor": 1,
     "locale": "en-GB",
@@ -499,6 +499,10 @@ async def _fetch_document(client: httpx.AsyncClient, url: str) -> tuple[JSON, st
                 finalUrl=str(response.url),
                 contentType=response.headers.get("content-type"),
                 carbonLocation=response.headers.get("carbontxt-location"),
+                redirects=[
+                    {"url": str(item.url), "status": item.status_code}
+                    for item in response.history
+                ],
                 sha256=hashlib.sha256(body).hexdigest(),
             )
             return record, body.decode("utf-8", errors="replace")
@@ -554,7 +558,10 @@ async def discover(
         "dns": {},
         "scope": "DNS TXT, root, well-known, HTTP header; up to six linked, supplied, or common-path disclosures, with one-hop follow-up. Not an exhaustive search or verification of claims.",
     }
-    locations = [f"{origin}/carbon.txt", f"{origin}/.well-known/carbon.txt"]
+    locations = [
+        (f"{origin}/carbon.txt", "root"),
+        (f"{origin}/.well-known/carbon.txt", "well-known"),
+    ]
     try:
         answers = await dns.asyncresolver.resolve(
             parts.hostname or "", "TXT", lifetime=4
@@ -562,7 +569,9 @@ async def discover(
         for answer in answers:
             text = b"".join(answer.strings).decode(errors="replace")
             if text.startswith("carbon-txt-location="):
-                locations.insert(0, text.split("=", 1)[1])
+                locations.insert(
+                    0, (text.split("=", 1)[1], "DNS TXT carbon-txt-location")
+                )
         result["dns"]["status"] = "queried"
     except dns.exception.DNSException as error:
         result["dns"] = {
@@ -572,17 +581,27 @@ async def discover(
     home_record, home_text = await fetch_document(client, url)
     result["homepage"] = home_record
     if home_record.get("carbonLocation"):
-        locations.append(resolve_link(url, home_record["carbonLocation"]))
+        locations.append(
+            (
+                resolve_link(url, home_record["carbonLocation"]),
+                "HTTP CarbonTxt-Location header",
+            )
+        )
     document = Document()
     document.feed(home_text)
     candidates: list[tuple[str, str]] = []
     found_carbon = False
-    for location in dict.fromkeys(locations):
+    carbon_present = False
+    for location, route in dict.fromkeys(locations):
         record, text = await fetch_document(client, location)
+        record["discoveredVia"] = route
         if record.get("status") == 200 and not record.get("truncated"):
             try:
                 parsed = tomllib.loads(text)
                 urls = disclosure_urls(parsed)
+                carbon_present |= any(
+                    key in parsed for key in ("version", "org", "upstream")
+                )
                 record.update(
                     parseStatus="parsed",
                     declaredVersion=parsed.get("version"),
@@ -652,6 +671,12 @@ async def discover(
                         )
                         break
         result["documents"].append(record)
+    result["carbonPresence"] = (
+        "present" if carbon_present else "not_established_within_discovery_scope"
+    )
+    result["discoveryProfile"] = (
+        "carbon.txt website v0.x FAQ order; not an implementation of the separate 1.0-RC1 IETF draft"
+    )
     result["carbonStatus"] = (
         "disclosures_found" if found_carbon else "not_found_within_discovery_scope"
     )
