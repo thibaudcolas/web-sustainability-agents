@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "0.1.0",
+  "family": "scope-v1",
+  "method": "Inspect the original failed trial record and presence of prediction/session artifacts; publish only allowlisted failure classes, sanitized diagnoses and private-result hashes.",
+  "failures": [
+    {
+      "model": "openai/gpt-6.1-sol",
+      "case": "ci-duplicate-trigger-unmeasured-priority",
+      "job": "scope-sol-high-v1",
+      "exceptionType": "NonZeroAgentExitCodeError",
+      "diagnosis": "Codex startup failed because optional platform package @openai/codex-linux-x64 was missing.",
+      "gradedPrediction": false,
+      "reportPresent": false,
+      "nativeSessionFiles": 0,
+      "trialResultSHA256": "a17e6244ac886161b947b0d5af6c5f1ef7909317c6ab316535864b5a8726ce99",
+      "retryJob": "scope-sol-high-setup-retry-v1",
+      "retryPolicy": "One unchanged-task, unchanged-model-configuration retry; original failure retained; no graded prediction retried."
+    },
+    {
+      "model": "neuralwatt/deepseek-v4.1-flash",
+      "case": "inclusive-testing-attendance-not-coverage",
+      "job": "scope-deepseek-high-v1",
+      "exceptionType": "AgentSetupTimeoutError",
+      "diagnosis": "Agent setup timed out before a recorded native session or report.",
+      "gradedPrediction": false,
+      "reportPresent": false,
+      "nativeSessionFiles": 0,
+      "trialResultSHA256": "1ca841cd7ecb77a51be3eeebc6fcfb95d5145c3b22e926b6469d07092b6699e9",
+      "retryJob": "scope-deepseek-high-setup-retry-v1",
+      "retryPolicy": "One unchanged-task, unchanged-model-configuration retry; original failure retained; no graded prediction retried."
+    }
+  ]
+}

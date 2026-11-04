@@ -268,13 +268,14 @@ nav:
               - First skill-guided scoring: initial-implementation/skill-audit-workflow.md
       - Evaluation:
           - evaluation/README.md
-          - Scope and qualitative review: evaluation/scope-benchmark.md
-          - Review the cases: initial-implementation/breadth-review-cases.md
-          - Current campaign: initial-implementation/breadth-benchmark.md
+          - Review the cases: evaluation/scope-review-cases.md
+          - Current campaign: evaluation/scope-benchmark.md
           - Benchmark design: evaluation/design.md
           - Model comparison protocol: evaluation/models.md
           - Test sites: evaluation/test-sites.md
           - Earlier campaigns:
+              - Broader interpretation: initial-implementation/breadth-benchmark.md
+              - Broader case review: initial-implementation/breadth-review-cases.md
               - Evidence review: initial-implementation/expanded-benchmark.md
               - Methodology and skills: initial-implementation/methodology-benchmark.md
       - Feasibility study:

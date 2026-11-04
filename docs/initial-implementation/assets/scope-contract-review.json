@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "0.1.0",
+  "family": "scope-v1",
+  "status": "Post-hoc contract diagnosis after inspecting model predictions; not independent labeling or an accuracy estimate. Original reference labels and verifier rewards remain unchanged.",
+  "initialReviewLimit": "Separate-agent scrutiny before execution did not catch the two recommendation contract defects described here.",
+  "findings": [
+    {
+      "case": "inference-energy-missing-not-zero",
+      "item": "answers/q2",
+      "originalReference": "pass",
+      "observedBothModels": "inconclusive",
+      "diagnosis": "The statement that inference energy is unresolved can be read as either a supported claim or a direct unresolved-state request under the task instruction. Both models retain the correct null quantity and explain that missing energy is not zero.",
+      "futureContract": "Declare claim-validation versus direct-state mode explicitly per question."
+    },
+    {
+      "case": "area-score-known-only-and-coverage",
+      "item": "recommendations/r1",
+      "originalReference": "preserve",
+      "observedBothModels": "fix",
+      "diagnosis": "The proposal asks to report area scores with coverage but provides no existing reporting behavior to preserve. Both models compute all seven score and coverage metrics correctly; action classification is under-specified.",
+      "futureContract": "Judge proposal support separately from the type of site action, and establish existing behavior before requiring preserve."
+    },
+    {
+      "case": "star-qualitative-scope-and-evidence",
+      "item": "recommendations/r1",
+      "originalReference": "investigate",
+      "observedBothModels": "preserve",
+      "diagnosis": "The proposal combines keeping an observed strength with requesting a missing baseline, without defining a primary operation. Both actions are justified by the supplied evidence, and both models preserve the stated qualitative scope.",
+      "futureContract": "Use one operation per recommendation request; split preserving the support route from investigating the baseline."
+    }
+  ],
+  "scoreTreatment": "No corrected score, alternative headline, relabeling or graded retry."
+}

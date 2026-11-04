@@ -17,8 +17,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 JSON = dict[str, Any]
 MODELS = {
-    "openai/gpt-6.1-sol": "Sol/high",
-    "neuralwatt/deepseek-v4.1-flash": "DeepSeek/high",
+    "openai/gpt-6.1-sol": "GPT-6.1 Sol (high)",
+    "neuralwatt/deepseek-v4.1-flash": "DeepSeek V4.1 Flash (high)",
 }
 
 
@@ -49,9 +49,8 @@ def selected(results: JSON, ids: set[str]) -> dict[str, dict[str, JSON]]:
 
 def metric(row: JSON) -> str:
     """Display numeric precision, units and evidence basis without relabeling."""
-    return (
-        f"{json.dumps(row.get('value'))} {row.get('unit', '')} ({row.get('basis', '')})"
-    )
+    value = json.dumps(row["value"]) if "value" in row else "missing"
+    return f"{value} {row.get('unit', '')} ({row.get('basis', '')})"
 
 
 def render(corpus: JSON, results: JSON) -> str:

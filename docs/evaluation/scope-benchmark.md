@@ -32,7 +32,7 @@ The contextual cases address bounded expectations under [audience evaluation](ht
 
 ## Contract and controls
 
-The task loads the evidence, guideline, claims and contextual review skills, including their reference resources. Four cases require the model to invoke the frozen collector before judging. That collector reads a supplied bundle; it does not browse a live site. References and oracle solutions are outside the agent environment, and Harbor runs verification separately.
+The tasks supply the evidence, guideline, claims and contextual review skills, including their reference resources, and instruct the model to read them. Four cases require the model to invoke the frozen collector before judging. That collector reads a supplied bundle; it does not browse a live site. References and oracle solutions are outside the agent environment, and Harbor runs verification separately.
 
 Questions validate claims: `pass` means supported and `fail` means unsupported, including insufficient evidence. A rejected claim is not automatically a failed website check. Metrics name their units and basis; unavailable quantities remain null. Recommendations name one action. Each case also has a public reference rationale for scrutiny, withheld from the agent input.
 
@@ -40,9 +40,14 @@ The verifier checks labels, values, units, evidence IDs, explanation presence an
 
 ## Reproduction
 
-Freeze once after reference and skill review. The builder refuses a nonempty output directory; do not rebuild during a campaign.
+The campaign froze commit `839c299e18c9fc7ca3f1c92c49b754d1710c1a9d`, including contextual skill version 0.1.0. Later workspace changes, including version 0.1.1, are outside this comparison. The [source verification](../initial-implementation/assets/scope-source-verification.json) rebuilds from that commit's Git blobs in an isolated temporary tree: every filename and byte in all nineteen generated tasks matches the actual campaign tasks, the manifest matches, and both model configurations match byte-for-byte.
+
+Reproduce from that source revision in an isolated checkout. Building from the latest branch does not reproduce this snapshot. The builder refuses a nonempty output directory; do not rebuild during a campaign.
 
 ```sh
+git worktree add --detach .audit-work/scope-reproduction \
+  839c299e18c9fc7ca3f1c92c49b754d1710c1a9d
+cd .audit-work/scope-reproduction
 uv run --locked --script benchmarks/build_expanded.py --scope
 harbor run -p .audit-work/scope-tasks-v1 -a oracle -n 2 \
   --jobs-dir "$PWD/.audit-work/scope-jobs" --job-name scope-oracle-v1
@@ -57,8 +62,41 @@ harbor run -c benchmarks/neuralwatt.json -p .audit-work/scope-tasks-v1 \
 
 Both model arms use Codex CLI, one attempt per case, high reasoning and identical frozen inputs. Record setup failures separately; retry infrastructure failures on unchanged inputs and retain every attempt. Do not retry graded predictions or choose the best answer. Run model campaigns outside hardware-energy measurement windows.
 
-Publish allowlisted results with `benchmarks/publish_expanded.py --scope <completed job directories...>`. The publisher regrades saved artifacts and compares input, reference, instruction, verifier, collector and complete skill-resource hashes across arms. Missing cost or energy is unknown. Token usage and harness cost estimates do not establish metered inference energy.
+Use the current checkout's `benchmarks/publish_expanded.py --scope <completed job directories...>` to publish allowlisted projections of the completed jobs; projection changes do not alter the pinned tasks. The publisher regrades saved artifacts and compares input, reference, instruction, verifier, collector and complete skill-resource hashes across arms. Missing cost or energy is unknown. Token usage and harness cost estimates do not establish metered inference energy.
 
-## Campaign status
+The task manifest covers those named resources; it does not bind Dockerfile or image identities, or every environmental dependency. Base-image pins and the requested CLI version remain inspectable in the builder and trial configuration. Runtime package installation adds mutable external dependencies. Scope result projections also retain native CLI model/effort records and collector-call/returned-observation hashes, with private transcripts excluded. Those records establish recorded CLI settings and frozen-bundle handoffs, not independent verification of provider computation or live browsing.
 
-The [case book](../initial-implementation/assets/scope-benchmark-cases.json) and [task manifest](../initial-implementation/assets/scope-benchmark-manifest.json) are frozen. A separate agent reviewed all nineteen references before execution; the [review record](../initial-implementation/assets/scope-reference-review.json) states the limits of that scrutiny. The [Harbor controls](../initial-implementation/assets/scope-benchmark-controls.json) accept 19/19 oracle reports and 0/19 no-operation reports, with no exceptions. Both required model campaigns are running; no complete model comparison is claimed yet.
+## Completed model comparison
+
+Each required model arm produced **16/19 complete reports accepted by the original strict verifier**. Read the [full case review](scope-review-cases.md) for supplied facts, references and both models' explanations. The [published results](../initial-implementation/assets/scope-benchmark-results.json) retain all forty model attempts, including two startup failures and their unchanged-input retries. These counts measure agreement with a development contract; they are not independent accuracy estimates.
+
+| Measure                                      | GPT-6.1 Sol (high) | DeepSeek V4.1 Flash (high) |
+| -------------------------------------------- | ------------------ | -------------------------- |
+| Completed graded cases                       | 19                 | 19                         |
+| Strict complete-report accepts               | 16                 | 16                         |
+| Strict complete-report rejections            | 3                  | 3                          |
+| Ungraded startup failures retained           | 1                  | 1                          |
+| Unchanged-input startup retries              | 1                  | 1                          |
+| Required frozen-bundle handoffs corroborated | 4                  | 4                          |
+
+Harbor 0.23.0 ran both arms through Codex CLI 0.166.0. Input, reference, instruction, grader, collector and skill-resource hashes match across arms. Recorded native CLI model/effort contexts match the requested model and high reasoning in all thirty-eight graded predictions. This verifies recorded client settings, not a provider's internal computation. Remote inference energy remains unknown.
+
+The [case book](../initial-implementation/assets/scope-benchmark-cases.json) and [task manifest](../initial-implementation/assets/scope-benchmark-manifest.json) remain frozen. The [Harbor controls](../initial-implementation/assets/scope-benchmark-controls.json) accept 19/19 oracle reports and 0/19 no-operation reports, with no exceptions. These validate the execution and grading contract, not reference-label correctness.
+
+The [startup-failure record](../initial-implementation/assets/scope-setup-failures.json) distinguishes DeepSeek's agent-setup timeout from Sol's missing optional Codex platform binary. Neither failed attempt produced a report or native session. Each exact case was retried once using its original configuration and frozen task: `-i inclusive-testing-attendance-not-coverage` for DeepSeek and `-i ci-duplicate-trigger-unmeasured-priority` for Sol. Both retries passed. No graded prediction was retried or selected by score.
+
+The [collector review](../initial-implementation/assets/scope-collector-review.json) corroborates all eight required handoffs. Manual inspection matched actual direct or awaited collector commands to successful subprocess receipts and saved artifacts identical to the frozen collection references. This is trace, receipt and artifact evidence for frozen bundles, not formal execution attestation or live browser orchestration.
+
+## Reference-contract findings
+
+Both models disagree with the same three reference items. Their explanations expose ambiguities in the task contract; the original labels and rewards remain unchanged. The [post-hoc contract review](../initial-implementation/assets/scope-contract-review.json) records the diagnosis without a corrected score.
+
+| Case/item                                | Original reference | Both model labels | Post-hoc diagnosis                                                                                                                                                                              |
+| ---------------------------------------- | ------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `inference-energy-missing-not-zero/q2`   | `pass`             | `inconclusive`    | The unresolved-energy statement can be read as a supported claim or a direct unknown-state question. Both models retain null energy and explain that missing is not zero.                       |
+| `area-score-known-only-and-coverage/r1`  | `preserve`         | `fix`             | The proposal asks for reporting behavior that is not shown as already implemented. Both models calculate all seven area score and coverage quantities correctly.                                |
+| `star-qualitative-scope-and-evidence/r1` | `investigate`      | `preserve`        | The proposal combines retaining a useful support route and requesting a missing baseline, with no defined primary operation. Both models explain both actions and retain the qualitative scope. |
+
+A separate agent inspected the references before execution; the [initial review record](../initial-implementation/assets/scope-reference-review.json) states its limits. That scrutiny did not catch the two recommendation contract defects. The diagnosis above followed inspection of the predictions and is not independent labeling. Future cases need explicit question modes, one operation per recommendation, and separate judgments of proposal support and site-action type.
+
+The remaining cases agree with the frozen references, including bounded public governance records, audience research, inclusive-testing coverage, service alternatives, data minimization, lifecycle decisions and unmeasured CI priority. This remains partial WSG interpretation evidence. The campaign has no skill ablation, independent usefulness scoring or complete live-audit task.

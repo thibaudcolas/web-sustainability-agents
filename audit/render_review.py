@@ -26,6 +26,7 @@ if __package__ in {None, ""}:
 from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
     area_results,
     energy_rows,
+    first_visits,
     source_excerpt,
     validate_presentation,
 )
@@ -184,14 +185,6 @@ def page_name(url: str, title: str | None = None) -> str:
     return path.split("/")[-1].replace("-", " ").capitalize()
 
 
-def size_range(values: list[float]) -> str:
-    """Preserve independent observations as a range, not an invented average."""
-    if not values:
-        return "Not measured"
-    low, high = traffic(min(values)), traffic(max(values))
-    return low if low == high else f"{low}–{high}"
-
-
 def pointer(document: Any, location: str) -> Any:
     """Resolve a packet's JSON pointer to describe evidence in human terms."""
     current = document
@@ -322,6 +315,7 @@ def render(
     probes = read(session / "probes.json")
     source = read(session / "source.json")
     documents = {"staged.json": staged, "probes.json": probes, "source.json": source}
+    headline_runs = first_visits(staged["runs"])
     has_consent = any(run["branch"] != "no_banner" for run in staged["runs"])
     page_labels = {
         run["url"]: page_name(
@@ -335,7 +329,7 @@ def render(
                 None,
             ),
         )
-        for run in staged["runs"]
+        for run in headline_runs
     }
     counts = score["counts"]
     edited = {row["checkId"]: row for row in editorial["checks"]}
@@ -395,11 +389,11 @@ def render(
             "First-load transfers", ["Page", "First load", "Measurement completeness"]
         ),
     ]
-    urls = list(dict.fromkeys(run["url"] for run in staged["runs"]))
+    urls = list(dict.fromkeys(run["url"] for run in headline_runs))
     for url in urls:
         initial = [
             phase
-            for run in staged["runs"]
+            for run in headline_runs
             if run["url"] == url
             for phase in run["phases"]
             if phase["phase"] == "initial"
@@ -428,7 +422,7 @@ def render(
     lines += ["</tbody></table></div>"]
     incomplete = any(
         phase.get("accountingStatus") != "complete_within_protocol"
-        for run in staged["runs"]
+        for run in headline_runs
         for phase in run["phases"]
         if phase["phase"] == "initial"
     )
@@ -468,13 +462,13 @@ def render(
         ]
     ratings = [
         run["rating"]["trace"]["co2"]["rating"]
-        for run in staged["runs"]
+        for run in headline_runs
         if run.get("rating", {}).get("status") == "calculated"
     ]
     if ratings:
         eligible = [
             run["rating"]
-            for run in staged["runs"]
+            for run in headline_runs
             if run.get("rating", {}).get("status") == "calculated"
         ]
         footprint = [item["trace"]["co2"]["total"] for item in eligible]

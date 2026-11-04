@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "0.1.0",
+  "taskFamily": "scope-v1",
+  "sourceCommit": "839c299e18c9fc7ca3f1c92c49b754d1710c1a9d",
+  "method": "Export selected Git blobs at the pinned commit, execute that commit's --scope builder in an isolated temporary tree, and compare every generated task filename and file byte against the actual campaign tasks. Compare the generated manifest semantically and both model configuration files byte-for-byte. No Docker or model rerun.",
+  "allTaskBytesMatch": true,
+  "manifestMatches": true,
+  "modelConfigurationSHA256": {
+    "codex": "480f6bd3d8aec4b8043c75b73678dc76ac5cdf75fc4faf58bf90fb7bc2cf628b",
+    "neuralwatt": "8da849981c0494a75e943a5d7dad2c9e185457e8a4c27c2dc62b035ca2bc7f23"
+  },
+  "cases": [
+    {
+      "case": "area-score-known-only-and-coverage",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "audience-research-changes-low-data-journey",
+      "identicalFiles": 21,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "branch-link-not-immutable-source-proof",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "ci-duplicate-trigger-unmeasured-priority",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "ci-priority-requires-applicability-evidence",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "commit-pin-does-not-repair-snippet-mismatch",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "content-lifecycle-policy-and-stale-path",
+      "identicalFiles": 21,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "data-minimization-purpose-and-retention",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "end-of-life-plan-versus-tested-retirement",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "energy-measured-modeled-boundaries",
+      "identicalFiles": 21,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "governance-practice-public-operation-record",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "impact-business-model-outputs-not-outcomes",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "inclusive-testing-attendance-not-coverage",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "inference-energy-missing-not-zero",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "initial-first-visit-and-median-three",
+      "identicalFiles": 21,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "median-cannot-mix-consent-and-cache",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "service-necessity-and-access-tradeoff",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "star-public-claim-missing-operations",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    },
+    {
+      "case": "star-qualitative-scope-and-evidence",
+      "identicalFiles": 19,
+      "allTaskBytesMatch": true
+    }
+  ],
+  "limitations": "This binds repository resources, including Dockerfile/task configuration bytes, to a source commit. It does not capture external apt/npm mirror state, all installed package identities, provider computation or every environmental dependency."
+}

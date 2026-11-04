@@ -14,6 +14,7 @@ import hashlib
 import importlib
 import json
 import os
+import re
 import sys
 from collections.abc import Callable
 from pathlib import Path
@@ -35,7 +36,93 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def campaign(directory: Path, breadth: bool = False) -> JSON:
+def invokes_collector(arguments: Any) -> bool:
+    """Recognize an executed collector command, excluding source-file reads."""
+    if not isinstance(arguments, dict):
+        return False
+    command = arguments.get("cmd")
+    if isinstance(command, str) and re.search(
+        r"(?:^|[;&\n])\s*python3?\s+/app/collect\.py(?:\s|$)", command
+    ):
+        return True
+    code = arguments.get("input")
+    return isinstance(code, str) and bool(
+        re.search(
+            r"(?:[\"']cmd[\"']|\bcmd)\s*:\s*[\"']python3?\s+/app/collect\.py\b",
+            code,
+        )
+    )
+
+
+def execution_evidence(directory: Path, agent: JSON) -> JSON:
+    """Publish only runtime setting fields and hashes from private native traces."""
+    contexts: list[JSON] = []
+    for path in sorted(directory.glob("agent/sessions/**/*.jsonl")):
+        values: list[JSON] = []
+        for line in path.read_text().splitlines():
+            entry = json.loads(line)
+            if entry.get("type") == "turn_context":
+                payload = entry.get("payload", {})
+                values.append(
+                    {
+                        "model": payload.get("model"),
+                        "reasoningEffort": payload.get("effort"),
+                    }
+                )
+        contexts.append({"traceSHA256": digest(path), "turnContexts": values})
+    calls: list[JSON] = []
+    trajectory = directory / "agent/trajectory.json"
+    recorded_agent: JSON = {}
+    if trajectory.exists():
+        trace = json.loads(trajectory.read_text())
+        recorded_agent = trace.get("agent", {})
+        for step in trace.get("steps", []):
+            for call in step.get("tool_calls", []):
+                arguments = call.get("arguments")
+                if not invokes_collector(arguments):
+                    continue
+                observations = [
+                    row
+                    for row in (step.get("observation") or {}).get("results", [])
+                    if row.get("source_call_id") == call.get("tool_call_id")
+                ]
+                calls.append(
+                    {
+                        "stepId": step.get("step_id"),
+                        "function": call.get("function_name"),
+                        "toolCallId": call.get("tool_call_id"),
+                        "argumentsSHA256": hashlib.sha256(
+                            json.dumps(arguments, sort_keys=True).encode()
+                        ).hexdigest(),
+                        "returnedObservationPresent": bool(observations),
+                        "observationsSHA256": hashlib.sha256(
+                            json.dumps(observations, sort_keys=True).encode()
+                        ).hexdigest(),
+                    }
+                )
+    observed = [row for trace in contexts for row in trace["turnContexts"]]
+    model = agent.get("model_name", "").split("/")[-1]
+    effort = agent.get("kwargs", {}).get("reasoning_effort")
+    return {
+        "scope": "Recorded native CLI settings and returned tool observations; not independent verification of provider computation or live browsing.",
+        "nativeTraces": contexts,
+        "recordedAgent": {
+            "name": recorded_agent.get("name"),
+            "version": recorded_agent.get("version"),
+            "model": recorded_agent.get("model_name"),
+        },
+        "nativeSettingsMatchRequested": all(
+            row["model"] == model and row["reasoningEffort"] == effort
+            for row in observed
+        )
+        if observed
+        else None,
+        "trajectorySHA256": digest(trajectory) if trajectory.exists() else None,
+        "collectorInvocations": calls,
+    }
+
+
+def campaign(directory: Path, breadth: bool = False, scope: bool = False) -> JSON:
     """Read completed trials without publishing credentials or provider transcripts."""
     job = json.loads((directory / "result.json").read_text())
     if not job.get("finished_at"):
@@ -126,6 +213,11 @@ def campaign(directory: Path, breadth: bool = False) -> JSON:
                 },
                 "reportSHA256": digest(report_path) if report_path.exists() else None,
                 **(
+                    {"executionEvidence": execution_evidence(path.parent, agent)}
+                    if scope and agent["name"] == "codex"
+                    else {}
+                ),
+                **(
                     {
                         "collectionRequired": "requiredCollection" in reference,
                         "collectionArtifactSHA256": digest(collection_path)
@@ -190,7 +282,9 @@ def main() -> None:
             if args.scope
             else "docs/initial-implementation/assets/breadth-benchmark-results.json"
         )
-    campaigns = [campaign(path, args.breadth or args.scope) for path in args.jobs]
+    campaigns = [
+        campaign(path, args.breadth or args.scope, args.scope) for path in args.jobs
+    ]
     paired: dict[str, JSON] = {}
     models = set()
     model_cases: dict[str, set[str]] = {}

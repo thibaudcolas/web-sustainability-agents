@@ -21,6 +21,14 @@ AREAS = {
 }
 
 
+def first_visits(runs: list[JSON]) -> list[JSON]:
+    """Keep transfer, completeness and rating tied to the same first visit."""
+    selected: dict[str, JSON] = {}
+    for run in runs:
+        selected.setdefault(run["url"], run)
+    return list(selected.values())
+
+
 def area_results(guidelines: list[JSON]) -> list[JSON]:
     """Use the same conservative denominator as the overall scoped score."""
     results = []

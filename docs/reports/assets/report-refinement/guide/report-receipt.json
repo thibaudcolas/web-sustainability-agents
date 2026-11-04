@@ -36,8 +36,8 @@
     ]
   ],
   "inputSHA256": {
-    "audit/render_review.py": "5f97a5f1d61b34786d2d0604314200b91f714354cbac9cb63648ce368d7ef965",
-    "audit/report_details.py": "10e98260229767d39822020a1aa3efb9cc238e6d189b48572cfd51d72304d4b9",
+    "audit/render_review.py": "c97036557bea49e8e8ebe0f02bdd2c29db722e1b7f185b0e6e52fd5af09346bb",
+    "audit/report_details.py": "d611fe0af635503595b7f78c944c85e4383cdd4c2247df4495850ef40bb832ea",
     "audit/render_review.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
     ".agents/skills/sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1",
     "docs/reports/assets/fresh-guide/editorial.json": "bb8fc88acf53e244347df3adc5a42fd82e0850aea5bba0ac47a837d08584ce7e",

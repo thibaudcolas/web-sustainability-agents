@@ -9,6 +9,7 @@ from audit.render_review import render
 from audit.report_details import (
     area_results,
     energy_rows,
+    first_visits,
     source_excerpt,
     validate_presentation,
 )
@@ -98,6 +99,34 @@ class ReportDetailsTests(unittest.TestCase):
         data["pages"][0]["clientDeviceSummaryWh"]["median"] *= 2
         with self.assertRaisesRegex(ValueError, "median does not match"):
             energy_rows(data, "https://guide.wagtail.org")
+
+    def test_first_visit_keeps_incomplete_status_and_withheld_rating(self):
+        runs = [
+            {
+                "url": "https://example.com/",
+                "size": 100,
+                "complete": False,
+                "rating": None,
+            },
+            {
+                "url": "https://example.com/other",
+                "size": 80,
+                "complete": True,
+                "rating": "A",
+            },
+            {
+                "url": "https://example.com/",
+                "size": 50,
+                "complete": True,
+                "rating": "A+",
+            },
+        ]
+        selected = first_visits(runs)
+        self.assertEqual(len(selected), 2)
+        self.assertEqual(selected[0]["size"], 100)
+        self.assertFalse(selected[0]["complete"])
+        self.assertIsNone(selected[0]["rating"])
+        self.assertEqual(selected[1], runs[1])
 
     def test_headline_uses_first_recorded_initial_visit(self):
         session = Path("docs/reports/assets/fresh-wagtail")
