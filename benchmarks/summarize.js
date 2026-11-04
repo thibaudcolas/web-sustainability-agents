@@ -1,12 +1,25 @@
 import { createHash } from "node:crypto";
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
+import { parseArgs } from "node:util";
 import { grade } from "./grade.js";
 
 const readJSON = async (path) => JSON.parse(await readFile(path, "utf8"));
 const digest = (value) => createHash("sha256").update(value).digest("hex");
-const restoreFlag = process.argv.includes("--restore-codex-auth-flag");
-const jobs = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
+const { values, positionals: jobs } = parseArgs({
+  allowPositionals: true,
+  options: {
+    output: { type: "string" },
+    "restore-codex-auth-flag": { type: "boolean" },
+    "reference-root": { type: "string" },
+  },
+});
+const restoreFlag = values["restore-codex-auth-flag"];
+const referenceRoot = values["reference-root"];
+const outputPath =
+  values.output ??
+  "docs/initial-implementation/assets/first-slice-results.json";
+const graderSHA256 = digest(await readFile("benchmarks/grade.js"));
 if (!jobs.length)
   throw new Error("Usage: node benchmarks/summarize.js JOB_DIRECTORY [...]");
 const campaigns = [];
@@ -90,12 +103,21 @@ for (const directory of jobs) {
       join(trial.config.task.path, "instruction.md"),
       "utf8",
     );
-    const reference = await readJSON(
+    const originalReference = await readJSON(
       join(trial.config.task.path, "tests/reference.json"),
     );
+    const reference = referenceRoot
+      ? await readJSON(
+          join(referenceRoot, trial.task_name, "tests/reference.json"),
+        )
+      : originalReference;
     const artifactRegrade = grade(report, reference);
     const recordedReward = trial.verifier_result?.rewards?.reward ?? null;
-    if (recordedReward !== null && artifactRegrade.reward !== recordedReward)
+    if (
+      !referenceRoot &&
+      recordedReward !== null &&
+      artifactRegrade.reward !== recordedReward
+    )
       throw new Error(`Artifact regrade disagrees with Harbor: ${entry.name}`);
     trials.push({
       task: trial.task_name,
@@ -105,8 +127,20 @@ for (const directory of jobs) {
       requestedModel: trial.config.agent.model_name,
       agent: trial.config.agent.name,
       version: trial.config.agent.kwargs.version ?? null,
+      requestedReasoning: trial.config.agent.kwargs.reasoning_effort ?? null,
+      requestedProvider:
+        trial.config.agent.kwargs.config?.model_provider ?? null,
       verifierMode: trial.verifier_environment_mode,
       metadataRepair,
+      regrade: {
+        explicitReferenceOverride: Boolean(referenceRoot),
+        graderSHA256,
+        originalReference,
+        reference,
+        note: referenceRoot
+          ? "Regraded unchanged report with an explicitly selected reference and current grader. Original Harbor reward and diagnostics preserved."
+          : "Current grader checked against original reference and recorded reward.",
+      },
       reward: trial.verifier_result?.rewards?.reward ?? null,
       exception: trial.exception_info?.exception_type ?? null,
       startedAt: trial.started_at,
@@ -156,8 +190,5 @@ for (const key of [
   if (output.includes(key))
     throw new Error("Refusing to publish a credential in the summary");
 }
-await writeFile(
-  "docs/initial-implementation/assets/first-slice-results.json",
-  output,
-);
+await writeFile(outputPath, output);
 console.log(`Published allowlisted results for ${campaigns.length} campaigns`);

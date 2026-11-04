@@ -1,6 +1,6 @@
 # Deterministic tools for sustainability audits
 
-Research date: November 4, 2026. This extends the [initial local project review](local-projects.md). Tool capabilities were checked against source code and primary documentation; no comparative browser benchmark was run.
+This extends the [initial local project review](local-projects.md). Tool capabilities were checked against source code and primary documentation; no comparative browser benchmark was run.
 
 **Recommendation: own the capture protocol, evidence format, and WSG rule mappings; reuse established measurement engines.** Start with a small Playwright collector for representative journeys, axe-core for accessibility safeguards, and imported Lighthouse diagnostics. Add other engines only when they answer a question the initial stack cannot. Keep agent-browser and a Jev-driven browser as experimental discovery and journey-authoring options.
 
@@ -51,7 +51,7 @@ The Sitespeed.io sustainability plugin can combine transfer observations and hos
 
 ### claude-seo
 
-The November 4 inspection used commit `6be93f45064ffbadced572b5d5c95f55fd263af0`. These are executable scripts and reusable engineering patterns, rather than a ready-made WSG engine.
+The follow-up inspection used commit `6be93f45064ffbadced572b5d5c95f55fd263af0`. These are executable scripts and reusable engineering patterns, rather than a ready-made WSG engine.
 
 | Local component                         | Useful behavior                                                                      | Adaptation needed                                                               |
 | --------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |

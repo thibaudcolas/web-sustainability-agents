@@ -1,0 +1,579 @@
+{
+  "source": "https://www.w3.org/TR/web-sustainability-guidelines/",
+  "sourceVersion": "https://www.w3.org/TR/2026/DNOTE-web-sustainability-guidelines-20261016/",
+  "capturedAt": "2026-11-04T06:22:38.961Z",
+  "sourceSHA256": "2883a77d30990455f593f17b94a61b8baad8c2440032d74e1e5abe7d0b4ba0d6",
+  "scope": "Guideline-level coverage register, not a criterion-level conformance assessment. Partial evidence never means a whole guideline passes. Missing internal evidence is not automatically failure.",
+  "partialGuidelines": 12,
+  "unassessedGuidelines": 59,
+  "guidelines": [
+    {
+      "number": "2.1",
+      "id": "identify-assess-disclose-review-and-mitigate-sustainability-impacts",
+      "title": "Identify, assess, disclose, review, and mitigate sustainability impacts",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#identify-assess-disclose-review-and-mitigate-sustainability-impacts"
+    },
+    {
+      "number": "2.2",
+      "id": "understand-user-requirements-or-constraints",
+      "title": "Understand user requirements or constraints",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#understand-user-requirements-or-constraints"
+    },
+    {
+      "number": "2.3",
+      "id": "integrate-sustainability-into-every-stage-of-the-ideation-process",
+      "title": "Integrate sustainability into every stage of the ideation process",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#integrate-sustainability-into-every-stage-of-the-ideation-process"
+    },
+    {
+      "number": "2.4",
+      "id": "design-efficient-and-streamlined-user-journeys",
+      "title": "Design efficient and streamlined user journeys",
+      "status": "partial_evidence",
+      "findingIds": ["F07"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys"
+    },
+    {
+      "number": "2.5",
+      "id": "design-to-assist-and-not-to-distract",
+      "title": "Design to assist and not to distract",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract"
+    },
+    {
+      "number": "2.6",
+      "id": "avoid-being-manipulative-or-deceptive",
+      "title": "Avoid being manipulative or deceptive",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive"
+    },
+    {
+      "number": "2.7",
+      "id": "make-deliverables-understandable-and-reusable",
+      "title": "Make deliverables understandable and reusable",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable"
+    },
+    {
+      "number": "2.8",
+      "id": "use-a-design-system-for-interface-consistency",
+      "title": "Use a design system for interface consistency",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency"
+    },
+    {
+      "number": "2.9",
+      "id": "optimize-media-to-reduce-resource-use",
+      "title": "Optimize media to reduce resource use",
+      "status": "partial_evidence",
+      "findingIds": ["F04", "F06"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use"
+    },
+    {
+      "number": "2.10",
+      "id": "ensure-animation-is-proportionate-and-easy-to-control",
+      "title": "Ensure animation is proportionate and easy to control",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control"
+    },
+    {
+      "number": "2.11",
+      "id": "use-optimized-web-typography",
+      "title": "Use optimized web typography",
+      "status": "partial_evidence",
+      "findingIds": ["F09"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography"
+    },
+    {
+      "number": "2.12",
+      "id": "avoid-unwanted-notifications",
+      "title": "Avoid unwanted notifications",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications"
+    },
+    {
+      "number": "2.13",
+      "id": "reduce-the-impact-of-downloadable-and-physical-documents",
+      "title": "Reduce the impact of downloadable and physical documents",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents"
+    },
+    {
+      "number": "2.14",
+      "id": "involve-users-early-in-the-project",
+      "title": "Involve users early in the project",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#involve-users-early-in-the-project"
+    },
+    {
+      "number": "2.15",
+      "id": "audit-and-test-for-bugs-or-issues-requiring-resolution",
+      "title": "Audit and test for bugs or issues requiring resolution",
+      "status": "partial_evidence",
+      "findingIds": ["F02"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#audit-and-test-for-bugs-or-issues-requiring-resolution"
+    },
+    {
+      "number": "2.16",
+      "id": "validate-usability-through-testing-and-real-world-usage",
+      "title": "Validate usability through testing and real-world usage",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#validate-usability-through-testing-and-real-world-usage"
+    },
+    {
+      "number": "2.17",
+      "id": "provide-cross-platform-compatibility-support",
+      "title": "Provide cross-platform compatibility support",
+      "status": "partial_evidence",
+      "findingIds": ["F08"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support"
+    },
+    {
+      "number": "3.1",
+      "id": "set-goals-based-on-performance-and-energy-impact",
+      "title": "Set goals based on performance and energy impact",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#set-goals-based-on-performance-and-energy-impact"
+    },
+    {
+      "number": "3.2",
+      "id": "minify-and-remove-unused-code",
+      "title": "Minify and remove unused code",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code"
+    },
+    {
+      "number": "3.3",
+      "id": "modularize-bandwidth-heavy-components",
+      "title": "Modularize bandwidth-heavy components",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components"
+    },
+    {
+      "number": "3.4",
+      "id": "avoid-redundancy-and-duplication-in-code",
+      "title": "Avoid redundancy and duplication in code",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-redundancy-and-duplication-in-code"
+    },
+    {
+      "number": "3.5",
+      "id": "treat-third-parties-the-same-as-first-parties",
+      "title": "Treat third parties the same as first parties",
+      "status": "partial_evidence",
+      "findingIds": ["F01", "F02"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#treat-third-parties-the-same-as-first-parties"
+    },
+    {
+      "number": "3.6",
+      "id": "ensure-code-follows-good-semantic-practices",
+      "title": "Ensure code follows good semantic practices",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices"
+    },
+    {
+      "number": "3.7",
+      "id": "defer-the-loading-of-non-critical-resources",
+      "title": "Defer the loading of non-critical resources",
+      "status": "partial_evidence",
+      "findingIds": ["F04"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#defer-the-loading-of-non-critical-resources"
+    },
+    {
+      "number": "3.8",
+      "id": "structure-metadata-for-machine-readability",
+      "title": "Structure metadata for machine readability",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability"
+    },
+    {
+      "number": "3.9",
+      "id": "use-media-queries-that-support-sustainability-goals",
+      "title": "Use media queries that support sustainability goals",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals"
+    },
+    {
+      "number": "3.10",
+      "id": "ensure-layouts-work-for-different-devices-and-requirements",
+      "title": "Ensure layouts work for different devices and requirements",
+      "status": "partial_evidence",
+      "findingIds": ["F10"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements"
+    },
+    {
+      "number": "3.11",
+      "id": "use-sustainable-javascript-and-apis",
+      "title": "Use sustainable JavaScript and APIs",
+      "status": "partial_evidence",
+      "findingIds": ["F07"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis"
+    },
+    {
+      "number": "3.12",
+      "id": "use-dependencies-sparingly-and-maintain-them",
+      "title": "Use dependencies sparingly and maintain them",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-dependencies-sparingly-and-maintain-them"
+    },
+    {
+      "number": "3.13",
+      "id": "include-expected-and-beneficial-files",
+      "title": "Include expected and beneficial files",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#include-expected-and-beneficial-files"
+    },
+    {
+      "number": "3.14",
+      "id": "use-the-most-efficient-solution-for-your-service",
+      "title": "Use the most efficient solution for your service",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-most-efficient-solution-for-your-service"
+    },
+    {
+      "number": "3.15",
+      "id": "use-the-latest-stable-language-version",
+      "title": "Use the latest stable language version",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-latest-stable-language-version"
+    },
+    {
+      "number": "3.16",
+      "id": "reduce-the-number-and-complexity-of-database-queries",
+      "title": "Reduce the number and complexity of database queries",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-number-and-complexity-of-database-queries"
+    },
+    {
+      "number": "4.1",
+      "id": "use-sustainable-hosting",
+      "title": "Use sustainable hosting",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-hosting"
+    },
+    {
+      "number": "4.2",
+      "id": "optimize-caching-and-support-offline-access",
+      "title": "Optimize caching and support offline access",
+      "status": "partial_evidence",
+      "findingIds": ["F05"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access"
+    },
+    {
+      "number": "4.3",
+      "id": "reduce-data-transfer-with-compression",
+      "title": "Reduce data transfer with compression",
+      "status": "partial_evidence",
+      "findingIds": ["F05"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression"
+    },
+    {
+      "number": "4.4",
+      "id": "setup-necessary-error-pages-and-redirection-links",
+      "title": "Setup necessary error pages and redirection links",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#setup-necessary-error-pages-and-redirection-links"
+    },
+    {
+      "number": "4.5",
+      "id": "avoid-maintaining-unnecessary-virtualized-environments-or-containers",
+      "title": "Avoid maintaining unnecessary virtualized environments or containers",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-maintaining-unnecessary-virtualized-environments-or-containers"
+    },
+    {
+      "number": "4.6",
+      "id": "use-automation-wisely",
+      "title": "Use automation wisely",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-automation-wisely"
+    },
+    {
+      "number": "4.7",
+      "id": "define-the-frequency-of-data-refreshes",
+      "title": "Define the frequency of data refreshes",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-the-frequency-of-data-refreshes"
+    },
+    {
+      "number": "4.8",
+      "id": "back-up-critical-data-at-routine-intervals",
+      "title": "Back up critical data at routine intervals",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#back-up-critical-data-at-routine-intervals"
+    },
+    {
+      "number": "4.9",
+      "id": "assess-the-impact-and-requirements-of-data-processing",
+      "title": "Assess the impact and requirements of data processing",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#assess-the-impact-and-requirements-of-data-processing"
+    },
+    {
+      "number": "4.10",
+      "id": "use-content-delivery-networks-cdns-when-beneficial",
+      "title": "Use Content Delivery Networks (CDNs) when beneficial",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-content-delivery-networks-cdns-when-beneficial"
+    },
+    {
+      "number": "4.11",
+      "id": "ensure-infrastructure-fits-project-requirements",
+      "title": "Ensure infrastructure fits project requirements",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-infrastructure-fits-project-requirements"
+    },
+    {
+      "number": "4.12",
+      "id": "store-data-according-to-the-needs-of-your-users",
+      "title": "Store data according to the needs of your users",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#store-data-according-to-the-needs-of-your-users"
+    },
+    {
+      "number": "5.1",
+      "id": "have-an-ethical-and-sustainable-product-strategy",
+      "title": "Have an ethical and sustainable product strategy",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#have-an-ethical-and-sustainable-product-strategy"
+    },
+    {
+      "number": "5.2",
+      "id": "assign-a-sustainability-advocate",
+      "title": "Assign a sustainability advocate",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#assign-a-sustainability-advocate"
+    },
+    {
+      "number": "5.3",
+      "id": "inform-raise-awareness-and-train-for-sustainability",
+      "title": "Inform, raise awareness, and train for sustainability",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#inform-raise-awareness-and-train-for-sustainability"
+    },
+    {
+      "number": "5.4",
+      "id": "communicate-the-environmental-impact-of-user-choices",
+      "title": "Communicate the environmental impact of user choices",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices"
+    },
+    {
+      "number": "5.5",
+      "id": "calculate-the-environmental-impact",
+      "title": "Calculate the environmental impact",
+      "status": "partial_evidence",
+      "findingIds": ["F03"],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#calculate-the-environmental-impact"
+    },
+    {
+      "number": "5.6",
+      "id": "define-clear-organizational-sustainability-goals-and-metrics",
+      "title": "Define clear organizational sustainability goals and metrics",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-clear-organizational-sustainability-goals-and-metrics"
+    },
+    {
+      "number": "5.7",
+      "id": "validate-web-sustainability-efforts-through-external-verification",
+      "title": "Validate web sustainability efforts through external verification",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#validate-web-sustainability-efforts-through-external-verification"
+    },
+    {
+      "number": "5.8",
+      "id": "support-mandatory-disclosures-and-reporting",
+      "title": "Support mandatory disclosures and reporting",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#support-mandatory-disclosures-and-reporting"
+    },
+    {
+      "number": "5.9",
+      "id": "create-one-or-more-impact-business-models",
+      "title": "Create one or more impact business models",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#create-one-or-more-impact-business-models"
+    },
+    {
+      "number": "5.10",
+      "id": "follow-a-product-management-and-maintenance-strategy",
+      "title": "Follow a product management and maintenance strategy",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#follow-a-product-management-and-maintenance-strategy"
+    },
+    {
+      "number": "5.11",
+      "id": "implement-continuous-improvement-procedures",
+      "title": "Implement continuous improvement procedures",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#implement-continuous-improvement-procedures"
+    },
+    {
+      "number": "5.12",
+      "id": "document-updates-and-evolutions",
+      "title": "Document updates and evolutions",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#document-updates-and-evolutions"
+    },
+    {
+      "number": "5.13",
+      "id": "evaluate-if-a-digital-product-or-service-is-necessary",
+      "title": "Evaluate if a digital product or service is necessary",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#evaluate-if-a-digital-product-or-service-is-necessary"
+    },
+    {
+      "number": "5.14",
+      "id": "provide-a-supplier-standards-of-practice-document",
+      "title": "Provide a supplier standards of practice document",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-a-supplier-standards-of-practice-document"
+    },
+    {
+      "number": "5.15",
+      "id": "share-economic-benefits",
+      "title": "Share economic benefits",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#share-economic-benefits"
+    },
+    {
+      "number": "5.16",
+      "id": "share-decision-making-power-with-affected-parties",
+      "title": "Share decision-making power with affected parties",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#share-decision-making-power-with-affected-parties"
+    },
+    {
+      "number": "5.17",
+      "id": "use-diversity-equity-justice-inclusion-deji-practices",
+      "title": "Use Diversity, Equity, Justice, Inclusion (DEJI) practices",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-diversity-equity-justice-inclusion-deji-practices"
+    },
+    {
+      "number": "5.18",
+      "id": "promote-responsible-data-practices",
+      "title": "Promote responsible data practices",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#promote-responsible-data-practices"
+    },
+    {
+      "number": "5.19",
+      "id": "establish-responsible-practices-around-ai-and-emerging-or-disruptive-technologies",
+      "title": "Establish responsible practices around AI and emerging or disruptive technologies",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#establish-responsible-practices-around-ai-and-emerging-or-disruptive-technologies"
+    },
+    {
+      "number": "5.20",
+      "id": "adopt-responsible-financial-practices",
+      "title": "Adopt responsible financial practices",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-responsible-financial-practices"
+    },
+    {
+      "number": "5.21",
+      "id": "adopt-organizational-philanthropy-practices",
+      "title": "Adopt organizational philanthropy practices",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-organizational-philanthropy-practices"
+    },
+    {
+      "number": "5.22",
+      "id": "plan-for-a-digital-product-or-service-s-care-and-end-of-life",
+      "title": "Plan for a digital product or service's care and end-of-life",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#plan-for-a-digital-product-or-service-s-care-and-end-of-life"
+    },
+    {
+      "number": "5.23",
+      "id": "repair-reuse-refurbish-recycle-or-reduce-e-waste",
+      "title": "Repair, reuse, refurbish, recycle or reduce e-waste",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#repair-reuse-refurbish-recycle-or-reduce-e-waste"
+    },
+    {
+      "number": "5.24",
+      "id": "define-performance-environmental-and-human-budgets",
+      "title": "Define performance, environmental, and human budgets",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-performance-environmental-and-human-budgets"
+    },
+    {
+      "number": "5.25",
+      "id": "use-and-contribute-to-open-source",
+      "title": "Use and contribute to open source",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-and-contribute-to-open-source"
+    },
+    {
+      "number": "5.26",
+      "id": "create-a-business-continuity-and-disaster-recovery-plan",
+      "title": "Create a business continuity and disaster recovery plan",
+      "status": "not_assessed",
+      "findingIds": [],
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#create-a-business-continuity-and-disaster-recovery-plan"
+    }
+  ]
+}

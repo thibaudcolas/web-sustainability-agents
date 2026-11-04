@@ -1,0 +1,43 @@
+{
+  "capturedAt": "2026-11-04T06:10:39.969Z",
+  "status": 200,
+  "requestedModel": "deepseek-v4.1-flash",
+  "reasoningEffort": "high",
+  "id": "chatcmpl-b36efadf-f85f-4da0-8148-5efbe937b807",
+  "model": "deepseek-v4.1-flash",
+  "usage": {
+    "prompt_tokens": 313,
+    "total_tokens": 367,
+    "completion_tokens": 54,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+      "reasoning_tokens": 15
+    }
+  },
+  "system_fingerprint": null,
+  "energy": {
+    "energy_joules": 2.21,
+    "energy_kwh": 6.13e-7,
+    "avg_power_watts": 2639.8,
+    "duration_seconds": 0.224,
+    "attribution_method": "prorated_token_pool_weighted_multi_gpu_4",
+    "attribution_ratio": 0.0037,
+    "carbon_g_co2eq": 0.0002402,
+    "grid_carbon_intensity_gco2perkwhr": 392,
+    "grid_id": "US-MIDA-PJM",
+    "carbon_source": "agent_cache"
+  },
+  "cost": {
+    "request_cost_usd": 5e-6,
+    "cache_savings_usd": 0
+  },
+  "service_tier": "standard",
+  "toolCall": {
+    "id": "call_85ac1706c45547cebf986c15",
+    "type": "function",
+    "function": {
+      "name": "record_status",
+      "arguments": "{\"status\":\"ready\"}"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 
 export function grade(report, reference) {
   const errors = [];
@@ -27,6 +28,9 @@ export function grade(report, reference) {
       !actual ||
       !Array.isArray(actual.evidenceIds) ||
       !expected.evidenceIds.every((id) => actual.evidenceIds.includes(id)) ||
+      !(expected.evidenceGroups ?? []).every((group) =>
+        group.some((id) => actual.evidenceIds.includes(id)),
+      ) ||
       !actual.evidenceIds.every((id) =>
         reference.allowedEvidenceIds.includes(id),
       )
@@ -38,12 +42,7 @@ export function grade(report, reference) {
     )
       errors.push(`${expected.id}: explanation missing`);
   }
-  if (
-    !report.rating ||
-    Object.keys(report.rating).length !== 2 ||
-    report.rating.status !== reference.rating.status ||
-    report.rating.band !== reference.rating.band
-  )
+  if (!report.rating || !isDeepStrictEqual(report.rating, reference.rating))
     errors.push("Rating differs from supplied deterministic result");
   return { reward: errors.length ? 0 : 1, errors };
 }

@@ -1,8 +1,8 @@
 # Model comparison plan
 
-Use Neuralwatt DeepSeek V4.1 Flash alongside an explicitly recorded OpenAI model in Codex. Compare decision models on the same semantic tasks before adding them to a full audit workflow. Distinguish model, provider, and harness effects.
+Use Neuralwatt DeepSeek V4.1 Flash with high reasoning alongside GPT-6.1 Sol with low reasoning, both through Codex CLI. The [current checkpoint](review-checkpoint.md) records the active configuration and real-site comparisons. Compare decision models on the same semantic tasks before adding them to a full audit workflow. Distinguish model, provider, and harness effects.
 
-The November 4 [first executable slice](first-slice.md#initial-benchmark-results) records completed trials and integration failures. The broader comparison arms below remain a plan. Provider contracts and energy-accounting caveats are maintained in the [knowledge-base reference](../knowledge-base/provider-capabilities.md).
+The follow-up [first executable slice](first-slice.md#initial-benchmark-results) records completed trials and integration failures. The broader comparison arms below remain a plan. Provider contracts and energy-accounting caveats are maintained in the [knowledge-base reference](../knowledge-base/provider-capabilities.md).
 
 ## Initial experimental arms
 

@@ -1,6 +1,6 @@
 # Sources and research method
 
-Initial research conducted November 3, 2026; tooling, local decision models, ratings, benchmark, provider, and portability follow-ups conducted November 4. Sources in the follow-up sections were inspected on November 4; other sources were accessed on November 3 unless stated otherwise. This ledger supports the [research overview](README.md); nearby citations in the topic pages identify the evidence for individual claims.
+This ledger supports the [research overview](README.md); nearby citations in the topic pages identify the evidence for individual claims.
 
 ## Scope and method
 
@@ -59,9 +59,9 @@ These sources describe capabilities and methodologies. No comparative accuracy o
 
 ## Deterministic-tool follow-up
 
-The November 4 investigation inspected executable collectors, wrappers, report adapters, caches, and model-driven browser code. All four local working trees were clean when inspected. The accessibility-agents checkout had advanced since the initial review; both snapshots are retained in the documentation.
+The follow-up investigation inspected executable collectors, wrappers, report adapters, caches, and model-driven browser code. All four local working trees were clean when inspected. The accessibility-agents checkout had advanced since the initial review; both snapshots are retained in the documentation.
 
-| Local checkout               | Revision inspected November 4              | Focus                                                                                            |
+| Local checkout               | Revision inspected                         | Focus                                                                                            |
 | ---------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `local/claude-seo`           | `6be93f45064ffbadced572b5d5c95f55fd263af0` | Fetching, rendering, URL safety, sitemaps, PSI/CrUX, Unlighthouse, preload heuristics, baselines |
 | `local/accessibility-agents` | `7597f1a2cd315f144bc6a212ecceabf0268ea044` | MCP Playwright tools, high-impact checks, bridge skills, finding merge                           |
@@ -87,11 +87,11 @@ Additional primary documentation reviewed:
 
 The offline jevotron preview used two synthetic records in a temporary directory, with the API key removed from the process environment. It exited successfully and emitted two requests with the expected three-label Choice schema. The [saved preview](assets/decision-preview.json) contains the requests and reproduction command. This validates local request construction only; there were no inference calls or measured model outputs. No live browser audit or cross-tool performance experiment was performed.
 
-WSG and impact-rating links now point to the canonical latest published addresses requested for this workspace. They still identified the October 16 drafts when rechecked November 4. The inventory records a fresh digest for the canonical WSG response and retains the earlier digest as historical provenance; a moving publication URL is not an immutable version identifier.
+WSG and impact-rating links now point to the canonical latest published addresses requested for this workspace. They still identified the October 16 drafts when rechecked. The inventory records a fresh digest for the canonical WSG response and retains the earlier digest as historical provenance; a moving publication URL is not an immutable version identifier.
 
 ## Ratings, benchmark, providers, and portability follow-up
 
-The second November 4 extension follows the requested Harbor/Neuralwatt direction and adds optional project evidence to the audit design. The [validation roadmap](../initial-implementation/validation-roadmap.md) separates accepted design choices from unverified implementation behavior.
+The provider and portability extension follows the requested Harbor/Neuralwatt direction and adds optional project evidence to the audit design. The [validation roadmap](../initial-implementation/validation-roadmap.md) separates accepted design choices from unverified implementation behavior.
 
 | Sources                                                                                                                                                                                                                                                                                                                                                       | Research use                                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -113,7 +113,7 @@ No credentials were read, no authenticated provider calls were made, and no mode
 
 ## Reproducing the inventory
 
-The November 4 [demo/test-site follow-up](../initial-implementation/test-sites.md) rechecked the STAR repository revision and JSON/tree mapping: 116 declared URLs, 113 corresponding files, and 119 total HTML files in the test directory. It inspected five fixture bodies, including consent and retention examples, and reviewed the primary bakerydemo, headless demo, archive, LOW←TECH, and GOV.UK sources linked on that page. These were source/document inspections, not executed browser tests or audited reference sites.
+The [demo/test-site follow-up](../initial-implementation/test-sites.md) rechecked the STAR repository revision and JSON/tree mapping: 116 declared URLs, 113 corresponding files, and 119 total HTML files in the test directory. It inspected five fixture bodies, including consent and retention examples, and reviewed the primary bakerydemo, headless demo, archive, LOW←TECH, and GOV.UK sources linked on that page. These were source/document inspections, not executed browser tests or audited reference sites.
 
 Download the [source inventory manifest](../knowledge-base/assets/source-inventory.json) for retrieval URLs, SHA-256 digests, repository revisions, counts, and missing paths. The JSON files retrieved from the live sites were byte-identical to their pinned raw GitHub versions. The published HTML was separately inspected; the JSON's declared date is not treated as its publication date.
 
@@ -173,9 +173,9 @@ The subsequent [first executable slice](../initial-implementation/first-slice.md
 
 The documentation work was checked with `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`; all passed. The inventory reproduction snippet also returned the documented counts and unmatched IDs. Formatting, Ruff, `ty`, and Vale checks passed.
 
-The initial aggregate `just lint` stopped because `mypy .` followed `local/claude-seo` into the separate reference checkout. The November 4 follow-up excludes the root `local/` directory from mypy, as requested, and `uv run mypy .` now passes on this repository's four Python files. Reference checkouts were not modified. This change corrects validation scope; it says nothing about either project's audit accuracy.
+The initial aggregate `just lint` stopped because `mypy .` followed `local/claude-seo` into the separate reference checkout. The tooling follow-up excludes the root `local/` directory from mypy, as requested, and `uv run mypy .` now passes on this repository's four Python files. Reference checkouts were not modified. This change corrects validation scope; it says nothing about either project's audit accuracy.
 
-The first November 4 follow-up passed `just lint`, `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`. The external check reported zero errors and two redirects.
+The first tooling follow-up passed `just lint`, `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`. The external check reported zero errors and two redirects.
 
 The ratings/benchmark/provider/portability extension passed the same five checks, again with 11 tests. Its external check reported zero errors and four redirects. The benchmark-plan JSON was also checked for twelve unique case families, both required campaign arms, and explicit design-only status. These checks validate repository quality and source-link availability, not the proposed audit methodology or provider integrations.
 

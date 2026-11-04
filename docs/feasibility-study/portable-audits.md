@@ -1,6 +1,6 @@
 # Portable skills and optional project evidence
 
-Design update: November 4, 2026. **The default product is a live-site audit that works from a clean directory.** Source code and internal documents are optional evidence sources that can improve diagnosis and recommendations. The shared methodology should work in Codex, Claude Code, OpenCode, and pi, with harness-specific installation and execution adapters.
+**The default product is a live-site audit that works from a clean directory.** Source code and internal documents are optional evidence sources that can improve diagnosis and recommendations. The shared methodology should work in Codex, Claude Code, OpenCode, and pi, with harness-specific installation and execution adapters.
 
 ## Portable core, explicit adapters
 

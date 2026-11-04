@@ -9,8 +9,6 @@ search:
 
 # Feasibility study
 
-Initial research: November 3, 2026. Tooling, benchmark, provider, portability, and carbon-rating updates: November 4, 2026.
-
 **Recommendation: build an evidence-based audit assistant around a versioned methodology, with deterministic checks first and bounded model reviews where interpretation is necessary.** This looks useful for finding improvements, assembling evidence, and maintaining an audit over time. Its suitability for autonomous sustainability assurance is unproven.
 
 !!! note "Research and proposed design"

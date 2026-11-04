@@ -1,12 +1,12 @@
 # Demo sites and benchmark targets
 
-Reviewed November 4, 2026. **Start with adapted STAR fixtures and a pinned local Wagtail bakerydemo, then validate on a small set of real websites.** Finding public sites is straightforward. Establishing correct expected findings, realistic exceptions, and deployment-linked internal evidence is where project-owner input is most valuable.
+**Start with adapted STAR fixtures and a pinned local Wagtail bakerydemo, then validate on a small set of real websites.** Finding public sites is straightforward. Establishing correct expected findings, realistic exceptions, and deployment-linked internal evidence is where project-owner input is most valuable.
 
 ## What WSG and STAR supply
 
 The published WSG draft supplies requirements and implementation references, rather than a complete labeled collection of audited websites. Its status section states that no preliminary interoperability or implementation reports exist. STAR provides techniques, procedures, examples, and a linked test suite. Its PASS/FAIL table describes whether a test could be performed, not the sustainability verdict for an arbitrary site. [WSG draft](https://www.w3.org/TR/web-sustainability-guidelines/), [STAR](https://w3c.github.io/sustainableweb-ig/docs/star.html).
 
-Rechecking the STAR repository on November 4 returned the same revision as the earlier research: `393ed62a16580968e2de8af77c68fe9a2e2c675d`. Its JSON lists 116 technique test URLs; 113 correspond to files in that tree, and three paths are missing. The directory contains 119 HTML files overall, including `_template.html` and five additional pages not referenced by those JSON URLs. These counts describe source files, not validated tests or automated WSG coverage. [Pinned JSON](https://github.com/w3c/sustainableweb-ig/blob/393ed62a16580968e2de8af77c68fe9a2e2c675d/docs/star.json), [test directory](https://github.com/w3c/sustainableweb-ig/tree/393ed62a16580968e2de8af77c68fe9a2e2c675d/docs/test-suite).
+Rechecking the STAR repository returned the same revision as the earlier research: `393ed62a16580968e2de8af77c68fe9a2e2c675d`. Its JSON lists 116 technique test URLs; 113 correspond to files in that tree, and three paths are missing. The directory contains 119 HTML files overall, including `_template.html` and five additional pages not referenced by those JSON URLs. These counts describe source files, not validated tests or automated WSG coverage. [Pinned JSON](https://github.com/w3c/sustainableweb-ig/blob/393ed62a16580968e2de8af77c68fe9a2e2c675d/docs/star.json), [test directory](https://github.com/w3c/sustainableweb-ig/tree/393ed62a16580968e2de8af77c68fe9a2e2c675d/docs/test-suite).
 
 The [earlier inventory](../knowledge-base/wsg-and-star.md) lists the missing paths. Do not silently substitute similarly named files without reviewing whether they test the intended requirement.
 
@@ -40,7 +40,7 @@ The existing [Wagtail bakerydemo archive](https://github.com/thibaudcolas/wagtai
 
 ## Real-world validation candidates
 
-The owner selected **guide.wagtail.org and wagtail.org** on November 4, 2026. They know both sites well and report prior sustainability-focused improvements. Prioritize these two content-focused sites for false-positive review and practical feedback; do not convert that history into passing labels. The [first executable slice](first-slice.md) records the initial bounded sample.
+The owner selected **guide.wagtail.org and wagtail.org**. They know both sites well and report prior sustainability-focused improvements. Prioritize these two content-focused sites for false-positive review and practical feedback; do not convert that history into passing labels. The [first executable slice](first-slice.md) records the initial bounded sample.
 
 Real sites help reveal missing assumptions; they do not arrive with reliable sustainability answer keys. Keep live-site results separate from the frozen benchmark and review findings before treating them as labels.
 

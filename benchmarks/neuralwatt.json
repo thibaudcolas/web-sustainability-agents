@@ -4,26 +4,25 @@
   "n_attempts": 1,
   "agents": [
     {
-      "name": "opencode",
+      "name": "codex",
       "model_name": "neuralwatt/deepseek-v4.1-flash",
-      "env": { "NEURALWATT_API_KEY": "${NEURALWATT_API_KEY}" },
+      "env": {
+        "OPENAI_API_KEY": "${NEURALWATT_API_KEY}"
+      },
       "kwargs": {
-        "version": "1.19.5",
-        "opencode_config": {
-          "provider": {
+        "version": "0.166.0",
+        "reasoning_effort": "high",
+        "reasoning_summary": "none",
+        "web_search": "disabled",
+        "config": {
+          "model_provider": "neuralwatt",
+          "model_providers": {
             "neuralwatt": {
-              "npm": "@ai-sdk/openai-compatible",
-              "options": {
-                "baseURL": "https://api.neuralwatt.com/v1",
-                "apiKey": "{env:NEURALWATT_API_KEY}"
-              },
-              "models": {
-                "deepseek-v4.1-flash": {
-                  "name": "DeepSeek V4.1 Flash",
-                  "limit": { "context": 1048560, "output": 8192 },
-                  "options": { "reasoningEffort": "low" }
-                }
-              }
+              "name": "Neuralwatt",
+              "base_url": "https://api.neuralwatt.com/v1",
+              "env_key": "OPENAI_API_KEY",
+              "wire_api": "responses",
+              "supports_websockets": false
             }
           }
         }

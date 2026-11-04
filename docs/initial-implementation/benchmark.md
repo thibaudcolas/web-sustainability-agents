@@ -1,6 +1,6 @@
 # Web sustainability benchmark with Harbor
 
-Design update: November 4, 2026. **Use Harbor as the primary benchmark runner and task format.** Establish one versioned web sustainability benchmark with separate knowledge, evidence-review, and end-to-end audit tracks. Use narrower skill evaluations to diagnose failures and improve components without changing the overall benchmark's meaning.
+**Use Harbor as the primary benchmark runner and task format.** Establish one versioned web sustainability benchmark with separate knowledge, evidence-review, and end-to-end audit tracks. Use narrower skill evaluations to diagnose failures and improve components without changing the overall benchmark's meaning.
 
 This page defines the broader benchmark to build, with a [machine-readable seed plan](assets/benchmark-plan.json). The [first executable slice](first-slice.md) implements six development cases covering part of this design. The twelve families below remain expansion specifications. The [evaluation methodology](../feasibility-study/evaluation.md) remains the source for metrics, labeling, and release gates.
 

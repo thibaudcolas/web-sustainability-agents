@@ -211,6 +211,8 @@ nav:
       - Sources and research method: feasibility-study/sources.md
   - Initial implementation work:
       - initial-implementation/README.md
+      - WIP Wagtail audit: initial-implementation/wagtail-audit.md
+      - Model and real-site review checkpoint: initial-implementation/review-checkpoint.md
       - First executable slice and results: initial-implementation/first-slice.md
       - Harbor benchmark: initial-implementation/benchmark.md
       - Demo sites and benchmark targets: initial-implementation/test-sites.md

@@ -4,8 +4,8 @@ if (!process.env.NEURALWATT_API_KEY)
   throw new Error("NEURALWATT_API_KEY is required");
 const payload = {
   model: "deepseek-v4.1-flash",
-  reasoning_effort: "low",
-  max_tokens: 512,
+  reasoning_effort: "high",
+  max_tokens: 8192,
   messages: [
     {
       role: "user",

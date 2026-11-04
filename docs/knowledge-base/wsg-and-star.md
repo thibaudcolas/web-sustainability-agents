@@ -6,9 +6,9 @@ tags:
 
 # WSG and STAR as an audit foundation
 
-Reviewed November 3, 2026. This page separates source observations from recommendations for an audit implementation.
+This page separates source observations from recommendations for an audit implementation.
 
-WSG and impact-rating links use their latest published `/TR/` addresses, rechecked November 4. Both still identified the October 16 draft at that check. These URLs can advance; retain publication dates, content digests, and pinned supporting data when reproducing an assessment. See the [source inventory](assets/source-inventory.json).
+WSG and impact-rating links use their latest published `/TR/` addresses. Both still identified the October 16 draft at that check. These URLs can advance; retain publication dates, content digests, and pinned supporting data when reproducing an assessment. See the [source inventory](assets/source-inventory.json).
 
 ## Documents and authority
 

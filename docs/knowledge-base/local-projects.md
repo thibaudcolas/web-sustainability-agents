@@ -1,6 +1,6 @@
 # Lessons from existing audit projects
 
-Inspected November 3, 2026. Both local checkouts had clean working trees. This was a source review, not a run of either project's audits or test suite.
+Both local checkouts had clean working trees. This was a source review, not a run of either project's audits or test suite.
 
 | Project              | Local path                   | Inspected revision                         |
 | -------------------- | ---------------------------- | ------------------------------------------ |
@@ -9,7 +9,7 @@ Inspected November 3, 2026. Both local checkouts had clean working trees. This w
 
 The paths are local symlinks. Citations below use commit permalinks so readers of the published documentation can inspect the same material. Findings concern these snapshots, not every release or capability of either project.
 
-The November 4 follow-up reviews [executable tools and measurement caveats](deterministic-tools.md), including a newer accessibility-agents checkout. It also examines [jevotron and jev-ultrafast](../feasibility-study/decision-model-examples.md). This page preserves the original snapshot and its orchestration/evaluation findings.
+The tooling follow-up reviews [executable tools and measurement caveats](deterministic-tools.md), including a newer accessibility-agents checkout. It also examines [jevotron and jev-ultrafast](../feasibility-study/decision-model-examples.md). This page preserves the original snapshot and its orchestration/evaluation findings.
 
 ## Claude-seo
 

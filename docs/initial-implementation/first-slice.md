@@ -1,6 +1,6 @@
 # First executable audit slice
 
-Checkpoint: November 4, 2026. **The repository now has a runnable evidence-review benchmark, controlled browser fixtures, a shared review skill, and initial measurements of the two owner-nominated Wagtail sites.** This is a development experiment, not a validated sustainability assurance product.
+**The repository now has a runnable evidence-review benchmark, controlled browser fixtures, a shared review skill, and initial measurements of the two owner-nominated Wagtail sites.** This is a development experiment, not a validated sustainability assurance product.
 
 ## What runs
 
@@ -46,7 +46,7 @@ just benchmark-neuralwatt
 just benchmark-codex
 ```
 
-The model recipes require `NEURALWATT_API_KEY` and an existing Codex login, respectively. They use OpenCode 1.19.5 with `neuralwatt/deepseek-v4.1-flash`, and Codex CLI 0.166.0 with `openai/gpt-6-astra`, with low reasoning requested for both. The Codex model was selected from the local account's available configuration. These are comparisons of two model-plus-harness systems, not isolated model comparisons or equivalent reasoning budgets.
+The model recipes require `NEURALWATT_API_KEY` and an existing Codex login, respectively. Current recipes use Codex CLI 0.166.0 for both Neuralwatt DeepSeek V4.1 Flash with high reasoning and GPT-6.1 Sol with low reasoning. See the [current checkpoint](review-checkpoint.md) for validation and paired real-site reviews. The initial results below used Astra/low and OpenCode/DeepSeek/low and are preserved as historical evidence.
 
 Generated tasks, full trajectories, provider responses, and working results stay under ignored `.audit-work/`. Treat those raw files as private: harness configuration and logs can include account material. Published results should use an explicit allowlist of fields. The recipes use an absolute jobs directory to avoid a Harbor/Docker Compose relative-path fallback observed during the initial controls.
 
@@ -106,7 +106,7 @@ The standalone Neuralwatt tool-call preflight succeeded and returned request-lev
 
 The [sanitized preflight response](assets/provider-preflight.json) preserves the tool call, usage, energy attribution method, and request cost, excluding account allowance and authentication material.
 
-OpenCode produced report artifacts but exited nonzero with `EPIPE` in all six revised trials. A further trial with formatter and language-server processes disabled showed the same symptom. This remains an integration failure even when the separate verifier accepts the report. The [matching upstream issue](https://github.com/harbor-framework/harbor/issues/4019) describes the same symptom; its suspected cause is not confirmed here. The baseline configuration retains the campaign settings rather than treating the unsuccessful workaround as a fix.
+OpenCode produced report artifacts but exited nonzero with `EPIPE` in all six revised trials. A further trial with formatter and language-server processes disabled showed the same symptom. This remains an integration failure even when the separate verifier accepts the report. The [matching upstream issue](https://github.com/harbor-framework/harbor/issues/4019) describes the same symptom; its suspected cause is not confirmed here. The [current checkpoint](review-checkpoint.md) replaces OpenCode with Codex for the active Neuralwatt recipe while preserving these historical campaign settings in the result artifacts.
 
 Harbor also treated the initial Codex authentication toggle `CODEX_FORCE_AUTH_JSON=1` as a secret and replaced the digit `1` inside downloaded metadata, reports, and verifier logs, breaking some JSON. The committed recipe instead passes the path to the existing Codex authentication file through `CODEX_AUTH_JSON_PATH`, avoiding a short redaction value. The summary script's explicit `--restore-codex-auth-flag` option reverses only this known historical nonsecret substitution in published copies, marks affected trials, and preserves the original files. Restored reports are regraded against their original references and must match Harbor's recorded rewards. This is another reason to retain raw artifacts and validate result serialization before a larger campaign.
 
@@ -114,6 +114,6 @@ A further Codex trial using the committed authentication-path configuration comp
 
 ## Next validation gate
 
-Before expanding to bakerydemo, additional skills, or Jev/Clef routing, independently review the case expectations and a small set of actual model reports. Resolve or replace the OpenCode integration so a passing artifact also comes from a successful run. Improve the evidence contract to check units, unsupported numeric claims, and recommendation prerequisites. Validate child-frame/service-worker accounting and the treatment of aborted analytics requests against another measurement tool. Then use a matching Wagtail checkout to test whether source access improves a concrete diagnosis or proposed fix.
+Before expanding to bakerydemo, additional skills, or Jev/Clef routing, independently review the case expectations and a small set of actual model reports. The replacement Codex/Neuralwatt integration is tracked in the [current checkpoint](review-checkpoint.md). Improve the evidence contract to check units, unsupported numeric claims, and recommendation prerequisites. Validate child-frame/service-worker accounting and the treatment of aborted analytics requests against another measurement tool. The [WIP Wagtail audit](wagtail-audit.md) now uses supplied checkouts for candidate locations; establishing their deployed revisions remains outstanding.
 
 Keep both Wagtail sites as owner-known validation targets. The owner's familiarity and past sustainability work make them useful for identifying false positives and impractical recommendations; those facts are context, not passing labels. A useful next checkpoint is a reviewed audit report for one real journey, with a public-only version and a deployment-matched source-assisted version.

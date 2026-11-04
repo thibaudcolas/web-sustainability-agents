@@ -1,6 +1,6 @@
 # What to validate next
 
-Updated November 4, 2026. **Review and strengthen the first executable slice before expanding the agent architecture.** The [initial implementation](first-slice.md) now exercises collection, ratings, evidence review, and Harbor. The remaining uncertainties are mostly empirical: capture validity, grader correctness, provider integration, useful model judgments, and portability.
+**Review and strengthen the first executable slice before expanding the agent architecture.** The [initial implementation](first-slice.md) now exercises collection, ratings, evidence review, and Harbor. The remaining uncertainties are mostly empirical: capture validity, grader correctness, provider integration, useful model judgments, and portability.
 
 ## Accepted direction
 

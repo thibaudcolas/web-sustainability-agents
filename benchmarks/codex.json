@@ -5,8 +5,10 @@
   "agents": [
     {
       "name": "codex",
-      "model_name": "openai/gpt-6-astra",
-      "env": { "CODEX_AUTH_JSON_PATH": "${CODEX_AUTH_JSON_PATH}" },
+      "model_name": "openai/gpt-6.1-sol",
+      "env": {
+        "CODEX_AUTH_JSON_PATH": "${CODEX_AUTH_JSON_PATH}"
+      },
       "kwargs": {
         "version": "0.166.0",
         "reasoning_effort": "low",

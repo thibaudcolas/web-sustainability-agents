@@ -1,6 +1,6 @@
 # Model providers and inference accounting
 
-Reference research: November 4, 2026. This page consolidates the public API, model-catalog, and accounting observations from the feasibility work. Capabilities are dated observations, not guarantees of account access or harness compatibility. See the [implementation results](../initial-implementation/first-slice.md) for subsequent authenticated trials.
+This page consolidates the public API, model-catalog, and accounting observations from the feasibility work. Capabilities are dated observations, not guarantees of account access or harness compatibility. See the [implementation results](../initial-implementation/first-slice.md) for subsequent authenticated trials.
 
 ## Verified provider surfaces
 

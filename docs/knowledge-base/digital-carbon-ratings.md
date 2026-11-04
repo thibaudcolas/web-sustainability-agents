@@ -1,6 +1,6 @@
 # Digital Carbon Ratings in an audit
 
-Reviewed November 4, 2026. **Integrate Digital Carbon Ratings as a deterministic, versioned reporting layer alongside WSG findings.** A rating describes estimated emissions under a specific calculation profile. It does not replace the broader assessment of user needs, accessibility, governance, and operational practices.
+**Integrate Digital Carbon Ratings as a deterministic, versioned reporting layer alongside WSG findings.** A rating describes estimated emissions under a specific calculation profile. It does not replace the broader assessment of user needs, accessibility, governance, and operational practices.
 
 ## Relationship to SWDM and WSG
 
