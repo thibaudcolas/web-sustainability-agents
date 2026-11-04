@@ -13,9 +13,9 @@ Initial research: November 3, 2026. Tooling, benchmark, provider, portability, a
 
 **Recommendation: build an evidence-based audit assistant around a versioned methodology, with deterministic checks first and bounded model reviews where interpretation is necessary.** This looks useful for finding improvements, assembling evidence, and maintaining an audit over time. Its suitability for autonomous sustainability assurance is unproven.
 
-!!! note "Research and proposed design"
+!!! note "Research with an initial executable slice"
 
-    This research inspected primary sources, four local projects, and WSG/STAR data, and generated an offline decision-request preview. It did not run a sustainability audit, benchmark models, or implement an audit engine. The architecture, evaluation targets, and pilot below are proposals, not demonstrated results.
+    The [first executable slice](first-slice.md) adds controlled browser fixtures, a six-case Harbor evidence-review benchmark, a shared skill, and initial Wagtail measurements. The broader architecture and evaluation targets remain proposals; the initial experiments do not establish audit accuracy or autonomous assurance.
 
 ## Why this is promising
 
@@ -28,6 +28,8 @@ The strongest initial product would answer: **“What can we substantiate, what 
 The accepted direction is a public-site audit that also uses supplied source code and internal documents when relevant. Use Harbor for the benchmark, with Neuralwatt DeepSeek V4.1 Flash and Codex in model-bearing release comparisons. Share skills across Codex, Claude Code, OpenCode, and pi through small host adapters. Add Digital Carbon Ratings as a distinct deterministic reporting layer. The [validation roadmap](validation-roadmap.md) identifies what to establish before expanding implementation.
 
 ## Read the research
+
+For where to test the approach, start with [demo sites and benchmark targets](test-sites.md): STAR fixture seeds, a runnable application, and a small real-world sample.
 
 | Document                                                              | Purpose                                                                                     |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |

@@ -38,7 +38,11 @@ Initialization installs Python and npm dependencies and downloads the pinned Val
 - `just check-links`: Check local links without network access.
 - `just check-external-links`: Check HTTP(S) sources separately.
 - `just build-docs`: Build the documentation.
-- `just test`: Test agent skill publishing and documentation rendering.
+- `just test`: Test agent skill publishing, documentation rendering, browser collection, ratings, and the benchmark grader.
+- `just audit-install`: Install the pinned Playwright Chromium browser used by audit tests.
+- `just benchmark-build`: Build Harbor development tasks from frozen fixture observations.
+- `just benchmark-controls`: Run the reference and no-operation agents through Harbor.
+- `just benchmark-neuralwatt` / `just benchmark-codex`: Run the bounded model campaigns; see the [executable slice](../agentic-audits/first-slice.md) for authentication and interpretation.
 - `just docs`: Build the documentation and serve it locally.
 
 ## Coding style & conventions

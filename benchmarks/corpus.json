@@ -1,0 +1,464 @@
+{
+  "schemaVersion": "0.1.0",
+  "fixtureHash": "0794ff83b12f3934e8dde799825e87529d32c355f82fb642d01b847e9138d24b",
+  "measured": {
+    "clean": [
+      {
+        "url": "http://127.0.0.1:42471/",
+        "finalUrl": "http://127.0.0.1:42471/",
+        "startedAt": "2026-11-04T05:26:18.774Z",
+        "cache": "cold",
+        "protocol": {
+          "version": "0.1.0",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "locale": "en-GB",
+          "timezoneId": "Europe/London",
+          "observationMs": 500,
+          "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+          "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+          "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+        },
+        "browser": "156.0.8078.4",
+        "complete": true,
+        "limitations": [],
+        "navigationError": null,
+        "frames": ["http://127.0.0.1:42471/"],
+        "title": "Illustration - Example guide",
+        "receivedBytes": 17796,
+        "resources": [
+          {
+            "id": "53FD74884EBCAF0A6C45784A6A1651CF",
+            "url": "http://127.0.0.1:42471/",
+            "type": "Document",
+            "finished": true,
+            "receivedBytes": 1360,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "text/html",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "1170",
+              "Content-Type": "text/html; charset=utf-8"
+            }
+          },
+          {
+            "id": "856511.2",
+            "url": "http://127.0.0.1:42471/asset.js",
+            "type": "Script",
+            "finished": true,
+            "receivedBytes": 16215,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "text/javascript",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Length": "16006",
+              "Content-Type": "text/javascript"
+            }
+          },
+          {
+            "id": "856511.4",
+            "url": "http://127.0.0.1:42471/private",
+            "type": "Fetch",
+            "finished": true,
+            "receivedBytes": 221,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "application/json",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "41",
+              "Content-Type": "application/json"
+            }
+          }
+        ],
+        "rating": {
+          "status": "calculated",
+          "bytes": 17796,
+          "profile": {
+            "library": "@tgwf/co2@0.19.0",
+            "model": "swd",
+            "version": 4,
+            "functionalUnit": "one sampled cold page load",
+            "hosting": "unknown; assume non-green for this scenario",
+            "firstVisitPercentage": 1,
+            "returnVisitPercentage": 0,
+            "dataReloadRatio": 0.02,
+            "comparisonStatus": "provisional; capture protocol not externally validated"
+          },
+          "trace": {
+            "co2": {
+              "total": 0.0026373672,
+              "rating": "A+"
+            },
+            "green": false,
+            "variables": {
+              "description": "Below are the variables used to calculate this CO2 estimate.",
+              "bytes": 17796,
+              "gridIntensity": {
+                "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                "device": {
+                  "value": 494
+                },
+                "dataCenter": {
+                  "value": 494
+                },
+                "network": {
+                  "value": 494
+                }
+              },
+              "greenHostingFactor": 0,
+              "dataReloadRatio": 0.02,
+              "firstVisitPercentage": 1,
+              "returnVisitPercentage": 0
+            }
+          }
+        },
+        "sha256": "9c6b1d71e773ec1c4a9fc4758856d7f75edac51f5a123b4468c4996463ab06c9"
+      },
+      {
+        "url": "http://127.0.0.1:42471/",
+        "finalUrl": "http://127.0.0.1:42471/",
+        "startedAt": "2026-11-04T05:26:19.314Z",
+        "cache": "warm",
+        "protocol": {
+          "version": "0.1.0",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "locale": "en-GB",
+          "timezoneId": "Europe/London",
+          "observationMs": 500,
+          "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+          "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+          "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+        },
+        "browser": "156.0.8078.4",
+        "complete": true,
+        "limitations": [],
+        "navigationError": null,
+        "frames": ["http://127.0.0.1:42471/"],
+        "title": "Illustration - Example guide",
+        "receivedBytes": 1581,
+        "resources": [
+          {
+            "id": "B3C8B66D614F94906466D86FC147D322",
+            "url": "http://127.0.0.1:42471/",
+            "type": "Document",
+            "finished": true,
+            "receivedBytes": 1360,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "text/html",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "1170",
+              "Content-Type": "text/html; charset=utf-8"
+            }
+          },
+          {
+            "id": "856511.6",
+            "url": "http://127.0.0.1:42471/asset.js",
+            "type": "Script",
+            "finished": true,
+            "receivedBytes": 0,
+            "fromCache": true,
+            "status": 200,
+            "mimeType": "text/javascript",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Length": "16006",
+              "Content-Type": "text/javascript"
+            }
+          },
+          {
+            "id": "856511.8",
+            "url": "http://127.0.0.1:42471/private",
+            "type": "Fetch",
+            "finished": true,
+            "receivedBytes": 221,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "application/json",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "41",
+              "Content-Type": "application/json"
+            }
+          }
+        ],
+        "rating": {
+          "status": "not_calculated",
+          "reason": "Requires a complete, positive-byte cold capture",
+          "profile": {
+            "library": "@tgwf/co2@0.19.0",
+            "model": "swd",
+            "version": 4,
+            "functionalUnit": "one sampled cold page load",
+            "hosting": "unknown; assume non-green for this scenario",
+            "firstVisitPercentage": 1,
+            "returnVisitPercentage": 0,
+            "dataReloadRatio": 0.02,
+            "comparisonStatus": "provisional; capture protocol not externally validated"
+          }
+        },
+        "sha256": "e45758b5d264c13feaa1ab894752ac661eca3f8f0e22c17f7a3698a2ecf23c7e"
+      }
+    ],
+    "broken": [
+      {
+        "url": "http://127.0.0.1:41191/",
+        "finalUrl": "http://127.0.0.1:41191/",
+        "startedAt": "2026-11-04T05:26:19.878Z",
+        "cache": "cold",
+        "protocol": {
+          "version": "0.1.0",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "locale": "en-GB",
+          "timezoneId": "Europe/London",
+          "observationMs": 500,
+          "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+          "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+          "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+        },
+        "browser": "156.0.8078.4",
+        "complete": true,
+        "limitations": [],
+        "navigationError": null,
+        "frames": ["http://127.0.0.1:41191/"],
+        "title": "Illustration - Example guide",
+        "receivedBytes": 18049,
+        "resources": [
+          {
+            "id": "5F2F51D0147D9B4EA2F975A749450C0F",
+            "url": "http://127.0.0.1:41191/",
+            "type": "Document",
+            "finished": true,
+            "receivedBytes": 1347,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "text/html",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "1157",
+              "Content-Type": "text/html; charset=utf-8"
+            }
+          },
+          {
+            "id": "857038.2",
+            "url": "http://127.0.0.1:41191/asset.js",
+            "type": "Script",
+            "finished": true,
+            "receivedBytes": 16188,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "text/javascript",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "16006",
+              "Content-Type": "text/javascript"
+            }
+          },
+          {
+            "id": "857038.3",
+            "url": "http://127.0.0.1:41191/illustration.svg",
+            "type": "Image",
+            "finished": true,
+            "receivedBytes": 293,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "image/svg+xml",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "115",
+              "Content-Type": "image/svg+xml"
+            }
+          },
+          {
+            "id": "857038.6",
+            "url": "http://127.0.0.1:41191/private",
+            "type": "Fetch",
+            "finished": true,
+            "receivedBytes": 221,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "application/json",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "41",
+              "Content-Type": "application/json"
+            }
+          }
+        ],
+        "rating": {
+          "status": "calculated",
+          "bytes": 18049,
+          "profile": {
+            "library": "@tgwf/co2@0.19.0",
+            "model": "swd",
+            "version": 4,
+            "functionalUnit": "one sampled cold page load",
+            "hosting": "unknown; assume non-green for this scenario",
+            "firstVisitPercentage": 1,
+            "returnVisitPercentage": 0,
+            "dataReloadRatio": 0.02,
+            "comparisonStatus": "provisional; capture protocol not externally validated"
+          },
+          "trace": {
+            "co2": {
+              "total": 0.0026748618,
+              "rating": "A+"
+            },
+            "green": false,
+            "variables": {
+              "description": "Below are the variables used to calculate this CO2 estimate.",
+              "bytes": 18049,
+              "gridIntensity": {
+                "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                "device": {
+                  "value": 494
+                },
+                "dataCenter": {
+                  "value": 494
+                },
+                "network": {
+                  "value": 494
+                }
+              },
+              "greenHostingFactor": 0,
+              "dataReloadRatio": 0.02,
+              "firstVisitPercentage": 1,
+              "returnVisitPercentage": 0
+            }
+          }
+        },
+        "sha256": "68da4c74d9ae70b567d5e12bc1fb41846e0ca04d8b32a2f022af6c1229082c1c"
+      },
+      {
+        "url": "http://127.0.0.1:41191/",
+        "finalUrl": "http://127.0.0.1:41191/",
+        "startedAt": "2026-11-04T05:26:20.413Z",
+        "cache": "warm",
+        "protocol": {
+          "version": "0.1.0",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "locale": "en-GB",
+          "timezoneId": "Europe/London",
+          "observationMs": 500,
+          "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+          "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+          "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+        },
+        "browser": "156.0.8078.4",
+        "complete": true,
+        "limitations": [],
+        "navigationError": null,
+        "frames": ["http://127.0.0.1:41191/"],
+        "title": "Illustration - Example guide",
+        "receivedBytes": 18049,
+        "resources": [
+          {
+            "id": "4FEEE41CF502DE3557ECE0074ECF218D",
+            "url": "http://127.0.0.1:41191/",
+            "type": "Document",
+            "finished": true,
+            "receivedBytes": 1347,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "text/html",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "1157",
+              "Content-Type": "text/html; charset=utf-8"
+            }
+          },
+          {
+            "id": "857038.8",
+            "url": "http://127.0.0.1:41191/asset.js",
+            "type": "Script",
+            "finished": true,
+            "receivedBytes": 16188,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "text/javascript",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "16006",
+              "Content-Type": "text/javascript"
+            }
+          },
+          {
+            "id": "857038.9",
+            "url": "http://127.0.0.1:41191/illustration.svg",
+            "type": "Image",
+            "finished": true,
+            "receivedBytes": 293,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "image/svg+xml",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "115",
+              "Content-Type": "image/svg+xml"
+            }
+          },
+          {
+            "id": "857038.12",
+            "url": "http://127.0.0.1:41191/private",
+            "type": "Fetch",
+            "finished": true,
+            "receivedBytes": 221,
+            "fromCache": false,
+            "status": 200,
+            "mimeType": "application/json",
+            "fromServiceWorker": false,
+            "headers": {
+              "Cache-Control": "no-store",
+              "Content-Length": "41",
+              "Content-Type": "application/json"
+            }
+          }
+        ],
+        "rating": {
+          "status": "not_calculated",
+          "reason": "Requires a complete, positive-byte cold capture",
+          "profile": {
+            "library": "@tgwf/co2@0.19.0",
+            "model": "swd",
+            "version": 4,
+            "functionalUnit": "one sampled cold page load",
+            "hosting": "unknown; assume non-green for this scenario",
+            "firstVisitPercentage": 1,
+            "returnVisitPercentage": 0,
+            "dataReloadRatio": 0.02,
+            "comparisonStatus": "provisional; capture protocol not externally validated"
+          }
+        },
+        "sha256": "21eda69e9d0b087fc1d9817e051b502b35f6fd996881b710514b49369e764767"
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 # What to validate next
 
-Updated November 4, 2026. **Build a small benchmark-backed vertical slice next, before expanding the agent architecture.** The research now supplies enough direction to begin implementation. The remaining uncertainties are mostly empirical: capture validity, grader correctness, provider integration, useful model judgments, and portability.
+Updated November 4, 2026. **Review and strengthen the first executable slice before expanding the agent architecture.** The [initial implementation](first-slice.md) now exercises collection, ratings, evidence review, and Harbor. The remaining uncertainties are mostly empirical: capture validity, grader correctness, provider integration, useful model judgments, and portability.
 
 ## Accepted direction
 
@@ -33,7 +33,7 @@ Milestones can overlap where independent, but a working provider connection does
 
 **Reference judgments:** have a second reviewer assess the initial rule mappings, acceptable exceptions, and semantic labels. Cases with unresolved disagreement should remain research cases rather than secret “correct” answers.
 
-**Provider behavior:** confirm Clef preview enrollment, TypeSafe version availability, tool-call compatibility, energy extensions, and unit consistency. The research checked public sources, not account credentials or paid inference. Record exact OpenAI model and reasoning settings for the Codex arm rather than using “Codex” as the model name.
+**Provider behavior:** confirm Clef preview enrollment, TypeSafe version availability, tool-call compatibility, energy extensions, and unit consistency. The first slice now exercises DeepSeek and Codex; Clef/Jev access and complete campaign energy accounting still need validation. Record exact OpenAI model and reasoning settings for the Codex arm rather than using “Codex” as the model name.
 
 **Evidence boundaries:** verify that public-only tasks cannot inspect fixture source, that local evidence is tied to the target/deployment, and that stale/internal claims cannot override contradictory observations without justification.
 
@@ -41,8 +41,10 @@ Milestones can overlap where independent, but a working provider connection does
 
 ## First useful deliverable
 
+Use the [demo and test-site shortlist](test-sites.md) to choose the fixture seeds and controlled application. It recommends adapting STAR examples and running a pinned bakerydemo, with a small real-site validation set afterward.
+
 Aim for one reproducible audit report from a controlled site, with a public-only and a source-assisted variant. It should include measured resource facts, a transparently calculated Digital Carbon Rating where applicable, supported findings, unknowns, and recommendations grounded in evidence. Harbor should evaluate both variants with DeepSeek and Codex against the same reviewed expectations.
 
 That delivers a complete path from collection to judgment to evaluation without requiring every WSG criterion or every harness at once. It also gives us real failure cases for deciding whether a Clef/Jev layer and sub-agent delegation improve results.
 
-The current repository contains research and benchmark specifications, not this executable vertical slice. The [benchmark plan](benchmark.md), [provider comparison](model-comparison.md), [portable evidence workflow](portable-audits.md), and [DCR integration](../knowledge-base/digital-carbon-ratings.md) define the implementation boundaries.
+The [first executable slice](first-slice.md) now supplies controlled captures, six frozen-evidence Harbor tasks, a shared skill, and initial measurements of guide.wagtail.org and wagtail.org. It is narrower than the full deliverable: repository investigation, complete browser journeys, semantic grading, and an independent judgment set remain to be validated. Its checkpoint identifies the next empirical work.

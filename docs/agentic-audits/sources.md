@@ -113,6 +113,8 @@ No credentials were read, no authenticated provider calls were made, and no mode
 
 ## Reproducing the inventory
 
+The November 4 [demo/test-site follow-up](test-sites.md) rechecked the STAR repository revision and JSON/tree mapping: 116 declared URLs, 113 corresponding files, and 119 total HTML files in the test directory. It inspected five fixture bodies, including consent and retention examples, and reviewed the primary bakerydemo, headless demo, archive, LOW←TECH, and GOV.UK sources linked on that page. These were source/document inspections, not executed browser tests or audited reference sites.
+
 Download the [source inventory manifest](assets/source-inventory.json) for retrieval URLs, SHA-256 digests, repository revisions, counts, and missing paths. The JSON files retrieved from the live sites were byte-identical to their pinned raw GitHub versions. The published HTML was separately inspected; the JSON's declared date is not treated as its publication date.
 
 This Python snippet reproduces the structural counts and unmatched IDs from the pinned sources. It performs read-only network requests and prints derived data; it does not test any website's sustainability.
@@ -167,6 +169,8 @@ Useful follow-up research includes a complete criterion/technique crosswalk, rev
 
 ## Repository verification
 
+The subsequent [first executable slice](first-slice.md) records actual browser and provider experiments, their artifacts, and limitations. Earlier verification entries below describe the research stages at the time they were completed.
+
 The documentation work was checked with `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`; all passed. The inventory reproduction snippet also returned the documented counts and unmatched IDs. Formatting, Ruff, `ty`, and Vale checks passed.
 
 The initial aggregate `just lint` stopped because `mypy .` followed `local/claude-seo` into the separate reference checkout. The November 4 follow-up excludes the root `local/` directory from mypy, as requested, and `uv run mypy .` now passes on this repository's four Python files. Reference checkouts were not modified. This change corrects validation scope; it says nothing about either project's audit accuracy.
@@ -174,3 +178,20 @@ The initial aggregate `just lint` stopped because `mypy .` followed `local/claud
 The first November 4 follow-up passed `just lint`, `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`. The external check reported zero errors and two redirects.
 
 The ratings/benchmark/provider/portability extension passed the same five checks, again with 11 tests. Its external check reported zero errors and four redirects. The benchmark-plan JSON was also checked for twelve unique case families, both required campaign arms, and explicit design-only status. These checks validate repository quality and source-link availability, not the proposed audit methodology or provider integrations.
+
+## Executable-slice evidence, November 4
+
+The subsequent implementation uses Playwright 1.64.1, CO2.js 0.19.0, Harbor 0.23.0, Codex CLI 0.166.0, and the npm-distributed OpenCode 1.19.5. The local `opencode --version` reported 2.2.5, but `opencode-ai@2.2.5` was unavailable in the registry used by Harbor. Record those as distinct installations rather than assuming interchangeable version numbers. Package versions were checked against the npm registry; runtime dependencies are recorded in `package-lock.json` and the benchmark configurations.
+
+| Evidence                       | Source and interpretation                                                                                                                                                                                                                                                                            |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Controlled observations        | `benchmarks/corpus.json`; actual cold/warm captures of original project-owned fixtures, with browser/protocol metadata and hashes                                                                                                                                                                    |
+| Live targets                   | [Guide homepage](https://guide.wagtail.org/en/), [image-management instructions](https://guide.wagtail.org/en/how-to-guides/manage-images/), [Wagtail homepage](https://wagtail.org/), [sustainability page](https://wagtail.org/sustainability/); [sanitized observations](assets/live-sample.json) |
+| Provider preflight             | [Sanitized DeepSeek tool-call response](assets/provider-preflight.json); one authenticated request, including provider-attributed energy and cost                                                                                                                                                    |
+| Harbor integration             | [Separate verifier documentation](https://docs.harborframework.com/tasks/separate-verifier), [environment-variable boundaries](https://docs.harborframework.com/jobs/environment-variables), and inspection of the installed 0.23.0 implementation                                                   |
+| Neuralwatt routing             | [OpenCode integration](https://docs.neuralwatt.com/integrations/opencode); actual model requests through its OpenAI-compatible adapter                                                                                                                                                               |
+| OpenCode failure investigation | [Harbor issue 4019](https://github.com/harbor-framework/harbor/issues/4019) describes a matching completed-output/nonzero-exit symptom. This similarity does not establish the underlying cause in our environment.                                                                                  |
+
+The source-assisted fixture uses a runner-supplied excerpt and deployment identity. It is a controlled context test, not independent verification of a production deployment. The incomplete case removes observations deliberately; it is distinct from the collector's actual HTTP-error test. The [checkpoint](first-slice.md) distinguishes these development cases from broader methodology and accuracy claims.
+
+The executable slice passed `just lint`, `just build-docs`, `just test` (11 Python tests and 7 JavaScript tests), `just check-links`, and `just check-external-links`. The skill metadata validator also passed. Six oracle controls passed, six no-operation controls failed their grader as intended, and both required model arms produced reports for all six revised cases. OpenCode's six execution errors and Harbor's historical Codex redaction corruption are recorded separately from grader acceptance. Published restored artifacts were regraded against their original references, with matching rewards; identical-input hashes were checked across model arms.

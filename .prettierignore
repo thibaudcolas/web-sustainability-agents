@@ -3,5 +3,7 @@ site/
 .venv/
 .mypy_cache/
 .ruff_cache/
+.audit-work/
+.a11y-history/
 # Prettier rewrites Python-Markdown abbreviation definitions as emphasis.
 docs/contributing/abbreviations.md

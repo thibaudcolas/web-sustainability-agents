@@ -1,0 +1,2863 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "Exploratory initial-viewport measurements, not site audit verdicts",
+  "sampleRationale": "Owner-nominated content-focused sites with reported prior sustainability improvements; homepage and content page per site",
+  "privacy": "Query strings/fragments removed from published resource URLs; originalCaptureSHA256 refers to the original capture excluding its sha256 field",
+  "excludedAttempt": "An accidentally guessed /en/latest/how-to-guides/manage-images/ URL returned 404; excluded from target sample and retained privately as a capture-error observation",
+  "captures": [
+    {
+      "url": "https://guide.wagtail.org/en/",
+      "finalUrl": "https://guide.wagtail.org/en/",
+      "startedAt": "2026-11-04T05:22:09.193Z",
+      "title": "Wagtail user guide - Wagtail Guide",
+      "cache": "cold",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": true,
+      "limitations": [],
+      "receivedBytes": 58635,
+      "requestCount": 5,
+      "cacheHitCount": 0,
+      "rating": {
+        "status": "calculated",
+        "bytes": 58635,
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        },
+        "trace": {
+          "co2": {
+            "total": 0.008689707,
+            "rating": "A+"
+          },
+          "green": false,
+          "variables": {
+            "description": "Below are the variables used to calculate this CO2 estimate.",
+            "bytes": 58635,
+            "gridIntensity": {
+              "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+              "device": {
+                "value": 494
+              },
+              "dataCenter": {
+                "value": 494
+              },
+              "network": {
+                "value": 494
+              }
+            },
+            "greenHostingFactor": 0,
+            "dataReloadRatio": 0.02,
+            "firstVisitPercentage": 1,
+            "returnVisitPercentage": 0
+          }
+        }
+      },
+      "originalCaptureSHA256": "8ac3cf606c2e9d9daed95b30f0bb06a0e043f77f4c8a99bb5e702dd59c84030a",
+      "resources": [
+        {
+          "id": "07B6FA6251F30260B63B04433C42A897",
+          "url": "https://guide.wagtail.org/en/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 19983,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Accept, Cookie, accept-encoding"
+          }
+        },
+        {
+          "id": "821042.2",
+          "url": "https://guide.wagtail.org/static/main-Bgm1fVS1.9554aa123a7e.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 8766,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac416f5-aa8b\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "8247"
+          }
+        },
+        {
+          "id": "821042.3",
+          "url": "https://guide.wagtail.org/static/blocking-Cnb9KfqH.ad978dad23b4.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 1419,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac3bec3-254\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "364"
+          }
+        },
+        {
+          "id": "821042.4",
+          "url": "https://guide.wagtail.org/en/jsi18n/",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 1332,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "br",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "accept-encoding"
+          }
+        },
+        {
+          "id": "821042.5",
+          "url": "https://guide.wagtail.org/static/main-7Msu0H_J.806796bef3b0.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 27135,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac4e9bc-15de9\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "26385"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://guide.wagtail.org/en/",
+      "finalUrl": "https://guide.wagtail.org/en/",
+      "startedAt": "2026-11-04T05:22:12.583Z",
+      "title": "Wagtail user guide - Wagtail Guide",
+      "cache": "warm",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": true,
+      "limitations": [],
+      "receivedBytes": 1045,
+      "requestCount": 5,
+      "cacheHitCount": 3,
+      "rating": {
+        "status": "not_calculated",
+        "reason": "Requires a complete, positive-byte cold capture",
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        }
+      },
+      "originalCaptureSHA256": "2cd328295e956d7b2e8091038c8d42e6391c5f336d509e923b25f2727efd9e5c",
+      "resources": [
+        {
+          "id": "94E1C3977559C69ECC2A53DCE5D2A4FA",
+          "url": "https://guide.wagtail.org/en/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 732,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Accept, Cookie, accept-encoding"
+          }
+        },
+        {
+          "id": "821042.11",
+          "url": "https://guide.wagtail.org/static/main-Bgm1fVS1.9554aa123a7e.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac416f5-aa8b\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "8247"
+          }
+        },
+        {
+          "id": "821042.12",
+          "url": "https://guide.wagtail.org/static/blocking-Cnb9KfqH.ad978dad23b4.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac3bec3-254\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "364"
+          }
+        },
+        {
+          "id": "821042.13",
+          "url": "https://guide.wagtail.org/en/jsi18n/",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 313,
+          "fromCache": false,
+          "status": 304,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "vary": "accept-encoding"
+          }
+        },
+        {
+          "id": "821042.14",
+          "url": "https://guide.wagtail.org/static/main-7Msu0H_J.806796bef3b0.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac4e9bc-15de9\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "26385"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://wagtail.org/",
+      "finalUrl": "https://wagtail.org/",
+      "startedAt": "2026-11-04T05:22:22.535Z",
+      "title": "Wagtail CMS - Django Content Management System",
+      "cache": "cold",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": false,
+      "limitations": [
+        "Failed or unfinished resource requests",
+        "HTTP resource error"
+      ],
+      "receivedBytes": 944006,
+      "requestCount": 36,
+      "cacheHitCount": 6,
+      "rating": {
+        "status": "not_calculated",
+        "reason": "Requires a complete, positive-byte cold capture",
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        }
+      },
+      "originalCaptureSHA256": "58eae36f7973d354a41e41fb0f5a95b003964f734424c03441df06bbb243d779",
+      "resources": [
+        {
+          "id": "1A663681F044FA0852BBEE6B06AEAD1B",
+          "url": "https://wagtail.org/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 39323,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "s-maxage=14400, stale-while-revalidate=30, public",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding"
+          }
+        },
+        {
+          "id": "821427.2",
+          "url": "https://wagtail.org/static/css/main.59e0b935dbf5.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 21512,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ada7bde-1eb02\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "21060"
+          }
+        },
+        {
+          "id": "821427.3",
+          "url": "https://plausible.io/js/pa-ngavQ28VQSDP3hrszIVgI.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": null,
+          "fromCache": false,
+          "status": 404,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain; charset=utf-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=0, private, must-revalidate",
+            "content-length": "9"
+          },
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "id": "821427.4",
+          "url": "https://wagtail.org/static/js/blocking.4c0750407486.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 817,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6a3ccd14-227\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "340"
+          }
+        },
+        {
+          "id": "821427.5",
+          "url": "https://media.wagtail.org/images/Logo_-_small.max-160x160.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 6910,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/png",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"432fd7fbe94b7611222a140ec74f6364\"",
+            "content-type": "image/png",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6421"
+          }
+        },
+        {
+          "id": "821427.6",
+          "url": "https://media.wagtail.org/media_thumbnails/meet-wagtail-play.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 6568,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"8e9692dce8e562d95f1dde17244153c4\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6070"
+          }
+        },
+        {
+          "id": "821427.7",
+          "url": "https://media.wagtail.org/images/oxfam_Br8enLn.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 7295,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"8a57c2a56725ad464824db1fd7ed85d3\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6596"
+          }
+        },
+        {
+          "id": "821427.8",
+          "url": "https://media.wagtail.org/images/nhs.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 3346,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"09071ff8ccc10d78249c37bff01daff4\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "2900"
+          }
+        },
+        {
+          "id": "821427.9",
+          "url": "https://media.wagtail.org/images/moz.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 2444,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"92b01f3a7f6465607098bed9c6fa4aa3\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "1944"
+          }
+        },
+        {
+          "id": "821427.10",
+          "url": "https://media.wagtail.org/images/rca.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 13579,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"37f1d480e2320e334ec31ec1ae090a4b\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "12772"
+          }
+        },
+        {
+          "id": "821427.11",
+          "url": "https://media.wagtail.org/images/MIT-Logo.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 8440,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"c91358eb29a64f3d75de05370bd38448\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "7952"
+          }
+        },
+        {
+          "id": "821427.12",
+          "url": "https://media.wagtail.org/images/google_xJwilw8.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 4467,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"9d1e89dba805401cd7aee8822ac15db1\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "3976"
+          }
+        },
+        {
+          "id": "821427.13",
+          "url": "https://media.wagtail.org/images/Wagtail_8.1_sustainability_graphic.2e39d972.fill-500x500.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 11341,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"2f51fe7e56bcd714c3101f70662b5987\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "10818"
+          }
+        },
+        {
+          "id": "821427.14",
+          "url": "https://media.wagtail.org/images/mvoss-headshot-web.2e16d0ba.fill-90x90.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 2947,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"08e2f31771fc56503a8a8f25887f822c\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "2482"
+          }
+        },
+        {
+          "id": "821427.15",
+          "url": "https://media.wagtail.org/images/thibaud-heart-web.2e16d0ba.fill-90x90.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 2710,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"5dca1460455716ef1f0f2e121a5c4592\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "2242"
+          }
+        },
+        {
+          "id": "821427.16",
+          "url": "https://media.wagtail.org/images/IMG_20210413_182503.2e16d0ba.fill-90x90.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 3730,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"b8d2293cae418a0eb1e2703b2ee87fc7\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "3014"
+          }
+        },
+        {
+          "id": "821427.19",
+          "url": "https://media.wagtail.org/images/MatthewNewton.2e16d0ba.fill-50x50.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 1979,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"e2b44d442c6f70c0b01a5db665d31499\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "1316"
+          }
+        },
+        {
+          "id": "821427.20",
+          "url": "https://media.wagtail.org/images/Aimee_Maroney.2e16d0ba.fill-50x50.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 1449,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"0c4914e637123f94d7d8a45371ea68eb\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "978"
+          }
+        },
+        {
+          "id": "821427.21",
+          "url": "https://wagtail.org/static/js/main.7e65faa9ea46.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 11747,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6acf2dc8-9a5d\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "11338"
+          }
+        },
+        {
+          "id": "821427.22",
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 156389,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "zstd",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "private, max-age=900",
+            "content-length": "155934"
+          }
+        },
+        {
+          "id": "821427.27",
+          "url": "https://wagtail.org/static/b0261a1f14d185dd8ec9.377af7d4af79.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 20623,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4cb8\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19640"
+          }
+        },
+        {
+          "id": "821427.25",
+          "url": "https://wagtail.org/static/6cc37e36494160883d90.ef1a3b77769b.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 19730,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4b68\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19304"
+          }
+        },
+        {
+          "id": "821427.51",
+          "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBmaWxsPSJXaW5kb3ciPgo8Zz4KCTxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxOCIgcj0iMiIvPgo8L2c+Cjwvc3ZnPgo=",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.45",
+          "url": "https://media.wagtail.org/images/c6d330d8d289f634a9605ca4a13ffed5d24db93e.width-2400.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 371313,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"2a9235f66d2735a52e4b36d846250204\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "370360"
+          }
+        },
+        {
+          "id": "821427.46",
+          "url": "https://media.wagtail.org/images/MMuseum-900-50.2e16d0ba.fill-495x495.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 33269,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"5ee9470bef086c1fd30b01dcc98c9f82\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "32720"
+          }
+        },
+        {
+          "id": "821427.54",
+          "url": "https://wagtail.org/sitewide_alert/",
+          "type": "Fetch",
+          "finished": true,
+          "receivedBytes": 917,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/json",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "application/json",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding",
+            "cache-control": "max-age=300, s-maxage=604800, public",
+            "content-length": "2"
+          }
+        },
+        {
+          "id": "821427.55",
+          "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05OCw0OXY0Yy0yNC45LDAtNDUsMjAuMS00NSw0NQoJYzAsMTgsMTAuNiwzMy42LDI1LjksNDAuOGwtMS43LDMuNmMwLjEsMCwwLjIsMC4xLDAuMywwLjFjLTAuMSwwLTAuMi0wLjEtMC4zLTAuMWwwLDBDNjAuNSwxMzQuNSw0OSwxMTcuNiw0OSw5OAoJQzQ5LDcwLjksNzAuOSw0OSw5OCw0OXoiLz4KPC9zdmc+Cg==",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.56",
+          "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNDcsOThjMCwxOS42LTExLjUsMzYuNS0yOC4yLDQ0LjRsMCwwYy0wLjEsMC0wLjIsMC4xLTAuMywwLjEKCWMwLjEsMCwwLjItMC4xLDAuMy0wLjFsLTEuNy0zLjZDMTMyLjQsMTMxLjYsMTQzLDExNiwxNDMsOThjMC0yNC45LTIwLjEtNDUtNDUtNDV2LTRDMTI1LjEsNDksMTQ3LDcwLjksMTQ3LDk4eiIvPgo8L3N2Zz4K",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.57",
+          "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTggNXYxNGwxMS03eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.58",
+          "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTMgOXY2aDRsNSA1VjRMNyA5SDN6bTEzLjUgM2MwLTEuNzctMS4wMi0zLjI5LTIuNS00LjAzdjguMDVjMS40OC0uNzMgMi41LTIuMjUgMi41LTQuMDJ6TTE0IDMuMjN2Mi4wNmMyLjg5Ljg2IDUgMy41NCA1IDYuNzFzLTIuMTEgNS44NS01IDYuNzF2Mi4wNmM0LjAxLS45MSA3LTQuNDkgNy04Ljc3cy0yLjk5LTcuODYtNy04Ljc3eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.59",
+          "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggZD0iTTcgMTRINXY1aDV2LTJIN3YtM3ptLTItNGgyVjdoM1Y1SDV2NXptMTIgN2gtM3YyaDV2LTVoLTJ2M3pNMTQgNXYyaDN2M2gyVjVoLTV6Ii8+Cjwvc3ZnPgo=",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.60",
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 169232,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "private, max-age=900",
+            "content-encoding": "zstd",
+            "content-length": "169046",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding"
+          }
+        },
+        {
+          "id": "821427.61",
+          "url": "https://www.google-analytics.com/analytics.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 21409,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "content-type": "text/javascript",
+            "vary": "Accept-Encoding",
+            "cache-control": "public, max-age=7200",
+            "content-length": "20802"
+          }
+        },
+        {
+          "id": "821427.62",
+          "url": "https://region1.google-analytics.com/g/collect",
+          "type": "Fetch",
+          "finished": true,
+          "receivedBytes": null,
+          "fromCache": false,
+          "status": 204,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "0",
+            "content-type": "text/plain"
+          },
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "id": "821427.63",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 449,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        },
+        {
+          "id": "821427.64",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 71,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://wagtail.org/",
+      "finalUrl": "https://wagtail.org/",
+      "startedAt": "2026-11-04T05:22:26.213Z",
+      "title": "Wagtail CMS - Django Content Management System",
+      "cache": "warm",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": false,
+      "limitations": [
+        "Failed or unfinished resource requests",
+        "HTTP resource error"
+      ],
+      "receivedBytes": 39847,
+      "requestCount": 35,
+      "cacheHitCount": 30,
+      "rating": {
+        "status": "not_calculated",
+        "reason": "Requires a complete, positive-byte cold capture",
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        }
+      },
+      "originalCaptureSHA256": "f07a05ad000cd0cabde00b4971726d37cf328ebb0426d05cbe3dac7fce13b864",
+      "resources": [
+        {
+          "id": "C1E58AEE0DAF0FA67E9A82C3769B7A33",
+          "url": "https://wagtail.org/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 39364,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "s-maxage=14400, stale-while-revalidate=30, public",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding"
+          }
+        },
+        {
+          "id": "821427.67",
+          "url": "https://wagtail.org/static/css/main.59e0b935dbf5.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ada7bde-1eb02\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "21060"
+          }
+        },
+        {
+          "id": "821427.68",
+          "url": "https://plausible.io/js/pa-ngavQ28VQSDP3hrszIVgI.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": null,
+          "fromCache": false,
+          "status": 404,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain; charset=utf-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=0, private, must-revalidate",
+            "content-length": "9"
+          },
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "id": "821427.69",
+          "url": "https://wagtail.org/static/js/blocking.4c0750407486.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6a3ccd14-227\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "340"
+          }
+        },
+        {
+          "id": "821427.70",
+          "url": "https://media.wagtail.org/images/Logo_-_small.max-160x160.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/png",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"432fd7fbe94b7611222a140ec74f6364\"",
+            "content-type": "image/png",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6421"
+          }
+        },
+        {
+          "id": "821427.71",
+          "url": "https://media.wagtail.org/media_thumbnails/meet-wagtail-play.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"8e9692dce8e562d95f1dde17244153c4\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6070"
+          }
+        },
+        {
+          "id": "821427.72",
+          "url": "https://media.wagtail.org/images/oxfam_Br8enLn.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"8a57c2a56725ad464824db1fd7ed85d3\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6596"
+          }
+        },
+        {
+          "id": "821427.73",
+          "url": "https://media.wagtail.org/images/nhs.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"09071ff8ccc10d78249c37bff01daff4\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "2900"
+          }
+        },
+        {
+          "id": "821427.74",
+          "url": "https://media.wagtail.org/images/moz.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"92b01f3a7f6465607098bed9c6fa4aa3\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "1944"
+          }
+        },
+        {
+          "id": "821427.75",
+          "url": "https://media.wagtail.org/images/rca.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"37f1d480e2320e334ec31ec1ae090a4b\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "12772"
+          }
+        },
+        {
+          "id": "821427.76",
+          "url": "https://media.wagtail.org/images/MIT-Logo.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"c91358eb29a64f3d75de05370bd38448\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "7952"
+          }
+        },
+        {
+          "id": "821427.77",
+          "url": "https://media.wagtail.org/images/google_xJwilw8.max-200x200.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"9d1e89dba805401cd7aee8822ac15db1\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "3976"
+          }
+        },
+        {
+          "id": "821427.78",
+          "url": "https://media.wagtail.org/images/Wagtail_8.1_sustainability_graphic.2e39d972.fill-500x500.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"2f51fe7e56bcd714c3101f70662b5987\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "10818"
+          }
+        },
+        {
+          "id": "821427.79",
+          "url": "https://media.wagtail.org/images/mvoss-headshot-web.2e16d0ba.fill-90x90.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"08e2f31771fc56503a8a8f25887f822c\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "2482"
+          }
+        },
+        {
+          "id": "821427.80",
+          "url": "https://media.wagtail.org/images/thibaud-heart-web.2e16d0ba.fill-90x90.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"5dca1460455716ef1f0f2e121a5c4592\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "2242"
+          }
+        },
+        {
+          "id": "821427.81",
+          "url": "https://media.wagtail.org/images/IMG_20210413_182503.2e16d0ba.fill-90x90.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"b8d2293cae418a0eb1e2703b2ee87fc7\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "3014"
+          }
+        },
+        {
+          "id": "821427.84",
+          "url": "https://media.wagtail.org/images/MatthewNewton.2e16d0ba.fill-50x50.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"e2b44d442c6f70c0b01a5db665d31499\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "1316"
+          }
+        },
+        {
+          "id": "821427.85",
+          "url": "https://media.wagtail.org/images/Aimee_Maroney.2e16d0ba.fill-50x50.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"0c4914e637123f94d7d8a45371ea68eb\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "978"
+          }
+        },
+        {
+          "id": "821427.86",
+          "url": "https://wagtail.org/static/js/main.7e65faa9ea46.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6acf2dc8-9a5d\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "11338"
+          }
+        },
+        {
+          "id": "821427.87",
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "zstd",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "private, max-age=900",
+            "content-length": "155934"
+          }
+        },
+        {
+          "id": "821427.92",
+          "url": "https://media.wagtail.org/images/c6d330d8d289f634a9605ca4a13ffed5d24db93e.width-2400.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"2a9235f66d2735a52e4b36d846250204\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "370360"
+          }
+        },
+        {
+          "id": "821427.99",
+          "url": "https://media.wagtail.org/images/MMuseum-900-50.2e16d0ba.fill-495x495.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"5ee9470bef086c1fd30b01dcc98c9f82\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "32720"
+          }
+        },
+        {
+          "id": "821427.115",
+          "url": "https://wagtail.org/sitewide_alert/",
+          "type": "Fetch",
+          "finished": true,
+          "receivedBytes": 431,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/json",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "application/json",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding",
+            "cache-control": "max-age=300, s-maxage=604800, public",
+            "content-length": "2"
+          }
+        },
+        {
+          "id": "821427.116",
+          "url": "https://wagtail.org/static/6cc37e36494160883d90.ef1a3b77769b.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4b68\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19304"
+          }
+        },
+        {
+          "id": "821427.118",
+          "url": "https://wagtail.org/static/b0261a1f14d185dd8ec9.377af7d4af79.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4cb8\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19640"
+          }
+        },
+        {
+          "id": "821427.119",
+          "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05OCw0OXY0Yy0yNC45LDAtNDUsMjAuMS00NSw0NQoJYzAsMTgsMTAuNiwzMy42LDI1LjksNDAuOGwtMS43LDMuNmMwLjEsMCwwLjIsMC4xLDAuMywwLjFjLTAuMSwwLTAuMi0wLjEtMC4zLTAuMWwwLDBDNjAuNSwxMzQuNSw0OSwxMTcuNiw0OSw5OAoJQzQ5LDcwLjksNzAuOSw0OSw5OCw0OXoiLz4KPC9zdmc+Cg==",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.120",
+          "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNDcsOThjMCwxOS42LTExLjUsMzYuNS0yOC4yLDQ0LjRsMCwwYy0wLjEsMC0wLjIsMC4xLTAuMywwLjEKCWMwLjEsMCwwLjItMC4xLDAuMy0wLjFsLTEuNy0zLjZDMTMyLjQsMTMxLjYsMTQzLDExNiwxNDMsOThjMC0yNC45LTIwLjEtNDUtNDUtNDV2LTRDMTI1LjEsNDksMTQ3LDcwLjksMTQ3LDk4eiIvPgo8L3N2Zz4K",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.121",
+          "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBmaWxsPSJXaW5kb3ciPgo8Zz4KCTxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxOCIgcj0iMiIvPgo8L2c+Cjwvc3ZnPgo=",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.122",
+          "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTggNXYxNGwxMS03eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.123",
+          "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTMgOXY2aDRsNSA1VjRMNyA5SDN6bTEzLjUgM2MwLTEuNzctMS4wMi0zLjI5LTIuNS00LjAzdjguMDVjMS40OC0uNzMgMi41LTIuMjUgMi41LTQuMDJ6TTE0IDMuMjN2Mi4wNmMyLjg5Ljg2IDUgMy41NCA1IDYuNzFzLTIuMTEgNS44NS01IDYuNzF2Mi4wNmM0LjAxLS45MSA3LTQuNDkgNy04Ljc3cy0yLjk5LTcuODYtNy04Ljc3eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.124",
+          "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggZD0iTTcgMTRINXY1aDV2LTJIN3YtM3ptLTItNGgyVjdoM1Y1SDV2NXptMTIgN2gtM3YyaDV2LTVoLTJ2M3pNMTQgNXYyaDN2M2gyVjVoLTV6Ii8+Cjwvc3ZnPgo=",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        },
+        {
+          "id": "821427.125",
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "private, max-age=900",
+            "content-encoding": "zstd",
+            "content-length": "169046",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding"
+          }
+        },
+        {
+          "id": "821427.126",
+          "url": "https://www.google-analytics.com/analytics.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "content-type": "text/javascript",
+            "vary": "Accept-Encoding",
+            "cache-control": "public, max-age=7200",
+            "content-length": "20802"
+          }
+        },
+        {
+          "id": "821427.127",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 26,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        },
+        {
+          "id": "821427.128",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 26,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://wagtail.org/sustainability/",
+      "finalUrl": "https://wagtail.org/sustainability/",
+      "startedAt": "2026-11-04T05:22:29.523Z",
+      "title": "Sustainability | Wagtail CMS",
+      "cache": "cold",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": false,
+      "limitations": [
+        "Failed or unfinished resource requests",
+        "HTTP resource error"
+      ],
+      "receivedBytes": 603126,
+      "requestCount": 20,
+      "cacheHitCount": 0,
+      "rating": {
+        "status": "not_calculated",
+        "reason": "Requires a complete, positive-byte cold capture",
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        }
+      },
+      "originalCaptureSHA256": "d7b545b64a2eac8cc26f6e78235462cf9918796855f3d6c2171509d9726db4db",
+      "resources": [
+        {
+          "id": "BFAD9CC71692E7287E0A1AED5ED876E0",
+          "url": "https://wagtail.org/sustainability/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 37402,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "s-maxage=14400, stale-while-revalidate=30, public",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding"
+          }
+        },
+        {
+          "id": "821707.2",
+          "url": "https://wagtail.org/static/css/main.59e0b935dbf5.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 21567,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ada7bde-1eb02\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "21060"
+          }
+        },
+        {
+          "id": "821707.3",
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 156389,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "zstd",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "private, max-age=900",
+            "content-length": "155934"
+          }
+        },
+        {
+          "id": "821707.5",
+          "url": "https://plausible.io/js/pa-ngavQ28VQSDP3hrszIVgI.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": null,
+          "fromCache": false,
+          "status": 404,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain; charset=utf-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=0, private, must-revalidate",
+            "content-length": "9"
+          },
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "id": "821707.7",
+          "url": "https://wagtail.org/static/js/blocking.4c0750407486.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 767,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6a3ccd14-227\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "340"
+          }
+        },
+        {
+          "id": "821707.8",
+          "url": "https://media.wagtail.org/images/Logo_-_small.max-160x160.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 7151,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/png",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"432fd7fbe94b7611222a140ec74f6364\"",
+            "content-type": "image/png",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6421"
+          }
+        },
+        {
+          "id": "821707.9",
+          "url": "https://wagtail.org/static/js/main.7e65faa9ea46.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 11773,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6acf2dc8-9a5d\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "11338"
+          }
+        },
+        {
+          "id": "821707.12",
+          "url": "https://wagtail.org/static/b0261a1f14d185dd8ec9.377af7d4af79.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 20072,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4cb8\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19640"
+          }
+        },
+        {
+          "id": "821707.10",
+          "url": "https://wagtail.org/static/6cc37e36494160883d90.ef1a3b77769b.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 19917,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4b68\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19304"
+          }
+        },
+        {
+          "id": "821707.15",
+          "url": "https://media.wagtail.org/images/green-coding-chart.original_fEregGn.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 62393,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"a9afe28c5be83a13c326c9c7a691717b\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "61914"
+          }
+        },
+        {
+          "id": "821707.16",
+          "url": "https://media.wagtail.org/images/Greenleaf-rec2.original_looJkiI.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 2101,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"2350006f0f0f0df8028f195da30381e8\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "1634"
+          }
+        },
+        {
+          "id": "821707.17",
+          "url": "https://media.wagtail.org/images/wagtail-gsoc-newsletter.original_f80G90h.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 3738,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"5fffc1a202bed34d00a04dcf6ae8ca68\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "3318"
+          }
+        },
+        {
+          "id": "821707.18",
+          "url": "https://media.wagtail.org/images/grid-aware-websites-advisory-board-members_1.width-1300.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 57601,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/jpeg",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"d551d05b98ee14c435f668886fb0badf\"",
+            "content-type": "image/jpeg",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "57068"
+          }
+        },
+        {
+          "id": "821707.19",
+          "url": "https://media.wagtail.org/images/forms-newsletter_h9vy9GV.original-1_2JObyyy.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 10622,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"7412bf7da01a50593d6fc68720627cb6\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "9946"
+          }
+        },
+        {
+          "id": "821707.27",
+          "url": "https://wagtail.org/sitewide_alert/",
+          "type": "Fetch",
+          "finished": true,
+          "receivedBytes": 472,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/json",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "application/json",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding",
+            "cache-control": "max-age=300, s-maxage=604800, public",
+            "content-length": "2"
+          }
+        },
+        {
+          "id": "821707.28",
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 169232,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "private, max-age=900",
+            "content-encoding": "zstd",
+            "content-length": "169046",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding"
+          }
+        },
+        {
+          "id": "821707.29",
+          "url": "https://www.google-analytics.com/analytics.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 21409,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "content-type": "text/javascript",
+            "vary": "Accept-Encoding",
+            "cache-control": "public, max-age=7200",
+            "content-length": "20802"
+          }
+        },
+        {
+          "id": "821707.30",
+          "url": "https://region1.google-analytics.com/g/collect",
+          "type": "Fetch",
+          "finished": true,
+          "receivedBytes": null,
+          "fromCache": false,
+          "status": 204,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "0",
+            "content-type": "text/plain"
+          },
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "id": "821707.31",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 449,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        },
+        {
+          "id": "821707.32",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 71,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://wagtail.org/sustainability/",
+      "finalUrl": "https://wagtail.org/sustainability/",
+      "startedAt": "2026-11-04T05:22:33.285Z",
+      "title": "Sustainability | Wagtail CMS",
+      "cache": "warm",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": false,
+      "limitations": [
+        "Failed or unfinished resource requests",
+        "HTTP resource error"
+      ],
+      "receivedBytes": 37653,
+      "requestCount": 19,
+      "cacheHitCount": 14,
+      "rating": {
+        "status": "not_calculated",
+        "reason": "Requires a complete, positive-byte cold capture",
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        }
+      },
+      "originalCaptureSHA256": "5340d6c948510347505feb9747fb1bd899c547421447cb6835fb280d679814f9",
+      "resources": [
+        {
+          "id": "19B4D81174C835682BAAFF8FEEAE0D27",
+          "url": "https://wagtail.org/sustainability/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 37170,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "s-maxage=14400, stale-while-revalidate=30, public",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding"
+          }
+        },
+        {
+          "id": "821707.35",
+          "url": "https://wagtail.org/static/css/main.59e0b935dbf5.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ada7bde-1eb02\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "21060"
+          }
+        },
+        {
+          "id": "821707.36",
+          "url": "https://plausible.io/js/pa-ngavQ28VQSDP3hrszIVgI.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": null,
+          "fromCache": false,
+          "status": 404,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain; charset=utf-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=0, private, must-revalidate",
+            "content-length": "9"
+          },
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "id": "821707.37",
+          "url": "https://wagtail.org/static/js/blocking.4c0750407486.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6a3ccd14-227\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "340"
+          }
+        },
+        {
+          "id": "821707.38",
+          "url": "https://media.wagtail.org/images/Logo_-_small.max-160x160.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/png",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"432fd7fbe94b7611222a140ec74f6364\"",
+            "content-type": "image/png",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "6421"
+          }
+        },
+        {
+          "id": "821707.39",
+          "url": "https://wagtail.org/static/js/main.7e65faa9ea46.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6acf2dc8-9a5d\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "11338"
+          }
+        },
+        {
+          "id": "821707.40",
+          "url": "https://www.googletagmanager.com/gtm.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "zstd",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding",
+            "cache-control": "private, max-age=900",
+            "content-length": "155934"
+          }
+        },
+        {
+          "id": "821707.45",
+          "url": "https://media.wagtail.org/images/green-coding-chart.original_fEregGn.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"a9afe28c5be83a13c326c9c7a691717b\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "61914"
+          }
+        },
+        {
+          "id": "821707.46",
+          "url": "https://media.wagtail.org/images/Greenleaf-rec2.original_looJkiI.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"2350006f0f0f0df8028f195da30381e8\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "1634"
+          }
+        },
+        {
+          "id": "821707.47",
+          "url": "https://media.wagtail.org/images/wagtail-gsoc-newsletter.original_f80G90h.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"5fffc1a202bed34d00a04dcf6ae8ca68\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "3318"
+          }
+        },
+        {
+          "id": "821707.48",
+          "url": "https://media.wagtail.org/images/grid-aware-websites-advisory-board-members_1.width-1300.jpg",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/jpeg",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"d551d05b98ee14c435f668886fb0badf\"",
+            "content-type": "image/jpeg",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "57068"
+          }
+        },
+        {
+          "id": "821707.49",
+          "url": "https://media.wagtail.org/images/forms-newsletter_h9vy9GV.original-1_2JObyyy.width-1300.webp",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/octet-stream",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"7412bf7da01a50593d6fc68720627cb6\"",
+            "content-type": "application/octet-stream",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=31536000",
+            "content-length": "9946"
+          }
+        },
+        {
+          "id": "821707.57",
+          "url": "https://wagtail.org/sitewide_alert/",
+          "type": "Fetch",
+          "finished": true,
+          "receivedBytes": 431,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "application/json",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "application/json",
+            "vary": "Cookie, X-Requested-With, X-Forwarded-Proto, Accept-Encoding",
+            "cache-control": "max-age=300, s-maxage=604800, public",
+            "content-length": "2"
+          }
+        },
+        {
+          "id": "821707.58",
+          "url": "https://wagtail.org/static/6cc37e36494160883d90.ef1a3b77769b.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4b68\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19304"
+          }
+        },
+        {
+          "id": "821707.60",
+          "url": "https://wagtail.org/static/b0261a1f14d185dd8ec9.377af7d4af79.woff2",
+          "type": "Font",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "font/woff2",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"6a3ccd14-4cb8\"",
+            "content-type": "font/woff2",
+            "vary": "accept-encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "19640"
+          }
+        },
+        {
+          "id": "821707.61",
+          "url": "https://www.googletagmanager.com/gtag/js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "application/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "cache-control": "private, max-age=900",
+            "content-encoding": "zstd",
+            "content-length": "169046",
+            "content-type": "application/javascript; charset=UTF-8",
+            "vary": "Accept-Encoding"
+          }
+        },
+        {
+          "id": "821707.62",
+          "url": "https://www.google-analytics.com/analytics.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "content-type": "text/javascript",
+            "vary": "Accept-Encoding",
+            "cache-control": "public, max-age=7200",
+            "content-length": "20802"
+          }
+        },
+        {
+          "id": "821707.63",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 26,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        },
+        {
+          "id": "821707.64",
+          "url": "https://www.google-analytics.com/j/collect",
+          "type": "XHR",
+          "finished": true,
+          "receivedBytes": 26,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/plain",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-type": "text/plain",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "content-length": "3"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "finalUrl": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "startedAt": "2026-11-04T05:23:12.487Z",
+      "title": "Manage images - Wagtail Guide",
+      "cache": "cold",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": true,
+      "limitations": [],
+      "receivedBytes": 232124,
+      "requestCount": 10,
+      "cacheHitCount": 1,
+      "rating": {
+        "status": "calculated",
+        "bytes": 232124,
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        },
+        "trace": {
+          "co2": {
+            "total": 0.034400776800000005,
+            "rating": "A+"
+          },
+          "green": false,
+          "variables": {
+            "description": "Below are the variables used to calculate this CO2 estimate.",
+            "bytes": 232124,
+            "gridIntensity": {
+              "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+              "device": {
+                "value": 494
+              },
+              "dataCenter": {
+                "value": 494
+              },
+              "network": {
+                "value": 494
+              }
+            },
+            "greenHostingFactor": 0,
+            "dataReloadRatio": 0.02,
+            "firstVisitPercentage": 1,
+            "returnVisitPercentage": 0
+          }
+        }
+      },
+      "originalCaptureSHA256": "bfee607bab4a67d74c4e4ef66a62ec13867ae2d684d687335b31c3a017c7d626",
+      "resources": [
+        {
+          "id": "41DACCC3AE5F9434C7EDB386F33076AD",
+          "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 15969,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Accept, Cookie, accept-encoding"
+          }
+        },
+        {
+          "id": "829738.2",
+          "url": "https://guide.wagtail.org/static/main-Bgm1fVS1.9554aa123a7e.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 9135,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac416f5-aa8b\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "8247"
+          }
+        },
+        {
+          "id": "829738.3",
+          "url": "https://guide.wagtail.org/static/blocking-Cnb9KfqH.ad978dad23b4.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 1114,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac3bec3-254\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "364"
+          }
+        },
+        {
+          "id": "829738.4",
+          "url": "https://guide-media.wagtail.org/images/Images_listing_with_header_and_images_grid_OFs.width-900.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 49219,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"613b5795822ac5811f4283b6bcca7794\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "48694"
+          }
+        },
+        {
+          "id": "829738.5",
+          "url": "https://guide-media.wagtail.org/images/Images_listing_with_checkboxes_shown_next_to_i.width-900_uduIqfm.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 51043,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"52db34d10ecb212aadba9b9ca0131c08\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "50516"
+          }
+        },
+        {
+          "id": "829738.6",
+          "url": "https://guide-media.wagtail.org/images/Images_listing_with_header_and_images_list.width-900.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 39031,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"b4483c521187c0240b3885e04fe7c68e\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "38300"
+          }
+        },
+        {
+          "id": "829738.7",
+          "url": "https://guide-media.wagtail.org/images/Image_editing_form_for_Olivia_Ava_image_To_the.width-900_T2JPY0c.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 37841,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"638002080866ac913d48e5b159618d0b\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "37266"
+          }
+        },
+        {
+          "id": "829738.10",
+          "url": "https://guide.wagtail.org/en/jsi18n/",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 1712,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "br",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "accept-encoding"
+          }
+        },
+        {
+          "id": "829738.11",
+          "url": "https://guide.wagtail.org/static/main-7Msu0H_J.806796bef3b0.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 27060,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac4e9bc-15de9\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "26385"
+          }
+        },
+        {
+          "id": "829738.18",
+          "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA3RDdFIiBkPSJNMjgwLjIgMTUwLjJjLTcuMS02LjQtMTguMS04LTI1LjktNC4xcy0xNS4yIDEyLjQtMTUuMiAyMWwuMDAyIDU2TDE1MiAyMjRjLTEzLjIgMC0yNCAxMC44LTI0IDI0djE2YzAgMTMuMyAxMC44IDI0IDI0IDI0bDg4LS45djU2YzAgOS41MzEgNS42NTYgMTguMTYgMTQuMzggMjJhMjQuMDI1IDI0LjAyNSAwIDAgMCAyNS45MS00LjM3NWw5Ni04OC43NUMzODEuMiAyNjguMyAzODQgMjYxLjkgMzg0IDI1NS4yYy0uMzEzLTcuNzgxLTIuODc1LTEzLjI1LTcuODQ0LTE3Ljc1TDI4MC4yIDE1MC4yek0yNTYgMEMxMTQuNiAwIDAgMTE0LjYgMCAyNTZzMTE0LjYgMjU2IDI1NiAyNTYgMjU2LTExNC42IDI1Ni0yNTZTMzk3LjQgMCAyNTYgMHptMCA0NjRjLTExNC43IDAtMjA4LTkzLjMxLTIwOC0yMDhTMTQxLjMgNDggMjU2IDQ4czIwOCA5My4zMSAyMDggMjA4LTkzLjMgMjA4LTIwOCAyMDh6Ii8+PC9zdmc+",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "finalUrl": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+      "startedAt": "2026-11-04T05:23:16.022Z",
+      "title": "Manage images - Wagtail Guide",
+      "cache": "warm",
+      "browser": "156.0.8078.4",
+      "protocol": {
+        "version": "0.1.0",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "locale": "en-GB",
+        "timezoneId": "Europe/London",
+        "observationMs": 3000,
+        "byteDefinition": "Sum of CDP Network.loadingFinished.encodedDataLength plus redirect response encodedDataLength; received network bytes, including protocol-reported overhead",
+        "warmDefinition": "Second navigation in the same browser context, with no cache-disabling routing",
+        "scope": "Main page CDP session; service workers blocked; no scrolling or consent interaction"
+      },
+      "complete": true,
+      "limitations": [],
+      "receivedBytes": 17377,
+      "requestCount": 10,
+      "cacheHitCount": 8,
+      "rating": {
+        "status": "not_calculated",
+        "reason": "Requires a complete, positive-byte cold capture",
+        "profile": {
+          "library": "@tgwf/co2@0.19.0",
+          "model": "swd",
+          "version": 4,
+          "functionalUnit": "one sampled cold page load",
+          "hosting": "unknown; assume non-green for this scenario",
+          "firstVisitPercentage": 1,
+          "returnVisitPercentage": 0,
+          "dataReloadRatio": 0.02,
+          "comparisonStatus": "provisional; capture protocol not externally validated"
+        }
+      },
+      "originalCaptureSHA256": "5a0b8fbc7a367aec27735f7e71712f679bf8fe422d26585798d11502d43c6dac",
+      "resources": [
+        {
+          "id": "CD8EE2560B1DD66D6E3DB3E6EF6C3C5C",
+          "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+          "type": "Document",
+          "finished": true,
+          "receivedBytes": 16022,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/html",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "vary": "Accept, Cookie, accept-encoding"
+          }
+        },
+        {
+          "id": "829738.20",
+          "url": "https://guide.wagtail.org/static/main-Bgm1fVS1.9554aa123a7e.css",
+          "type": "Stylesheet",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/css",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac416f5-aa8b\"",
+            "content-type": "text/css; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "8247"
+          }
+        },
+        {
+          "id": "829738.21",
+          "url": "https://guide.wagtail.org/static/blocking-Cnb9KfqH.ad978dad23b4.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac3bec3-254\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "364"
+          }
+        },
+        {
+          "id": "829738.24",
+          "url": "https://guide-media.wagtail.org/images/Images_listing_with_header_and_images_grid_OFs.width-900.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"613b5795822ac5811f4283b6bcca7794\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "48694"
+          }
+        },
+        {
+          "id": "829738.25",
+          "url": "https://guide-media.wagtail.org/images/Images_listing_with_checkboxes_shown_next_to_i.width-900_uduIqfm.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"52db34d10ecb212aadba9b9ca0131c08\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "50516"
+          }
+        },
+        {
+          "id": "829738.26",
+          "url": "https://guide-media.wagtail.org/images/Images_listing_with_header_and_images_list.width-900.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"b4483c521187c0240b3885e04fe7c68e\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "38300"
+          }
+        },
+        {
+          "id": "829738.27",
+          "url": "https://guide-media.wagtail.org/images/Image_editing_form_for_Olivia_Ava_image_To_the.width-900_T2JPY0c.png",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/webp",
+          "fromServiceWorker": false,
+          "headers": {
+            "etag": "\"638002080866ac913d48e5b159618d0b\"",
+            "content-type": "image/webp",
+            "vary": "accept, accept-encoding",
+            "content-length": "37266"
+          }
+        },
+        {
+          "id": "829738.28",
+          "url": "https://guide.wagtail.org/en/jsi18n/",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 1355,
+          "fromCache": false,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "br",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "accept-encoding"
+          }
+        },
+        {
+          "id": "829738.34",
+          "url": "https://guide.wagtail.org/static/main-7Msu0H_J.806796bef3b0.js",
+          "type": "Script",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "text/javascript",
+          "fromServiceWorker": false,
+          "headers": {
+            "content-encoding": "gzip",
+            "etag": "\"6ac4e9bc-15de9\"",
+            "content-type": "text/javascript; charset=\"utf-8\"",
+            "vary": "Accept-Encoding",
+            "cache-control": "max-age=315360000, public, immutable",
+            "content-length": "26385"
+          }
+        },
+        {
+          "id": "829738.35",
+          "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA3RDdFIiBkPSJNMjgwLjIgMTUwLjJjLTcuMS02LjQtMTguMS04LTI1LjktNC4xcy0xNS4yIDEyLjQtMTUuMiAyMWwuMDAyIDU2TDE1MiAyMjRjLTEzLjIgMC0yNCAxMC44LTI0IDI0djE2YzAgMTMuMyAxMC44IDI0IDI0IDI0bDg4LS45djU2YzAgOS41MzEgNS42NTYgMTguMTYgMTQuMzggMjJhMjQuMDI1IDI0LjAyNSAwIDAgMCAyNS45MS00LjM3NWw5Ni04OC43NUMzODEuMiAyNjguMyAzODQgMjYxLjkgMzg0IDI1NS4yYy0uMzEzLTcuNzgxLTIuODc1LTEzLjI1LTcuODQ0LTE3Ljc1TDI4MC4yIDE1MC4yek0yNTYgMEMxMTQuNiAwIDAgMTE0LjYgMCAyNTZzMTE0LjYgMjU2IDI1NiAyNTYgMjU2LTExNC42IDI1Ni0yNTZTMzk3LjQgMCAyNTYgMHptMCA0NjRjLTExNC43IDAtMjA4LTkzLjMxLTIwOC0yMDhTMTQxLjMgNDggMjU2IDQ4czIwOCA5My4zMSAyMDggMjA4LTkzLjMgMjA4LTIwOCAyMDh6Ii8+PC9zdmc+",
+          "type": "Image",
+          "finished": true,
+          "receivedBytes": 0,
+          "fromCache": true,
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "fromServiceWorker": false,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          }
+        }
+      ]
+    }
+  ]
+}

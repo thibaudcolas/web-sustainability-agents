@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-04T05:22:50.416Z",
+  "status": 200,
+  "requestedModel": "deepseek-v4.1-flash",
+  "servedModel": "deepseek-v4.1-flash",
+  "reasoningEffort": "low",
+  "systemFingerprint": null,
+  "toolCall": {
+    "name": "record_status",
+    "arguments": "{\"status\":\"ready\"}"
+  },
+  "usage": {
+    "prompt_tokens": 313,
+    "total_tokens": 352,
+    "completion_tokens": 39,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "energy": {
+    "energy_joules": 2.67,
+    "energy_kwh": 7.4e-7,
+    "avg_power_watts": 4018,
+    "duration_seconds": 0.258,
+    "attribution_method": "counter_prorated_token_pool_weighted_multi_gpu_4",
+    "attribution_ratio": 0.0026,
+    "carbon_g_co2eq": 0.0002902,
+    "grid_carbon_intensity_gco2perkwhr": 392,
+    "grid_id": "US-MIDA-PJM",
+    "carbon_source": "agent_cache"
+  },
+  "cost": {
+    "requestCostUSD": 0.000006,
+    "cacheSavingsUSD": 0
+  },
+  "serviceTier": "standard",
+  "scope": "One standalone tool-call preflight; not total campaign energy or cost"
+}

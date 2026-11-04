@@ -1,0 +1,33 @@
+{
+  "jobs_dir": ".audit-work/jobs",
+  "n_concurrent_trials": 2,
+  "n_attempts": 1,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "neuralwatt/deepseek-v4.1-flash",
+      "env": { "NEURALWATT_API_KEY": "${NEURALWATT_API_KEY}" },
+      "kwargs": {
+        "version": "1.19.5",
+        "opencode_config": {
+          "provider": {
+            "neuralwatt": {
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "baseURL": "https://api.neuralwatt.com/v1",
+                "apiKey": "{env:NEURALWATT_API_KEY}"
+              },
+              "models": {
+                "deepseek-v4.1-flash": {
+                  "name": "DeepSeek V4.1 Flash",
+                  "limit": { "context": 1048560, "output": 8192 },
+                  "options": { "reasoningEffort": "low" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

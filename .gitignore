@@ -92,3 +92,5 @@ lib64
 # Your own project's ignores
 # -------------------------------------------------
 site
+/.audit-work/
+/.a11y-history/

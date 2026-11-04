@@ -220,6 +220,8 @@ nav:
       - Decision-model examples: agentic-audits/decision-model-examples.md
       - Evaluation plan: agentic-audits/evaluation.md
       - Harbor benchmark: agentic-audits/benchmark.md
+      - First executable slice: agentic-audits/first-slice.md
+      - Demo sites and benchmark targets: agentic-audits/test-sites.md
       - Model and provider comparisons: agentic-audits/model-comparison.md
       - Validation roadmap: agentic-audits/validation-roadmap.md
       - Sources and research method: agentic-audits/sources.md
