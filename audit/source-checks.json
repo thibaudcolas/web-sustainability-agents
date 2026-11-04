@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "0.1.0",
+  "rubricVersion": "source-review-v1",
+  "checks": [
+    {
+      "id": "source-reuse",
+      "guideline": "3.4",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-redundancy-and-duplication-in-code",
+      "expectation": "Selected templates or modules use shared components for the same repeated interface behavior. A demonstrated duplicated maintenance path can fail this narrow check; shared imports alone cannot establish whole-project efficiency. Inspect concrete call sites and tradeoffs before recommending consolidation.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-dependencies",
+      "guideline": "3.12",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-dependencies-sparingly-and-maintain-them",
+      "expectation": "The selected manifests document direct dependencies and a repeatable version-resolution mechanism. Distinguish declared dependencies from installed or deployed versions; necessity, vulnerability status and up-to-date maintenance require further evidence.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-runtime",
+      "guideline": "3.15",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-latest-stable-language-version",
+      "expectation": "The selected runtime declarations are mutually consistent for the documented build/deployment path. This checks consistency only; a latest-stable-version claim needs a separately captured authoritative release reference and deployment evidence.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-automation",
+      "guideline": "4.6",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-automation-wisely",
+      "expectation": "The selected CI workflows declare triggers and avoid demonstrably duplicate or superseded work through relevant filtering, cancellation or equivalent controls. Evaluate the same workflow and necessary validation before prescribing fewer jobs; this does not measure CI energy.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-maintenance",
+      "guideline": "5.10",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#follow-a-product-management-and-maintenance-strategy",
+      "expectation": "Selected project documentation explains how maintainers develop, test or maintain the service. A document can pass this disclosure expectation without proving staffing, regular execution or a complete sustainability maintenance strategy.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-change-docs",
+      "guideline": "5.12",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#document-updates-and-evolutions",
+      "expectation": "The selected change/release documentation communicates user-facing changes with identifiable versions or change history. Git metadata alone does not prove that affected users receive useful change documentation.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-budgets",
+      "guideline": "5.24",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-performance-environmental-and-human-budgets",
+      "expectation": "Selected build or project documentation defines a concrete asset/performance limit and what happens when it is exceeded. A linter or default warning without an explicit relevant limit is insufficient. No selected document is a bounded search result, not proof that the organization has no budgets.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    },
+    {
+      "id": "source-open-source",
+      "guideline": "5.25",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-and-contribute-to-open-source",
+      "expectation": "Selected license and contribution documents identify reuse terms and how to contribute to this codebase. Code licensing does not automatically license site content or prove ongoing upstream contribution.",
+      "requiresSource": true,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite captured source file IDs, relevant lines, repository state and the exact deployment uncertainty. Mark missing prerequisite evidence cantTell rather than claiming project-wide absence."
+    }
+  ]
+}

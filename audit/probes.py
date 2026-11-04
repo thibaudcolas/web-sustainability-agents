@@ -35,6 +35,8 @@ DOM = r"""() => {
  const links=[...document.querySelectorAll('a[href]')].map(e=>({url:e.href,...label(e),...box(e),download:e.getAttribute('download'),type:e.type}));
  return {
   url:location.href,title:document.title,lang:document.documentElement.lang,
+  metadata:{canonical:document.querySelector('link[rel="canonical"]')?.href||null,description:document.querySelector('meta[name="description"]')?.content||null,viewport:document.querySelector('meta[name="viewport"]')?.content||null,robots:document.querySelector('meta[name="robots"]')?.content||null,structuredData:cap([...document.querySelectorAll('script[type="application/ld+json"]')].map(e=>{try{const v=JSON.parse(e.textContent);return {validJSON:true,rootType:Array.isArray(v)?'array':typeof v,declaredType:v?.['@type']||null};}catch{return {validJSON:false};}}),30)},
+  semantics:{mainCount:document.querySelectorAll('main,[role="main"]').length,h1Count:document.querySelectorAll('h1').length,positiveTabindex:cap([...document.querySelectorAll('[tabindex]')].filter(e=>e.tabIndex>0).map(e=>({tag:e.tagName,id:e.id,tabIndex:e.tabIndex,...label(e)})),50),forms:cap([...document.forms].map(e=>({action:e.action,method:e.method,...label(e)})),50)},
   viewport:{width:innerWidth,height:innerHeight,deviceScaleFactor:devicePixelRatio},
   documentSize:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight},
   horizontalOverflow:document.documentElement.scrollWidth>innerWidth+1,
@@ -45,13 +47,14 @@ DOM = r"""() => {
   downloads:cap(links.filter(e=>e.download!==null || /\.(pdf|docx?|xlsx?|pptx?|odt|zip)([?#]|$)/i.test(e.url)),100),
   controls:cap([...document.querySelectorAll('button,input,select,textarea,[role="button"],[role="switch"]')].map(e=>({tag:e.tagName,type:e.type||null,id:e.id,...label(e),...box(e),labels:[...(e.labels||[])].map(l=>l.textContent.trim()),required:e.required||false,disabled:e.disabled||false,checked:typeof e.checked==='boolean'?e.checked:null,autocomplete:e.autocomplete||null})),150),
   overlays:cap([...document.querySelectorAll('dialog,[role="dialog"],[role="alert"],[aria-live]')].map(e=>({...label(e),role:e.getAttribute('role'),live:e.getAttribute('aria-live'),...box(e)})),40),
-  images:cap([...document.images].map(e=>({url:e.currentSrc||e.src,alt:e.getAttribute('alt'),loading:e.loading,naturalWidth:e.naturalWidth,naturalHeight:e.naturalHeight,...box(e)})),150),
+  images:cap([...document.images].map(e=>({url:e.currentSrc||e.src,alt:e.getAttribute('alt'),loading:e.loading,naturalWidth:e.naturalWidth,naturalHeight:e.naturalHeight,srcset:e.srcset,sizes:e.sizes,widthAttribute:e.getAttribute("width"),heightAttribute:e.getAttribute("height"),decoding:e.decoding,...box(e)})),150),
   media:cap([...document.querySelectorAll('video,audio')].map(e=>({tag:e.tagName,url:e.currentSrc,autoplay:e.autoplay,controls:e.controls,loop:e.loop,muted:e.muted,paused:e.paused,preload:e.preload,...box(e)})),50),
   animations:cap(document.getAnimations().map(a=>({playState:a.playState,currentTime:a.currentTime,iterations:a.effect?.getTiming().iterations===Infinity?'Infinity':a.effect?.getTiming().iterations,target:a.effect?.target?.tagName||null})),100),
   fonts:cap([...document.fonts].map(f=>({family:f.family,status:f.status,weight:f.weight,style:f.style,display:f.display})),100),
   bodyFont:document.body?{family:getComputedStyle(document.body).fontFamily,size:getComputedStyle(document.body).fontSize,lineHeight:getComputedStyle(document.body).lineHeight}:null,
   print:{matches:matchMedia('print').matches,visibleNavigation:[...document.querySelectorAll('nav')].filter(visible).length,visibleImages:[...document.images].filter(visible).length},
-  preferences:{reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches},
+  preferences:{reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches,dark:matchMedia('(prefers-color-scheme: dark)').matches,forcedColors:matchMedia('(forced-colors: active)').matches},
+  colors:document.body?{color:getComputedStyle(document.body).color,background:getComputedStyle(document.body).backgroundColor,rootBackground:getComputedStyle(document.documentElement).backgroundColor}:null,
   notification:{apiAvailable:'Notification' in window,permission:'Notification' in window?Notification.permission:null,requestCalls:window.__wsgNotificationRequests||0},
   resources:cap(performance.getEntriesByType('resource').map(r=>({url:r.name,initiatorType:r.initiatorType,startTimeMs:r.startTime,durationMs:r.duration,transferSize:r.transferSize,encodedBodySize:r.encodedBodySize,decodedBodySize:r.decodedBodySize})),300)
  };
@@ -88,6 +91,38 @@ def validate_plan(plan: JSON) -> None:
         if len({entry["id"] for entry in entries}) != len(entries):
             raise ValueError("Duplicate entry IDs")
     for journey in journeys:
+        if viewport := journey.get("viewport"):
+            if (
+                not isinstance(viewport, dict)
+                or set(viewport) != {"width", "height"}
+                or any(
+                    type(value) is not int or not 240 <= value <= 3840
+                    for value in viewport.values()
+                )
+            ):
+                raise ValueError(
+                    "Journey viewport requires width/height between 240 and 3840 CSS pixels"
+                )
+        if "success" in journey:
+            success = journey["success"]
+            if (
+                not isinstance(success, dict)
+                or not success
+                or set(success) - {"url", "selector", "text"}
+                or any(
+                    not isinstance(value, str) or not value.strip()
+                    for value in success.values()
+                )
+            ):
+                raise ValueError(
+                    "Success requires nonempty url, selector or text postconditions"
+                )
+            if "url" in success:
+                parsed = urlsplit(success["url"])
+                if (parsed.scheme, parsed.netloc) != (origin.scheme, origin.netloc):
+                    raise ValueError(
+                        "Expected completion URL must match the plan origin"
+                    )
         if len(journey.get("actions", [])) > 20:
             raise ValueError("Journeys are limited to 20 actions")
         for action in journey.get("actions", []):
@@ -150,6 +185,155 @@ async def finish_coverage(cdp: CDPSession) -> JSON:
     }
 
 
+class NetworkObservations:
+    """Retain bounded request and selected-header facts without sensitive headers."""
+
+    def __init__(self) -> None:
+        """Initialize a main-target ledger distinct from headline byte accounting."""
+        self.result: JSON = {
+            "requests": [],
+            "responses": [],
+            "requestsTotal": 0,
+            "responsesTotal": 0,
+            "limit": 300,
+            "scope": "Main CDP target during supplemental page states; not transfer-byte accounting or a cache-reuse experiment",
+        }
+
+    def request(self, event: JSON) -> None:
+        """Count request attempts, including repeated fetch/XHR URLs."""
+        self.result["requestsTotal"] += 1
+        if len(self.result["requests"]) < self.result["limit"]:
+            request = event["request"]
+            self.result["requests"].append(
+                {
+                    "url": request["url"],
+                    "method": request["method"],
+                    "type": event.get("type"),
+                    "timestamp": event.get("timestamp"),
+                    "hasPostData": bool(request.get("hasPostData")),
+                }
+            )
+
+    def response(self, event: JSON) -> None:
+        """Copy only the explicit performance-policy header allowlist."""
+        self.result["responsesTotal"] += 1
+        if len(self.result["responses"]) < self.result["limit"]:
+            response = event["response"]
+            allowed = {
+                "cache-control",
+                "content-encoding",
+                "content-type",
+                "content-length",
+                "etag",
+                "vary",
+                "last-modified",
+                "expires",
+                "age",
+            }
+            self.result["responses"].append(
+                {
+                    "url": response["url"],
+                    "status": response["status"],
+                    "type": event.get("type"),
+                    "mimeType": response.get("mimeType"),
+                    "fromDiskCache": bool(response.get("fromDiskCache")),
+                    "fromServiceWorker": bool(response.get("fromServiceWorker")),
+                    "headers": {
+                        key.lower(): str(value)[:1000]
+                        for key, value in response.get("headers", {}).items()
+                        if key.lower() in allowed
+                    },
+                }
+            )
+
+
+async def keyboard_trace(page: Page) -> JSON:
+    """Record twelve real Tab movements without activating or submitting controls."""
+    steps = []
+    for _ in range(12):
+        await page.keyboard.press("Tab")
+        steps.append(
+            await page.evaluate("""() => {
+          const e=document.activeElement,r=e.getBoundingClientRect(),s=getComputedStyle(e);
+          return {tag:e.tagName,id:e.id,role:e.getAttribute('role'),text:(e.innerText||e.textContent||'').trim().slice(0,160),ariaLabel:e.getAttribute('aria-label'),tabIndex:e.tabIndex,href:e.href||null,box:{x:r.x,y:r.y,width:r.width,height:r.height},visible:r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none',focusVisible:e.matches(':focus-visible'),outline:{style:s.outlineStyle,width:s.outlineWidth,color:s.outlineColor},scrollY};
+        }""")
+        )
+    return {
+        "steps": steps,
+        "limit": 12,
+        "scope": "Sequential Tab presses in the main page after preference/print probes; no activation, reverse traversal, trap diagnosis or complete accessible-name computation",
+    }
+
+
+async def completion_evidence(page: Page, journey: JSON, actions: list[JSON]) -> JSON:
+    """Evaluate declared postconditions without promoting generic headings to success."""
+    expected = journey.get("success")
+    if not expected:
+        return {
+            "status": "not_declared",
+            "reason": "Legacy successSelector is an observation, not a task postcondition",
+        }
+    observed: JSON = {
+        "expected": expected,
+        "actualUrl": page.url,
+        "conditions": {},
+        "actionsSucceeded": len(actions) == len(journey.get("actions", []))
+        and all(item["status"] in {"completed", "not_present"} for item in actions),
+    }
+    if "url" in expected:
+        observed["conditions"]["url"] = page.url == expected["url"]
+    if selector := expected.get("selector"):
+        locator = page.locator(selector)
+        count = await locator.count()
+        observed["selectorMatches"] = count
+        observed["conditions"]["selector"] = count == 1 and await locator.is_visible()
+        if "text" in expected:
+            observed["conditions"]["text"] = count == 1 and expected["text"] in (
+                await locator.inner_text()
+            )
+    elif "text" in expected:
+        observed["conditions"]["text"] = expected["text"] in (
+            await page.locator("body").inner_text()
+        )
+    observed["status"] = (
+        "satisfied"
+        if observed["actionsSucceeded"] and all(observed["conditions"].values())
+        else "not_satisfied"
+    )
+    observed["interpretation"] = (
+        "Declared observable postconditions only; not proof of usability or optimal task efficiency"
+    )
+    return observed
+
+
+async def inspect_cold_dark(browser: Browser, url: str) -> JSON:
+    """Observe dark/reduced-motion preferences set before a fresh page navigation."""
+    result: JSON = {"name": "cold_dark", "capturedAt": timestamp()}
+    context = await browser.new_context(
+        viewport={"width": 1280, "height": 800},
+        color_scheme="dark",
+        reduced_motion="reduce",
+        locale="en-GB",
+        service_workers="block",
+    )
+    try:
+        async with asyncio.timeout(30):
+            page = await context.new_page()
+            response = await page.goto(url, wait_until="load", timeout=25000)
+            result["documentStatus"] = response.status if response else None
+            await page.wait_for_timeout(500)
+            result["observations"] = await snapshot(page)
+    except (BrowserError, TimeoutError) as error:
+        result["error"] = str(error) or type(error).__name__
+    finally:
+        try:
+            async with asyncio.timeout(5):
+                await context.close()
+        except (BrowserError, TimeoutError) as error:
+            result["error"] = str(error) or type(error).__name__
+    return result
+
+
 async def inspect_page(browser: Browser, target: JSON) -> JSON:
     """Observe initial, resized, reduced-motion and print states without user actions."""
     result: JSON = {
@@ -162,6 +346,8 @@ async def inspect_page(browser: Browser, target: JSON) -> JSON:
     }
     context = await browser.new_context(
         viewport={"width": 1280, "height": 800},
+        color_scheme="light",
+        reduced_motion="no-preference",
         device_scale_factor=1,
         locale="en-GB",
         timezone_id="Europe/London",
@@ -172,6 +358,11 @@ async def inspect_page(browser: Browser, target: JSON) -> JSON:
             page = await context.new_page()
             await page.add_init_script(NOTIFICATIONS)
             cdp = await context.new_cdp_session(page)
+            network = NetworkObservations()
+            await cdp.send("Network.enable")
+            cdp.on("Network.responseReceived", network.response)
+            cdp.on("Network.requestWillBeSent", network.request)
+            result["network"] = network.result
             try:
                 await start_coverage(cdp)
             except BrowserError as error:
@@ -213,6 +404,15 @@ async def inspect_page(browser: Browser, target: JSON) -> JSON:
                     "observations": await snapshot(page),
                 }
             )
+            await page.emulate_media(color_scheme="dark")
+            await page.wait_for_timeout(250)
+            result["states"].append(
+                {
+                    "name": "live_dark",
+                    "capturedAt": timestamp(),
+                    "observations": await snapshot(page),
+                }
+            )
             await page.emulate_media(media="print")
             await page.wait_for_timeout(250)
             result["states"].append(
@@ -223,6 +423,10 @@ async def inspect_page(browser: Browser, target: JSON) -> JSON:
                 }
             )
             result["frames"] = [frame.url for frame in page.frames]
+            await page.emulate_media(
+                media="screen", color_scheme="light", reduced_motion="no-preference"
+            )
+            result["keyboardFocus"] = await keyboard_trace(page)
     except (BrowserError, TimeoutError) as error:
         result["errors"].append(
             {"phase": "page", "error": str(error) or type(error).__name__}
@@ -239,6 +443,10 @@ async def inspect_page(browser: Browser, target: JSON) -> JSON:
     result["states"].append(nojs)
     if nojs.get("error"):
         result["errors"].append({"phase": "no_javascript", "error": nojs["error"]})
+    dark = await inspect_cold_dark(browser, target["url"])
+    result["states"].append(dark)
+    if dark.get("error"):
+        result["errors"].append({"phase": "cold_dark", "error": dark["error"]})
     result["status"] = "completed_with_errors" if result["errors"] else "completed"
     return result
 
@@ -280,7 +488,9 @@ async def inspect_journey(browser: Browser, journey: JSON) -> JSON:
         "successSelectorVisible": None,
     }
     context = await browser.new_context(
-        viewport={"width": 1280, "height": 800}, locale="en-GB", service_workers="block"
+        viewport=journey.get("viewport", {"width": 1280, "height": 800}),
+        locale="en-GB",
+        service_workers="block",
     )
     try:
         async with asyncio.timeout(90):
@@ -309,6 +519,9 @@ async def inspect_journey(browser: Browser, journey: JSON) -> JSON:
                     break
             await page.wait_for_timeout(500)
             result["after"] = await snapshot(page)
+            result["completion"] = await completion_evidence(
+                page, journey, result["actions"]
+            )
             if selector := journey.get("successSelector"):
                 result["successSelectorVisible"] = await page.locator(
                     selector
@@ -341,7 +554,7 @@ async def collect(plan: JSON, output: Path) -> JSON:
     """Collect evidence from any bounded one-origin plan without hardcoded site knowledge."""
     validate_plan(plan)
     result: JSON = {
-        "schemaVersion": "0.1.0",
+        "schemaVersion": "0.2.0",
         "site": plan["origin"],
         "startedAt": timestamp(),
         "purpose": plan.get("purpose"),
@@ -351,13 +564,16 @@ async def collect(plan: JSON, output: Path) -> JSON:
         "protocol": {
             "pageDeadlineSeconds": 50,
             "additionalNoJavaScriptDeadlineSeconds": 30,
+            "additionalColdDarkDeadlineSeconds": 30,
             "journeyDeadlineSeconds": 90,
             "observationMs": 500,
-            "states": "Initial desktop, then same document resized to 360 CSS px, live reduced-motion change, print emulation; separate fresh no-JavaScript context. Resized and emulated states are not independent cold loads or real-device tests.",
+            "states": "Initial desktop, then same document resized to 360 CSS px, live reduced-motion and dark changes, print emulation, twelve Tab presses; separate fresh no-JavaScript and dark contexts. Resized and emulated states are not independent cold loads or real-device tests.",
             "measurementPurpose": "Qualitative review and bounded interaction evidence, not headline bytes or energy",
             "limitations": [
                 "Main document observations; embedded frames are not traversed",
-                "No scrolling or interaction in page probes; journey actions must be explicit",
+                "Page probes include bounded Tab traversal after other states; no control activation. Journey actions must be explicit",
+                "Selected CDP response headers omit cookies and authorization; no header alone proves cache reuse",
+                "Keyboard trace is twelve Tab presses, not complete keyboard or accessibility conformance",
                 "Resource Timing zeros may reflect timing restrictions or cache, not zero traffic",
                 "Notification requestPermission calls counted with a delegating wrapper",
                 "Print emulation is not PDF pagination or document accessibility testing",

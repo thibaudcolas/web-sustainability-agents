@@ -13,6 +13,8 @@ This project turns the [feasibility study](../feasibility-study/README.md) into 
 
 ## Current checkpoint
 
+The [broader check catalog](broader-checks.md) adds ten browser checks and eight source-assisted checks, with source citations now part of the scored packet. The [broader benchmark](breadth-benchmark.md) adds sixteen controlled cases, four collection handoffs and reviewable expected judgments.
+
 The [repeatable agent workflow](agent-driven-audits.md) moves collection and scope decisions into the coordinator skill. It adds a portable per-origin plan, [interaction checks](interaction-checks.md), deeper [carbon.txt interpretation](../knowledge-base/carbon-disclosures.md), an optional [GreenFrame client adapter](../knowledge-base/greenframe.md), and a [crosswalk of all 101 relevant older assessment rows](wsg-check-expansion.md).
 
 The [skill-guided workflow](skill-audit-workflow.md) adds scoped scores, annual browsing-footprint estimates, evidence-resolved reviewer judgments and an explicit WSG/STAR coverage roadmap. Both site reports end with next auditing steps and reproducibility details. The [methodology benchmark](methodology-benchmark.md) adds ten cases for the new skills, estimates and aggregation rules.

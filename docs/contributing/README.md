@@ -49,6 +49,7 @@ Initialization installs Python and npm dependencies and downloads the pinned Val
 - `just audit-energy`: Run the supplied co2-runner adapter; keep tests and model campaigns separate from hardware measurement.
 - `just audit-traffic`: Retrieve the latest public CrUX mirror and derive scoped traffic scenarios; see the [energy and traffic experiment](../initial-implementation/energy-traffic-experiment.md).
 - `just benchmark-expanded-build`: Freeze 12 evidence-review tasks; model commands and interpretation are in the [expanded benchmark](../initial-implementation/expanded-benchmark.md). Do not rebuild during a campaign.
+- `just benchmark-breadth-build`: Freeze sixteen broader interpretation and collection-handoff cases; see the [broader benchmark](../initial-implementation/breadth-benchmark.md).
 - `just benchmark-methodology-build`: Freeze ten additional scoring, estimation and skill-review cases; see the [methodology benchmark](../initial-implementation/methodology-benchmark.md). Builders reject nonempty task directories.
 - `just benchmark-build`: Build Harbor development tasks from frozen fixture observations.
 - `just benchmark-controls`: Run the reference and no-operation agents through Harbor.

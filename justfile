@@ -116,3 +116,7 @@ benchmark-codex:
 # Build the documentation and serve it locally.
 docs:
     NO_MKDOCS_2_WARNING=1 uv run mkdocs serve --strict
+
+# Freeze broader interpretation and collection-handoff tasks.
+benchmark-breadth-build:
+    uv run --locked --script benchmarks/build_expanded.py --breadth

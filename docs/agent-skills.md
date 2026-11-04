@@ -6,7 +6,7 @@ This workspace publishes [Agent Skills](https://agentskills.io/) alongside its d
 
 | Skill                             | Version | Role                                                                                              |
 | --------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
-| `sustainability-audit`            | 0.2.0   | Coordinate a per-site audit, bounded review roles, calculation, reporting and next auditing steps |
+| `sustainability-audit`            | 0.3.0   | Coordinate a per-site audit, bounded review roles, calculation, reporting and next auditing steps |
 | `sustainability-evidence-review`  | 0.5.0   | Interpret measurements, phases, partial accounting and model boundaries                           |
 | `sustainability-guideline-review` | 0.2.0   | Apply scoped expectations, distinguish applicability and unknowns, and explain score coverage     |
 | `sustainability-claims-review`    | 0.2.0   | Review footprint assumptions, disclosures, source corroboration and recommendation usefulness     |

@@ -42,20 +42,28 @@ def main() -> None:
     parser.add_argument(
         "--output", type=Path, default=ROOT / ".audit-work/expanded-tasks-v2"
     )
-    parser.add_argument("--methodology", action="store_true")
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--methodology", action="store_true")
+    modes.add_argument("--breadth", action="store_true")
     args = parser.parse_args()
     if args.methodology and args.output == ROOT / ".audit-work/expanded-tasks-v2":
         args.output = ROOT / ".audit-work/methodology-tasks-v1"
+    if args.breadth and args.output == ROOT / ".audit-work/expanded-tasks-v2":
+        args.output = ROOT / ".audit-work/breadth-tasks-v1"
     if args.output.exists() and any(args.output.iterdir()):
         raise ValueError(
             "Use a new output directory; frozen tasks must not be overwritten"
         )
     corpus_name = (
-        "methodology-cases.json" if args.methodology else "expanded-cases.json"
+        "breadth-cases.json"
+        if args.breadth
+        else "methodology-cases.json"
+        if args.methodology
+        else "expanded-cases.json"
     )
     corpus = json.loads((ROOT / "benchmarks" / corpus_name).read_text())
     instruction = INSTRUCTION
-    if args.methodology:
+    if args.methodology or args.breadth:
         instruction = (
             instruction.replace(
                 "Use /skills/sustainability-evidence-review/SKILL.md and read /app/input.json.",
@@ -79,9 +87,29 @@ def main() -> None:
         task = args.output / case["id"]
         for folder in ["environment/skills", "tests", "solution"]:
             (task / folder).mkdir(parents=True, exist_ok=True)
-        write_json(task / "environment/input.json", case["input"])
-        write_json(task / "tests/reference.json", case["reference"])
-        reference = case["reference"]
+        input_data = dict(case["input"])
+        reference = dict(case["reference"])
+        requires_collector = args.breadth and case.get("requiresCollector", False)
+        extra_instruction = ""
+        if requires_collector:
+            bundle = {"site": input_data["site"], "facts": input_data["facts"]}
+            write_json(task / "environment/bundle.json", bundle)
+            input_data["facts"] = []
+            input_data["collectionRequired"] = True
+            input_data["collectionCommand"] = "python3 /app/collect.py"
+            shutil.copyfile(
+                ROOT / "benchmarks/collect_breadth.py", task / "environment/collect.py"
+            )
+            reference["requiredCollection"] = {
+                "collectionVersion": "breadth-collector-v1",
+                "sourceSHA256": hashlib.sha256(
+                    (task / "environment/bundle.json").read_bytes()
+                ).hexdigest(),
+                **bundle,
+            }
+            extra_instruction = "\nBefore judging, run `python3 /app/collect.py`. It reads the frozen bundle and writes /app/output/collection.json. Read that collected evidence to answer the questions. Preserve collection.json alongside report.json; the isolated verifier checks its source digest, origin and facts. This is a required tool handoff, not live browsing.\n"
+        write_json(task / "environment/input.json", input_data)
+        write_json(task / "tests/reference.json", reference)
         solution: dict[str, Any] = {
             "schemaVersion": "0.2.0",
             "summary": {"site": reference["site"], "overallScore": None},
@@ -96,22 +124,39 @@ def main() -> None:
             ]
         write_json(task / "solution/report.json", solution)
         (task / "solution/solve.sh").write_text(
-            "#!/bin/sh\nset -eu\nmkdir -p /app/output\ncp /solution/report.json /app/output/report.json\n"
+            "#!/bin/sh\nset -eu\nmkdir -p /app/output\n"
+            + ("python3 /app/collect.py\n" if requires_collector else "")
+            + "cp /solution/report.json /app/output/report.json\n"
         )
         (task / "tests/test.sh").write_text(
             "#!/bin/sh\nset -eu\npython /tests/grade.py\n"
         )
-        shutil.copyfile(ROOT / "benchmarks/grade_expanded.py", task / "tests/grade.py")
+        shutil.copyfile(
+            ROOT
+            / "benchmarks"
+            / ("grade_breadth.py" if args.breadth else "grade_expanded.py"),
+            task / "tests/grade.py",
+        )
+        if args.breadth:
+            shutil.copyfile(
+                ROOT / "benchmarks/grade_expanded.py", task / "tests/grade_expanded.py"
+            )
         skills = (
             [
-                ROOT / "benchmarks/frozen-methodology-skills" / name
+                ROOT
+                / (
+                    ".agents/skills"
+                    if args.breadth
+                    else "benchmarks/frozen-methodology-skills"
+                )
+                / name
                 for name in [
                     "sustainability-evidence-review",
                     "sustainability-guideline-review",
                     "sustainability-claims-review",
                 ]
             ]
-            if args.methodology
+            if args.methodology or args.breadth
             else [ROOT / "benchmarks/frozen-skills/sustainability-evidence-review"]
         )
         for skill in skills:
@@ -120,9 +165,15 @@ def main() -> None:
                 task / "environment/skills" / skill.name,
                 dirs_exist_ok=True,
             )
-        (task / "instruction.md").write_text(instruction)
+        (task / "instruction.md").write_text(instruction + extra_instruction)
         (task / "environment/Dockerfile").write_text(
-            "FROM node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c\nRUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates git python3 && rm -rf /var/lib/apt/lists/*\nWORKDIR /app\nCOPY input.json /app/input.json\nCOPY skills /skills\nRUN mkdir -p /app/output\n"
+            "FROM node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c\nRUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates git python3 && rm -rf /var/lib/apt/lists/*\nWORKDIR /app\nCOPY input.json /app/input.json\nCOPY skills /skills\n"
+            + (
+                "COPY bundle.json /app/bundle.json\nCOPY collect.py /app/collect.py\n"
+                if requires_collector
+                else ""
+            )
+            + "RUN mkdir -p /app/output\n"
         )
         (task / "tests/Dockerfile").write_text(
             "FROM python:3.14-slim@sha256:930e1abba7c4e8f96ed93e8012c35d174d7732752731bbd5e8e757d7ec6f3966\nCOPY . /tests/\n"
@@ -130,9 +181,36 @@ def main() -> None:
         (task / "task.toml").write_text(
             'version = "1.0"\nartifacts = ["/app/output/report.json"]\n\n[metadata]\nauthor_name = "Web sustainability agents"\ndifficulty = "medium"\ncategory = "web-sustainability"\ntags = ["development", "expanded-evidence"]\n\n[agent]\ntimeout_sec = 300\n\n[environment]\ncpus = 1\nmemory_mb = 2048\nskills_dir = "/skills"\n\n[verifier]\nenvironment_mode = "separate"\ntimeout_sec = 30\n'
         )
+        if requires_collector:
+            task_config = task / "task.toml"
+            task_config.write_text(
+                task_config.read_text().replace(
+                    'artifacts = ["/app/output/report.json"]',
+                    'artifacts = ["/app/output/report.json", "/app/output/collection.json"]',
+                )
+            )
         manifest["cases"].append(
             {
                 "id": case["id"],
+                **(
+                    {
+                        "guidelines": case["guidelines"],
+                        "requiresCollector": requires_collector,
+                        "extraResources": {
+                            str(p.relative_to(task)): hashlib.sha256(
+                                p.read_bytes()
+                            ).hexdigest()
+                            for p in [
+                                task / "environment/bundle.json",
+                                task / "environment/collect.py",
+                                task / "tests/grade_expanded.py",
+                            ]
+                            if p.exists()
+                        },
+                    }
+                    if args.breadth
+                    else {}
+                ),
                 "skillResources": {
                     str(path.relative_to(task / "environment/skills")): hashlib.sha256(
                         path.read_bytes()
@@ -156,7 +234,9 @@ def main() -> None:
         ROOT
         / "docs/initial-implementation/assets"
         / (
-            "methodology-benchmark-manifest.json"
+            "breadth-benchmark-manifest.json"
+            if args.breadth
+            else "methodology-benchmark-manifest.json"
             if args.methodology
             else "expanded-benchmark-manifest.json"
         ),

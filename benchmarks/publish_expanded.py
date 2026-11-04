@@ -35,7 +35,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def campaign(directory: Path) -> JSON:
+def campaign(directory: Path, breadth: bool = False) -> JSON:
     """Read completed trials without publishing credentials or provider transcripts."""
     job = json.loads((directory / "result.json").read_text())
     if not job.get("finished_at"):
@@ -53,10 +53,29 @@ def campaign(directory: Path) -> JSON:
             report = None
         reference = json.loads((task / "tests/reference.json").read_text())
         if digest(task / "tests/grade.py") != digest(
-            ROOT / "benchmarks/grade_expanded.py"
+            ROOT
+            / "benchmarks"
+            / ("grade_breadth.py" if breadth else "grade_expanded.py")
         ):
             raise ValueError("Refusing an implicit grader change")
-        regrade = grade(report, reference)
+        collection_path = path.parent / "artifacts/app/output/collection.json"
+        collection = None
+        if breadth:
+            if digest(task / "tests/grade_expanded.py") != digest(
+                ROOT / "benchmarks/grade_expanded.py"
+            ):
+                raise ValueError("Refusing an implicit base grader change")
+            try:
+                collection = json.loads(collection_path.read_text())
+            except FileNotFoundError, UnicodeError, json.JSONDecodeError:
+                pass
+            breadth_grade = cast(
+                Callable[[Any, JSON, Any], JSON],
+                importlib.import_module("benchmarks.grade_breadth").grade,
+            )
+            regrade = breadth_grade(report, reference, collection)
+        else:
+            regrade = grade(report, reference)
         reward = (trial.get("verifier_result") or {}).get("rewards", {}).get("reward")
         if reward is not None and reward != regrade["reward"]:
             raise ValueError(
@@ -74,6 +93,21 @@ def campaign(directory: Path) -> JSON:
                 "verifierMode": trial.get("verifier_environment_mode"),
                 "taskChecksum": trial.get("task_checksum"),
                 "hashes": {
+                    **(
+                        {
+                            "extraResources": {
+                                str(p.relative_to(task)): digest(p)
+                                for p in [
+                                    task / "environment/bundle.json",
+                                    task / "environment/collect.py",
+                                    task / "tests/grade_expanded.py",
+                                ]
+                                if p.exists()
+                            }
+                        }
+                        if breadth
+                        else {}
+                    ),
                     "skillResources": {
                         str(p.relative_to(task / "environment/skills")): digest(p)
                         for p in sorted((task / "environment/skills").rglob("*"))
@@ -91,6 +125,20 @@ def campaign(directory: Path) -> JSON:
                     },
                 },
                 "reportSHA256": digest(report_path) if report_path.exists() else None,
+                **(
+                    {
+                        "collectionRequired": "requiredCollection" in reference,
+                        "collectionArtifactSHA256": digest(collection_path)
+                        if collection_path.exists()
+                        else None,
+                        "collectionMatchesReference": collection
+                        == reference.get("requiredCollection")
+                        if "requiredCollection" in reference
+                        else None,
+                    }
+                    if breadth
+                    else {}
+                ),
                 "reward": reward,
                 "exception": (trial.get("exception_info") or {}).get("exception_type"),
                 "startedAt": trial.get("started_at"),
@@ -128,8 +176,17 @@ def main() -> None:
         default=ROOT
         / "docs/initial-implementation/assets/expanded-benchmark-results.json",
     )
+    parser.add_argument("--breadth", action="store_true")
     args = parser.parse_args()
-    campaigns = [campaign(path) for path in args.jobs]
+    if (
+        args.breadth
+        and args.output
+        == ROOT / "docs/initial-implementation/assets/expanded-benchmark-results.json"
+    ):
+        args.output = (
+            ROOT / "docs/initial-implementation/assets/breadth-benchmark-results.json"
+        )
+    campaigns = [campaign(path, args.breadth) for path in args.jobs]
     paired: dict[str, JSON] = {}
     models = set()
     model_cases: dict[str, set[str]] = {}

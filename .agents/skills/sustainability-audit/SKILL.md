@@ -3,7 +3,7 @@ name: sustainability-audit
 description: Coordinate a per-site sustainability audit using measurement evidence, scoped WSG review, footprint scenarios, and an explicit plan for increasing audit coverage.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Sustainability audit

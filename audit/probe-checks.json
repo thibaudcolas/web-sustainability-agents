@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "0.1.0",
-  "rubricVersion": "interaction-probes-v1",
+  "schemaVersion": "0.2.0",
+  "rubricVersion": "interaction-probes-v2",
   "checks": [
     {
       "id": "distraction",
@@ -97,6 +97,86 @@
       "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys",
       "fullGuidelineCoverage": false,
       "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "media-delivery",
+      "guideline": "2.9",
+      "expectation": "The sampled task images preserve useful content and provide proportionate intrinsic dimensions and delivery choices for their rendered size and pixel density. A large image is an investigation candidate until legibility and task value are checked; absent srcset alone is not a failure.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop/narrow image dimensions, srcset/sizes, delivered MIME types, loading state, and task content. Confirm any proposed rendition at intended pixel densities before asserting savings."
+    },
+    {
+      "id": "font-delivery",
+      "guideline": "2.11",
+      "expectation": "Observed web fonts and variants serve the sampled content, with a declared fallback/loading strategy where needed. Do not fail a site merely for using a web font; recommend removal or subsetting only after language and readability requirements are established.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect document.fonts family/weight/style/display/status, font responses and visible body text. Missing font-blocking/constrained-loading or language evidence can leave the scoped judgment unresolved."
+    },
+    {
+      "id": "semantic-forms",
+      "guideline": "3.6",
+      "expectation": "The sampled document has a meaningful language, primary heading and main region, and task controls have visible labels or an explicit naming relationship. Count/attribute presence alone does not establish semantic correctness or WCAG compliance.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Read title/lang/headings/mainCount, form control labels and task content. aria-labelledby references need resolution before claiming a missing accessible name."
+    },
+    {
+      "id": "metadata",
+      "guideline": "3.8",
+      "expectation": "The sampled content has a descriptive title and usable canonical metadata when applicable; declared structured-data blocks parse as JSON. Judge description and other optional metadata according to page purpose, not a mandatory-field checklist.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect metadata and document title, resolving canonical URLs and applicability. JSON parsing does not establish schema validity or search-engine eligibility."
+    },
+    {
+      "id": "preference-behavior",
+      "guideline": "3.9",
+      "expectation": "The sampled page respects applicable dark/reduced-motion preferences both before navigation and when they change in-page, without losing task content. Distinguish intentional design choices and absence of applicable motion from unsupported behavior.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop, reduced_motion, live_dark and cold_dark observations, colors, visible text and actual animations. A matching media query alone is insufficient; theme initialization and live change are distinct."
+    },
+    {
+      "id": "no-js-content",
+      "guideline": "2.17",
+      "expectation": "The sampled core reading content and navigation remain available without JavaScript, or an explicit alternative supports the task. This bounded check does not establish no-JavaScript search, every interaction, or all browser compatibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop and fresh no_javascript text/headings/navigation. Explain task-critical missing content and legitimate progressive enhancements rather than demanding every feature without scripts."
+    },
+    {
+      "id": "api-requests",
+      "guideline": "3.11",
+      "expectation": "Repeated observed API requests are justified by the sampled task and its update needs. Identify redundant-looking requests for investigation without inferring backend cost or safe removal from URL repetition alone.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect bounded network.requests methods/types/timestamps and explicit journey resource entries. Establish polling purpose, cache behavior and task freshness needs; initial-only windows may remain cantTell."
+    },
+    {
+      "id": "public-cache-policy",
+      "guideline": "4.2",
+      "expectation": "Reusable public scripts/styles/media expose an appropriate caching or validation policy in the sample. Distinguish dynamic/private responses and note that headers alone do not prove cache reuse or offline support.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Review allowlisted response cache-control/etag/last-modified/age/vary headers and public resource purpose. Require a warm-load test before claiming measured reuse; private no-store is a legitimate exception."
+    },
+    {
+      "id": "text-compression",
+      "guideline": "4.3",
+      "expectation": "Material sampled text assets are delivered with compression where beneficial. Do not demand compression for already-compressed images, tiny bodies or error responses without context.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Review text/script/style response MIME types, status and content-encoding, alongside transfer magnitude when available. Header absence for a material text response supports investigation; missing response evidence stays unknown."
+    },
+    {
+      "id": "keyboard-path",
+      "guideline": "3.6",
+      "expectation": "The sampled initial keyboard path reaches visible task navigation/controls in a meaningful order with a discernible focus indicator. A bounded Tab trace cannot establish complete keyboard support, reverse navigation, traps or screen-reader accessibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect keyboardFocus steps, names/label relationships, element geometry, focus-visible and outline clues. A zero outline is not proof of invisible focus because borders or shadows may supply it; verify the actual indicator before a failure."
     }
   ]
 }

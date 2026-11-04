@@ -162,6 +162,7 @@ def init_plan(origin: str, urls: list[str], path: Path) -> None:
         "journeys": [],
         "checks": [],
         "sourceRoots": [],
+        "sourceFiles": [],
         "questions": [],
         "assumptions": [
             "Public anonymous access",
@@ -196,20 +197,28 @@ def run_command(argv: list[str], session: Path, name: str) -> JSON:
 
 def catalog() -> list[JSON]:
     """Load the versioned public-browser and disclosure expectations."""
-    return [*read(ROOT / "audit/probe-checks.json")["checks"], *DISCLOSURE_CHECKS]
+    return [
+        *read(ROOT / "audit/probe-checks.json")["checks"],
+        *DISCLOSURE_CHECKS,
+        *read(ROOT / "audit/source-checks.json")["checks"],
+    ]
 
 
 def prepare_packet(session: Path, plan: JSON) -> None:
     """Freeze selected expectations, source digests and resolvable evidence locations."""
     definitions = read(session / "checks.json")["checks"]
-    requested = plan.get("checks") or [item["id"] for item in definitions]
+    requested = plan.get("checks") or [
+        item["id"]
+        for item in definitions
+        if not item.get("requiresSource") or plan.get("sourceFiles")
+    ]
     if len(set(requested)) != len(requested) or set(requested) - {
         item["id"] for item in definitions
     }:
         raise ValueError("Unknown or duplicate check ID")
     selected = [item for item in definitions if item["id"] in requested]
     rubric = read(session / "base-rubric.json")
-    rubric["rubricVersion"] = "agent-public-v1"
+    rubric["rubricVersion"] = "agent-breadth-v2"
     for guideline in rubric["guidelines"]:
         checks = [item for item in selected if item["guideline"] == guideline["number"]]
         guideline["expectation"] = (
@@ -223,6 +232,7 @@ def prepare_packet(session: Path, plan: JSON) -> None:
         ("staged.json", ["runs", "discovery"]),
         ("probes.json", ["pages", "journeys"]),
         ("disclosures.json", ["sites"]),
+        ("source.json", ["files"]),
     ]:
         path = session / name
         if not path.exists():
@@ -305,7 +315,14 @@ def collect(plan_path: Path, session: Path) -> None:
     shutil.copyfile(ROOT / "audit/rubric.json", session / "base-rubric.json")
     shutil.copyfile(ROOT / "audit/impact-weights.json", session / "impact-weights.json")
     shutil.copytree(ROOT / ".agents/skills", session / "skills")
-    scripts = ["run.py", "probes.py", "workflow.py", "assess.py", "disclosures.py"]
+    scripts = [
+        "run.py",
+        "probes.py",
+        "workflow.py",
+        "assess.py",
+        "disclosures.py",
+        "source.py",
+    ]
     receipt: JSON = {
         "schemaVersion": "0.1.0",
         "executionStatus": "running",
@@ -331,12 +348,26 @@ def collect(plan_path: Path, session: Path) -> None:
         "planSHA256": digest(session / "plan.json"),
         "limitations": [
             "Live responses and LLM judgments can vary",
-            "Source roots are scope declarations, not deployment attestations or automatically collected source",
+            "Only selected sourceFiles are captured; source roots alone do not trigger a scan and deployment identity remains unknown",
             "Energy runs are separate and optional",
             "Inspect captured text and logs before publishing; the session is private",
         ],
     }
     for name, argv in [
+        (
+            "source",
+            [
+                "uv",
+                "run",
+                "--locked",
+                "--script",
+                "audit/source.py",
+                "--plan",
+                str(session / "plan.json"),
+                "--output",
+                str(session / "source.json"),
+            ],
+        ),
         (
             "staged",
             [
