@@ -2,6 +2,7 @@ import copy
 import json
 import unittest
 from pathlib import Path
+from typing import Any
 
 from benchmarks.grade_expanded import grade
 
@@ -12,7 +13,7 @@ class ExpandedGraderTests(unittest.TestCase):
             "cases"
         ]
 
-    def solution(self, reference):
+    def solution(self, reference: dict[str, Any]) -> dict[str, Any]:
         return {
             "schemaVersion": "0.2.0",
             "summary": {"site": reference["site"], "overallScore": None},
@@ -47,6 +48,7 @@ class ExpandedGraderTests(unittest.TestCase):
             ("value", 944379),
             ("value", True),
             ("value", float("nan")),
+            ("value", 10**400),
         ]:
             report = self.solution(reference)
             report["metrics"][0][field] = value
@@ -82,7 +84,8 @@ class ExpandedGraderTests(unittest.TestCase):
 
     def test_malformed_sections_do_not_crash_verifier(self):
         reference = self.cases[0]["reference"]
-        for value in [None, {}, [None], [{"id": []}]]:
+        invalids: list[Any] = [None, {}, [None], [{"id": []}]]
+        for value in invalids:
             report = self.solution(reference)
             report["answers"] = value
             self.assertEqual(grade(report, reference)["reward"], 0)

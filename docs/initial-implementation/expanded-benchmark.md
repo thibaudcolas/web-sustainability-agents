@@ -29,14 +29,14 @@ References and the verifier run in a separate Python container. The agent receiv
 
 ```sh
 uv run --locked --script benchmarks/build_expanded.py
-harbor run -p .audit-work/expanded-tasks -a oracle -n 2 \
+harbor run -p .audit-work/expanded-tasks-v2 -a oracle -n 2 \
   --jobs-dir "$PWD/.audit-work/jobs"
-harbor run -p .audit-work/expanded-tasks -a nop -n 2 \
+harbor run -p .audit-work/expanded-tasks-v2 -a nop -n 2 \
   --jobs-dir "$PWD/.audit-work/jobs"
-harbor run -c benchmarks/neuralwatt.json -p .audit-work/expanded-tasks \
+harbor run -c benchmarks/neuralwatt.json -p .audit-work/expanded-tasks-v2 \
   --jobs-dir "$PWD/.audit-work/jobs"
 CODEX_AUTH_JSON_PATH="${CODEX_AUTH_JSON_PATH:-${CODEX_HOME:-$HOME/.codex}/auth.json}" \
-  harbor run -c benchmarks/codex.json -p .audit-work/expanded-tasks \
+  harbor run -c benchmarks/codex.json -p .audit-work/expanded-tasks-v2 \
   --jobs-dir "$PWD/.audit-work/jobs"
 ```
 

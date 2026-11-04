@@ -50,14 +50,17 @@ def grade(report: Any, reference: JSON) -> JSON:
             if section == "metrics":
                 value = actual.get("value")
                 number = expected["value"]
-                valid = (
-                    value is None
-                    if number is None
-                    else isinstance(value, (float, int))
-                    and not isinstance(value, bool)
-                    and math.isfinite(value)
-                    and math.isclose(value, number, rel_tol=1e-6, abs_tol=1e-6)
-                )
+                try:
+                    valid = (
+                        value is None
+                        if number is None
+                        else isinstance(value, (float, int))
+                        and not isinstance(value, bool)
+                        and math.isfinite(value)
+                        and math.isclose(value, number, rel_tol=1e-6, abs_tol=1e-6)
+                    )
+                except OverflowError, ValueError:
+                    valid = False
                 if (
                     "value" not in actual
                     or not valid

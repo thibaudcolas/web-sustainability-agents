@@ -36,7 +36,7 @@ The carbon figures use CO2.js 0.19.0, SWDM v4, first visits only, and a non-gree
 
 No cookie action was configured; the middle stage is inapplicable, not a successful consent decision. Both runs reached the bottom. Complete accounting means complete within this bounded protocol; child frames, service workers, and other profiles require separate validation. Zero additional traffic does not prove that eager loading is optimal.
 
-[Per-site structured report](assets/reports/guide-wagtail-org.json) and [metric rows for charts](assets/reports/guide-wagtail-org.csv) preserve exact values, units, phase, branch, status, capture time, and evidence hashes. The [reporting contract](reporting.md) defines valid aggregations.
+[Per-site structured report](assets/reports/https-guide-wagtail-org-432853f7b5d8.json) and [metric rows for charts](assets/reports/https-guide-wagtail-org-432853f7b5d8.csv) preserve exact values, units, phase, branch, status, capture time, and evidence hashes. The [reporting contract](reporting.md) defines valid aggregations.
 
 ### Additional quantitative context
 

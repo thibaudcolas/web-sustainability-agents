@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from audit.report import display_bytes, export_reports
+from audit.report import display_bytes, export_reports, report_stem
 
 
 class ReportDataTests(unittest.TestCase):
@@ -44,3 +44,12 @@ class ReportDataTests(unittest.TestCase):
         self.assertEqual(display_bytes(58992), "59.0 KB")
         self.assertEqual(display_bytes(1107665), "1.11 MB")
         self.assertEqual(display_bytes(0), "0.0 KB")
+
+    def test_export_names_do_not_merge_origins(self):
+        origins = [
+            "https://example.com",
+            "http://example.com",
+            "https://a.b.example",
+            "https://a-b.example",
+        ]
+        self.assertEqual(len({report_stem(value) for value in origins}), len(origins))

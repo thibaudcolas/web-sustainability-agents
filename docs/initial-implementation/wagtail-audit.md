@@ -38,7 +38,7 @@ Initial figures precede cookie interaction. Reported failed requests remain part
 
 All four runs reached the bottom and completed their configured cookie clicks. No extra traffic was measured in the post-choice window; this does not prove that consent was enforced or that future behavior is identical. Branches use fresh contexts, so their different initial totals are single-run variation. Scroll-window deltas include background activity and late completions; they are not automatically avoidable savings.
 
-[Per-site structured report](assets/reports/wagtail-org.json) and [metric rows for charts](assets/reports/wagtail-org.csv) preserve exact values and provenance. Charts must label partial accounting and avoid stacking cumulative phase totals. See the [reporting contract](reporting.md).
+[Per-site structured report](assets/reports/https-wagtail-org-fa043133d284.json) and [metric rows for charts](assets/reports/https-wagtail-org-fa043133d284.csv) preserve exact values and provenance. Charts must label partial accounting and avoid stacking cumulative phase totals. See the [reporting contract](reporting.md).
 
 ### Additional quantitative context
 

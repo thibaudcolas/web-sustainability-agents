@@ -4,12 +4,13 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from typing import Any
 
 from audit.energy import read_profile, summarize, validate_profile
 from audit.traffic import origin, traffic_scenario
 
 
-def profile():
+def profile() -> dict[str, Any]:
     return {
         "meta": {"oscpu": "Linux x86_64"},
         "counters": [
@@ -37,7 +38,12 @@ class EnrichmentTests(unittest.TestCase):
         self.assertAlmostEqual(result["excludingFirstSampleJoules"], 3.6)
 
     def test_missing_empty_and_duplicate_counter_are_not_zero(self):
-        for value in [{}, {"counters": []}, {"counters": profile()["counters"] * 2}]:
+        invalids: list[dict[str, Any]] = [
+            {},
+            {"counters": []},
+            {"counters": profile()["counters"] * 2},
+        ]
+        for value in invalids:
             self.assertIsNone(validate_profile(value)["joules"])
         value = profile()
         value["counters"][0]["samples"]["data"] = []
@@ -111,3 +117,20 @@ class EnrichmentTests(unittest.TestCase):
         self.assertEqual(result["status"], "scenario")
         self.assertEqual(result["annualPageviews"], 572851)
         self.assertIsNone(result["annualEmissions"])
+
+    def test_wrong_platform_category_and_malformed_containers_are_unavailable(self):
+        values = []
+        value = profile()
+        value["meta"]["oscpu"] = "Windows"
+        values.append(value)
+        value = profile()
+        value["counters"][0]["category"] = "not-power"
+        values.append(value)
+        value = profile()
+        value["counters"] = [None]
+        values.append(value)
+        value = profile()
+        value["counters"][0]["samples"] = None
+        values.append(value)
+        for value in values:
+            self.assertIsNone(validate_profile(value)["joules"])

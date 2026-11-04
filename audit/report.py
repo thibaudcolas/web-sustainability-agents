@@ -147,6 +147,13 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
     return reports
 
 
+def report_stem(origin: str) -> str:
+    """Use scheme and origin digest to avoid cross-site filename collisions."""
+    parsed = urlsplit(origin)
+    host = parsed.netloc.replace(".", "-").replace(":", "-")
+    return f"{parsed.scheme}-{host}-{hashlib.sha256(origin.encode()).hexdigest()[:12]}"
+
+
 def main() -> None:
     """Write JSON envelopes and equivalent CSV metric rows for each audited origin."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -165,7 +172,7 @@ def main() -> None:
     reports = export_reports(json.loads(raw), hashlib.sha256(raw).hexdigest())
     args.output.mkdir(parents=True, exist_ok=True)
     for origin, report in reports.items():
-        name = urlsplit(origin).netloc.replace(".", "-").replace(":", "-")
+        name = report_stem(origin)
         (args.output / f"{name}.json").write_text(json.dumps(report, indent=2) + "\n")
         with (args.output / f"{name}.csv").open("w", newline="") as output:
             rows = report["observations"]

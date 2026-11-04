@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.2.0",
   "labelStatus": "Coordinator-authored public development labels; not independently owner-validated or held out.",
   "cases": [
     {
@@ -49,11 +49,11 @@
           },
           {
             "id": "q2",
-            "text": "Does the click establish that consent was enforced?"
+            "text": "Was the visitor\u2019s consent preference actually enforced?"
           },
           {
             "id": "q3",
-            "text": "Does the scroll delta establish avoidable savings?"
+            "text": "Are all additional resources observed during scrolling unnecessary for the visitor\u2019s task?"
           }
         ],
         "metricRequests": [
@@ -161,7 +161,7 @@
           },
           {
             "id": "q2",
-            "text": "Does this establish that no banner exists anywhere?"
+            "text": "Is a cookie banner absent from this site?"
           },
           {
             "id": "q3",
@@ -363,7 +363,7 @@
           },
           {
             "id": "q2",
-            "text": "Do the differing capture figures establish a regression?"
+            "text": "Did the site\u2019s impact regress under a comparable measurement profile?"
           },
           {
             "id": "q3",
@@ -456,7 +456,7 @@
           },
           {
             "id": "q2",
-            "text": "Does PWA detection establish usable offline behavior?"
+            "text": "Does usable offline behavior work on this site?"
           },
           {
             "id": "q3",
@@ -709,7 +709,7 @@
           },
           {
             "id": "q3",
-            "text": "Is the annual site footprint established by this evidence?"
+            "text": "Is the site\u2019s actual annual footprint below one tonne CO2e?"
           }
         ],
         "metricRequests": [
@@ -880,11 +880,11 @@
           },
           {
             "id": "q2",
-            "text": "Does the width ratio alone establish that the images are wasteful?"
+            "text": "Are these screenshot renditions unnecessarily large for their intended uses?"
           },
           {
             "id": "q3",
-            "text": "Is the supplied source confirmed to be deployed?"
+            "text": "Does the supplied source match the deployed revision?"
           }
         ],
         "metricRequests": [
@@ -976,7 +976,7 @@
           },
           {
             "id": "q3",
-            "text": "Does that establish whole-site backend efficiency?"
+            "text": "Are the site\u2019s live backend operations efficient beyond this public asset?"
           }
         ],
         "metricRequests": [
@@ -1052,7 +1052,7 @@
         "questions": [
           {
             "id": "q1",
-            "text": "Does the policy establish deletion execution?"
+            "text": "Is the stated 90-day deletion process implemented?"
           },
           {
             "id": "q2",

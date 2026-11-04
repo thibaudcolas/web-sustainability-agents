@@ -24,7 +24,7 @@ Use /skills/sustainability-evidence-review/SKILL.md and read /app/input.json. Th
 Write /app/output/report.json with schemaVersion "0.2.0" and:
 - summary: site (exact supplied origin), overallScore (null; no aggregate rubric).
 - answers: one per question, with id, outcome (pass/fail/inconclusive/not_applicable), evidenceIds, explanation. Pass means the proposition is established, fail means contradicted, inconclusive means neither. This is not necessarily a site defect.
-- metrics: one per metricRequest, with id, value (number or null if unavailable), unit and basis exactly as requested, explanation. Use decimal KB/MB; retain at least six significant digits for calculations. Distinguish observed, calculated, modeled, and scenario values. Null is not zero.
+- metrics: one per metricRequest, with id, value (number or null if unavailable), unit and basis exactly as requested, explanation. Use decimal KB/MB; retain at least eight significant digits for calculations. Distinguish observed, calculated, modeled, and scenario values. Null is not zero.
 - recommendations: one per proposal, with id, action (fix/investigate/preserve/not_supported/defer), evidenceIds, explanation. Judge the proposed action, not a different action you could substitute. Investigate means gather missing evidence or run a bounded experiment; preserve means retain demonstrated useful behavior; not_supported means the proposed change or claim is not justified.
 
 Every explanation must explain the evidence and uncertainty in a concise sentence. Cite supplied evidence IDs, and do not invent metrics, file locations, or conformance scores. Output empty arrays when no items are requested. You may include an optional topFindings list in summary; this bounded task does not require a full audit report.
@@ -40,7 +40,7 @@ def main() -> None:
     """Build a new task directory without changing historical tasks or labels."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--output", type=Path, default=ROOT / ".audit-work/expanded-tasks"
+        "--output", type=Path, default=ROOT / ".audit-work/expanded-tasks-v2"
     )
     args = parser.parse_args()
     corpus = json.loads((ROOT / "benchmarks/expanded-cases.json").read_text())

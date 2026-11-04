@@ -39,6 +39,14 @@ def read_profile(path: Path) -> JSON:
     return value
 
 
+def finite_number(value: int | float) -> bool:
+    """Reject numeric overflow in malformed counter data."""
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+
 def validate_profile(profile: JSON) -> JSON:
     """Validate one non-overlapping Linux CPU-package interval-energy series."""
     result: JSON = {
@@ -47,17 +55,36 @@ def validate_profile(profile: JSON) -> JSON:
         "mWh": None,
         "scope": "whole-system CPU package during Firefox session; excludes separate DRAM and other device energy",
     }
+    if (
+        not isinstance(profile, dict)
+        or not isinstance(profile.get("meta"), dict)
+        or not str(profile["meta"].get("oscpu", "")).startswith("Linux")
+    ):
+        return {**result, "reason": "Linux profile metadata required for this adapter"}
+    raw_counters = profile.get("counters", [])
+    if not isinstance(raw_counters, list) or any(
+        not isinstance(c, dict) for c in raw_counters
+    ):
+        return {**result, "status": "invalid", "reason": "Malformed counter containers"}
     counters = [
-        c for c in profile.get("counters", []) if c.get("name") == "Power: CPU package"
+        c
+        for c in raw_counters
+        if c.get("name") == "Power: CPU package" and c.get("category") == "power"
     ]
     if len(counters) != 1:
         return {
             **result,
-            "reason": "Expected exactly one top-level CPU-package counter",
+            "reason": "Expected exactly one top-level CPU-package power counter",
         }
     samples = counters[0].get("samples", {})
+    if not isinstance(samples, dict):
+        return {**result, "status": "invalid", "reason": "Malformed sample container"}
     rows = samples.get("data", [])
-    if samples.get("schema") != {"time": 0, "count": 1} or len(rows) < 2:
+    if (
+        samples.get("schema") != {"time": 0, "count": 1}
+        or not isinstance(rows, list)
+        or len(rows) < 2
+    ):
         return {
             **result,
             "reason": "Unsupported schema or insufficient counter samples",
@@ -70,7 +97,7 @@ def validate_profile(profile: JSON) -> JSON:
             or any(
                 isinstance(v, bool)
                 or not isinstance(v, (int, float))
-                or not math.isfinite(v)
+                or not finite_number(v)
                 or v < 0
                 for v in row
             )
@@ -82,7 +109,14 @@ def validate_profile(profile: JSON) -> JSON:
                 "reason": "Malformed, negative, nonfinite, or unordered counter samples",
             }
         previous = row[0]
-    total = math.fsum(row[1] for row in rows)
+    try:
+        total = math.fsum(row[1] for row in rows)
+    except OverflowError:
+        return {
+            **result,
+            "status": "invalid",
+            "reason": "Counter total exceeds numeric range",
+        }
     return {
         **result,
         "status": "measured",
