@@ -13,6 +13,8 @@ This project turns the [feasibility study](../feasibility-study/README.md) into 
 
 ## Current checkpoint
 
+The [staged Python workflow](staged-auditing.md) measures initial load, cookie-choice, and scrolling states; discovers carbon.txt and footprint statements; and adds Wappalyzer context. Initial-load numbers lead the updated WIP report.
+
 The [WIP Wagtail audit](wagtail-audit.md) is ready for owner review: measured page states, two journeys, source corroboration, actionable findings, and explicit coverage gaps. Each finding maps feedback to the relevant pipeline component.
 
 The [model and real-site checkpoint](review-checkpoint.md) switches the active baseline to Codex CLI for both GPT-6.1 Sol/low and Neuralwatt DeepSeek V4.1 Flash/high. It compares controlled fixtures and public/source-assisted Wagtail evidence. The [first executable slice](first-slice.md) preserves the original Astra/OpenCode experiment and its limitations.

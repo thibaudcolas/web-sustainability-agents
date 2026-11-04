@@ -2,6 +2,8 @@
 
 **Review and strengthen the first executable slice before expanding the agent architecture.** The [initial implementation](first-slice.md) now exercises collection, ratings, evidence review, and Harbor. The remaining uncertainties are mostly empirical: capture validity, grader correctness, provider integration, useful model judgments, and portability.
 
+The [staged collector and next case families](staged-auditing.md#next-benchmark-cases) incorporate owner feedback on measurement phases, as-is failures, disclosures, technology context, and Python scripting. Build those contrasting cases before expanding the site sample.
+
 ## Accepted direction
 
 - Live-site audits work without source access; supplied code and internal documents can strengthen them.

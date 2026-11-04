@@ -22,6 +22,9 @@ dev = [
   "types-pyyaml>=6.0",
   # Python wrapper downloads the matching Vale CLI on its first invocation.
   "vale==3.22.0.0",
+  "playwright==1.64.1",
+  "httpx==0.28.1",
+  "wappalyzer==2.0.4",
 ]
 
 [tool.ruff]

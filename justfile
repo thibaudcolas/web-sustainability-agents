@@ -53,6 +53,11 @@ test:
 # Download the browser used by the deterministic audit tests.
 audit-install:
     npx playwright install chromium
+    uv run python -m playwright install chromium
+
+# Measure initial, cookie-choice, and scroll states, then discover disclosures and technologies.
+audit-sites:
+    uv run --locked --script audit/run.py --publish docs/initial-implementation/assets/staged-audit.json
 
 # Build six development tasks from measured controlled fixtures.
 benchmark-build:

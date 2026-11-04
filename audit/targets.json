@@ -1,0 +1,65 @@
+{
+  "targets": [
+    {
+      "id": "guide-home",
+      "url": "https://guide.wagtail.org/en/",
+      "statementUrls": ["https://wagtail.org/sustainability/"]
+    },
+    {
+      "id": "guide-images",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/"
+    },
+    {
+      "id": "wagtail-home",
+      "url": "https://wagtail.org/",
+      "branches": [
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-in]",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-out]",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wagtail-sustainability",
+      "url": "https://wagtail.org/sustainability/",
+      "branches": [
+        {
+          "name": "accept",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-in]",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "reject",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "[data-cookie-opt-out]",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

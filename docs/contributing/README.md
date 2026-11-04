@@ -40,6 +40,7 @@ Initialization installs Python and npm dependencies and downloads the pinned Val
 - `just build-docs`: Build the documentation.
 - `just test`: Test agent skill publishing, documentation rendering, browser collection, ratings, and the benchmark grader.
 - `just audit-install`: Install the pinned Playwright Chromium browser used by audit tests.
+- `just audit-sites`: Run the Python staged collector, footprint-document discovery, and Wappalyzer; publish sanitized evidence.
 - `just benchmark-build`: Build Harbor development tasks from frozen fixture observations.
 - `just benchmark-controls`: Run the reference and no-operation agents through Harbor.
 - `just benchmark-neuralwatt` / `just benchmark-codex`: Run the bounded model campaigns; see the [executable slice](../initial-implementation/first-slice.md) for authentication and interpretation.
@@ -50,6 +51,7 @@ Initialization installs Python and npm dependencies and downloads the pinned Val
 We follow [PEP 8](https://peps.python.org/pep-0008/) for Python code style, enforced automatically by `ruff`:
 
 - **Python**: formatted with `ruff format`, linted with `ruff check`. Configuration in `pyproject.toml`.
+- **Audit and automation scripts**: use Python with uv. Standalone entry points must be executable, start with `#!/usr/bin/env -S uv run --script`, and declare Python requirements, pinned dependencies, and `tool.uv.required-version` in PEP 723 inline metadata. Commit their `uv lock --script` lockfiles and verify with `uv run --locked --script`. Keep ordinary imported modules separate from executable entry points. Historical JavaScript experiments remain reproducible; new orchestration uses Python. The pinned CO2.js adapter is retained as a narrow library bridge rather than duplicating SWDM formulas.
 - **Other files**: formatted with `prettier` (see `prettier.config.js`).
 - **Indentation**: 4 spaces, no tabs.
 - **Type annotations**: required on all production code, checked by `mypy` with strict settings and by `ty` (experimental).
