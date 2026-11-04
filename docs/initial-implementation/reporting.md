@@ -6,13 +6,15 @@ The structure adapts the local claude-seo audit's summary, prioritized findings,
 
 ## Reading order
 
-1. **Overall assessment and key measures:** initial transfer, eligible Digital Carbon Ratings, measured energy when available, sample size, and accounting status.
+1. **Overall assessment and key measures:** scoped score and coverage, initial transfer, eligible Digital Carbon Ratings, estimated annual footprint, measured energy when available, sample size, and accounting status.
 2. **Top five findings:** useful changes, experiments, and existing optimizations worth preserving. Do not invent five defects or imply equal priority.
 3. **Quantitative evidence:** measurements and calculations with units, profile, denominator, and uncertainty.
 4. **Qualitative review:** purpose, user needs, technology context, disclosure interpretation, and source corroboration.
 5. **Detailed findings and coverage:** evidence-linked explanations, proposed checks, and unknowns.
+6. **Next steps for auditing:** additional public tests, source/internal evidence, applicability decisions, and owner validation needed to increase coverage.
+7. **Methodology and reproducibility:** versioned rubric, evidence and skill hashes, model settings, capture profiles, calculation assumptions, commands, and limitations.
 
-An overall WSG score remains explicitly unscored until a validated scoring contract exists. A page-load carbon band, evidence coverage count, measured joules, and an organizational assessment are different quantities. Do not average them into a health score.
+The [scoped audit score](../knowledge-base/audit-scoring.md) is now implemented as passing guideline groups divided by all attempted applicable or unresolved groups. Show pass/fail/unknown counts and checked/71 coverage beside the number. A page-load carbon band, measured joules, annual emissions scenario and full-guideline conformance are separate quantities; do not average them into this score.
 
 ## Implemented data export
 
@@ -30,6 +32,8 @@ The initial chart contracts cover phase traffic, incremental traffic, and resour
 
 The exporter also reads the energy and traffic artifacts when available. Energy rows retain one observation per repetition, including joules, scope, protocol, duration, counter category, and validity. The linked energy artifact supplies full hardware/browser provenance. Show individual runs plus median and range; a range is not a confidence interval. Do not align a whole Firefox session with a Chromium phase as if they were equivalent measurements.
 
-Traffic rows retain origin, rank bucket, dataset month, estimated annual pageviews, and a `scenario` basis, with source hashes linking to lookup scope and mapping provenance. Missing lookup is not zero traffic or a known unranked bucket. Site analytics can replace the scenario only with matching scope and period. An annual impact calculation additionally needs a defensible page mix and repeat-visit model; a homepage multiplied by guessed traffic is not a measured annual footprint.
+Traffic rows retain origin, rank bucket, dataset month, estimated annual pageviews, and a `scenario` basis, with source hashes linking to lookup scope and mapping provenance. Missing lookup is not zero traffic or a known unranked bucket. Site analytics can replace the scenario only with matching scope and period. The [annual calculator](skill-audit-workflow.md#annual-footprint-scenarios) uses an explicitly assumed page mix and first-visit model when actual analytics are unavailable. A clearly labeled estimate is allowed; it is not a measured annual footprint.
+
+The exporter also includes `scoped_audit_score` and `annual_browsing_footprint` series. Score rows retain rubric and checked/total coverage. Annual rows retain partial-input status and low/high sampled-page sensitivities, which must not be rendered as confidence intervals. Both link to exact source digests. Measured package energy remains a separate series and is never added to SWDM.
 
 For future charts, preserve trial and protocol IDs rather than only aggregate values. This enables distributions, before/after comparisons, per-template breakdowns, and error bars once repeated matched observations exist. Accessible labels, equivalent tables, and downloadable data belong to the later presentation implementation.

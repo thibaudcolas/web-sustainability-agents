@@ -3,14 +3,14 @@ name: sustainability-evidence-review
 description: Review collected web sustainability evidence, distinguish observations from claims, and produce scoped findings with explicit unknowns. Use for audit evidence review, including supplied source corroboration.
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Sustainability evidence review
 
 Read the requested report contract and evidence inventory first. Tie each outcome to specific evidence IDs and the observed page state. An observation can support a narrow finding without establishing whole-site WSG conformance.
 
-For human reports, use one site per report. Lead with key measures and an overall assessment, then up to five prioritized findings, quantitative evidence, qualitative review, and detail. Display traffic in decimal KB/MB while retaining exact base units in artifacts. Do not invent an aggregate WSG score or five defects.
+For human reports, use one site per report. Lead with key measures and the supplied versioned audit score, then up to five prioritized findings, quantitative evidence, qualitative review, and detail. Display traffic in decimal KB/MB while retaining exact base units in artifacts. Explain the score's denominator and scope; calculate it from the declared rubric, never from an impression of site quality. Close with next auditing steps and methodology/reproduction details. Do not invent five defects.
 
 Keep these distinctions when reviewing evidence:
 
@@ -24,6 +24,7 @@ Keep these distinctions when reviewing evidence:
 - Media deferral requires observed request timing and usable activation, not just a `loading` attribute.
 - Failed or incomplete collection leaves an unknown. Zero observed bytes do not establish low emissions.
 - Preserve the supplied deterministic carbon calculation and its assumptions. Digital Carbon Ratings is not a WSG conformance score.
+- Annual footprint estimates are allowed when explicitly requested or part of the report contract. Use matched-origin traffic and a declared per-view/page-mix proxy; label both as scenario assumptions. Partial-byte estimates can support an explicitly partial-input scenario, but do not become an eligible Digital Carbon Rating. Distinguish a sensitivity range from a confidence interval, and do not add measured package energy to SWDM.
 - Local source can identify fix locations only when its relationship to the deployed site is established. Stale source does not override runtime observations. Distinguish an inferred fix from a verified location.
 - A false proposition in an evaluation is not necessarily a site defect. Do not invent a remediation for beneficial behavior such as negotiated WebP delivery. Check recommendation prerequisites such as screenshot legibility and device pixel density.
 

@@ -26,7 +26,7 @@ The pinned mirror's September 2026 dataset matched both exact HTTPS origins:
 | `https://guide.wagtail.org` |       10,000,000 |    approximately 245,000 |
 | `https://wagtail.org`       |        5,000,000 |    approximately 573,000 |
 
-The [traffic artifact](assets/traffic-scenarios.json) contains exact mapping values, dataset month, mirror commit, compressed-file digests, searched buckets, and mapping digest. These are **scenarios based on a different population and period**, not observed site traffic. No annual emissions total is calculated. The guide's scenario must not be replaced by Wagtail.org's bucket or combined as if origins were interchangeable.
+The [traffic artifact](assets/traffic-scenarios.json) contains exact mapping values, dataset month, mirror commit, compressed-file digests, searched buckets, and mapping digest. These are **scenarios based on a different population and period**, not observed site traffic. The initial experiment stopped at pageview scenarios; the [annual footprint extension](skill-audit-workflow.md#annual-footprint-scenarios) now combines them with an explicitly assumed sampled-page mix. The guide's scenario must not be replaced by Wagtail.org's bucket or combined as if origins were interchangeable.
 
 ## Reproduce
 

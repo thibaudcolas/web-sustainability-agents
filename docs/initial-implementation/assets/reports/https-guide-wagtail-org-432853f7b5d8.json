@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.4.0",
   "site": "https://guide.wagtail.org",
   "sourceSHA256": "8b5aa1b5cfc15b8a6b900148739562110c860174d24de114bdabab0a853fcb7c",
   "protocol": {
@@ -18,9 +18,31 @@
     "phaseMeaning": "Cumulative totals in one context; deltas are additional bytes since the preceding checkpoint, not independent page loads"
   },
   "overallScore": {
-    "value": null,
-    "status": "not_assessed",
-    "reason": "No validated aggregate WSG scoring model; bounded sample only."
+    "site": "https://guide.wagtail.org",
+    "rubricVersion": "scoped-wsg-v1",
+    "label": "Scoped WSG audit score",
+    "value": 71.42857142857143,
+    "unit": "percent",
+    "formula": "100 * passed / (passed + failed + cantTell), grouped once per guideline",
+    "counts": {
+      "cantTell": 2,
+      "fail": 2,
+      "inapplicable": 0,
+      "pass": 10,
+      "untested": 57
+    },
+    "checkedGuidelines": 14,
+    "totalGuidelines": 71,
+    "checkedCoveragePercent": 19.718309859154928,
+    "supportedByMethod": 21,
+    "fullGuidelinesVerified": 0,
+    "impactWeighted": {
+      "value": 70.12987012987013,
+      "passedWeight": 54,
+      "checkedWeight": 77,
+      "status": "Experimental project convention using WSG impact priority points; not a W3C site score"
+    },
+    "interpretation": "Passes satisfy only the declared scoped expectations; unknowns earn no points but are not defects. Compare only matching rubric, sample, and evidence profiles."
   },
   "headline": [
     {
@@ -658,6 +680,34 @@
       "scope": "US government websites, 2025 analytics and December 2025 CrUX ranks",
       "datasetMonth": "202609",
       "rankBucket": 10000000
+    },
+    {
+      "site": "https://guide.wagtail.org",
+      "metric": "scoped_audit_score",
+      "value": 71.42857142857143,
+      "unit": "percent",
+      "phase": "evidence_review",
+      "basis": "calculated",
+      "status": "provisional_scoped_rubric",
+      "sourceId": "assessment/https://guide.wagtail.org",
+      "sourceSHA256": "198b82394dda208c95ae9c2233fd39bea2b714c876e1498052d8d26fd430bc85",
+      "rubricVersion": "scoped-wsg-v1",
+      "checkedGuidelines": 14,
+      "totalGuidelines": 71
+    },
+    {
+      "site": "https://guide.wagtail.org",
+      "metric": "annual_browsing_footprint",
+      "value": 5.2916227381836,
+      "unit": "kgCO2e/year",
+      "phase": "annual_scenario",
+      "basis": "scenario",
+      "status": "estimated",
+      "transferInputs": "complete_within_protocol",
+      "sourceId": "annual/https://guide.wagtail.org",
+      "sourceSHA256": "84a18e6414c50a1fb118176be3ccf596377a650cb49956bdd3f81b7a8e172f71",
+      "sensitivityLow": 2.1396149925695997,
+      "sensitivityHigh": 8.4436304837976
     }
   ],
   "ratings": [
@@ -803,6 +853,126 @@
       "series": ["site"],
       "aggregation": "none",
       "note": "Scenario point, not actual analytics or a confidence interval. Missing values remain unknown."
+    },
+    {
+      "id": "scoped-score",
+      "metric": "scoped_audit_score",
+      "unit": "percent",
+      "x": "site",
+      "series": ["rubricVersion"],
+      "aggregation": "none",
+      "note": "Display pass/fail/unknown counts and checked/total coverage; compare only matching rubric and sample. Not a conformance percentage."
+    },
+    {
+      "id": "annual-footprint",
+      "metric": "annual_browsing_footprint",
+      "unit": "kgCO2e/year",
+      "x": "site",
+      "aggregation": "none",
+      "note": "Assumed page mix and rank-derived traffic; show partial-input status. Sensitivity cases are not confidence intervals; never add measured package energy."
     }
-  ]
+  ],
+  "annualFootprint": {
+    "site": "https://guide.wagtail.org",
+    "basis": "scenario",
+    "unit": "kgCO2e/year",
+    "status": "estimated",
+    "value": 5.2916227381836,
+    "functionalUnit": "One estimated year of page views at the audited origin, modeled operational and embodied browsing emissions",
+    "notIncluded": "Not a complete organizational footprint; no site-specific backend/build/office inventory or remote inference energy",
+    "assumptions": {
+      "pageMix": "Equal weights across sampled page URLs; repeated branches averaged within each page first",
+      "realPageMix": "unknown",
+      "visitMix": "100% first visits, 0% returning visits",
+      "hosting": "unknown; model uses non-green scenario",
+      "traffic": "Rank-bucket cohort estimate, not actual analytics",
+      "sensitivity": "All views at the minimum/maximum sampled page intensity; not a confidence interval or bounds on true site emissions"
+    },
+    "annualPageviews": 244734,
+    "gramsPerViewProxy": 0.0216219354,
+    "rankBucket": 10000000,
+    "transferInputs": "complete_within_protocol",
+    "pages": [
+      {
+        "url": "https://guide.wagtail.org/en/",
+        "gramsPerView": 0.0087426144,
+        "accountingStatus": "complete",
+        "branches": [
+          {
+            "url": "https://guide.wagtail.org/en/",
+            "runId": "guide-home-no_banner",
+            "bytes": 58992,
+            "accountingStatus": "complete_within_protocol",
+            "trace": {
+              "co2": 0.0087426144,
+              "green": false,
+              "variables": {
+                "description": "Below are the variables used to calculate this CO2 estimate.",
+                "bytes": 58992,
+                "gridIntensity": {
+                  "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                  "device": {
+                    "value": 494
+                  },
+                  "dataCenter": {
+                    "value": 494
+                  },
+                  "network": {
+                    "value": 494
+                  }
+                },
+                "greenHostingFactor": 0,
+                "dataReloadRatio": 0.02,
+                "firstVisitPercentage": 1,
+                "returnVisitPercentage": 0
+              }
+            }
+          }
+        ],
+        "pageWeight": 0.5
+      },
+      {
+        "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+        "gramsPerView": 0.0345012564,
+        "accountingStatus": "complete",
+        "branches": [
+          {
+            "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/",
+            "runId": "guide-images-no_banner",
+            "bytes": 232802,
+            "accountingStatus": "complete_within_protocol",
+            "trace": {
+              "co2": 0.0345012564,
+              "green": false,
+              "variables": {
+                "description": "Below are the variables used to calculate this CO2 estimate.",
+                "bytes": 232802,
+                "gridIntensity": {
+                  "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                  "device": {
+                    "value": 494
+                  },
+                  "dataCenter": {
+                    "value": 494
+                  },
+                  "network": {
+                    "value": 494
+                  }
+                },
+                "greenHostingFactor": 0,
+                "dataReloadRatio": 0.02,
+                "firstVisitPercentage": 1,
+                "returnVisitPercentage": 0
+              }
+            }
+          }
+        ],
+        "pageWeight": 0.5
+      }
+    ],
+    "sensitivityKgPerYear": {
+      "lowestSampledPage": 2.1396149925695997,
+      "highestSampledPage": 8.4436304837976
+    }
+  }
 }

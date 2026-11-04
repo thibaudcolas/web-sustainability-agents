@@ -68,7 +68,7 @@ def traffic_scenario(rank: int | None, mapping: dict[int, int]) -> JSON:
         "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
         "uncertainty": "No calibrated site-level interval; population and period differ. This is not measured site analytics or a forecast.",
         "annualEmissions": None,
-        "annualEmissionsReason": "Requires representative page mix, revisit assumptions, and compatible emissions model",
+        "annualEmissionsReason": "Calculated separately by audit/annual.py under explicit page-mix, visit, and emissions-model assumptions",
     }
 
 

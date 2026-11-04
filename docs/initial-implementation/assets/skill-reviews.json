@@ -1,0 +1,807 @@
+{
+  "schemaVersion": "0.1.0",
+  "reviewerModel": "GPT-6.1 Sol / low; separate subagent per site",
+  "status": "Independent bounded skill forward tests; coordinator reviewed evidence resolution; not owner-validated ground truth",
+  "sourceSHA256": {
+    "staged-audit.json": "8b5aa1b5cfc15b8a6b900148739562110c860174d24de114bdabab0a853fcb7c",
+    "scope-extension.json": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5",
+    "wagtail-review-evidence.json": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+  },
+  "rubricSHA256": "ac952adc807996435615c62907403e57cda6ba9dd3b6d8074bb564fa5333d465",
+  "skillSHA256": {
+    "sustainability-evidence-review": "ce25c36213e67c6b7063c490abc69f85f991727ac86a89122067bd856d17166d",
+    "sustainability-guideline-review": "338e2e54ed186ca0b891f7a869fe57a3aba02c20f1bd138bc95a669fadde6fea",
+    "sustainability-claims-review": "ef3cf988d1f342396830fd46b68ae1621b94beac262d81dcb14c67512a88e37b"
+  },
+  "reviews": [
+    {
+      "site": "https://guide.wagtail.org",
+      "reviewer": "guide_skill_review",
+      "rows": [
+        {
+          "guideline": "2.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-search-images"
+          ],
+          "rationale": "Recorded search-to-Manage images task completed with one search_json fetch and the expected article navigation. Repeated asset request events across documents do not establish unnecessary transfers.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "2.9",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.4",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.5",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.6",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.7"
+          ],
+          "rationale": "All four sampled article screenshots returned image/webp with Vary: accept despite PNG URL suffixes. Rendition suitability is outside this check.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "2.17",
+          "outcome": "fail",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-no-js",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-no-js",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-no-js"
+          ],
+          "rationale": "Main content remains present without JavaScript, but the search input is hidden and clicking the visible search control does not reveal it. The rubric requires both main content and search entry.",
+          "confidence": "high",
+          "nextEvidence": "Verify a visible no-JavaScript search entry and complete a search after progressive-enhancement changes."
+        },
+        {
+          "guideline": "3.6",
+          "outcome": "fail",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/how-to-guides/manage-images/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/how-to-guides/manage-pages/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/is/releases/new-in-wagtail-7-3/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/fr/fonctionnalites-d-accessibilite/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/__sustainability_audit_missing_page__"
+          ],
+          "rationale": "Six sampled successful pages have nonempty language, one H1 and one main. The deliberate 404 has lang=\"\" despite one H1 and one main; all sampled responses are required to satisfy the narrow check.",
+          "confidence": "high",
+          "nextEvidence": "Capture the deliberate missing path after setting an appropriate nonempty document language; separately review translation correctness."
+        },
+        {
+          "guideline": "3.7",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-desktop",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-mobile",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-image-format"
+          ],
+          "rationale": "All four instructional screenshots are already complete below the initial viewport and are fetched before scrolling. This establishes eager loading, but the evidence does not settle whether these instructional media are non-critical or whether eager loading is justified. Their 900-pixel rendition alone is insufficient to prescribe a smaller replacement.",
+          "confidence": "medium",
+          "nextEvidence": "Assess screenshot legibility and instructional relevance at target device pixel densities; then test whether deferral preserves the reading task and when requests start."
+        },
+        {
+          "guideline": "3.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/how-to-guides/manage-images/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/how-to-guides/manage-pages/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/is/releases/new-in-wagtail-7-3/",
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/fr/fonctionnalites-d-accessibilite/"
+          ],
+          "rationale": "All six successful sampled content pages have a nonempty title and canonical URL. Missing descriptions or structured-data suitability do not automatically fail this expectation.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "3.9",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/",
+            "docs/initial-implementation/assets/scope-extension.json#source:guide/apps/frontend/static_src/js/blocking.js"
+          ],
+          "rationale": "With dark preference active after reload, homepage foreground becomes rgb(245, 243, 248) and background rgb(38, 38, 38), reversing the light state. The unchanged live-change state is outside this initialization/reload check.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "3.11",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-search-images",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-search"
+          ],
+          "rationale": "Recorded typing produced one search request. Source at clean revision 31a4547eb1f6de55baea84269723313784f6b544 corroborates a 150 ms debounced keyup handler; deployment revision is not attested. This passes only the recorded typing pattern.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "3.13",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/scope-extension.json#file:https://guide.wagtail.org/robots.txt",
+            "docs/initial-implementation/assets/scope-extension.json#file:https://guide.wagtail.org/sitemap.xml",
+            "docs/initial-implementation/assets/scope-extension.json#file:https://guide.wagtail.org/favicon.ico"
+          ],
+          "rationale": "Robots, advertised sitemap and favicon all return successful appropriate non-HTML responses; declared PNG icons also return 200. Optional manifest, OpenSearch, security and carbon files do not automatically fail this scoped check.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "4.2",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-cold/resources/1054425.2",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-warm/resources/1054425.11"
+          ],
+          "rationale": "The reusable public stylesheet has public immutable caching and is served from cache with zero received bytes on the second same-context navigation. Offline support is outside scope.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "4.3",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-cold/resources/13C13F1B0DCD4AF4AC509A71C2CC3F26",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-cold/resources/1054425.2",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-cold/resources/1054425.5"
+          ],
+          "rationale": "Sampled HTML is Brotli encoded and public CSS/JavaScript are gzip encoded, demonstrating negotiated compression of compressible text assets.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "4.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/__sustainability_audit_missing_page__"
+          ],
+          "rationale": "Deliberate missing path returns 404, a Page not found H1, two navigation landmarks and a search form. Completing a recovery journey is outside this narrow affordance check.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        },
+        {
+          "guideline": "5.5",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/staged-audit.json#discovery/site:https://guide.wagtail.org/documents/https://wagtail.org/sustainability/",
+            "docs/initial-implementation/assets/staged-audit.json#discovery/site:https://guide.wagtail.org/documents/https://wagtail.org/blog/wagtails-2025-carbon-footprint/"
+          ],
+          "rationale": "Supplied disclosures describe an ecosystem population of 6,431 Wagtail sites, not an attributable guide.wagtail.org footprint. Their stated 5,173 tonnes/year divided by 6,431 is about 0.804 tonnes/site/year, inconsistent with the stated 12; this ecosystem contradiction is not a demonstrated guide-specific figure defect. Site-specific attribution remains unresolved.",
+          "confidence": "high",
+          "nextEvidence": "Obtain an explicitly attributed guide.wagtail.org figure with period, units, traffic/page-mix assumptions and arithmetic; clarify the ecosystem average independently."
+        },
+        {
+          "guideline": "5.25",
+          "outcome": "pass",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/scope-extension.json#source:guide/LICENSE",
+            "docs/initial-implementation/assets/scope-extension.json#source:guide/CONTRIBUTING.md"
+          ],
+          "rationale": "Read-only checkout is clean at 31a4547eb1f6de55baea84269723313784f6b544. LICENSE permits redistribution of source and binaries subject to three conditions; CONTRIBUTING.md welcomes code and other contributions and links local setup and discussion/issue routes. Content licensing and actual organizational contribution practice are separate.",
+          "confidence": "high",
+          "nextEvidence": "None for the narrow sampled check."
+        }
+      ],
+      "topRecommendations": [
+        {
+          "finding": "Readers without JavaScript cannot open the search entry, although article navigation works.",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-no-js",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-no-js",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-search-template"
+          ],
+          "nextAction": "Provide a usable search entry without JavaScript; treat the source template as a candidate location until deployment identity is verified, then test search-to-article completion."
+        },
+        {
+          "finding": "The sampled missing-page document has an empty language attribute.",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/__sustainability_audit_missing_page__",
+            "docs/initial-implementation/assets/scope-extension.json#source:guide/apps/core/templates/base.html"
+          ],
+          "nextAction": "Check how the error template receives its language and supply an appropriate fallback; verify the deployed 404 DOM."
+        },
+        {
+          "finding": "Instructional screenshots load before scrolling; their deferral prerequisites remain unresolved.",
+          "evidenceIds": [
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-desktop",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-mobile",
+            "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold"
+          ],
+          "nextAction": "Review instructional usefulness and legibility before changing loading or renditions; preserve negotiated WebP and verify request timing plus reading usability if deferral is introduced."
+        }
+      ],
+      "rawReviewSHA256": "39fa53849411e8a76fccdd601aba14cdefc2c888147cd7a18951a00d66e76358",
+      "evidenceIndex": {
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-search-images": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/journeys/0",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.4": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/2/resources/3",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.5": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/2/resources/4",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.6": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/2/resources/5",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold/resources/1060781.7": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/2/resources/6",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-no-js": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/reviews/2",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-no-js": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/reviews/5",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-no-js": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/followups/2",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/pages/0",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/how-to-guides/manage-images/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/pages/1",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/how-to-guides/manage-pages/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/pages/2",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/pages/3",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/is/releases/new-in-wagtail-7-3/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/pages/4",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/fr/fonctionnalites-d-accessibilite/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/pages/5",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#page:https://guide.wagtail.org/__sustainability_audit_missing_page__": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/pages/6",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-desktop": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/reviews/3",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-mobile": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/reviews/4",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-images-cold": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/2",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-image-format": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/sources/0",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#source:guide/apps/frontend/static_src/js/blocking.js": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/sourceCorroboration/files/0",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-search": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/sources/1",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#file:https://guide.wagtail.org/robots.txt": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/files/0",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#file:https://guide.wagtail.org/sitemap.xml": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/files/1",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#file:https://guide.wagtail.org/favicon.ico": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/files/2",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-cold/resources/1054425.2": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/0/resources/1",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-warm/resources/1054425.11": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/1/resources/1",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-cold/resources/13C13F1B0DCD4AF4AC509A71C2CC3F26": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/0/resources/0",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-home-cold/resources/1054425.5": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/0/resources/4",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/staged-audit.json#discovery/site:https://guide.wagtail.org/documents/https://wagtail.org/sustainability/": {
+          "artifact": "staged-audit.json",
+          "jsonPointer": "/discovery/0/documents/0",
+          "sourceSHA256": "8b5aa1b5cfc15b8a6b900148739562110c860174d24de114bdabab0a853fcb7c"
+        },
+        "docs/initial-implementation/assets/staged-audit.json#discovery/site:https://guide.wagtail.org/documents/https://wagtail.org/blog/wagtails-2025-carbon-footprint/": {
+          "artifact": "staged-audit.json",
+          "jsonPointer": "/discovery/0/documents/1",
+          "sourceSHA256": "8b5aa1b5cfc15b8a6b900148739562110c860174d24de114bdabab0a853fcb7c"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#source:guide/LICENSE": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/sourceCorroboration/files/4",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#source:guide/CONTRIBUTING.md": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/sourceCorroboration/files/5",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "docs/initial-implementation/assets/wagtail-review-evidence.json#guide-search-template": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/sources/2",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "docs/initial-implementation/assets/scope-extension.json#source:guide/apps/core/templates/base.html": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/0/sourceCorroboration/files/1",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        }
+      }
+    },
+    {
+      "site": "https://wagtail.org",
+      "reviewer": "independent skills forward test: sustainability-guideline-review + sustainability-claims-review + sustainability-evidence-review",
+      "rows": [
+        {
+          "guideline": "2.1",
+          "outcome": "pass",
+          "evidenceIds": [
+            "scope-extension.json#page:https://wagtail.org/sustainability/",
+            "staged-audit.json#discovery:https://wagtail.org/documents:https://wagtail.org/sustainability/"
+          ],
+          "rationale": "Public sustainability text identifies CMS climate impacts and image-format, picture-tag, documentation and collaboration mitigation activity. Disclosure is supported; implementation and the inaccurate average are separate judgments.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "2.9",
+          "outcome": "pass",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.6",
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.7",
+            "wagtail-review-evidence.json#wagtail-home-desktop"
+          ],
+          "rationale": "The poster and sampled logos are delivered as image/webp despite JPEG/PNG paths. The homepage video has controls and preload=none, with no observed media request before playback. Modern image delivery independently supports the rubric; playback usability and rendition suitability were not tested.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "2.11",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-font-css",
+            "wagtail-review-evidence.json#wagtail-fonts"
+          ],
+          "rationale": "Retrieved CSS uses font-display:block for regular Kumbh Sans and omits it for other weights. These declarations suggest a loading risk but do not establish readability under constrained loading.",
+          "confidence": "high",
+          "nextEvidence": "Record visible text and fallback behavior while fonts are delayed or blocked under a declared constrained profile."
+        },
+        {
+          "guideline": "2.15",
+          "outcome": "fail",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.3",
+            "wagtail-review-evidence.json#wagtail-sustainability-cold/resources:1072467.5"
+          ],
+          "rationale": "Requested Plausible script returned HTTP 404 text/plain and net::ERR_ABORTED. This contradicts usable successful script loading in the recorded environment; it does not establish a broken visitor task or priority repair.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "3.1",
+          "outcome": "pass",
+          "evidenceIds": [
+            "scope-extension.json#page:https://wagtail.org/digital-emissions/"
+          ],
+          "rationale": "The site-specific disclosure identifies April 2026 homepage emissions, SWD version 4, Lighthouse via DebugBear with mobile emulation, first/return page weights and grid factors. This establishes method and profile disclosure, not repeated execution.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "3.5",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-opt-out",
+            "wagtail-review-evidence.json#wagtail-gtm",
+            "wagtail-review-evidence.json#wagtail-plausible",
+            "wagtail-review-evidence.json#wagtail-cookie-control"
+          ],
+          "rationale": "Google analytics requests recur after an observed opt-out and reload; Plausible is also requested. Source identifies analytics integrations and a preference cookie, but deployed tag configuration and the exact purpose/preference contract are unavailable. A source comment calling analytics privacy-friendly is not verification.",
+          "confidence": "high",
+          "nextEvidence": "Obtain the deployed tag inventory, purpose and preference contract, then compare before-choice, accept and reject network behavior to it."
+        },
+        {
+          "guideline": "3.6",
+          "outcome": "pass",
+          "evidenceIds": [
+            "scope-extension.json#page:https://wagtail.org/",
+            "scope-extension.json#page:https://wagtail.org/sustainability/",
+            "scope-extension.json#page:https://wagtail.org/digital-emissions/",
+            "scope-extension.json#page:https://wagtail.org/privacy/",
+            "scope-extension.json#page:https://wagtail.org/accessibility/",
+            "scope-extension.json#page:https://wagtail.org/blog/wagtail-wrapped-2025/",
+            "scope-extension.json#page:https://wagtail.org/blog/going-green-with-google-summer-of-code/",
+            "scope-extension.json#page:https://wagtail.org/__sustainability_audit_missing_page__"
+          ],
+          "rationale": "All seven sampled successful pages and the deliberate 404 have nonempty en language, exactly one H1 and one main landmark. This is presence/count evidence only.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "3.7",
+          "outcome": "fail",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-home-desktop",
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.7",
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.8"
+          ],
+          "rationale": "Homepage customer logos at about 3198 CSS pixels load during the initial unscrolled capture with loading=auto. These below-fold non-critical images are requested before relevant scroll intent, with no eager-loading justification supplied. The deferred video should be preserved.",
+          "confidence": "medium",
+          "nextEvidence": "Confirm visitor relevance and browser lazy-loading thresholds, then compare initial requests and scroll usability after deferring the logo row."
+        },
+        {
+          "guideline": "3.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "scope-extension.json#page:https://wagtail.org/",
+            "scope-extension.json#page:https://wagtail.org/sustainability/",
+            "scope-extension.json#page:https://wagtail.org/digital-emissions/",
+            "scope-extension.json#page:https://wagtail.org/privacy/",
+            "scope-extension.json#page:https://wagtail.org/accessibility/",
+            "scope-extension.json#page:https://wagtail.org/blog/wagtail-wrapped-2025/",
+            "scope-extension.json#page:https://wagtail.org/blog/going-green-with-google-summer-of-code/"
+          ],
+          "rationale": "Each sampled successful content page has a nonempty title and canonical URL. The 404 canonical is outside this content-page check.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "3.9",
+          "outcome": "pass",
+          "evidenceIds": ["scope-extension.json#page:https://wagtail.org/"],
+          "rationale": "Under the emulated dark preference, the homepage changes to white text on rgb(38,38,38) background after reload. The narrow initialization/reload expectation passes; lack of immediate live-change response does not fail it.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "3.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-home-mobile",
+            "wagtail-review-evidence.json#wagtail-home-desktop",
+            "wagtail-review-evidence.json#wagtail-mobile",
+            "wagtail-review-evidence.json#wagtail-desktop"
+          ],
+          "rationale": "Follow-ups show 10 CSS pixels of horizontal scrolling and hidden off-canvas navigation, but do not demonstrate disruption of the intended task. Geometry alone neither proves a defect nor establishes task usability.",
+          "confidence": "high",
+          "nextEvidence": "Observe the homepage task, cookie controls and mobile navigation at the sampled viewport, including any clipping or accidental horizontal scrolling."
+        },
+        {
+          "guideline": "3.13",
+          "outcome": "pass",
+          "evidenceIds": [
+            "scope-extension.json#file:https://wagtail.org/robots.txt",
+            "scope-extension.json#file:https://wagtail.org/sitemap.xml",
+            "scope-extension.json#file:https://wagtail.org/favicon.ico",
+            "scope-extension.json#declaredFileChecks:https://wagtail.org/static/img/favicons/favicon.ec7386ac84cc.ico"
+          ],
+          "rationale": "Robots, advertised sitemap and favicon are retrievable with successful responses. Favicon redirects to a working hashed static asset; declared manifest and icon alternatives also succeed. Missing guessed optional paths do not fail this check.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "4.2",
+          "outcome": "pass",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.2",
+            "wagtail-review-evidence.json#wagtail-home-warm/resources:1067177.67"
+          ],
+          "rationale": "The same public stylesheet transfers 21553 bytes cold and zero bytes warm with fromCache=true. Its public immutable cache policy supports this observed reuse; capture-wide completeness does not invalidate this finished asset observation.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "4.3",
+          "outcome": "pass",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.2",
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:AC67981044A1CA79B1C9290B3097E5B3"
+          ],
+          "rationale": "The sampled stylesheet has content-encoding:gzip and Vary:Accept-Encoding; the homepage document uses br with Accept-Encoding in Vary. This supports sampled negotiated text compression only.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "4.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "scope-extension.json#page:https://wagtail.org/__sustainability_audit_missing_page__"
+          ],
+          "rationale": "The deliberate missing path returns 404, an explanatory Page not found H1, an invitation to search, and a GET search form. Completed recovery remains outside this check.",
+          "confidence": "high",
+          "nextEvidence": "No additional evidence required for this narrow sample."
+        },
+        {
+          "guideline": "5.5",
+          "outcome": "fail",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#sustainability-average",
+            "wagtail-review-evidence.json#footprint-total",
+            "wagtail-review-evidence.json#average-check",
+            "scope-extension.json#page:https://wagtail.org/digital-emissions/"
+          ],
+          "rationale": "The 2025 ecosystem total is 5173 tonnes CO2e/year across 6431 sites, which yields approximately 0.804 tonnes/site/year, not the published 12. The arithmetic contradiction is scoped to the ecosystem statement; the site-specific digital-emissions disclosure separately identifies its population and units.",
+          "confidence": "high",
+          "nextEvidence": "Ask the content owner to confirm the intended denominator and correct or explain the average; retain the ecosystem versus wagtail.org distinction."
+        },
+        {
+          "guideline": "5.18",
+          "outcome": "fail",
+          "evidenceIds": [
+            "scope-extension.json#page:https://wagtail.org/privacy/"
+          ],
+          "rationale": "Although retrieved at wagtail.org and titled Wagtail Privacy policy, the statement explicitly says it applies only to the Torchbox website. This contradicts clear applicability to the audited site; legal compliance and processing execution are not assessed.",
+          "confidence": "high",
+          "nextEvidence": "Publish or clarify a privacy statement whose scope explicitly includes wagtail.org, with owner confirmation of the described processing."
+        }
+      ],
+      "topRecommendations": [
+        {
+          "finding": "The sustainability page publishes an inconsistent ecosystem average, impairing readers\u2019 comparison of site footprints.",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#sustainability-average",
+            "wagtail-review-evidence.json#average-check"
+          ],
+          "nextAction": "Confirm the intended population and year, reconcile 5173/6431 with the stated average, and recheck published units and wording."
+        },
+        {
+          "finding": "Visitors cannot rely on the retrieved privacy statement to clearly describe wagtail.org.",
+          "evidenceIds": [
+            "scope-extension.json#page:https://wagtail.org/privacy/"
+          ],
+          "nextAction": "Have the responsible owner establish the site-specific statement scope and verify it matches the described processing."
+        },
+        {
+          "finding": "Analytics traffic continues after opt-out, while the deployed purpose/preference contract is unresolved.",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-opt-out",
+            "wagtail-review-evidence.json#wagtail-gtm"
+          ],
+          "nextAction": "Inspect deployed tag configuration and declared preference semantics, then validate requests against that contract before prescribing a change."
+        },
+        {
+          "finding": "Below-fold logo images transfer before visitors reach that content.",
+          "evidenceIds": [
+            "wagtail-review-evidence.json#wagtail-home-desktop",
+            "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.7"
+          ],
+          "nextAction": "Evaluate lazy loading for the logo row; validate initial request reduction and on-scroll display while preserving negotiated WebP and deferred video."
+        }
+      ],
+      "rawReviewSHA256": "6de06d82183932950530394c84754e301a27c553458f38192f331e4cecc2ac23",
+      "evidenceIndex": {
+        "scope-extension.json#page:https://wagtail.org/sustainability/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/1",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "staged-audit.json#discovery:https://wagtail.org/documents:https://wagtail.org/sustainability/": {
+          "artifact": "staged-audit.json",
+          "jsonPointer": "/discovery/1/documents/0",
+          "sourceSHA256": "8b5aa1b5cfc15b8a6b900148739562110c860174d24de114bdabab0a853fcb7c"
+        },
+        "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.6": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/4/resources/5",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.7": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/4/resources/6",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-home-desktop": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/reviews/6",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-font-css": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/fonts",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-fonts": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/sources/7",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.3": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/4/resources/2",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-sustainability-cold/resources:1072467.5": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/6/resources/3",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "scope-extension.json#page:https://wagtail.org/digital-emissions/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/2",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "wagtail-review-evidence.json#wagtail-opt-out": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/consent",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-gtm": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/sources/5",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-plausible": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/sources/4",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-cookie-control": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/sources/8",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "scope-extension.json#page:https://wagtail.org/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/0",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#page:https://wagtail.org/privacy/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/3",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#page:https://wagtail.org/accessibility/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/4",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#page:https://wagtail.org/blog/wagtail-wrapped-2025/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/5",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#page:https://wagtail.org/blog/going-green-with-google-summer-of-code/": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/6",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#page:https://wagtail.org/__sustainability_audit_missing_page__": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/pages/7",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.8": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/4/resources/7",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-home-mobile": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/reviews/7",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-mobile": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/followups/0",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-desktop": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/followups/1",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "scope-extension.json#file:https://wagtail.org/robots.txt": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/files/0",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#file:https://wagtail.org/sitemap.xml": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/files/1",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#file:https://wagtail.org/favicon.ico": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/files/2",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "scope-extension.json#declaredFileChecks:https://wagtail.org/static/img/favicons/favicon.ec7386ac84cc.ico": {
+          "artifact": "scope-extension.json",
+          "jsonPointer": "/sites/1/declaredFileChecks/1",
+          "sourceSHA256": "ec56a81f975d80b8213fa6c56135e39cebc24671f767a9f76af6017c65d01fa5"
+        },
+        "wagtail-review-evidence.json#wagtail-home-cold/resources:1067177.2": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/4/resources/1",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-home-warm/resources:1067177.67": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/5/resources/1",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#wagtail-home-cold/resources:AC67981044A1CA79B1C9290B3097E5B3": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/captures/4/resources/0",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#sustainability-average": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/content/0",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#footprint-total": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/content/1",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        },
+        "wagtail-review-evidence.json#average-check": {
+          "artifact": "wagtail-review-evidence.json",
+          "jsonPointer": "/calculations/0",
+          "sourceSHA256": "980e167974768bbadfa8ca708c7433b40df63b214dc7ff3403cbb92486d12fbb"
+        }
+      }
+    }
+  ]
+}

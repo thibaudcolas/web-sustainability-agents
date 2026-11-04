@@ -6,16 +6,19 @@
 
 **Overall assessment: small initial transfers and useful existing caching; the strongest next experiments concern screenshot loading and search resilience.**
 
-| Key measure                            | Result                                                          |
-| -------------------------------------- | --------------------------------------------------------------- |
-| Homepage initial load                  | **59.0 KB**                                                     |
-| Image-management article initial load  | **232.8 KB**                                                    |
-| Initial Digital Carbon Ratings         | **A+**, provisional on both sampled pages                       |
-| Modeled initial footprint              | 0.00874 / 0.03450 gCO2e per sampled load                        |
-| Extra measured traffic after scrolling | 0.0 KB on both pages in these windows                           |
-| Overall WSG score                      | **Not scored**: no validated aggregate rubric; partial coverage |
+| Key measure                            | Result                                                 |
+| -------------------------------------- | ------------------------------------------------------ |
+| Homepage initial load                  | **59.0 KB**                                            |
+| Image-management article initial load  | **232.8 KB**                                           |
+| Initial Digital Carbon Ratings         | **A+**, provisional on both sampled pages              |
+| Modeled initial footprint              | 0.00874 / 0.03450 gCO2e per sampled load               |
+| Extra measured traffic after scrolling | 0.0 KB on both pages in these windows                  |
+| Scoped WSG audit score                 | **71.4/100 — 10/14 passing scoped checks**             |
+| Estimated annual browsing footprint    | **5.3 kgCO2e/year**, under the declared proxy scenario |
 
 The carbon figures use CO2.js 0.19.0, SWDM v4, first visits only, and a non-green scenario for unknown hosting. They are modeled estimates, not measured energy or whole-site grades.
+
+The `scoped-wsg-v1` score comprises **10 passes, 2 failures, and 2 unresolved checks**. Checked coverage is **14/71 guidelines (19.7%)**; 57 remain untested. The experimental impact-weighted score is **70.1/100**. Unknowns remain in the score denominator but are not failures. A pass satisfies the declared narrow check, not every criterion of its WSG guideline; **zero full guidelines are verified**. See the [scoring method](../knowledge-base/audit-scoring.md) and [evidence-linked judgments](assets/scored-audits.json).
 
 ## Top five findings
 
@@ -41,6 +44,10 @@ No cookie action was configured; the middle stage is inapplicable, not a success
 ### Additional quantitative context
 
 A separate three-run Firefox experiment measured a median **71.91 J** of whole-system CPU-package energy during homepage load, a three-second wait, startup, and shutdown. This shared-workstation measurement is exploratory and is not added to the SWDM calculation. The September 2026 CrUX **10-million bucket** yields a cohort-based scenario of approximately **245,000 annual pageviews**, not measured analytics. See the [energy and traffic experiment](energy-traffic-experiment.md) for provenance, ranges, differing profiles, and limits.
+
+### Estimated annual footprint
+
+The estimated annual browsing footprint is **5.3 kgCO2e/year**, using **244,734 estimated annual pageviews** and an equal mix of the homepage and image-management page. Representing all views with only the lighter or heavier sampled page yields **2.1–8.4 kgCO2e/year**. These are scenario sensitivities, not confidence bounds. The estimate assumes first visits only, an unknown real page mix, and non-green hosting in SWDM v4. It includes modeled operational and embodied browsing emissions, not a complete organizational footprint or a measured calendar-year total. Scrolling, playback, actual repeat visits and unsampled content can change it. See the [annual scenario artifact](assets/annual-footprints.json) and [reproduction details](skill-audit-workflow.md#methodology-and-reproducibility).
 
 ## Qualitative review
 
@@ -100,7 +107,20 @@ Without JavaScript, the guide retains the sampled main text and a visible naviga
 
 These observations and source hashes are in the [scope extension](scope-extension.md). The [per-site register](assets/coverage/guide.wagtail.org-432853f7b5d8.json) now records partial evidence for 14 guidelines, with 57 not assessed. None is declared a complete guideline pass. Working robots/sitemap/icon resources and supplied source licensing add useful context without proving all beneficial-file or organizational requirements.
 
-## Scope and method
+## Next steps for auditing
+
+The current method supports bounded checks in 21/71 guideline groups; this report attempted 14. It has no complete criterion-level guideline coverage. The broader sample covers six of 156 sitemap-listed content URLs, plus one missing path. Scope definition, inventory, sampling, review and reporting are implemented, but the STAR evaluation remains partial: not all selected-page states or relevant processes have been exercised.
+
+The failed scoped checks concern [no-JavaScript search](https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support) and [error-page language](https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices). The unresolved checks concern [media deferral](https://www.w3.org/TR/web-sustainability-guidelines/#defer-the-loading-of-non-critical-resources) and [guide-specific footprint attribution](https://www.w3.org/TR/web-sustainability-guidelines/#calculate-the-environmental-impact). Fixing the demonstrated issues and resolving unknowns are different activities.
+
+1. Complete search and 404 recovery with keyboard, assistive technology and JavaScript unavailable; expand translated-page and template coverage. Test successful outcomes, not merely control presence.
+2. Test screenshot deferral at realistic pixel densities while checking legibility and reading tasks. Exercise active reduced-motion behavior and live theme changes separately from initialization.
+3. Replace the assumed annual page mix with matched-origin analytics where available; sample heavily used pages and repeat/scroll states. Compare byte accounting and hardware energy against independent collectors under matched profiles.
+4. Corroborate production source identity, hosting and operational practices. Internal retention, procurement and maintenance records would open additional organizational areas that the public site cannot establish.
+
+The [coverage roadmap](skill-audit-workflow.md#current-score-and-expected-wsg-coverage) distinguishes supported checks from unimplemented areas; the [backlog](backlog.md) preserves the longer sequence. Owner review of recommendation usefulness and rubric applicability is the next validation gate.
+
+## Methodology and reproducibility
 
 This WIP audit combines a two-page transfer sample with the separately scoped metadata and preference observations above; it does not establish whole-site WSG conformance. The [staged protocol](staged-auditing.md) records a fresh 1,280 × 800 desktop viewport, no initial interaction, then configured cookie choice and scrolling. All traffic figures use decimal KB/MB (1 KB = 1,000 B). Offscreen resources requested before scrolling remain in the initial figure. Three-second observation windows do not cover all eventual activity.
 
@@ -108,8 +128,8 @@ The [current evidence](assets/staged-audit.json) supports headline measurements.
 
 The [WSG draft](https://www.w3.org/TR/web-sustainability-guidelines/), [STAR](https://w3c.github.io/sustainableweb-ig/docs/star.html), and [impact ratings](https://www.w3.org/TR/wsg-ir/) inform review. The broader sample combines purposeful pages with two reproducibly selected sitemap URLs; it remains a development sample rather than a complete or representative site evaluation. Public statements are claims to corroborate. Unobserved organizational practices remain unknown.
 
-## Feedback and reproducibility
-
 Use the site name and finding ID when correcting an observation, interpretation, priority, or fix. The [feedback-to-pipeline backlog](backlog.md) records follow-up experiments. Run `just audit-sites` for fresh observations and `uv run --locked --script audit/report.py` for per-site chart data. Live recollection will vary.
 
-Model reviews are a separate frozen-evidence experiment, described in the [model checkpoint](review-checkpoint.md) and [expanded comparison](expanded-benchmark.md). The coordinator synthesized this report; it is not the output of a validated autonomous auditor. Source excerpts can locate plausible fixes without proving production deployment identity.
+The current score uses an independent GPT-6.1 Sol/low skill review of the raw artifacts, followed by coordinator inspection and deterministic aggregation. The [skill workflow](skill-audit-workflow.md) records rubric/skill versions, source hashes, review packets and commands. Historical [model comparisons](expanded-benchmark.md) and the [methodology benchmark](methodology-benchmark.md) are separate development evaluations. This report is not a validated autonomous conformance audit; source excerpts locate candidate fixes without proving deployment identity.
+
+To recalculate from published evidence, run `uv run --locked --script audit/assess.py`, `uv run --locked --script audit/annual.py`, then `uv run --locked --script audit/report.py`. The annual calculator uses CO2.js 0.19.0/SWDM v4 and the pinned September 2026 rank dataset/mapping; its output records input and dependency hashes. New live observations or LLM judgments require a new campaign, rather than silently changing this score’s evidence.

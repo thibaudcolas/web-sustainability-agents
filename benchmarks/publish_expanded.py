@@ -74,14 +74,21 @@ def campaign(directory: Path) -> JSON:
                 "verifierMode": trial.get("verifier_environment_mode"),
                 "taskChecksum": trial.get("task_checksum"),
                 "hashes": {
-                    key: digest(task / name)
-                    for key, name in {
-                        "input": "environment/input.json",
-                        "instruction": "instruction.md",
-                        "skill": "environment/skills/sustainability-evidence-review/SKILL.md",
-                        "reference": "tests/reference.json",
-                        "grader": "tests/grade.py",
-                    }.items()
+                    "skillResources": {
+                        str(p.relative_to(task / "environment/skills")): digest(p)
+                        for p in sorted((task / "environment/skills").rglob("*"))
+                        if p.is_file()
+                    },
+                    **{
+                        key: digest(task / name)
+                        for key, name in {
+                            "input": "environment/input.json",
+                            "instruction": "instruction.md",
+                            "skill": "environment/skills/sustainability-evidence-review/SKILL.md",
+                            "reference": "tests/reference.json",
+                            "grader": "tests/grade.py",
+                        }.items()
+                    },
                 },
                 "reportSHA256": digest(report_path) if report_path.exists() else None,
                 "reward": reward,

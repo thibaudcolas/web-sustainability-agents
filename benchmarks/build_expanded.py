@@ -42,8 +42,34 @@ def main() -> None:
     parser.add_argument(
         "--output", type=Path, default=ROOT / ".audit-work/expanded-tasks-v2"
     )
+    parser.add_argument("--methodology", action="store_true")
     args = parser.parse_args()
-    corpus = json.loads((ROOT / "benchmarks/expanded-cases.json").read_text())
+    if args.methodology and args.output == ROOT / ".audit-work/expanded-tasks-v2":
+        args.output = ROOT / ".audit-work/methodology-tasks-v1"
+    if args.output.exists() and any(args.output.iterdir()):
+        raise ValueError(
+            "Use a new output directory; frozen tasks must not be overwritten"
+        )
+    corpus_name = (
+        "methodology-cases.json" if args.methodology else "expanded-cases.json"
+    )
+    corpus = json.loads((ROOT / "benchmarks" / corpus_name).read_text())
+    instruction = INSTRUCTION
+    if args.methodology:
+        instruction = (
+            instruction.replace(
+                "Use /skills/sustainability-evidence-review/SKILL.md and read /app/input.json.",
+                "Read /app/input.json, /skills/sustainability-evidence-review/SKILL.md, /skills/sustainability-guideline-review/SKILL.md, and /skills/sustainability-claims-review/SKILL.md. Apply the relevant specialist review to each question.",
+            )
+            .replace(
+                "overallScore (null; no aggregate rubric)",
+                "overallScore (null; these are bounded evaluation cases, with requested score calculations in metrics)",
+            )
+            .replace(
+                "Pass means the proposition is established, fail means contradicted, inconclusive means neither.",
+                "These are claim-validation questions: pass means the claim is supported; fail means it is unsupported (contradicted OR insufficient evidence). Use inconclusive only if the question explicitly asks for an unresolved direct state.",
+            )
+        )
     manifest = {
         "schemaVersion": "0.1.0",
         "labelStatus": corpus["labelStatus"],
@@ -76,12 +102,25 @@ def main() -> None:
             "#!/bin/sh\nset -eu\npython /tests/grade.py\n"
         )
         shutil.copyfile(ROOT / "benchmarks/grade_expanded.py", task / "tests/grade.py")
-        shutil.copytree(
-            ROOT / ".agents/skills/sustainability-evidence-review",
-            task / "environment/skills/sustainability-evidence-review",
-            dirs_exist_ok=True,
+        skills = (
+            [
+                ROOT / ".agents/skills" / name
+                for name in [
+                    "sustainability-evidence-review",
+                    "sustainability-guideline-review",
+                    "sustainability-claims-review",
+                ]
+            ]
+            if args.methodology
+            else [ROOT / "benchmarks/frozen-skills/sustainability-evidence-review"]
         )
-        (task / "instruction.md").write_text(INSTRUCTION)
+        for skill in skills:
+            shutil.copytree(
+                skill,
+                task / "environment/skills" / skill.name,
+                dirs_exist_ok=True,
+            )
+        (task / "instruction.md").write_text(instruction)
         (task / "environment/Dockerfile").write_text(
             "FROM node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c\nRUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates git python3 && rm -rf /var/lib/apt/lists/*\nWORKDIR /app\nCOPY input.json /app/input.json\nCOPY skills /skills\nRUN mkdir -p /app/output\n"
         )
@@ -94,6 +133,13 @@ def main() -> None:
         manifest["cases"].append(
             {
                 "id": case["id"],
+                "skillResources": {
+                    str(path.relative_to(task / "environment/skills")): hashlib.sha256(
+                        path.read_bytes()
+                    ).hexdigest()
+                    for path in sorted((task / "environment/skills").rglob("*"))
+                    if path.is_file()
+                },
                 **{
                     name: hashlib.sha256((task / path).read_bytes()).hexdigest()
                     for name, path in {
@@ -107,7 +153,13 @@ def main() -> None:
             }
         )
     write_json(
-        ROOT / "docs/initial-implementation/assets/expanded-benchmark-manifest.json",
+        ROOT
+        / "docs/initial-implementation/assets"
+        / (
+            "methodology-benchmark-manifest.json"
+            if args.methodology
+            else "expanded-benchmark-manifest.json"
+        ),
         manifest,
     )
 

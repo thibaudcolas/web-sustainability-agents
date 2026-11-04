@@ -46,7 +46,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                 "overallScore": {
                     "value": None,
                     "status": "not_assessed",
-                    "reason": "No validated aggregate WSG scoring model; bounded sample only.",
+                    "reason": "No scoped review supplied to this export; calculate a versioned assessment with audit/assess.py.",
                 },
                 "headline": [],
                 "observations": [],
@@ -247,6 +247,85 @@ def report_stem(origin: str) -> str:
     return f"{parsed.scheme}-{host}-{hashlib.sha256(origin.encode()).hexdigest()[:12]}"
 
 
+def enrich_assessment(
+    reports: dict[str, JSON],
+    assessments: JSON,
+    annual: JSON,
+    assessment_digest: str,
+    annual_digest: str,
+) -> None:
+    """Attach scoped scores and labeled annual scenarios as separate chart series."""
+    for score in assessments.get("scores", []):
+        site = score["site"]
+        if site not in reports:
+            continue
+        report = reports[site]
+        report["schemaVersion"] = "0.4.0"
+        report["overallScore"] = {
+            key: value for key, value in score.items() if key != "guidelines"
+        }
+        report["observations"].append(
+            {
+                "site": site,
+                "metric": "scoped_audit_score",
+                "value": score["value"],
+                "unit": "percent",
+                "phase": "evidence_review",
+                "basis": "calculated",
+                "status": "provisional_scoped_rubric",
+                "sourceId": f"assessment/{site}",
+                "sourceSHA256": assessment_digest,
+                "rubricVersion": score["rubricVersion"],
+                "checkedGuidelines": score["checkedGuidelines"],
+                "totalGuidelines": score["totalGuidelines"],
+            }
+        )
+        report["chartContracts"].append(
+            {
+                "id": "scoped-score",
+                "metric": "scoped_audit_score",
+                "unit": "percent",
+                "x": "site",
+                "series": ["rubricVersion"],
+                "aggregation": "none",
+                "note": "Display pass/fail/unknown counts and checked/total coverage; compare only matching rubric and sample. Not a conformance percentage.",
+            }
+        )
+    for scenario in annual.get("scenarios", []):
+        site = scenario["site"]
+        if site not in reports:
+            continue
+        report = reports[site]
+        report["annualFootprint"] = scenario
+        sensitivity = scenario.get("sensitivityKgPerYear", {})
+        report["observations"].append(
+            {
+                "site": site,
+                "metric": "annual_browsing_footprint",
+                "value": scenario["value"],
+                "unit": "kgCO2e/year",
+                "phase": "annual_scenario",
+                "basis": "scenario",
+                "status": scenario["status"],
+                "transferInputs": scenario.get("transferInputs"),
+                "sourceId": f"annual/{site}",
+                "sourceSHA256": annual_digest,
+                "sensitivityLow": sensitivity.get("lowestSampledPage"),
+                "sensitivityHigh": sensitivity.get("highestSampledPage"),
+            }
+        )
+        report["chartContracts"].append(
+            {
+                "id": "annual-footprint",
+                "metric": "annual_browsing_footprint",
+                "unit": "kgCO2e/year",
+                "x": "site",
+                "aggregation": "none",
+                "note": "Assumed page mix and rank-derived traffic; show partial-input status. Sensitivity cases are not confidence intervals; never add measured package energy.",
+            }
+        )
+
+
 def main() -> None:
     """Write JSON envelopes and equivalent CSV metric rows for each audited origin."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -270,6 +349,16 @@ def main() -> None:
         type=Path,
         default=ROOT / "docs/initial-implementation/assets/traffic-scenarios.json",
     )
+    parser.add_argument(
+        "--assessments",
+        type=Path,
+        default=ROOT / "docs/initial-implementation/assets/scored-audits.json",
+    )
+    parser.add_argument(
+        "--annual",
+        type=Path,
+        default=ROOT / "docs/initial-implementation/assets/annual-footprints.json",
+    )
     args = parser.parse_args()
     raw = args.input.read_bytes()
     reports = export_reports(json.loads(raw), hashlib.sha256(raw).hexdigest())
@@ -283,6 +372,17 @@ def main() -> None:
         enrichments[1][0],
         enrichments[0][1],
         enrichments[1][1],
+    )
+    optional = [
+        path.read_bytes() if path.exists() else b"{}"
+        for path in [args.assessments, args.annual]
+    ]
+    enrich_assessment(
+        reports,
+        json.loads(optional[0]),
+        json.loads(optional[1]),
+        hashlib.sha256(optional[0]).hexdigest(),
+        hashlib.sha256(optional[1]).hexdigest(),
     )
     args.output.mkdir(parents=True, exist_ok=True)
     for origin, report in reports.items():
