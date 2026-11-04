@@ -3,14 +3,14 @@ name: sustainability-evidence-review
 description: Review collected web sustainability evidence, distinguish observations from claims, and produce scoped findings with explicit unknowns. Use for audit evidence review, including supplied source corroboration.
 license: MIT
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # Sustainability evidence review
 
 Read the requested report contract and evidence inventory first. Tie each outcome to specific evidence IDs and the observed page state. An observation can support a narrow finding without establishing whole-site WSG conformance.
 
-For human reports, use one site per report. Lead with key measures and the supplied versioned audit score, then up to five prioritized findings, quantitative evidence, qualitative review, and detail. Display traffic in decimal KB/MB while retaining exact base units in artifacts. Explain the score's denominator and scope; calculate it from the declared rubric, never from an impression of site quality. Close with next auditing steps and methodology/reproduction details. Do not invent five defects.
+For human reports, use one site per report. Lead with key measures and the supplied versioned audit score, then up to five prioritized findings, quantitative evidence, qualitative review, and detail. Display traffic in decimal kB/MB while retaining exact base units in artifacts. Explain the score's denominator and scope; calculate it from the declared rubric, never from an impression of site quality. Close with next auditing steps and methodology/reproduction details. Do not invent five defects.
 
 Keep these distinctions when reviewing evidence:
 

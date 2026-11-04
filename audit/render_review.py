@@ -489,7 +489,9 @@ def render(
     lines += [f"{i}. {prose(step)}" for i, step in enumerate(editorial["nextSteps"], 1)]
     lines += [
         "",
-        "Future audits normally sample 5–10 representative pages, including the homepage, selected from the site's navigation, sitemap and important visitor tasks. This report retains its original smaller sample; its findings have not been relabeled as a wider audit.",
+        "The sample covers selected pages and visitor tasks, not every page on the site. Expand it where the checks above identify an untested template, interaction or audience need."
+        if len(probes["pages"]) >= 5
+        else "This audit has a smaller sample than the default 5–10 representative pages. Expand it using the site's navigation, sitemap and important visitor tasks; do not assume the findings cover untested pages.",
         "",
         "## How we checked this",
         "",
