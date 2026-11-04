@@ -38,6 +38,10 @@ No cookie action was configured; the middle stage is inapplicable, not a success
 
 [Per-site structured report](assets/reports/guide-wagtail-org.json) and [metric rows for charts](assets/reports/guide-wagtail-org.csv) preserve exact values, units, phase, branch, status, capture time, and evidence hashes. The [reporting contract](reporting.md) defines valid aggregations.
 
+### Additional quantitative context
+
+A separate three-run Firefox experiment measured a median **71.91 J** of whole-system CPU-package energy during homepage load, a three-second wait, startup, and shutdown. This shared-workstation measurement is exploratory and is not added to the SWDM calculation. The September 2026 CrUX **10-million bucket** yields a cohort-based scenario of approximately **245,000 annual pageviews**, not measured analytics. See the [energy and traffic experiment](energy-traffic-experiment.md) for provenance, ranges, differing profiles, and limits.
+
 ## Qualitative review
 
 Wappalyzer detected Wagtail, Django, Python, and Cloudflare. Review CMS renditions, rich-text output, server rendering, and cache behavior. Fingerprints do not establish exact versions or low-carbon hosting.

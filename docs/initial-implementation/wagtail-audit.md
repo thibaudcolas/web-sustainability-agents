@@ -40,6 +40,10 @@ All four runs reached the bottom and completed their configured cookie clicks. N
 
 [Per-site structured report](assets/reports/wagtail-org.json) and [metric rows for charts](assets/reports/wagtail-org.csv) preserve exact values and provenance. Charts must label partial accounting and avoid stacking cumulative phase totals. See the [reporting contract](reporting.md).
 
+### Additional quantitative context
+
+A separate three-run Firefox experiment measured a median **77.86 J** of whole-system CPU-package energy during homepage load, a three-second wait, startup, and shutdown. This shared-workstation measurement is exploratory and is not added to the SWDM calculation. The September 2026 CrUX **5-million bucket** yields a cohort-based scenario of approximately **573,000 annual pageviews**, not measured analytics. See the [energy and traffic experiment](energy-traffic-experiment.md) for provenance, ranges, differing profiles, and limits.
+
 ## Qualitative review
 
 [Carbon.txt](https://wagtail.org/carbon.txt) declares syntax version 0.4 and links [digital-emissions documentation](https://wagtail.org/digital-emissions/). That statement describes a 0.06 gCO2e homepage view from an April 2026 mobile Lighthouse profile, 507 KB for first-time visitors, an annual footprint range, and monitoring practices. Its profile and grid assumptions differ from this desktop capture. The difference is not evidence of a regression.

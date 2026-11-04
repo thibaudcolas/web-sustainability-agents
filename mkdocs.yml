@@ -213,6 +213,7 @@ nav:
       - initial-implementation/README.md
       - WIP guide audit: initial-implementation/guide-audit.md
       - WIP Wagtail.org audit: initial-implementation/wagtail-audit.md
+      - Energy and traffic experiment: initial-implementation/energy-traffic-experiment.md
       - Per-site reports and chart data: initial-implementation/reporting.md
       - Implementation backlog: initial-implementation/backlog.md
       - Staged measurements and context: initial-implementation/staged-auditing.md
@@ -227,6 +228,7 @@ nav:
       - knowledge-base/README.md
       - WSG and STAR: knowledge-base/wsg-and-star.md
       - Digital Carbon Ratings: knowledge-base/digital-carbon-ratings.md
+      - Browser energy and traffic scenarios: knowledge-base/energy-and-traffic.md
       - Deterministic audit tools: knowledge-base/deterministic-tools.md
       - Lessons from existing audit projects: knowledge-base/local-projects.md
       - Model providers and inference accounting: knowledge-base/provider-capabilities.md
