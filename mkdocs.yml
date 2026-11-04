@@ -219,6 +219,7 @@ nav:
       - Broader WSG and STAR evidence: initial-implementation/scope-extension.md
       - Broader checks and source evidence: initial-implementation/broader-checks.md
       - Broader interpretation benchmark: initial-implementation/breadth-benchmark.md
+      - Broader eval case review: initial-implementation/breadth-review-cases.md
       - Repeatable agent workflow: initial-implementation/agent-driven-audits.md
       - WSG assessment crosswalk: initial-implementation/wsg-check-expansion.md
       - Interaction checks: initial-implementation/interaction-checks.md

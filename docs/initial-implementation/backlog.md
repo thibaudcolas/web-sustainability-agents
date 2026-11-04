@@ -36,9 +36,13 @@ The current task follows this sequence. It is not necessary to finish every futu
 
 **B16:** Preinstall the pinned Codex adapter dependencies in a reusable environment image. The expanded campaign repeatedly installs OS packages in each trial; setup currently dominates model review time. Validate that the rebuilt environment preserves task inputs, reference isolation, and model settings before comparing its runtime or energy. Do not change task images during an active campaign. One trial also failed before inference because npm omitted Codex’s platform binary; record setup failures separately and allow a bounded unchanged-input retry.
 
+The broader campaign adds two Sol setup failures: another missing platform binary and a temporary Debian package-resolution failure. Both passed unchanged-input retries. Prioritize the reusable image before another full campaign; preserve these exceptions separately from model errors.
+
 ## Judgment labels
 
 **B17:** Separate direct site-state propositions from evidence-sufficiency questions in the benchmark schema. Both model arms can preserve the correct unknown value and sensible advice while choosing different `fail`/`inconclusive` labels for phrases such as “known to be zero” or “attributable solely.” Preserve original scores and explanations; independently review the question contract before accepting alternative labels or rerunning models. A label mismatch is not automatically a harmful recommendation.
+
+The [broader case review](breadth-review-cases.md) reproduces this problem for the claim that a deployed dependency version is unresolved. Add an explicit question mode in a new version. Separately distinguish an observed-event counter from an unmeasured outcome: both models returned null for successful submissions when the reference expected zero recorded successes, without an explicit counter in the facts.
 
 ## Feedback routing
 
@@ -76,4 +80,8 @@ Historical artifacts and model outcomes stay frozen. Corrections create a new ru
 
 **B26:** Extend the new session packet's provenance resolver to source excerpts, screenshots and independently retrieved proof documents before including them in its score. Retain source revision, dirty status and deployment relationship. Public observations and supplemental source recommendations already remain distinguishable.
 
+The expanded catalog now implements ten additional browser checks and eight source checks. Both live reports include a completed public journey and selected source evidence with revision, dirty status, content hashes and unknown deployment identity. This advances B25/B26; full task recovery, screenshot provenance, independently retrieved proof documents and organizational execution records remain open.
+
 **B27:** Run the same frozen agent-triggered task through Codex and another harness, then evaluate with Harbor using Sol/low and Neuralwatt DeepSeek/high. Include scope clarification, actual tool invocation, partial failures and evidence citation in the verifier; the prior frozen-evidence campaigns do not test these behaviors. Preserve the existing benchmark skills in `benchmarks/frozen-methodology-skills/` when current skills evolve.
+
+The broader Harbor campaign validates four collection handoffs per model under Codex, with actual collector calls corroborated in all eight trajectories. Another harness, live scope clarification and complete browser orchestration are still untested. Keep those requirements separate from artifact validation.

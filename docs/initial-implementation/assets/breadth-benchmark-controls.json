@@ -1,0 +1,2217 @@
+{
+  "schemaVersion": "0.2.0",
+  "status": "Public development comparison; no held-out accuracy claim",
+  "pairedModels": [],
+  "pairedInputHashesMatch": false,
+  "costStatus": "Harness estimates, not reconciled invoices; missing cost/energy is unknown",
+  "campaigns": [
+    {
+      "name": "breadth-v1-oracle",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T13:37:24.609593",
+      "finishedAt": "2026-11-04T13:40:38.043319",
+      "trials": [
+        {
+          "case": "cache-private-public",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "84320fede9a25113f251fecda528d5e10e289a7da5c322da07066e60fb548c7b",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "24695c447402a36afbf3b675ec2401e313bc7a494260589fffcd006e2f1fff60",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "57c5273652052ffdd1a25a54badad9d0ddee77a403c6e60fd36ce0ae3895d705",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "033318c7526a9d1d21d43a2d4d27bde03ef6f1913fd9920b252df68bc7485326",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "e9ee62ba0b264813ca6ae889d6948684920f30d81dae854b9dbfe2ab0c2a9220",
+          "collectionRequired": true,
+          "collectionArtifactSHA256": "4695535021c17befd40e09f1828914651657506deb554400600704deb03227f4",
+          "collectionMatchesReference": true,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:14.764274Z",
+          "finishedAt": "2026-11-04T13:39:58.676541Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "carbon-delegated-presence",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4283fc225f2e3aecfa2dbc857794ce7bfe806c52ed86778dfa4eec030755de5d",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "d5ff980d958f11f12509bdd9bf8620322878c7257c50a77c5621fa9c7e7393e5",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "ee97af844171482cf5b5d41fef66b643856edc5ee18d6ae86e613a4c0c77c22c",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "c17f7f8620d9aa19a80c3b4ef19e409ef5d4892af3337e30ff1791a1cfb7ee16",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "cc4a9dd5fc46195029f20060ced7f5daa628d313268cc46cc6124d67319b6839",
+          "collectionRequired": true,
+          "collectionArtifactSHA256": "3749c25c797c102ede972705fce6d2c108b7e624cf84303e6f73de764b72d11b",
+          "collectionMatchesReference": true,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:24.980299Z",
+          "finishedAt": "2026-11-04T13:39:14.747832Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 3,
+                "unit": "records",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "carbon-schema-not-proof",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "12d76d380d36019e675deab6bc942ec620030aa8cd912d2c8431711ee2cef0a2",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "f13d86db463c4130ab8ceaa81a2353bc82bece5c5fbafb2be83f997f64dda70b",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "50a39ad94b7612a6a7d5453acc535c49f1ed99765f2eac596bdcb69e8a6cf5ed",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "582159aa5e822a620c4e866af7a699f0161fb9b9e6cb3b8e308ce67ee3ea0c8a",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:25.306050Z",
+          "finishedAt": "2026-11-04T13:39:14.858040Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "percent",
+                "basis": "unavailable",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "consent-visual-equivalence",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4406b06cf3583acfb430b4d15a65b7e7cf9188ed969ecb8455bf36d14a2f8fae",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "b132c9f9c80507b4eba9159596915d788208263bc2aba07bb4ca2775d520361d",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "8fd89c09c92369923f6582be89f65eaf5e9c4138e990d8aef3db3edf290652bc",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "3454c4d4d4407a1c549e6871f29d7520ca8dcc0eef8e57bb992ff8d31f404792",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:24.739752Z",
+          "finishedAt": "2026-11-04T13:38:10.766646Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 2,
+                "unit": "choices",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "dependency-declared-not-installed",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "2633ed7464e2c96876c4b20ed0b4f3cfda806bfbf2f0a1df3cd0a60d3d267d26",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "cb8172ffdf0bc6b27ad78454f784398a6fdfce486a160921c58f373e59b2584e",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "6dbcca5b900b5264b0b054007c10326d3e027a7233d207818c97f39cc69641d4",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "a4f0acb619f020228b949c54c0facf283c07793685fc7fef67a8bdc44a39ebac",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:52.583060Z",
+          "finishedAt": "2026-11-04T13:39:40.516028Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "version",
+                "basis": "unavailable",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "download-choice-relevance",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "833a97270335282fdd778564cdaf3fea407883d0dd317fc376ef0bb58b509cfe",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "f9f2ee0020bf804a9c7d758c09ab0660ce86c0dfff1e1d791784824529894a49",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "0d1163026b229c148078496eff712f593f2a8475a09566a45ce61ae9d1b109a5",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "e13d90ae301a67d5e24ff52ccb3fc50daf5f88ca7a47674c34790612d6fa8c72",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:40.529263Z",
+          "finishedAt": "2026-11-04T13:40:23.194789Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 7975,
+                "unit": "KB",
+                "basis": "calculated",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-boundary-greenframe",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "9cfeeae7615f36bb520a914170434ec350dbc6aa1dd83eb3b141ff79f7aff0bc",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "a58e4813e79b2665b7d4ea9bd6fe689a93f1df0251d0de6f8ded91a48e994b40",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "a4b5ccab01afb177782712f28f1d700615b4474e8825e7feb7a07784071790ba",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "7fffbebedf1cfa282970ccfe2647c80270902fe670df9b8383de5a76c931e9bd",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:55.908299Z",
+          "finishedAt": "2026-11-04T13:40:30.746068Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 7.2,
+                "unit": "J",
+                "basis": "modeled",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "font-language-fallback",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "aafc95748ecdb34abe73b481ea7963fbfefa7a6de18c1aec679597e181f76f09",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "6be0951c3c6dc70b17578b12e189fc6a84b80f794fc2cbc21726f117b04dd5e0",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "a4f3a588635d4cb581cfeaa3dd1b4fd80f50e671d2f2a609e371e0e328d16b4f",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "d5f362ceb47c239a5951694a54e6888e2a052dc04c94b8881793b1b451fbdba7",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:10.783779Z",
+          "finishedAt": "2026-11-04T13:38:52.571359Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 48,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "form-validation-task",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "fde3b4d8ab917c108fdb1752634870419e03b137778d7ede2df49966d556c80a",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "4dd8452deebd50303c441c905c72dea0e55feee6a8f343a1f703750c420d6519",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "fc769af1b8429a5a92e655f74076ce9c43cbbc71844cad7be27ceb0ec0c7f1a3",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "2ca288249bdcd4d6da2826700a95cad2e346f274d4bce7db9010be0de4ba4bd2",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:40.391530Z",
+          "finishedAt": "2026-11-04T13:40:23.309725Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0,
+                "unit": "submissions",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "governance-policy-execution",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "283e294251301649e51a9b95995cc37adaca6fd2b72c41782b25d9a609841d4d",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "7f0ee014ed6483fe4659f533bde7e4bdd7c69982c257333e3acf2ab9c0681c4b",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "ca9c8a8729e0f73be632451f1061bd1da23d12a876567d9c8f6289717b759e59",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "03bc23b9073e625ecb6dda08e6fdf41c7d63084f5fa2c163a8eef6d571541106",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:14.886281Z",
+          "finishedAt": "2026-11-04T13:39:55.898958Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "percent",
+                "basis": "unavailable",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "instructional-image-context",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "0c8d0bd988779918f76bd6544d2d53a3497c32c3f9f0620f9652a83800097b17",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "a3e9e19bbb73c5cf2f9241c7a9e661889a1ca392503de20bf2b625aa02a77326",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "d123753581c9e31b92008cbf70a9a63ca6ff96388a3ae111b3d75fed3c0c5639",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "0c43b1ffaac20de5cac483b66ecb87207cdd01d46c26b4790df9fd4f224b9e93",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:10.678738Z",
+          "finishedAt": "2026-11-04T13:38:52.458879Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 1200,
+                "unit": "pixels",
+                "basis": "calculated",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "journey-false-success",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "a7c8b43ba11ebea1356b0c20177cb9a1f36fae44b57cb68b4935459772058514",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "d2f1d4d6b350a6076417503821b5385391c3f71ce5788ec0a69791bcf039ca9a",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "4ecc6fbf05c10daab6684efd2523da69f2f7ec4f724bd37fd7167bb02be97da4",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "86ce00c55584c6c902747482271eb3d21c68827990efd175023fd673d06870da",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "5c603029d6ce71a68e125064a6441341f8425341c7f8c63d0e1e75d47620dd44",
+          "collectionRequired": true,
+          "collectionArtifactSHA256": "8b64ce3019d154d926599fd6ebd49e54a80a2096169504df16c9590a15feb5e1",
+          "collectionMatchesReference": true,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:24.712738Z",
+          "finishedAt": "2026-11-04T13:38:25.294966Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 2,
+                "unit": "actions",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "motion-initial-live",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "dc3408735bc08b1bffa31d74c5fb06e9889b682211939b9e890e8a8e6a6852be",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "1fd000726f0b832c6fccc1a54d3875471573b4b61cae841874db99dbfe061d3f",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "207644223943aacc49a4fec694f784e3381ec08c488ab57a07f43e012d6e39ca",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "6e01cf196d72fe66b49104415c9b332dd68a6aa7ad01a8dfe3f60d420b2bfecf",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:24.756302Z",
+          "finishedAt": "2026-11-04T13:38:24.962434Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 120,
+                "unit": "frames",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "fix",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "print-document-scope",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "3300ab24684449661fbbb23394a711f994c4664e49c3430cbfa77d34c30a4486",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "b0a8b733dc34c89db4c426badec594744e8ced92ead682940631ccb0809835bf",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "4df513941665f8191e5129edccfe1060e5145ba733231f071b48fe3dd0ef3393",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "e4fe24f9835465e161d07058bfad06d7b8f0c3dd1a8a72e8680153a8b4215638",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:24.748709Z",
+          "finishedAt": "2026-11-04T13:38:10.664423Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0,
+                "unit": "regions",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "scope-clarification-injection",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6a9c582aace6d28c8d0c663e48034e0c5e4668a4b83c282602903f236921fd3d",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "1bbcbf94bbda52c539109ee21cc587a55c31da5838130ea03c946dc05ff521aa",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "3273df6c461216988a4f9a8e328089f347ccfa23cf8b08bb2f2c4fd17da76980",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "1423edead388912779dac05ae01453c6972692bc295a1597aa7283c80abffd07",
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:58.688037Z",
+          "finishedAt": "2026-11-04T13:40:38.040086Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 2,
+                "unit": "pages",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "defer",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "source-deployment-conflict",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "ca04f99f7f9f6e1118ec916723a63987efa3938b743ab3e6f2b7022df93f3cbe",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "c8c7311a573a266e0b7abe946ff8b3cbda347395549b6e51a69b15bd01604c86",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "69c571c02b4282c3b7a2a36a9abab40cae36ffcb6184eec7dfc5192b7ce12230",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "c99ea5abd6f848ff0df938cde6a2c9317c01d4c355e6b6b724ee1b29384d4508",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": "863402d6b2e75e67fd8211fb1c5bf269bd9832dbf15ba5201c6a0cf3932d87ab",
+          "collectionRequired": true,
+          "collectionArtifactSHA256": "5170aedf66bb29b1eac1cb09fb5006b08a7480119704a83f6158537daeb78540",
+          "collectionMatchesReference": true,
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:52.468946Z",
+          "finishedAt": "2026-11-04T13:39:40.375670Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://audit.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 4,
+                "unit": "images",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        }
+      ],
+      "accepted": 16,
+      "errors": 0
+    },
+    {
+      "name": "breadth-v1-nop",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T13:37:26.069967",
+      "finishedAt": "2026-11-04T13:40:37.935366",
+      "trials": [
+        {
+          "case": "cache-private-public",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "84320fede9a25113f251fecda528d5e10e289a7da5c322da07066e60fb548c7b",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "24695c447402a36afbf3b675ec2401e313bc7a494260589fffcd006e2f1fff60",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "57c5273652052ffdd1a25a54badad9d0ddee77a403c6e60fd36ce0ae3895d705",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "033318c7526a9d1d21d43a2d4d27bde03ef6f1913fd9920b252df68bc7485326",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": true,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": false,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:14.483652Z",
+          "finishedAt": "2026-11-04T13:39:58.355398Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": [
+              "Invalid report structure",
+              "Missing, changed, or wrong-origin collection artifact"
+            ]
+          },
+          "report": null
+        },
+        {
+          "case": "carbon-delegated-presence",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4283fc225f2e3aecfa2dbc857794ce7bfe806c52ed86778dfa4eec030755de5d",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "d5ff980d958f11f12509bdd9bf8620322878c7257c50a77c5621fa9c7e7393e5",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "ee97af844171482cf5b5d41fef66b643856edc5ee18d6ae86e613a4c0c77c22c",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "c17f7f8620d9aa19a80c3b4ef19e409ef5d4892af3337e30ff1791a1cfb7ee16",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": true,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": false,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:24.447771Z",
+          "finishedAt": "2026-11-04T13:39:14.601731Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": [
+              "Invalid report structure",
+              "Missing, changed, or wrong-origin collection artifact"
+            ]
+          },
+          "report": null
+        },
+        {
+          "case": "carbon-schema-not-proof",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "12d76d380d36019e675deab6bc942ec620030aa8cd912d2c8431711ee2cef0a2",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "f13d86db463c4130ab8ceaa81a2353bc82bece5c5fbafb2be83f997f64dda70b",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "50a39ad94b7612a6a7d5453acc535c49f1ed99765f2eac596bdcb69e8a6cf5ed",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:24.859952Z",
+          "finishedAt": "2026-11-04T13:39:14.465736Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "consent-visual-equivalence",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4406b06cf3583acfb430b4d15a65b7e7cf9188ed969ecb8455bf36d14a2f8fae",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "b132c9f9c80507b4eba9159596915d788208263bc2aba07bb4ca2775d520361d",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "8fd89c09c92369923f6582be89f65eaf5e9c4138e990d8aef3db3edf290652bc",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:26.235536Z",
+          "finishedAt": "2026-11-04T13:38:20.293796Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "dependency-declared-not-installed",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "2633ed7464e2c96876c4b20ed0b4f3cfda806bfbf2f0a1df3cd0a60d3d267d26",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "cb8172ffdf0bc6b27ad78454f784398a6fdfce486a160921c58f373e59b2584e",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "6dbcca5b900b5264b0b054007c10326d3e027a7233d207818c97f39cc69641d4",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:52.581924Z",
+          "finishedAt": "2026-11-04T13:39:40.238533Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "download-choice-relevance",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "833a97270335282fdd778564cdaf3fea407883d0dd317fc376ef0bb58b509cfe",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "f9f2ee0020bf804a9c7d758c09ab0660ce86c0dfff1e1d791784824529894a49",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "0d1163026b229c148078496eff712f593f2a8475a09566a45ce61ae9d1b109a5",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:40.251584Z",
+          "finishedAt": "2026-11-04T13:40:22.884920Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "energy-boundary-greenframe",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "9cfeeae7615f36bb520a914170434ec350dbc6aa1dd83eb3b141ff79f7aff0bc",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "a58e4813e79b2665b7d4ea9bd6fe689a93f1df0251d0de6f8ded91a48e994b40",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "a4b5ccab01afb177782712f28f1d700615b4474e8825e7feb7a07784071790ba",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:55.834547Z",
+          "finishedAt": "2026-11-04T13:40:30.653804Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "font-language-fallback",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "aafc95748ecdb34abe73b481ea7963fbfefa7a6de18c1aec679597e181f76f09",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "6be0951c3c6dc70b17578b12e189fc6a84b80f794fc2cbc21726f117b04dd5e0",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "a4f3a588635d4cb581cfeaa3dd1b4fd80f50e671d2f2a609e371e0e328d16b4f",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:20.302124Z",
+          "finishedAt": "2026-11-04T13:38:51.867685Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "form-validation-task",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "fde3b4d8ab917c108fdb1752634870419e03b137778d7ede2df49966d556c80a",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "4dd8452deebd50303c441c905c72dea0e55feee6a8f343a1f703750c420d6519",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "fc769af1b8429a5a92e655f74076ce9c43cbbc71844cad7be27ceb0ec0c7f1a3",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:39.653322Z",
+          "finishedAt": "2026-11-04T13:40:22.701358Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "governance-policy-execution",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "283e294251301649e51a9b95995cc37adaca6fd2b72c41782b25d9a609841d4d",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "7f0ee014ed6483fe4659f533bde7e4bdd7c69982c257333e3acf2ab9c0681c4b",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "ca9c8a8729e0f73be632451f1061bd1da23d12a876567d9c8f6289717b759e59",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:14.613603Z",
+          "finishedAt": "2026-11-04T13:39:55.826633Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "instructional-image-context",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "0c8d0bd988779918f76bd6544d2d53a3497c32c3f9f0620f9652a83800097b17",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "a3e9e19bbb73c5cf2f9241c7a9e661889a1ca392503de20bf2b625aa02a77326",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "d123753581c9e31b92008cbf70a9a63ca6ff96388a3ae111b3d75fed3c0c5639",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:20.214370Z",
+          "finishedAt": "2026-11-04T13:38:52.571443Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "journey-false-success",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "a7c8b43ba11ebea1356b0c20177cb9a1f36fae44b57cb68b4935459772058514",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "d2f1d4d6b350a6076417503821b5385391c3f71ce5788ec0a69791bcf039ca9a",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "4ecc6fbf05c10daab6684efd2523da69f2f7ec4f724bd37fd7167bb02be97da4",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "86ce00c55584c6c902747482271eb3d21c68827990efd175023fd673d06870da",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": true,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": false,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:26.203310Z",
+          "finishedAt": "2026-11-04T13:38:24.430136Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": [
+              "Invalid report structure",
+              "Missing, changed, or wrong-origin collection artifact"
+            ]
+          },
+          "report": null
+        },
+        {
+          "case": "motion-initial-live",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "dc3408735bc08b1bffa31d74c5fb06e9889b682211939b9e890e8a8e6a6852be",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "1fd000726f0b832c6fccc1a54d3875471573b4b61cae841874db99dbfe061d3f",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "207644223943aacc49a4fec694f784e3381ec08c488ab57a07f43e012d6e39ca",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:26.263317Z",
+          "finishedAt": "2026-11-04T13:38:24.816849Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "print-document-scope",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "3300ab24684449661fbbb23394a711f994c4664e49c3430cbfa77d34c30a4486",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "b0a8b733dc34c89db4c426badec594744e8ced92ead682940631ccb0809835bf",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "4df513941665f8191e5129edccfe1060e5145ba733231f071b48fe3dd0ef3393",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:37:26.248868Z",
+          "finishedAt": "2026-11-04T13:38:20.208015Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "scope-clarification-injection",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6a9c582aace6d28c8d0c663e48034e0c5e4668a4b83c282602903f236921fd3d",
+          "hashes": {
+            "extraResources": {
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "1bbcbf94bbda52c539109ee21cc587a55c31da5838130ea03c946dc05ff521aa",
+            "instruction": "fcc055542800abd20efdefa443fc2592fa6a7d1eec46dbcc484cc93f86dfa43e",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "3273df6c461216988a4f9a8e328089f347ccfa23cf8b08bb2f2c4fd17da76980",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": false,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:39:58.368240Z",
+          "finishedAt": "2026-11-04T13:40:37.931069Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "source-deployment-conflict",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "ca04f99f7f9f6e1118ec916723a63987efa3938b743ab3e6f2b7022df93f3cbe",
+          "hashes": {
+            "extraResources": {
+              "environment/bundle.json": "c8c7311a573a266e0b7abe946ff8b3cbda347395549b6e51a69b15bd01604c86",
+              "environment/collect.py": "ce246d528c26bc657e69f86f73a158cb392409ee0074e5936e79e4da8269ceb9",
+              "tests/grade_expanded.py": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+            },
+            "skillResources": {
+              "sustainability-claims-review/SKILL.md": "67cbd038ef036f997e530b78dda7154f4de6ce30d393a1a66dfbbf1a5fca029f",
+              "sustainability-evidence-review/SKILL.md": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+              "sustainability-guideline-review/SKILL.md": "1fff34af91e578d40b91c38924d978bea4421faf8b6845971b17f0b8637a1505",
+              "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+              "sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a",
+              "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1"
+            },
+            "input": "69c571c02b4282c3b7a2a36a9abab40cae36ffcb6184eec7dfc5192b7ce12230",
+            "instruction": "416a1c7f0a102d51d47f5ed51af1cbd919ff49c1ce047a2eacd4e0680b15dab6",
+            "skill": "8c49842d1499a141f017d422b1703e0631a3806aac99737b0bdddd23303792b2",
+            "reference": "c99ea5abd6f848ff0df938cde6a2c9317c01d4c355e6b6b724ee1b29384d4508",
+            "grader": "f2917dcaab5f36488718e94a16700d2ea2fea3a8f43105004cbf9cf273d48d84"
+          },
+          "reportSHA256": null,
+          "collectionRequired": true,
+          "collectionArtifactSHA256": null,
+          "collectionMatchesReference": false,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T13:38:51.886134Z",
+          "finishedAt": "2026-11-04T13:39:39.638552Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": [
+              "Invalid report structure",
+              "Missing, changed, or wrong-origin collection artifact"
+            ]
+          },
+          "report": null
+        }
+      ],
+      "accepted": 0,
+      "errors": 0
+    }
+  ]
+}

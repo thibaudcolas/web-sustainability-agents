@@ -49,6 +49,32 @@ Questions use claim-validation semantics: `pass` means supported, and `fail` mea
 
 The breadth verifier adds collection-artifact validation to the existing numeric, label, evidence-ID and explanation-presence checks. It rejects missing or altered collection artifacts, wrong origins, changed source hashes and invented evidence. It does not semantically grade prose, calibrate recommendation usefulness or establish that the supplied reference labels are correct. Full reports remain available for owner review.
 
+## Completed model comparison
+
+Both required model arms accept **14/16 complete reports (87.5%)** under the frozen strict verifier. Read the [case-by-case comparison](breadth-review-cases.md) for supplied facts, reference answers, model judgments and recommendation explanations. The [published results](assets/breadth-benchmark-results.json) retain every trial, including setup exceptions and their unchanged-input retries.
+
+| Measure                                         | GPT-6.1 Sol/low | Neuralwatt DeepSeek V4.1 Flash/high |
+| ----------------------------------------------- | --------------- | ----------------------------------- |
+| Complete reports accepted                       | 14/16           | 14/16                               |
+| Claim labels matching references                | 31/32           | 31/32                               |
+| Numeric value, unit and basis matching          | 15/16           | 15/16                               |
+| Recommendation actions matching                 | 16/16           | 16/16                               |
+| Required collection artifacts matching          | 4/4             | 4/4                                 |
+| Setup failures, retried without changing inputs | 2               | 0                                   |
+
+Harbor 0.23.0 ran both arms through Codex CLI 0.166.0 with matching frozen task, skill, collector and verifier hashes. The [controls](assets/breadth-benchmark-controls.json) accept 16/16 oracle reports and 0/16 no-operation reports. Sol's initial campaign has twelve accepted reports, two graded rejections and two setup failures: a missing npm platform binary and a temporary Debian package-resolution failure. Only those two setup failures were retried; both retries passed. No graded prediction was retried or selected by its score.
+
+Both models disagree with the references on the same two distinctions:
+
+- **Declared versus deployed dependency:** Both correctly preserve an unknown deployed version and reject an unsupported immediate upgrade. The reference labels “The exact deployed Django version is unresolved” as a supported claim (`pass`); both models label the underlying state `inconclusive`. The instructions' exception for unresolved direct-state questions makes this ambiguous. A future case version needs an explicit question mode.
+- **Untested valid submission:** The reference counts zero documented successful submissions; both models return null because valid submission was never tested. The facts contain no explicit successful-submission counter. A future case version must distinguish counting recorded events from measuring an untested outcome.
+
+Original scores remain unchanged. These disagreements identify reference-contract work, rather than establishing that either model gave harmful advice. The verifier checks recommendation actions and explanation presence, not the semantic quality of the prose. These author-created development cases cannot establish model superiority, general audit accuracy or a causal advantage from skills.
+
+Trajectory inspection also found the instructed `python3 /app/collect.py` tool call and a returned observation in all eight required model handoffs. The [invocation evidence](assets/breadth-collector-invocations.json) records case IDs, call IDs and trace/artifact hashes without publishing provider transcripts. This corroborates actual agent-triggered collection for these frozen bundles. It does not validate live browser orchestration or interactive scope clarification.
+
+Next, independently review the two question contracts and recommendation explanations, preinstall the pinned harness dependencies to reduce setup failures, and add complete site tasks with scope clarification and recoverable tool failures. Preserve this campaign as the baseline. Inference energy and billing remain unreconciled; setup time is not a model-efficiency measurement.
+
 ## Reproduce
 
 ```sh
@@ -67,3 +93,5 @@ harbor run -c benchmarks/neuralwatt.json -p .audit-work/breadth-tasks-v1 \
 The required model arms remain GPT-6.1 Sol/low and Neuralwatt DeepSeek V4.1 Flash/high using the existing Codex harness configuration. Current review skills and all their references are copied into the tasks at build time. Do not rebuild or edit them during a campaign. The builder refuses a nonempty output directory.
 
 Publish completed campaigns with `benchmarks/publish_expanded.py --breadth <job directories...>`. The publisher regrades saved reports and collection artifacts, verifies the unchanged base/breadth graders, and compares all task/skill/collector hashes across model arms. It exports allowlisted reports, diagnostics, usage and collection-artifact status without provider transcripts or credentials. Model results must be reported separately from oracle controls, setup failures and retries.
+
+Regenerate the human-readable comparison with `uv run --locked --script benchmarks/render_breadth.py`, then format the generated Markdown with Prettier. The renderer requires exactly one graded prediction per model and case; duplicate graded attempts are rejected rather than choosing a better score.

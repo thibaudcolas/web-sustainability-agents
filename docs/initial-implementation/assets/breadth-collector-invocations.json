@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "0.1.0",
+  "method": "Inspect actual agent tool-call entries for the instructed Python collector and match returned observations; corroborate with verifier-checked collection artifacts. Source trajectories retained privately. This is a bounded frozen-data handoff, not live browser or full audit orchestration validation.",
+  "records": [
+    {
+      "modelArm": "sol",
+      "case": "cache-private-public",
+      "traceSHA256": "815a9bf6cc68c7ad6c732fee1101c1d25135317df62a36c8c868f95b2af37760",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 7,
+          "function": "exec",
+          "toolCallId": "call_de1b714f1d2f4b72bbc4a9482cd49154",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "a7702a5abeaeb095cee93c7a3662763b49bcacef1de9312c1b8ca8feae2f34cb",
+          "returnedObservationPresent": true,
+          "observationSHA256": "f0cca381654c2372d66e94f3945f12fef1524cc71ea86e61ac8ea2ab4c32e9f0"
+        }
+      ],
+      "collectionArtifactSHA256": "4695535021c17befd40e09f1828914651657506deb554400600704deb03227f4",
+      "gradedReward": 1.0
+    },
+    {
+      "modelArm": "sol",
+      "case": "carbon-delegated-presence",
+      "traceSHA256": "cccf7df50e1b1d0066ac5332e6279944d756ae4a2a8078fe79694d61d7bfbdf8",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 7,
+          "function": "exec",
+          "toolCallId": "call_d1ba46f79a744aa880d383592ec40ed8",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "ac9525dcd427453b94b74c8e4ca4ec6a82aae3cf606c9198541bbb4201392bfa",
+          "returnedObservationPresent": true,
+          "observationSHA256": "866a251426aa98528c67c81b56e5438242757c490c3f55b072e4a2bf180d60e3"
+        }
+      ],
+      "collectionArtifactSHA256": "3749c25c797c102ede972705fce6d2c108b7e624cf84303e6f73de764b72d11b",
+      "gradedReward": 1.0
+    },
+    {
+      "modelArm": "sol",
+      "case": "journey-false-success",
+      "traceSHA256": "4a2d8057ff3f565765e08fbe61d97bb3375a3f528601584e1938afb0881f4f91",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 7,
+          "function": "exec",
+          "toolCallId": "call_2ac49faf9d464d41a0c7d0c67145a515",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "8d5a2693d7eaabe4cbce3f936a4cc7f3be49bd21b45e232627c72c163a99685d",
+          "returnedObservationPresent": true,
+          "observationSHA256": "ba7130c73e7a3a1bef654448f17b21d7f590b37e31df82c9f2454dd291649459"
+        }
+      ],
+      "collectionArtifactSHA256": "8b64ce3019d154d926599fd6ebd49e54a80a2096169504df16c9590a15feb5e1",
+      "gradedReward": 1.0
+    },
+    {
+      "modelArm": "sol",
+      "case": "source-deployment-conflict",
+      "traceSHA256": "08c86dc5ec981bc9e4df897756a0a3fdee6a723c7bf16489fad89f4c2748f18b",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 7,
+          "function": "exec",
+          "toolCallId": "call_00b2130b01a64769829f822544c4c8eb",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "85d591867ef391971658350a01de263d1645e534b8ff18138e87b3a22e5151b2",
+          "returnedObservationPresent": true,
+          "observationSHA256": "287c77ac52169e862491131e0c324d4beb9198cd0de1a09ae5d8cfaacac84b7d"
+        }
+      ],
+      "collectionArtifactSHA256": "5170aedf66bb29b1eac1cb09fb5006b08a7480119704a83f6158537daeb78540",
+      "gradedReward": 1.0
+    },
+    {
+      "modelArm": "deepseek",
+      "case": "cache-private-public",
+      "traceSHA256": "09e0066b7641a48ee2ba0eea677aae2e69d95af97d42ae425b729de288edfd34",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 5,
+          "function": "exec_command",
+          "toolCallId": "call_6754257fff4f4f149856f9bb",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "702fd49c5b77a1aff21fb498b256ffb2e9022d2972d100c6ae8271a822e37a2a",
+          "returnedObservationPresent": true,
+          "observationSHA256": "d5ed1f1ab5b0a9b6103daeebfb570f904f9d39a42babb623e9cfacd876aae497"
+        }
+      ],
+      "collectionArtifactSHA256": "4695535021c17befd40e09f1828914651657506deb554400600704deb03227f4",
+      "gradedReward": 1.0
+    },
+    {
+      "modelArm": "deepseek",
+      "case": "carbon-delegated-presence",
+      "traceSHA256": "a2229b1b943cd6bbb2d20bae5230a14757ffcec72a21af8e466c93490bbdefdc",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 4,
+          "function": "exec_command",
+          "toolCallId": "call_40c02b75b9ca47f7af7a56f0",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "edaeb3d76f9ca7303b77e14f99f01473b742f9dafabc2326b4bcd8680610c7f7",
+          "returnedObservationPresent": true,
+          "observationSHA256": "495fbc79a2e187796a8bbc7a8370caed7fa3192848ea410965333f8106698218"
+        }
+      ],
+      "collectionArtifactSHA256": "3749c25c797c102ede972705fce6d2c108b7e624cf84303e6f73de764b72d11b",
+      "gradedReward": 1.0
+    },
+    {
+      "modelArm": "deepseek",
+      "case": "journey-false-success",
+      "traceSHA256": "d4deec39c652ba5d8d19aa6156b78d34419d9485aaf8f765aafa4077c4319308",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 5,
+          "function": "exec_command",
+          "toolCallId": "call_7b854b14c4304c088dff56c4",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "78e3e3dda42f78aab4bd45b9d135c420356ab1202a78945375a6e4a843907b0e",
+          "returnedObservationPresent": true,
+          "observationSHA256": "9b2ee21b5eee2afd2ef275c198f581f4163733a4b5ee8f1240f7bc502da97aba"
+        }
+      ],
+      "collectionArtifactSHA256": "8b64ce3019d154d926599fd6ebd49e54a80a2096169504df16c9590a15feb5e1",
+      "gradedReward": 1.0
+    },
+    {
+      "modelArm": "deepseek",
+      "case": "source-deployment-conflict",
+      "traceSHA256": "3572be3d0eb2d69de1086f2bc8b4639ff6183f32aab9f1028b565bb43012929e",
+      "recordedCollectorCalls": [
+        {
+          "stepId": 5,
+          "function": "exec_command",
+          "toolCallId": "call_84330944bd174d9d902fe159",
+          "invocation": "python3 /app/collect.py",
+          "argumentsSHA256": "702fd49c5b77a1aff21fb498b256ffb2e9022d2972d100c6ae8271a822e37a2a",
+          "returnedObservationPresent": true,
+          "observationSHA256": "6af2b5fe08f6c5d94d00f9dcc52423d6562b9b2e5a9bd04efc488c88ac7a3c8a"
+        }
+      ],
+      "collectionArtifactSHA256": "5170aedf66bb29b1eac1cb09fb5006b08a7480119704a83f6158537daeb78540",
+      "gradedReward": 1.0
+    }
+  ]
+}
