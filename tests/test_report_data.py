@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from audit.report import display_bytes, export_reports, report_stem
+from audit.report import display_bytes, enrich_reports, export_reports, report_stem
 
 
 class ReportDataTests(unittest.TestCase):
@@ -53,3 +53,47 @@ class ReportDataTests(unittest.TestCase):
             "https://a-b.example",
         ]
         self.assertEqual(len({report_stem(value) for value in origins}), len(origins))
+
+    def test_energy_and_traffic_keep_distinct_units_and_boundaries(self):
+        evidence = json.loads(
+            Path("docs/initial-implementation/assets/staged-audit.json").read_text()
+        )
+        energy = json.loads(
+            Path(
+                "docs/initial-implementation/assets/energy-experiment.json"
+            ).read_text()
+        )
+        traffic = json.loads(
+            Path(
+                "docs/initial-implementation/assets/traffic-scenarios.json"
+            ).read_text()
+        )
+        reports = export_reports(evidence, "bytes-digest")
+        ratings = json.dumps(
+            {site: report["ratings"] for site, report in reports.items()},
+            sort_keys=True,
+        )
+        enrich_reports(reports, energy, traffic, "energy-digest", "traffic-digest")
+        self.assertEqual(
+            ratings,
+            json.dumps(
+                {site: report["ratings"] for site, report in reports.items()},
+                sort_keys=True,
+            ),
+        )
+        for report in reports.values():
+            energy_rows = [
+                r for r in report["observations"] if r["metric"] == "cpu_package_energy"
+            ]
+            self.assertEqual(len(energy_rows), 3)
+            self.assertEqual({r["unit"] for r in energy_rows}, {"J"})
+            self.assertEqual(
+                {r["phase"] for r in energy_rows}, {"whole_browser_session"}
+            )
+            scenarios = [
+                r
+                for r in report["observations"]
+                if r["metric"] == "estimated_annual_pageviews"
+            ]
+            self.assertEqual(len(scenarios), 1)
+            self.assertEqual(scenarios[0]["basis"], "scenario")

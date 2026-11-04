@@ -582,6 +582,82 @@
       "value": 9376,
       "unit": "B",
       "category": "Stylesheet"
+    },
+    {
+      "site": "https://guide.wagtail.org",
+      "runId": "site-0-repeat-1",
+      "pageUrl": "https://guide.wagtail.org/en/",
+      "branch": "no_interaction",
+      "phase": "whole_browser_session",
+      "capturedAt": "2026-11-04T08:30:04.122082+00:00",
+      "status": "measured",
+      "basis": "observed",
+      "sourceId": "energy/site-0-repeat-1",
+      "sourceSHA256": "a5d4c856a942b8d04b717213604faf29e6b1d2d82db10bf0bf2d68ecc3e39dbf",
+      "metric": "cpu_package_energy",
+      "value": 68.75897216759999,
+      "unit": "J",
+      "category": "CPU package",
+      "scope": "whole-system CPU package during Firefox session; excludes separate DRAM and other device energy",
+      "protocolId": "co2-runner-firefox-session-v1",
+      "durationMs": 5790.7831160000005
+    },
+    {
+      "site": "https://guide.wagtail.org",
+      "runId": "site-0-repeat-2",
+      "pageUrl": "https://guide.wagtail.org/en/",
+      "branch": "no_interaction",
+      "phase": "whole_browser_session",
+      "capturedAt": "2026-11-04T08:30:17.925529+00:00",
+      "status": "measured",
+      "basis": "observed",
+      "sourceId": "energy/site-0-repeat-2",
+      "sourceSHA256": "a5d4c856a942b8d04b717213604faf29e6b1d2d82db10bf0bf2d68ecc3e39dbf",
+      "metric": "cpu_package_energy",
+      "value": 71.914550778,
+      "unit": "J",
+      "category": "CPU package",
+      "scope": "whole-system CPU package during Firefox session; excludes separate DRAM and other device energy",
+      "protocolId": "co2-runner-firefox-session-v1",
+      "durationMs": 5734.143457
+    },
+    {
+      "site": "https://guide.wagtail.org",
+      "runId": "site-0-repeat-3",
+      "pageUrl": "https://guide.wagtail.org/en/",
+      "branch": "no_interaction",
+      "phase": "whole_browser_session",
+      "capturedAt": "2026-11-04T08:30:31.665869+00:00",
+      "status": "measured",
+      "basis": "observed",
+      "sourceId": "energy/site-0-repeat-3",
+      "sourceSHA256": "a5d4c856a942b8d04b717213604faf29e6b1d2d82db10bf0bf2d68ecc3e39dbf",
+      "metric": "cpu_package_energy",
+      "value": 72.348815916,
+      "unit": "J",
+      "category": "CPU package",
+      "scope": "whole-system CPU package during Firefox session; excludes separate DRAM and other device energy",
+      "protocolId": "co2-runner-firefox-session-v1",
+      "durationMs": 5749.804980000001
+    },
+    {
+      "site": "https://guide.wagtail.org",
+      "runId": "crux-202609",
+      "pageUrl": null,
+      "branch": null,
+      "phase": "annual_scenario",
+      "capturedAt": "2026-11-04T08:32:19.393085+00:00",
+      "status": "scenario",
+      "basis": "scenario",
+      "sourceId": "traffic/https://guide.wagtail.org",
+      "sourceSHA256": "91c3039acc01f8fe6b790149adc5c634ae014575f820f75bdd051e489a43bc78",
+      "metric": "estimated_annual_pageviews",
+      "value": 244734,
+      "unit": "pageviews/year",
+      "category": "rank bucket median",
+      "scope": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+      "datasetMonth": "202609",
+      "rankBucket": 10000000
     }
   ],
   "ratings": [
@@ -709,6 +785,24 @@
       "x": "category",
       "series": ["runId", "phase"],
       "aggregation": "sum within a run and phase only"
+    },
+    {
+      "id": "session-energy",
+      "metric": "cpu_package_energy",
+      "unit": "J",
+      "x": "runId",
+      "series": ["pageUrl", "protocolId"],
+      "aggregation": "individual repetitions; median and range only for measured, completed, plausible counters",
+      "note": "Whole-system CPU package; different browser/viewport from traffic phases. Do not add to SWDM."
+    },
+    {
+      "id": "traffic-scenario",
+      "metric": "estimated_annual_pageviews",
+      "unit": "pageviews/year",
+      "x": "datasetMonth",
+      "series": ["site"],
+      "aggregation": "none",
+      "note": "Scenario point, not actual analytics or a confidence interval. Missing values remain unknown."
     }
   ]
 }

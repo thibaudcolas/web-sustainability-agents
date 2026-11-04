@@ -147,6 +147,99 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
     return reports
 
 
+def enrich_reports(
+    reports: dict[str, JSON],
+    energy: JSON,
+    traffic: JSON,
+    energy_digest: str,
+    traffic_digest: str,
+) -> None:
+    """Append independent energy and traffic series without combining incompatible metrics."""
+    for run in energy.get("runs", []):
+        parsed = urlsplit(run["url"])
+        site = f"{parsed.scheme}://{parsed.netloc}"
+        if site not in reports:
+            continue
+        measured = run["energy"]
+        status = (
+            measured["status"]
+            if run.get("journeyStatus") == "completed"
+            else "journey_failed"
+        )
+        if measured.get("allZero"):
+            status = "sensor_plausibility_unknown"
+        reports[site]["observations"].append(
+            {
+                "site": site,
+                "runId": run["id"],
+                "pageUrl": run["url"],
+                "branch": "no_interaction",
+                "phase": "whole_browser_session",
+                "capturedAt": run["capturedAt"],
+                "status": status,
+                "basis": "observed",
+                "sourceId": f"energy/{run['id']}",
+                "sourceSHA256": energy_digest,
+                "metric": "cpu_package_energy",
+                "value": measured.get("joules"),
+                "unit": "J",
+                "category": "CPU package",
+                "scope": measured.get("scope"),
+                "protocolId": "co2-runner-firefox-session-v1",
+                "durationMs": measured.get("sessionDurationMs"),
+            }
+        )
+    for item in traffic.get("results", []):
+        site = item["origin"]
+        if site not in reports:
+            continue
+        scenario = item["traffic"]
+        reports[site]["observations"].append(
+            {
+                "site": site,
+                "runId": f"crux-{traffic.get('datasetMonth', 'unknown')}",
+                "pageUrl": None,
+                "branch": None,
+                "phase": "annual_scenario",
+                "capturedAt": traffic.get("capturedAt"),
+                "status": scenario["status"],
+                "basis": "scenario",
+                "sourceId": f"traffic/{site}",
+                "sourceSHA256": traffic_digest,
+                "metric": "estimated_annual_pageviews",
+                "value": scenario.get("annualPageviews"),
+                "unit": "pageviews/year",
+                "category": "rank bucket median",
+                "scope": scenario.get("calibrationPopulation"),
+                "datasetMonth": traffic.get("datasetMonth"),
+                "rankBucket": item.get("rankBucket"),
+            }
+        )
+    for report in reports.values():
+        report["chartContracts"].extend(
+            [
+                {
+                    "id": "session-energy",
+                    "metric": "cpu_package_energy",
+                    "unit": "J",
+                    "x": "runId",
+                    "series": ["pageUrl", "protocolId"],
+                    "aggregation": "individual repetitions; median and range only for measured, completed, plausible counters",
+                    "note": "Whole-system CPU package; different browser/viewport from traffic phases. Do not add to SWDM.",
+                },
+                {
+                    "id": "traffic-scenario",
+                    "metric": "estimated_annual_pageviews",
+                    "unit": "pageviews/year",
+                    "x": "datasetMonth",
+                    "series": ["site"],
+                    "aggregation": "none",
+                    "note": "Scenario point, not actual analytics or a confidence interval. Missing values remain unknown.",
+                },
+            ]
+        )
+
+
 def report_stem(origin: str) -> str:
     """Use scheme and origin digest to avoid cross-site filename collisions."""
     parsed = urlsplit(origin)
@@ -167,9 +260,30 @@ def main() -> None:
         type=Path,
         default=ROOT / "docs/initial-implementation/assets/reports",
     )
+    parser.add_argument(
+        "--energy",
+        type=Path,
+        default=ROOT / "docs/initial-implementation/assets/energy-experiment.json",
+    )
+    parser.add_argument(
+        "--traffic",
+        type=Path,
+        default=ROOT / "docs/initial-implementation/assets/traffic-scenarios.json",
+    )
     args = parser.parse_args()
     raw = args.input.read_bytes()
     reports = export_reports(json.loads(raw), hashlib.sha256(raw).hexdigest())
+    enrichments = []
+    for path in [args.energy, args.traffic]:
+        source = path.read_bytes() if path.exists() else b"{}"
+        enrichments.append((json.loads(source), hashlib.sha256(source).hexdigest()))
+    enrich_reports(
+        reports,
+        enrichments[0][0],
+        enrichments[1][0],
+        enrichments[0][1],
+        enrichments[1][1],
+    )
     args.output.mkdir(parents=True, exist_ok=True)
     for origin, report in reports.items():
         name = report_stem(origin)
@@ -177,7 +291,11 @@ def main() -> None:
         with (args.output / f"{name}.csv").open("w", newline="") as output:
             rows = report["observations"]
             if rows:
-                writer = csv.DictWriter(output, fieldnames=list(rows[0]))
+                writer = csv.DictWriter(
+                    output,
+                    fieldnames=list(dict.fromkeys(key for row in rows for key in row)),
+                    lineterminator="\n",
+                )
                 writer.writeheader()
                 writer.writerows(rows)
 

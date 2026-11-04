@@ -26,10 +26,10 @@ Exact base units remain in machine data; human traffic tables use decimal KB or 
 
 The initial chart contracts cover phase traffic, incremental traffic, and resource composition. They specify dimensions and aggregation before any rendering implementation. Cumulative phases must not be stacked. Resource categories can be stacked only within the same run and phase. Fresh accept/reject branches are separate trajectories. Partial accounting stays visible in tables and chart descriptions.
 
-## Additional series
+## Energy and traffic series
 
-Energy experiments should export one row per repetition, including joules, scope, hardware/browser profile, duration, counter name, and validity. Show individual runs plus median and range; a range is not a confidence interval. Do not align a whole Firefox session with a Chromium phase as if they were equivalent measurements.
+The exporter also reads the energy and traffic artifacts when available. Energy rows retain one observation per repetition, including joules, scope, protocol, duration, counter category, and validity. The linked energy artifact supplies full hardware/browser provenance. Show individual runs plus median and range; a range is not a confidence interval. Do not align a whole Firefox session with a Chromium phase as if they were equivalent measurements.
 
-Traffic scenarios need origin, rank bucket, dataset month, lookup scope, mapping revision, estimated annual pageviews, and a `scenario` basis. Missing lookup is not zero traffic or a known unranked bucket. Site analytics can replace the scenario only with matching scope and period. An annual impact calculation additionally needs a defensible page mix and repeat-visit model; a homepage multiplied by guessed traffic is not a measured annual footprint.
+Traffic rows retain origin, rank bucket, dataset month, estimated annual pageviews, and a `scenario` basis, with source hashes linking to lookup scope and mapping provenance. Missing lookup is not zero traffic or a known unranked bucket. Site analytics can replace the scenario only with matching scope and period. An annual impact calculation additionally needs a defensible page mix and repeat-visit model; a homepage multiplied by guessed traffic is not a measured annual footprint.
 
 For future charts, preserve trial and protocol IDs rather than only aggregate values. This enables distributions, before/after comparisons, per-template breakdowns, and error bars once repeated matched observations exist. Accessible labels, equivalent tables, and downloadable data belong to the later presentation implementation.

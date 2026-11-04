@@ -1,0 +1,1391 @@
+{
+  "schemaVersion": "0.2.0",
+  "status": "Public development comparison; no held-out accuracy claim",
+  "pairedModels": [],
+  "pairedInputHashesMatch": false,
+  "costStatus": "Harness estimates, not reconciled invoices; missing cost/energy is unknown",
+  "campaigns": [
+    {
+      "name": "expanded-v2-oracle",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T08:45:00.040364",
+      "finishedAt": "2026-11-04T08:48:34.667916",
+      "trials": [
+        {
+          "case": "consent-absent",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "64bdd47cb4dcff86d53060f1f7221903e69e5ed643c2e22904b1256992f062ab",
+          "hashes": {
+            "input": "0d67d120d87c1ad46675613913fc3dfa5128641813d79316c8a12f95d0f54fe7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "924fbf3df9890ea2ee56e49ef463d3082b8b720e15bc48580d2bd89e49040102",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "1158dd871df0f4fb95611e0cc51edc7df8d7783e699b1bd40c0910e636999c4e",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:00.141718Z",
+          "finishedAt": "2026-11-04T08:45:40.914260Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://consent.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 50,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "disclosure-scope",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "9f506e3a1d4ed6478223485229cb5ffb21aa99e4cf830c49267081a71831ee86",
+          "hashes": {
+            "input": "8ca8f4295e3483d9a6c47e69d9d51cb8d2519b6938743374d9b70a6ab89fcccc",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "b38fdf9f26abc7d51a28837c776de54f8aeeeaccf6585bbafa305c67e997ec15",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "b5b669b97d32c14e9b041b9b2ac20dfab522ac08ae4d8f5668ccbc2d07e49151",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:41.002838Z",
+          "finishedAt": "2026-11-04T08:46:21.255207Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.8043850101072928,
+                "unit": "tonnes/site/year",
+                "basis": "calculated",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-boundary",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "fd240fdc13b4b1ff6a086480e8d2a5a6d8ee8f554c6b4fb49755ab6200a7986a",
+          "hashes": {
+            "input": "f0b7f1539bc70f8a7533a0292d36d32d2d2c2389615aedd7eeaa753eb618cbae",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "9cadbae286004a11c5e63d6091ccf049875761a7735212d70faf9ac228010f3d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "bb7a4d2dd6239dc2ff6f7d7da78ee6d0a8b0bc76a3996060d2b6e3b7788ce65c",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:21.331028Z",
+          "finishedAt": "2026-11-04T08:46:56.418757Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 7.2,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "energy-missing",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4c1fd7c4c2a69847314335f6603a856a08adb4016dbbcedfa964c86bc0a2ef60",
+          "hashes": {
+            "input": "d2e4fae6f19486cfcd57092cdd9c82201767b21a725570f24a14428bf1d2cae5",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "d43b716998a49c7ad85d49ae8599c4dea4693c900d233d6a8abe4e97b40b4419",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "f2070fe432b6a4647fc1f6c676aa6aafbf41e688873e60aa422e18f35358c160",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:56.429608Z",
+          "finishedAt": "2026-11-04T08:47:25.035900Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://energy-missing.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "J",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "fingerprints",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "e9ade8ab5ff8a6ac900a149c43399749e8d93154f62040d43c39482af4a06958",
+          "hashes": {
+            "input": "0f72188bbca419dc77dc62c2122db96e4d4f66053ba94e7164c0fe0ce75b4c33",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7a05d2209e8d14494d7910cb747f8c13b0bcded80cc2ba82809c38713f278d6c",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "1926a1eea428f95e8bcdfdcc284e4faf634c1f445deca85a5041fce1d1f80380",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:21.266272Z",
+          "finishedAt": "2026-11-04T08:46:56.487714Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://technology.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "media-source",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "0be64ed00c0ba2947090ea934f04fc1bfa4d49967305bc588ba108120958499a",
+          "hashes": {
+            "input": "01c975d9c54d4e936d120dfcb99ed6ef51f2cd30f1b9dbea7a1c786739035780",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7f466e798bd1563704ff0a111b2669505f1151ac94a737c20823cbe3eaaafcd6",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "34d34531ff3cb92b037e9f2b0044ffde6d553db53711d67c9756dc46034c5b63",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:28.871709Z",
+          "finishedAt": "2026-11-04T08:47:59.794198Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 177.126,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "phases",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "90b4168a4b2b3a51cd50183f81c717ab0dd478ec74c7c18f438fd33b00085030",
+          "hashes": {
+            "input": "084732025dc6386212a5214abab452f551e96a136d056c50133c9acce61b8270",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "901f7b2dc677991006bcb1b185ac30d7c6fefcc03fc41bfd0cb3cb6812fbdde3",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "6351c5b95fccadf81c16590f843ce4e9a6de8f3ded7016ab4b4cce0546996ecd",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:00.114733Z",
+          "finishedAt": "2026-11-04T08:45:40.993195Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 944.379,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m2",
+                "value": 1.107665,
+                "unit": "MB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m3",
+                "value": 163.286,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "policy-and-coverage",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "2af382f6db8e9d960994493bbb7ff15fea057102e43676d42cffa6c39ae3612c",
+          "hashes": {
+            "input": "483ba3e8dc3eb3d0930699c6057e46423bcfee7f06a2791c2bff5f8b0de336e4",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "c6a110b5791e330efc4f396af25a1dedef7181dad7d23cdeb1090dca5d78f7fe",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "d712132541bb998b23a8500cb914da84c21b119efe8cb3dbf4c6031a22d5ecbf",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:59.801465Z",
+          "finishedAt": "2026-11-04T08:48:34.664879Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://policy.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "preserve-and-attest",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6c3bb62dcae32f20a6013d8d8c2c56a27693bf52c05d170cd3aad01338028497",
+          "hashes": {
+            "input": "bb3530c02afa9a46ee0b91f2d721cd600f21e51e62d951b9190e8a6590c7fca7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "eb99d235e0b1601f2feb40a3209d952b4f0dd1f1d56d16b3d7e83af0e7d75c25",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "e8f306d7ec814e3c166b57f47d81d0ca5016ba69a457c904d33a70e47174cf94",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:51.838896Z",
+          "finishedAt": "2026-11-04T08:48:22.516461Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://fixture.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "pass",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "pass",
+                "evidenceIds": ["e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1", "e2"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "preserve",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "resource-errors",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6f5cb2dcb90f24e371306c9ad4586dd6e326f4bf5c298c86692557053d2af503",
+          "hashes": {
+            "input": "3053d231eacad80210f6d8b18df638230f21135e978a5ab3a0054b6823ad0913",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "0550dad1214f4ff0aff542bf9b7c95e052b341e7e13fbe78e83e14a2ccb3feed",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "1f6b4bd9239e3591b452c0968b3488cd36cb353db0d9955d72d735832028200a",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:40.925010Z",
+          "finishedAt": "2026-11-04T08:46:21.321856Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://errors.example",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 0.12,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "m2",
+                "value": null,
+                "unit": "KB",
+                "basis": "observed",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "traffic-missing",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "555f77195baa6092e47074b13180dc4022d16068890d7bcdae0b783cf3ffbc8e",
+          "hashes": {
+            "input": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "0b30fc5e8a0f88df2d8ee47db6053eb3f86d4c8930e2be412304d5443514c93c",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:25.041721Z",
+          "finishedAt": "2026-11-04T08:47:51.833434Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://guide.wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": null,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "investigate",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        },
+        {
+          "case": "traffic-scenario",
+          "agent": "oracle",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "ffa41fe6b58902ee918a79c233bb82b39226547faf3b541aa58a27d83526876a",
+          "hashes": {
+            "input": "0b977ac0568cc4c39194eff1449bf4b06db5980aa805105e7f8bad207724cc25",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "a054f411206353706435ae4793bb91dc6ae30225ebb2493abe30a41a9d18476d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": "7aed9796b7c19da7233dee39ab372ab2571abb1adf8e344c2e520e3357953eef",
+          "reward": 1.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:56.497460Z",
+          "finishedAt": "2026-11-04T08:47:28.864333Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 1,
+            "errors": []
+          },
+          "report": {
+            "schemaVersion": "0.2.0",
+            "summary": {
+              "site": "https://wagtail.org",
+              "overallScore": null
+            },
+            "answers": [
+              {
+                "id": "q1",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q2",
+                "outcome": "fail",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              },
+              {
+                "id": "q3",
+                "outcome": "inconclusive",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "metrics": [
+              {
+                "id": "m1",
+                "value": 572851,
+                "unit": "pageviews/year",
+                "basis": "scenario",
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ],
+            "recommendations": [
+              {
+                "id": "r1",
+                "action": "not_supported",
+                "evidenceIds": ["e1"],
+                "explanation": "Oracle control for the frozen development contract, not an independent audit judgment."
+              }
+            ]
+          }
+        }
+      ],
+      "accepted": 12,
+      "errors": 0
+    },
+    {
+      "name": "expanded-v2-nop",
+      "harborVersion": "0.23.0",
+      "startedAt": "2026-11-04T08:45:00.967150",
+      "finishedAt": "2026-11-04T08:48:34.545590",
+      "trials": [
+        {
+          "case": "consent-absent",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "64bdd47cb4dcff86d53060f1f7221903e69e5ed643c2e22904b1256992f062ab",
+          "hashes": {
+            "input": "0d67d120d87c1ad46675613913fc3dfa5128641813d79316c8a12f95d0f54fe7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "924fbf3df9890ea2ee56e49ef463d3082b8b720e15bc48580d2bd89e49040102",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:01.088955Z",
+          "finishedAt": "2026-11-04T08:45:40.530184Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "disclosure-scope",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "9f506e3a1d4ed6478223485229cb5ffb21aa99e4cf830c49267081a71831ee86",
+          "hashes": {
+            "input": "8ca8f4295e3483d9a6c47e69d9d51cb8d2519b6938743374d9b70a6ab89fcccc",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "b38fdf9f26abc7d51a28837c776de54f8aeeeaccf6585bbafa305c67e997ec15",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:40.678838Z",
+          "finishedAt": "2026-11-04T08:46:20.988529Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "energy-boundary",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "fd240fdc13b4b1ff6a086480e8d2a5a6d8ee8f554c6b4fb49755ab6200a7986a",
+          "hashes": {
+            "input": "f0b7f1539bc70f8a7533a0292d36d32d2d2c2389615aedd7eeaa753eb618cbae",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "9cadbae286004a11c5e63d6091ccf049875761a7735212d70faf9ac228010f3d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:21.000290Z",
+          "finishedAt": "2026-11-04T08:46:56.333857Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "energy-missing",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "4c1fd7c4c2a69847314335f6603a856a08adb4016dbbcedfa964c86bc0a2ef60",
+          "hashes": {
+            "input": "d2e4fae6f19486cfcd57092cdd9c82201767b21a725570f24a14428bf1d2cae5",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "d43b716998a49c7ad85d49ae8599c4dea4693c900d233d6a8abe4e97b40b4419",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:43.913465Z",
+          "finishedAt": "2026-11-04T08:47:16.861530Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "fingerprints",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "e9ade8ab5ff8a6ac900a149c43399749e8d93154f62040d43c39482af4a06958",
+          "hashes": {
+            "input": "0f72188bbca419dc77dc62c2122db96e4d4f66053ba94e7164c0fe0ce75b4c33",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7a05d2209e8d14494d7910cb747f8c13b0bcded80cc2ba82809c38713f278d6c",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:15.521291Z",
+          "finishedAt": "2026-11-04T08:46:43.907762Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "media-source",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "0be64ed00c0ba2947090ea934f04fc1bfa4d49967305bc588ba108120958499a",
+          "hashes": {
+            "input": "01c975d9c54d4e936d120dfcb99ed6ef51f2cd30f1b9dbea7a1c786739035780",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "7f466e798bd1563704ff0a111b2669505f1151ac94a737c20823cbe3eaaafcd6",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:28.617752Z",
+          "finishedAt": "2026-11-04T08:47:59.565185Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "phases",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "90b4168a4b2b3a51cd50183f81c717ab0dd478ec74c7c18f438fd33b00085030",
+          "hashes": {
+            "input": "084732025dc6386212a5214abab452f551e96a136d056c50133c9acce61b8270",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "901f7b2dc677991006bcb1b185ac30d7c6fefcc03fc41bfd0cb3cb6812fbdde3",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:01.049836Z",
+          "finishedAt": "2026-11-04T08:45:40.668964Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "policy-and-coverage",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "2af382f6db8e9d960994493bbb7ff15fea057102e43676d42cffa6c39ae3612c",
+          "hashes": {
+            "input": "483ba3e8dc3eb3d0930699c6057e46423bcfee7f06a2791c2bff5f8b0de336e4",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "c6a110b5791e330efc4f396af25a1dedef7181dad7d23cdeb1090dca5d78f7fe",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:59.574709Z",
+          "finishedAt": "2026-11-04T08:48:34.542220Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "preserve-and-attest",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6c3bb62dcae32f20a6013d8d8c2c56a27693bf52c05d170cd3aad01338028497",
+          "hashes": {
+            "input": "bb3530c02afa9a46ee0b91f2d721cd600f21e51e62d951b9190e8a6590c7fca7",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "eb99d235e0b1601f2feb40a3209d952b4f0dd1f1d56d16b3d7e83af0e7d75c25",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:45.706604Z",
+          "finishedAt": "2026-11-04T08:48:18.522314Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "resource-errors",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "6f5cb2dcb90f24e371306c9ad4586dd6e326f4bf5c298c86692557053d2af503",
+          "hashes": {
+            "input": "3053d231eacad80210f6d8b18df638230f21135e978a5ab3a0054b6823ad0913",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "0550dad1214f4ff0aff542bf9b7c95e052b341e7e13fbe78e83e14a2ccb3feed",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:45:40.541519Z",
+          "finishedAt": "2026-11-04T08:46:15.515101Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "traffic-missing",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "555f77195baa6092e47074b13180dc4022d16068890d7bcdae0b783cf3ffbc8e",
+          "hashes": {
+            "input": "1d377012fe7d9b24726b93e81d9369b9878b12e6ff9fe94cd94d1b7eabf3670e",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "db9ef06cfb1394fdffc082fd25930c212d1787e2b63ab8866de1d9f01e71a921",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:47:16.866705Z",
+          "finishedAt": "2026-11-04T08:47:45.697495Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        },
+        {
+          "case": "traffic-scenario",
+          "agent": "nop",
+          "requestedModel": null,
+          "requestedReasoning": null,
+          "codexVersion": null,
+          "provider": null,
+          "verifierMode": "separate",
+          "taskChecksum": "ffa41fe6b58902ee918a79c233bb82b39226547faf3b541aa58a27d83526876a",
+          "hashes": {
+            "input": "0b977ac0568cc4c39194eff1449bf4b06db5980aa805105e7f8bad207724cc25",
+            "instruction": "ce60d490f677d727c8d9830ec450b1b5a690b23764872d96f81f32fe614c1d29",
+            "skill": "fe1ac47cf604f7c429c4284f6fc989199f363e2178b5bb0e5731068636365b70",
+            "reference": "a054f411206353706435ae4793bb91dc6ae30225ebb2493abe30a41a9d18476d",
+            "grader": "f60082f010824f85cc1e41ed15a467b8a5706f36fdfca33a3d65150ea6449328"
+          },
+          "reportSHA256": null,
+          "reward": 0.0,
+          "exception": null,
+          "startedAt": "2026-11-04T08:46:56.343357Z",
+          "finishedAt": "2026-11-04T08:47:28.607530Z",
+          "usage": {
+            "inputTokens": null,
+            "cachedTokens": null,
+            "outputTokens": null,
+            "harnessReportedCostUSD": null,
+            "inferenceEnergyJoules": null,
+            "energyStatus": "not reconciled for this campaign"
+          },
+          "artifactRegrade": {
+            "reward": 0,
+            "errors": ["Invalid report structure"]
+          },
+          "report": null
+        }
+      ],
+      "accepted": 0,
+      "errors": 0
+    }
+  ]
+}

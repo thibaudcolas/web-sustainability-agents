@@ -25,6 +25,10 @@ The Python verifier adds numeric value/unit/basis checks, per-site scope, explic
 
 References and the verifier run in a separate Python container. The agent receives only input, instructions, and skill version 0.3.0. Oracle controls must pass; no-operation controls must fail. Neither validates that coordinator-authored labels are independently correct. The corpus is public development material, not a held-out benchmark.
 
+## Validated controls
+
+All 12 revised oracle tasks passed and all 12 revised no-operation tasks failed as intended, with zero harness exceptions. The [published controls](assets/expanded-benchmark-controls.json) retain reports, diagnostic regrades, and task hashes. The initial control run also passed before review clarified epistemic question wording and aligned numeric precision; only the revised tasks are used for the model comparison.
+
 ## Reproduce
 
 ```sh

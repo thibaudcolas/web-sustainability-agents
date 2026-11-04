@@ -32,6 +32,10 @@ The current task follows this sequence. It is not necessary to finish every futu
 | B14 | Portable orchestration across agent harnesses                                     | Same skills/contracts and controlled evidence under Codex, Claude Code, OpenCode/pi                                 | After task contract stabilizes            |
 | B15 | First load versus successful task cost                                            | Consent enforcement, search fallback, screenshot readability at high DPR, usable video activation                   | Expand interaction fixtures               |
 
+## Benchmark execution efficiency
+
+**B16:** Preinstall the pinned Codex adapter dependencies in a reusable environment image. The expanded campaign repeatedly installs OS packages in each trial; setup currently dominates model review time. Validate that the rebuilt environment preserves task inputs, reference isolation, and model settings before comparing its runtime or energy. Do not change task images during an active campaign.
+
 ## Feedback routing
 
 | Owner feedback                            | Pipeline location                        | Regression                                                                  |
