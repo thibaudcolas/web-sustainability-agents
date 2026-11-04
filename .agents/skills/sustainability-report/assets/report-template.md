@@ -4,9 +4,13 @@
 
 {Scoped score and pass/problem/unknown counts; number of pages and journeys.}
 
-## First-load page sizes
+## Results by WSG area
 
-{Page name, observed size or range, and whether the measurement is complete. Define kB and first load.}
+{Passing percentage and count, checked groups out of the area total, unknown count.}
+
+## Page measurements
+
+{First-load transfer per page and completeness. Separate modeled browser energy table where collected.}
 
 ## Priorities
 
@@ -14,7 +18,7 @@
 
 ### {Action or investigation title}
 
-{Priority words and direct WSG link.}
+{Priority words and direct WSG link with guideline title.}
 
 **What we found.** {Concrete observation.}
 
@@ -22,7 +26,7 @@
 
 **Next step.** {Useful action and success condition.}
 
-{Optional inspected screenshot, descriptive alternative text, caption, capture context.}
+{Optional inspected screenshot, descriptive alternative text, short caption.}
 
 [How we checked this: {meaningful description}](#evidence-check-id)
 
@@ -46,6 +50,6 @@
 
 ## Methodology and reproducibility
 
-{Actual sample, settings, collection and model provenance. Clearly separate newer illustrations.}
+{Actual sample, units, visit selection, score denominator, collection and model provenance. Clearly separate newer illustrations and energy experiments.}
 
 {Expandable technical download links and hashes for people reproducing the audit.}

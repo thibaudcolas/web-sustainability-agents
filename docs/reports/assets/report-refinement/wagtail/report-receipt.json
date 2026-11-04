@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "report-refinement-receipt-v1",
+  "site": "https://wagtail.org",
+  "reason": "Owner-requested presentation refinement and separate energy/context experiments; original scored session preserved.",
+  "commands": [
+    [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "audit/render_review.py",
+      "--session",
+      "docs/reports/assets/fresh-wagtail",
+      "--artifact-prefix",
+      "assets/fresh-wagtail",
+      "--editorial",
+      "docs/reports/assets/fresh-wagtail/editorial.json",
+      "--screenshots",
+      "docs/reports/assets/fresh-wagtail/screenshots/manifest.json",
+      "--image-prefix",
+      "assets/fresh-wagtail/screenshots",
+      "--presentation",
+      "docs/reports/assets/report-refinement/wagtail/presentation.json",
+      "--energy",
+      "docs/reports/assets/report-refinement/wagtail/energy.json",
+      "--supplement-prefix",
+      "assets/report-refinement/wagtail",
+      "--output",
+      "docs/reports/wagtail.md"
+    ],
+    [
+      "npx",
+      "prettier",
+      "--write",
+      "docs/reports/wagtail.md"
+    ]
+  ],
+  "inputSHA256": {
+    "audit/render_review.py": "b5eca11ff78183107043d9ff54abffe0d899e51b4530369865ef309c5ace8b8d",
+    "audit/report_details.py": "10e98260229767d39822020a1aa3efb9cc238e6d189b48572cfd51d72304d4b9",
+    "audit/render_review.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    ".agents/skills/sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1",
+    "docs/reports/assets/fresh-wagtail/editorial.json": "ada73d1eebe96e44e5477a9322484d4c1844709a60185a52edf6ec002063739d",
+    "docs/reports/assets/fresh-wagtail/screenshots/manifest.json": "1425ed1e8d11acfa3a7519b2e67cb839b4587eeeb2446b87b9dc4539b3dfc0ba",
+    "docs/reports/assets/fresh-wagtail/scores.json": "22a1bf693c5448f34d18081f8cdbfd48611d1bdad09a2a7aecece0f48e511953",
+    "docs/reports/assets/fresh-wagtail/review.json": "04ebbd19b85ede13304facec78b14229ee60adc1e137bfb5e551e1fb0027968f",
+    "docs/reports/assets/report-refinement/wagtail/presentation.json": "09494601d2a20738dcdf9693732754addffaf4fb7fe05474ff62cca0e67d412c",
+    "docs/reports/assets/report-refinement/wagtail/energy.json": "db0d79459d46637b4fdb18eb443602675f80ebe6746f86c33f22decfff853a19",
+    "docs/reports/assets/report-refinement/wagtail/context-preview.json": "ecafc92fcf9bf755d82763f9bcb67d63fce7cc073402a8d4b7b005a29592e9b2"
+  },
+  "output": "docs/reports/wagtail.md",
+  "outputSHA256": "86e936242ac49a96363a2ce079ad6d4d975c11ceeeaad0aacdfd3ba3bf20f9cc",
+  "originalSessionManifest": "docs/reports/assets/fresh-wagtail/manifest.json",
+  "originalSessionNote": "The original publication manifest identifies the earlier report edition; this receipt identifies the revised report. Neither replaces the original scored evidence.",
+  "energyArtifacts": "docs/reports/assets/report-refinement/wagtail/energy/reproduction.json",
+  "contextPreview": "Developer review by GPT-6.1 Sol, high reasoning, native Codex subagent; not blinded, no new browsing, not added to existing score."
+}

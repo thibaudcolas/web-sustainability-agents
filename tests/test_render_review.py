@@ -109,7 +109,7 @@ class EditorialContractTests(unittest.TestCase):
         self.assertGreaterEqual(len(probes["pages"]), 5)
         self.assertIn(f"**{len(probes['pages'])} pages** reviewed", body)
         self.assertNotIn("smaller sample than the default", body)
-        self.assertIn("## First-load page sizes", body)
+        self.assertIn("## Page measurements", body)
         self.assertIn("## After waiting and scrolling", body)
         self.assertIn("No cookie banner was observed in this sample", body)
         self.assertNotIn("Each cookie choice starts a separate fresh visit", body)

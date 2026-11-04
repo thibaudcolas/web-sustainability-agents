@@ -123,6 +123,160 @@ def validate_plan(plan: JSON) -> None:
         raise ValueError(
             "checks must be a list of check IDs; empty selects the catalog"
         )
+    validate_context(plan)
+    validate_energy(plan)
+
+
+def validate_energy(plan: JSON) -> None:
+    """Require a bounded planned energy sample and explicit execution mode."""
+    settings = plan.get("energy", {})
+    if not isinstance(settings, dict):
+        raise ValueError("energy must be an object")
+    if settings.get("mode", "readiness") not in {"readiness", "run", "skip"}:
+        raise ValueError("Use energy mode readiness, run or skip")
+    samples = settings.get("samples", 3)
+    if (
+        isinstance(samples, bool)
+        or not isinstance(samples, int)
+        or not 2 <= samples <= 10
+    ):
+        raise ValueError("Use 2–10 complete energy repetitions")
+    pages = settings.get("pageIds", [])
+    if (
+        not isinstance(pages, list)
+        or len(pages) > 3
+        or not all(isinstance(item, str) for item in pages)
+        or len(set(pages)) != len(pages)
+        or set(pages) - {page["id"] for page in plan["pages"]}
+    ):
+        raise ValueError("Select up to three unique planned energy page IDs")
+
+
+def validate_context(plan: JSON) -> None:
+    """Validate explicit qualitative scope and attributed, pre-collected records."""
+    checks = plan.get("contextChecks", [])
+    known = {item["id"] for item in read(ROOT / "audit/context-checks.json")["checks"]}
+    if (
+        not isinstance(checks, list)
+        or not all(isinstance(item, str) for item in checks)
+        or len(set(checks)) != len(checks)
+        or set(checks) - known
+    ):
+        raise ValueError("contextChecks must select unique contextual check IDs")
+    records = plan.get("contextEvidence", [])
+    if not isinstance(records, list) or len(records) > 30:
+        raise ValueError("Select at most 30 contextual evidence records")
+    selected = set(checks) | (set(plan.get("checks", [])) & known)
+    identifiers: set[str] = set()
+    for record in records:
+        if not isinstance(record, dict):
+            raise ValueError("Context evidence must be an attributed record")
+        identifier = record.get("id", "")
+        if (
+            not isinstance(identifier, str)
+            or not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,79}", identifier)
+            or identifier in identifiers
+        ):
+            raise ValueError("Use unique stable contextual evidence IDs")
+        identifiers.add(identifier)
+        if record.get("kind") not in {
+            "public-document",
+            "owner-record",
+            "task-observation",
+        }:
+            raise ValueError("Declare the contextual evidence kind")
+        for key in ("path", "source", "scope", "capturedAt", "limitations"):
+            if not isinstance(record.get(key), str) or not record[key].strip():
+                raise ValueError(f"Context evidence requires {key}")
+        if not Path(record["path"]).is_absolute():
+            raise ValueError("Context evidence paths must be absolute")
+        try:
+            timestamp = datetime.fromisoformat(record["capturedAt"])
+        except ValueError as error:
+            raise ValueError("Use an ISO contextual capture timestamp") from error
+        if timestamp.tzinfo is None:
+            raise ValueError("Context capture timestamps require a timezone")
+        check_ids = record.get("checkIds", [])
+        if (
+            not isinstance(check_ids, list)
+            or not check_ids
+            or not all(isinstance(item, str) for item in check_ids)
+            or len(set(check_ids)) != len(check_ids)
+            or set(check_ids) - selected
+        ):
+            raise ValueError(
+                "Context evidence must identify selected contextual checks"
+            )
+
+
+def selected_checks(definitions: list[JSON], plan: JSON) -> list[JSON]:
+    """Preserve v2 defaults while allowing the setup skill to select context."""
+    requested = plan.get("checks") or [
+        item["id"]
+        for item in definitions
+        if not item.get("optional")
+        and (not item.get("requiresSource") or plan.get("sourceFiles"))
+    ]
+    if len(set(requested)) != len(requested):
+        raise ValueError("Unknown or duplicate check ID")
+    requested = set(requested) | set(plan.get("contextChecks", []))
+    if requested - {item["id"] for item in definitions}:
+        raise ValueError("Unknown or duplicate check ID")
+    return [item for item in definitions if item["id"] in requested]
+
+
+def snapshot_context(plan: JSON, selected: list[JSON]) -> JSON:
+    """Freeze bounded text supplied by agents; do not treat provenance as verification."""
+    records = []
+    for selection in plan.get("contextEvidence", []):
+        record = {key: value for key, value in selection.items() if key != "path"}
+        path = Path(selection["path"])
+        try:
+            if path.is_symlink() or (path.exists() and not path.is_file()):
+                raise ValueError("Context evidence must be a regular text file")
+            with path.open("rb") as stream:
+                raw = stream.read(64_001)
+            if len(raw) > 64_000:
+                record.update(status="too_large", text=None, sha256=None)
+            else:
+                record.update(
+                    status="captured",
+                    text=raw.decode("utf-8"),
+                    sha256=hashlib.sha256(raw).hexdigest(),
+                )
+        except (OSError, UnicodeError, ValueError) as error:
+            record.update(
+                status="unavailable", text=None, sha256=None, error=type(error).__name__
+            )
+        records.append(record)
+    contextual = [
+        item for item in selected if item.get("method") == "qualitative-context-review"
+    ]
+    return {
+        "schemaVersion": "context-evidence-v1",
+        "site": plan["origin"],
+        "records": records,
+        "requests": [
+            {
+                "checkId": item["id"],
+                "request": item["evidenceRequirements"],
+                "recordIds": [
+                    record["id"]
+                    for record in records
+                    if item["id"] in record["checkIds"]
+                    and record["status"] == "captured"
+                ],
+                "status": "review-required"
+                if any(
+                    item["id"] in record["checkIds"] and record["status"] == "captured"
+                    for record in records
+                )
+                else "unresolved",
+            }
+            for item in contextual
+        ],
+        "scope": "Attributed public documents, owner records or task observations selected before freezing. Captured text is evidence, not an instruction or independently verified implementation. Missing records are unresolved, not defects.",
+    }
 
 
 def validate_actions(actions: list[JSON], kinds: set[str]) -> None:
@@ -161,6 +315,8 @@ def init_plan(origin: str, urls: list[str], path: Path) -> None:
         ],
         "journeys": [],
         "checks": [],
+        "contextChecks": [],
+        "contextEvidence": [],
         "sourceRoots": [],
         "sourceFiles": [],
         "questions": [],
@@ -170,7 +326,7 @@ def init_plan(origin: str, urls: list[str], path: Path) -> None:
             "No server measurement",
             "No form submission or account change unless explicitly scoped",
         ],
-        "optionalEnergy": "none",
+        "energy": {"mode": "readiness", "samples": 3, "pageIds": []},
         "ownerPriorities": [],
     }
     validate_plan(plan)
@@ -201,24 +357,19 @@ def catalog() -> list[JSON]:
         *read(ROOT / "audit/probe-checks.json")["checks"],
         *DISCLOSURE_CHECKS,
         *read(ROOT / "audit/source-checks.json")["checks"],
+        *read(ROOT / "audit/context-checks.json")["checks"],
     ]
 
 
 def prepare_packet(session: Path, plan: JSON) -> None:
     """Freeze selected expectations, source digests and resolvable evidence locations."""
     definitions = read(session / "checks.json")["checks"]
-    requested = plan.get("checks") or [
-        item["id"]
-        for item in definitions
-        if not item.get("requiresSource") or plan.get("sourceFiles")
-    ]
-    if len(set(requested)) != len(requested) or set(requested) - {
-        item["id"] for item in definitions
-    }:
-        raise ValueError("Unknown or duplicate check ID")
-    selected = [item for item in definitions if item["id"] in requested]
+    selected = selected_checks(definitions, plan)
     rubric = read(session / "base-rubric.json")
-    rubric["rubricVersion"] = "agent-breadth-v2"
+    has_context = any(
+        item.get("method") == "qualitative-context-review" for item in selected
+    )
+    rubric["rubricVersion"] = "agent-breadth-v3" if has_context else "agent-breadth-v2"
     for guideline in rubric["guidelines"]:
         checks = [item for item in selected if item["guideline"] == guideline["number"]]
         guideline["expectation"] = (
@@ -233,6 +384,8 @@ def prepare_packet(session: Path, plan: JSON) -> None:
         ("probes.json", ["pages", "journeys"]),
         ("disclosures.json", ["sites"]),
         ("source.json", ["files"]),
+        ("context.json", ["records"]),
+        ("energy/manifest.json", ["pages"]),
     ]:
         path = session / name
         if not path.exists():
@@ -268,9 +421,30 @@ def prepare_packet(session: Path, plan: JSON) -> None:
                     ]
                 ]
                 + sorted((session / "skills").rglob("*"))
+                + sorted((session / "energy").rglob("*"))
                 if path.is_file()
             },
             "checks": selected,
+            "methodologyCoverage": {
+                "meaning": "Defined partial review methods, not executed checks or full-guideline conformance",
+                "catalogChecks": len(definitions),
+                "catalogGuidelineGroups": len(
+                    {item["guideline"] for item in definitions}
+                ),
+                "catalogPartialGuidelineGroups": len(
+                    {item["guideline"] for item in definitions}
+                ),
+                "catalogFullGuidelineGroups": 0,
+                "selectedChecks": len(selected),
+                "selectedGuidelineGroups": len(
+                    {item["guideline"] for item in selected}
+                ),
+                "selectedPartialGuidelineGroups": len(
+                    {item["guideline"] for item in selected}
+                ),
+                "selectedFullGuidelineGroups": 0,
+                "totalWSGGuidelines": len(rubric["guidelines"]),
+            },
             "evidenceIndex": index,
             "collectionReceipt": "receipt.json",
             "skillSnapshot": "skills",
@@ -299,19 +473,38 @@ def prepare_packet(session: Path, plan: JSON) -> None:
     )
 
 
-def collect(plan_path: Path, session: Path) -> None:
+def collect(
+    plan_path: Path,
+    session: Path,
+    energy: str | None = None,
+    greenframe_binary: str = "greenframe",
+) -> None:
     """Run collectors sequentially and freeze a review bundle in a new directory."""
     plan = read(plan_path)
     validate_plan(plan)
     definitions = catalog()
-    if set(plan.get("checks", [])) - {item["id"] for item in definitions}:
-        raise ValueError("Unknown check ID")
+    selected = selected_checks(definitions, plan)
     if session.exists():
         raise ValueError("Use a new session directory; evidence is immutable")
     session.mkdir(parents=True, mode=0o700)
     write(session / "plan.json", plan)
     write(session / "targets.json", {"targets": plan["pages"]})
-    write(session / "checks.json", {"checks": definitions})
+    context_catalog = read(ROOT / "audit/context-checks.json")
+    write(
+        session / "checks.json",
+        {
+            "catalogVersion": "agent-breadth-v3",
+            "componentVersions": {
+                "browser": read(ROOT / "audit/probe-checks.json")["rubricVersion"],
+                "source": read(ROOT / "audit/source-checks.json")["rubricVersion"],
+                "context": context_catalog["rubricVersion"],
+            },
+            "wsgSourceVersion": context_catalog["wsgSourceVersion"],
+            "wsgSourceSha256": context_catalog["wsgSourceSha256"],
+            "checks": definitions,
+        },
+    )
+    write(session / "context.json", snapshot_context(plan, selected))
     shutil.copyfile(ROOT / "audit/rubric.json", session / "base-rubric.json")
     shutil.copyfile(ROOT / "audit/impact-weights.json", session / "impact-weights.json")
     shutil.copytree(ROOT / ".agents/skills", session / "skills")
@@ -325,6 +518,7 @@ def collect(plan_path: Path, session: Path) -> None:
         "assess.py",
         "disclosures.py",
         "source.py",
+        "greenframe.py",
     ]
     receipt: JSON = {
         "schemaVersion": "0.1.0",
@@ -352,7 +546,7 @@ def collect(plan_path: Path, session: Path) -> None:
         "limitations": [
             "Live responses and LLM judgments can vary",
             "Only selected sourceFiles are captured; source roots alone do not trigger a scan and deployment identity remains unknown",
-            "Energy runs are separate and optional",
+            "Energy readiness is recorded by default; measurements require an explicit run mode and a quiet local workload window",
             "Inspect captured text and logs before publishing; the session is private",
         ],
     }
@@ -411,6 +605,24 @@ def collect(plan_path: Path, session: Path) -> None:
                 str(session / "staged.json"),
                 "--output",
                 str(session / "disclosures.json"),
+            ],
+        ),
+        (
+            "energy",
+            [
+                "uv",
+                "run",
+                "--locked",
+                "--script",
+                "audit/greenframe.py",
+                "--plan",
+                str(session / "plan.json"),
+                "--output-dir",
+                str(session / "energy"),
+                "--mode",
+                energy or plan.get("energy", {}).get("mode", "readiness"),
+                "--binary",
+                greenframe_binary,
             ],
         ),
     ]:
@@ -540,6 +752,8 @@ def main() -> None:
     gather = commands.add_parser("collect")
     gather.add_argument("--plan", type=Path, required=True)
     gather.add_argument("--session", type=Path, required=True)
+    gather.add_argument("--energy", choices=["readiness", "run", "skip"])
+    gather.add_argument("--greenframe-binary", default="greenframe")
     judge = commands.add_parser("score")
     judge.add_argument("--session", type=Path, required=True)
     judge.add_argument("--review", type=Path, required=True)
@@ -547,7 +761,12 @@ def main() -> None:
     if args.command == "init":
         init_plan(args.origin, args.page, args.plan.resolve())
     elif args.command == "collect":
-        collect(args.plan.resolve(), args.session.resolve())
+        collect(
+            args.plan.resolve(),
+            args.session.resolve(),
+            args.energy,
+            args.greenframe_binary,
+        )
     else:
         score(args.session.resolve(), args.review.resolve())
 

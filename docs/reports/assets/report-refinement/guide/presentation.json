@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "report-presentation-v1",
+  "site": "https://guide.wagtail.org",
+  "reviewSHA256": "81b9b340955150748c990d2b225405e1d50a48e1d75ce91d26e73137bd511bcd",
+  "reason": "This presentation revision responds to owner feedback: clearer guideline descriptions, area results, concise illustrations, and a separate energy experiment. The scored audit evidence and outcomes are unchanged. The Renovate workflow investigation is now low priority because duplicate runs and their cost have not been verified.",
+  "findingOrder": [
+    "preference-behavior",
+    "media-delivery",
+    "layout",
+    "source-automation"
+  ],
+  "findingOverrides": {
+    "source-automation": {
+      "priority": "low",
+      "title": "Check whether Renovate updates run CI twice",
+      "summary": "The selected workflow listens for both pushes to Renovate branches and pull requests. A Renovate update could trigger both, but this audit has not checked the actual workflow runs.",
+      "whyItMatters": "If both runs repeat the same work, one could be unnecessary. The frequency and resource cost are unknown, so this belongs below the visitor-facing findings.",
+      "action": "Check a recent Renovate pull request in GitHub Actions. If two equivalent runs occur, keep the required checks and remove the redundant trigger.",
+      "reason": "Owner feedback: conditional duplication with no measured frequency or cost warrants low-priority investigation."
+    }
+  },
+  "captions": {
+    "manage-images-instruction": "Interface labels in the image guide need to stay readable in smaller image variants.",
+    "manage-images-narrow": "The mobile layout replaces the sidebar with search and menu controls."
+  },
+  "sourceExcerpts": {
+    "source-automation": {
+      "evidenceId": "source.json:files:7",
+      "startLine": 1,
+      "endLine": 8,
+      "repositoryUrl": "https://github.com/wagtail/guide",
+      "branch": "main",
+      "checkedOutRevision": "31a4547eb1f6de55baea84269723313784f6b544"
+    }
+  },
+  "nextAuditChecks": [
+    {
+      "title": "Content lifecycle",
+      "observation": "A release-review procedure and an explanation of historical copies are present; completed reviews have not been verified.",
+      "nextStep": "Check one dated review decision and the corresponding live and archived pages.",
+      "guideline": "5.18"
+    },
+    {
+      "title": "Audience needs",
+      "observation": "The guide names its audiences and documentation framework; the influence of user research is unknown.",
+      "nextStep": "Find one audience research finding that informed a design or content decision.",
+      "guideline": "2.2"
+    },
+    {
+      "title": "Access barriers",
+      "observation": "Desktop search reaches the image guide. Narrow layouts and no-JavaScript reading were inspected separately.",
+      "nextStep": "Complete the same task using keyboard-only input and a narrow screen.",
+      "guideline": "5.13"
+    }
+  ]
+}

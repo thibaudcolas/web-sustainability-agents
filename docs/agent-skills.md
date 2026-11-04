@@ -4,17 +4,20 @@ Install one entry point, `sustainability-audit`, then ask your agent to audit a 
 
 ## Entry point and specialist roles
 
-| Skill                             | Version | Role                                                                    |
-| --------------------------------- | ------- | ----------------------------------------------------------------------- |
-| `sustainability-audit`            | 0.4.0   | Discover the installed workflow and coordinate the audit                |
-| `sustainability-setup`            | 0.1.0   | Prepare tools and select 5–10 representative pages and meaningful tasks |
-| `sustainability-collection`       | 0.1.0   | Execute the accepted plan once and explain incomplete collection        |
-| `sustainability-evidence-review`  | 0.5.1   | Check measurements, phases and numeric interpretation                   |
-| `sustainability-guideline-review` | 0.2.0   | Judge selected WSG expectations and preserve unknowns                   |
-| `sustainability-claims-review`    | 0.2.0   | Review disclosures, estimates and source-informed recommendations       |
-| `sustainability-report`           | 0.1.1   | Write readable findings, evidence explanations and illustrated reports  |
+| Skill                             | Version | Role                                                                                           |
+| --------------------------------- | ------- | ---------------------------------------------------------------------------------------------- |
+| `sustainability-audit`            | 0.4.0   | Discover the installed workflow and coordinate the audit                                       |
+| `sustainability-setup`            | 0.2.0   | Prepare tools, representative tasks and relevant contextual checks                             |
+| `sustainability-context-review`   | 0.1.0   | Collect and interpret public/owner evidence about service decisions, lifecycles and governance |
+| `sustainability-collection`       | 0.2.0   | Execute the accepted plan once and explain incomplete collection                               |
+| `sustainability-evidence-review`  | 0.5.1   | Check measurements, phases and numeric interpretation                                          |
+| `sustainability-guideline-review` | 0.3.0   | Judge selected WSG expectations and preserve unknowns                                          |
+| `sustainability-claims-review`    | 0.3.0   | Review disclosures, estimates and source-informed recommendations                              |
+| `sustainability-report`           | 0.1.1   | Write readable findings, evidence explanations and illustrated reports                         |
 
 The entry point loads the CLI-only `core` orchestration workflow, which assigns the roles. Evidence, guideline and claims reviews can run as native subagents against the same frozen packet, then the coordinator reconciles them before scoring and report writing. A sequential fallback uses identical task contracts and records that execution mode.
+
+During setup, the contextual role selects useful public checks and captures attributed documents or task observations before the packet is frozen. It supports the existing guideline and claims reviewers rather than adding a mandatory fourth independent review. Public operational examples can support scoped outcomes without internal source access; missing records remain explicit requests. The [check reference](reference/checks.md) explains the ten qualitative expectations, the optional v3 extension and its partial coverage limits.
 
 The plugin registers only the entry skill. Specialist sources remain in `.agents/skills/` for compatibility with existing collectors and frozen-task builders; development checkout discovery may therefore expose more roles. A future package can move those internal sources without changing the public entry point. The contributor-only `research-workspace` skill is not part of the audit plugin.
 

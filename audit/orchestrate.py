@@ -80,7 +80,20 @@ def tasks(session: Path, output: Path, mode: str) -> None:
                 "packetSHA256": digest(session / "packet.json"),
                 "executionMode": mode,
                 "skill": str(session.resolve() / "skills" / skill / "SKILL.md"),
-                "instruction": instruction,
+                "supportingSkills": [
+                    str(
+                        session.resolve()
+                        / "skills/sustainability-context-review/SKILL.md"
+                    )
+                ]
+                if role in {"guidelines", "claims"}
+                and any(
+                    row.get("method") == "qualitative-context-review"
+                    for row in packet["checks"]
+                )
+                else [],
+                "instruction": instruction
+                + " Load any supportingSkills listed in this task before judging contextual records.",
                 "output": str(output.resolve() / f"{role}.result.json"),
                 "checkIds": [row["id"] for row in packet["checks"]],
                 "modelPolicy": {"gpt-6.1-sol": "high", "deepseek-v4.1-flash": "high"},

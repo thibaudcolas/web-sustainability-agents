@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0",
+  "rubricVersion": "contextual-review-v1",
+  "wsgSourceVersion": "https://www.w3.org/TR/2026/DNOTE-web-sustainability-guidelines-20261016/",
+  "wsgSourceSha256": "2883a77d30990455f593f17b94a61b8baad8c2440032d74e1e5abe7d0b4ba0d6",
+  "coverageMeaning": "Ten bounded qualitative expectations across eight guideline groups. All are partial guideline coverage; selection is not evidence, execution or conformance. No internal code access is required.",
+  "checks": [
+    {
+      "id": "audience-needs",
+      "guideline": "2.2",
+      "criterion": "audience-evaluation",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#audience-evaluation",
+      "expectation": "For the declared service or feature decision, evidence identifies relevant users and affected communities, their material requirements or constraints, and how research findings changed or confirmed that decision. Persona labels, analytics counts or an auditor completing a task alone do not demonstrate user involvement.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Select a recent service decision and its research record, participant/audience scope, findings and resulting decision. A public case study can suffice for this bounded decision when it describes actual research and action; do not request personal participant data."
+    },
+    {
+      "id": "inclusive-testing",
+      "guideline": "2.14",
+      "criterion": "early-user-testing",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#early-user-testing",
+      "expectation": "A selected new feature or interface change was tested before release with users representative of its stated accessibility and real-world constraints, and recorded findings were addressed or explicitly accepted with reasons. An accessibility statement, automated scan or staff-only walkthrough does not establish representative user testing.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Capture the feature, release/test dates, relevant participant needs and conditions, anonymized test findings and resulting decisions. If only a testing policy is available, request an executed example and retain cantTell for implementation."
+    },
+    {
+      "id": "governance-practice",
+      "guideline": "5.1",
+      "criterion": "governance-over-time",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#governance-over-time",
+      "expectation": "For a declared sustainability commitment and period, records show accountable review, a monitored result and a resulting action or reasoned continuation over time. A published policy, named lead or future review date alone cannot pass this implementation check.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Find dated progress/review records for the same service commitment across a declared period, the accountable role and a documented response to results. Public reports or issue histories are usable; preserve self-reporting and verification limits."
+    },
+    {
+      "id": "impact-business-model",
+      "guideline": "5.9",
+      "criterion": "theory-of-change",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#theory-of-change",
+      "expectation": "For a selected service, evidence explains its revenue or funding mechanism, the associated environmental and social effects, and how an observed impact was reviewed and improved or retained with reasons. A generic SDG logo or charitable pledge does not demonstrate the relationship or its review.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Capture a scoped business-model or funding explanation, an explicit impact pathway, its measures and a dated review/decision. Distinguish a documented theory from evidence that predicted outcomes occurred."
+    },
+    {
+      "id": "service-necessity",
+      "guideline": "5.13",
+      "criterion": "creation-evaluation",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#creation-evaluation",
+      "expectation": "A selected product, service or substantial feature decision evaluates user desirability, technical feasibility and ongoing viability against credible alternatives, including reuse or no new feature where relevant. A marketing claim of demand or absence of a public decision record alone cannot determine necessity.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Select one creation/continuation decision. Capture the user problem, considered alternatives, desirability/feasibility/viability evidence and reasoned decision. Public decision records can support the check; missing business records remain unknown."
+    },
+    {
+      "id": "access-barriers",
+      "guideline": "5.13",
+      "criterion": "obstacle-consideration",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#obstacle-consideration",
+      "expectation": "For the declared visitor task and represented access constraints, inspect material accessibility, technical, geographic or fairness barriers and verify the sampled route or alternative supports task completion while preserving necessary security and safety. Do not demand removal of justified authentication or infer all-user accessibility from one successful route.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Declare the audience/constraints and completion condition; capture a complete relevant journey, any barrier and the usable alternative or justified restriction. Distinguish agent observations from representative user testing; stop before unauthorized submissions."
+    },
+    {
+      "id": "data-minimization",
+      "guideline": "5.18",
+      "criterion": "data-ownership",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#data-ownership",
+      "expectation": "For the sampled data-collecting task, each requested personal-data category has a task-related purpose, required and optional choices are meaningful, and observed controls match the stated purpose. A privacy policy cannot establish actual retention, downstream deletion or all-system consent propagation; keep those outside this bounded task judgment.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect visible fields, defaults, mandatory/optional behavior, purpose explanation and relevant public privacy text without submitting personal data. Request a scoped processing explanation for unexplained required data; do not infer purpose solely from a field name."
+    },
+    {
+      "id": "content-lifecycle",
+      "guideline": "5.18",
+      "criterion": "outdated-content",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#outdated-content",
+      "expectation": "For a declared content collection, evidence identifies a review/expiry schedule and demonstrates an applied archive, update or deletion decision, with a lightweight discoverable historical version where users still need it. A date label, old article or policy alone cannot establish an effective lifecycle or justify deletion.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Select a content collection and an actual review/expiry example; capture the schedule, ownership, decision rationale and resulting live/archive routes. Check whether historical content has continuing user, legal or research value before recommending removal."
+    },
+    {
+      "id": "sustainability-goals",
+      "guideline": "5.6",
+      "criterion": "web-sustainability-goals",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#web-sustainability-goals",
+      "expectation": "Published goals for the audited web service define a measurable target or direction, relevant metric and boundary, and communicate dated progress against a comparable baseline. A corporate net-zero ambition or isolated low-carbon badge cannot establish service-specific goals and progress.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Capture the goal and dated baseline/progress records, metric units, service boundary and target period. Explain changes in method or scope before comparing values; do not turn an ambition into a measured achievement."
+    },
+    {
+      "id": "service-end-of-life",
+      "guideline": "5.22",
+      "criterion": "end-of-life-care",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#end-of-life-care",
+      "expectation": "For the declared service and its data, end-of-life guidance describes user notice, relevant export or migration options, and disposal or archiving responsibilities and timing. Judge the guidance only; a plan does not prove that retirement or backend deletion has been executed.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Read the actual retirement/continuity guidance and identify service scope, user actions, data handling, responsible roles and timing. Use public guidance or owner-supplied records; missing guidance is cantTell unless its absence is established within an explicitly complete documentation scope."
+    }
+  ]
+}

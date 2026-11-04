@@ -27,6 +27,7 @@ TOOLS = {
     "report",
     "assess",
     "greenframe",
+    "energy",
     "orchestrate",
 }
 

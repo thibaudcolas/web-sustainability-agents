@@ -1,0 +1,25 @@
+{
+  "origin": "https://guide.wagtail.org",
+  "pages": [
+    {
+      "id": "energy-page-1",
+      "url": "https://guide.wagtail.org/en/"
+    },
+    {
+      "id": "energy-page-2",
+      "url": "https://guide.wagtail.org/en/how-to-guides/manage-images/"
+    },
+    {
+      "id": "energy-page-3",
+      "url": "https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/"
+    }
+  ],
+  "energy": {
+    "samples": 3,
+    "pageIds": [
+      "energy-page-1",
+      "energy-page-2",
+      "energy-page-3"
+    ]
+  }
+}

@@ -1,8 +1,33 @@
-# Broader browser and source-assisted checks
+# Browser, source and contextual checks
 
-The `agent-breadth-v2` session rubric contains **33 checks across 32 WSG guideline groups**: 22 browser reviews, three disclosure/hosting reviews, and eight optional source reviews. It adds 18 checks to the first agent-driven catalog. A public-only audit defaults to 25 checks in 24 groups; source checks join the default set only when files are explicitly selected.
+The `agent-breadth-v3` catalog contains **43 checks across 40 WSG guideline groups**: 22 browser reviews, three disclosure/hosting reviews, eight optional source reviews and ten contextual reviews. All 40 groups have **partial** methods; none has full-guideline coverage. The contextual extension adds eight groups through explicit qualitative expectations rather than automatic policy-presence checks.
 
-Across the historical and current catalogs, **39/71 guideline groups (54.9%)** now have some defined scoped review method. That is methodology breadth, not the score coverage of one report or complete success-criterion coverage. Scope, page diversity, interaction depth and organizational evidence remain separate dimensions. The [101-row assessment crosswalk](../knowledge-base/assessment-crosswalk.md) remains the broader development map.
+New audits select relevant contextual checks during setup using visitor tasks, public evidence and owner priorities. The owner does not need to choose IDs or provide internal code. Each selected subset has its own denominator. The low-level workflow preserves the context-free `agent-breadth-v2` default: 25 public checks in 24 groups, with eight source checks joining only when files are explicitly selected. Existing v2 sessions and historical scores remain unchanged.
+
+Across the historical and current catalogs, **46/71 guideline groups (64.8%)** have some defined scoped review method. That is methodology breadth, not the score coverage of one report or complete success-criterion coverage. Scope, page diversity, interaction depth and organizational evidence remain separate dimensions. The [101-row assessment crosswalk](../knowledge-base/assessment-crosswalk.md) remains the broader development map.
+
+## Contextual evidence and decisions
+
+The `sustainability-context-review` role helps setup select and collect useful evidence, then supports the existing guideline and claims reviewers. It can run as a bounded native agent task or sequentially. These expectations use the pinned 16 October 2026 WSG draft and its criterion identifiers; a manual qualitative classification does not prevent an agent from collecting and interpreting evidence.
+
+| Check                   | Bounded expectation                                                                                   | WSG criterion                                                                                                  |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `audience-needs`        | A selected decision responds to researched user and community needs                                   | [2.2: audience evaluation](https://www.w3.org/TR/web-sustainability-guidelines/#audience-evaluation)           |
+| `inclusive-testing`     | A selected change has representative pre-release testing and reasoned responses to findings           | [2.14: early user testing](https://www.w3.org/TR/web-sustainability-guidelines/#early-user-testing)            |
+| `governance-practice`   | A commitment has accountable review, results and a documented response over time                      | [5.1: governance over time](https://www.w3.org/TR/web-sustainability-guidelines/#governance-over-time)         |
+| `impact-business-model` | Funding/revenue connects to impacts and a reviewed decision                                           | [5.9: theory of change](https://www.w3.org/TR/web-sustainability-guidelines/#theory-of-change)                 |
+| `service-necessity`     | A selected decision evaluates desirability, feasibility and viability against alternatives            | [5.13: creation evaluation](https://www.w3.org/TR/web-sustainability-guidelines/#creation-evaluation)          |
+| `access-barriers`       | A declared task works for represented constraints or has a usable justified alternative               | [5.13: obstacle consideration](https://www.w3.org/TR/web-sustainability-guidelines/#obstacle-consideration)    |
+| `data-minimization`     | Requested personal data and meaningful choices have a task-related purpose                            | [5.18: data ownership](https://www.w3.org/TR/web-sustainability-guidelines/#data-ownership)                    |
+| `content-lifecycle`     | A selected collection has a schedule and an applied review/archive decision preserving useful history | [5.18: outdated content](https://www.w3.org/TR/web-sustainability-guidelines/#outdated-content)                |
+| `sustainability-goals`  | Service-specific measurable goals communicate dated, comparable progress                              | [5.6: web sustainability goals](https://www.w3.org/TR/web-sustainability-guidelines/#web-sustainability-goals) |
+| `service-end-of-life`   | Scoped retirement guidance explains notice, migration/export and data handling responsibilities       | [5.22: end-of-life care](https://www.w3.org/TR/web-sustainability-guidelines/#end-of-life-care)                |
+
+Select IDs in `plan.contextChecks`. Before collection, capture attributed UTF-8 text or Markdown as `plan.contextEvidence`: each record declares its absolute file path, source, kind (`public-document`, `owner-record` or `task-observation`), capture time with timezone, scope, check IDs and limitations. The contextual skill's reference supplies the complete record format. The workflow freezes up to thirty records of 64 KB each into `context.json`, indexes them with artifact hashes and JSON Pointers, and preserves per-check evidence requests. Failed or oversized records stay explicit. A captured record means review is possible, not that the check passes.
+
+Public reports, research case studies, issue histories and actual task observations can support scoped judgments without internal access. A policy alone cannot establish performed testing, operational review or lifecycle execution. Missing public evidence remains `cantTell` after review; it is not proof that the practice is absent. The retirement check deliberately judges guidance rather than completed shutdown. Browser form evidence cannot verify retention enforcement or downstream deletion. Historical content and necessary authentication can remain valuable.
+
+Packets include the exact selected expectations, scope and skill snapshots. Workers use the same frozen evidence, request missing facts through the coordinator and return ordinary evidence-linked outcomes. The scorer groups checks by guideline, so two contextual checks in one group do not earn extra weight. Collecting later records requires a linked new session; adding the new catalog does not rescore earlier reports or benchmarks.
 
 ## More browser evidence
 

@@ -1,8 +1,29 @@
 # Energy and traffic enrichment experiment
 
-The audit now runs a Python adapter for the supplied co2-runner and a separate CrUX lookup adapter. Sitespeed.io's hardware-energy path has been inspected but has not been executed in this checkpoint. Its role is the next independent cross-tool comparison. See [methodology and sources](../knowledge-base/energy-and-traffic.md).
+The audit has separate adapters for GreenFrame resource-model estimates, co2-runner CPU-package counters, and a CrUX lookup. These answer different questions and must retain their measurement boundaries. Sitespeed.io's hardware-energy path has been inspected but has not been executed. See [methodology and sources](../knowledge-base/energy-and-traffic.md).
 
-## Executed energy measurements
+## Fresh GreenFrame estimates
+
+The fresh report supplement captured six pages on November 4, 2026, from 22:38:59 to 22:41:40 UTC. All 18 repetitions completed successfully. Each row summarizes three independent browser scenarios; the range is observed variation, not a confidence interval.
+
+| Page                          | Client-device median | Client-device range | Network median |
+| ----------------------------- | -------------------: | ------------------: | -------------: |
+| Guide homepage                |            12.00 mWh |     10.38–13.85 mWh |       0.76 mWh |
+| Guide: manage images          |            11.15 mWh |     10.52–14.50 mWh |       2.80 mWh |
+| Guide: new in Wagtail 8.1     |            10.72 mWh |     10.67–11.04 mWh |       4.19 mWh |
+| Wagtail.org homepage          |            12.08 mWh |     11.23–12.58 mWh |      11.65 mWh |
+| Wagtail.org: Wagtail 8.1 blog |            16.41 mWh |     15.48–18.00 mWh |      25.26 mWh |
+| Wagtail.org: sustainability   |            13.84 mWh |     10.66–14.96 mWh |       7.51 mWh |
+
+The [guide manifest](../reports/assets/report-refinement/guide/energy/manifest.json) and [Wagtail.org manifest](../reports/assets/report-refinement/wagtail/energy/manifest.json) retain exact Wh values, individual repetitions, component estimates, timestamps and artifact digests. Their adjacent page directories publish raw Docker counters, full-precision model output and the executed scenario/bridge. Each bundle includes `plan.json` and `reproduction.json`; sibling `energy.json` files are exact manifest copies for report rendering. These later captures supplement the scored reports without changing their original evidence or judgments.
+
+The boundary is **modeled browser-device CPU, memory, disk and screen energy**. Network energy is modeled separately; remote servers are excluded. The unchanged [GreenFrame 2.0.1 model](https://github.com/marmelab/greenframe-cli/blob/v2.0.1/src/model/stat-tools/getConsumption.ts) uses a synthetic 45 W CPU and 14 W screen, with CPU usage normalized by available host CPUs. The screen estimate dominates these client-device results. This is neither measured electricity nor total-device energy, and it must not be added to SWDM or extrapolated directly to annual site impact. The results establish a reproducible sample, not a causal efficiency ranking.
+
+The shared Linux workstation had an Intel Core i5-1145G7 and eight logical CPUs. Docker 29.9.2 ran the pinned `mcr.microsoft.com/playwright:v1.30.0-focal` image, digest `sha256:9e6eddb08b8566076ef778007859096bc90f8984236061c086eaede2fb60430b`, with Chromium 110.0.5481.38. GreenFrame supplies a fixed Chrome 89 user-agent string and `--disable-web-security`; these are experimental limits, not a current-browser compatibility claim. Temperature, power state and ambient activity were uncontrolled; local tests and campaigns were paused during collection.
+
+Each fresh browser context used 1,280 × 800, navigated through `load`, then waited three seconds without consent interaction or scrolling. GreenFrame starts its accounting window after browser startup and a two-second warm-up, and ends after browser close. Modeled counter spans were approximately 3–5 seconds. Repetitions shared a container, so this does not establish cold host caches. The narrow energy sample covers three pages per site, fewer than the browser audit sample.
+
+## Earlier CPU-package measurements
 
 | Target homepage | Valid repetitions | Median CPU-package energy | Observed range |
 | --------------- | ----------------: | ------------------------: | -------------: |
@@ -32,12 +53,28 @@ The [traffic artifact](assets/traffic-scenarios.json) contains exact mapping val
 
 ```sh
 # Uses the supplied checkout and its installed Node/Firefox dependencies.
-uv run --locked --script audit/energy.py
+uv run --locked --script audit/energy.py --output .audit-work/new-cpu-package-energy.json
 # Reads public monthly dumps; no CrUX or BigQuery key required.
 uv run --locked --script audit/traffic.py --month 202609
 ```
 
 The Python entry points have executable shebangs, inline requirements, and script lockfiles. `audit/rank-pageviews.csv` freezes the supplied mapping. New measurements have different timestamps and may differ numerically. Keep Harbor/model work separate from hardware-energy collection.
+
+For the fresh GreenFrame protocol, install CLI 2.0.1 into an isolated local directory and pull the pinned runner image. The captured CLI archive SHA-256 is `fbfbbfd6ba034b2dd7ed35f6a412f32873f2ab0d3d9dbe06a5b590ab0fc1effc`; the stable download URL can change, so verify both version and digest. Use the published plans and new output directories:
+
+```sh
+docker pull mcr.microsoft.com/playwright:v1.30.0-focal
+uv run --locked --script audit/greenframe.py \
+  --plan docs/reports/assets/report-refinement/guide/energy/plan.json \
+  --output-dir .audit-work/new-guide-energy \
+  --mode run --binary .audit-work/tools/greenframe/bin/greenframe
+uv run --locked --script audit/greenframe.py \
+  --plan docs/reports/assets/report-refinement/wagtail/energy/plan.json \
+  --output-dir .audit-work/new-wagtail-energy \
+  --mode run --binary .audit-work/tools/greenframe/bin/greenframe
+```
+
+New agent collections record energy readiness by default. `workflow collect --energy run --greenframe-binary <local-binary>` attempts the accepted sample after browser collection; `--energy skip` records an explicit opt-out. Missing prerequisites or invalid counters retain null metrics and a reason. No hardware permissions or global settings are changed.
 
 ## Next validation
 

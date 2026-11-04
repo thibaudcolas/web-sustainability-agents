@@ -3,7 +3,7 @@ name: sustainability-core
 description: Coordinate the complete sustainability audit through explicit native-agent tasks and deterministic artifact handoffs.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Coordinate the audit
@@ -15,6 +15,7 @@ Use the CLI `tool <name> ...` to invoke existing deterministic tools. Pass absol
 ## Native role sequence
 
 1. **Setup and sampling** — load `setup`, dispatch `sustainability-setup` with URL, known priorities, working project and source roots. It resolves prerequisites, explores public navigation and returns a plan covering 5–10 representative pages by default, including the homepage and a complete visitor journey. The coordinator handles owner questions and approves the scope within existing authorization.
+   Load `context-review` during setup and select relevant qualitative checks from the site's public tasks, content, data collection and stated commitments. Dispatch a bounded contextual evidence task or perform it sequentially: capture attributed documents/observations and explicit unresolved requests before freezing. The owner need not know check IDs or grant internal access. Include selected `contextChecks` and `contextEvidence` in the plan; new audits normally select useful public context and therefore use the v3 extension. Preserve v2 only for an explicitly context-free scope.
 2. **Collection** — load `collection`, dispatch `sustainability-collection` with the accepted plan and a new session directory. One collector owns the browser run; workers do not independently recrawl the same pages. It returns the packet path, command receipt and a summary of failed or incomplete observations.
 3. **Independent reviews** — run `tool orchestrate tasks --session <session> --output <review-tasks> --mode native-subagents`. Dispatch evidence, guideline and claims workers concurrently against the same frozen session. Each receives its task JSON, named skill and output path. If native subagents are unavailable, use `--mode sequential` and apply the same contracts one at a time. Do not fabricate parallel execution.
 4. **Validate and reconcile** — run `tool orchestrate accept --task <role.task.json>` for each result, then `status --tasks <review-tasks>`. Respond to every evidence/claims issue in `resolutions.json` as `{resolutions:[{issue:"role:id",decision:"applied|retained-with-reason|needs-new-evidence",reason:"..."}]}` and validate with `reconcile`. Use the guideline result as the base of `session/review.json`, making explicit, evidence-supported corrections. Preserve unresolved disagreements and missing evidence; reviewer agreement alone adds no site evidence.

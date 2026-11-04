@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "greenframe-reproduction-v1",
+  "supplementRecordedAt": "2026-11-04T22:43:06.302255+00:00",
+  "originalManifestSHA256": "81eafdda1225abecdb6eeeb13d9d7b7ee03099f25bce82742f20b0a51a860299",
+  "hostMetadataObservedAfterCapture": {
+    "platform": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+    "cpuModel": "11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz",
+    "logicalCPUs": 8,
+    "note": "Same workstation; supplemental host metadata, not an additional energy capture"
+  },
+  "upstreamSourceRevision": "61110be49a36c2b525ebc85d011094546169d835",
+  "upstreamSource": "https://github.com/marmelab/greenframe-cli/tree/v2.0.1",
+  "cliDownload": {
+    "url": "https://assets.greenframe.io/channels/stable/greenframe-linux-x64.tar.gz",
+    "sha256": "fbfbbfd6ba034b2dd7ed35f6a412f32873f2ab0d3d9dbe06a5b590ab0fc1effc",
+    "warning": "Stable download can change; verify version2.0.1 and digest before reproduction"
+  },
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "--script",
+    "audit/greenframe.py",
+    "--plan",
+    ".audit-work/energy-guide-plan.json",
+    "--output-dir",
+    ".audit-work/fresh-energy-guide-v1",
+    "--mode",
+    "run",
+    "--binary",
+    ".audit-work/tools/greenframe/bin/greenframe"
+  ],
+  "reproduction": "Copy plan.json to the named plan path and use a new empty output directory. Install the declared local CLI and pinned image first. Results and timestamps will differ; do not overwrite the published capture."
+}

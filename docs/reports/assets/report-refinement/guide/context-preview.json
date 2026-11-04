@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "context-preview-v1",
+  "site": "https://guide.wagtail.org",
+  "purpose": "Developer forward-test of contextual skill against previously frozen real-site evidence; not blinded validation, not a new scored audit",
+  "reviewedAt": "2026-11-04T22:44:47.657703+00:00",
+  "sourcePacket": "docs/reports/assets/fresh-guide/packet.json",
+  "sourcePacketSHA256": "49fb5b845b47930414721b698f5c4f18da5d07b58ded8f6d198db6538c010ed7",
+  "sourceSHA256": {
+    "probes.json": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb",
+    "disclosures.json": "b03f03d8615fc580ff12bc99339187563be04cce670b89e2d8e8d1f4ba6a6b34",
+    "source.json": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52"
+  },
+  "contextCatalogSHA256": "73c9c10d0dc6b9cea83b0e318b8fac65b4de95f51891c2387675372a4810bf77",
+  "skillSHA256": {
+    ".agents/skills/sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+    ".agents/skills/sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2"
+  },
+  "execution": {
+    "mode": "native-developer-review",
+    "blinded": false,
+    "newBrowsing": false,
+    "rescored": false,
+    "scopeLimitation": "The original packet uses v2 and did not select these contextual checks. This separate preview applies new expectations to existing records and preserves unanswered requests. It cannot amend the original outcomes or score."
+  },
+  "rows": [
+    {
+      "checkId": "content-lifecycle",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:5",
+        "probes.json:pages:4",
+        "source.json:files:9"
+      ],
+      "scope": "English user guide collection; current release guidance and public historical-copy explanation",
+      "observations": [
+        "The About page describes historical page contents in the Git repository and is dated November 3, 2026.",
+        "The selected contribution document describes release-triggered review/update and version-copy steps.",
+        "Current Wagtail 8.1 guidance and links to earlier releases are visible, but no selected record demonstrates an applied content review or checks the claimed historical route."
+      ],
+      "rationale": "A maintenance procedure, recent date and historical-copy claim provide useful inputs. They do not establish a performed review/archive decision for the selected collection or that a usable lightweight historical version was checked. This is missing evidence, not evidence that old content should be deleted.",
+      "confidence": "moderate",
+      "nextEvidence": "Capture one dated guide content-review decision, its release/review trigger and accountable role, then follow its live and historical routes to verify useful historical access. A public issue/change discussion can suffice; internal code access is unnecessary.",
+      "evidenceDetails": [
+        {
+          "evidenceId": "probes.json:pages:5",
+          "jsonPointer": "/pages/5/states/0/observations/text/value"
+        },
+        {
+          "evidenceId": "probes.json:pages:4",
+          "jsonPointer": "/pages/4/states/0/observations/text/value"
+        },
+        {
+          "evidenceId": "source.json:files:9",
+          "jsonPointer": "/files/9/text"
+        }
+      ],
+      "guideline": "5.18",
+      "criterion": "outdated-content",
+      "expectation": "For a declared content collection, evidence identifies a review/expiry schedule and demonstrates an applied archive, update or deletion decision, with a lightweight discoverable historical version where users still need it. A date label, old article or policy alone cannot establish an effective lifecycle or justify deletion.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "checkId": "audience-needs",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:5",
+        "source.json:files:8"
+      ],
+      "scope": "Decision to structure the guide for content editors, moderators and administrators",
+      "observations": [
+        "The homepage and About page name content editors, moderators and administrators as intended users.",
+        "The selected README describes the Diataxis documentation framework, desired content types and the 2022 project team.",
+        "No captured research record links an audience finding to the selected information-architecture decision."
+      ],
+      "rationale": "Named audiences, a documentation framework and feedback invitations do not demonstrate actual research participation or how findings changed or confirmed this decision. The missing record cannot establish that such research never occurred.",
+      "confidence": "moderate",
+      "nextEvidence": "Capture a public design/research discussion or anonymized owner example showing a guide audience need, the represented users/constraints, findings and the resulting structure/content decision.",
+      "evidenceDetails": [
+        {
+          "evidenceId": "probes.json:pages:0",
+          "jsonPointer": "/pages/0/states/0/observations/text/value"
+        },
+        {
+          "evidenceId": "probes.json:pages:5",
+          "jsonPointer": "/pages/5/states/0/observations/text/value"
+        },
+        {
+          "evidenceId": "source.json:files:8",
+          "jsonPointer": "/files/8/text"
+        }
+      ],
+      "guideline": "2.2",
+      "criterion": "audience-evaluation",
+      "expectation": "For the declared service or feature decision, evidence identifies relevant users and affected communities, their material requirements or constraints, and how research findings changed or confirmed that decision. Persona labels, analytics counts or an auditor completing a task alone do not demonstrate user involvement.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "checkId": "access-barriers",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "probes.json:pages:0",
+        "probes.json:pages:2"
+      ],
+      "scope": "Search for image guidance and read it; proposed represented constraint is keyboard-only or narrow-screen access",
+      "observations": [
+        "The desktop search-to-image-guide journey completed all declared URL, selector and text conditions with successful actions.",
+        "Homepage and image-guide snapshots retain reading text without JavaScript and show no horizontal overflow in desktop/narrow captures.",
+        "The complete declared journey did not run with keyboard-only or narrow-screen conditions; a bounded initial Tab trace is supplementary evidence."
+      ],
+      "rationale": "The packet supports one successful desktop agent route and useful static compatibility observations. It does not yet establish completion for the proposed access constraints or representative users. No specific barrier is demonstrated by this gap.",
+      "confidence": "moderate",
+      "nextEvidence": "Repeat the full search-to-image-guide task with keyboard-only navigation and at the chosen narrow viewport, preserving focus, activation and completion evidence. Keep no-JavaScript search separate from no-JavaScript reading content.",
+      "evidenceDetails": [
+        {
+          "evidenceId": "probes.json:journeys:0",
+          "jsonPointer": "/journeys/0/completion"
+        },
+        {
+          "evidenceId": "probes.json:pages:0",
+          "jsonPointer": "/pages/0/states"
+        },
+        {
+          "evidenceId": "probes.json:pages:2",
+          "jsonPointer": "/pages/2/states"
+        }
+      ],
+      "guideline": "5.13",
+      "criterion": "obstacle-consideration",
+      "expectation": "For the declared visitor task and represented access constraints, inspect material accessibility, technical, geographic or fairness barriers and verify the sampled route or alternative supports task completion while preserving necessary security and safety. Do not demand removal of justified authentication or infer all-user accessibility from one successful route.",
+      "fullGuidelineCoverage": false
+    }
+  ],
+  "reportIntegration": "Present as next audit scope/developer preview. Clearly distinguish partial observations, a narrow scoped pass, and missing evidence from defects. Keep outside existing score denominator. Use original evidence artifact links and the nextEvidence requests."
+}

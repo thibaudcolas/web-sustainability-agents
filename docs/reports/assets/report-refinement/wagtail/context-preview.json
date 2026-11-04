@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "context-preview-v1",
+  "site": "https://wagtail.org",
+  "purpose": "Developer forward-test of contextual skill against previously frozen real-site evidence; not blinded validation, not a new scored audit",
+  "reviewedAt": "2026-11-04T22:44:47.662535+00:00",
+  "sourcePacket": "docs/reports/assets/fresh-wagtail/packet.json",
+  "sourcePacketSHA256": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+  "sourceSHA256": {
+    "probes.json": "c741ecf24ee59087039d793306a8cc24e9cb9df39591406d21faaf51829d1853",
+    "disclosures.json": "562036b4d51d359a5ac5f11c421d16b9dfcbaa8adde4a3a44140a4f26cde8dc1",
+    "source.json": "dc1f47aa54f5093b4bb302467fcd73300179365bfa7b340bf57a3e6b8ed77999"
+  },
+  "contextCatalogSHA256": "73c9c10d0dc6b9cea83b0e318b8fac65b4de95f51891c2387675372a4810bf77",
+  "skillSHA256": {
+    ".agents/skills/sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+    ".agents/skills/sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2"
+  },
+  "execution": {
+    "mode": "native-developer-review",
+    "blinded": false,
+    "newBrowsing": false,
+    "rescored": false,
+    "scopeLimitation": "The original packet uses v2 and did not select these contextual checks. This separate preview applies new expectations to existing records and preserves unanswered requests. It cannot amend the original outcomes or score."
+  },
+  "rows": [
+    {
+      "checkId": "governance-practice",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:4",
+        "disclosures.json:sites:0"
+      ],
+      "scope": "Public commitment to reduce impacts of wagtail.org, docs.wagtail.org and guide.wagtail.org",
+      "observations": [
+        "The sustainability page describes delivered image-format/picture-tag features and public collaborations, including a 2025 CMS grid-awareness collaboration.",
+        "It states an intention to reduce impacts of the three named websites and invites contributions through a sustainability channel/backlog.",
+        "The carbon.txt review records a linked sustainability disclosure but expressly marks claims unverified."
+      ],
+      "rationale": "Published actions and links are useful evidence routes, but the captured text does not identify an accountable review of this website commitment, monitored results and a resulting response across a declared period. The existence of policy or delivered CMS features cannot fill that operational gap.",
+      "confidence": "moderate",
+      "nextEvidence": "Capture one dated review/progress record for the named website commitment, with the accountable role, monitored result and response or reasoned continuation. Follow the public roadmap/backlog first; no source-code access is required.",
+      "evidenceDetails": [
+        {
+          "evidenceId": "probes.json:pages:4",
+          "jsonPointer": "/pages/4/states/0/observations/text/value"
+        },
+        {
+          "evidenceId": "disclosures.json:sites:0",
+          "jsonPointer": "/sites/0/records"
+        }
+      ],
+      "guideline": "5.1",
+      "criterion": "governance-over-time",
+      "expectation": "For a declared sustainability commitment and period, records show accountable review, a monitored result and a resulting action or reasoned continuation over time. A published policy, named lead or future review date alone cannot pass this implementation check.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "checkId": "sustainability-goals",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:4",
+        "disclosures.json:sites:0"
+      ],
+      "scope": "Measurable goals and progress for the audited wagtail.org service",
+      "observations": [
+        "The page states a direction to reduce impacts of named Wagtail websites.",
+        "Its published 2025 estimate concerns a population of Wagtail-powered websites rather than a matched-origin progress series for wagtail.org.",
+        "The current capture does not include the linked roadmap or measurement-history contents."
+      ],
+      "rationale": "A direction and a CMS-population estimate do not establish comparable dated baseline/progress against a service-specific metric. Uncaptured linked material may resolve the question; this preview cannot conclude that no goals exist.",
+      "confidence": "moderate",
+      "nextEvidence": "Retrieve the linked measurement method and roadmap, then identify a wagtail.org metric with units, boundary, baseline date, target/direction and dated progress measured on a comparable basis.",
+      "evidenceDetails": [
+        {
+          "evidenceId": "probes.json:pages:4",
+          "jsonPointer": "/pages/4/states/0/observations/text/value"
+        },
+        {
+          "evidenceId": "disclosures.json:sites:0",
+          "jsonPointer": "/sites/0/records"
+        }
+      ],
+      "guideline": "5.6",
+      "criterion": "web-sustainability-goals",
+      "expectation": "Published goals for the audited web service define a measurable target or direction, relevant metric and boundary, and communicate dated progress against a comparable baseline. A corporate net-zero ambition or isolated low-carbon badge cannot establish service-specific goals and progress.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "checkId": "data-minimization",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:6",
+        "probes.json:pages:5"
+      ],
+      "scope": "Visible pre-submission footer newsletter form on the contact page only; no subscription submission or downstream processing assessment",
+      "observations": [
+        "The footer explains that the email signup provides Wagtail events, features and news.",
+        "The captured newsletter control is one visible email input named Email with required=true and autocomplete=email. No additional visible personal-data field is captured for this footer form.",
+        "The adjacent search inputs serve search rather than newsletter signup. The privacy text describes marketing/removal routes but its Torchbox-specific scope needs clarification before applying it to downstream Wagtail processing."
+      ],
+      "rationale": "For this narrow visible signup surface, the single requested email category has a clear delivery purpose and no extra visible personal information or preselected optional-data controls. This passes the interface expectation for the captured pre-submit state only. It establishes nothing about a later provider page, retention, withdrawal propagation, backend deletion or legal compliance.",
+      "confidence": "moderate",
+      "nextEvidence": "Preserve this small signup surface. In an authorized test or non-mutating provider inspection, follow the continuation and clarify the applicable privacy scope and unsubscribe handling before judging the complete subscription journey. Do not submit a real address without authorization.",
+      "evidenceDetails": [
+        {
+          "evidenceId": "probes.json:pages:6",
+          "jsonPointer": "/pages/6/states/0/observations/controls/items"
+        },
+        {
+          "evidenceId": "probes.json:pages:6",
+          "jsonPointer": "/pages/6/states/0/observations/text/value"
+        },
+        {
+          "evidenceId": "probes.json:pages:5",
+          "jsonPointer": "/pages/5/states/0/observations/text/value"
+        }
+      ],
+      "guideline": "5.18",
+      "criterion": "data-ownership",
+      "expectation": "For the sampled data-collecting task, each requested personal-data category has a task-related purpose, required and optional choices are meaningful, and observed controls match the stated purpose. A privacy policy cannot establish actual retention, downstream deletion or all-system consent propagation; keep those outside this bounded task judgment.",
+      "fullGuidelineCoverage": false
+    }
+  ],
+  "reportIntegration": "Present as next audit scope/developer preview. Clearly distinguish partial observations, a narrow scoped pass, and missing evidence from defects. Keep outside existing score denominator. Use original evidence artifact links and the nextEvidence requests."
+}

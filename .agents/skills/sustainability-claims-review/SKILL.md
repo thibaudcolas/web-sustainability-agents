@@ -3,7 +3,7 @@ name: sustainability-claims-review
 description: Review footprint estimates, public policies, and source-assisted sustainability recommendations for scope, assumptions, evidence gaps, and usefulness.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Sustainability claims review
@@ -17,5 +17,7 @@ The site can still receive a clearly labeled estimate when measurement inputs ar
 For carbon.txt, inspect discovery route, HTTP outcome, declared version, parsed relationships, provider/service domains and supporting document links. Separate file presence, TOML syntax, schema validity and independently corroborated claims. A delegated file or parent-domain statement needs an explicit relationship to the audited origin; a provider name alone is not verified green hosting. Use retrieved document scope and dates to direct follow-up, and preserve conflicts with observed technology or public claims. Absence or an unsupported version does not prove high emissions.
 
 For policies, verify the final document and whether its stated organization, site, activity, and period match the audit. Publication proves disclosure, not execution. For source-assisted advice, inspect the requested checkout or supplied excerpts, record revision/dirty status and file identity, and distinguish a plausible edit location from a deployment-verified fix. Do not infer absence from an unsuccessful search or treat a source comment as deployment attestation.
+
+For selected contextual checks, apply the frozen `sustainability-context-review` reference to attributed public/owner records. Trace actual research, reviews, content decisions and progress against their stated scope and dates. A public executed example can support a bounded implementation judgment; a policy alone cannot. Data-collecting task observations cannot verify backend retention or deletion. Adequate retirement guidance can support its guidance-only expectation without proving a shutdown occurred. Request the smallest missing operational example rather than making internal source access a prerequisite.
 
 Recommendations should name the affected visitor task or decision, observed evidence, expected benefit, uncertainty, and validation. Preserve working optimizations. Treat an optional missing feature as a context-dependent recommendation rather than automatically prescribing more code. Follow the supplied output schema; do not generate a score from qualitative confidence.

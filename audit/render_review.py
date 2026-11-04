@@ -15,9 +15,20 @@ import html
 import json
 import os
 import re
+import sys
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
+
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
+    area_results,
+    energy_rows,
+    source_excerpt,
+    validate_presentation,
+)
 
 JSON = dict[str, Any]
 
@@ -190,13 +201,21 @@ def pointer(document: Any, location: str) -> Any:
     return current
 
 
-def source_descriptions(session: Path, packet: JSON, ids: list[str]) -> list[str]:
+def source_descriptions(
+    session: Path,
+    packet: JSON,
+    ids: list[str],
+    documents: dict[str, JSON] | None = None,
+) -> list[str]:
     """Describe inspected pages/files without sending readers to raw JSON."""
     descriptions: list[str] = []
+    documents = documents if documents is not None else {}
     for identifier in ids:
         reference = packet["evidenceIndex"][identifier]
-        item = pointer(read(session / reference["artifact"]), reference["jsonPointer"])
         name = reference["artifact"]
+        if name not in documents:
+            documents[name] = read(session / name)
+        item = pointer(documents[name], reference["jsonPointer"])
         if name == "source.json":
             description = (
                 f"Selected local file `{prose(item.get('path', 'unavailable path'))}`"
@@ -265,6 +284,9 @@ def render(
     image_prefix: str = "",
     editorial_link: str | None = None,
     receipt_link: str | None = None,
+    presentation: JSON | None = None,
+    energy: JSON | None = None,
+    supplement_prefix: str | None = None,
 ) -> str:
     """Render readable findings with calculations and provenance kept deterministic."""
     packet = read(session / "packet.json")
@@ -274,12 +296,24 @@ def render(
     if len(assessment["scores"]) != 1:
         raise ValueError("Render exactly one site")
     score = assessment["scores"][0]
-    if score["rubricVersion"] != "agent-breadth-v2":
-        raise ValueError("This report template targets agent-breadth-v2")
+    if score["rubricVersion"] not in {"agent-breadth-v2", "agent-breadth-v3"}:
+        raise ValueError("This report template targets agent-breadth-v2 or v3")
     if {packet["site"], review["site"], score["site"]} != {packet["site"]}:
         raise ValueError("Review and score must match the packet origin")
     review_sha = hashlib.sha256((session / "review.json").read_bytes()).hexdigest()
     validate_editorial(editorial, review, review_sha)
+    presentation = presentation or {}
+    validate_presentation(presentation, review, review_sha)
+    reference_path = (
+        Path(__file__).resolve().parents[1]
+        / ".agents/skills/sustainability-guideline-review/references/wsg.json"
+    )
+    references = {r["id"]: r for r in read(reference_path)["guidelines"]}
+
+    def guideline_link(number: str) -> str:
+        item = references[number]
+        return f"[WSG {number}: {prose(item['title'])}]({item['url']})"
+
     rules = {row["id"]: row for row in packet["checks"]}
     images = illustrations(screenshot_path, packet["site"], set(rules))
     if screenshot_path and not image_prefix:
@@ -287,6 +321,7 @@ def render(
     staged = read(session / "staged.json")
     probes = read(session / "probes.json")
     source = read(session / "source.json")
+    documents = {"staged.json": staged, "probes.json": probes, "source.json": source}
     has_consent = any(run["branch"] != "no_banner" for run in staged["runs"])
     page_labels = {
         run["url"]: page_name(
@@ -302,9 +337,7 @@ def render(
         )
         for run in staged["runs"]
     }
-    repeated_visits = len(staged["runs"]) > len(page_labels)
     counts = score["counts"]
-    titles = {row["number"]: row for row in score["guidelines"]}
     edited = {row["checkId"]: row for row in editorial["checks"]}
     judgments = {row["checkId"]: row for row in review["rows"]}
     number = (
@@ -326,21 +359,40 @@ def render(
         "",
         "</div>",
         "",
-        '!!! info "What the score means"',
-        "",
-        f"    {counts['pass']} of {score['checkedGuidelines']} scored guideline groups passed this audit's selected checks. Unknowns stay in the denominator, so missing evidence lowers the score without becoming a site defect. This is not a full WSG conformance grade or a ranking against other sites.",
-        "",
-        "## First-load page sizes",
-        "",
-        "Data downloaded when a visitor first opens the page, before clicking or scrolling. **kB = 1,000 bytes; MB = 1,000,000 bytes.** "
-        + (
-            "Ranges show separate visits, not a modeled average."
-            if repeated_visits
-            else "Each figure comes from one fresh visit."
-        ),
+        "## Results by WSG area",
         "",
         *table_start(
-            "First-load page sizes", ["Page", "First load", "Measurement completeness"]
+            "Selected checks by WSG area",
+            ["Area", "Passing", "Guideline groups checked", "Needs evidence"],
+        ),
+    ]
+    for area in area_results(score["guidelines"]):
+        percentage = (
+            f"{area['percent']:.0f}% ({area['counts']['pass']}/{area['checked']})"
+            if area["percent"] is not None
+            else "Not assessed"
+        )
+        lines.append(
+            table_row(
+                [
+                    area["title"],
+                    percentage,
+                    f"{area['checked']} of {area['total']}",
+                    str(area["counts"]["cantTell"]),
+                ]
+            )
+        )
+    lines += [
+        "</tbody></table></div>",
+        "",
+        "Passing percentages apply to the selected checks. Full-guideline conformance has not been established.",
+        "",
+        "## Page measurements",
+        "",
+        "Data downloaded when a visitor first opens the page, before clicking or scrolling.",
+        "",
+        *table_start(
+            "First-load transfers", ["Page", "First load", "Measurement completeness"]
         ),
     ]
     urls = list(dict.fromkeys(run["url"] for run in staged["runs"]))
@@ -352,6 +404,7 @@ def render(
             for phase in run["phases"]
             if phase["phase"] == "initial"
         ]
+        initial = initial[:1]
         values = [
             phase["receivedBytes"]
             for phase in initial
@@ -365,7 +418,7 @@ def render(
             table_row(
                 [
                     anchor(page_labels[url], url),
-                    size_range(values),
+                    traffic(values[0]) if values else "Not measured",
                     "Complete within the test conditions"
                     if complete
                     else "Some data could not be measured",
@@ -386,6 +439,33 @@ def render(
         else "The collector recorded the requests within its observation window. Later downloads and untested journeys are outside these first-load figures.",
         "",
     ]
+    lines += ["### Browser energy", ""]
+    if energy:
+        lines += [
+            "GreenFrame models energy from browser resource activity. These figures are the median of three visits to each page.",
+            "",
+            *table_start(
+                "Modeled browser energy per visit",
+                ["Page", "Client device model", "Network model"],
+            ),
+        ]
+        for url, device, network in energy_rows(energy, packet["site"]):
+            lines.append(
+                table_row(
+                    [anchor(page_labels.get(url, page_name(url)), url), device, network]
+                )
+            )
+        lines += [
+            "</tbody></table></div>",
+            "",
+            "The device estimate includes CPU, memory, disk and a modeled display. Other sampled pages have no energy result yet. See the methodology for the separate browser scenario and model assumptions.",
+            "",
+        ]
+    else:
+        lines += [
+            "Energy was not collected for this session. Transfer sizes alone do not measure browser energy.",
+            "",
+        ]
     ratings = [
         run["rating"]["trace"]["co2"]["rating"]
         for run in staged["runs"]
@@ -407,8 +487,13 @@ def render(
         ]
     lines += ["## Priorities", "", prose(editorial["overview"]), ""]
     used_images: set[str] = set()
-    for index, finding in enumerate(editorial["findings"], 1):
-        original = review["topFindings"][index - 1]
+    finding_map = {f["checkId"]: f for f in editorial["findings"]}
+    finding_order = presentation.get("findingOrder", list(finding_map))
+    originals = {f["checkId"]: f for f in review["topFindings"]}
+    for index, identifier in enumerate(finding_order, 1):
+        override = presentation.get("findingOverrides", {}).get(identifier, {})
+        finding = {**finding_map[identifier], **override}
+        original = {**originals[identifier], **override}
         identifier = finding["checkId"]
         guideline = rules[identifier]["guideline"]
         lines += [
@@ -416,7 +501,7 @@ def render(
             "",
             '<div class="audit-finding" markdown="1">',
             "",
-            f"**{original['priority'].capitalize()} priority** · {LABELS[judgments[identifier]['outcome']]} · [WSG {guideline}]({titles[guideline]['url']})",
+            f"**{original['priority'].capitalize()} priority** · {LABELS[judgments[identifier]['outcome']]} · {guideline_link(guideline)}",
             "",
             f"**What we found.** {prose(finding['summary'])}",
             "",
@@ -425,6 +510,10 @@ def render(
             f"**Next step.** {prose(finding['action'])}",
             "",
         ]
+        if identifier in presentation.get("sourceExcerpts", {}):
+            lines += source_excerpt(
+                session, packet, presentation["sourceExcerpts"][identifier]
+            )
         for capture in images["captures"]:
             if (
                 capture["status"] != "completed"
@@ -439,7 +528,7 @@ def render(
                 "",
                 f"[![{prose(capture['alt']).replace(']', '&#93;')} ]({src})]({src})",
                 "",
-                f"<figcaption>{html.escape(capture['caption'])} Captured {html.escape(capture['capturedAt'][:10])}, {capture['viewport']['width']} × {capture['viewport']['height']} pixels. This later illustration is separate from the scored measurements.</figcaption>",
+                f"<figcaption>{html.escape(presentation.get('captions', {}).get(capture['id'], capture['caption']))}</figcaption>",
                 "</figure>",
                 "",
             ]
@@ -526,6 +615,28 @@ def render(
         )
     lines += ["    </tbody></table></div>", "", "## Next steps for auditing", ""]
     lines += [f"{i}. {prose(step)}" for i, step in enumerate(editorial["nextSteps"], 1)]
+    if presentation.get("nextAuditChecks"):
+        lines += [
+            "",
+            "### Broader checks to add next",
+            "",
+            "The new contextual skill was tried against this audit’s existing evidence. The requests below are outside the current score; missing records are not site defects.",
+            "",
+            *table_start(
+                "Next contextual audit scope", ["Check", "Evidence so far", "Next step"]
+            ),
+        ]
+        for item in presentation["nextAuditChecks"]:
+            lines.append(
+                table_row(
+                    [
+                        anchor(item["title"], references[item["guideline"]]["url"]),
+                        html.escape(item["observation"]),
+                        html.escape(item["nextStep"]),
+                    ]
+                )
+            )
+        lines += ["</tbody></table></div>", ""]
     lines += [
         "",
         "The sample covers selected pages and visitor tasks, not every page on the site. Expand it where the checks above identify an untested template, interaction or audience need."
@@ -544,14 +655,18 @@ def render(
         lines += [
             f'<h3 id="evidence-{identifier}">{html.escape(item["title"])}</h3>',
             "",
-            f"**{LABELS[row['outcome']]}** · [WSG {guideline}]({titles[guideline]['url']})",
+            f"**{LABELS[row['outcome']]}** · {guideline_link(guideline)}",
+            "",
+            f"_{prose(references[guideline]['summary'])}_",
             "",
             prose(item["summary"]),
             "",
             f"**Next step:** {prose(item['nextStep'])}",
             "",
         ]
-        descriptions = source_descriptions(session, packet, row.get("evidenceIds", []))
+        descriptions = source_descriptions(
+            session, packet, row.get("evidenceIds", []), documents
+        )
         if descriptions:
             lines += (
                 ["**Where we looked:**", ""]
@@ -567,17 +682,40 @@ def render(
         "",
         f"The browser measurements were captured from **{staged.get('startedAt', 'unrecorded')}** to **{staged.get('finishedAt', 'unrecorded')}**. Initial-load tests used a {viewport.get('width', 'recorded')} × {viewport.get('height', 'recorded')} desktop viewport and a {protocol.get('observationMs', 0) / 1000:g}-second observation window. Cookie choices and scrolling were recorded afterward. Supplementary tests covered narrow layouts, color and motion preferences, print, JavaScript availability and bounded keyboard navigation.",
         "",
-        f"**Audit judgments:** {prose(reviewer['harness'])}, {prose(reviewer['model'])}, **{prose(reviewer['reasoning'])} reasoning**. **Report wording:** {prose(writer['harness'])}, {prose(writer['model'])}, **{prose(writer['reasoning'])} reasoning**. The editorial pass changes explanations, not the original outcomes, priorities or calculated score.",
+        f"**Audit judgments:** {prose(reviewer['harness'])}, {prose(reviewer['model'])}, **{prose(reviewer['reasoning'])} reasoning**. **Report wording:** {prose(writer['harness'])}, {prose(writer['model'])}, **{prose(writer['reasoning'])} reasoning**. The original judgments and calculated score are preserved. Any subsequent priority or wording changes are recorded in the presentation supplement.",
         "",
-        f"The scoring method is `{score['rubricVersion']}`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. {counts['inapplicable']} groups were excluded as not applicable; {counts['untested']} were untested. No new annual footprint or measured energy result is inferred from this report.",
+        f"The scoring method is `{score['rubricVersion']}`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. {counts['inapplicable']} groups were excluded as not applicable; {counts['untested']} were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.",
         "",
-        "Illustrations, when present, were captured separately and show their own date and viewport. They do not change the earlier transfer measurements or prove that an interaction, accessible name, or energy saving was tested.",
+        "First-load transfer headlines use the first recorded initial visit for each URL, including its completeness limit. Later cookie-choice runs remain in the interaction table; they are not combined into a median. Decimal kB = 1,000 bytes; MB = 1,000,000 bytes. Energy is shown in milliwatt-hours (mWh = 0.001 Wh).",
+        "",
+        "Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the branch checked out when the presentation supplement was prepared. Captured-revision links remain stable if that branch moves.",
         "",
         '??? note "Technical files for reproducing this report"',
         "",
         "    The report above can be read without these files. They retain exact evidence, original judgments and calculation inputs for independent reproduction.",
         "",
     ]
+    if energy:
+        # Insert the readable model boundary before the collapsed technical appendix.
+        position = lines.index('??? note "Technical files for reproducing this report"')
+        lines[position:position] = [
+            "**Energy method:** GreenFrame 2.0.1 uses separately recorded browser scenarios, with three fresh-context visits per page, page load followed by a three-second wait, and no cookie interaction or scrolling. The median client-device estimate and median network estimate are reported separately; their medians must not be added to derive a total. This is a resource-use model, not metered whole-device electricity. Browser startup and the collector warm-up are excluded; browser close is included.",
+            "",
+            "The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, independently of the transfer collector. The model assumes a 14 W display; that assumption contributes substantially to these short visits. CPU, memory and disk estimates use the collection host's properties. Background activity on this shared workstation was not independently isolated. These figures support repeat experiments under the same conditions, not device-independent rankings. GreenFrame network energy and SWDM carbon estimates overlap in scope and are not added together.",
+            "",
+        ]
+    if presentation:
+        position = lines.index('??? note "Technical files for reproducing this report"')
+        lines[position:position] = [prose(presentation["reason"]), ""]
+    if supplement_prefix:
+        lines += [
+            f"    - [Presentation revision and source links]({supplement_prefix}/presentation.json)",
+            f"    - [Report reproduction command and input hashes]({supplement_prefix}/report-receipt.json)",
+        ]
+        if energy:
+            lines += [
+                f"    - [Energy protocol, samples and provenance]({supplement_prefix}/energy.json)"
+            ]
     for name, label in [
         ("plan.json", "Audit scope and tasks"),
         ("receipt.json", "Collector commands and versions"),
@@ -618,6 +756,9 @@ def main() -> None:
     parser.add_argument("--editorial", type=Path, required=True)
     parser.add_argument("--screenshots", type=Path)
     parser.add_argument("--image-prefix", default="")
+    parser.add_argument("--presentation", type=Path)
+    parser.add_argument("--energy", type=Path)
+    parser.add_argument("--supplement-prefix")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -635,6 +776,9 @@ def main() -> None:
             )
             if args.editorial.with_name("editorial-receipt.json").exists()
             else None,
+            read(args.presentation) if args.presentation else None,
+            read(args.energy) if args.energy else None,
+            args.supplement_prefix,
         )
     )
 

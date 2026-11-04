@@ -48,8 +48,53 @@ class PlanTests(unittest.TestCase):
             validate_plan(plan)
             self.assertTrue(plan["assumptions"])
             self.assertEqual(plan["questions"], [])
+            self.assertEqual(plan["energy"]["mode"], "readiness")
             with self.assertRaises(ValueError):
                 init_plan("https://example.com", [], path)
+
+    def test_energy_sample_is_bounded_and_explicit(self):
+        for settings in [
+            {"mode": "silent"},
+            {"samples": True},
+            {"samples": 1},
+            {"pageIds": ["missing"]},
+            {"pageIds": ["home", "home"]},
+            [],
+        ]:
+            self.plan["energy"] = settings
+            with self.assertRaises(ValueError):
+                validate_plan(self.plan)
+        self.plan["energy"] = {"mode": "run", "samples": 3, "pageIds": ["home"]}
+        validate_plan(self.plan)
+
+    def test_collection_records_energy_readiness_and_freezes_artifact(self):
+        from unittest.mock import patch
+
+        from audit.workflow import collect, write
+
+        def fake_command(argv, session, name):
+            if name == "energy":
+                write(
+                    session / "energy/manifest.json",
+                    {
+                        "pages": [
+                            {"status": "unavailable_prerequisites", "metrics": None}
+                        ]
+                    },
+                )
+            return {"argv": argv, "exitCode": 0}
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write(root / "plan.json", self.plan)
+            with patch("audit.workflow.run_command", side_effect=fake_command):
+                collect(root / "plan.json", root / "session")
+            receipt = read(root / "session/receipt.json")
+            energy = receipt["commands"][-1]["argv"]
+            self.assertEqual(energy[energy.index("--mode") + 1], "readiness")
+            packet = read(root / "session/packet.json")
+            self.assertIn("energy/manifest.json:pages:0", packet["evidenceIndex"])
+            self.assertIn("energy/manifest.json", packet["frozenFiles"])
 
 
 class ReviewTests(unittest.TestCase):

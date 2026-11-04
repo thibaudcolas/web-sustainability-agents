@@ -1,0 +1,25 @@
+{
+  "origin": "https://wagtail.org",
+  "pages": [
+    {
+      "id": "energy-page-1",
+      "url": "https://wagtail.org/"
+    },
+    {
+      "id": "energy-page-2",
+      "url": "https://wagtail.org/blog/wagtail-8-1/"
+    },
+    {
+      "id": "energy-page-3",
+      "url": "https://wagtail.org/sustainability/"
+    }
+  ],
+  "energy": {
+    "samples": 3,
+    "pageIds": [
+      "energy-page-1",
+      "energy-page-2",
+      "energy-page-3"
+    ]
+  }
+}

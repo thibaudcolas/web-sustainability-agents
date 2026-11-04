@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "report-presentation-v1",
+  "site": "https://wagtail.org",
+  "reviewSHA256": "04ebbd19b85ede13304facec78b14229ee60adc1e137bfb5e551e1fb0027968f",
+  "reason": "This presentation revision responds to owner feedback: clearer guideline descriptions, area results, concise illustrations, and a separate energy experiment. The scored audit evidence and outcomes are unchanged.",
+  "findingOrder": [
+    "choice",
+    "components",
+    "no-js-content",
+    "comprehension",
+    "preference-behavior"
+  ],
+  "findingOverrides": {},
+  "captions": {
+    "release-video-preview": "The release article’s optional YouTube video.",
+    "policy-impact-summary": "The sustainability page publishes separate website and ecosystem estimates."
+  },
+  "sourceExcerpts": {},
+  "nextAuditChecks": [
+    {
+      "title": "Governance practice",
+      "observation": "The site describes commitments and CMS improvements; accountable review of the website commitment remains unverified.",
+      "nextStep": "Find a dated website progress review naming the responsible role, result and response.",
+      "guideline": "5.1"
+    },
+    {
+      "title": "Sustainability goals",
+      "observation": "The page states a direction and a CMS-wide estimate, but no comparable website baseline and progress series was captured.",
+      "nextStep": "Follow the linked roadmap and measurement method for a website-specific metric, baseline and progress record.",
+      "guideline": "5.6"
+    },
+    {
+      "title": "Data minimization",
+      "observation": "The visible newsletter form asks only for an email address with a clear purpose. This is a limited pre-submission strength.",
+      "nextStep": "Keep the small form; review the next step and clarify privacy and unsubscribe scope before assessing the complete signup.",
+      "guideline": "5.18"
+    }
+  ]
+}

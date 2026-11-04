@@ -1,0 +1,16 @@
+{
+  "baseURL": "https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/",
+  "scenarios": [
+    {
+      "path": "./scenario.js",
+      "name": "initial"
+    }
+  ],
+  "projectName": "web-sustainability-agents-client",
+  "samples": 3,
+  "distant": false,
+  "useAdblock": false,
+  "ignoreHTTPSErrors": false,
+  "containers": [],
+  "databaseContainers": []
+}
