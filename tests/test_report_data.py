@@ -2,10 +2,53 @@ import json
 import unittest
 from pathlib import Path
 
-from audit.report import display_bytes, enrich_reports, export_reports, report_stem
+from audit.report import (
+    display_bytes,
+    enrich_assessment,
+    enrich_reports,
+    export_reports,
+    report_stem,
+)
 
 
 class ReportDataTests(unittest.TestCase):
+    def test_scores_and_annual_scenarios_do_not_change_page_ratings(self):
+        assets = Path("docs/initial-implementation/assets")
+        reports = export_reports(
+            json.loads((assets / "staged-audit.json").read_text()), "staged"
+        )
+        original = json.dumps(
+            {site: report["ratings"] for site, report in reports.items()},
+            sort_keys=True,
+        )
+        scores = json.loads((assets / "scored-audits.json").read_text())
+        annual = json.loads((assets / "annual-footprints.json").read_text())
+        enrich_assessment(reports, scores, annual, "scores", "annual")
+        self.assertEqual(
+            original,
+            json.dumps(
+                {site: report["ratings"] for site, report in reports.items()},
+                sort_keys=True,
+            ),
+        )
+        for site, report in reports.items():
+            score = next(s for s in scores["scores"] if s["site"] == site)
+            self.assertEqual(report["overallScore"]["value"], score["value"])
+            rows = [
+                r
+                for r in report["observations"]
+                if r["metric"] == "annual_browsing_footprint"
+            ]
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["basis"], "scenario")
+            self.assertEqual(rows[0]["unit"], "kgCO2e/year")
+            self.assertEqual(rows[0]["sourceSHA256"], "annual")
+            self.assertEqual(report["annualFootprint"]["site"], site)
+        self.assertEqual(
+            reports["https://wagtail.org"]["annualFootprint"]["transferInputs"],
+            "partial",
+        )
+
     def test_origins_and_phase_totals_remain_separate(self):
         evidence = json.loads(
             Path("docs/initial-implementation/assets/staged-audit.json").read_text()

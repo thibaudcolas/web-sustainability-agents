@@ -52,6 +52,8 @@ The [methodology benchmark](methodology-benchmark.md) implements ten new develop
 
 **B21:** Review the distinction between eager instructional screenshots and below-fold customer logos. Create matched counterexamples with task context, request timing, native lazy-loading thresholds, legibility and intended rendering. Preserve medium-confidence reviewer judgments and disagreements rather than turning every offscreen request into a universal failure.
 
+**B22:** Separate recommendation operations from their justification in the evaluation schema. A proposal that both preserves working behavior and investigates an unknown can legitimately invite multiple actions; publishing an estimate also does not fit a site-remediation verb cleanly. Use single-action proposals or an explicitly defined action set in a new case version. Preserve the current frozen labels/results and have an independent reviewer judge whether disagreements affect actual advice.
+
 | Owner feedback                            | Pipeline location                        | Regression                                                                  |
 | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------- |
 | First-load figures, KB/MB, separate sites | Collector phases and report export       | Origin isolation, units, immutable initial snapshot                         |

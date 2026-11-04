@@ -29,3 +29,5 @@ The supplied [ranking-to-pageviews project](https://github.com/thibaudcolas/rank
 Apply bucket medians as cohort-based scenarios, not actual analytics, forecasts, or statistical bounds. Audience, geography, month, and content type can differ substantially. A high fit to aggregate bucket medians does not establish low error for an individual site. Owner-supplied analytics and held-out calibration are the next validation step.
 
 Annual emissions additionally require the right population, page mix, cache/revisit behavior, and compatible carbon assumptions. Do not multiply one cold homepage result by a rank-derived pageview point and label the product the site's measured footprint.
+
+A clearly labeled annual estimate can use explicit proxy assumptions where real analytics are unavailable. The [implemented scenario](../initial-implementation/skill-audit-workflow.md#annual-footprint-scenarios) uses an equal mix of sampled pages and first visits only, retains partial-input status, and publishes sampled-page sensitivities rather than confidence bounds. Refine those assumptions when owner data becomes available.

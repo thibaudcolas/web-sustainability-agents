@@ -13,6 +13,8 @@ This project turns the [feasibility study](../feasibility-study/README.md) into 
 
 ## Current checkpoint
 
+The [skill-guided workflow](skill-audit-workflow.md) adds scoped scores, annual browsing-footprint estimates, evidence-resolved reviewer judgments and an explicit WSG/STAR coverage roadmap. Both site reports end with next auditing steps and reproducibility details. The [methodology benchmark](methodology-benchmark.md) adds ten cases for the new skills, estimates and aggregation rules.
+
 The [staged Python workflow](staged-auditing.md) measures initial load, cookie-choice, and scrolling states; discovers carbon.txt and footprint statements; and adds Wappalyzer context. Initial-load numbers lead the updated WIP report.
 
 The separate [guide audit](guide-audit.md) and [Wagtail.org audit](wagtail-audit.md) lead with key measures and top findings, then separate quantitative evidence from qualitative review. The [reporting contract](reporting.md) defines chart-ready data; the [backlog](backlog.md) maps feedback to validation work.
@@ -30,6 +32,8 @@ The [model and real-site checkpoint](review-checkpoint.md) switches the active b
 | [Energy and traffic experiment](energy-traffic-experiment.md) | Executed energy measurements and CrUX-derived traffic scenarios                      |
 | [Expanded benchmark](expanded-benchmark.md)                   | Paired model results, controls, substantive errors, and label disagreements          |
 | [Broader WSG and STAR evidence](scope-extension.md)           | Inventory, sampled states, additional findings, and per-site registers               |
+| [Skill-guided audit and coverage](skill-audit-workflow.md)    | Current scores, annual estimates, review roles and supported versus missing coverage |
+| [Methodology and skill benchmark](methodology-benchmark.md)   | New controlled cases, model results and skill-validation limits                      |
 | [Reporting contract](reporting.md)                            | Quantitative/qualitative structure and chart-ready data                              |
 | [Ordered backlog](backlog.md)                                 | Validation gates and later experiments                                               |
 | [Model and real-site checkpoint](review-checkpoint.md)        | Current settings, paired review experiments, and validation limits                   |

@@ -63,6 +63,18 @@ audit-sites:
 audit-reports:
     uv run --locked --script audit/report.py
 
+# Prepare harness-independent evidence review packets for the audit skills.
+audit-review-packets:
+    uv run --locked --script audit/reviews.py --prepare .audit-work/review-packets
+
+# Recalculate scores and annual scenarios from published evidence and reviews.
+audit-assess:
+    uv run --locked --script audit/assess.py
+    uv run --locked --script audit/annual.py
+    npx prettier --write docs/initial-implementation/assets/scored-audits.json docs/initial-implementation/assets/annual-footprints.json
+    uv run --locked --script audit/report.py
+    npx prettier --write docs/initial-implementation/assets/reports/*.json
+
 # Collect metadata, preference, and recovery evidence; publish per-site registers.
 audit-scope:
     uv run --locked --script audit/scope.py --publish docs/initial-implementation/assets/scope-extension.json
@@ -80,6 +92,10 @@ audit-traffic:
 # Build the expanded evidence-review tasks; never run during an active campaign.
 benchmark-expanded-build:
     uv run --locked --script benchmarks/build_expanded.py
+
+# Freeze the ten new methodology/skill cases in a new directory.
+benchmark-methodology-build:
+    uv run --locked --script benchmarks/build_expanded.py --methodology
 
 # Build six development tasks from measured controlled fixtures.
 benchmark-build:

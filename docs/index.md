@@ -10,7 +10,7 @@ Can agents improve sustainability audits, and which parts need deterministic che
 
 ## Initial implementation work
 
-The first working slice includes browser fixtures, a Playwright collector, a carbon-rating adapter, a shared review skill, and a Harbor benchmark. This section records what has run, the results and limitations, and what to validate next.
+The workflow includes browser fixtures, staged measurements, carbon and energy adapters, skill-guided qualitative reviews, scoped scores, annual footprint scenarios, and Harbor benchmarks. This section records what has run, current coverage, limitations, and what to validate next.
 
 [Explore the implementation and results](initial-implementation/README.md).
 

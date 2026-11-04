@@ -42,10 +42,13 @@ Initialization installs Python and npm dependencies and downloads the pinned Val
 - `just audit-install`: Install the pinned Playwright Chromium browser used by audit tests.
 - `just audit-sites`: Run the Python staged collector, footprint-document discovery, and Wappalyzer; publish sanitized evidence.
 - `just audit-reports`: Export per-site report JSON and CSV from existing evidence; see the [reporting contract](../initial-implementation/reporting.md).
+- `just audit-review-packets`: Prepare bounded evidence packets for the [audit skills](../agent-skills.md); reviewers produce judgments, not aggregate scores.
+- `just audit-assess`: Recalculate scoped scores, annual footprint scenarios and report exports from published evidence/reviews. This does not call models or recollect sites.
 - `just audit-scope`: Collect broader metadata/preference/recovery observations and generate per-site guideline registers.
 - `just audit-energy`: Run the supplied co2-runner adapter; keep tests and model campaigns separate from hardware measurement.
 - `just audit-traffic`: Retrieve the latest public CrUX mirror and derive scoped traffic scenarios; see the [energy and traffic experiment](../initial-implementation/energy-traffic-experiment.md).
 - `just benchmark-expanded-build`: Freeze 12 evidence-review tasks; model commands and interpretation are in the [expanded benchmark](../initial-implementation/expanded-benchmark.md). Do not rebuild during a campaign.
+- `just benchmark-methodology-build`: Freeze ten additional scoring, estimation and skill-review cases; see the [methodology benchmark](../initial-implementation/methodology-benchmark.md). Builders reject nonempty task directories.
 - `just benchmark-build`: Build Harbor development tasks from frozen fixture observations.
 - `just benchmark-controls`: Run the reference and no-operation agents through Harbor.
 - `just benchmark-neuralwatt` / `just benchmark-codex`: Run the bounded model campaigns; see the [executable slice](../initial-implementation/first-slice.md) for authentication and interpretation.
