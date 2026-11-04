@@ -137,7 +137,19 @@ def validate(task: JSON, result: JSON) -> None:
                 "Guideline reviewer must cover every selected check exactly once"
             )
         mapping = {row["id"]: row["guideline"] for row in packet["checks"]}
+        scopes = {
+            row["id"]: row["assessmentScope"]
+            for row in packet["checks"]
+            if "assessmentScope" in row
+        }
         for row in rows:
+            if (
+                row["checkId"] in scopes
+                and row.get("assessmentScope") != scopes[row["checkId"]]
+            ):
+                raise ValueError(
+                    "Review must preserve the declared contextual assessmentScope"
+                )
             if row.get("guideline") != mapping[row["checkId"]] or row.get(
                 "outcome"
             ) not in {"pass", "fail", "cantTell", "inapplicable", "untested"}:

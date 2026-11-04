@@ -10,6 +10,10 @@ For new public audits, consider `access-barriers` for a representative visitor t
 
 Keep a small bounded sample: one named feature decision, one content collection, one data-collecting task, or one declared reporting period per check can be sufficient. State exclusions. Browser collector facts may already answer part of the question; do not duplicate the entire crawl.
 
+Pin the assessment scope before collection in `plan.contextScopes`, with exactly one nonempty entry for each selected contextual check, including those selected through `checks`. For journey checks, state the task, audience, access constraints and completion condition. For organizational checks, identify the service/collection/decision and applicable period. Reviewers must use that declared boundary; source-record scope and whichever observations happen to be available cannot redefine it.
+
+For example, the same successful desktop search-to-guide trace can support an anonymous English desktop task, while leaving completion with keyboard-only navigation unknown when that is the declared constraint. These are different assessments with different scopes. If the plan requires both, incomplete keyboard evidence cannot be converted into a pass by judging only desktop completion. Preserve unknowns or create a linked new session for a scope change.
+
 ## Prepare records before freezing
 
 Capture public pages, downloaded policy text, published issue/decision records or anonymized owner documents as UTF-8 text or Markdown. A task-observation record should include the starting URL, task, audience/constraints, actual actions and states, completion evidence, observation time, and limitations. Preserve relevant source wording and dates; an agent's conclusion alone is not a raw observation. Keep independently retrieved documents distinct from an owner summary or auditor interpretation. Do not include participant identities or personal form data.
@@ -19,6 +23,10 @@ Add the selected checks and records to the plan:
 ```json
 {
   "contextChecks": ["access-barriers", "content-lifecycle"],
+  "contextScopes": {
+    "access-barriers": "Anonymous English readers using keyboard-only navigation: search for the guide from the homepage and reach its complete reading content; no account or submission task.",
+    "content-lifecycle": "English guide collection and its 2026 release review: inspect the review schedule and one applied update/archive decision, retaining useful historical access."
+  },
   "contextEvidence": [
     {
       "id": "archive-example",
@@ -36,7 +44,7 @@ Add the selected checks and records to the plan:
 
 `kind` is `public-document`, `owner-record` or `task-observation`. Paths must be absolute and select regular UTF-8 files; the collector reads at most 64 KB per record and accepts at most thirty records. Source can be a document URL or an attributed owner-record identity. `capturedAt` records retrieval/observation time with a timezone, not an inferred publication date. Put publication and execution dates in the captured text. Every record needs its own scope and limitations.
 
-The workflow freezes captured text and its digest into `context.json`. Unavailable, undecodable and oversized records remain explicit; they do not silently become evidence. Per-check `requests` preserve the evidence needed and whether captured records are available for review. `review-required` means text exists, not that the expectation passes. `unresolved` means no captured record is available; browser evidence could still help. Reviewers cite `context.json:records:<index>` alongside browser or disclosure IDs. A record's `checkIds` are routing hints, not permission to ignore relevant contradictions elsewhere in the packet.
+The workflow freezes captured text and its digest into `context.json`. Unavailable, undecodable and oversized records remain explicit; they do not silently become evidence. Selected packet checks and per-check `requests` both retain the declared `assessmentScope`; requests also preserve the evidence needed and whether captured records are available for review. `review-required` means text exists, not that the expectation passes. `unresolved` means no captured record is available; browser evidence could still help. Reviewers cite `context.json:records:<index>` alongside browser or disclosure IDs. A record's `checkIds` are routing hints, not permission to ignore relevant contradictions elsewhere in the packet.
 
 Evidence arriving after collection requires a linked new session. Never revise frozen text or turn an unanswered optional owner question into an answer. Do not contact third parties to obtain records unless authorized.
 

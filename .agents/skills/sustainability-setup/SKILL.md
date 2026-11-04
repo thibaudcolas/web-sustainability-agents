@@ -3,7 +3,7 @@ name: sustainability-setup
 description: Prepare the runtime and choose a representative public-site audit scope from a URL, owner priorities and optional source context. Use before collecting a sustainability audit.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Setup and sampling
@@ -17,5 +17,7 @@ Reuse the owner's stated priorities and access boundaries. Ask the coordinator f
 Create the plan with `tool workflow init`, then refine it. Each page needs a visitor task. Discover actual cookie controls and record accept/reject actions where available. Include at least one meaningful complete public journey with destination URL, selector and expected text; all supplied postconditions must match. Select specific source files when available, preserving the distinction between local code and deployed behavior. Source roots alone do not select their contents.
 
 Load `context-review` and select relevant qualitative `contextChecks` for new audits. Start with a meaningful public task's access barriers, then consider data collection, content lifecycle, stated goals and governance where relevant. Use the owner's priorities and discovered public evidence to choose additional decision/research checks; explain omissions. Do not require the owner to choose IDs or supply internal code. Prepare attributed public documents or task observations as `contextEvidence` before collection, using the contextual role's record format. Preserve unresolved evidence requests; do not delay a public audit for unavailable optional internal records. Selected contextual checks use the explicitly extended `agent-breadth-v3` rubric; an intentionally context-free plan retains v2.
+
+Pin exactly one assessment scope per selected contextual check in `contextScopes` before handing over the plan. State the task, audience, access constraints and completion condition for interactions, or the service/decision boundary and period for organizational checks. Distinguish anonymous desktop completion from keyboard-only or constrained-device completion. Do not leave reviewers to choose a boundary from the evidence they receive; missing observations within the declared scope remain unknown.
 
 Return the absolute plan path, selected pages and rationale, omissions, prerequisites status, and unanswered scope questions. Do not claim collection or page performance from exploratory browsing. The coordinator passes the final plan to the collection role.

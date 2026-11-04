@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from audit.orchestrate import tasks
+from audit.orchestrate import validate as validate_worker
 from audit.workflow import (
     ROOT,
     catalog,
@@ -15,6 +16,7 @@ from audit.workflow import (
     snapshot_context,
     validate_frozen_files,
     validate_plan,
+    validate_review,
     write,
 )
 
@@ -32,6 +34,9 @@ class ContextReviewTests(unittest.TestCase):
             ],
             "checks": [],
             "contextChecks": ["content-lifecycle"],
+            "contextScopes": {
+                "content-lifecycle": "English guide collection; the October 2026 review and one applied archive decision"
+            },
             "contextEvidence": [],
         }
         self.path = self.directory / "review.md"
@@ -71,7 +76,7 @@ class ContextReviewTests(unittest.TestCase):
 
     def test_context_free_defaults_remain_v2_and_context_needs_no_source(self):
         definitions = catalog()
-        public_plan = {**self.plan, "contextChecks": []}
+        public_plan = {**self.plan, "contextChecks": [], "contextScopes": {}}
         self.assertEqual(len(selected_checks(definitions, public_plan)), 25)
         source_plan = {**public_plan, "sourceFiles": [{"path": "README.md"}]}
         self.assertEqual(len(selected_checks(definitions, source_plan)), 33)
@@ -79,7 +84,12 @@ class ContextReviewTests(unittest.TestCase):
         self.assertEqual(len(chosen), 26)
         self.assertIn("content-lifecycle", {c["id"] for c in chosen})
         self.assertFalse(any(c.get("requiresSource") for c in chosen))
-        direct = {**public_plan, "checks": ["content-lifecycle"]}
+        direct = {
+            **public_plan,
+            "checks": ["content-lifecycle"],
+            "contextScopes": self.plan["contextScopes"],
+        }
+        validate_plan(direct)
         self.assertEqual(
             [c["id"] for c in selected_checks(definitions, direct)],
             ["content-lifecycle"],
@@ -88,6 +98,31 @@ class ContextReviewTests(unittest.TestCase):
     def test_records_require_attribution_time_scope_and_selected_check(self):
         self.plan["contextEvidence"] = [self.record]
         validate_plan(self.plan)
+        invalid_scopes: list[Any] = [
+            None,
+            [],
+            {},
+            {"content-lifecycle": " "},
+            {"content-lifecycle": 1},
+            {"content-lifecycle": "English guide", "access-barriers": "Desktop task"},
+        ]
+        for scopes in invalid_scopes:
+            broken = copy.deepcopy(self.plan)
+            broken["contextScopes"] = scopes
+            with (
+                self.subTest(scopes=scopes),
+                self.assertRaisesRegex(ValueError, "contextScopes"),
+            ):
+                validate_plan(broken)
+            with (
+                self.subTest(selection=scopes),
+                self.assertRaisesRegex(ValueError, "contextScopes"),
+            ):
+                selected_checks(catalog(), broken)
+        missing_scope = copy.deepcopy(self.plan)
+        missing_scope.pop("contextScopes")
+        with self.assertRaisesRegex(ValueError, "contextScopes"):
+            validate_plan(missing_scope)
         for key, invalid in [
             ("scope", ""),
             ("source", ""),
@@ -122,8 +157,8 @@ class ContextReviewTests(unittest.TestCase):
         self.assertEqual(missing["records"][0]["status"], "unavailable")
         self.assertEqual(missing["requests"][0]["recordIds"], [])
 
-    def packet(self) -> Path:
-        session = self.directory / "session"
+    def packet(self, name: str = "session") -> Path:
+        session = self.directory / name
         session.mkdir()
         self.plan["contextEvidence"] = [self.record]
         write(session / "plan.json", self.plan)
@@ -175,7 +210,61 @@ class ContextReviewTests(unittest.TestCase):
         self.assertEqual(packet["methodologyCoverage"]["catalogGuidelineGroups"], 40)
         self.assertEqual(packet["methodologyCoverage"]["catalogFullGuidelineGroups"], 0)
         self.assertEqual(packet["methodologyCoverage"]["selectedGuidelineGroups"], 25)
+        contextual = next(
+            check for check in packet["checks"] if check["id"] == "content-lifecycle"
+        )
+        self.assertEqual(
+            contextual["assessmentScope"],
+            self.plan["contextScopes"]["content-lifecycle"],
+        )
+        context = read(session / "context.json")
+        self.assertEqual(
+            context["requests"][0]["assessmentScope"], contextual["assessmentScope"]
+        )
+        self.plan["contextScopes"]["content-lifecycle"] = (
+            "French guide collection; the November 2026 review and one applied archive decision"
+        )
+        other = self.packet("different-scope")
+        other_check = next(
+            check
+            for check in read(other / "packet.json")["checks"]
+            if check["id"] == "content-lifecycle"
+        )
+        self.assertEqual(read(other / "context.json")["records"], context["records"])
+        self.assertEqual(other_check["expectation"], contextual["expectation"])
+        self.assertNotEqual(
+            other_check["assessmentScope"], contextual["assessmentScope"]
+        )
+        self.assertNotEqual(digest(other / "plan.json"), digest(session / "plan.json"))
+        self.assertNotEqual(
+            digest(other / "context.json"), digest(session / "context.json")
+        )
+        self.assertNotEqual(
+            digest(other / "packet.json"), digest(session / "packet.json")
+        )
+        self.assertFalse(any("assessmentScope" in check for check in catalog()))
         tasks(session, self.directory / "tasks", "sequential")
+        task = read(self.directory / "tasks/guidelines.task.json")
+        review = read(session / "review-template.json")
+        review["reviewer"] = {"harness": "test", "model": "test", "reasoning": "test"}
+        validate_review(review, packet, digest(session / "packet.json"))
+        validate_worker(task, review)
+        review_row = next(
+            row for row in review["rows"] if row["checkId"] == "content-lifecycle"
+        )
+        self.assertEqual(review_row["assessmentScope"], contextual["assessmentScope"])
+        for value in [None, other_check["assessmentScope"]]:
+            review_row["assessmentScope"] = value
+            with (
+                self.subTest(review_scope=value),
+                self.assertRaisesRegex(ValueError, "assessmentScope"),
+            ):
+                validate_review(review, packet, digest(session / "packet.json"))
+            with (
+                self.subTest(worker_scope=value),
+                self.assertRaisesRegex(ValueError, "assessmentScope"),
+            ):
+                validate_worker(task, review)
         for role in ["claims", "guidelines"]:
             task = read(self.directory / "tasks" / f"{role}.task.json")
             self.assertEqual(len(task["supportingSkills"]), 1)
@@ -189,6 +278,7 @@ class ContextReviewTests(unittest.TestCase):
 
     def test_context_free_packet_retains_v2_rubric(self):
         self.plan["contextChecks"] = []
+        self.plan["contextScopes"] = {}
         self.record["checkIds"] = []
         # A context-free packet has no contextual record selection.
         session = self.directory / "plain"

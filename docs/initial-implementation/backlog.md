@@ -38,11 +38,15 @@ The current task follows this sequence. It is not necessary to finish every futu
 
 The broader campaign adds two Sol setup failures: another missing platform binary and a temporary Debian package-resolution failure. Both passed unchanged-input retries. Prioritize the reusable image before another full campaign; preserve these exceptions separately from model errors.
 
+The new [setup investigation](assets/benchmark-setup-review.json) verifies that Harbor 0.23.0 already skips all dependency installation when `codex --version` matches the requested version. A clean image containing Codex 0.166.0 can therefore avoid repeated apt/NVM/npm setup without an adapter patch. Pin the effective Node 22 runtime deliberately: the current task image starts on Node 24, but Harbor installs Node 22 during setup. Add Dockerfile and resolved image identity to future paired-provenance checks, keep authentication outside images, and never reuse a completed trial container as the clean base. The skip path was checked against the installed adapter with a fake environment; no end-to-end speedup is claimed yet. Source: [Harbor 0.23.0 Codex installer](https://github.com/harbor-framework/harbor/blob/v0.23.0/src/harbor/agents/installed/codex.py#L328-L381).
+
 ## Judgment labels
 
 **B17:** Separate direct site-state propositions from evidence-sufficiency questions in the benchmark schema. Both model arms can preserve the correct unknown value and sensible advice while choosing different `fail`/`inconclusive` labels for phrases such as “known to be zero” or “attributable solely.” Preserve original scores and explanations; independently review the question contract before accepting alternative labels or rerunning models. A label mismatch is not automatically a harmful recommendation.
 
 The [broader case review](breadth-review-cases.md) reproduces this problem for the claim that a deployed dependency version is unresolved. Add an explicit question mode in a new version. Separately distinguish an observed-event counter from an unmeasured outcome: both models returned null for successful submissions when the reference expected zero recorded successes, without an explicit counter in the facts.
+
+The new scope cases expose two more recommendation-label ambiguities: reporting area scores does not establish an existing practice to “preserve,” and keeping a working route while requesting a baseline combines two actions. Future cases should separate proposal support from the site-action category and use atomic recommendations. Keep the current strict grades and model explanations; post-hoc interpretation is not a corrected accuracy estimate.
 
 ## Feedback routing
 

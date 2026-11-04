@@ -1,0 +1,393 @@
+{
+  "schemaVersion": "context-forward-test-comparison-v1",
+  "purpose": "Separate-agent developer forward-test, not held-out accuracy validation",
+  "sourceRevision": "839c299e18c9fc7ca3f1c92c49b754d1710c1a9d",
+  "procedure": "The second native Sol/high agent received the same frozen site evidence and selected check IDs but was instructed not to read earlier preview answers. No new browsing or site-score changes.",
+  "sites": {
+    "guide": {
+      "developerPreview": "docs/reports/assets/report-refinement/guide/context-preview.json",
+      "developerPreviewSHA256": "e3e391b533d9e85ccc0c027e8a32ce329eccf5041eac51fb58dd922062e89002",
+      "independentReview": {
+        "schemaVersion": "independent-context-review-v1",
+        "site": "https://guide.wagtail.org",
+        "createdAt": "2026-11-04T23:05:02.944680+00:00",
+        "reviewer": {
+          "harness": "nativeCodex",
+          "model": "gpt-6.1-sol",
+          "reasoning": "high"
+        },
+        "purpose": "Independent developer forward-test of the current contextual sustainability skill against existing frozen evidence.",
+        "caveat": "This is a developer forward-test, not a held-out accuracy study. Current context checks were absent from the frozen audit check selections. These are separate supplemental judgments against contextual-review-v1, not edits to the audits, frozen evidence, site scores or conformance claims. No browsing, new collection or access to report-refinement/context-preview.json or .audit-work/report-refinement outputs occurred. No comparison to another reviewer has been performed.",
+        "rubricVersion": "contextual-review-v1",
+        "inputHashes": {
+          "algorithm": "sha256",
+          "files": {
+            "AGENTS.md": "bf5744ef0ffaf22be9d809b2d2ed888756610d651c127ecade61cf45437f217f",
+            ".agents/skills/sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+            ".agents/skills/sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+            "audit/context-checks.json": "73c9c10d0dc6b9cea83b0e318b8fac65b4de95f51891c2387675372a4810bf77",
+            "docs/reports/assets/fresh-guide/plan.json": "21796679551f4ea768e352b4bbe67a818a8aa918fb54111ce7edff1a3e3a223a",
+            "docs/reports/assets/fresh-guide/source.json": "25dbf22cf9f428169158db36510db5b47d93b8afaf798c41c5eab5ce44a6cf52",
+            "docs/reports/assets/fresh-guide/probes.json": "eef2902f81af4b9a0e7458a6200e0ce904b92fab329cc233603b1b2d34d117cb",
+            "docs/reports/assets/fresh-guide/staged.json": "28ab60216fd63c50f78d9d458e92f6b74d0a8320eb74587c6ab05fd88fe339e2",
+            "docs/reports/assets/fresh-guide/disclosures.json": "b03f03d8615fc580ff12bc99339187563be04cce670b89e2d8e8d1f4ba6a6b34",
+            "docs/reports/assets/fresh-guide/packet.json": "49fb5b845b47930414721b698f5c4f18da5d07b58ded8f6d198db6538c010ed7",
+            "docs/reports/assets/fresh-guide/checks.json": "6196ee2dd9ffd04273c0bb3716d9849cb030882d59e1215ad16d23778f51268e",
+            "docs/reports/assets/fresh-guide/session.zip": "3437bc4c89d3eb0c8c2787a7c603530b5653cd8b3f93f6e5ada7ced4b2d6b76a"
+          },
+          "sessionArchiveMembers": {
+            "session/skills/sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1",
+            "session/skills/sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a"
+          }
+        },
+        "evidenceScope": {
+          "root": "docs/reports/assets/fresh-guide",
+          "frozenCaptureDate": "2026-11-04",
+          "sourceDeploymentVerified": false,
+          "contextRecordsPresent": false,
+          "selectionNote": "Existing browser/public/source observations reused; no dedicated context.json or owner research/review record was available."
+        },
+        "results": [
+          {
+            "checkId": "content-lifecycle",
+            "guideline": "5.18",
+            "criterion": "outdated-content",
+            "expectation": "For a declared content collection, evidence identifies a review/expiry schedule and demonstrates an applied archive, update or deletion decision, with a lightweight discoverable historical version where users still need it. A date label, old article or policy alone cannot establish an effective lifecycle or justify deletion.",
+            "scope": {
+              "collection": "English Wagtail user-guide content and release/version copies",
+              "example": "Current New in Wagtail 8.1 article and published historical-copies route",
+              "exclusions": [
+                "CMS revision history",
+                "unretrieved Git historical content",
+                "all releases and translations"
+              ]
+            },
+            "outcome": "cantTell",
+            "evidenceIds": [
+              "source.json:files:9",
+              "probes.json:pages:4",
+              "probes.json:pages:5"
+            ],
+            "observations": [
+              "CONTRIBUTING says the latest guide corresponds to the development release; for each release maintainers review/update latest content, then copy it for the release.",
+              "Live 8.1 notes contain specific new-feature documentation and a November 3, 2026 update date.",
+              "Live About says historical copies of every page are in the wagtail/guide Git content directory."
+            ],
+            "rationale": "The candidate contribution instructions specify a release-triggered review/update and copy schedule. The live 8.1 article contains release-specific content, and About advertises historical source in Git. This supplies a plausible process and discoverable historical route, but the frozen sample does not show a particular applied review/archive decision, its rationale and resulting historical content. A last-updated label and a stated repository location do not establish that execution. Missing evidence leaves implementation unknown, rather than proving that content was unmanaged.",
+            "confidence": "high",
+            "nextEvidence": {
+              "request": "One dated release review example identifying the reviewed pages, accountable maintainer, update/archive decision and rationale, plus the resulting live page and a retrieved lightweight historical version.",
+              "likelySource": "Public guide release/content issue or commit and the linked content directory; an anonymized maintainer record would also suffice.",
+              "validationPurpose": "Connect the release-triggered schedule to an applied lifecycle action and verify continued historical user value and access."
+            },
+            "limitations": [
+              "Owner-supplied source revision is not attested as deployed.",
+              "No historical repository contents or CMS changes were retrieved in the frozen packet."
+            ],
+            "fullGuidelineCoverage": false
+          },
+          {
+            "checkId": "audience-needs",
+            "guideline": "2.2",
+            "criterion": "audience-evaluation",
+            "expectation": "For the declared service or feature decision, evidence identifies relevant users and affected communities, their material requirements or constraints, and how research findings changed or confirmed that decision. Persona labels, analytics counts or an auditor completing a task alone do not demonstrate user involvement.",
+            "scope": {
+              "decision": "The guide documentation structure for content editors, moderators, administrators and other CMS users",
+              "exclusions": [
+                "Organization-wide user research",
+                "unretrieved external Google Summer of Code articles",
+                "representative testing"
+              ]
+            },
+            "outcome": "cantTell",
+            "evidenceIds": [
+              "source.json:files:8",
+              "probes.json:pages:0",
+              "probes.json:pages:5"
+            ],
+            "observations": [
+              "README describes content editors, moderators, administrators and other users and adoption of Diataxis.",
+              "Homepage describes getting started, how-to, concepts and reference purposes.",
+              "About describes CMS user documentation and separate machine-friendly formats."
+            ],
+            "rationale": "The README and live guide name relevant user groups and organize content around tutorials, how-tos, concepts and reference. These are audience and design assertions. The frozen records contain no bounded research record showing participant or affected-community scope, material constraints, findings and how those findings changed or confirmed this structure. The auditor finding an article cannot supply user involvement.",
+            "confidence": "high",
+            "nextEvidence": {
+              "request": "One public or anonymized research/decision example for the guide structure or a named guide feature: audience/participant scope, material needs, findings and the resulting decision.",
+              "likelySource": "Guide design issue, research case study or supplied maintainer research summary with linked findings.",
+              "validationPurpose": "Establish actual audience involvement and the connection between findings and the selected decision."
+            },
+            "limitations": [
+              "No personal participant data is needed.",
+              "Absence from this public sample does not prove that research never happened."
+            ],
+            "fullGuidelineCoverage": false
+          },
+          {
+            "checkId": "access-barriers",
+            "guideline": "5.13",
+            "criterion": "obstacle-consideration",
+            "expectation": "For the declared visitor task and represented access constraints, inspect material accessibility, technical, geographic or fairness barriers and verify the sampled route or alternative supports task completion while preserving necessary security and safety. Do not demand removal of justified authentication or infer all-user accessibility from one successful route.",
+            "scope": {
+              "task": "From the English homepage, search for images and open the Manage images guide",
+              "audience": "Anonymous English-reading CMS editor using a JavaScript-enabled desktop browser with pointer and text-entry access",
+              "representedConstraints": [
+                "Public access without a CMS account or paid subscription",
+                "1280 by 800 desktop viewport"
+              ],
+              "completionCondition": "URL /en/how-to-guides/manage-images/, one h1 matching Manage images and successful declared actions",
+              "exclusions": [
+                "Full keyboard-only journey",
+                "Narrow-viewport navigation interaction",
+                "Screen-reader or representative-user testing",
+                "Other languages, geographies and network restrictions",
+                "Performing image edits in authenticated Wagtail"
+              ]
+            },
+            "outcome": "pass",
+            "evidenceIds": [
+              "probes.json:journeys:0",
+              "probes.json:pages:0",
+              "probes.json:pages:2",
+              "probes.json:pages:3"
+            ],
+            "observations": [
+              "All four recorded actions completed: open search, enter images, press Enter and open the matching result.",
+              "Completion conditions for destination URL, unique selector and Manage images text are all true; status is satisfied.",
+              "The homepage keyboard sample includes a focus-visible direct Manage images anchor, but no activation or complete keyboard task was recorded.",
+              "Narrow and no-JavaScript page states are supplementary snapshots; they do not establish full constrained journeys."
+            ],
+            "rationale": "Within the declared desktop anonymous sample, the complete homepage search route executed successfully and reached the exact article and unique heading without authentication, payment or a submission of personal information. The homepage also exposes a visible direct Manage images link, and desktop destination/search states expose readable content without horizontal overflow. The sampled route therefore supports the stated task under these represented constraints. This is a bounded observed access result; it does not establish accessibility for all users.",
+            "confidence": "medium",
+            "nextEvidence": {
+              "request": "No additional evidence is required for this bounded desktop result. To extend it, capture complete keyboard-only and 360-pixel navigation/search journeys to the same article.",
+              "likelySource": "A new authorized browser task-observation record.",
+              "validationPurpose": "Verify task completion for the additional access constraints, rather than generalizing from static probes."
+            },
+            "limitations": [
+              "Successful agent navigation is not representative user testing or full WCAG conformance.",
+              "No restriction was encountered that needed a security or safety exception."
+            ],
+            "fullGuidelineCoverage": false
+          }
+        ]
+      },
+      "comparison": [
+        {
+          "checkId": "content-lifecycle",
+          "developerOutcome": "cantTell",
+          "independentOutcome": "cantTell",
+          "sameOutcome": true
+        },
+        {
+          "checkId": "audience-needs",
+          "developerOutcome": "cantTell",
+          "independentOutcome": "cantTell",
+          "sameOutcome": true
+        },
+        {
+          "checkId": "access-barriers",
+          "developerOutcome": "cantTell",
+          "independentOutcome": "pass",
+          "sameOutcome": false
+        }
+      ]
+    },
+    "wagtail": {
+      "developerPreview": "docs/reports/assets/report-refinement/wagtail/context-preview.json",
+      "developerPreviewSHA256": "ecafc92fcf9bf755d82763f9bcb67d63fce7cc073402a8d4b7b005a29592e9b2",
+      "independentReview": {
+        "schemaVersion": "independent-context-review-v1",
+        "site": "https://wagtail.org",
+        "createdAt": "2026-11-04T23:05:02.969637+00:00",
+        "reviewer": {
+          "harness": "nativeCodex",
+          "model": "gpt-6.1-sol",
+          "reasoning": "high"
+        },
+        "purpose": "Independent developer forward-test of the current contextual sustainability skill against existing frozen evidence.",
+        "caveat": "This is a developer forward-test, not a held-out accuracy study. Current context checks were absent from the frozen audit check selections. These are separate supplemental judgments against contextual-review-v1, not edits to the audits, frozen evidence, site scores or conformance claims. No browsing, new collection or access to report-refinement/context-preview.json or .audit-work/report-refinement outputs occurred. No comparison to another reviewer has been performed.",
+        "rubricVersion": "contextual-review-v1",
+        "inputHashes": {
+          "algorithm": "sha256",
+          "files": {
+            "AGENTS.md": "bf5744ef0ffaf22be9d809b2d2ed888756610d651c127ecade61cf45437f217f",
+            ".agents/skills/sustainability-context-review/SKILL.md": "e0ec17ea70a1e133996f3c9879c99029bd679012b9f908d35aa8df1b9ecda1ea",
+            ".agents/skills/sustainability-context-review/references/review.md": "68c5718c9e2a53e352589a5efa8cb04849d58be5c7cf5f7adb425fc42f1ff1b2",
+            "audit/context-checks.json": "73c9c10d0dc6b9cea83b0e318b8fac65b4de95f51891c2387675372a4810bf77",
+            "docs/reports/assets/fresh-wagtail/plan.json": "cb32f6d6b7a87ea53ce403e8917418984e037dc85a7c2eff0513d41a7a7a7e12",
+            "docs/reports/assets/fresh-wagtail/source.json": "dc1f47aa54f5093b4bb302467fcd73300179365bfa7b340bf57a3e6b8ed77999",
+            "docs/reports/assets/fresh-wagtail/probes.json": "c741ecf24ee59087039d793306a8cc24e9cb9df39591406d21faaf51829d1853",
+            "docs/reports/assets/fresh-wagtail/staged.json": "c41c6e1bb768b84f3b175788e433e424078083fa87e5aa4064c1c302b49d4528",
+            "docs/reports/assets/fresh-wagtail/disclosures.json": "562036b4d51d359a5ac5f11c421d16b9dfcbaa8adde4a3a44140a4f26cde8dc1",
+            "docs/reports/assets/fresh-wagtail/packet.json": "e18c88928aba9a129342a6e2de378fab5301a4abe4f82d75054ce725737579fc",
+            "docs/reports/assets/fresh-wagtail/checks.json": "6196ee2dd9ffd04273c0bb3716d9849cb030882d59e1215ad16d23778f51268e",
+            "docs/reports/assets/fresh-wagtail/session.zip": "b8a82191b0bc22fb07de71547f634ec9921caf891b4931d0a27a7f5a66228979"
+          },
+          "sessionArchiveMembers": {
+            "session/skills/sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1",
+            "session/skills/sustainability-guideline-review/references/assessment-crosswalk.json": "c2f6acadb9a89655e663f90c13eb7c6ac9c29c43016c3fcb60c6a46fd973d58a"
+          }
+        },
+        "evidenceScope": {
+          "root": "docs/reports/assets/fresh-wagtail",
+          "frozenCaptureDate": "2026-11-04",
+          "sourceDeploymentVerified": false,
+          "contextRecordsPresent": false,
+          "selectionNote": "Existing browser/public/source observations reused; no dedicated context.json or owner research/review record was available."
+        },
+        "results": [
+          {
+            "checkId": "governance-practice",
+            "guideline": "5.1",
+            "criterion": "governance-over-time",
+            "expectation": "For a declared sustainability commitment and period, records show accountable review, a monitored result and a resulting action or reasoned continuation over time. A published policy, named lead or future review date alone cannot pass this implementation check.",
+            "scope": {
+              "commitment": "Reduce the impact/carbon emissions of wagtail.org itself",
+              "period": "The dated April 2026 website footprint disclosure through the November 4, 2026 capture",
+              "exclusions": [
+                "Wagtail CMS ecosystem annual footprint as a substitute for website governance",
+                "Uncaptured DebugBear records or issue histories",
+                "Organization-wide implementation"
+              ]
+            },
+            "outcome": "cantTell",
+            "evidenceIds": [
+              "probes.json:pages:4",
+              "staged.json:discovery:0",
+              "disclosures.json:sites:0"
+            ],
+            "observations": [
+              "Sustainability says the project is working to reduce emissions of wagtail.org, docs.wagtail.org and guide.wagtail.org.",
+              "Discovery document 4, Digital emissions, gives April 2026 homepage emissions and claims weekly representative-page monitoring and alerts.",
+              "Annual reports in discovery documents 1 through 3 explicitly measure a many-site Wagtail ecosystem rather than this audited website."
+            ],
+            "rationale": "The live sustainability page explicitly includes wagtail.org in the reduction commitment. The captured Digital emissions page reports an April 2026 homepage estimate and says representative pages are checked weekly with alerts against a target. This is useful public self-reporting, but the packet lacks dated website review records linking an accountable role, monitored results and a resulting action or reasoned continuation across the period. Ecosystem annual reports concern a different service boundary and cannot close that site-governance gap.",
+            "confidence": "high",
+            "nextEvidence": {
+              "request": "One dated wagtail.org monitoring/review record after the April 2026 baseline, naming the accountable role and documenting the response or reasoned continuation.",
+              "likelySource": "Public site issue/PR history or a redacted DebugBear alert and associated maintainer decision.",
+              "validationPurpose": "Connect the site commitment to executed monitoring, accountable review and a documented response over time."
+            },
+            "limitations": [
+              "Public statements are attributed self-reporting.",
+              "Only bounded excerpts of ecosystem reports are frozen; no new browsing was performed."
+            ],
+            "fullGuidelineCoverage": false
+          },
+          {
+            "checkId": "sustainability-goals",
+            "guideline": "5.6",
+            "criterion": "web-sustainability-goals",
+            "expectation": "Published goals for the audited web service define a measurable target or direction, relevant metric and boundary, and communicate dated progress against a comparable baseline. A corporate net-zero ambition or isolated low-carbon badge cannot establish service-specific goals and progress.",
+            "scope": {
+              "service": "wagtail.org website",
+              "metricAndBoundary": "April 2026 homepage CO2e per page view, page weight and a broad total annual website estimate",
+              "period": "April 2026 disclosure to November 4, 2026 capture",
+              "exclusions": [
+                "CMS ecosystem totals and ecosystem 10 percent annual aspiration",
+                "Cross-method comparison with the fresh audit headline",
+                "All project websites as a combined boundary"
+              ]
+            },
+            "outcome": "cantTell",
+            "evidenceIds": [
+              "probes.json:pages:4",
+              "staged.json:discovery:0",
+              "disclosures.json:sites:0"
+            ],
+            "observations": [
+              "Discovery document 4 estimates the homepage at 0.06 gCO2e per pageview as of April 2026, first/repeat mobile weights 507/41.9 kb and SWD v4.",
+              "The same page estimates total website emissions as 30 to 300 kg CO2e/year and says alerts enforce an unspecified target.",
+              "The 2025 ecosystem report discusses 6431 sites, estimated traffic and changing methodology, so it is not a website baseline."
+            ],
+            "rationale": "The site-specific disclosure defines the homepage sample, SWD version 4, mobile Lighthouse page weights, carbon factors and a dated estimate of 0.06 gCO2e/pageview; the sustainability page states a site-impact reduction direction. These support a goal direction and a measurable boundary. However, only one dated site measurement is captured, with no comparable baseline/progress pair, and the referenced monitoring target is not quantified in the captured text. Ecosystem annual totals and their method-sensitive changes cannot establish progress for wagtail.org.",
+            "confidence": "high",
+            "nextEvidence": {
+              "request": "A published wagtail.org target or reduction direction tied to a metric, plus two dated comparable site measurements identifying baseline, progress period and any method/scope changes.",
+              "likelySource": "An updated Digital emissions page or a linked public site-monitoring history.",
+              "validationPurpose": "Demonstrate dated progress against a comparable baseline within the audited service boundary."
+            },
+            "limitations": [
+              "A one-time rating is not dated progress.",
+              "The new audit and the published mobile/SWD estimate have different measurement boundaries and are not treated as comparable."
+            ],
+            "fullGuidelineCoverage": false
+          },
+          {
+            "checkId": "data-minimization",
+            "guideline": "5.18",
+            "criterion": "data-ownership",
+            "expectation": "For the sampled data-collecting task, each requested personal-data category has a task-related purpose, required and optional choices are meaningful, and observed controls match the stated purpose. A privacy policy cannot establish actual retention, downstream deletion or all-system consent propagation; keep those outside this bounded task judgment.",
+            "scope": {
+              "task": "Inspect the visible This Week in Wagtail footer newsletter signup on the Contact page, stopping before submission",
+              "audience": "Anonymous visitor voluntarily requesting events, features and adventures by email",
+              "personalDataCategories": [
+                "Email address"
+              ],
+              "observedControl": "One visible enabled required type=email field labelled Email and a Sign up submit button",
+              "exclusions": [
+                "Submitting any data or contacting the listed email addresses",
+                "Provider landing pages or later signup steps",
+                "Tracking-cookie processing",
+                "Retention, deletion, backup handling and downstream consent propagation",
+                "General contact correspondence"
+              ]
+            },
+            "outcome": "pass",
+            "evidenceIds": [
+              "probes.json:pages:6",
+              "probes.json:pages:5"
+            ],
+            "observations": [
+              "Contact page footer states This Week in Wagtail and Sign up for events, features and adventures on Wagtail.",
+              "Controls contain one visible personal-data input: footer_email, type email, aria-label Email, required true, disabled false, autocomplete email. The control inventory is marked untruncated.",
+              "The newsletter form posts to a torchbox.us1.list-manage.com subscribe endpoint. No submission was performed.",
+              "Privacy mentions voluntarily supplied contact information, responding to enquiries, internal marketing and opt-out, but also describes its scope as the Torchbox website."
+            ],
+            "rationale": "The visible signup explicitly offers This Week in Wagtail events, features and adventures. Its sole visible personal-data field is an email address, enabled and required, which has a direct stated newsletter-delivery purpose. The visitor can choose whether to initiate signup; no extra personal-data categories, preselected marketing choices or unexplained required fields are observed in this sampled form. This passes the bounded visible collection/purpose judgment. It does not establish what happens after submission or prove retention and deletion practices. The privacy text is recorded as context, including its Torchbox wording and scope ambiguity, without using it to assert backend compliance.",
+            "confidence": "medium",
+            "nextEvidence": {
+              "request": "No additional evidence is required for this visible-field judgment. For any later signup step, capture its fields, defaults and purpose wording without sending personal data.",
+              "likelySource": "An authorized browser observation of the provider continuation or a scoped form-processing explanation.",
+              "validationPurpose": "Determine whether additional requested categories and choices remain necessary and aligned with the newsletter purpose."
+            },
+            "limitations": [
+              "The required attribute is observed; no attempted submission or provider response was tested.",
+              "The visible-field inventory does not inventory automatic background data processing.",
+              "Policy assertions do not verify execution or all-system propagation."
+            ],
+            "fullGuidelineCoverage": false
+          }
+        ]
+      },
+      "comparison": [
+        {
+          "checkId": "governance-practice",
+          "developerOutcome": "cantTell",
+          "independentOutcome": "cantTell",
+          "sameOutcome": true
+        },
+        {
+          "checkId": "sustainability-goals",
+          "developerOutcome": "cantTell",
+          "independentOutcome": "cantTell",
+          "sameOutcome": true
+        },
+        {
+          "checkId": "data-minimization",
+          "developerOutcome": "pass",
+          "independentOutcome": "pass",
+          "sameOutcome": true
+        }
+      ]
+    }
+  },
+  "assessment": "Five of six outcome labels agree. Guide access-barriers differs because the developer preview considers constrained-device and keyboard completion, while the separate reviewer scopes its pass to the completed anonymous English desktop journey. The observations need not conflict: the assessment boundaries do.",
+  "pipelineResponse": "Future setup must declare per-check contextual scopes before evidence is frozen; review workers must retain these boundaries. The existing reports keep their original score and still request the uncompleted constrained journeys.",
+  "limits": [
+    "Two agents using the same model are not an independent human reference panel.",
+    "The earlier preview and second review applied new checks to an old packet where those check scopes had not been selected.",
+    "Outcome agreement in six developer examples does not estimate audit accuracy."
+  ]
+}

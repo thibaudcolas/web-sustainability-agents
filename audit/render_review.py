@@ -664,6 +664,11 @@ def render(
             f"**Next step:** {prose(item['nextStep'])}",
             "",
         ]
+        if rules[identifier].get("assessmentScope"):
+            lines += [
+                f"**Assessed scope:** {prose(rules[identifier]['assessmentScope'])}",
+                "",
+            ]
         descriptions = source_descriptions(
             session, packet, row.get("evidenceIds", []), documents
         )

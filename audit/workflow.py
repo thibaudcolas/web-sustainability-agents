@@ -167,6 +167,7 @@ def validate_context(plan: JSON) -> None:
     if not isinstance(records, list) or len(records) > 30:
         raise ValueError("Select at most 30 contextual evidence records")
     selected = set(checks) | (set(plan.get("checks", [])) & known)
+    context_scopes(plan, selected)
     identifiers: set[str] = set()
     for record in records:
         if not isinstance(record, dict):
@@ -209,6 +210,22 @@ def validate_context(plan: JSON) -> None:
             )
 
 
+def context_scopes(plan: JSON, selected: set[str]) -> dict[str, str]:
+    """Require a declared assessment boundary for exactly the contextual selection."""
+    scopes = plan.get("contextScopes", {})
+    if (
+        not isinstance(scopes, dict)
+        or set(scopes) != selected
+        or any(
+            not isinstance(scope, str) or not scope.strip() for scope in scopes.values()
+        )
+    ):
+        raise ValueError(
+            "contextScopes must map every selected contextual check, and no others, to a nonempty assessment scope"
+        )
+    return scopes
+
+
 def selected_checks(definitions: list[JSON], plan: JSON) -> list[JSON]:
     """Preserve v2 defaults while allowing the setup skill to select context."""
     requested = plan.get("checks") or [
@@ -222,7 +239,21 @@ def selected_checks(definitions: list[JSON], plan: JSON) -> list[JSON]:
     requested = set(requested) | set(plan.get("contextChecks", []))
     if requested - {item["id"] for item in definitions}:
         raise ValueError("Unknown or duplicate check ID")
-    return [item for item in definitions if item["id"] in requested]
+    selected = [item for item in definitions if item["id"] in requested]
+    scopes = context_scopes(
+        plan,
+        {
+            item["id"]
+            for item in selected
+            if item.get("method") == "qualitative-context-review"
+        },
+    )
+    return [
+        {**item, "assessmentScope": scopes[item["id"]]}
+        if item["id"] in scopes
+        else item
+        for item in selected
+    ]
 
 
 def snapshot_context(plan: JSON, selected: list[JSON]) -> JSON:
@@ -259,6 +290,7 @@ def snapshot_context(plan: JSON, selected: list[JSON]) -> JSON:
         "requests": [
             {
                 "checkId": item["id"],
+                "assessmentScope": item["assessmentScope"],
                 "request": item["evidenceRequirements"],
                 "recordIds": [
                     record["id"]
@@ -316,6 +348,7 @@ def init_plan(origin: str, urls: list[str], path: Path) -> None:
         "journeys": [],
         "checks": [],
         "contextChecks": [],
+        "contextScopes": {},
         "contextEvidence": [],
         "sourceRoots": [],
         "sourceFiles": [],
@@ -448,7 +481,7 @@ def prepare_packet(session: Path, plan: JSON) -> None:
             "evidenceIndex": index,
             "collectionReceipt": "receipt.json",
             "skillSnapshot": "skills",
-            "reviewContract": "One row per check ID: checkId, guideline, outcome, evidenceIds, rationale, confidence, nextEvidence. Outcomes pass/fail/cantTell/inapplicable/untested. Cite actual packet evidence IDs and specific observations. Supply reviewer object with harness, model, reasoning. Explicitly explain applicability and unresolved evidence. Do not score yourself.",
+            "reviewContract": "One row per check ID: checkId, guideline, outcome, evidenceIds, rationale, confidence, nextEvidence. Outcomes pass/fail/cantTell/inapplicable/untested. Cite actual packet evidence IDs and specific observations. Supply reviewer object with harness, model, reasoning. Preserve each contextual check's assessmentScope exactly in its review row; do not narrow or expand it, and keep missing observations within that scope unresolved. Explicitly explain applicability and unresolved evidence. Do not score yourself.",
         },
     )
     write(
@@ -460,6 +493,11 @@ def prepare_packet(session: Path, plan: JSON) -> None:
             "rows": [
                 {
                     "checkId": item["id"],
+                    **(
+                        {"assessmentScope": item["assessmentScope"]}
+                        if "assessmentScope" in item
+                        else {}
+                    ),
                     "guideline": item["guideline"],
                     "outcome": "untested",
                     "evidenceIds": [],
@@ -651,10 +689,22 @@ def validate_review(review: JSON, packet: JSON, packet_sha: str) -> None:
     ):
         raise ValueError("Record harness, model and reasoning settings")
     expected = {item["id"]: item["guideline"] for item in packet["checks"]}
+    scopes = {
+        item["id"]: item["assessmentScope"]
+        for item in packet["checks"]
+        if "assessmentScope" in item
+    }
     rows = review["rows"]
     if len(rows) != len(expected) or {row["checkId"] for row in rows} != set(expected):
         raise ValueError("Return exactly one row for every selected check")
     for row in rows:
+        if (
+            row["checkId"] in scopes
+            and row.get("assessmentScope") != scopes[row["checkId"]]
+        ):
+            raise ValueError(
+                "Review must preserve the declared contextual assessmentScope"
+            )
         if row["guideline"] != expected[row["checkId"]]:
             raise ValueError("Check mapped to the wrong guideline")
         if (

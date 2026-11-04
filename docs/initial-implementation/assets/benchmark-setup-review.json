@@ -1,0 +1,190 @@
+{
+  "status": "Read-only investigation and private proposal; no build, inference, active campaign mutation, or repository edit performed.",
+  "observedAtUTC": "2026-11-04T22:59:25.910392+00:00",
+  "harborVersion": "0.23.0",
+  "installedAdapter": {
+    "path": "harbor/agents/installed/codex.py",
+    "sha256": "ee0ca8ec43617f3909d2195afe8f9e7cbd7313a8b3b558b01fde388f65b7c39c",
+    "skipCheckLines": "328-346",
+    "fallbackInstallLines": "348-381"
+  },
+  "frozenTaskSet": {
+    "path": ".audit-work/scope-tasks-v1",
+    "caseCount": 19,
+    "directEvidenceCases": 15,
+    "collectorCases": 4,
+    "generatorLocation": "benchmarks/build_expanded.py:179-192",
+    "agentBaseImage": "node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c",
+    "verifierBaseImage": "python:3.14-slim@sha256:930e1abba7c4e8f96ed93e8012c35d174d7732752731bbd5e8e757d7ec6f3966"
+  },
+  "verifiedCommands": [
+    "apt-get update && apt-get install -y curl bash nodejs npm ripgrep",
+    "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash; source NVM; nvm install 22; nvm alias default 22; npm install -g @openai/codex@0.166.0; codex --version (summarized from exact trial.log shell command)"
+  ],
+  "findings": [
+    "The current image already has Node24/npm but omits Codex and ripgrep. When any dependency command is missing, Harbor installs the entire dependency group. On glibc Harbor then downloads NVM0.40.2 and Node22 even though Node24 was provided by the task image.",
+    "The installed Codex adapter checks codex --version before ensure_system_dependencies. A matching explicit version causes return before apt, NVM, npm, or symlink steps. Preinstalling only OS dependencies does not eliminate NVM/npm installation; preinstalling the exact Codex version does.",
+    "A no-container fake-environment probe invoked the actual installed Codex.install method with requested 0.166.0 and output codex-cli 0.166.0. Only the codex --version check executed; dependency installation was never reached. Output 0.165.0 failed the version check.",
+    "Agent/setup directories are empty in inspected completed trials; install commands are recorded in trial.log. Timings below identify the combined setup phase, not independent apt/npm/NVM durations.",
+    "Both current configs pin kwargs.version=0.166.0 and reasoning_effort=high. Representative native traces record CLI0.166.0 and turn_context model/effort as gpt-6.1-sol/high and deepseek-v4.1-flash/high. These prove requested client settings, not independent provider-side execution or inference energy.",
+    "Current manifest and published trial hashes cover inputs, references, instruction, graders, collectors, and complete skill resources, but omit environment/Dockerfile and resolved runtime image provenance."
+  ],
+  "snapshotCompletedTrials": [
+    {
+      "arm": "scope-sol-high-v1",
+      "trial": "energy-measured-modeled-boundari__xfmyapJ",
+      "resultPath": ".audit-work/scope-jobs/scope-sol-high-v1/energy-measured-modeled-boundari__xfmyapJ/result.json",
+      "phasesSeconds": {
+        "environment_setup": 10.995,
+        "agent_setup": 232.619,
+        "agent_execution": 51.312,
+        "verifier": 18.171
+      }
+    },
+    {
+      "arm": "scope-sol-high-v1",
+      "trial": "inference-energy-missing-not-zer__uCpDYFP",
+      "resultPath": ".audit-work/scope-jobs/scope-sol-high-v1/inference-energy-missing-not-zer__uCpDYFP/result.json",
+      "phasesSeconds": {
+        "environment_setup": 10.939,
+        "agent_setup": 267.845,
+        "agent_execution": 56.468,
+        "verifier": 14.835
+      }
+    },
+    {
+      "arm": "scope-sol-high-v1",
+      "trial": "initial-first-visit-and-median-t__ycDZYte",
+      "resultPath": ".audit-work/scope-jobs/scope-sol-high-v1/initial-first-visit-and-median-t__ycDZYte/result.json",
+      "phasesSeconds": {
+        "environment_setup": 2.226,
+        "agent_setup": 232.246,
+        "agent_execution": 32.965,
+        "verifier": 13.673
+      }
+    },
+    {
+      "arm": "scope-sol-high-v1",
+      "trial": "median-cannot-mix-consent-and-ca__Wpu4yAV",
+      "resultPath": ".audit-work/scope-jobs/scope-sol-high-v1/median-cannot-mix-consent-and-ca__Wpu4yAV/result.json",
+      "phasesSeconds": {
+        "environment_setup": 2.824,
+        "agent_setup": 159.491,
+        "agent_execution": 46.589,
+        "verifier": 14.947
+      }
+    },
+    {
+      "arm": "scope-sol-high-v1",
+      "trial": "area-score-known-only-and-covera__DHUtqJv",
+      "resultPath": ".audit-work/scope-jobs/scope-sol-high-v1/area-score-known-only-and-covera__DHUtqJv/result.json",
+      "phasesSeconds": {
+        "environment_setup": 2.83,
+        "agent_setup": 215.668,
+        "agent_execution": 63.753,
+        "verifier": 14.73
+      }
+    },
+    {
+      "arm": "scope-sol-high-v1",
+      "trial": "ci-priority-requires-applicabili__gi2F4V5",
+      "resultPath": ".audit-work/scope-jobs/scope-sol-high-v1/ci-priority-requires-applicabili__gi2F4V5/result.json",
+      "phasesSeconds": {
+        "environment_setup": 3.172,
+        "agent_setup": 209.241,
+        "agent_execution": 60.319,
+        "verifier": 13.788
+      }
+    },
+    {
+      "arm": "scope-deepseek-high-v1",
+      "trial": "energy-measured-modeled-boundari__oDvaRH3",
+      "resultPath": ".audit-work/scope-jobs/scope-deepseek-high-v1/energy-measured-modeled-boundari__oDvaRH3/result.json",
+      "phasesSeconds": {
+        "environment_setup": 11.018,
+        "agent_setup": 264.044,
+        "agent_execution": 31.507,
+        "verifier": 14.309
+      }
+    },
+    {
+      "arm": "scope-deepseek-high-v1",
+      "trial": "inference-energy-missing-not-zer__vkNMBdH",
+      "resultPath": ".audit-work/scope-jobs/scope-deepseek-high-v1/inference-energy-missing-not-zer__vkNMBdH/result.json",
+      "phasesSeconds": {
+        "environment_setup": 10.798,
+        "agent_setup": 242.468,
+        "agent_execution": 32.387,
+        "verifier": 14.254
+      }
+    },
+    {
+      "arm": "scope-deepseek-high-v1",
+      "trial": "initial-first-visit-and-median-t__JW22NCZ",
+      "resultPath": ".audit-work/scope-jobs/scope-deepseek-high-v1/initial-first-visit-and-median-t__JW22NCZ/result.json",
+      "phasesSeconds": {
+        "environment_setup": 4.512,
+        "agent_setup": 135.687,
+        "agent_execution": 40.712,
+        "verifier": 14.749
+      }
+    },
+    {
+      "arm": "scope-deepseek-high-v1",
+      "trial": "median-cannot-mix-consent-and-ca__PqtKjxX",
+      "resultPath": ".audit-work/scope-jobs/scope-deepseek-high-v1/median-cannot-mix-consent-and-ca__PqtKjxX/result.json",
+      "phasesSeconds": {
+        "environment_setup": 2.785,
+        "agent_setup": 226.475,
+        "agent_execution": 27.411,
+        "verifier": 14.534
+      }
+    },
+    {
+      "arm": "scope-deepseek-high-v1",
+      "trial": "area-score-known-only-and-covera__6FgXoeZ",
+      "resultPath": ".audit-work/scope-jobs/scope-deepseek-high-v1/area-score-known-only-and-covera__6FgXoeZ/result.json",
+      "phasesSeconds": {
+        "environment_setup": 2.365,
+        "agent_setup": 132.613,
+        "agent_execution": 65.509,
+        "verifier": 14.578
+      }
+    },
+    {
+      "arm": "scope-deepseek-high-v1",
+      "trial": "ci-priority-requires-applicabili__LijM5gB",
+      "resultPath": ".audit-work/scope-jobs/scope-deepseek-high-v1/ci-priority-requires-applicabili__LijM5gB/result.json",
+      "phasesSeconds": {
+        "environment_setup": 2.48,
+        "agent_setup": 222.587,
+        "agent_execution": 38.636,
+        "verifier": 14.907
+      }
+    }
+  ],
+  "smallestNextCampaignFix": [
+    "Create a dedicated clean dependency-only Docker build context containing no task inputs, corpus, reports, references, oracle solutions, repository checkout, auth, Codex home, native sessions, or model config.",
+    "Build a common runtime once from a pinned base. Preinstall curl, ca-certificates, git, python3, ripgrep and @openai/codex@0.166.0 with optional platform package included; require actual codex --version output to equal codex-cli 0.166.0. Verify node/npm/python3/rg. Capture OS package versions, npm package integrity/platform binary and image architecture in an allowlisted build manifest. Pin the finished dependency image by content digest for use in task FROM lines.",
+    "For strict runtime continuity first determine and record the resolved Node22 patch/npm version from the current fallback; they are not pinned by nvm install22. A new pinned Node22 base avoids a silent Node22-to24 runtime switch. Alternatively retain the existing pinned Node24 base and document that runtime change as a new environment campaign, not a pure timing comparison.",
+    "Change benchmarks/build_expanded.py:180 in a future revision to use the immutable common runtime image digest and remove the per-task apt layer. Keep explicit COPY input.json, skills, optional bundle.json/collect.py and mkdir output unchanged. Generate a new task directory/version; never rewrite scope-tasks-v1 or any running config/job.",
+    "Keep the Python verifier image, separate verifier mode, tests/reference.json location and solution outside environment context. Do not set one common prebuilt task image via task.toml docker_image: that would bypass task-specific inputs. The common image is a FROM base only.",
+    "Keep true model, reasoning, auth and provider configuration in their existing per-arm runtime configs. Never bake them into the image. Leave fresh output/session/log directories and runtime-only secrets. Do not create a reusable image using docker commit on a completed agent container.",
+    "Add environmentDockerfileSHA256 and verifierDockerfileSHA256 plus common runtime digest/architecture and installed Harbor adapter hash to future build/campaign provenance. Add corresponding fields around benchmarks/publish_expanded.py:174 and compare per-case across arms at lines289-290. Preserve original manifests/results."
+  ],
+  "futureValidationBeforeCampaign": [
+    "Inspect clean runtime filesystem/build history for absence of task material, references, oracle solution, generated reports, sessions, auth/config and home state; check presence without printing secret content.",
+    "Compare old/new task instruction, input, bundle, collector, reference, grader, all skill resource hashes. Only explicitly versioned runtime/Dockerfile hashes should differ for same-case comparison.",
+    "Prebuild/warm all new task and verifier images outside measured campaign time. Run oracle/no-operation controls against the new task set and require expected complete pass/fail controls without exceptions.",
+    "Run one bounded trial per model arm using exact configured CLI0.166.0 and high effort. Require no apt/npm/NVM commands in logs, fresh sessions, correct collected-source digest, correct per-arm native model/effort/provider metadata, and successful isolated verification.",
+    "Measure setup/inference/verifier phases separately after warm-up. Publish build/warm-up time separately. Do not infer energy savings from setup wall-time alone; avoid overlapping hardware-energy measurement windows."
+  ],
+  "caveats": [
+    "No image was built or run for this investigation. End-to-end image compatibility, actual performance improvement, final image digest and exact resolved Node22 version remain to be validated in a future campaign.",
+    "A matching codex executable skips all dependency validation in Harbor0.23.0. The image build must explicitly include the normal tools; a fake executable or incomplete base could pass version detection but leave a broken benchmark environment.",
+    "An explicit CLI version mismatch would invoke fallback installation again. A future fail-closed preinstalled Codex subclass could reject mismatch without changing Harbor internals, but it is not required for the smallest matching-image fix.",
+    "Pinned final image digest makes campaign runtime immutable. Rebuilding the same Dockerfile can still change apt/NPM content unless OS repositories and package integrity/version sources are locked; retain build provenance or use snapshots for repeatable rebuilds.",
+    "Exact model/effort settings and separate authentication are independent from runtime installation. A fast image is not evidence that a provider honored a requested reasoning level."
+  ],
+  "source": "https://github.com/harbor-framework/harbor/blob/v0.23.0/src/harbor/agents/installed/codex.py"
+}
