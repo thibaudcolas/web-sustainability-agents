@@ -41,6 +41,7 @@ def area_results(guidelines: list[JSON]) -> list[JSON]:
         checked = counts["pass"] + counts["fail"] + counts["cantTell"]
         results.append(
             {
+                "section": section,
                 "title": title,
                 "total": len(rows),
                 "checked": checked,

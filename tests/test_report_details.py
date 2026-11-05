@@ -132,10 +132,71 @@ class ReportDetailsTests(unittest.TestCase):
         session = Path("docs/reports/assets/fresh-wagtail")
         editorial = json.loads((session / "editorial.json").read_text())
         output = render(session, "artifacts", editorial)
-        headline = output.split("## Page measurements")[1].split("### Browser energy")[
-            0
-        ]
+        headline = output.split("## Page measurements")[1].split("## Priorities")[0]
         self.assertNotIn("Ranges show", headline)
         self.assertNotIn("–", headline)
         self.assertNotIn("1,000 bytes", headline)
-        self.assertIn("Some data could not be measured", headline)
+        self.assertIn(">partial</a>", headline)
+
+    def test_combined_table_keeps_cookie_visits_carbon_and_energy_distinct(self):
+        import re
+
+        for name in ("guide", "wagtail"):
+            session = Path(f"docs/reports/assets/fresh-{name}")
+            energy = json.loads(
+                Path(
+                    f"docs/reports/assets/report-refinement/{name}/energy.json"
+                ).read_text()
+            )
+            editorial = json.loads((session / "editorial.json").read_text())
+            output = render(session, "artifacts", editorial, energy=energy)
+            measurements = output.split("## Page measurements")[1].split(
+                "## Priorities"
+            )[0]
+            rows = re.findall(r'<tr><th scope="row">(.*?)</tr>', measurements)
+            self.assertEqual(len(rows), 6 if name == "guide" else 7)
+            self.assertEqual(measurements.count("<table>"), 1)
+            self.assertNotIn("GreenFrame", measurements)
+            self.assertNotIn("### Browser energy", output)
+            self.assertNotIn("## After", output)
+            # The homepage and the following page have different sampling coverage.
+            self.assertIn("12.00 mWh" if name == "guide" else "12.08 mWh", rows[0])
+            self.assertIn("Not sampled", rows[1])
+            if name == "guide":
+                self.assertIn("59.1 kB", rows[0])
+                self.assertIn("0.00876 gCO₂e", rows[0])
+                self.assertIn("<td>A+</td>", rows[0])
+            else:
+                self.assertIn("<td>944.4 kB", rows[0])
+                self.assertIn("Reject optional cookies: 944.4 kB", rows[0])
+                self.assertIn("Accept cookies: 945.6 kB", rows[0])
+                self.assertIn("Reject optional cookies: 1.108 MB", rows[0])
+                self.assertIn("Accept cookies: 1.109 MB", rows[0])
+                self.assertEqual(rows[0].count(">Withheld</td>"), 2)
+                self.assertEqual(rows[0].count(">partial</a>"), 5)
+
+    def test_area_links_group_each_check_and_tooltips_use_pinned_descriptions(self):
+        import html
+
+        reference = json.loads(
+            Path(
+                ".agents/skills/sustainability-guideline-review/references/wsg.json"
+            ).read_text()
+        )
+        references = {r["id"]: r for r in reference["guidelines"]}
+        output = render(self.session, "artifacts", self.editorial)
+        details = output.split("## Detailed findings")[1].split("## Methodology")[0]
+        for section in ("2", "3", "4", "5"):
+            self.assertIn(f'href="#findings-{section}"', output)
+            area = details.split(f"{{#findings-{section}}}")[1].split("### ")[0]
+            expected = [
+                r
+                for r in self.packet["checks"]
+                if r["guideline"].startswith(section + ".")
+            ]
+            self.assertEqual(area.count('<h4 id="evidence-'), len(expected))
+            for row in expected:
+                self.assertIn(f'id="evidence-{row["id"]}"', area)
+                summary = references[row["guideline"]]["summary"]
+                self.assertIn(f'title="{html.escape(summary, quote=True)}"', area)
+                self.assertIn(f"_{summary}_", area)

@@ -6,11 +6,11 @@
 
 ## Results by WSG area
 
-{Passing percentage and count, checked groups out of the area total, unknown count.}
+{Area links to detailed findings subsections; passing percentage and count, checked groups out of the area total, unknown count.}
 
 ## Page measurements
 
-{First-load transfer per page and completeness. Separate modeled browser energy table where collected.}
+{One row per page: first-load transfer, cumulative cookie/wait and scroll transfers, estimated gCO₂e, carbon rating, modeled browser and network energy. Mark partial and missing values. Column labels link to methodology at the end.}
 
 ## Priorities
 
@@ -18,7 +18,7 @@
 
 ### {Action or investigation title}
 
-{Priority words and direct WSG link with guideline title.}
+{Priority words and direct WSG link with guideline title and description tooltip.}
 
 **What we found.** {Concrete observation.}
 
@@ -30,10 +30,6 @@
 
 [How we checked this: {meaningful description}](#evidence-check-id)
 
-## After cookie choices and scrolling
-
-{Secondary, cumulative measurements; distinguish separate cookie-choice runs.}
-
 ## Further checks
 
 {Compact status index with links to readable details.}
@@ -42,11 +38,13 @@
 
 {Specific journeys, source or owner evidence needed to resolve gaps.}
 
-## How we checked this
+## Detailed findings
 
-### {Readable evidence heading}
+### {WSG area title} {#findings-area-number}
 
-{Observed behavior, pages, source context, limitations and next step. No raw JSON needed.}
+#### {Readable evidence heading} {#evidence-check-id}
+
+{Guideline title and visible description; observed behavior, pages, source context, limitations and next step. No raw JSON needed.}
 
 ## Methodology and reproducibility
 

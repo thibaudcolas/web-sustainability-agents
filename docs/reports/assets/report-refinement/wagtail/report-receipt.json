@@ -36,8 +36,11 @@
     ]
   ],
   "inputSHA256": {
-    "audit/render_review.py": "c97036557bea49e8e8ebe0f02bdd2c29db722e1b7f185b0e6e52fd5af09346bb",
-    "audit/report_details.py": "d611fe0af635503595b7f78c944c85e4383cdd4c2247df4495850ef40bb832ea",
+    "docs/theme/report-tooltips.js": "40f80bd479a79b9804af42934162a68ae2b37387c18bf6a42507b4ffb28e43ca",
+    "docs/theme/theme.css": "7c3a0a01a21a7445ad26ee07fb161941959c104f6a8ef65511656e6ec89b6602",
+    "mkdocs.yml": "27fcc3a76985fb9dabcd24cfba4a3c6acf8f24da9524a766f80d2d8a31d842e9",
+    "audit/render_review.py": "72b8ada01b2eab4041a2cb1f72842ef71994d4661608dd7964b7046f1b5a79b5",
+    "audit/report_details.py": "5d9a53e5bd45da4b14f06c15e09e83fb49439b649f35ddcfa13c369d32d7c178",
     "audit/render_review.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
     ".agents/skills/sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1",
     "docs/reports/assets/fresh-wagtail/editorial.json": "ada73d1eebe96e44e5477a9322484d4c1844709a60185a52edf6ec002063739d",
@@ -49,7 +52,7 @@
     "docs/reports/assets/report-refinement/wagtail/context-preview.json": "ecafc92fcf9bf755d82763f9bcb67d63fce7cc073402a8d4b7b005a29592e9b2"
   },
   "output": "docs/reports/wagtail.md",
-  "outputSHA256": "86e936242ac49a96363a2ce079ad6d4d975c11ceeeaad0aacdfd3ba3bf20f9cc",
+  "outputSHA256": "58ca91ade9f7acbdd2eaa89d6eeae5628f121a506270e2e5c9dee7412d8e53d8",
   "originalSessionManifest": "docs/reports/assets/fresh-wagtail/manifest.json",
   "originalSessionNote": "The original publication manifest identifies the earlier report edition; this receipt identifies the revised report. Neither replaces the original scored evidence.",
   "energyArtifacts": "docs/reports/assets/report-refinement/wagtail/energy/reproduction.json",

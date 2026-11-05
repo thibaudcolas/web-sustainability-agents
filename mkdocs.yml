@@ -101,6 +101,9 @@ theme:
     - search.share
   custom_dir: docs/theme
 
+extra_javascript:
+  - theme/report-tooltips.js
+
 extra_css:
   - theme/theme.css
 

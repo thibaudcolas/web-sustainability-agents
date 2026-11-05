@@ -242,14 +242,12 @@ class DocumentationTests(unittest.TestCase):
                 try:
                     page = browser.new_page(viewport={"width": 390, "height": 900})
                     page.goto(f"http://127.0.0.1:{server.server_port}/reports/wagtail/")
-                    page.locator("article summary").first.focus()
-                    page.keyboard.press("Enter")
                     region = page.get_by_role(
                         "region",
-                        name="Cumulative data after cookie choices and scrolling",
+                        name="Page measurements",
                     )
                     region.focus()
-                    for _ in range(25):
+                    for _ in range(90):
                         page.keyboard.press("ArrowRight")
                     page.wait_for_timeout(350)
                     geometry = region.evaluate("""element => ({
@@ -264,6 +262,41 @@ class DocumentationTests(unittest.TestCase):
                     self.assertLessEqual(
                         geometry["documentWidth"], geometry["viewportWidth"]
                     )
+                    for link in region.locator("thead a").all():
+                        target = link.get_attribute("href")
+                        assert target is not None
+                        self.assertEqual(
+                            page.locator("#" + urlparse(target).fragment).count(), 1
+                        )
+                    for area in ("2", "3", "4", "5"):
+                        page.get_by_role(
+                            "region", name="Selected checks by WSG area"
+                        ).locator(f'a[href$="#findings-{area}"]').click()
+                        self.assertTrue(page.url.endswith(f"#findings-{area}"))
+                        self.assertEqual(page.locator(f"h3#findings-{area}").count(), 1)
+                    guideline = page.locator("a.audit-guideline").first
+                    guideline.focus()
+                    page.wait_for_function(
+                        "document.querySelector('a.audit-guideline').hasAttribute('aria-describedby')"
+                    )
+                    tooltip_id = guideline.get_attribute("aria-describedby")
+                    assert tooltip_id is not None
+                    tooltip = page.locator("#" + tooltip_id)
+                    self.assertTrue(tooltip.is_visible())
+                    page.keyboard.press("Escape")
+                    self.assertFalse(tooltip.is_visible())
+                    self.assertTrue(
+                        guideline.evaluate(
+                            "element => element === document.activeElement"
+                        )
+                    )
+                    page.wait_for_timeout(250)
+                    self.assertFalse(tooltip.is_visible())
+                    page.keyboard.press("Tab")
+                    page.wait_for_timeout(50)
+                    guideline.focus()
+                    page.wait_for_timeout(250)
+                    self.assertTrue(tooltip.is_visible())
                     self.assertEqual(region.locator("caption").count(), 1)
                     self.assertEqual(
                         region.locator("tbody tr").count(),

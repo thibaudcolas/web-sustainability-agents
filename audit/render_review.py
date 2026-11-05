@@ -24,6 +24,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
+    AREAS,
     area_results,
     energy_rows,
     first_visits,
@@ -243,8 +244,11 @@ def anchor(label: str, target: str) -> str:
     return f'<a href="{html.escape(target, quote=True)}">{html.escape(label)}</a>'
 
 
-def table_start(caption: str, headings: list[str]) -> list[str]:
+def table_start(
+    caption: str, headings: list[str], methods: dict[str, str] | None = None
+) -> list[str]:
     """Name a simple data table and identify its column headers."""
+    methods = methods or {}
     return [
         '<div class="audit-table-scroll" tabindex="0" role="region" aria-label="'
         + html.escape(caption, quote=True)
@@ -252,7 +256,10 @@ def table_start(caption: str, headings: list[str]) -> list[str]:
         "<table>",
         "<caption>" + html.escape(caption) + "</caption>",
         "<thead><tr>"
-        + "".join(f'<th scope="col">{html.escape(h)}</th>' for h in headings)
+        + "".join(
+            f'<th scope="col">{anchor(h, methods[h]) if h in methods else html.escape(h)}</th>'
+            for h in headings
+        )
         + "</tr></thead>",
         "<tbody>",
     ]
@@ -305,7 +312,11 @@ def render(
 
     def guideline_link(number: str) -> str:
         item = references[number]
-        return f"[WSG {number}: {prose(item['title'])}]({item['url']})"
+        return (
+            f'<a class="audit-guideline" href="{html.escape(item["url"], quote=True)}" '
+            f'title="{html.escape(item["summary"], quote=True)}">'
+            f"WSG {html.escape(number)}: {html.escape(item['title'])}</a>"
+        )
 
     rules = {row["id"]: row for row in packet["checks"]}
     images = illustrations(screenshot_path, packet["site"], set(rules))
@@ -369,7 +380,7 @@ def render(
         lines.append(
             table_row(
                 [
-                    area["title"],
+                    anchor(area["title"], f"#findings-{area['section']}"),
                     percentage,
                     f"{area['checked']} of {area['total']}",
                     str(area["counts"]["cantTell"]),
@@ -383,102 +394,90 @@ def render(
         "",
         "## Page measurements",
         "",
-        "Data downloaded when a visitor first opens the page, before clicking or scrolling.",
-        "",
         *table_start(
-            "First-load transfers", ["Page", "First load", "Measurement completeness"]
+            "Page measurements",
+            [
+                "Page",
+                "First load",
+                "After cookies" if has_consent else "After waiting",
+                "After scrolling",
+                "Estimated footprint",
+                "Carbon rating",
+                "Browser energy",
+                "Network energy",
+            ],
+            {
+                "First load": "#measure-first-load",
+                "After cookies": "#measure-after-choice",
+                "After waiting": "#measure-after-choice",
+                "After scrolling": "#measure-scroll",
+                "Estimated footprint": "#measure-carbon",
+                "Carbon rating": "#measure-carbon",
+                "Browser energy": "#measure-energy",
+                "Network energy": "#measure-energy",
+            },
         ),
     ]
-    urls = list(dict.fromkeys(run["url"] for run in headline_runs))
-    for url in urls:
-        initial = [
-            phase
-            for run in headline_runs
-            if run["url"] == url
-            for phase in run["phases"]
-            if phase["phase"] == "initial"
-        ]
-        initial = initial[:1]
-        values = [
-            phase["receivedBytes"]
-            for phase in initial
-            if phase.get("receivedBytes") is not None
-        ]
-        complete = bool(initial) and all(
-            phase.get("accountingStatus") == "complete_within_protocol"
-            for phase in initial
+    energy_by_url = (
+        {
+            url: (device, network)
+            for url, device, network in energy_rows(energy, packet["site"])
+        }
+        if energy
+        else {}
+    )
+
+    def phase_size(run: JSON, name: str) -> str:
+        phase: JSON = next((p for p in run["phases"] if p["phase"] == name), {})
+        if phase.get("receivedBytes") is None:
+            return "Not measured"
+        value = traffic(phase["receivedBytes"])
+        if phase.get("accountingStatus") != "complete_within_protocol":
+            value += " · " + anchor("partial", "#measure-completeness")
+        return value
+
+    def later_sizes(url: str, phase: str) -> str:
+        values = []
+        for run in staged["runs"]:
+            if run["url"] != url:
+                continue
+            label = {
+                "accept": "Accept cookies",
+                "reject": "Reject optional cookies",
+            }.get(run["branch"], "" if run["branch"] == "no_banner" else run["branch"])
+            value = phase_size(run, phase)
+            values.append(f"{html.escape(label)}: {value}" if label else value)
+        return "<br>".join(values) or "Not measured"
+
+    for run in headline_runs:
+        url = run["url"]
+        rating = run.get("rating", {})
+        initial_complete = any(
+            p["phase"] == "initial"
+            and p.get("accountingStatus") == "complete_within_protocol"
+            for p in run["phases"]
         )
+        carbon = (
+            rating["trace"]["co2"]
+            if initial_complete and rating.get("status") == "calculated"
+            else None
+        )
+        device, network = energy_by_url.get(url, ("Not sampled", "Not sampled"))
         lines.append(
             table_row(
                 [
                     anchor(page_labels[url], url),
-                    traffic(values[0]) if values else "Not measured",
-                    "Complete within the test conditions"
-                    if complete
-                    else "Some data could not be measured",
+                    phase_size(run, "initial"),
+                    later_sizes(url, "after_consent"),
+                    later_sizes(url, "after_scroll"),
+                    f"{carbon['total']:.3g} gCO₂e" if carbon else "Withheld",
+                    html.escape(carbon["rating"]) if carbon else "Withheld",
+                    device,
+                    network,
                 ]
             )
         )
-    lines += ["</tbody></table></div>"]
-    incomplete = any(
-        phase.get("accountingStatus") != "complete_within_protocol"
-        for run in headline_runs
-        for phase in run["phases"]
-        if phase["phase"] == "initial"
-    )
-    lines += [
-        "",
-        "Some requests failed or did not finish in the observation window. Their transferred size is uncertain, so these figures are incomplete and a Digital Carbon Rating is withheld. The audit measures the site as it behaved; a failed analytics request is context, not automatically a priority fix."
-        if incomplete
-        else "The collector recorded the requests within its observation window. Later downloads and untested journeys are outside these first-load figures.",
-        "",
-    ]
-    lines += ["### Browser energy", ""]
-    if energy:
-        lines += [
-            "GreenFrame models energy from browser resource activity. These figures are the median of three visits to each page.",
-            "",
-            *table_start(
-                "Modeled browser energy per visit",
-                ["Page", "Client device model", "Network model"],
-            ),
-        ]
-        for url, device, network in energy_rows(energy, packet["site"]):
-            lines.append(
-                table_row(
-                    [anchor(page_labels.get(url, page_name(url)), url), device, network]
-                )
-            )
-        lines += [
-            "</tbody></table></div>",
-            "",
-            "The device estimate includes CPU, memory, disk and a modeled display. Other sampled pages have no energy result yet. See the methodology for the separate browser scenario and model assumptions.",
-            "",
-        ]
-    else:
-        lines += [
-            "Energy was not collected for this session. Transfer sizes alone do not measure browser energy.",
-            "",
-        ]
-    ratings = [
-        run["rating"]["trace"]["co2"]["rating"]
-        for run in headline_runs
-        if run.get("rating", {}).get("status") == "calculated"
-    ]
-    if ratings:
-        eligible = [
-            run["rating"]
-            for run in headline_runs
-            if run.get("rating", {}).get("status") == "calculated"
-        ]
-        footprint = [item["trace"]["co2"]["total"] for item in eligible]
-        profile = eligible[0]["profile"]
-        lines += [
-            f"**Digital Carbon Ratings:** {', '.join(dict.fromkeys(ratings))} for the eligible initial visits, using the fixed comparison model. This estimates a page-load footprint; it does not establish whole-site sustainability.",
-            "",
-            f"The eligible visits model **{min(footprint):.3g}–{max(footprint):.3g} gCO₂e per first visit**, using Sustainable Web Design Model version {profile['version']} through `{profile['library']}`. The comparison assumes {profile['firstVisitPercentage']:.0%} first visits and gives no green-hosting credit. These are fixed model assumptions, not verified electricity-supply facts. The rating remains provisional because the capture protocol has not been independently validated.",
-            "",
-        ]
+    lines += ["</tbody></table></div>", ""]
     lines += ["## Priorities", "", prose(editorial["overview"]), ""]
     used_images: set[str] = set()
     finding_map = {f["checkId"]: f for f in editorial["findings"]}
@@ -533,58 +532,6 @@ def render(
             "",
         ]
     lines += [
-        "## After cookie choices and scrolling"
-        if has_consent
-        else "## After waiting and scrolling",
-        "",
-        (
-            "Each cookie choice starts a separate fresh visit. "
-            if has_consent
-            else "No cookie banner was observed in this sample. The intermediate checkpoint waits without clicking, then the page is scrolled to the bottom. "
-        )
-        + "The sizes below are **cumulative totals**, including the first load. They help locate later downloads; they are not additional amounts to add together or guaranteed savings.",
-        "",
-        '??? note "Compare the interaction measurements"',
-        "",
-        *[
-            "    " + line
-            for line in table_start(
-                "Cumulative data after cookie choices and scrolling"
-                if has_consent
-                else "Cumulative data after waiting and scrolling",
-                [
-                    "Page",
-                    "Cookie choice tested" if has_consent else "Intermediate action",
-                    "After cookie choice" if has_consent else "After waiting",
-                    "After scrolling to the bottom",
-                ],
-            )
-        ],
-    ]
-    for run in staged["runs"]:
-        phases = {phase["phase"]: phase for phase in run["phases"]}
-        choice = {
-            "accept": "Accept cookies",
-            "reject": "Reject optional cookies",
-            "no_banner": "No banner interaction",
-        }.get(run["branch"], run["branch"].replace("_", " ").capitalize())
-        values = [
-            traffic(phases[name]["receivedBytes"]) if name in phases else "Not measured"
-            for name in ["after_consent", "after_scroll"]
-        ]
-        lines.append(
-            "    "
-            + table_row(
-                [
-                    anchor(page_labels[run["url"]], run["url"]),
-                    html.escape(choice),
-                    *values,
-                ]
-            )
-        )
-    lines += [
-        "    </tbody></table></div>",
-        "",
         "## Further checks",
         "",
         "These outcomes apply to the selected checks and sample. Open a check's explanation for the observation, limitations and useful follow-up.",
@@ -637,45 +584,68 @@ def render(
         if len(probes["pages"]) >= 5
         else "This audit has a smaller sample than the default 5–10 representative pages. Expand it using the site's navigation, sitemap and important visitor tasks; do not assume the findings cover untested pages.",
         "",
-        "## How we checked this",
+        "## Detailed findings",
         "",
         "This appendix explains the evidence in ordinary language. Local source files help identify possible fixes, but we have not confirmed that the live site uses the same code revision. A missing selected file or document does not mean the organization has none.",
         "",
     ]
-    for row in review["rows"]:
-        identifier = row["checkId"]
-        item = edited[identifier]
-        guideline = rules[identifier]["guideline"]
-        lines += [
-            f'<h3 id="evidence-{identifier}">{html.escape(item["title"])}</h3>',
-            "",
-            f"**{LABELS[row['outcome']]}** · {guideline_link(guideline)}",
-            "",
-            f"_{prose(references[guideline]['summary'])}_",
-            "",
-            prose(item["summary"]),
-            "",
-            f"**Next step:** {prose(item['nextStep'])}",
-            "",
+    for section, title in AREAS.items():
+        lines += [f"### {title} {{#findings-{section}}}", ""]
+        area_rows = [
+            row
+            for row in review["rows"]
+            if rules[row["checkId"]]["guideline"].split(".")[0] == section
         ]
-        if rules[identifier].get("assessmentScope"):
+        if not area_rows:
             lines += [
-                f"**Assessed scope:** {prose(rules[identifier]['assessmentScope'])}",
+                "No checks selected in this area. Include it in the next audit scope.",
                 "",
             ]
-        descriptions = source_descriptions(
-            session, packet, row.get("evidenceIds", []), documents
-        )
-        if descriptions:
-            lines += (
-                ["**Where we looked:**", ""]
-                + [f"- {description}." for description in descriptions]
-                + [""]
+        for row in area_rows:
+            identifier = row["checkId"]
+            item = edited[identifier]
+            guideline = rules[identifier]["guideline"]
+            lines += [
+                f'<h4 id="evidence-{identifier}">{html.escape(item["title"])}</h4>',
+                "",
+                f"**{LABELS[row['outcome']]}** · {guideline_link(guideline)}",
+                "",
+                f"_{prose(references[guideline]['summary'])}_",
+                "",
+                prose(item["summary"]),
+                "",
+                f"**Next step:** {prose(item['nextStep'])}",
+                "",
+            ]
+            if rules[identifier].get("assessmentScope"):
+                lines += [
+                    f"**Assessed scope:** {prose(rules[identifier]['assessmentScope'])}",
+                    "",
+                ]
+            descriptions = source_descriptions(
+                session, packet, row.get("evidenceIds", []), documents
             )
+            if descriptions:
+                lines += (
+                    ["**Where we looked:**", ""]
+                    + [f"- {description}." for description in descriptions]
+                    + [""]
+                )
     protocol = staged.get("protocol", {})
     viewport = protocol.get("viewport", {})
     reviewer = review["reviewer"]
     writer = editorial["writer"]
+    profiles = [
+        run["rating"]["profile"]
+        for run in headline_runs
+        if run.get("rating", {}).get("profile")
+    ]
+    carbon_methods = list(
+        dict.fromkeys(
+            f"Sustainable Web Design Model version {profile['version']} through `{profile['library']}`, assuming {profile['firstVisitPercentage']:.0%} first visits"
+            for profile in profiles
+        )
+    )
     lines += [
         "## Methodology and reproducibility",
         "",
@@ -685,7 +655,40 @@ def render(
         "",
         f"The scoring method is `{score['rubricVersion']}`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. {counts['inapplicable']} groups were excluded as not applicable; {counts['untested']} were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.",
         "",
-        "First-load transfer headlines use the first recorded initial visit for each URL, including its completeness limit. Later cookie-choice runs remain in the interaction table; they are not combined into a median. Decimal kB = 1,000 bytes; MB = 1,000,000 bytes. Energy is shown in milliwatt-hours (mWh = 0.001 Wh).",
+        "### First load {#measure-first-load}",
+        "",
+        "Data downloaded before clicking or scrolling, using the first recorded initial visit for each URL, including its completeness limit. Decimal kB = 1,000 bytes; MB = 1,000,000 bytes.",
+        "",
+        "### Cookie choices and waiting {#measure-after-choice}",
+        "",
+        (
+            "Each cookie choice starts a separate fresh visit. Accept and reject results stay separate; they are not combined into a median. The first-load column uses the first of those visits."
+            if has_consent
+            else "No cookie banner was observed in this sample. The intermediate checkpoint waits without clicking."
+        )
+        + " Later columns show **cumulative totals**, including the initial load of that visit. They are not additional amounts to add together or guaranteed savings.",
+        "",
+        "### Scrolling {#measure-scroll}",
+        "",
+        "Cumulative downloads after scrolling to the bottom, following the cookie-choice or waiting checkpoint of the same visit. Compare accept and reject values within their own visit; do not subtract the first-load headline from a different visit.",
+        "",
+        "### Partial measurements {#measure-completeness}",
+        "",
+        "A partial result means some requests failed or did not finish in the observation window, so their transferred size is uncertain. The site is measured as it behaved; a failed analytics request is context, not automatically a priority fix. Carbon estimates and ratings are withheld for incomplete initial captures. Unmarked transfer figures are complete within the test conditions, not a measure of every possible download.",
+        "",
+        "### Estimated footprint and Digital Carbon Rating {#measure-carbon}",
+        "",
+        "Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit; Digital Carbon Ratings use the fixed comparison model. "
+        + (
+            "Recorded model: " + "; ".join(carbon_methods) + ". "
+            if carbon_methods
+            else "No carbon model profile was recorded. "
+        )
+        + "The comparison gives no green-hosting credit. These are model assumptions, not verified electricity-supply facts. Ratings remain provisional because the capture protocol has not been independently validated; they do not establish whole-site sustainability.",
+        "",
+        "### Browser and network energy {#measure-energy}",
+        "",
+        "Energy is shown in milliwatt-hours (mWh = 0.001 Wh). Browser energy includes modeled CPU, memory, disk and display use. Not sampled means no energy experiment was supplied for that page; unavailable means a supplied experiment did not yield a usable result. Neither means zero energy.",
         "",
         "Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the branch checked out when the presentation supplement was prepared. Captured-revision links remain stable if that branch moves.",
         "",
@@ -696,7 +699,11 @@ def render(
     ]
     if energy:
         # Insert the readable model boundary before the collapsed technical appendix.
-        position = lines.index('??? note "Technical files for reproducing this report"')
+        position = next(
+            i
+            for i, line in enumerate(lines)
+            if line.startswith("Illustrations were captured separately")
+        )
         lines[position:position] = [
             "**Energy method:** GreenFrame 2.0.1 uses separately recorded browser scenarios, with three fresh-context visits per page, page load followed by a three-second wait, and no cookie interaction or scrolling. The median client-device estimate and median network estimate are reported separately; their medians must not be added to derive a total. This is a resource-use model, not metered whole-device electricity. Browser startup and the collector warm-up are excluded; browser close is included.",
             "",

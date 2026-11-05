@@ -151,3 +151,22 @@
   display: table;
   overflow: visible;
 }
+
+/* Keep a dismissed Material tooltip hidden while its trigger still has focus. */
+.md-tooltip[data-audit-dismissed],
+.md-tooltip2[data-audit-dismissed] {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Material's tooltip hover tracking needs a hit-testable inner panel. */
+body:has(.audit-guideline) .md-tooltip2[role="tooltip"] .md-tooltip2__inner {
+  pointer-events: auto;
+}
+
+body:has(.audit-guideline)
+  .md-tooltip2[data-audit-dismissed]
+  .md-tooltip2__inner {
+  pointer-events: none;
+}

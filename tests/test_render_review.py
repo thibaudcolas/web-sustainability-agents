@@ -110,7 +110,7 @@ class EditorialContractTests(unittest.TestCase):
         self.assertIn(f"**{len(probes['pages'])} pages** reviewed", body)
         self.assertNotIn("smaller sample than the default", body)
         self.assertIn("## Page measurements", body)
-        self.assertIn("## After waiting and scrolling", body)
+        self.assertNotIn("## After waiting and scrolling", body)
         self.assertIn("No cookie banner was observed in this sample", body)
         self.assertNotIn("Each cookie choice starts a separate fresh visit", body)
         self.assertIn("New in Wagtail 8.1", body)

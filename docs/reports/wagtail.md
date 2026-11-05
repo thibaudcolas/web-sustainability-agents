@@ -17,49 +17,29 @@
 <caption>Selected checks by WSG area</caption>
 <thead><tr><th scope="col">Area</th><th scope="col">Passing</th><th scope="col">Guideline groups checked</th><th scope="col">Needs evidence</th></tr></thead>
 <tbody>
-<tr><th scope="row">User experience design</th><td>50% (6/12)</td><td>12 of 17</td><td>3</td></tr>
-<tr><th scope="row">Web development</th><td>36% (4/11)</td><td>11 of 16</td><td>6</td></tr>
-<tr><th scope="row">Hosting, infrastructure and systems</th><td>75% (3/4)</td><td>4 of 12</td><td>1</td></tr>
-<tr><th scope="row">Business strategy and product management</th><td>40% (2/5)</td><td>5 of 26</td><td>3</td></tr>
+<tr><th scope="row"><a href="#findings-2">User experience design</a></th><td>50% (6/12)</td><td>12 of 17</td><td>3</td></tr>
+<tr><th scope="row"><a href="#findings-3">Web development</a></th><td>36% (4/11)</td><td>11 of 16</td><td>6</td></tr>
+<tr><th scope="row"><a href="#findings-4">Hosting, infrastructure and systems</a></th><td>75% (3/4)</td><td>4 of 12</td><td>1</td></tr>
+<tr><th scope="row"><a href="#findings-5">Business strategy and product management</a></th><td>40% (2/5)</td><td>5 of 26</td><td>3</td></tr>
 </tbody></table></div>
 
 Passing percentages apply to the selected checks. Full-guideline conformance has not been established.
 
 ## Page measurements
 
-Data downloaded when a visitor first opens the page, before clicking or scrolling.
-
-<div class="audit-table-scroll" tabindex="0" role="region" aria-label="First-load transfers">
+<div class="audit-table-scroll" tabindex="0" role="region" aria-label="Page measurements">
 <table>
-<caption>First-load transfers</caption>
-<thead><tr><th scope="col">Page</th><th scope="col">First load</th><th scope="col">Measurement completeness</th></tr></thead>
+<caption>Page measurements</caption>
+<thead><tr><th scope="col">Page</th><th scope="col"><a href="#measure-first-load">First load</a></th><th scope="col"><a href="#measure-after-choice">After cookies</a></th><th scope="col"><a href="#measure-scroll">After scrolling</a></th><th scope="col"><a href="#measure-carbon">Estimated footprint</a></th><th scope="col"><a href="#measure-carbon">Carbon rating</a></th><th scope="col"><a href="#measure-energy">Browser energy</a></th><th scope="col"><a href="#measure-energy">Network energy</a></th></tr></thead>
 <tbody>
-<tr><th scope="row"><a href="https://wagtail.org/">Homepage</a></th><td>944.4 kB</td><td>Some data could not be measured</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/features/">Wagtail Features</a></th><td>639.0 kB</td><td>Some data could not be measured</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/blog/wagtail-8-1/">Wagtail 8.1: automate more with an improved API and agent-ready tools</a></th><td>2.026 MB</td><td>Some data could not be measured</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/search/?query=sustainability">Search results</a></th><td>465.5 kB</td><td>Some data could not be measured</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/sustainability/">Sustainability</a></th><td>592.3 kB</td><td>Some data could not be measured</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/privacy/">Wagtail Privacy policy</a></th><td>465.0 kB</td><td>Some data could not be measured</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/contact/">Contact Us</a></th><td>465.7 kB</td><td>Some data could not be measured</td></tr>
+<tr><th scope="row"><a href="https://wagtail.org/">Homepage</a></th><td>944.4 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 944.4 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 945.6 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 1.108 MB · <a href="#measure-completeness">partial</a><br>Accept cookies: 1.109 MB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>12.08 mWh</td><td>11.65 mWh</td></tr>
+<tr><th scope="row"><a href="https://wagtail.org/features/">Wagtail Features</a></th><td>639.0 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 639.0 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 638.0 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 719.6 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 718.5 kB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>Not sampled</td><td>Not sampled</td></tr>
+<tr><th scope="row"><a href="https://wagtail.org/blog/wagtail-8-1/">Wagtail 8.1: automate more with an improved API and agent-ready tools</a></th><td>2.026 MB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 2.026 MB · <a href="#measure-completeness">partial</a><br>Accept cookies: 2.032 MB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 2.028 MB · <a href="#measure-completeness">partial</a><br>Accept cookies: 2.034 MB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>16.41 mWh</td><td>25.26 mWh</td></tr>
+<tr><th scope="row"><a href="https://wagtail.org/search/?query=sustainability">Search results</a></th><td>465.5 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.5 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.7 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.5 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.7 kB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>Not sampled</td><td>Not sampled</td></tr>
+<tr><th scope="row"><a href="https://wagtail.org/sustainability/">Sustainability</a></th><td>592.3 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 592.3 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 590.3 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 635.2 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 633.3 kB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>13.84 mWh</td><td>7.51 mWh</td></tr>
+<tr><th scope="row"><a href="https://wagtail.org/privacy/">Wagtail Privacy policy</a></th><td>465.0 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.0 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.4 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.0 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.4 kB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>Not sampled</td><td>Not sampled</td></tr>
+<tr><th scope="row"><a href="https://wagtail.org/contact/">Contact Us</a></th><td>465.7 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.7 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.9 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.7 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.9 kB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>Not sampled</td><td>Not sampled</td></tr>
 </tbody></table></div>
-
-Some requests failed or did not finish in the observation window. Their transferred size is uncertain, so these figures are incomplete and a Digital Carbon Rating is withheld. The audit measures the site as it behaved; a failed analytics request is context, not automatically a priority fix.
-
-### Browser energy
-
-GreenFrame models energy from browser resource activity. These figures are the median of three visits to each page.
-
-<div class="audit-table-scroll" tabindex="0" role="region" aria-label="Modeled browser energy per visit">
-<table>
-<caption>Modeled browser energy per visit</caption>
-<thead><tr><th scope="col">Page</th><th scope="col">Client device model</th><th scope="col">Network model</th></tr></thead>
-<tbody>
-<tr><th scope="row"><a href="https://wagtail.org/">Homepage</a></th><td>12.08 mWh</td><td>11.65 mWh</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/blog/wagtail-8-1/">Wagtail 8.1: automate more with an improved API and agent-ready tools</a></th><td>16.41 mWh</td><td>25.26 mWh</td></tr>
-<tr><th scope="row"><a href="https://wagtail.org/sustainability/">Sustainability</a></th><td>13.84 mWh</td><td>7.51 mWh</td></tr>
-</tbody></table></div>
-
-The device estimate includes CPU, memory, disk and a modeled display. Other sampled pages have no energy result yet. See the methodology for the separate browser scenario and model assumptions.
 
 ## Priorities
 
@@ -69,7 +49,7 @@ Wagtail.org already delivers compressed text, long-lived public assets, many Web
 
 <div class="audit-finding" markdown="1">
 
-**High priority** · Problem found · [WSG 2.6: Avoid being manipulative or deceptive](https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive)
+**High priority** · Problem found · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive" title="Avoid deceptive patterns, clearly label ads, respect consent for tracking, and ensure search, sharing, and discoverability practices prioritize user needs over optimization or manipulation.">WSG 2.6: Avoid being manipulative or deceptive</a>
 
 **What we found.** All seven sampled pages send Google Analytics page-view requests before the visitor chooses Opt in or Opt out. The analytics scripts also load before the choice in all fourteen separate visits. Both buttons work, but hiding the prompt does not demonstrate that optional measurement was prevented.
 
@@ -85,7 +65,7 @@ Wagtail.org already delivers compressed text, long-lived public assets, many Web
 
 <div class="audit-finding" markdown="1">
 
-**High priority** · Needs investigation · [WSG 3.3: Modularize bandwidth-heavy components](https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components)
+**High priority** · Needs investigation · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components" title="Split large components into smaller, on-demand modules to improve loading efficiency while balancing maintainability and caching performance.">WSG 3.3: Modularize bandwidth-heavy components</a>
 
 **What we found.** The Wagtail 8.1 article initializes YouTube before a play action, loading player scripts, fonts, thumbnail and ad/log requests. The initial reject visit captures 1.328 MB of associated traffic within 2.026 MB of recorded page traffic. These are incomplete observations with unresolved transfers and frame gaps, not a complete player footprint or a guaranteed saving.
 
@@ -108,7 +88,7 @@ Wagtail.org already delivers compressed text, long-lived public assets, many Web
 
 <div class="audit-finding" markdown="1">
 
-**Medium priority** · Problem found · [WSG 2.17: Provide cross-platform compatibility support](https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support)
+**Medium priority** · Problem found · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support" title="Document compatibility, avoid unnecessary obsolescence, and test across devices, systems, and network conditions.">WSG 2.17: Provide cross-platform compatibility support</a>
 
 **What we found.** In the fresh no-JavaScript Contact state, hello@wagtail.org and security@wagtail.org become [email protected] with Cloudflare decoder links. General/conduct and security visitors lose the readable email routes; FAQ and Slack links remain.
 
@@ -124,7 +104,7 @@ Wagtail.org already delivers compressed text, long-lived public assets, many Web
 
 <div class="audit-finding" markdown="1">
 
-**Medium priority** · Problem found · [WSG 2.7: Make deliverables understandable and reusable](https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable)
+**Medium priority** · Problem found · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable" title="Create discoverable, maintainable, and reusable documentation and code resources that support long-term understanding, reuse, and sustainability.">WSG 2.7: Make deliverables understandable and reusable</a>
 
 **What we found.** The policy gives 5,173 tCO2e/year across 6,431 sites and an average of 12 tCO2e/year per site. The displayed total divided by the count gives about 0.8044, so these cannot be the same mean and population. Separately, the privacy page describes the Torchbox website/company while being presented as the wagtail.org policy.
 
@@ -147,7 +127,7 @@ Wagtail.org already delivers compressed text, long-lived public assets, many Web
 
 <div class="audit-finding" markdown="1">
 
-**Medium priority** · Problem found · [WSG 3.9: Use media queries that support sustainability goals](https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals)
+**Medium priority** · Problem found · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals" title="Support user preferences via media queries for color, motion, contrast, data use, and related settings to improve accessibility and efficiency.">WSG 3.9: Use media queries that support sustainability goals</a>
 
 **What we found.** Fresh loads with a dark device preference work and preserve task text. Changing that preference while any of the seven pages is already open leaves the light colors unchanged.
 
@@ -158,33 +138,6 @@ Wagtail.org already delivers compressed text, long-lived public assets, many Web
 [How we checked this: Update the theme when the device preference changes](#evidence-preference-behavior)
 
 </div>
-
-## After cookie choices and scrolling
-
-Each cookie choice starts a separate fresh visit. The sizes below are **cumulative totals**, including the first load. They help locate later downloads; they are not additional amounts to add together or guaranteed savings.
-
-??? note "Compare the interaction measurements"
-
-    <div class="audit-table-scroll" tabindex="0" role="region" aria-label="Cumulative data after cookie choices and scrolling">
-    <table>
-    <caption>Cumulative data after cookie choices and scrolling</caption>
-    <thead><tr><th scope="col">Page</th><th scope="col">Cookie choice tested</th><th scope="col">After cookie choice</th><th scope="col">After scrolling to the bottom</th></tr></thead>
-    <tbody>
-    <tr><th scope="row"><a href="https://wagtail.org/">Homepage</a></th><td>Reject optional cookies</td><td>944.4 kB</td><td>1.108 MB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/">Homepage</a></th><td>Accept cookies</td><td>945.6 kB</td><td>1.109 MB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/features/">Wagtail Features</a></th><td>Reject optional cookies</td><td>639.0 kB</td><td>719.6 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/features/">Wagtail Features</a></th><td>Accept cookies</td><td>638.0 kB</td><td>718.5 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/blog/wagtail-8-1/">Wagtail 8.1: automate more with an improved API and agent-ready tools</a></th><td>Reject optional cookies</td><td>2.026 MB</td><td>2.028 MB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/blog/wagtail-8-1/">Wagtail 8.1: automate more with an improved API and agent-ready tools</a></th><td>Accept cookies</td><td>2.032 MB</td><td>2.034 MB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/search/?query=sustainability">Search results</a></th><td>Reject optional cookies</td><td>465.5 kB</td><td>465.5 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/search/?query=sustainability">Search results</a></th><td>Accept cookies</td><td>464.7 kB</td><td>464.7 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/sustainability/">Sustainability</a></th><td>Reject optional cookies</td><td>592.3 kB</td><td>635.2 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/sustainability/">Sustainability</a></th><td>Accept cookies</td><td>590.3 kB</td><td>633.3 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/privacy/">Wagtail Privacy policy</a></th><td>Reject optional cookies</td><td>465.0 kB</td><td>465.0 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/privacy/">Wagtail Privacy policy</a></th><td>Accept cookies</td><td>464.4 kB</td><td>464.4 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/contact/">Contact Us</a></th><td>Reject optional cookies</td><td>465.7 kB</td><td>465.7 kB</td></tr>
-    <tr><th scope="row"><a href="https://wagtail.org/contact/">Contact Us</a></th><td>Accept cookies</td><td>464.9 kB</td><td>464.9 kB</td></tr>
-    </tbody></table></div>
 
 ## Further checks
 
@@ -256,13 +209,15 @@ The new contextual skill was tried against this audit’s existing evidence. The
 
 The sample covers selected pages and visitor tasks, not every page on the site. Expand it where the checks above identify an untested template, interaction or audience need.
 
-## How we checked this
+## Detailed findings
 
 This appendix explains the evidence in ordinary language. Local source files help identify possible fixes, but we have not confirmed that the live site uses the same code revision. A missing selected file or document does not mean the organization has none.
 
-<h3 id="evidence-distraction">Reading without unsolicited interruptions</h3>
+### User experience design {#findings-2}
 
-**Passed this check** · [WSG 2.5: Design to assist and not to distract](https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract)
+<h4 id="evidence-distraction">Reading without unsolicited interruptions</h4>
+
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract" title="Give users control over notifications and focus, prioritize task-relevant content, and avoid designs that distract or unnecessarily extend engagement.">WSG 2.5: Design to assist and not to distract</a>
 
 _Give users control over notifications and focus, prioritize task-relevant content, and avoid designs that distract or unnecessarily extend engagement._
 
@@ -280,9 +235,9 @@ The seven sampled pages provide relevant reading, search, policy and contact con
 - Browser observations for [Privacy](https://wagtail.org/privacy/).
 - Browser observations for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-choice">Make the analytics choice effective</h3>
+<h4 id="evidence-choice">Make the analytics choice effective</h4>
 
-**Problem found** · [WSG 2.6: Avoid being manipulative or deceptive](https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive)
+**Problem found** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive" title="Avoid deceptive patterns, clearly label ads, respect consent for tracking, and ensure search, sharing, and discoverability practices prioritize user needs over optimization or manipulation.">WSG 2.6: Avoid being manipulative or deceptive</a>
 
 _Avoid deceptive patterns, clearly label ads, respect consent for tracking, and ensure search, sharing, and discoverability practices prioritize user needs over optimization or manipulation._
 
@@ -309,9 +264,9 @@ All seven initial page captures send Google Analytics page-view requests before 
 - Selected local file `wagtailio/project_styleguide/templates/patterns/includes/cookie_message.html` at revision `9fa65385f27c`.
 - Selected local file `wagtailio/static/js/components/cookie-message.js` at revision `9fa65385f27c`.
 
-<h3 id="evidence-comprehension">Reconcile the footprint summary and privacy scope</h3>
+<h4 id="evidence-comprehension">Reconcile the footprint summary and privacy scope</h4>
 
-**Problem found** · [WSG 2.7: Make deliverables understandable and reusable](https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable)
+**Problem found** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable" title="Create discoverable, maintainable, and reusable documentation and code resources that support long-term understanding, reuse, and sustainability.">WSG 2.7: Make deliverables understandable and reusable</a>
 
 _Create discoverable, maintainable, and reusable documentation and code resources that support long-term understanding, reuse, and sustainability._
 
@@ -330,9 +285,9 @@ The sustainability policy reports 5,173 tCO2e/year for 6,431 sites alongside a 1
 - Browser observations for [Contact](https://wagtail.org/contact/).
 - Captured public evidence for [Homepage](https://wagtail.org).
 
-<h3 id="evidence-consistency">Keep the familiar navigation and control names</h3>
+<h4 id="evidence-consistency">Keep the familiar navigation and control names</h4>
 
-**Passed this check** · [WSG 2.8: Use a design system for interface consistency](https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency" title="Use design systems and established patterns to ensure consistent, efficient, and sustainable interfaces through reusable components and clear maintenance practices.">WSG 2.8: Use a design system for interface consistency</a>
 
 _Use design systems and established patterns to ensure consistent, efficient, and sustainable interfaces through reusable components and clear maintenance practices._
 
@@ -350,9 +305,9 @@ The same primary navigation, footer groups, search, Get started, theme and cooki
 - Browser observations for [Privacy](https://wagtail.org/privacy/).
 - Browser observations for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-motion">Investigate transient motion before changing it</h3>
+<h4 id="evidence-motion">Investigate transient motion before changing it</h4>
 
-**Needs investigation** · [WSG 2.10: Ensure animation is proportionate and easy to control](https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control)
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control" title="Use animation sparingly and efficiently, only when it supports understanding, while limiting performance impact and giving users control over motion.">WSG 2.10: Ensure animation is proportionate and easy to control</a>
 
 _Use animation sparingly and efficiently, only when it supports understanding, while limiting performance impact and giving users control over motion._
 
@@ -370,9 +325,9 @@ Initial desktop snapshots show no running animation and the home video is paused
 - Browser observations for [Privacy](https://wagtail.org/privacy/).
 - Browser observations for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-notifications">No notification request during the reading tasks</h3>
+<h4 id="evidence-notifications">No notification request during the reading tasks</h4>
 
-**Passed this check** · [WSG 2.12: Avoid unwanted notifications](https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications" title="Send only user-requested notifications and provide clear, accessible controls for managing preferences, opt-in, and account and contact settings.">WSG 2.12: Avoid unwanted notifications</a>
 
 _Send only user-requested notifications and provide clear, accessible controls for managing preferences, opt-in, and account and contact settings._
 
@@ -390,9 +345,9 @@ No browser notification permission request was recorded in the sampled states. N
 - Browser observations for [Privacy](https://wagtail.org/privacy/).
 - Browser observations for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-documents">Readable HTML and a simpler print view</h3>
+<h4 id="evidence-documents">Readable HTML and a simpler print view</h4>
 
-**Passed this check** · [WSG 2.13: Reduce the impact of downloadable and physical documents](https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents" title="Reduce paper use through digital-first workflows, optimize and reuse accessible downloadable documents, and provide clear, user-controlled document previews and formats.">WSG 2.13: Reduce the impact of downloadable and physical documents</a>
 
 _Reduce paper use through digital-first workflows, optimize and reuse accessible downloadable documents, and provide clear, user-controlled document previews and formats._
 
@@ -410,86 +365,9 @@ The sampled tasks use HTML, with no recorded PDF, office-file or download-attrib
 - Browser observations for [Privacy](https://wagtail.org/privacy/).
 - Browser observations for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-unused-code">Measure code across the interactions visitors use</h3>
+<h4 id="evidence-journeys">The opt-out and policy-search task completes</h4>
 
-**Needs investigation** · [WSG 3.2: Minify and remove unused code](https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code)
-
-_Minify code and data, and remove unused characters to reduce file size and improve loading efficiency and maintainability._
-
-The deployed main JavaScript is about 39.5 kB decoded and 11.3 kB gzip; CSS is about 125.7 kB decoded and 21.1 kB gzip. Initial unexecuted functions may serve later menus, search and copy actions. CSS records show used ranges rather than all unused rules, and article/frame coverage is incomplete. The separate analytics scripts account for 347.162 kB in the initial home reject visit; they are not the first-party bundle. Local production minification is useful source context but does not identify the live build.
-
-**Next step:** Collect representative interaction coverage and match deployed bundles to source maps before deleting or splitting code. Review analytics and player requirements with their owners.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Features](https://wagtail.org/features/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-- Browser observations for [Privacy](https://wagtail.org/privacy/).
-- Browser observations for [Contact](https://wagtail.org/contact/).
-- Selected local file `webpack.config.js` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/project_styleguide/templates/patterns/base.html` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/static/js/main.js` at revision `9fa65385f27c`.
-
-<h3 id="evidence-components">Test loading the release player only on request</h3>
-
-**Needs investigation** · [WSG 3.3: Modularize bandwidth-heavy components](https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components)
-
-_Split large components into smaller, on-demand modules to improve loading efficiency while balancing maintainability and caching performance._
-
-The release article initializes its YouTube iframe before playback, requesting player code, fonts, thumbnail and ad/log endpoints. The initial reject visit captures 1.328 MB of associated traffic within 2.026 MB of recorded page traffic; the separate accept visit captures 2.032 MB of page traffic. All are partial totals with unresolved transfers and frame gaps. The home native video already avoids preloading and has no observed MP4 request. A usable replacement for the article player has not yet been validated.
-
-**Next step:** Prototype a named image/play preview that loads the existing player on activation. Verify keyboard access, captions, transcript or reading fallback and playback, then compare fresh-load transfers. Treat 1.328 MB as observed traffic, not a promised saving.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Captured public evidence for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Selected local file `wagtailio/project_styleguide/templates/patterns/pages/home/home_page.html` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/project_styleguide/templates/patterns/components/streamfields/video_block/video_block.html` at revision `9fa65385f27c`.
-
-<h3 id="evidence-layout">Find the shared horizontal overflow</h3>
-
-**Needs investigation** · [WSG 3.10: Ensure layouts work for different devices and requirements](https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements)
-
-_Use responsive, progressively enhanced, and carbon-aware design to ensure accessible, adaptable functionality across devices and interaction methods while managing resource use._
-
-All seven JavaScript desktop documents are 1,290 px wide in a 1,280 px viewport; resized narrow documents are 370 px in a 360 px viewport. Reading text remains and images shrink, but the records do not identify the extra 10 px or show content loss. No-JavaScript and print states have no overflow. Mobile menu/search controls were visible but not activated, and resizing is not a fresh mobile load.
-
-**Next step:** Identify the overflowing element, inspect clipping and scrolling, then exercise narrow menu/search with keyboard and touch on a real device.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Features](https://wagtail.org/features/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-- Browser observations for [Privacy](https://wagtail.org/privacy/).
-- Browser observations for [Contact](https://wagtail.org/contact/).
-
-<h3 id="evidence-impact-choice">Check useful context for optional video</h3>
-
-**Needs investigation** · [WSG 5.4: Communicate the environmental impact of user choices](https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices)
-
-_Empower users, allowing them to make decisions when their choices can influence the environmental impact they have._
-
-Ordinary reading links do not all need carbon labels. Optional video is a more consequential resource choice: the home player defers downloading while the article initializes YouTube before activation. The packet does not inspect player quality, duration or data-use information. Policy descriptions of OLED themes and image capabilities concern CMS use rather than an executed upload task here.
-
-**Next step:** Review the information visitors need to choose video playback, then test it alongside an accessible on-demand player.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-
-<h3 id="evidence-journeys">The opt-out and policy-search task completes</h3>
-
-**Passed this check** · [WSG 2.4: Design efficient and streamlined user journeys](https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys" title="Design clear, efficient journeys that help users complete tasks and find content with minimal effort.">WSG 2.4: Design efficient and streamlined user journeys</a>
 
 _Design clear, efficient journeys that help users complete tasks and find content with minimal effort._
 
@@ -503,9 +381,9 @@ All five declared actions completed: opt out, open desktop search, enter sustain
 - Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
 - Browser observations for [Sustainability](https://wagtail.org/sustainability/).
 
-<h3 id="evidence-media-delivery">Compare responsive images while keeping readable detail</h3>
+<h4 id="evidence-media-delivery">Compare responsive images while keeping readable detail</h4>
 
-**Needs investigation** · [WSG 2.9: Optimize media to reduce resource use](https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use)
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use" title="Include media only when it supports user needs. Manage, optimize, and load media efficiently. Ensure users have control over playback and data use.">WSG 2.9: Optimize media to reduce resource use</a>
 
 _Include media only when it supports user needs. Manage, optimize, and load media efficiently. Ensure users have control over playback and data use._
 
@@ -533,9 +411,9 @@ Many image URLs already deliver WebP, and scrolling confirms useful deferral of 
 - Selected local file `wagtailio/project_styleguide/templates/patterns/components/streamfields/video_block/video_block.html` at revision `9fa65385f27c`.
 - Selected local file `wagtailio/project_styleguide/templates/patterns/components/streamfields/image/image.html` at revision `9fa65385f27c`.
 
-<h3 id="evidence-font-delivery">Test font fallback before trimming variants</h3>
+<h4 id="evidence-font-delivery">Test font fallback before trimming variants</h4>
 
-**Needs investigation** · [WSG 2.11: Use optimized web typography](https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography)
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography" title="Use font strategies that minimize downloads and complexity while supporting required languages and dynamic content.">WSG 2.11: Use optimized web typography</a>
 
 _Use font strategies that minimize downloads and complexity while supporting required languages and dynamic content._
 
@@ -560,69 +438,9 @@ The English content uses Kumbh Sans with a sans-serif fallback. Weights 400 and 
 - Captured public evidence for [Privacy](https://wagtail.org/privacy/).
 - Captured public evidence for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-semantic-forms">Inspect visible headings and activated forms</h3>
+<h4 id="evidence-no-js-content">Keep contact email readable without JavaScript</h4>
 
-**Needs investigation** · [WSG 3.6: Ensure code follows good semantic practices](https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices)
-
-_Use standards-compliant HTML and web platform features, and avoid unnecessary complexity or non-standard code._
-
-All seven documents report English language, one main region and one H1. Search inputs have Search labels and the newsletter field has an Email name; textless controls are not automatically unnamed. The bounded heading inventories truncate inside duplicated hidden navigation before visible primary content, so counts alone cannot establish heading wording or hierarchy. Dialog activation and focus handling remain untested.
-
-**Next step:** Capture visible main-region headings and resolved control names directly, then execute search, newsletter and modal tasks before making broader accessibility claims.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Features](https://wagtail.org/features/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-- Browser observations for [Privacy](https://wagtail.org/privacy/).
-- Browser observations for [Contact](https://wagtail.org/contact/).
-
-<h3 id="evidence-metadata">Useful page metadata matches the task</h3>
-
-**Passed this check** · [WSG 3.8: Structure metadata for machine readability](https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability)
-
-_Include essential document metadata and structured data to improve usability, accessibility, and machine readability._
-
-The six content pages have descriptive titles, matching HTTPS canonicals and relevant descriptions. Dynamic search has a query-specific title and noindex; its lack of canonical/description is appropriate to the sampled purpose. Home and the article contain parseable JSON-LD. Parsing is not schema validation or proof of search eligibility.
-
-**Next step:** Validate declared schema meaning if structured-data eligibility becomes part of the scope.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Features](https://wagtail.org/features/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-- Browser observations for [Privacy](https://wagtail.org/privacy/).
-- Browser observations for [Contact](https://wagtail.org/contact/).
-
-<h3 id="evidence-preference-behavior">Follow system theme changes on an open page</h3>
-
-**Problem found** · [WSG 3.9: Use media queries that support sustainability goals](https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals)
-
-_Support user preferences via media queries for color, motion, contrast, data use, and related settings to improve accessibility and efficiency._
-
-Fresh dark-preference loads work: text becomes white on a dark rgb(38,38,38) background and task content remains. In contrast, changing the device preference while each of the seven pages is open leaves the original light colors in place. Transient animation records do not independently prove a reduced-motion defect. No energy saving is inferred from the selected color scheme.
-
-**Next step:** Confirm manual-override policy and the deployed theme listener. Test live light-to-dark and dark-to-light changes, explicit choices, persisted preferences and fresh loads.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Features](https://wagtail.org/features/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-- Browser observations for [Privacy](https://wagtail.org/privacy/).
-- Browser observations for [Contact](https://wagtail.org/contact/).
-
-<h3 id="evidence-no-js-content">Keep contact email readable without JavaScript</h3>
-
-**Problem found** · [WSG 2.17: Provide cross-platform compatibility support](https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support)
+**Problem found** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support" title="Document compatibility, avoid unnecessary obsolescence, and test across devices, systems, and network conditions.">WSG 2.17: Provide cross-platform compatibility support</a>
 
 _Document compatibility, avoid unnecessary obsolescence, and test across devices, systems, and network conditions._
 
@@ -640,9 +458,147 @@ The fresh no-JavaScript Contact page replaces the general/conduct address hello@
 - Browser observations for [Privacy](https://wagtail.org/privacy/).
 - Browser observations for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-api-requests">Confirm which analytics and player requests are needed</h3>
+<h4 id="evidence-disclosure-scope">Public disclosures identify services and mitigation</h4>
 
-**Needs investigation** · [WSG 3.11: Use sustainable JavaScript and APIs](https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#identify-assess-disclose-review-and-mitigate-sustainability-impacts" title="Assess and report the planet, people, and prosperity impacts of digital projects, and plan measurable reductions to the real-world effects of their activity.">WSG 2.1: Identify, assess, disclose, review, and mitigate sustainability impacts</a>
+
+_Assess and report the planet, people, and prosperity impacts of digital projects, and plan measurable reductions to the real-world effects of their activity._
+
+The sustainability policy explicitly includes wagtail.org, docs.wagtail.org and guide.wagtail.org alongside CMS/ecosystem and community work. The linked Digital emissions statement separates homepage/website estimates and describes method, period and monitoring. This passes disclosure coverage, not execution or footprint accuracy. Its April 2026 mobile/Lighthouse SWD v4 estimate is a different scenario from these partial desktop captures and is not reproduced here. The 2025 ecosystem article uses differing 2024 totals (6,327 and 6,260 tons) and a median page weight differing from the earlier report. A sample, method or data revision could explain those baseline differences; the bounded excerpts do not establish one. The article itself warns that estimated pageview changes drive much of the headline reduction.
+
+**Next step:** Explain comparable baseline versions and distinguish ecosystem, website and homepage estimates. Correct the policy average, obtain execution records for claimed reductions, and supply traffic period/count, first/repeat mix, page weighting and infrastructure inputs to reproduce the site estimate. Its 30–300 kg/year range is a methodological scenario range, not statistical bounds.
+
+**Where we looked:**
+
+- Captured public evidence for [Homepage](https://wagtail.org).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+
+### Web development {#findings-3}
+
+<h4 id="evidence-unused-code">Measure code across the interactions visitors use</h4>
+
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code" title="Minify code and data, and remove unused characters to reduce file size and improve loading efficiency and maintainability.">WSG 3.2: Minify and remove unused code</a>
+
+_Minify code and data, and remove unused characters to reduce file size and improve loading efficiency and maintainability._
+
+The deployed main JavaScript is about 39.5 kB decoded and 11.3 kB gzip; CSS is about 125.7 kB decoded and 21.1 kB gzip. Initial unexecuted functions may serve later menus, search and copy actions. CSS records show used ranges rather than all unused rules, and article/frame coverage is incomplete. The separate analytics scripts account for 347.162 kB in the initial home reject visit; they are not the first-party bundle. Local production minification is useful source context but does not identify the live build.
+
+**Next step:** Collect representative interaction coverage and match deployed bundles to source maps before deleting or splitting code. Review analytics and player requirements with their owners.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Features](https://wagtail.org/features/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+- Browser observations for [Privacy](https://wagtail.org/privacy/).
+- Browser observations for [Contact](https://wagtail.org/contact/).
+- Selected local file `webpack.config.js` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/project_styleguide/templates/patterns/base.html` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/static/js/main.js` at revision `9fa65385f27c`.
+
+<h4 id="evidence-components">Test loading the release player only on request</h4>
+
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components" title="Split large components into smaller, on-demand modules to improve loading efficiency while balancing maintainability and caching performance.">WSG 3.3: Modularize bandwidth-heavy components</a>
+
+_Split large components into smaller, on-demand modules to improve loading efficiency while balancing maintainability and caching performance._
+
+The release article initializes its YouTube iframe before playback, requesting player code, fonts, thumbnail and ad/log endpoints. The initial reject visit captures 1.328 MB of associated traffic within 2.026 MB of recorded page traffic; the separate accept visit captures 2.032 MB of page traffic. All are partial totals with unresolved transfers and frame gaps. The home native video already avoids preloading and has no observed MP4 request. A usable replacement for the article player has not yet been validated.
+
+**Next step:** Prototype a named image/play preview that loads the existing player on activation. Verify keyboard access, captions, transcript or reading fallback and playback, then compare fresh-load transfers. Treat 1.328 MB as observed traffic, not a promised saving.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Captured public evidence for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Selected local file `wagtailio/project_styleguide/templates/patterns/pages/home/home_page.html` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/project_styleguide/templates/patterns/components/streamfields/video_block/video_block.html` at revision `9fa65385f27c`.
+
+<h4 id="evidence-layout">Find the shared horizontal overflow</h4>
+
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements" title="Use responsive, progressively enhanced, and carbon-aware design to ensure accessible, adaptable functionality across devices and interaction methods while managing resource use.">WSG 3.10: Ensure layouts work for different devices and requirements</a>
+
+_Use responsive, progressively enhanced, and carbon-aware design to ensure accessible, adaptable functionality across devices and interaction methods while managing resource use._
+
+All seven JavaScript desktop documents are 1,290 px wide in a 1,280 px viewport; resized narrow documents are 370 px in a 360 px viewport. Reading text remains and images shrink, but the records do not identify the extra 10 px or show content loss. No-JavaScript and print states have no overflow. Mobile menu/search controls were visible but not activated, and resizing is not a fresh mobile load.
+
+**Next step:** Identify the overflowing element, inspect clipping and scrolling, then exercise narrow menu/search with keyboard and touch on a real device.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Features](https://wagtail.org/features/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+- Browser observations for [Privacy](https://wagtail.org/privacy/).
+- Browser observations for [Contact](https://wagtail.org/contact/).
+
+<h4 id="evidence-semantic-forms">Inspect visible headings and activated forms</h4>
+
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices" title="Use standards-compliant HTML and web platform features, and avoid unnecessary complexity or non-standard code.">WSG 3.6: Ensure code follows good semantic practices</a>
+
+_Use standards-compliant HTML and web platform features, and avoid unnecessary complexity or non-standard code._
+
+All seven documents report English language, one main region and one H1. Search inputs have Search labels and the newsletter field has an Email name; textless controls are not automatically unnamed. The bounded heading inventories truncate inside duplicated hidden navigation before visible primary content, so counts alone cannot establish heading wording or hierarchy. Dialog activation and focus handling remain untested.
+
+**Next step:** Capture visible main-region headings and resolved control names directly, then execute search, newsletter and modal tasks before making broader accessibility claims.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Features](https://wagtail.org/features/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+- Browser observations for [Privacy](https://wagtail.org/privacy/).
+- Browser observations for [Contact](https://wagtail.org/contact/).
+
+<h4 id="evidence-metadata">Useful page metadata matches the task</h4>
+
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability" title="Include essential document metadata and structured data to improve usability, accessibility, and machine readability.">WSG 3.8: Structure metadata for machine readability</a>
+
+_Include essential document metadata and structured data to improve usability, accessibility, and machine readability._
+
+The six content pages have descriptive titles, matching HTTPS canonicals and relevant descriptions. Dynamic search has a query-specific title and noindex; its lack of canonical/description is appropriate to the sampled purpose. Home and the article contain parseable JSON-LD. Parsing is not schema validation or proof of search eligibility.
+
+**Next step:** Validate declared schema meaning if structured-data eligibility becomes part of the scope.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Features](https://wagtail.org/features/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+- Browser observations for [Privacy](https://wagtail.org/privacy/).
+- Browser observations for [Contact](https://wagtail.org/contact/).
+
+<h4 id="evidence-preference-behavior">Follow system theme changes on an open page</h4>
+
+**Problem found** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals" title="Support user preferences via media queries for color, motion, contrast, data use, and related settings to improve accessibility and efficiency.">WSG 3.9: Use media queries that support sustainability goals</a>
+
+_Support user preferences via media queries for color, motion, contrast, data use, and related settings to improve accessibility and efficiency._
+
+Fresh dark-preference loads work: text becomes white on a dark rgb(38,38,38) background and task content remains. In contrast, changing the device preference while each of the seven pages is open leaves the original light colors in place. Transient animation records do not independently prove a reduced-motion defect. No energy saving is inferred from the selected color scheme.
+
+**Next step:** Confirm manual-override policy and the deployed theme listener. Test live light-to-dark and dark-to-light changes, explicit choices, persisted preferences and fresh loads.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Features](https://wagtail.org/features/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+- Browser observations for [Privacy](https://wagtail.org/privacy/).
+- Browser observations for [Contact](https://wagtail.org/contact/).
+
+<h4 id="evidence-api-requests">Confirm which analytics and player requests are needed</h4>
+
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis" title="Write efficient JavaScript and use APIs that minimize processing, data use, and energy consumption.">WSG 3.11: Use sustainable JavaScript and APIs</a>
 
 _Write efficient JavaScript and use APIs that minimize processing, data use, and energy consumption._
 
@@ -667,9 +623,101 @@ Each initial page requests one small sitewide alert and three analytics page vie
 - Captured public evidence for [Privacy](https://wagtail.org/privacy/).
 - Captured public evidence for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-public-cache-policy">Keep the explicit public-asset cache policies</h3>
+<h4 id="evidence-keyboard-path">Initial keyboard focus is visible</h4>
 
-**Passed this check** · [WSG 4.2: Optimize caching and support offline access](https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices" title="Use standards-compliant HTML and web platform features, and avoid unnecessary complexity or non-standard code.">WSG 3.6: Ensure code follows good semantic practices</a>
+
+_Use standards-compliant HTML and web platform features, and avoid unnecessary complexity or non-standard code._
+
+Bounded Tab traces reach visible event/skip/home links, named navigation and search, Get started and task controls. Recorded targets show a visible focus indicator, including a 1 px automatic outline on the sampled light background. This supports the initial path only; skip destinations, opened menus, reverse traversal, traps and full accessibility were not tested.
+
+**Next step:** Activate skip, search and menu controls and check complete forward/reverse paths, including narrow and dark states.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Features](https://wagtail.org/features/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+- Browser observations for [Privacy](https://wagtail.org/privacy/).
+- Browser observations for [Contact](https://wagtail.org/contact/).
+
+<h4 id="evidence-carbon-discovery">carbon.txt is present and usable for discovery</h4>
+
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#include-expected-and-beneficial-files" title="Include standard website metadata and configuration files to support discoverability, transparency, and operational best practices.">WSG 3.13: Include expected and beneficial files</a>
+
+_Include standard website metadata and configuration files to support discoverability, transparency, and operational best practices._
+
+The root carbon.txt returns 200 text/plain, parses with declared version 0.4 and supplies usable exact-host disclosure relationships without delegation ambiguity. All four declared disclosure URLs return 200. Common-field checks report no structural issue, but schemaValidated=false: this is neither full version-0.4 schema validation nor validation against the separate 1.0-RC1 profile. The 2023/2024 reports are historical and past their declared validity; last_updated is 2026-01-07. The newer 2025 report was reached through linked content, not directly declared. Provider entries remain self-declared relationships, and exact-host labels do not automatically cover subdomains.
+
+**Next step:** Link the current report directly and refresh the update date when appropriate. Use a matching version-specific validator for formal syntax conformance; verify claims and hosting independently.
+
+**Where we looked:**
+
+- Captured public evidence for [Homepage](https://wagtail.org).
+
+<h4 id="evidence-source-reuse">Selected local components share common behavior</h4>
+
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#avoid-redundancy-and-duplication-in-code" title="Reduce code duplication through refactoring and reuse, ensure maintainability, and favor evolving existing solutions over rebuilding them.">WSG 3.4: Avoid redundancy and duplication in code</a>
+
+_Reduce code duplication through refactoring and reuse, ensure maintainability, and favor evolving existing solutions over rebuilding them._
+
+The supplied local home template uses shared hero/button patterns and a common CTA button include. main.js has a shared component initializer, with dedicated cookie and desktop-search modules. This supports reuse in the selected files, not whole-project efficiency. The unselected base-page inheritance and live deployment identity remain unresolved.
+
+**Next step:** Inspect additional concrete template call sites only if expanding the duplication review; match proposed edits to the deployed build.
+
+**Where we looked:**
+
+- Selected local file `wagtailio/project_styleguide/templates/patterns/base.html` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/project_styleguide/templates/patterns/pages/home/home_page.html` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/project_styleguide/templates/patterns/includes/cookie_message.html` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/static/js/components/cookie-message.js` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/static/js/components/site-search-desktop.js` at revision `9fa65385f27c`.
+- Selected local file `wagtailio/static/js/main.js` at revision `9fa65385f27c`.
+
+<h4 id="evidence-source-dependencies">Verify lockfile contents or a repeatable build</h4>
+
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-dependencies-sparingly-and-maintain-them" title="Regularly review dependencies, remove unused or unnecessary libraries and frameworks, and keep required packages up to date. Opt for minimal, secure, and modular solutions.">WSG 3.12: Use dependencies sparingly and maintain them</a>
+
+_Regularly review dependencies, remove unused or unnecessary libraries and frameworks, and keep required packages up to date. Opt for minimal, secure, and modular solutions._
+
+Local manifests inventory dependencies, while Docker/CI declare npm ci and Poetry installation. The selected lockfiles contain identity/size metadata only, so their resolutions and consistency with manifests cannot be checked. Clean tracked source does not establish installed/deployed versions, package necessity or vulnerability status.
+
+**Next step:** Provide bounded lockfile/manifest checks or a clean-install receipt for this revision. Verify deployed versions separately where they affect a decision.
+
+**Where we looked:**
+
+- Selected local file `pyproject.toml` at revision `9fa65385f27c`.
+- Selected local file `package.json` at revision `9fa65385f27c`.
+- Selected local file `poetry.lock` at revision `9fa65385f27c` (metadata only).
+- Selected local file `package-lock.json` at revision `9fa65385f27c` (metadata only).
+- Selected local file `Dockerfile` at revision `9fa65385f27c`.
+- Selected local file `.github/workflows/ci.yml` at revision `9fa65385f27c`.
+
+<h4 id="evidence-source-runtime">Local runtime declarations agree</h4>
+
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-the-latest-stable-language-version" title="Use up-to-date technologies and select the most suitable programming language for each task to ensure efficiency and maintainability.">WSG 3.15: Use the latest stable language version</a>
+
+_Use up-to-date technologies and select the most suitable programming language for each task to ensure efficiency and maintainability._
+
+Selected local declarations agree on Python 3.14 and Node 24 across project metadata, runtime files, Docker and CI; Docker/CI also agree on Poetry 2.4.0. This passes declaration consistency. Unselected runtime paths and the deployed inventory are unknown, and no authoritative release check establishes a latest-version claim.
+
+**Next step:** Capture other supported runtime paths and a deployed inventory if broader consistency is required.
+
+**Where we looked:**
+
+- Selected local file `pyproject.toml` at revision `9fa65385f27c`.
+- Selected local file `Dockerfile` at revision `9fa65385f27c`.
+- Selected local file `.nvmrc` at revision `9fa65385f27c`.
+- Selected local file `.github/workflows/ci.yml` at revision `9fa65385f27c`.
+- Selected local file `README.md` at revision `9fa65385f27c`.
+
+### Hosting, infrastructure and systems {#findings-4}
+
+<h4 id="evidence-public-cache-policy">Keep the explicit public-asset cache policies</h4>
+
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access" title="Use caching and offline capabilities to reduce network load, improve resilience, and balance performance with sustainability.">WSG 4.2: Optimize caching and support offline access</a>
 
 _Use caching and offline capabilities to reduce network load, improve resilience, and balance performance with sustainability._
 
@@ -694,9 +742,9 @@ Hashed JavaScript, CSS and WOFF2 expose long public immutable caching and valida
 - Captured public evidence for [Privacy](https://wagtail.org/privacy/).
 - Captured public evidence for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-text-compression">Material text responses already use compression</h3>
+<h4 id="evidence-text-compression">Material text responses already use compression</h4>
 
-**Passed this check** · [WSG 4.3: Reduce data transfer with compression](https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression" title="Compress server responses and media files to reduce bandwidth, storage use, and delivery overhead while balancing processing costs.">WSG 4.3: Reduce data transfer with compression</a>
 
 _Compress server responses and media files to reduce bandwidth, storage use, and delivery overhead while balancing processing costs._
 
@@ -721,58 +769,9 @@ Sampled HTML uses Brotli and common CSS/JavaScript gzip; material third-party te
 - Captured public evidence for [Privacy](https://wagtail.org/privacy/).
 - Captured public evidence for [Contact](https://wagtail.org/contact/).
 
-<h3 id="evidence-keyboard-path">Initial keyboard focus is visible</h3>
+<h4 id="evidence-hosting-evidence">Verify hosting claims beyond provider names</h4>
 
-**Passed this check** · [WSG 3.6: Ensure code follows good semantic practices](https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices)
-
-_Use standards-compliant HTML and web platform features, and avoid unnecessary complexity or non-standard code._
-
-Bounded Tab traces reach visible event/skip/home links, named navigation and search, Get started and task controls. Recorded targets show a visible focus indicator, including a 1 px automatic outline on the sampled light background. This supports the initial path only; skip destinations, opened menus, reverse traversal, traps and full accessibility were not tested.
-
-**Next step:** Activate skip, search and menu controls and check complete forward/reverse paths, including narrow and dark states.
-
-**Where we looked:**
-
-- Browser observations for [Homepage](https://wagtail.org/).
-- Browser observations for [Features](https://wagtail.org/features/).
-- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
-- Browser observations for [Search results](https://wagtail.org/search/?query=sustainability).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-- Browser observations for [Privacy](https://wagtail.org/privacy/).
-- Browser observations for [Contact](https://wagtail.org/contact/).
-
-<h3 id="evidence-disclosure-scope">Public disclosures identify services and mitigation</h3>
-
-**Passed this check** · [WSG 2.1: Identify, assess, disclose, review, and mitigate sustainability impacts](https://www.w3.org/TR/web-sustainability-guidelines/#identify-assess-disclose-review-and-mitigate-sustainability-impacts)
-
-_Assess and report the planet, people, and prosperity impacts of digital projects, and plan measurable reductions to the real-world effects of their activity._
-
-The sustainability policy explicitly includes wagtail.org, docs.wagtail.org and guide.wagtail.org alongside CMS/ecosystem and community work. The linked Digital emissions statement separates homepage/website estimates and describes method, period and monitoring. This passes disclosure coverage, not execution or footprint accuracy. Its April 2026 mobile/Lighthouse SWD v4 estimate is a different scenario from these partial desktop captures and is not reproduced here. The 2025 ecosystem article uses differing 2024 totals (6,327 and 6,260 tons) and a median page weight differing from the earlier report. A sample, method or data revision could explain those baseline differences; the bounded excerpts do not establish one. The article itself warns that estimated pageview changes drive much of the headline reduction.
-
-**Next step:** Explain comparable baseline versions and distinguish ecosystem, website and homepage estimates. Correct the policy average, obtain execution records for claimed reductions, and supply traffic period/count, first/repeat mix, page weighting and infrastructure inputs to reproduce the site estimate. Its 30–300 kg/year range is a methodological scenario range, not statistical bounds.
-
-**Where we looked:**
-
-- Captured public evidence for [Homepage](https://wagtail.org).
-- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
-
-<h3 id="evidence-carbon-discovery">carbon.txt is present and usable for discovery</h3>
-
-**Passed this check** · [WSG 3.13: Include expected and beneficial files](https://www.w3.org/TR/web-sustainability-guidelines/#include-expected-and-beneficial-files)
-
-_Include standard website metadata and configuration files to support discoverability, transparency, and operational best practices._
-
-The root carbon.txt returns 200 text/plain, parses with declared version 0.4 and supplies usable exact-host disclosure relationships without delegation ambiguity. All four declared disclosure URLs return 200. Common-field checks report no structural issue, but schemaValidated=false: this is neither full version-0.4 schema validation nor validation against the separate 1.0-RC1 profile. The 2023/2024 reports are historical and past their declared validity; last_updated is 2026-01-07. The newer 2025 report was reached through linked content, not directly declared. Provider entries remain self-declared relationships, and exact-host labels do not automatically cover subdomains.
-
-**Next step:** Link the current report directly and refresh the update date when appropriate. Use a matching version-specific validator for formal syntax conformance; verify claims and hosting independently.
-
-**Where we looked:**
-
-- Captured public evidence for [Homepage](https://wagtail.org).
-
-<h3 id="evidence-hosting-evidence">Verify hosting claims beyond provider names</h3>
-
-**Needs investigation** · [WSG 4.1: Use sustainable hosting](https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-hosting)
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-hosting" title="Select and manage infrastructure using sustainability metrics, prioritizing low-carbon energy use and low-impact hosting and domain choices in selection, and extending hardware lifespan and minimising emissions in management.">WSG 4.1: Use sustainable hosting</a>
 
 _Select and manage infrastructure using sustainability metrics, prioritizing low-carbon energy use and low-impact hosting and domain choices in selection, and extending hardware lifespan and minimising emissions in management._
 
@@ -786,65 +785,9 @@ carbon.txt declares Cloudflare for CDN, Heroku for platform/database/cache, AWS 
 - Selected local file `Dockerfile` at revision `9fa65385f27c`.
 - Selected local file `README.md` at revision `9fa65385f27c`.
 
-<h3 id="evidence-source-reuse">Selected local components share common behavior</h3>
+<h4 id="evidence-source-automation">CI already cancels superseded runs</h4>
 
-**Passed this check** · [WSG 3.4: Avoid redundancy and duplication in code](https://www.w3.org/TR/web-sustainability-guidelines/#avoid-redundancy-and-duplication-in-code)
-
-_Reduce code duplication through refactoring and reuse, ensure maintainability, and favor evolving existing solutions over rebuilding them._
-
-The supplied local home template uses shared hero/button patterns and a common CTA button include. main.js has a shared component initializer, with dedicated cookie and desktop-search modules. This supports reuse in the selected files, not whole-project efficiency. The unselected base-page inheritance and live deployment identity remain unresolved.
-
-**Next step:** Inspect additional concrete template call sites only if expanding the duplication review; match proposed edits to the deployed build.
-
-**Where we looked:**
-
-- Selected local file `wagtailio/project_styleguide/templates/patterns/base.html` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/project_styleguide/templates/patterns/pages/home/home_page.html` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/project_styleguide/templates/patterns/includes/cookie_message.html` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/static/js/components/cookie-message.js` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/static/js/components/site-search-desktop.js` at revision `9fa65385f27c`.
-- Selected local file `wagtailio/static/js/main.js` at revision `9fa65385f27c`.
-
-<h3 id="evidence-source-dependencies">Verify lockfile contents or a repeatable build</h3>
-
-**Needs investigation** · [WSG 3.12: Use dependencies sparingly and maintain them](https://www.w3.org/TR/web-sustainability-guidelines/#use-dependencies-sparingly-and-maintain-them)
-
-_Regularly review dependencies, remove unused or unnecessary libraries and frameworks, and keep required packages up to date. Opt for minimal, secure, and modular solutions._
-
-Local manifests inventory dependencies, while Docker/CI declare npm ci and Poetry installation. The selected lockfiles contain identity/size metadata only, so their resolutions and consistency with manifests cannot be checked. Clean tracked source does not establish installed/deployed versions, package necessity or vulnerability status.
-
-**Next step:** Provide bounded lockfile/manifest checks or a clean-install receipt for this revision. Verify deployed versions separately where they affect a decision.
-
-**Where we looked:**
-
-- Selected local file `pyproject.toml` at revision `9fa65385f27c`.
-- Selected local file `package.json` at revision `9fa65385f27c`.
-- Selected local file `poetry.lock` at revision `9fa65385f27c` (metadata only).
-- Selected local file `package-lock.json` at revision `9fa65385f27c` (metadata only).
-- Selected local file `Dockerfile` at revision `9fa65385f27c`.
-- Selected local file `.github/workflows/ci.yml` at revision `9fa65385f27c`.
-
-<h3 id="evidence-source-runtime">Local runtime declarations agree</h3>
-
-**Passed this check** · [WSG 3.15: Use the latest stable language version](https://www.w3.org/TR/web-sustainability-guidelines/#use-the-latest-stable-language-version)
-
-_Use up-to-date technologies and select the most suitable programming language for each task to ensure efficiency and maintainability._
-
-Selected local declarations agree on Python 3.14 and Node 24 across project metadata, runtime files, Docker and CI; Docker/CI also agree on Poetry 2.4.0. This passes declaration consistency. Unselected runtime paths and the deployed inventory are unknown, and no authoritative release check establishes a latest-version claim.
-
-**Next step:** Capture other supported runtime paths and a deployed inventory if broader consistency is required.
-
-**Where we looked:**
-
-- Selected local file `pyproject.toml` at revision `9fa65385f27c`.
-- Selected local file `Dockerfile` at revision `9fa65385f27c`.
-- Selected local file `.nvmrc` at revision `9fa65385f27c`.
-- Selected local file `.github/workflows/ci.yml` at revision `9fa65385f27c`.
-- Selected local file `README.md` at revision `9fa65385f27c`.
-
-<h3 id="evidence-source-automation">CI already cancels superseded runs</h3>
-
-**Passed this check** · [WSG 4.6: Use automation wisely](https://www.w3.org/TR/web-sustainability-guidelines/#use-automation-wisely)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-automation-wisely" title="Automate and scale tasks and infrastructure efficiently, run processes only when needed, and control unwanted traffic.">WSG 4.6: Use automation wisely</a>
 
 _Automate and scale tasks and infrastructure efficiently, run processes only when needed, and control unwanted traffic._
 
@@ -856,9 +799,27 @@ The selected local workflow filters push runs to main/next, supports pull reques
 
 - Selected local file `.github/workflows/ci.yml` at revision `9fa65385f27c`.
 
-<h3 id="evidence-source-maintenance">Local documentation explains maintenance tasks</h3>
+### Business strategy and product management {#findings-5}
 
-**Passed this check** · [WSG 5.10: Follow a product management and maintenance strategy](https://www.w3.org/TR/web-sustainability-guidelines/#follow-a-product-management-and-maintenance-strategy)
+<h4 id="evidence-impact-choice">Check useful context for optional video</h4>
+
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices" title="Empower users, allowing them to make decisions when their choices can influence the environmental impact they have.">WSG 5.4: Communicate the environmental impact of user choices</a>
+
+_Empower users, allowing them to make decisions when their choices can influence the environmental impact they have._
+
+Ordinary reading links do not all need carbon labels. Optional video is a more consequential resource choice: the home player defers downloading while the article initializes YouTube before activation. The packet does not inspect player quality, duration or data-use information. Policy descriptions of OLED themes and image capabilities concern CMS use rather than an executed upload task here.
+
+**Next step:** Review the information visitors need to choose video playback, then test it alongside an accessible on-demand player.
+
+**Where we looked:**
+
+- Browser observations for [Homepage](https://wagtail.org/).
+- Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
+- Browser observations for [Sustainability](https://wagtail.org/sustainability/).
+
+<h4 id="evidence-source-maintenance">Local documentation explains maintenance tasks</h4>
+
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#follow-a-product-management-and-maintenance-strategy" title="Maintain clear documentation, resourcing, and measurement practices for long-term product support, including security, sustainability, and early detection of failure risks.">WSG 5.10: Follow a product management and maintenance strategy</a>
 
 _Maintain clear documentation, resourcing, and measurement practices for long-term product support, including security, sustainability, and early detection of failure risks._
 
@@ -871,9 +832,9 @@ The supplied README describes development setup, migrations, cache setup, contro
 - Selected local file `README.md` at revision `9fa65385f27c`.
 - Selected local file `.github/workflows/ci.yml` at revision `9fa65385f27c`.
 
-<h3 id="evidence-source-change-docs">The release article explains product changes</h3>
+<h4 id="evidence-source-change-docs">The release article explains product changes</h4>
 
-**Passed this check** · [WSG 5.12: Document updates and evolutions](https://www.w3.org/TR/web-sustainability-guidelines/#document-updates-and-evolutions)
+**Passed this check** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#document-updates-and-evolutions" title="Provide documentation to help users find their way whenever functionality changes.">WSG 5.12: Document updates and evolutions</a>
 
 _Provide documentation to help users find their way whenever functionality changes._
 
@@ -885,9 +846,9 @@ The public Wagtail 8.1 article identifies the version and user-facing API/workfl
 
 - Browser observations for [Wagtail 8 1](https://wagtail.org/blog/wagtail-8-1/).
 
-<h3 id="evidence-source-budgets">Make the stated monitoring target reviewable</h3>
+<h4 id="evidence-source-budgets">Make the stated monitoring target reviewable</h4>
 
-**Needs investigation** · [WSG 5.24: Define performance, environmental, and human budgets](https://www.w3.org/TR/web-sustainability-guidelines/#define-performance-environmental-and-human-budgets)
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#define-performance-environmental-and-human-budgets" title="Define and apply lifecycle sustainability and performance budgets, set evidence-based KPIs, and track measurable improvements over time.">WSG 5.24: Define performance, environmental, and human budgets</a>
 
 _Define and apply lifecycle sustainability and performance budgets, set evidence-based KPIs, and track measurable improvements over time._
 
@@ -903,9 +864,9 @@ Selected local build/CI/docs do not expose a numerical asset/performance ceiling
 - Selected local file `webpack.config.js` at revision `9fa65385f27c`.
 - Captured public evidence for [Homepage](https://wagtail.org).
 
-<h3 id="evidence-source-open-source">Clarify software and content reuse terms</h3>
+<h4 id="evidence-source-open-source">Clarify software and content reuse terms</h4>
 
-**Needs investigation** · [WSG 5.25: Use and contribute to open source](https://www.w3.org/TR/web-sustainability-guidelines/#use-and-contribute-to-open-source)
+**Needs investigation** · <a class="audit-guideline" href="https://www.w3.org/TR/web-sustainability-guidelines/#use-and-contribute-to-open-source" title="Define and maintain an open-source policy and actively contribute to open-source communities through code, time, and financial or in-kind support.">WSG 5.25: Use and contribute to open source</a>
 
 _Define and maintain an open-source policy and actively contribute to open-source communities through code, time, and financial or in-kind support._
 
@@ -928,13 +889,35 @@ The browser measurements were captured from **2026-11-04T19:24:59.321438+00:00**
 
 The scoring method is `agent-breadth-v2`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. 0 groups were excluded as not applicable; 39 were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.
 
-First-load transfer headlines use the first recorded initial visit for each URL, including its completeness limit. Later cookie-choice runs remain in the interaction table; they are not combined into a median. Decimal kB = 1,000 bytes; MB = 1,000,000 bytes. Energy is shown in milliwatt-hours (mWh = 0.001 Wh).
+### First load {#measure-first-load}
 
-Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the branch checked out when the presentation supplement was prepared. Captured-revision links remain stable if that branch moves.
+Data downloaded before clicking or scrolling, using the first recorded initial visit for each URL, including its completeness limit. Decimal kB = 1,000 bytes; MB = 1,000,000 bytes.
+
+### Cookie choices and waiting {#measure-after-choice}
+
+Each cookie choice starts a separate fresh visit. Accept and reject results stay separate; they are not combined into a median. The first-load column uses the first of those visits. Later columns show **cumulative totals**, including the initial load of that visit. They are not additional amounts to add together or guaranteed savings.
+
+### Scrolling {#measure-scroll}
+
+Cumulative downloads after scrolling to the bottom, following the cookie-choice or waiting checkpoint of the same visit. Compare accept and reject values within their own visit; do not subtract the first-load headline from a different visit.
+
+### Partial measurements {#measure-completeness}
+
+A partial result means some requests failed or did not finish in the observation window, so their transferred size is uncertain. The site is measured as it behaved; a failed analytics request is context, not automatically a priority fix. Carbon estimates and ratings are withheld for incomplete initial captures. Unmarked transfer figures are complete within the test conditions, not a measure of every possible download.
+
+### Estimated footprint and Digital Carbon Rating {#measure-carbon}
+
+Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit; Digital Carbon Ratings use the fixed comparison model. Recorded model: Sustainable Web Design Model version 4 through `@tgwf/co2@0.19.0`, assuming 100% first visits. The comparison gives no green-hosting credit. These are model assumptions, not verified electricity-supply facts. Ratings remain provisional because the capture protocol has not been independently validated; they do not establish whole-site sustainability.
+
+### Browser and network energy {#measure-energy}
+
+Energy is shown in milliwatt-hours (mWh = 0.001 Wh). Browser energy includes modeled CPU, memory, disk and display use. Not sampled means no energy experiment was supplied for that page; unavailable means a supplied experiment did not yield a usable result. Neither means zero energy.
 
 **Energy method:** GreenFrame 2.0.1 uses separately recorded browser scenarios, with three fresh-context visits per page, page load followed by a three-second wait, and no cookie interaction or scrolling. The median client-device estimate and median network estimate are reported separately; their medians must not be added to derive a total. This is a resource-use model, not metered whole-device electricity. Browser startup and the collector warm-up are excluded; browser close is included.
 
 The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, independently of the transfer collector. The model assumes a 14 W display; that assumption contributes substantially to these short visits. CPU, memory and disk estimates use the collection host's properties. Background activity on this shared workstation was not independently isolated. These figures support repeat experiments under the same conditions, not device-independent rankings. GreenFrame network energy and SWDM carbon estimates overlap in scope and are not added together.
+
+Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the branch checked out when the presentation supplement was prepared. Captured-revision links remain stable if that branch moves.
 
 This presentation revision responds to owner feedback: clearer guideline descriptions, area results, concise illustrations, and a separate energy experiment. The scored audit evidence and outcomes are unchanged.
 
