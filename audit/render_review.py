@@ -57,6 +57,12 @@ def traffic(value: float) -> str:
     )
 
 
+def footprint(value: float) -> str:
+    """Round display only, keeping positive estimates visible below 0.01 gCO₂e."""
+    displayed = max(0.01, value) if value > 0 else value
+    return f"{displayed:.2f} gCO₂e"
+
+
 def validate_inputs(session: Path, score_document: JSON, review: JSON) -> None:
     """Reject changed judgments, expectations or evidence after score calculation."""
     for key, name in {
@@ -94,6 +100,15 @@ LABELS = {
     "cantTell": "Needs investigation",
     "inapplicable": "Not relevant here",
     "untested": "Not reviewed",
+}
+
+
+STATUS_SYMBOLS = {
+    "pass": "✅",
+    "fail": "❌",
+    "cantTell": "❓",
+    "inapplicable": "➖",
+    "untested": "⚪",
 }
 
 
@@ -470,7 +485,7 @@ def render(
                     phase_size(run, "initial"),
                     later_sizes(url, "after_consent"),
                     later_sizes(url, "after_scroll"),
-                    f"{carbon['total']:.3g} gCO₂e" if carbon else "Withheld",
+                    footprint(carbon["total"]) if carbon else "Withheld",
                     html.escape(carbon["rating"]) if carbon else "Withheld",
                     device,
                     network,
@@ -550,7 +565,8 @@ def render(
             + table_row(
                 [
                     anchor(edited[identifier]["title"], f"#evidence-{identifier}"),
-                    LABELS[row["outcome"]],
+                    f'<span aria-hidden="true">{STATUS_SYMBOLS[row["outcome"]]}</span> '
+                    + LABELS[row["outcome"]],
                 ]
             )
         )
@@ -561,7 +577,7 @@ def render(
             "",
             "### Broader checks to add next",
             "",
-            "The new contextual skill was tried against this audit’s existing evidence. The requests below are outside the current score; missing records are not site defects.",
+            "These checks need additional evidence and are outside the current score. Missing records do not establish a site defect.",
             "",
             *table_start(
                 "Next contextual audit scope", ["Check", "Evidence so far", "Next step"]
@@ -651,7 +667,7 @@ def render(
         "",
         f"The browser measurements were captured from **{staged.get('startedAt', 'unrecorded')}** to **{staged.get('finishedAt', 'unrecorded')}**. Initial-load tests used a {viewport.get('width', 'recorded')} × {viewport.get('height', 'recorded')} desktop viewport and a {protocol.get('observationMs', 0) / 1000:g}-second observation window. Cookie choices and scrolling were recorded afterward. Supplementary tests covered narrow layouts, color and motion preferences, print, JavaScript availability and bounded keyboard navigation.",
         "",
-        f"**Audit judgments:** {prose(reviewer['harness'])}, {prose(reviewer['model'])}, **{prose(reviewer['reasoning'])} reasoning**. **Report wording:** {prose(writer['harness'])}, {prose(writer['model'])}, **{prose(writer['reasoning'])} reasoning**. The original judgments and calculated score are preserved. Any subsequent priority or wording changes are recorded in the presentation supplement.",
+        f"**Audit judgments:** {prose(reviewer['harness'])}, {prose(reviewer['model'])}, **{prose(reviewer['reasoning'])} reasoning**. **Report wording:** {prose(writer['harness'])}, {prose(writer['model'])}, **{prose(writer['reasoning'])} reasoning**.",
         "",
         f"The scoring method is `{score['rubricVersion']}`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. {counts['inapplicable']} groups were excluded as not applicable; {counts['untested']} were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.",
         "",
@@ -678,7 +694,7 @@ def render(
         "",
         "### Estimated footprint and Digital Carbon Rating {#measure-carbon}",
         "",
-        "Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit; Digital Carbon Ratings use the fixed comparison model. "
+        "Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit. They display two decimal places, with a minimum of 0.01 gCO₂e for positive estimates. Digital Carbon Ratings use unrounded estimates from the fixed comparison model. "
         + (
             "Recorded model: " + "; ".join(carbon_methods) + ". "
             if carbon_methods
@@ -690,7 +706,7 @@ def render(
         "",
         "Energy is shown in milliwatt-hours (mWh = 0.001 Wh). Browser energy includes modeled CPU, memory, disk and display use. Not sampled means no energy experiment was supplied for that page; unavailable means a supplied experiment did not yield a usable result. Neither means zero energy.",
         "",
-        "Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the branch checked out when the presentation supplement was prepared. Captured-revision links remain stable if that branch moves.",
+        "Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the checked-out branch. Captured-revision links remain stable if that branch moves.",
         "",
         '??? note "Technical files for reproducing this report"',
         "",
@@ -710,12 +726,9 @@ def render(
             "The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, independently of the transfer collector. The model assumes a 14 W display; that assumption contributes substantially to these short visits. CPU, memory and disk estimates use the collection host's properties. Background activity on this shared workstation was not independently isolated. These figures support repeat experiments under the same conditions, not device-independent rankings. GreenFrame network energy and SWDM carbon estimates overlap in scope and are not added together.",
             "",
         ]
-    if presentation:
-        position = lines.index('??? note "Technical files for reproducing this report"')
-        lines[position:position] = [prose(presentation["reason"]), ""]
     if supplement_prefix:
         lines += [
-            f"    - [Presentation revision and source links]({supplement_prefix}/presentation.json)",
+            f"    - [Report settings and source links]({supplement_prefix}/presentation.json)",
             f"    - [Report reproduction command and input hashes]({supplement_prefix}/report-receipt.json)",
         ]
         if energy:

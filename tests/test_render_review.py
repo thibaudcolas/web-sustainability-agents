@@ -90,7 +90,7 @@ class EditorialContractTests(unittest.TestCase):
     def test_readable_report_keeps_raw_downloads_in_technical_appendix(self):
         import re
 
-        from audit.render_review import render, traffic
+        from audit.render_review import footprint, render, traffic
 
         output = render(self.session, "evidence", self.editorial)
         body, appendix = output.split(
@@ -115,6 +115,10 @@ class EditorialContractTests(unittest.TestCase):
         self.assertNotIn("Each cookie choice starts a separate fresh visit", body)
         self.assertIn("New in Wagtail 8.1", body)
         self.assertIn("**cumulative totals**", body)
+        self.assertEqual(footprint(0.00876), "0.01 gCO₂e")
+        self.assertEqual(footprint(0.00001), "0.01 gCO₂e")
+        self.assertEqual(footprint(0.0345), "0.03 gCO₂e")
+        self.assertEqual(footprint(1.2345), "1.23 gCO₂e")
         self.assertEqual(traffic(1000), "1.0 kB")
         self.assertEqual(traffic(1000000), "1.000 MB")
 

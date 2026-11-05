@@ -32,12 +32,12 @@ Passing percentages apply to the selected checks. Full-guideline conformance has
 <caption>Page measurements</caption>
 <thead><tr><th scope="col">Page</th><th scope="col"><a href="#measure-first-load">First load</a></th><th scope="col"><a href="#measure-after-choice">After waiting</a></th><th scope="col"><a href="#measure-scroll">After scrolling</a></th><th scope="col"><a href="#measure-carbon">Estimated footprint</a></th><th scope="col"><a href="#measure-carbon">Carbon rating</a></th><th scope="col"><a href="#measure-energy">Browser energy</a></th><th scope="col"><a href="#measure-energy">Network energy</a></th></tr></thead>
 <tbody>
-<tr><th scope="row"><a href="https://guide.wagtail.org/en/">Homepage</a></th><td>59.1 kB</td><td>59.1 kB</td><td>59.1 kB</td><td>0.00876 gCO₂e</td><td>A+</td><td>12.00 mWh</td><td>0.76 mWh</td></tr>
-<tr><th scope="row"><a href="https://guide.wagtail.org/en/getting-started/overview/">Overview</a></th><td>63.6 kB</td><td>63.6 kB</td><td>63.6 kB</td><td>0.00943 gCO₂e</td><td>A+</td><td>Not sampled</td><td>Not sampled</td></tr>
-<tr><th scope="row"><a href="https://guide.wagtail.org/en/how-to-guides/manage-images/">Manage images</a></th><td>233.1 kB</td><td>233.1 kB</td><td>233.1 kB</td><td>0.0345 gCO₂e</td><td>A+</td><td>11.15 mWh</td><td>2.80 mWh</td></tr>
-<tr><th scope="row"><a href="https://guide.wagtail.org/en/search/?query=images">Search results</a></th><td>50.6 kB</td><td>50.6 kB</td><td>50.6 kB</td><td>0.0075 gCO₂e</td><td>A+</td><td>Not sampled</td><td>Not sampled</td></tr>
-<tr><th scope="row"><a href="https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/">New in Wagtail 8.1</a></th><td>354.3 kB</td><td>354.3 kB</td><td>354.3 kB</td><td>0.0525 gCO₂e</td><td>A</td><td>10.72 mWh</td><td>4.19 mWh</td></tr>
-<tr><th scope="row"><a href="https://guide.wagtail.org/en/about/">About</a></th><td>54.2 kB</td><td>54.2 kB</td><td>54.2 kB</td><td>0.00803 gCO₂e</td><td>A+</td><td>Not sampled</td><td>Not sampled</td></tr>
+<tr><th scope="row"><a href="https://guide.wagtail.org/en/">Homepage</a></th><td>59.1 kB</td><td>59.1 kB</td><td>59.1 kB</td><td>0.01 gCO₂e</td><td>A+</td><td>12.00 mWh</td><td>0.76 mWh</td></tr>
+<tr><th scope="row"><a href="https://guide.wagtail.org/en/getting-started/overview/">Overview</a></th><td>63.6 kB</td><td>63.6 kB</td><td>63.6 kB</td><td>0.01 gCO₂e</td><td>A+</td><td>Not sampled</td><td>Not sampled</td></tr>
+<tr><th scope="row"><a href="https://guide.wagtail.org/en/how-to-guides/manage-images/">Manage images</a></th><td>233.1 kB</td><td>233.1 kB</td><td>233.1 kB</td><td>0.03 gCO₂e</td><td>A+</td><td>11.15 mWh</td><td>2.80 mWh</td></tr>
+<tr><th scope="row"><a href="https://guide.wagtail.org/en/search/?query=images">Search results</a></th><td>50.6 kB</td><td>50.6 kB</td><td>50.6 kB</td><td>0.01 gCO₂e</td><td>A+</td><td>Not sampled</td><td>Not sampled</td></tr>
+<tr><th scope="row"><a href="https://guide.wagtail.org/en/releases/new-in-wagtail-8-1/">New in Wagtail 8.1</a></th><td>354.3 kB</td><td>354.3 kB</td><td>354.3 kB</td><td>0.05 gCO₂e</td><td>A</td><td>10.72 mWh</td><td>4.19 mWh</td></tr>
+<tr><th scope="row"><a href="https://guide.wagtail.org/en/about/">About</a></th><td>54.2 kB</td><td>54.2 kB</td><td>54.2 kB</td><td>0.01 gCO₂e</td><td>A+</td><td>Not sampled</td><td>Not sampled</td></tr>
 </tbody></table></div>
 
 ## Priorities
@@ -146,39 +146,39 @@ These outcomes apply to the selected checks and sample. Open a check's explanati
     <caption>All selected check outcomes</caption>
     <thead><tr><th scope="col">Check</th><th scope="col">Outcome</th></tr></thead>
     <tbody>
-    <tr><th scope="row"><a href="#evidence-distraction">Reading stays focused</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-choice">Inspect optional choices in their open states</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-comprehension">Instructions match the editor audience</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-consistency">Navigation and control names repeat across pages</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-motion">Observed reading states stay still</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-notifications">Reading needs no notification opt-in</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-documents">Check actual print output and text alternatives</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-unused-code">Measure interaction coverage before removing code</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-components">Check which components can load later</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-layout">Complete the task through the mobile controls</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-impact-choice">No consequential environmental choice was sampled</a></th><td>Not relevant here</td></tr>
-    <tr><th scope="row"><a href="#evidence-journeys">Desktop search reaches the requested guide</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-media-delivery">Trial later image loading without losing useful detail</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-font-delivery">System fonts avoid extra font downloads</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-semantic-forms">Core reading structure and named controls are present</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-metadata">Content metadata reflects page purpose</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-preference-behavior">Follow a system theme change while the page stays open</a></th><td>Problem found</td></tr>
-    <tr><th scope="row"><a href="#evidence-no-js-content">Core reading survives without JavaScript</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-api-requests">Capture autocomplete before judging request efficiency</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-public-cache-policy">Verify repeat-visit reuse and catalog freshness</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-text-compression">Text delivery already uses compression</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-keyboard-path">The initial Tab path has visible focus</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-disclosure-scope">Review the parent policy against this guide origin</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-carbon-discovery">The tested carbon.txt locations return 404</a></th><td>Problem found</td></tr>
-    <tr><th scope="row"><a href="#evidence-hosting-evidence">Establish which hosting evidence covers this origin</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-reuse">Selected templates share repeated interface code</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-dependencies">Verify lock contents or a clean frozen install</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-runtime">Selected runtime declarations agree</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-automation">Verify duplicate Renovate runs before changing CI</a></th><td>Problem found</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-maintenance">Contributors have development and maintenance guidance</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-change-docs">Versioned release guidance explains user-facing changes</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-budgets">Request the concrete limit and response procedure</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-open-source">Reuse terms and contribution routes are visible</a></th><td>Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-distraction">Reading stays focused</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-choice">Inspect optional choices in their open states</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-comprehension">Instructions match the editor audience</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-consistency">Navigation and control names repeat across pages</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-motion">Observed reading states stay still</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-notifications">Reading needs no notification opt-in</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-documents">Check actual print output and text alternatives</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-unused-code">Measure interaction coverage before removing code</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-components">Check which components can load later</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-layout">Complete the task through the mobile controls</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-impact-choice">No consequential environmental choice was sampled</a></th><td><span aria-hidden="true">➖</span> Not relevant here</td></tr>
+    <tr><th scope="row"><a href="#evidence-journeys">Desktop search reaches the requested guide</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-media-delivery">Trial later image loading without losing useful detail</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-font-delivery">System fonts avoid extra font downloads</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-semantic-forms">Core reading structure and named controls are present</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-metadata">Content metadata reflects page purpose</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-preference-behavior">Follow a system theme change while the page stays open</a></th><td><span aria-hidden="true">❌</span> Problem found</td></tr>
+    <tr><th scope="row"><a href="#evidence-no-js-content">Core reading survives without JavaScript</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-api-requests">Capture autocomplete before judging request efficiency</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-public-cache-policy">Verify repeat-visit reuse and catalog freshness</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-text-compression">Text delivery already uses compression</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-keyboard-path">The initial Tab path has visible focus</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-disclosure-scope">Review the parent policy against this guide origin</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-carbon-discovery">The tested carbon.txt locations return 404</a></th><td><span aria-hidden="true">❌</span> Problem found</td></tr>
+    <tr><th scope="row"><a href="#evidence-hosting-evidence">Establish which hosting evidence covers this origin</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-reuse">Selected templates share repeated interface code</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-dependencies">Verify lock contents or a clean frozen install</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-runtime">Selected runtime declarations agree</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-automation">Verify duplicate Renovate runs before changing CI</a></th><td><span aria-hidden="true">❌</span> Problem found</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-maintenance">Contributors have development and maintenance guidance</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-change-docs">Versioned release guidance explains user-facing changes</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-budgets">Request the concrete limit and response procedure</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-open-source">Reuse terms and contribution routes are visible</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
     </tbody></table></div>
 
 ## Next steps for auditing
@@ -191,7 +191,7 @@ These outcomes apply to the selected checks and sample. Open a check's explanati
 
 ### Broader checks to add next
 
-The new contextual skill was tried against this audit’s existing evidence. The requests below are outside the current score; missing records are not site defects.
+These checks need additional evidence and are outside the current score. Missing records do not establish a site defect.
 
 <div class="audit-table-scroll" tabindex="0" role="region" aria-label="Next contextual audit scope">
 <table>
@@ -869,7 +869,7 @@ The selected supplied license permits source and binary redistribution with stat
 
 The browser measurements were captured from **2026-11-04T19:22:46.209106+00:00** to **2026-11-04T19:23:43.617823+00:00**. Initial-load tests used a 1280 × 800 desktop viewport and a 3-second observation window. Cookie choices and scrolling were recorded afterward. Supplementary tests covered narrow layouts, color and motion preferences, print, JavaScript availability and bounded keyboard navigation.
 
-**Audit judgments:** Codex native subagent, gpt-6.1-sol, **high reasoning**. **Report wording:** Codex native subagent, gpt-6.1-sol, **high reasoning**. The original judgments and calculated score are preserved. Any subsequent priority or wording changes are recorded in the presentation supplement.
+**Audit judgments:** Codex native subagent, gpt-6.1-sol, **high reasoning**. **Report wording:** Codex native subagent, gpt-6.1-sol, **high reasoning**.
 
 The scoring method is `agent-breadth-v2`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. 1 groups were excluded as not applicable; 39 were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.
 
@@ -891,7 +891,7 @@ A partial result means some requests failed or did not finish in the observation
 
 ### Estimated footprint and Digital Carbon Rating {#measure-carbon}
 
-Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit; Digital Carbon Ratings use the fixed comparison model. Recorded model: Sustainable Web Design Model version 4 through `@tgwf/co2@0.19.0`, assuming 100% first visits. The comparison gives no green-hosting credit. These are model assumptions, not verified electricity-supply facts. Ratings remain provisional because the capture protocol has not been independently validated; they do not establish whole-site sustainability.
+Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit. They display two decimal places, with a minimum of 0.01 gCO₂e for positive estimates. Digital Carbon Ratings use unrounded estimates from the fixed comparison model. Recorded model: Sustainable Web Design Model version 4 through `@tgwf/co2@0.19.0`, assuming 100% first visits. The comparison gives no green-hosting credit. These are model assumptions, not verified electricity-supply facts. Ratings remain provisional because the capture protocol has not been independently validated; they do not establish whole-site sustainability.
 
 ### Browser and network energy {#measure-energy}
 
@@ -901,15 +901,13 @@ Energy is shown in milliwatt-hours (mWh = 0.001 Wh). Browser energy includes mod
 
 The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, independently of the transfer collector. The model assumes a 14 W display; that assumption contributes substantially to these short visits. CPU, memory and disk estimates use the collection host's properties. Background activity on this shared workstation was not independently isolated. These figures support repeat experiments under the same conditions, not device-independent rankings. GreenFrame network energy and SWDM carbon estimates overlap in scope and are not added together.
 
-Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the branch checked out when the presentation supplement was prepared. Captured-revision links remain stable if that branch moves.
-
-This presentation revision responds to owner feedback: clearer guideline descriptions, area results, concise illustrations, and a separate energy experiment. The scored audit evidence and outcomes are unchanged. The Renovate workflow investigation is now low priority because duplicate runs and their cost have not been verified.
+Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the checked-out branch. Captured-revision links remain stable if that branch moves.
 
 ??? note "Technical files for reproducing this report"
 
     The report above can be read without these files. They retain exact evidence, original judgments and calculation inputs for independent reproduction.
 
-    - [Presentation revision and source links](assets/report-refinement/guide/presentation.json)
+    - [Report settings and source links](assets/report-refinement/guide/presentation.json)
     - [Report reproduction command and input hashes](assets/report-refinement/guide/report-receipt.json)
     - [Energy protocol, samples and provenance](assets/report-refinement/guide/energy.json)
     - [Audit scope and tasks](assets/fresh-guide/plan.json)

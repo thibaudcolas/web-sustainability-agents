@@ -54,6 +54,9 @@ class ReportDetailsTests(unittest.TestCase):
         output = render(
             self.session, "artifacts", self.editorial, presentation=self.supplement
         )
+        self.assertNotIn(self.supplement["reason"], output)
+        self.assertNotIn("new contextual skill", output)
+        self.assertNotIn("subsequent priority or wording changes", output)
         self.assertIn("### 4. Check whether Renovate updates run CI twice", output)
         section = output.split("### 4.")[1].split("## After")[0]
         self.assertIn("**Low priority**", section)
@@ -164,7 +167,7 @@ class ReportDetailsTests(unittest.TestCase):
             self.assertIn("Not sampled", rows[1])
             if name == "guide":
                 self.assertIn("59.1 kB", rows[0])
-                self.assertIn("0.00876 gCO₂e", rows[0])
+                self.assertIn("0.01 gCO₂e", rows[0])
                 self.assertIn("<td>A+</td>", rows[0])
             else:
                 self.assertIn("<td>944.4 kB", rows[0])

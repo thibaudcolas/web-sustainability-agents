@@ -150,39 +150,39 @@ These outcomes apply to the selected checks and sample. Open a check's explanati
     <caption>All selected check outcomes</caption>
     <thead><tr><th scope="col">Check</th><th scope="col">Outcome</th></tr></thead>
     <tbody>
-    <tr><th scope="row"><a href="#evidence-distraction">Reading without unsolicited interruptions</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-choice">Make the analytics choice effective</a></th><td>Problem found</td></tr>
-    <tr><th scope="row"><a href="#evidence-comprehension">Reconcile the footprint summary and privacy scope</a></th><td>Problem found</td></tr>
-    <tr><th scope="row"><a href="#evidence-consistency">Keep the familiar navigation and control names</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-motion">Investigate transient motion before changing it</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-notifications">No notification request during the reading tasks</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-documents">Readable HTML and a simpler print view</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-unused-code">Measure code across the interactions visitors use</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-components">Test loading the release player only on request</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-layout">Find the shared horizontal overflow</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-impact-choice">Check useful context for optional video</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-journeys">The opt-out and policy-search task completes</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-media-delivery">Compare responsive images while keeping readable detail</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-font-delivery">Test font fallback before trimming variants</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-semantic-forms">Inspect visible headings and activated forms</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-metadata">Useful page metadata matches the task</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-preference-behavior">Follow system theme changes on an open page</a></th><td>Problem found</td></tr>
-    <tr><th scope="row"><a href="#evidence-no-js-content">Keep contact email readable without JavaScript</a></th><td>Problem found</td></tr>
-    <tr><th scope="row"><a href="#evidence-api-requests">Confirm which analytics and player requests are needed</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-public-cache-policy">Keep the explicit public-asset cache policies</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-text-compression">Material text responses already use compression</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-keyboard-path">Initial keyboard focus is visible</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-disclosure-scope">Public disclosures identify services and mitigation</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-carbon-discovery">carbon.txt is present and usable for discovery</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-hosting-evidence">Verify hosting claims beyond provider names</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-reuse">Selected local components share common behavior</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-dependencies">Verify lockfile contents or a repeatable build</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-runtime">Local runtime declarations agree</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-automation">CI already cancels superseded runs</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-maintenance">Local documentation explains maintenance tasks</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-change-docs">The release article explains product changes</a></th><td>Passed this check</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-budgets">Make the stated monitoring target reviewable</a></th><td>Needs investigation</td></tr>
-    <tr><th scope="row"><a href="#evidence-source-open-source">Clarify software and content reuse terms</a></th><td>Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-distraction">Reading without unsolicited interruptions</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-choice">Make the analytics choice effective</a></th><td><span aria-hidden="true">❌</span> Problem found</td></tr>
+    <tr><th scope="row"><a href="#evidence-comprehension">Reconcile the footprint summary and privacy scope</a></th><td><span aria-hidden="true">❌</span> Problem found</td></tr>
+    <tr><th scope="row"><a href="#evidence-consistency">Keep the familiar navigation and control names</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-motion">Investigate transient motion before changing it</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-notifications">No notification request during the reading tasks</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-documents">Readable HTML and a simpler print view</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-unused-code">Measure code across the interactions visitors use</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-components">Test loading the release player only on request</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-layout">Find the shared horizontal overflow</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-impact-choice">Check useful context for optional video</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-journeys">The opt-out and policy-search task completes</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-media-delivery">Compare responsive images while keeping readable detail</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-font-delivery">Test font fallback before trimming variants</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-semantic-forms">Inspect visible headings and activated forms</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-metadata">Useful page metadata matches the task</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-preference-behavior">Follow system theme changes on an open page</a></th><td><span aria-hidden="true">❌</span> Problem found</td></tr>
+    <tr><th scope="row"><a href="#evidence-no-js-content">Keep contact email readable without JavaScript</a></th><td><span aria-hidden="true">❌</span> Problem found</td></tr>
+    <tr><th scope="row"><a href="#evidence-api-requests">Confirm which analytics and player requests are needed</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-public-cache-policy">Keep the explicit public-asset cache policies</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-text-compression">Material text responses already use compression</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-keyboard-path">Initial keyboard focus is visible</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-disclosure-scope">Public disclosures identify services and mitigation</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-carbon-discovery">carbon.txt is present and usable for discovery</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-hosting-evidence">Verify hosting claims beyond provider names</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-reuse">Selected local components share common behavior</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-dependencies">Verify lockfile contents or a repeatable build</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-runtime">Local runtime declarations agree</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-automation">CI already cancels superseded runs</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-maintenance">Local documentation explains maintenance tasks</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-change-docs">The release article explains product changes</a></th><td><span aria-hidden="true">✅</span> Passed this check</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-budgets">Make the stated monitoring target reviewable</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
+    <tr><th scope="row"><a href="#evidence-source-open-source">Clarify software and content reuse terms</a></th><td><span aria-hidden="true">❓</span> Needs investigation</td></tr>
     </tbody></table></div>
 
 ## Next steps for auditing
@@ -195,7 +195,7 @@ These outcomes apply to the selected checks and sample. Open a check's explanati
 
 ### Broader checks to add next
 
-The new contextual skill was tried against this audit’s existing evidence. The requests below are outside the current score; missing records are not site defects.
+These checks need additional evidence and are outside the current score. Missing records do not establish a site defect.
 
 <div class="audit-table-scroll" tabindex="0" role="region" aria-label="Next contextual audit scope">
 <table>
@@ -885,7 +885,7 @@ Local Python metadata declares BSD-3-Clause and package metadata ISC, while the 
 
 The browser measurements were captured from **2026-11-04T19:24:59.321438+00:00** to **2026-11-04T19:28:05.355133+00:00**. Initial-load tests used a 1280 × 800 desktop viewport and a 3-second observation window. Cookie choices and scrolling were recorded afterward. Supplementary tests covered narrow layouts, color and motion preferences, print, JavaScript availability and bounded keyboard navigation.
 
-**Audit judgments:** Codex native subagent, gpt-6.1-sol, **high reasoning**. **Report wording:** Codex native subagent, gpt-6.1-sol, **high reasoning**. The original judgments and calculated score are preserved. Any subsequent priority or wording changes are recorded in the presentation supplement.
+**Audit judgments:** Codex native subagent, gpt-6.1-sol, **high reasoning**. **Report wording:** Codex native subagent, gpt-6.1-sol, **high reasoning**.
 
 The scoring method is `agent-breadth-v2`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. 0 groups were excluded as not applicable; 39 were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.
 
@@ -907,7 +907,7 @@ A partial result means some requests failed or did not finish in the observation
 
 ### Estimated footprint and Digital Carbon Rating {#measure-carbon}
 
-Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit; Digital Carbon Ratings use the fixed comparison model. Recorded model: Sustainable Web Design Model version 4 through `@tgwf/co2@0.19.0`, assuming 100% first visits. The comparison gives no green-hosting credit. These are model assumptions, not verified electricity-supply facts. Ratings remain provisional because the capture protocol has not been independently validated; they do not establish whole-site sustainability.
+Both use the same initial visit as the first-load column. Footprints are estimates in grams of carbon dioxide equivalent (gCO₂e) per first visit. They display two decimal places, with a minimum of 0.01 gCO₂e for positive estimates. Digital Carbon Ratings use unrounded estimates from the fixed comparison model. Recorded model: Sustainable Web Design Model version 4 through `@tgwf/co2@0.19.0`, assuming 100% first visits. The comparison gives no green-hosting credit. These are model assumptions, not verified electricity-supply facts. Ratings remain provisional because the capture protocol has not been independently validated; they do not establish whole-site sustainability.
 
 ### Browser and network energy {#measure-energy}
 
@@ -917,15 +917,13 @@ Energy is shown in milliwatt-hours (mWh = 0.001 Wh). Browser energy includes mod
 
 The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, independently of the transfer collector. The model assumes a 14 W display; that assumption contributes substantially to these short visits. CPU, memory and disk estimates use the collection host's properties. Background activity on this shared workstation was not independently isolated. These figures support repeat experiments under the same conditions, not device-independent rankings. GreenFrame network energy and SWDM carbon estimates overlap in scope and are not added together.
 
-Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the branch checked out when the presentation supplement was prepared. Captured-revision links remain stable if that branch moves.
-
-This presentation revision responds to owner feedback: clearer guideline descriptions, area results, concise illustrations, and a separate energy experiment. The scored audit evidence and outcomes are unchanged.
+Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the checked-out branch. Captured-revision links remain stable if that branch moves.
 
 ??? note "Technical files for reproducing this report"
 
     The report above can be read without these files. They retain exact evidence, original judgments and calculation inputs for independent reproduction.
 
-    - [Presentation revision and source links](assets/report-refinement/wagtail/presentation.json)
+    - [Report settings and source links](assets/report-refinement/wagtail/presentation.json)
     - [Report reproduction command and input hashes](assets/report-refinement/wagtail/report-receipt.json)
     - [Energy protocol, samples and provenance](assets/report-refinement/wagtail/energy.json)
     - [Audit scope and tasks](assets/fresh-wagtail/plan.json)

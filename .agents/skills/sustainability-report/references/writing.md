@@ -2,6 +2,8 @@
 
 Lead with the concrete observation and the useful next action. Name the page, control or behavior. Explain a technical detail only when it helps the reader decide what to do. Use a title that describes an action or question, not an internal check name.
 
+Reports describe the site and the audit performed. Do not narrate the development of skills or methodology, experiments on earlier evidence, owner feedback, or presentation revisions. Explain current scope, methods and limitations where they help interpret results; retain development history in project documentation and provenance artifacts.
+
 ## Finding structure
 
 - **What we found:** visible behavior or measured fact, in one or two sentences.
@@ -30,15 +32,15 @@ These examples clarify wording, not evidence. Only assert a behavior when the su
 
 ## Measures and scope
 
-Lead with first load before clicking or scrolling. Give each page a short readable name linked to its URL. Combine first-load, cookie-choice and scrolling transfers, estimated footprint, carbon rating and modeled energy in one table, one row per page. Label separate cookie-choice visits within their cells; link column labels to methodology at the end. Never present later totals as additional downloads or guaranteed savings. Use the first recorded initial visit, even when incomplete, or a declared median of three matching complete visits. Do not pool consent choices, cache states or browser profiles. Put selection rules and units in methodology.
+Lead with first load before clicking or scrolling. Give each page a short readable name linked to its URL. Combine first-load, cookie-choice and scrolling transfers, estimated footprint, carbon rating and modeled energy in one table, one row per page. Label separate cookie-choice visits within their cells; link column labels to methodology at the end. Never present later totals as additional downloads or guaranteed savings. Use the first recorded initial visit, even when incomplete, or a declared median of three matching complete visits. Do not pool consent choices, cache states or browser profiles. Display gCO₂e to two decimal places, with a minimum of 0.01 for positive estimates; keep full precision in calculations and rating inputs. Explain rounding, selection rules and units in methodology.
 
 Keep the score explanation in methodology. Show passing progress per WSG area alongside checked coverage and unknown counts. Link each area to its detailed findings subsection, preserving the top priorities as a separate overview. Show pass/problem/unknown counts beside the scoped score. Explain that a low score can reflect missing evidence, not just site defects. Do not call it an overall sustainability grade or a full WSG conformance score.
 
 ## Visual presentation
 
-Use short sections, meaningful headings, summary cards and expandable secondary detail. Keep priority and status words visible; color and icons are supplementary. Avoid decorative emoji in headings and repetitive status symbols. Use direct WSG links with guideline titles and pinned-summary tooltips available on focus and hover (Escape dismisses them); retain visible summaries in detailed findings for touch and print. Use meaningful evidence-link labels and screenshot captions. Keep the report useful without asking readers to inspect JSON.
+Use short sections, meaningful headings, summary cards and expandable secondary detail. Keep priority and status words visible; color and icons are supplementary. Prefix each check-outcome label with a consistent symbol: ✅ pass, ❌ problem, ❓ investigation, ➖ inapplicable, ⚪ untested. Hide these redundant symbols from assistive technology while retaining the complete wording. Avoid decorative emoji in headings. Use direct WSG links with guideline titles and pinned-summary tooltips available on focus and hover (Escape dismisses them); retain visible summaries in detailed findings for touch and print. Use meaningful evidence-link labels and screenshot captions. Keep the report useful without asking readers to inspect JSON.
 
-Separate historical audit capture from newer illustrations and editorial changes. The method section names the actual reviewer model/reasoning, sample, capture conditions and unresolved limitations. Keep exact hashes and machine downloads in a collapsed technical appendix.
+Distinguish independently collected measurements and illustrations where their different conditions affect interpretation. The method section names the actual reviewer model/reasoning, sample, capture conditions and unresolved limitations. Keep exact hashes and machine downloads in a collapsed technical appendix.
 
 ## Priority and code
 
