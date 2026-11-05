@@ -255,19 +255,31 @@ def source_descriptions(
                 description += (
                     f" ({prose(item.get('status', 'unavailable')).replace('_', ' ')})"
                 )
+        elif name == "disclosures.json" or (
+            name == "staged.json" and reference["jsonPointer"].startswith("/discovery/")
+        ):
+            origin = item.get("origin") or packet["site"]
+            description = f"Disclosure discovery for the origin `{prose(origin)}`"
         else:
-            url = item.get("url") or item.get("origin") or item.get("site")
+            url = (
+                item.get("source")
+                if name == "context.json"
+                else item.get("url") or item.get("origin") or item.get("site")
+            )
             if isinstance(url, str) and url.startswith(("https://", "http://")):
                 label = (
                     "Browser observations"
                     if name == "probes.json"
+                    else "Recorded visitor task starting"
+                    if name == "context.json" and item.get("kind") == "task-observation"
                     else "Captured public evidence"
                 )
-                description = f"{label} for [{page_name(url)}]({url})"
-            else:
-                description = (
-                    "Retrieved sustainability and hosting disclosures for this site"
+                preposition = (
+                    "at" if label == "Recorded visitor task starting" else "for"
                 )
+                description = f"{label} {preposition} [{page_name(url)}]({url})"
+            else:
+                description = "Captured contextual record with its declared scope"
         if description not in descriptions:
             descriptions.append(description)
     return descriptions

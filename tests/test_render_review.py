@@ -4,10 +4,43 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from audit.render_review import JSON, validate_inputs
+from audit.render_review import JSON, source_descriptions, validate_inputs
 
 
 class RenderProvenanceTests(unittest.TestCase):
+    def test_context_links_to_public_source_without_inventing_origin_homepage(self):
+        packet = {
+            "site": "https://example.com",
+            "evidenceIndex": {
+                "context": {"artifact": "context.json", "jsonPointer": "/records/0"},
+                "disclosure": {
+                    "artifact": "disclosures.json",
+                    "jsonPointer": "/sites/0",
+                },
+                "discovery": {"artifact": "staged.json", "jsonPointer": "/discovery/0"},
+            },
+        }
+        documents = {
+            "context.json": {
+                "records": [
+                    {
+                        "source": "https://example.com/project/policy/",
+                        "kind": "public-document",
+                    }
+                ]
+            },
+            "disclosures.json": {"sites": [{"origin": "https://example.com"}]},
+            "staged.json": {"discovery": [{"origin": "https://example.com"}]},
+        }
+        descriptions = source_descriptions(
+            Path("."), packet, ["context", "disclosure", "discovery"], documents
+        )
+        self.assertIn("[Policy](https://example.com/project/policy/)", descriptions[0])
+        self.assertEqual(
+            descriptions[1], "Disclosure discovery for the origin `https://example.com`"
+        )
+        self.assertEqual(len(descriptions), 2)
+
     def make_session(self, directory: str) -> tuple[Path, JSON, JSON]:
         session = Path(directory)
 
