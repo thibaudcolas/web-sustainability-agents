@@ -17,7 +17,7 @@ Thumbs.db
 logs
 *.log
 # Preserve exact GreenFrame reproduction logs alongside their published digests.
-!/docs/reports/assets/report-refinement/*/energy/*/runner.log
+!/docs/reports/assets/**/energy/*/runner.log
 npm-debug.log*
 *.sql
 *.sqlite3

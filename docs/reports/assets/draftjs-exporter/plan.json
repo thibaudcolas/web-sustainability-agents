@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://wagtail.github.io",
+  "purpose": "Audit the public Draft.js exporter documentation under /draftjs_exporter/, including anonymous documentation discovery and reading, using WSG/STAR scoped evidence.",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://wagtail.github.io/draftjs_exporter/",
+      "task": "Understand the exporter purpose and choose the next documentation route",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "getting-started",
+      "url": "https://wagtail.github.io/draftjs_exporter/getting-started/",
+      "task": "Find installation instructions and a complete first-render example",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "content-state",
+      "url": "https://wagtail.github.io/draftjs_exporter/content-state/",
+      "task": "Understand the ContentState data model through worked examples",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "configuration",
+      "url": "https://wagtail.github.io/draftjs_exporter/reference/configuration/",
+      "task": "Configure block, style and entity output mappings",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "api",
+      "url": "https://wagtail.github.io/draftjs_exporter/reference/api/",
+      "task": "Look up API parameters and behavior in the long reference page",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "alternative-engines",
+      "url": "https://wagtail.github.io/draftjs_exporter/guides/alternative-engines/",
+      "task": "Compare supported rendering engines and dependencies",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "migration-guide",
+      "url": "https://wagtail.github.io/draftjs_exporter/migration-guide/",
+      "task": "Find version-specific upgrade and compatibility guidance",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "search-to-installation",
+      "url": "https://wagtail.github.io/draftjs_exporter/",
+      "task": "An anonymous English-reading desktop visitor searches for getting started and reaches the installation command and first-render example.",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "actions": [
+        {
+          "type": "fill",
+          "selector": "input[data-md-component=\"search-query\"]",
+          "value": "getting started"
+        },
+        {
+          "type": "click",
+          "selector": ".md-search-result__link[href=\"https://wagtail.github.io/draftjs_exporter/getting-started/\"]"
+        }
+      ],
+      "success": {
+        "url": "https://wagtail.github.io/draftjs_exporter/getting-started/",
+        "selector": "article",
+        "text": "pip install draftjs_exporter"
+      }
+    }
+  ],
+  "checks": [],
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "service-necessity"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English-reading desktop Chromium visitor, 1280 \u00d7 800 CSS pixels, using keyboard text entry and pointer selection: search from the documentation homepage for getting started, reach the installation command and complete first-render example without account creation, payment or submission. Keyboard-only traversal, assistive technologies, other countries and representative-user testing are outside this task scope.",
+    "content-lifecycle": "Public Draft.js exporter documentation under /draftjs_exporter/ as captured for this audit: assess the documented update/review lifecycle and applied compatibility guidance in the current migration guide, including retained upgrade instructions for earlier releases. Date labels alone do not establish a review schedule; repository maintenance and unpublished processes are outside scope.",
+    "service-necessity": "The documented creation/continuation rationale for the Python Draft.js ContentState-to-HTML exporter capability, limited to the current homepage purpose statement and published alternative-engine tradeoffs. Assess whether these public records establish desirability, feasibility, viability and alternatives; do not infer unpublished business decisions or a site-wide necessity judgment."
+  },
+  "contextEvidence": [
+    {
+      "id": "installation-task",
+      "kind": "task-observation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/current-run/task-observation.md",
+      "source": "https://wagtail.github.io/draftjs_exporter/",
+      "capturedAt": "2026-11-05T07:40:05.018602+00:00",
+      "scope": "Observed anonymous desktop search-to-installation task; text entry and pointer result selection.",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Anonymous desktop Chromium with keyboard text entry and pointer result selection; no representative-user testing, assistive-technology test, geographic comparison, retention verification or performance measurement."
+    },
+    {
+      "id": "public-home",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/current-run/public-home.md",
+      "source": "https://wagtail.github.io/draftjs_exporter/",
+      "capturedAt": "2026-11-05T07:40:05.018602+00:00",
+      "scope": "Published exporter purpose and initial Wagtail/Django use case.",
+      "checkIds": [
+        "service-necessity"
+      ],
+      "limitations": "Publisher-authored public documentation; no independent verification of organizational practice, maintenance schedule or deployed package implementation."
+    },
+    {
+      "id": "public-engines",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/current-run/public-guides-alternative-engines.md",
+      "source": "https://wagtail.github.io/draftjs_exporter/guides/alternative-engines/",
+      "capturedAt": "2026-11-05T07:40:05.018602+00:00",
+      "scope": "Published engine alternatives, dependency requirements and output tradeoffs.",
+      "checkIds": [
+        "service-necessity"
+      ],
+      "limitations": "Publisher-authored public documentation; no independent verification of organizational practice, maintenance schedule or deployed package implementation."
+    },
+    {
+      "id": "public-migration",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/current-run/public-migration-guide.md",
+      "source": "https://wagtail.github.io/draftjs_exporter/migration-guide/",
+      "capturedAt": "2026-11-05T07:40:05.018602+00:00",
+      "scope": "Current migration documentation retaining version-specific upgrade paths and compatibility instructions.",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Publisher-authored public documentation; no independent verification of organizational practice, maintenance schedule or deployed package implementation."
+    }
+  ],
+  "sourceRoots": [],
+  "sourceFiles": [],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "Strict page and journey scope is https://wagtail.github.io/draftjs_exporter/; other GitHub Pages projects and the external Draftail playground are excluded.",
+    "Seven distinct documentation purposes were sampled; this live URL is a multi-page MkDocs site, not an interactive exporter demo.",
+    "No visible cookie consent banner was encountered in exploratory visits; no consent interaction is invented. Initial no-interaction, waiting and bottom-scroll states remain planned through the collector.",
+    "Parent-origin CrUX ranking belongs to all of wagtail.github.io and cannot be extrapolated as traffic for /draftjs_exporter/. Do not produce an origin-derived annual footprint for this project.",
+    "Energy sample is the homepage initial visit with three repetitions; coordinator serializes collection and optional GreenFrame execution."
+  ],
+  "energy": {
+    "mode": "run",
+    "samples": 3,
+    "pageIds": [
+      "home"
+    ]
+  },
+  "ownerPriorities": [
+    "Provide a separate readable audit for this documentation project",
+    "Exercise qualitative/contextual WSG review in addition to deterministic tooling",
+    "Keep client-side modeled energy separate from SWDM estimates"
+  ],
+  "auditScope": "https://wagtail.github.io/draftjs_exporter/"
+}

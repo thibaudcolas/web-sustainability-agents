@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0",
+  "origin": "https://docs.wagtail.org",
+  "startedAt": "2026-11-05T07:52:54.386814+00:00",
+  "status": "completed",
+  "planSHA256": "86a8c8bb5cf48c7d1ce4cb7f9d5fa62b2c552dd44588d4f11579d15519de3916",
+  "collectorSHA256": "9543f6b3b2ce60c8e26a391bc7147b5e2e76f0cdc0dc345570b20c512841cea7",
+  "playwrightVersion": "1.64.1",
+  "captures": [
+    {
+      "id": "tutorial-screenshot",
+      "url": "https://docs.wagtail.org/en/stable/getting_started/tutorial.html",
+      "selector": "img[src$=\"tutorial_6.png\"]",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Wagtail tutorial showing a blog-page screenshot with three gallery images beneath instructions about image renditions.",
+      "caption": "The tutorial illustrates image renditions with a detailed example page.",
+      "checkIds": [
+        "media-delivery"
+      ],
+      "captureMode": "viewport",
+      "status": "completed",
+      "capturedAt": "2026-11-05T07:52:56.666115+00:00",
+      "finalUrl": "https://docs.wagtail.org/en/stable/getting_started/tutorial.html",
+      "documentStatus": 200,
+      "pageTitle": "Your first Wagtail site \u2014 Wagtail Documentation 8.1 documentation",
+      "file": "tutorial-screenshot.png",
+      "fileSHA256": "6c60018e0f464ccf3a8698216bdf164c99fa1a803bfb7afc57eef596e6621049"
+    }
+  ],
+  "interpretation": "Supplemental visual illustrations captured separately from the scored audit. They do not establish historic appearance, transfer sizes, accessibility semantics, task completion or energy savings.",
+  "protocol": {
+    "captureMode": "viewport",
+    "deviceScaleFactor": 1,
+    "reducedMotion": "reduce",
+    "animations": "disabled",
+    "waitAfterLoadMs": 750,
+    "waitAfterScrollMs": 250,
+    "perCaptureDeadlineSeconds": 35,
+    "freshContextPerCapture": true,
+    "actions": "none"
+  },
+  "browserVersion": "156.0.8078.4",
+  "finishedAt": "2026-11-05T07:52:56.762063+00:00",
+  "editorialReview": {
+    "originalManifest": "capture-manifest.json",
+    "change": "Correct alternative text and caption after visual inspection; image bytes and capture provenance unchanged."
+  }
+}

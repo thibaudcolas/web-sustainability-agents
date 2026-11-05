@@ -1,0 +1,79 @@
+{
+  "resolutions": [
+    {
+      "issue": "evidence:failed-navigation-is-unavailable",
+      "decision": "applied",
+      "reason": "Failed visits display unavailable with no footprint/rating; seven pages were attempted and five initial documents succeeded."
+    },
+    {
+      "issue": "evidence:search-worker-byte-accounting-partial",
+      "decision": "applied",
+      "reason": "All five successful first loads retain partial labels and withheld DCR; unfinished worker accounting is not a search-function defect."
+    },
+    {
+      "issue": "evidence:journey-failed-before-search",
+      "decision": "retained-with-reason",
+      "reason": "The measured run failed before actions and supplies no negative search observation. The bounded context walkthrough supports only its successfully completed task."
+    },
+    {
+      "issue": "evidence:missing-probe-comparisons-are-unknown",
+      "decision": "applied",
+      "reason": "Missing paired states remain unknown. Absence-based checks were revised; positive semantics/metadata/naming use actual clean states across all seven pages, not absent states."
+    },
+    {
+      "issue": "evidence:phase-and-no-banner-meaning",
+      "decision": "applied",
+      "reason": "Wait and scroll totals stay cumulative with no cookie interaction or claimed consent savings."
+    },
+    {
+      "issue": "evidence:fully-accounted-errors-differ-from-byte-gaps",
+      "decision": "applied",
+      "reason": "Four actual nested sitemap404 requests form a low-priority request-path finding. The unresolved worker remains a separate accounting limit."
+    },
+    {
+      "issue": "evidence:coverage-and-qualitative-bounds",
+      "decision": "needs-new-evidence",
+      "reason": "Unused-code, keyboard completion, print usefulness and absence-based behavior remain unresolved without targeted interaction evidence."
+    },
+    {
+      "issue": "evidence:greenframe-is-one-page-median3",
+      "decision": "applied",
+      "reason": "Only homepage energy is shown, using its three-run median. Network is separate; other pages are not sampled, not zero."
+    },
+    {
+      "issue": "evidence:contextual-decisions-and-lifecycle-unknowns",
+      "decision": "retained-with-reason",
+      "reason": "Service necessity and content lifecycle remain unknown; actual purpose/engine choices and upgrade guidance are useful evidence without proving a decision or review schedule."
+    },
+    {
+      "issue": "evidence:path-site-origin-boundaries",
+      "decision": "applied",
+      "reason": "Frozen auditScope identifies /draftjs_exporter/. Origin-level discovery is labeled, and annual traffic projections are withheld for lack of project-specific visits."
+    },
+    {
+      "issue": "claims:claims-project-scope-disclosure",
+      "decision": "applied",
+      "reason": "Report distinguishes origin discovery from the project path and does not infer absent project practices or verified hosting."
+    },
+    {
+      "issue": "claims:claims-setup-versus-measured-journey",
+      "decision": "retained-with-reason",
+      "reason": "Successful attributed setup supports the bounded task. Failed initial measured navigation never exercised search and cannot contradict the completed task; reproducibility remains a limitation."
+    },
+    {
+      "issue": "claims:claims-necessity-expectation-gap",
+      "decision": "needs-new-evidence",
+      "reason": "Service necessity remains unknown; request desirability/viability and a concrete continuation decision if relevant."
+    },
+    {
+      "issue": "claims:claims-migration-content-versus-schedule",
+      "decision": "needs-new-evidence",
+      "reason": "Lifecycle remains unknown; request review cadence/ownership and an executed review rather than infer it from migration publication dates."
+    },
+    {
+      "issue": "claims:claims-partial-capture-model-boundary",
+      "decision": "applied",
+      "reason": "Failed zeros are unavailable, successful pages partial and unrated. Homepage median energy is separate from SWDM; no shared-origin annual traffic is assigned."
+    }
+  ]
+}

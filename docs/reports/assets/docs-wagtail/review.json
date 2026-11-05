@@ -1,0 +1,456 @@
+{
+  "site": "https://docs.wagtail.org",
+  "packetSHA256": "8c129140084d8d89f25e66eb3e5312d4e89a892dd43a306d2feacb9d1e062e5e",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "rows": [
+    {
+      "checkId": "distraction",
+      "guideline": "2.5",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6",
+        "context.json:records:0"
+      ],
+      "rationale": "In the successfully rendered homepage, tutorial and sustainability reading states, no overlays, autoplay media or active animations interrupt the developer reading task. Search/navigation and theme controls are relevant aids; the successful contextual search route also observed no blocking banner. This is limited to those captured states; blocked page probes do not establish their normal appearance. However, this does not resolve the entire declared page sample: some normal JavaScript-enabled observations are missing or blocked, so quiet successful states cannot stand in for those unobserved states.",
+      "confidence": "medium",
+      "nextEvidence": "Capture the missing normal documentation states, then review task interruptions and useful prompts across the declared sample."
+    },
+    {
+      "checkId": "choice",
+      "guideline": "2.6",
+      "outcome": "inapplicable",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "context.json:records:0"
+      ],
+      "rationale": "No consent, purchase, subscription or comparable accept/reject decision appears in the captured reading/search route. Navigation and the dark-mode control do not establish a consequential consent decision requiring visual accept/reject parity. Failed advertising requests cannot establish the appearance or wording of an ad.",
+      "confidence": "medium",
+      "nextEvidence": "Review wording, defaults and visual prominence if a consequential choice is introduced."
+    },
+    {
+      "checkId": "comprehension",
+      "guideline": "2.7",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "context.json:records:0",
+        "context.json:records:5"
+      ],
+      "rationale": "For English developers, the homepage names first steps and usage tasks, the tutorial uses ordered installation headings and concrete code outcomes, and the responsive-image excerpt explains srcset and sizes with input/output examples. Documentation modes distinguish learning, goals, reference and explanation. These sampled wording judgments do not establish comprehension for unrepresented users. The performance page has no clean prose probe in this packet, and several other comparable probes captured challenges. Wording across the complete declared sample therefore remains unresolved.",
+      "confidence": "medium",
+      "nextEvidence": "Read the remaining clean sampled articles in a linked session, then validate newcomer comprehension with audience research if extending beyond developer judgment."
+    },
+    {
+      "checkId": "consistency",
+      "guideline": "2.8",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6",
+        "staged.json:runs:2",
+        "staged.json:runs:3",
+        "staged.json:runs:5",
+        "probes.json:pages:7",
+        "staged.json:runs:4",
+        "staged.json:runs:8"
+      ],
+      "rationale": "Rendered documentation pages repeat Wagtail Documentation, Getting started, Tutorial, Usage guide, Advanced and Reference navigation, with consistent breadcrumb, theme and source controls. Successful staged pages corroborate repeated navigation names on image, reference and performance pages. This supports sampled naming consistency, not complete design-system governance. A clean alternate documentation-guidelines state and staged search/release captures extend the naming comparison to the remaining sampled sections.",
+      "confidence": "medium",
+      "nextEvidence": "Check any future independently designed interactive components against these established names."
+    },
+    {
+      "checkId": "motion",
+      "guideline": "2.10",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6"
+      ],
+      "rationale": "No active animation or media playback is recorded in the normal desktop, narrow and reduced-motion reading observations. No playback control is required for absent observed motion; challenge screens are not treated as documentation animation evidence. This does not cover later interactions or animation not captured by the probe. However, this does not resolve the entire declared page sample: some normal JavaScript-enabled observations are missing or blocked, so quiet successful states cannot stand in for those unobserved states.",
+      "confidence": "medium",
+      "nextEvidence": "Capture the missing normal documentation states, then review any actual motion, its purpose and controls across the declared sample."
+    },
+    {
+      "checkId": "notifications",
+      "guideline": "2.12",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The normal reading states record zero Notification.requestPermission calls and no unsolicited alerts or notification controls. Browser permission was already denied, so this supports absence of observed requests rather than proof that all notification routes are disabled. However, this does not resolve the entire declared page sample: some normal JavaScript-enabled observations are missing or blocked, so quiet successful states cannot stand in for those unobserved states.",
+      "confidence": "medium",
+      "nextEvidence": "Capture the missing normal documentation states, then review alerts and permission requests across the declared sample."
+    },
+    {
+      "checkId": "documents",
+      "guideline": "2.13",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Print emulation preserves documentation text and tutorial illustrations but reports four or five visible navigation regions. No downloadable document links were captured on the clean homepage/tutorial states. A paginated print preview was not captured, so the effect on paper use and content clipping cannot be judged; visibility counts alone do not prove waste or breakage.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect a tutorial print preview for page count, clipping and repeated navigation; optimize print CSS only where those observations show avoidable pages."
+    },
+    {
+      "checkId": "unused-code",
+      "guideline": "3.2",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "staged.json:runs:0"
+      ],
+      "rationale": "Initial-load-plus-500ms coverage records unexecuted ranges in Read the Docs add-ons and unused CSS rules, nominating investigation targets. Coverage uses source offsets and the main target only, not removable network bytes. Search, version navigation and later interactions were not successfully covered end-to-end, and no source corroboration is supplied.",
+      "confidence": "medium",
+      "nextEvidence": "Collect representative search, version/menu and copy-code coverage before removing code; separate globally required initialization from truly unused features."
+    },
+    {
+      "checkId": "components",
+      "guideline": "3.3",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "probes.json:pages:0",
+        "probes.json:journeys:0",
+        "context.json:records:0"
+      ],
+      "rationale": "Initial pages load the Read the Docs add-ons script (about 123 kB transferred in the homepage run), vendor/search tools and an add-ons API request. Search is a real user need demonstrated in context, but the later measured search did not complete. Evidence does not isolate a safely deferrable component or demonstrate usable activation after splitting.",
+      "confidence": "medium",
+      "nextEvidence": "Trace add-on functions through search and version navigation, then prototype deferral only for components whose later activation remains usable."
+    },
+    {
+      "checkId": "layout",
+      "guideline": "3.10",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6"
+      ],
+      "rationale": "At 360 and 1280 CSS pixels the clean homepage, tutorial and sustainability pages report no document horizontal overflow and retain reading headings. The main menu is hidden in narrow snapshots, but the mobile menu was not exercised; several other desktop/narrow probes captured Cloudflare challenges. Width-only snapshots cannot establish the affected navigation controls work across the declared sample.",
+      "confidence": "medium",
+      "nextEvidence": "Exercise the narrow menu, search and wide code/image content on clean pages; include a real mobile task before a broader compatibility claim."
+    },
+    {
+      "checkId": "impact-choice",
+      "guideline": "5.4",
+      "outcome": "inapplicable",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "context.json:records:0"
+      ],
+      "rationale": "The bounded task is reading documentation and locating an image guide. No comparable resource-intensive user choice such as media quality or bulk export is established on this route. Ordinary navigation and a theme toggle do not justify mandatory carbon labels. Developer guidance about image formats is educational content, not a measured footprint choice for this documentation host.",
+      "confidence": "medium",
+      "nextEvidence": "Reassess if a consequential media, download or hosted-environment activation choice is included in a future task."
+    },
+    {
+      "checkId": "journeys",
+      "guideline": "2.4",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "context.json:records:0",
+        "staged.json:runs:4"
+      ],
+      "rationale": "Setup recorded a complete anonymous search-to-responsive-images route through the embedded search panel. The measured journey filled images and pressed Enter but timed out waiting for the result link, ending at search.html?q=images&check_keywords=yes&area=default with a Cloudflare challenge. A separately loaded search page succeeded in staging. These differing states leave reproducible task completion unresolved; neither the selector timeout nor setup success establishes a globally broken or consistently successful search.",
+      "confidence": "medium",
+      "nextEvidence": "Repeat the route in a linked session with explicit add-on readiness and state capture, distinguishing embedded search from fallback navigation and security challenges before prescribing a site fix."
+    },
+    {
+      "checkId": "media-delivery",
+      "guideline": "2.9",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:1",
+        "staged.json:runs:1",
+        "context.json:records:1"
+      ],
+      "rationale": "The tutorial uses explanatory screenshots with descriptive alt text, generally 1280-pixel intrinsic widths displayed near 680 pixels on desktop and smaller on narrow screens, without srcset. Although URLs end .png, response MIME types show image/webp; tutorial_10 is about 205 kB and tutorial_6 about 110 kB transferred. Several screenshots sit far below the first viewport with loading=auto. Their instructional value is established, but alternative rendition legibility at intended pixel densities and measured deferred loading were not checked. These are optimization candidates, not proof that smaller or lossy images are safe.",
+      "confidence": "medium",
+      "nextEvidence": "Compare the largest screenshots at target narrow/desktop densities and test deferred loading for below-fold examples; preserve readable UI details and measure complete-page transfer."
+    },
+    {
+      "checkId": "font-delivery",
+      "guideline": "2.11",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "staged.json:runs:1"
+      ],
+      "rationale": "Body text uses a system font stack with language coverage fallbacks. Two Font Awesome WOFF2 variants load at roughly 79 kB and 78 kB transferred; their FontFace display value is block. No blocked-font experiment establishes whether icon controls remain discernible, and required icon/language coverage has not been mapped. Using these fonts alone is not a failure.",
+      "confidence": "medium",
+      "nextEvidence": "Block icon-font responses and check search, theme, menu and source controls; map used glyphs before considering subsetting or replacement."
+    },
+    {
+      "checkId": "semantic-forms",
+      "guideline": "3.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6",
+        "probes.json:pages:2",
+        "probes.json:pages:7"
+      ],
+      "rationale": "Clean home, tutorial and sustainability documents use lang=en, one main region and descriptive primary headings; search has aria-label Search documentation, menu buttons have text, and copy controls are named. However, several declared pages expose only challenge documents in the comparable desktop state, so their actual task-control semantics are unresolved. This partial positive evidence does not establish WCAG compliance.",
+      "confidence": "medium",
+      "nextEvidence": "Capture actual documentation states and resolve any custom-element/shadow control names on remaining sampled pages before a full sampled semantic judgment."
+    },
+    {
+      "checkId": "metadata",
+      "guideline": "3.8",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:6",
+        "probes.json:pages:7"
+      ],
+      "rationale": "Clean pages have descriptive page-and-version titles; no structured-data blocks are declared, so no JSON parse failure is demonstrated. Canonical and description are null. Descriptions are optional for these technical reading pages, but stable/version alias relationships have not been resolved enough to judge whether canonical metadata is applicable and usable. Challenge metadata is excluded from documentation judgments.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect stable versus numbered-version canonical/indexing intentions and capture clean remaining pages; add canonical metadata only where it correctly represents equivalent content."
+    },
+    {
+      "checkId": "preference-behavior",
+      "guideline": "3.9",
+      "outcome": "fail",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "Matching clean homepage and tutorial observations retain white rgb(255,255,255) backgrounds after prefers-color-scheme changes live to dark, despite dark=true. Fresh cold-dark loads of these same documentation pages use rgb(18,12,36) backgrounds and retain the same reading content/headings. Thus initial dark preference support exists but an in-page change does not update the observed theme. No motion is recorded in corresponding reduced-motion states. This comparison excludes challenged pages.",
+      "confidence": "high",
+      "nextEvidence": "Update live system-theme handling while preserving explicit user overrides; verify both preference directions without navigation and retain reading content."
+    },
+    {
+      "checkId": "no-js-content",
+      "guideline": "2.17",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:3",
+        "probes.json:pages:6",
+        "probes.json:pages:7",
+        "probes.json:pages:8"
+      ],
+      "rationale": "Fresh no-JavaScript home and tutorial pages retain core reading content, headings and navigation; reference, documentation-guidelines and release pages also have usable no-JavaScript observations. Sustainability and performance no-JavaScript observations are Cloudflare challenges, and the image observation failed, preventing comparison across the declared sample. These are collection/access limits rather than proof that documentation content requires JavaScript; search functionality is outside this bounded check.",
+      "confidence": "medium",
+      "nextEvidence": "Capture clean no-JavaScript reading states for unresolved pages and compare main content/navigation with their matching normal states."
+    },
+    {
+      "checkId": "api-requests",
+      "guideline": "3.11",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "staged.json:runs:0",
+        "probes.json:journeys:0"
+      ],
+      "rationale": "The clean initial network traces show one add-ons configuration XHR and one page-specific analytics XHR per homepage/tutorial load, without a demonstrated recurring polling loop. Similar URLs across distinct page loads are not redundant within one task. Initial-only windows and an incomplete measured search do not establish later API purpose, request duplication or freshness requirements; failed EthicalAds requests do not quantify removable backend cost.",
+      "confidence": "medium",
+      "nextEvidence": "Trace API calls through a successful reading/search journey and short idle window, identifying purposes and cache behavior before proposing request removal."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "guideline": "4.2",
+      "outcome": "pass",
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:2"
+      ],
+      "rationale": "Successful public pages expose cache-control max-age=1800, stale-if-error=86400, public plus ETags for reusable first-party styles, scripts and media; the add-ons bundle has max-age=1200 and an ETag. These provide bounded public reuse/validation policies appropriate to release-linked documentation. Error/challenge responses are excluded. Headers do not establish measured warm-cache reuse or offline access.",
+      "confidence": "medium",
+      "nextEvidence": "Use a warm-load test if claiming actual saved transfer; consider longer lifetimes only with reliable versioning/invalidation."
+    },
+    {
+      "checkId": "text-compression",
+      "guideline": "4.3",
+      "outcome": "pass",
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:2"
+      ],
+      "rationale": "Material successful HTML and CSS responses use gzip, and core JavaScript responses use Brotli; the larger add-ons JavaScript response uses gzip. This directly supports compressed delivery of sampled material text assets. Already-compressed WOFF2/WebP media and challenge/error responses are not used to demand additional compression.",
+      "confidence": "high",
+      "nextEvidence": "Recheck compression when delivery configuration changes; no specific compression repair is supported by this sample."
+    },
+    {
+      "checkId": "keyboard-path",
+      "guideline": "3.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "rationale": "The first two Tab steps identify the skip link and Wagtail Documentation link with focus-visible and a solid 3-pixel outline. Later steps repeatedly record an invisible zero-size READTHEDOCS-SEARCH shadow host rather than the inner active control, leaving actual task-control order and focus indicators unknown. The skip link geometry is also above the viewport in the recorded instant. These clues require visual/deep-focus verification and do not establish a trap or absent focus.",
+      "confidence": "medium",
+      "nextEvidence": "Capture the deeply active shadow element and screenshots during Tab/Shift+Tab navigation; verify skip-link visibility and the subsequent search/menu focus path."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "guideline": "2.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:6",
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "rationale": "The retrieved Sustainability considerations page recommends standards, guidelines and quantification methods for Wagtail-powered projects and mentions CMS development internships. It does not explicitly establish documentation-host impacts and mitigation. The bounded disclosure collector returned no service-linked records, which does not prove no policy exists elsewhere. The relationship to docs.wagtail.org remains unresolved.",
+      "confidence": "medium",
+      "nextEvidence": "Provide a public statement explicitly identifying this documentation service, its impact boundary and mitigation, or a verifiable relationship to an existing statement."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "guideline": "3.13",
+      "outcome": "fail",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "rationale": "Both /carbon.txt and /.well-known/carbon.txt return 404, with no Carbon-Location, redirect or delegated relationship discovered. Therefore the sampled standard discovery routes do not expose a parseable carbon.txt. No supported version/schema/organization relationships can be assessed without a retrieved file. This is a scoped metadata absence, not evidence of high emissions or full-guideline failure.",
+      "confidence": "high",
+      "nextEvidence": "If useful for this service, publish a valid carbon.txt with accurate hosting/organization relationships or delegation; validate its declared version and corroborating records."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "guideline": "4.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "context.json:records:6"
+      ],
+      "rationale": "No retrieved disclosure record ties operational sustainability evidence to the audited origin. Read the Docs resource URLs and references to Green Web Foundation internships identify technology/partnership context, not independently corroborated provider/service energy performance. Sustainable hosting cannot be concluded and no green-hosting model flag follows.",
+      "confidence": "medium",
+      "nextEvidence": "Obtain origin-specific provider/service relationships and dated, independently corroborated operational energy/emissions evidence."
+    },
+    {
+      "checkId": "audience-needs",
+      "assessmentScope": "The current public decision to organize Wagtail developer documentation into tutorial, how-to, reference and explanation modes: inspect audience rationale and public evidence that user research informed or validated that decision. No internal research or representative-user testing records supplied.",
+      "guideline": "2.2",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:5"
+      ],
+      "rationale": "The four-mode documentation policy identifies newcomer tutorials, goal-oriented how-to guides, reference users and conceptual explanation needs, and explains why mixed modes impede understanding. It attributes the structure to Di\u00e1taxis. It supplies no actual participant scope, research findings or evidence that user involvement changed or validated this specific decision. The policy rationale is useful but does not demonstrate performed audience research.",
+      "confidence": "medium",
+      "nextEvidence": "Provide one public decision or research record identifying represented audiences/constraints, relevant findings and how they informed or confirmed the four-mode structure."
+    },
+    {
+      "checkId": "access-barriers",
+      "assessmentScope": "Anonymous English desktop readers with JavaScript enabled, using pointer interaction and text entry: search from the stable homepage for images and reach complete responsive-image documentation without authentication or personal-data submission. Keyboard-only, assistive-technology, constrained-network and non-English completion are outside this task.",
+      "guideline": "5.13",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:0",
+        "probes.json:journeys:0",
+        "staged.json:runs:4"
+      ],
+      "rationale": "The contextual walkthrough satisfies the declared anonymous English desktop pointer/text-entry route, reaching responsive-image examples without login or personal-data submission. A subsequent measured run instead follows the fallback search URL and ends at a Cloudflare verification page after the result click times out. This contradictory completion evidence leaves reliable completion within the same broad scope unresolved. It does not prove all visitors face a barrier or that necessary security should be removed.",
+      "confidence": "medium",
+      "nextEvidence": "Repeat the scoped route with explicit search readiness and capture any challenge completion or usable alternative; determine whether automation timing, add-on readiness or security controls explain the differing outcomes."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "assessmentScope": "English Wagtail developer documentation through the publicly documented Wagtail 8.0 release: assess release-linked maintenance policy, a documented applied update/removal, and continued discoverability of v7.0 historical image guidance. Judge lifecycle rather than whether old supported documentation should be deleted.",
+      "guideline": "5.18",
+      "outcome": "pass",
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4",
+        "staged.json:runs:0"
+      ],
+      "rationale": "Within the stated release-linked boundary, contributor guidance specifies removing short-lived version directives after two releases, and the release process describes three-month feature releases, branch responsibilities and documentation backports. The dated August 25, 2026 Wagtail 8.0 notes record an applied removal of deprecated USE_L10N documentation and other documentation updates. The captured v7.0 image guide retains useful historical responsive-image guidance, and the homepage release-note index makes the historical release discoverable. This supports one bounded public lifecycle example, attributed to publisher records rather than independently verified organization-wide execution.",
+      "confidence": "medium",
+      "nextEvidence": "Preserve versioned historical access; extend the sample with a specific review log only if assessing wider editorial lifecycle effectiveness."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "assessmentScope": "Published goals and progress specifically for docs.wagtail.org as available in its current sustainability-considerations page and disclosure collection. Distinguish advice for Wagtail-powered websites and CMS-wide work from documentation-host-specific targets, boundaries and comparable results.",
+      "guideline": "5.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:6",
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "rationale": "The current sustainability guidance names accounting standards and possible tools for Wagtail projects and CMS development work. It supplies no docs.wagtail.org-specific target period, metric/boundary or dated comparable baseline and progress record. General recommendations cannot establish this host has measured goals, and their absence from the bounded sample does not establish no internal goals exist.",
+      "confidence": "medium",
+      "nextEvidence": "Publish or supply one documentation-host-specific goal with metric, service boundary, target period and dated comparable baseline/progress, explaining any method changes."
+    }
+  ],
+  "topFindings": [
+    {
+      "checkId": "preference-behavior",
+      "priority": "medium",
+      "title": "Apply system theme changes while documentation remains open",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "summary": "Clean homepage and tutorial states support initial dark loads but retain a white background after the system preference changes in-page.",
+      "recommendedAction": "Update live system-theme handling, preserving explicit user overrides; test light-to-dark and dark-to-light changes without navigation.",
+      "status": "observed defect"
+    },
+    {
+      "checkId": "journeys",
+      "priority": "medium",
+      "title": "Resolve inconsistent search completion before prescribing a fix",
+      "evidenceIds": [
+        "context.json:records:0",
+        "probes.json:journeys:0"
+      ],
+      "summary": "Setup completed embedded search, while the measured route fell back to search.html and ended at a Cloudflare challenge. The cause and visitor impact are unresolved.",
+      "recommendedAction": "Repeat with explicit add-on readiness and capture embedded search, fallback and challenge states; use the result to decide whether a site change is needed.",
+      "status": "evidence gap"
+    },
+    {
+      "checkId": "media-delivery",
+      "priority": "medium",
+      "title": "Validate smaller or deferred tutorial screenshots",
+      "evidenceIds": [
+        "probes.json:pages:1",
+        "staged.json:runs:1"
+      ],
+      "summary": "Instructional screenshots are useful and delivered as WebP despite .png names. Several 1280-pixel screenshots are loaded below the first viewport with loading=auto; the largest transfer is about 205 kB. Safe rendition savings have not been established.",
+      "recommendedAction": "Check screenshot detail at intended pixel densities and measure deferred loading for below-fold examples before changing dimensions or formats.",
+      "status": "investigation candidate"
+    },
+    {
+      "checkId": "sustainability-goals",
+      "priority": "low",
+      "title": "Separate documentation-host goals from CMS sustainability advice",
+      "evidenceIds": [
+        "context.json:records:6",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "The public guidance explains methods for Wagtail-powered projects but does not establish docs.wagtail.org-specific goals, a baseline or comparable progress.",
+      "recommendedAction": "If communicating host performance, publish a bounded goal and dated progress with a stable metric and method; retain the existing general guidance.",
+      "status": "evidence gap"
+    }
+  ]
+}

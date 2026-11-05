@@ -1,0 +1,81 @@
+{
+  "role": "claims",
+  "site": "https://wagtail.github.io",
+  "packetSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "claims-project-scope-disclosure",
+      "checkIds": [
+        "disclosure-scope",
+        "carbon-discovery",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "context.json:records:1"
+      ],
+      "summary": "The audited service is /draftjs_exporter/. The packet site field is the hosting origin; root/well-known carbon.txt and two origin-root sustainability fallback paths returned 404. This bounded discovery does not establish absence of a project statement or sustainability practices, nor independently verify hosting sustainability.",
+      "requestedChange": "Name the project path throughout the report. Attribute only the captured origin discovery outcomes and keep unresolved project disclosure/hosting relationships explicit. Do not generalize findings to all wagtail.github.io projects, apply parent/origin traffic to this path, or set a green-hosting flag without scoped independent evidence. Ask for a project-linked statement/provider record if resolving these checks is useful."
+    },
+    {
+      "id": "claims-setup-versus-measured-journey",
+      "checkIds": [
+        "journeys",
+        "access-barriers"
+      ],
+      "evidenceIds": [
+        "context.json:records:0",
+        "probes.json:journeys:0",
+        "probes.json:pages:1",
+        "staged.json:runs:1"
+      ],
+      "summary": "The setup task observation records searching from the homepage and reaching the installation command and full first-render example without account or payment. The later measured journey never executed its actions because initial navigation failed with ERR_NETWORK_CHANGED; staged getting-started navigation also failed although its probe later retrieved the document.",
+      "requestedChange": "Use the successful attributed setup observation only for the declared anonymous desktop pointer/text-entry access task. Label the automated journey and failed staged load incomplete in that run, not evidence that the site or search is broken. Do not claim measured journey efficiency or reproduce successful staged transfer metrics from the setup record; request one matched rerun only if that unresolved measurement is needed."
+    },
+    {
+      "id": "claims-necessity-expectation-gap",
+      "checkIds": [
+        "service-necessity"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2"
+      ],
+      "summary": "The homepage describes the Python ContentState-to-HTML problem and initial Wagtail use case; engine guidance compares dependencies, compatibility, speed and sanitization tradeoffs. Those choices support purpose and technical alternatives, but do not establish desirability evidence, ongoing viability and a reasoned creation/continuation decision for the declared capability.",
+      "requestedChange": "Retain an unknown for the exact unmet necessity expectation instead of inferring that this service is unnecessary or that no evaluation occurred. Ask for one scoped public or supplied continuation/creation decision tying user need, credible reuse/no-new-feature alternatives, feasibility and maintenance viability to its conclusion. Do not recommend removing sanitization or compatibility engines on speed/dependency claims alone."
+    },
+    {
+      "id": "claims-migration-content-versus-schedule",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "evidenceIds": [
+        "context.json:records:3",
+        "probes.json:pages:6"
+      ],
+      "summary": "The live migration guide supplies concrete upgrade changes and retained routes for users on older Python/package versions. Publication date labels and upgrade content do not establish a documentation review/expiry schedule or its execution for the whole selected collection.",
+      "requestedChange": "Acknowledge the applied compatibility guidance and preserve its historical user value, while leaving the missing schedule/ownership link unknown under the declared expectation. Request one release-linked documentation review rule and applied review example if needed. Do not infer absent maintenance or recommend deleting old upgrade instructions."
+    },
+    {
+      "id": "claims-partial-capture-model-boundary",
+      "checkIds": [
+        "impact-choice",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:6",
+        "energy/manifest.json:pages:0"
+      ],
+      "summary": "Successful staged pages retain partial byte accounting and no calculated DCR; two navigations captured zero bytes after network errors. GreenFrame supplies three modeled initial-homepage runs with client-device median 0.01141742601821111 Wh, distinct from its mean and network-inclusive total. No path-specific annual traffic is supplied.",
+      "requestedChange": "Keep failed zero-byte loads outside any page-intensity proxy and label available transfer quantities partial; assign no DCR. If reporting GreenFrame, use the validated three-run client median with its initial-load laboratory window and fixed coefficients, identify it as modeled resource energy, and keep network/remote-server/embodied scope separate from the client headline. Do not add it to SWDM or produce an origin-wide annual projection for the project path. Attribute savings only after matched changes and affected-traffic evidence."
+    }
+  ]
+}

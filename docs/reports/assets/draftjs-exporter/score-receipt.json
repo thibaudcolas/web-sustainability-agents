@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "scoring-campaign-v1",
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "--script",
+    "audit/cli.py",
+    "tool",
+    "assess",
+    "--reviews",
+    ".audit-work/draftjs-exporter/scored-session/reviews.json",
+    "--rubric",
+    ".audit-work/draftjs-exporter/scored-session/rubric.json",
+    "--weights",
+    ".audit-work/draftjs-exporter/scored-session/impact-weights.json",
+    "--assets",
+    ".audit-work/draftjs-exporter/scored-session",
+    "--output",
+    ".audit-work/draftjs-exporter/scored-session/scores.json"
+  ],
+  "exitCode": 0,
+  "reason": "Explicit new calculation campaign: allow nested energy evidence while retaining containment validation. Aggregation rules and all review judgments are unchanged. Original collection packet, receipt and failed calculation are preserved.",
+  "originalPacketSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+  "originalFailedReceiptSHA256": "19271da0acb252015e21f2e4db47ef2e5036a22643f2b774be84dc83158ddb28",
+  "sourceSHA256": {
+    "audit/assess.py": "684de88ad6bf3494d51ced65b8a9f8efde767e52882df539b467932daa2f02af",
+    "audit/assess.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235"
+  },
+  "inputSHA256": {
+    "reviews.json": "d32ccec4e532bf542c433fdfb4b997fd6f1ff7afd17444b1f63b82d24300952f",
+    "review.json": "046e37618c4b1303237bdbc90ffebbc6625dcdc8169f8e589bc81d38ee82953d",
+    "rubric.json": "522bace9f23e6615a94b2129a331fde80cd716fa0362685ed7d31de471489873",
+    "impact-weights.json": "120d2e9c59c8ff0910ab6f1e6b034d695811e677eeeb258c14ab759162dd0dbc"
+  },
+  "outputSHA256": "93b2e34ea0539c6c9ca10c883698477ffe516992bdbbccd46b9a61844a730a16"
+}

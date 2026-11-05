@@ -109,3 +109,13 @@ The new report skill and renderer separate editorial wording from scored judgmen
 **B33:** Compare focused experience/content and governance/lifecycle review instructions with the current general roles and a no-skill baseline. Keep model, evidence, tools and budgets fixed. Promote them to separate audit skills only when they improve independently judged evidence support or recommendation usefulness enough to justify orchestration cost. Context selection and claims review remain shared responsibilities; do not create one agent per WSG criterion.
 
 **B34:** Map the 33 browser/disclosure/source expectations to current criterion IDs and the specific clauses they assess; the ten contextual checks already name criteria. Link each method to execution evidence and benchmark cases, keeping full and partial coverage separate. Use the new 197-criterion inventory to prioritize gaps, not to claim implementation or validation coverage. This mapping precedes a reliable criterion-level coverage percentage.
+
+**B35: Validate collection recovery before expanding live-site breadth.** The [Wagtail documentation](../reports/wagtail-docs.md) and [exporter](../reports/draftjs-exporter.md) audits exposed cases worth turning into controlled benchmark fixtures:
+
+- Intended content versus a security challenge in different preference/no-JavaScript states. Require matching document identity before comparing features; a completed collector step is insufficient.
+- Successful setup search versus early form submission to a challenged fallback route, and navigation failure before any journey actions. Grade the distinction between an inconclusive reproduction and a demonstrated site defect.
+- A failed navigation with zero bytes but complete request accounting. Verify unavailable reporting and explicit annual-sample exclusions without replacing the first visit silently.
+- Partial worker accounting on otherwise successful pages. Extend B01 with the exporter's search-worker case before assigning complete-load carbon ratings.
+- Shared-host project scope versus origin-wide traffic, and missing pages versus an apparently passing qualitative sample. Test whether agents preserve the agreed scope and request only the missing evidence.
+
+Use bounded retries and an explicit readiness condition in a new collection session; preserve failures and avoid repeated requests after rate limiting. Establish these controls on fixtures before another broad live crawl. The current reports retain the unresolved observations rather than claiming recovery has been validated.

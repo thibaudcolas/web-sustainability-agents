@@ -182,6 +182,8 @@ plugins:
           - reports/README.md
           - reports/guide.md
           - reports/wagtail.md
+          - reports/wagtail-docs.md
+          - reports/draftjs-exporter.md
         Knowledge base:
           - knowledge-base/*.md
         Feasibility study:
@@ -240,6 +242,8 @@ nav:
       - reports/README.md
       - Guide audit: reports/guide.md
       - Wagtail.org audit: reports/wagtail.md
+      - Wagtail documentation audit: reports/wagtail-docs.md
+      - Draft.js exporter audit: reports/draftjs-exporter.md
   - Knowledge base:
       - knowledge-base/README.md
       - Methodology:

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "role": "guidelines",
+  "site": "https://wagtail.github.io",
+  "session": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/session",
+  "packetSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+  "executionMode": "native-subagents",
+  "skill": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/session/skills/sustainability-guideline-review/SKILL.md",
+  "supportingSkills": [
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/session/skills/sustainability-context-review/SKILL.md"
+  ],
+  "instruction": "Review every selected check using review-template.json and the frozen rubric. Return a complete review object, including useful top findings; do not calculate a score. Load any supportingSkills listed in this task before judging contextual records.",
+  "output": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/review-tasks/guidelines.result.json",
+  "checkIds": [
+    "distraction",
+    "choice",
+    "comprehension",
+    "consistency",
+    "motion",
+    "notifications",
+    "documents",
+    "unused-code",
+    "components",
+    "layout",
+    "impact-choice",
+    "journeys",
+    "media-delivery",
+    "font-delivery",
+    "semantic-forms",
+    "metadata",
+    "preference-behavior",
+    "no-js-content",
+    "api-requests",
+    "public-cache-policy",
+    "text-compression",
+    "keyboard-path",
+    "disclosure-scope",
+    "carbon-discovery",
+    "hosting-evidence",
+    "service-necessity",
+    "access-barriers",
+    "content-lifecycle"
+  ],
+  "modelPolicy": {
+    "gpt-6.1-sol": "high",
+    "deepseek-v4.1-flash": "high"
+  },
+  "contract": "guidelines: original review-template.json shape; evidence/claims: {role, site, packetSHA256, reviewer:{harness,model,reasoning}, issues:[{id,checkIds,evidenceIds,summary,requestedChange}]}. Every issue needs real check/evidence IDs. No additional browsing or mutable source access; request missing evidence through the coordinator."
+}

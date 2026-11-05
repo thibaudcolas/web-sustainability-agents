@@ -1,0 +1,481 @@
+{
+  "schemaVersion": "0.1.0",
+  "site": "https://docs.wagtail.org",
+  "planSHA256": "bc7ddd53567afb5f69d1bc152593fe8bc8bd11cfd9efdd5adc46c6ba0ca9cc44",
+  "rubricSHA256": "1d01d49ac12b21d5c9564dae85b845328db111653ae078db161363e561ba3d35",
+  "sourceSHA256": {
+    "staged.json": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a",
+    "probes.json": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672",
+    "disclosures.json": "494eaaf253f1f02b7a6e8a7e9c14a196bc0ef4cb60a4a512df53ed05751ece36",
+    "source.json": "d60112f1cef94c1226bdfdc8724d51aed1c1d65650407ba41c7aa98dddcbffb3",
+    "context.json": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48",
+    "energy/manifest.json": "6dad1e9a8703f8811b9bca465dc4b0eba90eeb9b85ebce836e50cc26a689ff70"
+  },
+  "frozenFiles": {
+    "plan.json": "bc7ddd53567afb5f69d1bc152593fe8bc8bd11cfd9efdd5adc46c6ba0ca9cc44",
+    "receipt.json": "f78ca2e671b0e5b57cdf06c3a232443820fd4e37e26c578c7f6c2af21f898b2f",
+    "checks.json": "618c28575c780beef9610747c12997da552945d7e805d7d4f98aec3afccd7993",
+    "base-rubric.json": "ac952adc807996435615c62907403e57cda6ba9dd3b6d8074bb564fa5333d465",
+    "rubric.json": "1d01d49ac12b21d5c9564dae85b845328db111653ae078db161363e561ba3d35",
+    "impact-weights.json": "120d2e9c59c8ff0910ab6f1e6b034d695811e677eeeb258c14ab759162dd0dbc",
+    "skills/research-workspace/SKILL.md": "1168556394ddc34c9b51172bb1648bbae2132592b6c5401c3edf763f586cba08",
+    "skills/sustainability-audit/SKILL.md": "fc0f2d7ba4d455446c361e7affb3b17de9f64cc2a37bd1366a28faf2c7ea3bb1",
+    "skills/sustainability-audit/references/agent-workflow.md": "1dfb719b7ec70d77608c79aca82fecee8163a7e69b5939d9b9f63e2ba8f534b9",
+    "skills/sustainability-audit/scripts/runtime.py": "9e2ba52b683c4483f9f87151007c680bec02c7b2c343933b1f995d5d13d2f34f",
+    "skills/sustainability-audit/scripts/runtime.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "skills/sustainability-claims-review/SKILL.md": "299e37c2dc01e9ee08be913a61b5dc69e78cc52d4e64909ef9dbdbb71227ce9f",
+    "skills/sustainability-collection/SKILL.md": "d2b3a73c03b0e758a0c9a604ced7a1649a42a1d6422a2f3292fb716ccbd49a5d",
+    "skills/sustainability-context-review/SKILL.md": "bf3d3672c6e7342a83ad0f362f23ba7e60ad6756836f4a86504eab96d3163c4c",
+    "skills/sustainability-context-review/references/review.md": "ff4a7b8573044c2dac7d23f5539d722de471ec60b4f8826bc2c7bd053b88b022",
+    "skills/sustainability-core/SKILL.md": "470699eaa4f80134422121a5e356e6bb45feadbd1e71f763efccd5f761385f1f",
+    "skills/sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+    "skills/sustainability-guideline-review/SKILL.md": "d89a9f472c0dab3c76efca05119246c2b9d5ecf2dfa52d110f4ae04d72243d3d",
+    "skills/sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+    "skills/sustainability-guideline-review/references/assessment-crosswalk.json": "4e958ed93d946ad8ec17ed4d80ef02929b522749a8d66e208baeb1918dbfc736",
+    "skills/sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1",
+    "skills/sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    "skills/sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa",
+    "skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    "skills/sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    "skills/sustainability-setup/SKILL.md": "604fca8fd420d42cbd8ace835fbf7179e16ba6a9773c5c70df04e3f471b13e61",
+    "energy/home/.greenframe.yml": "a5b51cbdde4cd8f317329160660c13e7497522a3be55a0d4702246a712d69a69",
+    "energy/home/bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff",
+    "energy/home/manifest.json": "07b200f1426389455afcbfcc1bed5a451667d6e4063354a5397315c0a61327a8",
+    "energy/home/model-results.json": "30bc8c5be78c3f549a4243710547891bd15e5a7c204adeb89c56cb4068eb2abe",
+    "energy/home/raw-counters.json": "3077dd8a53eff1a214e9143f0eb75648aa1004d21ba9412f511895e6d44dda54",
+    "energy/home/runner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "energy/home/scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "energy/images/.greenframe.yml": "36789c6e3fcc94477befdb3c980d5ea361e8f604b545a536e43931ab4fac7f91",
+    "energy/images/bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff",
+    "energy/images/manifest.json": "51198f626c56496b4796bb68f62f0fd0b139a6f2cc779a008ad2fe41b725f8a8",
+    "energy/images/model-results.json": "6ebf0ac25328c8cbc0707ed010e8b4e4314711d62ee5548277aa2e7e0be7c5a5",
+    "energy/images/raw-counters.json": "1c1b7fa51df124409ffa819ce0bd3f73d0a49efb722e2ab7dbc346c6a114d756",
+    "energy/images/runner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "energy/images/scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "energy/manifest.json": "6dad1e9a8703f8811b9bca465dc4b0eba90eeb9b85ebce836e50cc26a689ff70",
+    "energy/tutorial/.greenframe.yml": "7e59567b52ba6a56f8c243a4634b6b100ab19fcbcf497aaf8925c384b8069850",
+    "energy/tutorial/bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff",
+    "energy/tutorial/manifest.json": "a67d4ed95664bf48c417a5e017348bdc5b5ee283df34bb2e4f0b0f36142118a2",
+    "energy/tutorial/model-results.json": "beea75f963453bc639e9f3e47bfe55bcd87a6d57bae130196ffb04e9b850fb8b",
+    "energy/tutorial/raw-counters.json": "6e8131c86aeca81c54a29f07aeab91d6c2520c845b407f0f592c7111efc59b2a",
+    "energy/tutorial/runner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "energy/tutorial/scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0"
+  },
+  "checks": [
+    {
+      "id": "distraction",
+      "guideline": "2.5",
+      "expectation": "Assess visible distractions against the declared visitor task; distinguish useful prompts from interruptions.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "choice",
+      "guideline": "2.6",
+      "expectation": "Inspect choice wording, defaults, prominence and the observed accept/reject paths for undue steering. DOM text alone does not establish visual parity.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "comprehension",
+      "guideline": "2.7",
+      "expectation": "Assess the sampled task's wording, headings and terminology for its stated audience; retain uncertainty about unrepresented users.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "consistency",
+      "guideline": "2.8",
+      "expectation": "Compare repeated navigation and control names across sampled pages; consistent samples do not prove a documented design system.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "motion",
+      "guideline": "2.10",
+      "expectation": "Assess observed animation purpose, playback controls and reduced-motion behavior. A quiet snapshot does not prove no motion occurs elsewhere.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "notifications",
+      "guideline": "2.12",
+      "expectation": "Assess observed alerts and notification permission requests for user value and choice; absence is limited to observed states.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "documents",
+      "guideline": "2.13",
+      "expectation": "Review print layout visibility and download labels for the declared task. Fetch and inspect document content before asserting optimization or equivalence.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "unused-code",
+      "guideline": "3.2",
+      "expectation": "Use initial JS/CSS execution observations to nominate investigation targets; require representative journeys or source corroboration before recommending removal.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "components",
+      "guideline": "3.3",
+      "expectation": "Relate initial script resources to visible components and later task needs; recommend splitting only when a component's deferred use and usable activation are corroborated.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "layout",
+      "guideline": "3.10",
+      "expectation": "Compare narrow and desktop task content and overflow, then exercise affected controls; width emulation alone is not real-device compatibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "impact-choice",
+      "guideline": "5.4",
+      "expectation": "Identify consequential user choices in the sample and assess whether contextual impact information is useful and supported. Do not prescribe carbon labels on every control.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "journeys",
+      "guideline": "2.4",
+      "expectation": "Execute declared task actions and inspect completion evidence; an expected selector is one observable, not proof of user success or optimal journey length.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Cite page/state or journey JSON Pointers, declared task and sample. Use additional screenshots, task observations, document content or source when the expectation cannot be resolved from the collected facts."
+    },
+    {
+      "id": "media-delivery",
+      "guideline": "2.9",
+      "expectation": "The sampled task images preserve useful content and provide proportionate intrinsic dimensions and delivery choices for their rendered size and pixel density. A large image is an investigation candidate until legibility and task value are checked; absent srcset alone is not a failure.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop/narrow image dimensions, srcset/sizes, delivered MIME types, loading state, and task content. Confirm any proposed rendition at intended pixel densities before asserting savings."
+    },
+    {
+      "id": "font-delivery",
+      "guideline": "2.11",
+      "expectation": "Observed web fonts and variants serve the sampled content, with a declared fallback/loading strategy where needed. Do not fail a site merely for using a web font; recommend removal or subsetting only after language and readability requirements are established.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect document.fonts family/weight/style/display/status, font responses and visible body text. Missing font-blocking/constrained-loading or language evidence can leave the scoped judgment unresolved."
+    },
+    {
+      "id": "semantic-forms",
+      "guideline": "3.6",
+      "expectation": "The sampled document has a meaningful language, primary heading and main region, and task controls have visible labels or an explicit naming relationship. Count/attribute presence alone does not establish semantic correctness or WCAG compliance.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Read title/lang/headings/mainCount, form control labels and task content. aria-labelledby references need resolution before claiming a missing accessible name."
+    },
+    {
+      "id": "metadata",
+      "guideline": "3.8",
+      "expectation": "The sampled content has a descriptive title and usable canonical metadata when applicable; declared structured-data blocks parse as JSON. Judge description and other optional metadata according to page purpose, not a mandatory-field checklist.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect metadata and document title, resolving canonical URLs and applicability. JSON parsing does not establish schema validity or search-engine eligibility."
+    },
+    {
+      "id": "preference-behavior",
+      "guideline": "3.9",
+      "expectation": "The sampled page respects applicable dark/reduced-motion preferences both before navigation and when they change in-page, without losing task content. Distinguish intentional design choices and absence of applicable motion from unsupported behavior.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop, reduced_motion, live_dark and cold_dark observations, colors, visible text and actual animations. A matching media query alone is insufficient; theme initialization and live change are distinct."
+    },
+    {
+      "id": "no-js-content",
+      "guideline": "2.17",
+      "expectation": "The sampled core reading content and navigation remain available without JavaScript, or an explicit alternative supports the task. This bounded check does not establish no-JavaScript search, every interaction, or all browser compatibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Compare desktop and fresh no_javascript text/headings/navigation. Explain task-critical missing content and legitimate progressive enhancements rather than demanding every feature without scripts."
+    },
+    {
+      "id": "api-requests",
+      "guideline": "3.11",
+      "expectation": "Repeated observed API requests are justified by the sampled task and its update needs. Identify redundant-looking requests for investigation without inferring backend cost or safe removal from URL repetition alone.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect bounded network.requests methods/types/timestamps and explicit journey resource entries. Establish polling purpose, cache behavior and task freshness needs; initial-only windows may remain cantTell."
+    },
+    {
+      "id": "public-cache-policy",
+      "guideline": "4.2",
+      "expectation": "Reusable public scripts/styles/media expose an appropriate caching or validation policy in the sample. Distinguish dynamic/private responses and note that headers alone do not prove cache reuse or offline support.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Review allowlisted response cache-control/etag/last-modified/age/vary headers and public resource purpose. Require a warm-load test before claiming measured reuse; private no-store is a legitimate exception."
+    },
+    {
+      "id": "text-compression",
+      "guideline": "4.3",
+      "expectation": "Material sampled text assets are delivered with compression where beneficial. Do not demand compression for already-compressed images, tiny bodies or error responses without context.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Review text/script/style response MIME types, status and content-encoding, alongside transfer magnitude when available. Header absence for a material text response supports investigation; missing response evidence stays unknown."
+    },
+    {
+      "id": "keyboard-path",
+      "guideline": "3.6",
+      "expectation": "The sampled initial keyboard path reaches visible task navigation/controls in a meaningful order with a discernible focus indicator. A bounded Tab trace cannot establish complete keyboard support, reverse navigation, traps or screen-reader accessibility.",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Inspect keyboardFocus steps, names/label relationships, element geometry, focus-visible and outline clues. A zero outline is not proof of invisible focus because borders or shadows may supply it; verify the actual indicator before a failure."
+    },
+    {
+      "id": "disclosure-scope",
+      "guideline": "2.1",
+      "expectation": "A retrieved public sustainability statement identifies the audited service and describes its impacts and mitigation. Judge disclosure only, not execution; an unresolved relationship is cantTell."
+    },
+    {
+      "id": "carbon-discovery",
+      "guideline": "3.13",
+      "expectation": "The sampled service exposes a discoverable, parseable carbon.txt with usable declared relationships. Missing carbon.txt is a scoped absence, not proof of high emissions or failure of the entire guideline. Judge redirects, delegation, supported versions and schema findings explicitly."
+    },
+    {
+      "id": "hosting-evidence",
+      "guideline": "4.1",
+      "expectation": "Hosting claims identify provider, service and supporting evidence with a relationship to this origin. Self-declaration without independently corroborated operational scope remains cantTell for sustainable hosting; do not set SWDM green-hosting flags from this check."
+    },
+    {
+      "id": "audience-needs",
+      "guideline": "2.2",
+      "criterion": "audience-evaluation",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#audience-evaluation",
+      "expectation": "For the declared service or feature decision, evidence identifies relevant users and affected communities, their material requirements or constraints, and how research findings changed or confirmed that decision. Persona labels, analytics counts or an auditor completing a task alone do not demonstrate user involvement.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Select a recent service decision and its research record, participant/audience scope, findings and resulting decision. A public case study can suffice for this bounded decision when it describes actual research and action; do not request personal participant data.",
+      "assessmentScope": "The current public decision to organize Wagtail developer documentation into tutorial, how-to, reference and explanation modes: inspect audience rationale and public evidence that user research informed or validated that decision. No internal research or representative-user testing records supplied."
+    },
+    {
+      "id": "access-barriers",
+      "guideline": "5.13",
+      "criterion": "obstacle-consideration",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#obstacle-consideration",
+      "expectation": "For the declared visitor task and represented access constraints, inspect material accessibility, technical, geographic or fairness barriers and verify the sampled route or alternative supports task completion while preserving necessary security and safety. Do not demand removal of justified authentication or infer all-user accessibility from one successful route.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Declare the audience/constraints and completion condition; capture a complete relevant journey, any barrier and the usable alternative or justified restriction. Distinguish agent observations from representative user testing; stop before unauthorized submissions.",
+      "assessmentScope": "Anonymous English desktop readers with JavaScript enabled, using pointer interaction and text entry: search from the stable homepage for images and reach complete responsive-image documentation without authentication or personal-data submission. Keyboard-only, assistive-technology, constrained-network and non-English completion are outside this task."
+    },
+    {
+      "id": "content-lifecycle",
+      "guideline": "5.18",
+      "criterion": "outdated-content",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#outdated-content",
+      "expectation": "For a declared content collection, evidence identifies a review/expiry schedule and demonstrates an applied archive, update or deletion decision, with a lightweight discoverable historical version where users still need it. A date label, old article or policy alone cannot establish an effective lifecycle or justify deletion.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Select a content collection and an actual review/expiry example; capture the schedule, ownership, decision rationale and resulting live/archive routes. Check whether historical content has continuing user, legal or research value before recommending removal.",
+      "assessmentScope": "English Wagtail developer documentation through the publicly documented Wagtail 8.0 release: assess release-linked maintenance policy, a documented applied update/removal, and continued discoverability of v7.0 historical image guidance. Judge lifecycle rather than whether old supported documentation should be deleted."
+    },
+    {
+      "id": "sustainability-goals",
+      "guideline": "5.6",
+      "criterion": "web-sustainability-goals",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#web-sustainability-goals",
+      "expectation": "Published goals for the audited web service define a measurable target or direction, relevant metric and boundary, and communicate dated progress against a comparable baseline. A corporate net-zero ambition or isolated low-carbon badge cannot establish service-specific goals and progress.",
+      "method": "qualitative-context-review",
+      "optional": true,
+      "requiresSource": false,
+      "fullGuidelineCoverage": false,
+      "evidenceRequirements": "Capture the goal and dated baseline/progress records, metric units, service boundary and target period. Explain changes in method or scope before comparing values; do not turn an ambition into a measured achievement.",
+      "assessmentScope": "Published goals and progress specifically for docs.wagtail.org as available in its current sustainability-considerations page and disclosure collection. Distinguish advice for Wagtail-powered websites and CMS-wide work from documentation-host-specific targets, boundaries and comparable results."
+    }
+  ],
+  "methodologyCoverage": {
+    "meaning": "Defined partial review methods, not executed checks or full-guideline conformance",
+    "catalogChecks": 43,
+    "catalogGuidelineGroups": 40,
+    "catalogPartialGuidelineGroups": 40,
+    "catalogFullGuidelineGroups": 0,
+    "selectedChecks": 29,
+    "selectedGuidelineGroups": 28,
+    "selectedPartialGuidelineGroups": 28,
+    "selectedFullGuidelineGroups": 0,
+    "totalWSGGuidelines": 71
+  },
+  "evidenceIndex": {
+    "staged.json:runs:0": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/0",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:1": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/1",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:2": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/2",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:3": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/3",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:4": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/4",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:5": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/5",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:6": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/6",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:7": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/7",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:runs:8": {
+      "artifact": "staged.json",
+      "jsonPointer": "/runs/8",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "staged.json:discovery:0": {
+      "artifact": "staged.json",
+      "jsonPointer": "/discovery/0",
+      "sourceSHA256": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a"
+    },
+    "probes.json:pages:0": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/0",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:1": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/1",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:2": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/2",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:3": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/3",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:4": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/4",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:5": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/5",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:6": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/6",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:7": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/7",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:pages:8": {
+      "artifact": "probes.json",
+      "jsonPointer": "/pages/8",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "probes.json:journeys:0": {
+      "artifact": "probes.json",
+      "jsonPointer": "/journeys/0",
+      "sourceSHA256": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672"
+    },
+    "disclosures.json:sites:0": {
+      "artifact": "disclosures.json",
+      "jsonPointer": "/sites/0",
+      "sourceSHA256": "494eaaf253f1f02b7a6e8a7e9c14a196bc0ef4cb60a4a512df53ed05751ece36"
+    },
+    "context.json:records:0": {
+      "artifact": "context.json",
+      "jsonPointer": "/records/0",
+      "sourceSHA256": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48"
+    },
+    "context.json:records:1": {
+      "artifact": "context.json",
+      "jsonPointer": "/records/1",
+      "sourceSHA256": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48"
+    },
+    "context.json:records:2": {
+      "artifact": "context.json",
+      "jsonPointer": "/records/2",
+      "sourceSHA256": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48"
+    },
+    "context.json:records:3": {
+      "artifact": "context.json",
+      "jsonPointer": "/records/3",
+      "sourceSHA256": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48"
+    },
+    "context.json:records:4": {
+      "artifact": "context.json",
+      "jsonPointer": "/records/4",
+      "sourceSHA256": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48"
+    },
+    "context.json:records:5": {
+      "artifact": "context.json",
+      "jsonPointer": "/records/5",
+      "sourceSHA256": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48"
+    },
+    "context.json:records:6": {
+      "artifact": "context.json",
+      "jsonPointer": "/records/6",
+      "sourceSHA256": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48"
+    },
+    "energy/manifest.json:pages:0": {
+      "artifact": "energy/manifest.json",
+      "jsonPointer": "/pages/0",
+      "sourceSHA256": "6dad1e9a8703f8811b9bca465dc4b0eba90eeb9b85ebce836e50cc26a689ff70"
+    },
+    "energy/manifest.json:pages:1": {
+      "artifact": "energy/manifest.json",
+      "jsonPointer": "/pages/1",
+      "sourceSHA256": "6dad1e9a8703f8811b9bca465dc4b0eba90eeb9b85ebce836e50cc26a689ff70"
+    },
+    "energy/manifest.json:pages:2": {
+      "artifact": "energy/manifest.json",
+      "jsonPointer": "/pages/2",
+      "sourceSHA256": "6dad1e9a8703f8811b9bca465dc4b0eba90eeb9b85ebce836e50cc26a689ff70"
+    }
+  },
+  "collectionReceipt": "receipt.json",
+  "skillSnapshot": "skills",
+  "reviewContract": "One row per check ID: checkId, guideline, outcome, evidenceIds, rationale, confidence, nextEvidence. Outcomes pass/fail/cantTell/inapplicable/untested. Cite actual packet evidence IDs and specific observations. Supply reviewer object with harness, model, reasoning. Preserve each contextual check's assessmentScope exactly in its review row; do not narrow or expand it, and keep missing observations within that scope unresolved. Explicitly explain applicability and unresolved evidence. Do not score yourself."
+}

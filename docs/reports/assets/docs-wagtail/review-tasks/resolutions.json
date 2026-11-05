@@ -1,0 +1,79 @@
+{
+  "resolutions": [
+    {
+      "issue": "evidence:partial-byte-rating-eligibility",
+      "decision": "applied",
+      "reason": "All initial captures retain partial labels and withheld ratings. The independent annual scenario keeps its partial-input boundary."
+    },
+    {
+      "issue": "evidence:failed-main-document-is-not-content-weight",
+      "decision": "applied",
+      "reason": "HTTP429 page measurements are unavailable. The opt-in annual artifact lists that excluded visit and uses eight successful documents, preserving raw evidence."
+    },
+    {
+      "issue": "evidence:search-journey-conflicting-observations",
+      "decision": "needs-new-evidence",
+      "reason": "Final review keeps journey/access unresolved and contrasts successful setup with the challenged fallback; request readiness-controlled reproduction, not a site-search fix."
+    },
+    {
+      "issue": "evidence:probe-state-representation-contamination",
+      "decision": "applied",
+      "reason": "Review excludes challenge comparisons; absence-based passes and comprehension were reconsidered before acceptance. No challenge UI is judged as documentation."
+    },
+    {
+      "issue": "evidence:phase-and-consent-interpretation",
+      "decision": "applied",
+      "reason": "No-banner phases are labeled after waiting; values stay cumulative. No consent or scroll savings claimed."
+    },
+    {
+      "issue": "evidence:coverage-does-not-establish-removable-code",
+      "decision": "needs-new-evidence",
+      "reason": "Unused-code remains unresolved; complete interaction coverage and source corroboration are required before deletion advice."
+    },
+    {
+      "issue": "evidence:qualitative-probe-coverage-limits",
+      "decision": "needs-new-evidence",
+      "reason": "Absence-based checks retain unknowns across missing states. Keyboard activation, print preview and reader comprehension need targeted follow-up."
+    },
+    {
+      "issue": "evidence:greenframe-summary-scope-and-boundary",
+      "decision": "applied",
+      "reason": "Report uses exact-URL median of three for three planned pages and distinguishes network and SWDM. Nine-page energy coverage was not requested by the accepted energy plan."
+    },
+    {
+      "issue": "evidence:contextual-policy-evidence-remains-bounded",
+      "decision": "retained-with-reason",
+      "reason": "Audience research and host goals remain unknown; lifecycle pass is limited to the declared release-linked applied example, without prescribing historic-content deletion."
+    },
+    {
+      "issue": "evidence:disclosure-discovery-is-not-absence",
+      "decision": "applied",
+      "reason": "Known sustainability advice is distinguished from host-specific disclosure and hosting proof; missing carbon.txt is a bounded discovery failure, not an emissions claim."
+    },
+    {
+      "issue": "claims:claims-document-eligibility",
+      "decision": "applied",
+      "reason": "Guideline reviewer rechecked clean matching states and preserved missing comparisons as unknown; renderer withholds failed initial navigation values."
+    },
+    {
+      "issue": "claims:claims-journey-outcomes",
+      "decision": "needs-new-evidence",
+      "reason": "Successful setup and challenged measured task remain separate; matched readiness-controlled reproduction is a follow-up."
+    },
+    {
+      "issue": "claims:claims-service-specific-disclosure",
+      "decision": "retained-with-reason",
+      "reason": "Host goals, disclosure scope and hosting proof remain unknown; missing carbon discovery is low-salience and does not drive a green-hosting flag."
+    },
+    {
+      "issue": "claims:claims-audience-research-gap",
+      "decision": "needs-new-evidence",
+      "reason": "Audience-needs remains unknown; request one research-to-decision record rather than repository access."
+    },
+    {
+      "issue": "claims:claims-bounded-lifecycle-evidence",
+      "decision": "retained-with-reason",
+      "reason": "Scoped pass cites release-maintenance rules, applied documentation removal and retained historical guidance; no organization-wide execution claim."
+    }
+  ]
+}

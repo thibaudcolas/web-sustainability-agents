@@ -1,0 +1,40 @@
+{
+  "executionMode": "native-subagents",
+  "reviewer": {
+    "harness": "Codex native subagents",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "roles": {
+    "evidence": {
+      "role": "evidence",
+      "taskSHA256": "7c6900191d2883fe53f7a63d388582c7075bddae88a88e0826d031679260e70f",
+      "resultSHA256": "738c63a14fa7b71808d29bdb9934de9d15cad8877a0c9a09b3add539db15c25f",
+      "packetSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+      "executionMode": "native-subagents"
+    },
+    "guidelines": {
+      "role": "guidelines",
+      "taskSHA256": "6adf4444db17122c733c73a36e21cd5c82b7b2510309bf2b20e018ff850d11c0",
+      "resultSHA256": "046e37618c4b1303237bdbc90ffebbc6625dcdc8169f8e589bc81d38ee82953d",
+      "packetSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+      "executionMode": "native-subagents"
+    },
+    "claims": {
+      "role": "claims",
+      "taskSHA256": "6e7bdf0e2f8e1039a57934ade4d64d32c89ceae593cffd189a13df8e54aabe8a",
+      "resultSHA256": "74376211a771f178706038b57b7c8f120fc5ca73a28fe828504d024dce732d48",
+      "packetSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+      "executionMode": "native-subagents"
+    }
+  },
+  "reconciliation": {
+    "resolutionsSHA256": "5406ecf919f35d6aafbe4a7ca57ba9d5d2f14b850e9d9de828e472d4ca74097f",
+    "acceptedSHA256": {
+      "evidence": "e4ff0744aa087f92467cc7345f1d17c64ed5c9582ed2f79754ca0429810fefc4",
+      "guidelines": "64de9063efd7f9458d7052735bbb529c6bd29e7d74267bc3e05c324a61137ab7",
+      "claims": "4dccaa9a671eebd4742ce50a90da641e38ad2e63c20452c20d07c63cd0c9b006"
+    },
+    "next": "Coordinator writes review.json, preserving unresolved evidence; workflow score validates the final review. This receipt validates coverage of responses, not their semantic correctness."
+  }
+}

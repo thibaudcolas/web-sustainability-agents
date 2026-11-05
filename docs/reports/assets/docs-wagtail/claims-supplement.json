@@ -1,0 +1,49 @@
+{
+  "role": "claims-supplement",
+  "site": "https://docs.wagtail.org",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "inputSHA256": {
+    "traffic.json": "21b41bb30d08d3eb6ee1aafde28d28fbfc0e377e387db5ed5ec4f48f6feb3cb4",
+    "annual.json": "56f5a14d9e3659ec6764595913ae9dde020cda794f4594830acf1f34d052ee25",
+    "session/staged.json": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a",
+    "session/energy/manifest.json": "6dad1e9a8703f8811b9bca465dc4b0eba90eeb9b85ebce836e50cc26a689ff70"
+  },
+  "observations": [
+    {
+      "id": "matched-origin-traffic",
+      "summary": "September 2026 exact-origin HTTPS CrUX record is found in coarse 5,000,000 bucket. The 572,851 annual pageviews scenario uses a bucket median calibrated on US government websites with 2025 analytics and December 2025 ranks. It is neither measured site traffic nor a forecast, with no calibrated site-level interval; no parent-domain substitution occurred."
+    },
+    {
+      "id": "swdm-arithmetic-and-scope",
+      "summary": "SWDM uses first recorded initial visits from eight successful document navigations, each weighted 0.125. The HTTP 429 documentation-guidelines run is explicitly excluded by excludeFailedPages. All included transfer inputs remain partial. Weighted 0.167253203325 g/view \u00d7 572,851 views \u00f7 1,000 = 95.81116477792956 kgCO2e/year; arithmetic and input digests match. The non-green hosting flag is an unknown-hosting modeling assumption, with 100% first visits and global model electricity factors. No DCR is assigned."
+    },
+    {
+      "id": "swdm-sensitivity",
+      "summary": "6.364607072935801\u2013276.5173832909202 kg/year represents all views at the least/most intensive sampled successful page, not a confidence interval or bounds on real emissions. Equal sample weights proxy an unknown actual page mix. The modeled operational and embodied browsing scope excludes a complete organizational/backend/build inventory."
+    },
+    {
+      "id": "greenframe-arithmetic-and-scope",
+      "summary": "The smaller energy sample contains home, tutorial and images only, three validated initial-load repetitions per URL. Equal weights across their client-device medians yield 0.0140626694774 Wh/view; \u00d7 572,851 \u00f7 1,000 = 8.055814272798068 kWh/year; \u00d7 494 gCO2e/kWh \u00f7 1,000 = 3.9795722507622457 kgCO2e/year. This is browser CPU/memory/disk/display operation only and excludes modeled network, remote servers, embodied emissions and subsequent reading. Values overlap SWDM device scope and must remain separate."
+    },
+    {
+      "id": "greenframe-laboratory-limit",
+      "summary": "Manifest retains 1280\u00d7800 Chromium initial navigation plus 3 seconds, browser/container lifecycle window, no baseline subtraction, sequential shared workstation, fixed 45 W CPU/14 W screen coefficients and normalized CPU counters. The 494 gCO2e/kWh factor is an assumed comparison factor, not observed audience electricity. Nine audited URLs, eight successful SWDM URLs and three energy URLs are distinct denominators."
+    }
+  ],
+  "issues": [
+    {
+      "id": "retain-model-and-coverage-labels",
+      "summary": "The calculations are internally consistent but depend on incomplete transfer, unknown page mix and visit mix, cross-population traffic calibration and a smaller laboratory energy sample. Numerical precision does not improve these assumptions.",
+      "requestedChange": "Present approximately 96 kgCO2e/year SWDM and, separately, 8.1 kWh/year / 4.0 kgCO2e/year GreenFrame only as explicit scenarios. Keep the failed 429 exclusion and eight-versus-three samples visible; retain the model, dataset month, calibration population, first-visit assumption and coverage caveats near the figures. Do not claim measured annual emissions, a DCR badge, a complete inventory or statistical bounds."
+    },
+    {
+      "id": "hypothetical-savings-only",
+      "summary": "The configured 10% reduction is a scale sensitivity at unchanged traffic, not demonstrated achievable savings.",
+      "requestedChange": "Label any percentage-reduction illustration hypothetical. Require matched before/after evidence and affected-traffic share before attributing annual savings to a specific finding; never add GreenFrame and SWDM results."
+    }
+  ]
+}

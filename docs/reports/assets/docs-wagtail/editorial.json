@@ -1,0 +1,225 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://docs.wagtail.org",
+  "reviewSHA256": "a96a6275fe1d814a5b22b83c4690b577a71390cd77d5ba61c9579c23878aa281",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "overview": "This audit sampled nine public English pages in Wagtail’s stable documentation and a responsive-image search task. Strengths include consistent navigation, compression, caching and release-linked maintenance: Wagtail 8.0 notes report removing deprecated USE_L10N guidance. The clearest repair is theme handling: the homepage and tutorial honor an existing device dark-mode preference when opened, but do not follow a change while already open.\n\nNetwork interruptions and security challenges limit conclusions. Eight initial visits reached intended pages; one returned HTTP 429, and all transfer totals are incomplete. The low scoped score includes unknowns and is not an overall quality grade. Four contextual checks cover selected public evidence about documentation structure, anonymous access, release maintenance and host goals.",
+  "nextSteps": [
+    "Coverage comprises selected aspects of 26 of 71 WSG guideline groups, without establishing full criteria or STAR conformance. Extend it first through the missing public tasks below, then through further contextual records.",
+    "First verify and repair live theme changes on the homepage and tutorial, including both device-theme directions and a reader’s manual choice.",
+    "Next repeat the public search-to-image-guide task after search is ready. Capture the different search routes and any security challenge, then revisit interrupted pages for complete initial transfers and matching feature comparisons.",
+    "Complete public keyboard and narrow-screen tasks, no-JavaScript reading comparisons and a tutorial print preview. Test screenshot legibility before trying smaller responsive images or deferred loading; measure the resulting complete task.",
+    "Follow successful search and version navigation before investigating script removal, later component loading or background-request changes. Initial activity alone does not show what can safely be removed.",
+    "Then review public documentation-service disclosures and hosting evidence. Optional owner records can resolve the selected reader-research decision, wider editorial review practice or host goals and progress; source access is not required to begin these follow-ups."
+  ],
+  "findings": [
+    {
+      "checkId": "preference-behavior",
+      "title": "Apply device theme changes while documentation stays open",
+      "summary": "The homepage and tutorial open in dark mode when the device already uses it. Changing the device from light to dark while either page is open leaves the page background white in the observed tests.",
+      "whyItMatters": "Readers who change their device theme during a session do not get the same behavior as readers who open the page afterward. The finding establishes a preference mismatch, without quantifying an energy saving.",
+      "action": "Update theme handling so an open page follows device changes unless the reader has made a manual choice. Verify both directions without reloading, preserving readable text and the reader’s manual setting."
+    },
+    {
+      "checkId": "journeys",
+      "title": "Resolve the differing search outcomes before choosing a fix",
+      "summary": "The setup walkthrough used embedded search to reach the responsive-image guide. The later measured attempt reached the separate search page and ended at a Cloudflare security challenge. A separate search-page visit succeeded; the reason for the different routes is unknown.",
+      "whyItMatters": "Finding the right guide is a central documentation task. These observations leave its reliability and normal resource use unresolved, rather than establishing a persistent search defect.",
+      "action": "Repeat the same anonymous desktop task after search is ready, recording the results panel, any separate search page and any challenge. Use the observed cause and repeatable completion to decide whether a site change is needed."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Validate smaller or deferred tutorial screenshots",
+      "summary": "The tutorial’s detailed screenshots explain the task and are already served as WebP despite .png filenames. Several 1280-pixel screenshots display at about 680 pixels on desktop, with later examples below the first screenful and no explicit deferred loading. The largest observed screenshot transfer was about 205 kB.",
+      "whyItMatters": "Images contribute to the tutorial’s downloads, but smaller versions must still show the interface details readers need. The audit has not established safe size reductions or savings from loading later images on demand.",
+      "action": "Compare the largest examples at desktop and narrow sizes and intended screen densities. Only if the details remain legible, test responsive image sizes and deferred loading below the first screenful, then measure transfer through the full reading task."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "title": "Separate documentation-host goals from CMS sustainability advice",
+      "summary": "The public sustainability guide gives useful methods for Wagtail-powered projects and describes CMS work. It does not establish docs.wagtail.org-specific goals, a comparable baseline or dated progress within the captured scope.",
+      "whyItMatters": "Readers need a clear service boundary to understand what a sustainability claim covers. Advice about websites built with Wagtail cannot establish the documentation host’s own results.",
+      "action": "If publishing host performance, state a documentation-service metric, boundary and target period, with a dated baseline and comparable progress. Explain method changes and link supporting evidence."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Check interruptions on the remaining pages",
+      "summary": "The homepage, tutorial and sustainability page allowed quiet reading in the observed states, without overlays or autoplay. Other sampled pages could not all be checked in their normal reading state.",
+      "nextStep": "Revisit the missing normal pages and follow their reading and search tasks, recording any interruption and whether it helps the reader."
+    },
+    {
+      "checkId": "choice",
+      "title": "No consequential accept or reject choice was observed",
+      "summary": "The captured reading and search route did not present consent, purchase or subscription decisions. Navigation and the theme control do not make this check applicable.",
+      "nextStep": "Review wording, defaults and visual prominence if a consequential choice is added to this route."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Check the remaining articles with their intended readers",
+      "summary": "The homepage names useful starting points, the tutorial gives ordered steps, and the responsive-image guide explains its examples. Several other article observations were missing or interrupted, and no reader study was supplied.",
+      "nextStep": "First read the remaining sampled articles in normal conditions. For a broader comprehension judgment, ask newcomers to complete a documentation task and explain the result in their own words."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Keep navigation names consistent as the documentation grows",
+      "summary": "The sampled documentation repeats names such as Getting started, Tutorial, Usage guide and Reference, alongside consistent breadcrumb, theme and source controls. This supports naming consistency in the sample.",
+      "nextStep": "Use these established names when adding a new section or interactive control, and compare it with the existing navigation."
+    },
+    {
+      "checkId": "motion",
+      "title": "Check motion during complete reading tasks",
+      "summary": "No active animation or media playback appeared in the normal homepage, tutorial and sustainability observations, including reduced-motion settings. Missing normal states and later interactions leave the wider sample unresolved.",
+      "nextStep": "Complete the missing page observations and exercise any moving content. Check its purpose and controls, including with the device set to reduce motion."
+    },
+    {
+      "checkId": "notifications",
+      "title": "Check alerts beyond the captured reading states",
+      "summary": "No notification permission request or unsolicited alert was recorded on the clean reading pages. Browser permission was already denied, and several other page states were unavailable.",
+      "nextStep": "Check the remaining normal pages and complete tasks with notification permission initially undecided, recording any request and its value to the reader."
+    },
+    {
+      "checkId": "documents",
+      "title": "Inspect a complete tutorial print preview",
+      "summary": "Print observations retained the reading text and tutorial illustrations, with several navigation regions still visible. Without a paginated preview, the audit cannot judge clipping or avoidable printed pages.",
+      "nextStep": "Preview the full tutorial for printing and check page count, repeated navigation, code clipping and illustration readability before changing print styles."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Check script use through search and navigation before removing code",
+      "summary": "Some script and style code was unused shortly after the homepage and tutorial opened. Search, version navigation and later interactions were not fully covered, so this does not identify code that is safe to remove.",
+      "nextStep": "Record script use through successful search, version selection, menus and copy controls. Investigate only code still unused across these tasks."
+    },
+    {
+      "checkId": "components",
+      "title": "Check which documentation tools can load later",
+      "summary": "Read the Docs tools load when the page opens, including search-related code. The audit did not establish which parts could safely wait until the reader needs them.",
+      "nextStep": "Follow search and version navigation to identify what each tool needs. Try loading a component later only when its controls remain available and usable."
+    },
+    {
+      "checkId": "layout",
+      "title": "Exercise the narrow-screen menu and reading content",
+      "summary": "The homepage, tutorial and sustainability page retained their headings without horizontal page overflow at the observed desktop and narrow widths. The narrow menu was not exercised, and several other page observations met security challenges.",
+      "nextStep": "On clean pages, open the narrow menu, search, and read wide code examples and images. Complete one real mobile documentation task before extending the compatibility claim."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "No resource-intensive visitor choice was established",
+      "summary": "Reading documentation and locating image guidance did not expose a choice such as media quality or a bulk download. The sample therefore does not establish a need for impact labels on visitor controls.",
+      "nextStep": "Reassess if a future task includes a consequential download, media-quality setting or hosted-environment activation."
+    },
+    {
+      "checkId": "journeys",
+      "title": "Check why the two search visits took different routes",
+      "summary": "The setup walkthrough reached the responsive-image guide through embedded search. The later measured attempt instead reached the separate search page and ended at a security challenge; a separately loaded search page also succeeded. The cause remains unknown.",
+      "nextStep": "Repeat the same search after its controls are ready. Record embedded results, any separate search page and security challenge, then establish reliable completion before prescribing a site change."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Test smaller or deferred tutorial screenshots for readability",
+      "summary": "The tutorial uses useful screenshots with descriptive alternative text. They are already delivered as WebP, although their filenames end in .png. Several large screenshots appear below the first screenful without explicitly deferred loading; safe smaller versions and transfer savings have not been established.",
+      "nextStep": "Compare the largest screenshots at desktop and narrow sizes, including high-density screens. If details stay legible, test responsive image sizes and deferred loading for later examples, then measure the complete page again."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "Check whether icon controls remain clear when fonts fail",
+      "summary": "Reading text uses system fonts. Two downloaded icon-font variants also load, but the audit did not test whether search, theme, menu and source controls remain understandable if those fonts are unavailable.",
+      "nextStep": "Block the icon fonts and inspect those controls. Identify the icons actually needed before considering a smaller font or replacement."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "Check names and structure on the remaining normal pages",
+      "summary": "The clean homepage, tutorial and sustainability page declare English, use a main reading region and have descriptive headings. Search, menu and copy controls have names. Comparable checks were unavailable on several other pages; this is not a complete accessibility assessment.",
+      "nextStep": "Check the actual documentation pages that were interrupted, including the names of controls inside embedded search. Follow up with task-based accessibility testing."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Clarify which versioned page should be preferred in search results",
+      "summary": "Clean pages have descriptive titles including the documentation version. No preferred-page URL was declared in the captured metadata, but the intended relationship between stable and numbered versions was not established.",
+      "nextStep": "Decide how stable and numbered versions should appear in search results. Add preferred-page metadata only where it correctly identifies equivalent content, and check the remaining clean pages."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Apply device theme changes while the page stays open",
+      "summary": "The homepage and tutorial open in dark mode when the device already requests it. When the device changes from light to dark while either page remains open, the observed page keeps its white background.",
+      "nextStep": "Make open pages follow device theme changes when the reader has not chosen a manual theme. Verify light-to-dark and dark-to-light changes without reloading, while retaining readable content and any manual choice."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Complete the reading check with JavaScript disabled",
+      "summary": "Core text and navigation remained available without JavaScript on the homepage, tutorial, reference, documentation-guidelines and release pages. Security challenges and a failed image-guide visit prevented matching comparisons across the full sample.",
+      "nextStep": "Obtain normal reading pages with and without JavaScript for the unresolved articles, then compare their main content and navigation. Test search separately."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "Check background requests through a successful search task",
+      "summary": "The homepage and tutorial initially requested tool settings and page analytics, without an observed repeating polling loop. The short observation and incomplete search task do not establish redundant requests or their server cost.",
+      "nextStep": "Follow a successful reading and search task, followed by a short idle period. Identify each background request and its reuse needs before proposing removal."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Retain the sampled public caching policies",
+      "summary": "Successful documentation responses allow public reuse and provide validation information for styles, scripts and media. These policies support caching, but the audit did not measure a return visit or offline reading.",
+      "nextStep": "Measure a repeat visit before claiming saved transfer. Extend reuse periods only where content versioning and updates remain reliable."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Retain compressed delivery of text assets",
+      "summary": "The sampled successful HTML and styles use gzip compression, while core scripts use Brotli and the larger Read the Docs script uses gzip. No specific compression repair is supported by these responses.",
+      "nextStep": "Recheck representative HTML, styles and scripts after a hosting or delivery-configuration change."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "Verify the visible focus path through embedded search",
+      "summary": "The first keyboard steps recorded the skip link and documentation link with a focus outline. Later observations could not identify the active control inside embedded search, so they do not establish its visible focus path or a keyboard trap.",
+      "nextStep": "Watch forward and reverse keyboard navigation, including the skip link, search and menu. Confirm the focused control is visible, named and operable at each step."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "Connect sustainability information to this documentation service",
+      "summary": "The sustainability guide offers methods and advice for Wagtail-powered projects. The captured public information did not establish which impacts and mitigation apply specifically to docs.wagtail.org; it does not prove that no relevant policy exists elsewhere.",
+      "nextStep": "If communicating this service’s sustainability, link a statement that identifies the documentation host, the impacts it covers and the actions taken."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "Consider a discoverable carbon.txt for the documentation host",
+      "summary": "The two standard carbon.txt locations returned 404, with no alternative location or delegation discovered. This is a limited discovery finding and says nothing about the host’s emissions or energy mix.",
+      "nextStep": "If this discovery mechanism is useful for the service, publish a valid file with accurate organization and hosting relationships, then verify its linked records."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Verify hosting evidence before making a green-hosting claim",
+      "summary": "The captured records did not connect this origin to independently corroborated operational energy or emissions evidence. Read the Docs resource addresses and references to sustainability partnerships do not establish the hosting energy mix.",
+      "nextStep": "First look for public provider and service evidence tied to this origin. If needed, ask the owner for the service relationship and dated supporting operational evidence."
+    },
+    {
+      "checkId": "audience-needs",
+      "title": "Connect the four documentation modes to a reader-research example",
+      "summary": "The public policy explains tutorial, how-to, reference and explanation modes and their intended reader needs. Within this selected decision, no record showed how reader involvement informed or confirmed the structure; research may exist outside the sample.",
+      "nextStep": "Look for one public research-to-decision example. If none is public, an optional owner-supplied record can identify the readers, constraints, findings and resulting decision without requiring repository access."
+    },
+    {
+      "checkId": "access-barriers",
+      "title": "Confirm repeatable anonymous access to the image guide",
+      "summary": "An English desktop walkthrough reached the responsive-image guide without login or personal-data submission, using pointer interaction and text entry. A later measured attempt met a security challenge, leaving reliable completion unresolved within that scope.",
+      "nextStep": "Repeat this public route and record whether a challenge can be completed or a usable alternative reaches the guide. Assess keyboard, assistive-technology, constrained-network and other-language access as separate tasks."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "title": "Keep release-linked maintenance and useful historical guidance",
+      "summary": "Public guidance calls for removing short-lived version notes after two releases and describes release responsibilities. Wagtail 8.0 notes report removing deprecated USE_L10N setting guidance, while the v7.0 image guide remains accessible. This supports the selected release-linked example, rather than a claim about every page.",
+      "nextStep": "Continue updating current guidance while retaining useful versioned access. To assess wider editorial effectiveness, choose a specific article and connect its review date to an applied update, archive or retention decision."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "title": "Distinguish host goals from advice for Wagtail projects",
+      "summary": "The sustainability page recommends methods for Wagtail-powered websites and describes CMS work. The sampled records do not establish a docs.wagtail.org target, comparable baseline or dated progress; internal goals may exist outside this sample.",
+      "nextStep": "If reporting documentation-host performance, identify one service-specific metric, boundary and target period, with dated baseline and progress measured on a comparable basis."
+    }
+  ]
+}

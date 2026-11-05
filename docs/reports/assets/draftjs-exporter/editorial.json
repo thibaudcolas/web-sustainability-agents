@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://wagtail.github.io",
+  "reviewSHA256": "046e37618c4b1303237bdbc90ffebbc6625dcdc8169f8e589bc81d38ee82953d",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "overview": "This public-site audit covers seven selected Draft.js exporter documentation pages under /draftjs_exporter/ and a search-to-installation task. Other projects on `wagtail.github.io` are outside scope. Seven initial loads were attempted; five succeeded with incomplete transfer accounting. Failed loads are unavailable, and carbon ratings are withheld. Missing page states and interaction evidence limit the scoped score and leave substantial uncertainty.\n\nThe clearest small fix is to correct sitemap requests from four nested pages that return 404. The observed setup task successfully reached installation and a complete first-render example without account or payment barriers. System fonts, a small shared logo, compression and cache policies are useful strengths; search-index deferral still needs investigation.",
+  "nextSteps": [
+    "Complete missing paired normal, narrow, preference and no-JavaScript states, especially the API and configuration reading comparisons. Treat navigation transport errors as unavailable observations.",
+    "Verify visible focus and the complete keyboard search-to-installation route; exercise narrow menu and search controls and check long code content in a real mobile task if device coverage is required.",
+    "Obtain complete search-worker transfer accounting and clean linked initial visits before comparing page weights, assigning carbon ratings or evaluating a search-loading change. Repeat the automated installation route if measured completion and timing are needed.",
+    "If further owner context would be useful, add represented-user research, one bounded exporter continuation decision, and a release-linked documentation review rule with an applied maintenance record. Retain useful historical upgrade guidance.",
+    "For any future annual project estimate, obtain path-specific visits or an evidenced origin-to-project allocation; keep transfer-based emissions and separately modeled client energy distinct.",
+    "The audit checks selected aspects of 24 of 71 guideline groups; full criteria and STAR conformance remain outside this review. Broaden qualitative coverage beyond the selected service, access and lifecycle checks using public records or concrete owner examples."
+  ],
+  "findings": [
+    {
+      "checkId": "api-requests",
+      "title": "Resolve sitemap requests from nested documentation pages",
+      "summary": "The root sitemap at /draftjs_exporter/sitemap.xml returns XML with HTTP 200. Four nested pages—Content state, configuration, API and alternative engines—each request their own page-relative sitemap.xml and receive roughly 3.9 kB of 404 HTML. This is a small, observed request-path defect.",
+      "whyItMatters": "These completed error responses transfer data without supplying the requested sitemap. The evidence does not quantify backend cost, emissions savings or an effect on task completion, so this is a low-priority repair.",
+      "action": "Resolve the sitemap URL against the documentation root. Verify that home and all four nested pages retrieve the intended XML and that useful search and release requests still work."
+    },
+    {
+      "checkId": "components",
+      "title": "Check whether deferring the search index improves first load",
+      "summary": "The successful homepage run loads a roughly 64 kB compressed search index during initial loading. Search was useful in the completed setup task. The audit has not demonstrated safe on-demand activation, and search-worker transfer accounting is incomplete.",
+      "whyItMatters": "Deferral could change when data is loaded, but its value depends on actual search use and result readiness. The captured index size does not establish removable bytes or an achievable saving.",
+      "action": "Treat this as a low-priority investigation if first-load transfer matters. Compare on-demand activation with current behavior under matched conditions, including immediate typing, complete worker accounting, offline search and responsiveness. Adopt a change only after showing a useful measured improvement."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "title": "Document release-linked review of useful migration guidance",
+      "summary": "The migration guide provides concrete compatibility advice and retained upgrade paths. The captured public material does not identify an explicit review schedule, responsible owner or applied review record.",
+      "whyItMatters": "A lightweight release-linked review record would help maintainers keep current advice accurate while retaining instructions that readers on older versions still need. The evidence gap does not establish absent maintenance.",
+      "action": "Record who reviews documentation with a release, when that review is due, and one actual review decision. Preserve historical upgrade guidance and label its relationship to current configuration. This is low-priority follow-up."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Check the remaining reading states for interruptions",
+      "summary": "The captured installation, Content state, API and migration reading states show no autoplay or active animation. Search supports documentation discovery, and the completed installation walkthrough encountered no extra account or payment steps. Missing normal page observations prevent a conclusion across the full sample.",
+      "nextStep": "Capture the missing normal reading states, then check whether any prompts interrupt the documentation task."
+    },
+    {
+      "checkId": "choice",
+      "title": "No consequential accept-or-reject choice was in scope",
+      "summary": "The sampled task involves reading and search, with no observed consent, subscription, purchase or personal-data submission choice. Technical engine recommendations do not create a comparable transaction choice.",
+      "nextStep": "Review wording, defaults and visual prominence if consequential consent or payment choices are introduced."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Keep the direct route from purpose to working example",
+      "summary": "The homepage explains Python ContentState-to-HTML conversion and points newcomers to Content state and Getting started. Installation includes the package command and complete first-render example; engine and migration guidance explain concrete tradeoffs and upgrade actions. This supports the sampled Python-developer audience.",
+      "nextStep": "If the audience broadens, check these explanations with developers unfamiliar with Draft.js and its data model."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Keep shared navigation names consistent",
+      "summary": "Clean captured states across the seven pages use shared navigation names and consistent Search and Clear controls. This supports consistency within the sample; it does not establish a documented design system or every interaction state.",
+      "nextStep": "Use the existing navigation names and control labels when extending the documentation."
+    },
+    {
+      "checkId": "motion",
+      "title": "Check motion during the missing states and interactions",
+      "summary": "No active animation or media playback appears in the successful desktop, narrow and reduced-motion reading observations. Short quiet observations and missing normal page states leave transitions and later interactions unresolved.",
+      "nextStep": "Complete the missing normal states and exercise any actual motion before judging its purpose, controls or reduced-motion behavior."
+    },
+    {
+      "checkId": "notifications",
+      "title": "Complete the check for unsolicited alerts",
+      "summary": "The observed states recorded no notification permission requests or unsolicited notification flow. Permission was denied in the browser, and some normal page observations are missing, so this does not cover every possible notification state.",
+      "nextStep": "Check alerts and permission requests in the remaining normal states and document their user purpose if any appear."
+    },
+    {
+      "checkId": "documents",
+      "title": "Inspect a real print preview before changing print styles",
+      "summary": "No downloadable document links were recorded in the observed states. Print emulation preserves installation text and removes its navigation, while API and migration states retain navigation regions. Without a paginated preview, these regions do not establish wasted pages, clipping or duplication.",
+      "nextStep": "Inspect API and migration print previews with real content, checking code and upgrade steps before adjusting print styles."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Exercise interactive features before removing code",
+      "summary": "Initial-load coverage includes unexecuted JavaScript ranges and unused CSS rules. These source positions do not represent removable download bytes, and later search, navigation and code-copy tasks were not covered sufficiently to justify removal.",
+      "nextStep": "Capture representative search, navigation and code-copy interactions and establish which code they need before proposing a smaller bundle."
+    },
+    {
+      "checkId": "components",
+      "title": "Check whether search-index deferral would help readers",
+      "summary": "The homepage initially loads a roughly 64 kB compressed search index alongside the documentation bundle. Search successfully supported the setup task. Incomplete worker transfer accounting and the absence of a tested on-demand alternative leave safe deferral and any savings unproven.",
+      "nextStep": "If first-load transfer is a priority, compare search activation and immediate typing under matched conditions with complete worker accounting; check result readiness, offline search and responsiveness before adopting a change."
+    },
+    {
+      "checkId": "layout",
+      "title": "Exercise search and navigation at narrow widths",
+      "summary": "Captured installation, Content state, API and migration pages retain their headings and reading content without reported document overflow at desktop and narrow widths. Narrow menu and search controls were not exercised, and paired states are missing for some pages.",
+      "nextStep": "Complete desktop/narrow comparisons, exercise narrow navigation and search, and inspect long API and code content; use a real mobile task before making device-compatibility claims."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "No consequential environmental choice was established",
+      "summary": "The scoped visitor reads installation and usage guidance. No high-transfer media setting, bulk export or comparable web-service choice was established. Engine guidance explains software tradeoffs without a measured environmental comparison.",
+      "nextStep": "Reassess if the service introduces consequential resource-use choices; support any environmental comparison with a common workload and scope."
+    },
+    {
+      "checkId": "journeys",
+      "title": "The observed search-to-installation task completed",
+      "summary": "The timestamped setup walkthrough entered getting started in search, selected its result and reached the installation command plus complete first-render example. The later automated measurement stopped at initial navigation with ERR_NETWORK_CHANGED before any search action, leaving measured timing and completion unavailable.",
+      "nextStep": "Repeat the same route in a clean linked measurement if completion reliability or timing is needed; keep navigation transport errors distinct from search behavior."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Keep the small shared logo proportionate",
+      "summary": "Clean reading states use the same small PNG logo without heavy article images or video. The observed logo is a modest shared resource; the absence of responsive image variants does not establish a worthwhile optimization.",
+      "nextStep": "Check any future article images at their intended display sizes and pixel densities. The present logo is a low-value optimization target."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "Retain readable system-font delivery",
+      "summary": "Observed typography uses system fonts with Helvetica, Arial and sans-serif fallbacks. FontFace lists are empty and the successful homepage resource sample contains no web-font responses, supporting delivery without external font downloads for the sampled English text.",
+      "nextStep": "Check fallback readability and character coverage if supported languages or typography requirements change."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "Keep meaningful page structure and control names",
+      "summary": "Each sampled page has at least one clean state with English language metadata, one main region and a descriptive primary heading. Search and Clear have explicit labels, navigation sections are named, and copy buttons have a Copy to clipboard title. This bounded structure-and-naming check is not a full accessibility assessment.",
+      "nextStep": "For a broader assessment, verify copy-control names in the accessibility tree and inspect the API heading hierarchy and complete interactions."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Maintain descriptive metadata for published documentation paths",
+      "summary": "Clean states provide content-specific titles, purpose-specific descriptions and absolute self-canonical URLs under /draftjs_exporter/. No structured-data blocks were declared. These observations apply to the sampled exporter pages.",
+      "nextStep": "Keep canonical URLs aligned with published paths and validate any structured data introduced later."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Establish the intended theme behavior",
+      "summary": "Successful desktop and dark-preference states remain light while retaining reading content. No active motion was observed. The evidence does not establish an offered dark theme or a requirement to follow the device setting, so the fixed light appearance alone does not demonstrate a defect.",
+      "nextStep": "Establish the intended theme policy and controls; if device-theme following is intended, verify both initial loading and changes while a page remains open."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Complete the no-JavaScript reading comparison",
+      "summary": "Fresh no-JavaScript states retain reading text, headings and navigation for home, installation, Content state, alternative engines and migration. Configuration and API navigations encountered ERR_NETWORK_CHANGED, leaving those comparisons unavailable rather than demonstrating a JavaScript dependency.",
+      "nextStep": "Capture clean no-JavaScript configuration and API pages and compare their full reading content and navigation with matching normal states."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "Resolve sitemap requests from nested documentation pages",
+      "summary": "The documentation-root sitemap returns XML successfully. Content state, configuration, API and alternative-engine pages each request a page-relative sitemap.xml and receive roughly 3.9 kB of 404 HTML. These four completed error requests are a demonstrated local request defect; visitor-task impact and backend cost were not measured.",
+      "nextStep": "Resolve sitemap fetching against /draftjs_exporter/ and verify root and nested pages retrieve the intended XML without new failed requests."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Retain the observed public caching and validation policy",
+      "summary": "Successful reusable first-party scripts, styles, images and search-index responses expose ten-minute cache lifetimes and ETags. Public GitHub API responses expose a one-minute public cache lifetime and ETags. These headers support bounded reuse or validation; warm reuse and offline behavior were not measured.",
+      "nextStep": "Use matched warm-load observations before claiming saved transfer. Consider longer lifetimes only where versioned assets and hosting controls support them."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Keep compression on successful text responses",
+      "summary": "Successful material HTML, CSS, JavaScript, search-index JSON and GitHub API responses use gzip. Worker accounting gaps and failed page navigations limit the scope of this finding; they do not establish a compression defect.",
+      "nextStep": "Check unobserved successful responses if expanding the claim; no specific compression repair is established by this sample."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "Verify focus through search and the complete task",
+      "summary": "Short Tab traces reach skip/home links, Search where initialized, the repository link and task navigation in a meaningful sequence. Search focus styling and an intermediate dialog state were not captured well enough to verify discernible focus. A complete keyboard route or trap was not established.",
+      "nextStep": "Visually verify focus on the skip link, Search input and dialog controls, then complete the installation route with forward and reverse keyboard traversal."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "Identify any exporter-specific impact statement",
+      "summary": "The homepage explains the library purpose but supplies no captured sustainability impact or mitigation statement. Bounded origin discovery also found no usable statement at its sampled routes. This leaves a service-linked disclosure unresolved and does not establish that no policy exists elsewhere.",
+      "nextStep": "If disclosure is intended, provide a public statement explicitly covering /draftjs_exporter/ and explaining its web-service impact and mitigation scope."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "Coordinate carbon.txt discovery with the origin owner if useful",
+      "summary": "The sampled origin-root and well-known carbon.txt routes returned 404, with no captured discovery or delegation relationship. A parseable service-related file could not be established through those routes. This scoped absence provides no conclusion about emissions levels or other projects on the origin.",
+      "nextStep": "If useful, coordinate a correctly scoped carbon.txt relationship with the origin owner and validate its declared version, schema and supporting evidence."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Match hosting claims to this documentation service",
+      "summary": "The `github.io` origin and response routes identify the delivery context. No retrieved service-specific sustainability record or independent operational evidence establishes renewable-energy, hardware or emissions performance for the exporter documentation.",
+      "nextStep": "If making a sustainable-hosting claim, supply a dated provider record with independently corroborated operational scope and a clear relationship to this origin and project path."
+    },
+    {
+      "checkId": "service-necessity",
+      "title": "Document the bounded decision to maintain the exporter capability",
+      "summary": "The homepage explains a Python/Wagtail/Django conversion need, and alternative-engine guidance describes dependencies, speed, sanitization and output stability. This supports purpose and technical tradeoffs. It does not complete a documented evaluation of user desirability, ongoing viability and credible capability-level alternatives or reuse.",
+      "nextStep": "If resolving this check is useful, supply one creation or continuation decision connecting user need, maintenance resources, feasibility and considered alternatives to the chosen exporter capability."
+    },
+    {
+      "checkId": "access-barriers",
+      "title": "Keep installation guidance openly reachable",
+      "summary": "The observed anonymous English desktop task used keyboard text entry and pointer result selection to reach installation and the first-render example without an account, payment, personal-data submission or external navigation. This is one successful bounded task, excluding keyboard-only, assistive-technology, geographic and representative-user claims.",
+      "nextStep": "Obtain a clean linked run for measured reliability. Extend to other represented users and constraints only when broadening the declared assessment scope."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "title": "Record review of useful migration and compatibility guidance",
+      "summary": "The migration guide retains concrete upgrade instructions from earlier releases alongside current compatibility guidance. This is useful applied maintenance content. Date labels and release sections do not establish an explicit review schedule, ownership or a recorded review decision.",
+      "nextStep": "Document a release-linked review rule, responsible owner and one applied review decision, keeping historical upgrade paths discoverable and clearly distinguished from current configuration."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://docs.wagtail.org",
+  "createdAt": "2026-11-05T08:06:14.975327+00:00",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "reviewSHA256": "a96a6275fe1d814a5b22b83c4690b577a71390cd77d5ba61c9579c23878aa281",
+  "inputsSHA256": {
+    ".agents/skills/sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    ".agents/skills/sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    ".agents/skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    ".agents/skills/sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa",
+    ".audit-work/docs-wagtail/session/review.json": "a96a6275fe1d814a5b22b83c4690b577a71390cd77d5ba61c9579c23878aa281",
+    ".audit-work/docs-wagtail/scored-session/review.json": "a96a6275fe1d814a5b22b83c4690b577a71390cd77d5ba61c9579c23878aa281",
+    ".audit-work/docs-wagtail/scored-session/scores.json": "e658baf3d9af53843391760f3273df361487243c0ff301d4e0fecb98c0628fe9",
+    ".audit-work/docs-wagtail/session/packet.json": "8c129140084d8d89f25e66eb3e5312d4e89a892dd43a306d2feacb9d1e062e5e",
+    ".audit-work/docs-wagtail/session/rubric.json": "1d01d49ac12b21d5c9564dae85b845328db111653ae078db161363e561ba3d35",
+    ".audit-work/docs-wagtail/session/probes.json": "bf11d6abbdeb3eeded0201c02218ce820962e5bae68a907fa840b2b4d4fb2672",
+    ".audit-work/docs-wagtail/session/staged.json": "1cdef6f57982849ae9e20890192747cc7b96ff6f9979525b744babd9cc2d346a",
+    ".audit-work/docs-wagtail/session/context.json": "777f3efe05e91784fab9fb2c22d2aa9298ee0cb043f112664c92202bb50a9f48",
+    ".audit-work/docs-wagtail/session/source.json": "d60112f1cef94c1226bdfdc8724d51aed1c1d65650407ba41c7aa98dddcbffb3",
+    ".audit-work/docs-wagtail/review-tasks/evidence.result.json": "73565c7b65c0eb9fe46c6ce027b9178878a77366d86bcf112bec9de78f8e601a",
+    ".audit-work/docs-wagtail/review-tasks/claims.result.json": "aa303410aa6d2cab91c66f36870ed39ba33a30d96d4ad8f1acbc4c70638b11a3",
+    ".audit-work/docs-wagtail/review-tasks/resolutions.json": "0f78895fec9c76a0acb9264ee261c7723aee6e5f71e22d79b1c0411a25a9bc52",
+    ".audit-work/docs-wagtail/screenshots-reviewed/manifest.json": "cf7cd211c29d6c52dd6d2c5f965825224f5893ca81d887e161f31cd7471d50be"
+  },
+  "output": {
+    "file": "editorial.json",
+    "sha256": "f8b949bc5c0d776ce6ea284e0d83587acbfb7759f26bd8179bc5baccbfe041dd"
+  },
+  "validation": {
+    "checkCount": 29,
+    "everyReviewCheckExactlyOnce": true,
+    "topFindingOrderPreserved": true,
+    "canonicalReviewMatchesOriginalBytes": true,
+    "editorialSchema": "passed (all supplied schema constraints)",
+    "rendererEditorialValidator": "passed",
+    "inputAndOutputDigests": "passed"
+  },
+  "handoff": {
+    "status": "editorial-written-awaiting-render-and-page-review",
+    "canonicalSession": ".audit-work/docs-wagtail/scored-session",
+    "illustrations": ".audit-work/docs-wagtail/screenshots-reviewed/manifest.json",
+    "nextAction": "Coordinator renders with the scored session and calculation supplements, then previews and publishes inspected artifacts."
+  },
+  "limitations": "Editorial pass used existing frozen public evidence and review resolutions. No new collection, browsing, source inspection, rendering or themed-page review was performed in this pass. Writer settings are the actual settings of this native Codex subagent; no separate host trace was created."
+}

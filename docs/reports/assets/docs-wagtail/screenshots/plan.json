@@ -1,0 +1,20 @@
+{
+  "origin": "https://docs.wagtail.org",
+  "captures": [
+    {
+      "id": "tutorial-screenshot",
+      "url": "https://docs.wagtail.org/en/stable/getting_started/tutorial.html",
+      "selector": "img[src$=\"tutorial_6.png\"]",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Wagtail tutorial showing an annotated page editor screenshot alongside instructions.",
+      "caption": "Detailed screenshots explain the editing steps in the tutorial.",
+      "checkIds": [
+        "media-delivery"
+      ]
+    }
+  ]
+}

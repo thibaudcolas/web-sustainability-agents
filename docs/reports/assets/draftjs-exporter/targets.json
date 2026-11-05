@@ -1,0 +1,81 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://wagtail.github.io/draftjs_exporter/",
+      "task": "Understand the exporter purpose and choose the next documentation route",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "getting-started",
+      "url": "https://wagtail.github.io/draftjs_exporter/getting-started/",
+      "task": "Find installation instructions and a complete first-render example",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "content-state",
+      "url": "https://wagtail.github.io/draftjs_exporter/content-state/",
+      "task": "Understand the ContentState data model through worked examples",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "configuration",
+      "url": "https://wagtail.github.io/draftjs_exporter/reference/configuration/",
+      "task": "Configure block, style and entity output mappings",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "api",
+      "url": "https://wagtail.github.io/draftjs_exporter/reference/api/",
+      "task": "Look up API parameters and behavior in the long reference page",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "alternative-engines",
+      "url": "https://wagtail.github.io/draftjs_exporter/guides/alternative-engines/",
+      "task": "Compare supported rendering engines and dependencies",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "migration-guide",
+      "url": "https://wagtail.github.io/draftjs_exporter/migration-guide/",
+      "task": "Find version-specific upgrade and compatibility guidance",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ]
+}

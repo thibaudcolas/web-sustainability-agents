@@ -1,0 +1,585 @@
+{
+  "rubricSHA256": "522bace9f23e6615a94b2129a331fde80cd716fa0362685ed7d31de471489873",
+  "sourceSHA256": {
+    "staged.json": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de",
+    "probes.json": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df",
+    "disclosures.json": "9249745688eb449397d126b48613e3e746656782424b3e155a364eefe4c82185",
+    "source.json": "0c34f341d8f42abe2df05e51c96463cea6b835ace82b671619c04ff418ed1910",
+    "context.json": "add7db56972ec49be923d1b7808ed22ccc246409353568e9e2e771fdebd9ba0a",
+    "energy/manifest.json": "ba5850002674921e07d3bf693ec4066d9413a70da42f065112e1f0393d48ef51"
+  },
+  "reviewFileSHA256": "046e37618c4b1303237bdbc90ffebbc6625dcdc8169f8e589bc81d38ee82953d",
+  "reviews": [
+    {
+      "site": "https://wagtail.github.io",
+      "packetSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+      "reviewer": {
+        "harness": "Codex native subagent",
+        "model": "gpt-6.1-sol",
+        "reasoning": "high"
+      },
+      "rows": [
+        {
+          "checkId": "distraction",
+          "guideline": "2.5",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6",
+            "context.json:records:0"
+          ],
+          "rationale": "The rendered installation, content-state, API and migration reading states show no autoplay media or active animations. The small search dialog/prompt is part of documentation discovery, not an unrelated interruption. The contextual installation walkthrough completed without an account, payment or extra fields. This supports the observed reading/search states, not all future dialogs. However, this does not resolve the entire declared page sample: some normal JavaScript-enabled observations are missing or blocked, so quiet successful states cannot stand in for those unobserved states.",
+          "confidence": "medium",
+          "nextEvidence": "Capture the missing normal documentation states, then review task interruptions and useful prompts across the declared sample."
+        },
+        {
+          "checkId": "choice",
+          "guideline": "2.6",
+          "outcome": "inapplicable",
+          "evidenceIds": [
+            "context.json:records:0",
+            "context.json:records:1",
+            "probes.json:pages:2"
+          ],
+          "rationale": "The sample contains documentation navigation and search rather than consent, subscription, purchase or comparable accept/reject choices. The contextual route explicitly encountered no account/payment/personal-data fields. Engine recommendations are technical documentation; their tradeoffs are assessed under service-necessity rather than treating them as manipulative transaction controls.",
+          "confidence": "medium",
+          "nextEvidence": "Review wording and visual accept/reject paths if consequential consent or payment choices enter scope."
+        },
+        {
+          "checkId": "comprehension",
+          "guideline": "2.7",
+          "outcome": "pass",
+          "evidenceIds": [
+            "context.json:records:0",
+            "context.json:records:1",
+            "context.json:records:2",
+            "context.json:records:3",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4"
+          ],
+          "rationale": "For Python developers, the home page states ContentState-to-HTML purpose and directs newcomers to Content state or Getting started. The installation article supplies pip install draftjs_exporter and a complete first render. Engine guidance explains dependencies, speed and sanitization/output differences; migration notes identify affected Python versions and concrete upgrade actions. This supports sampled developer wording, not comprehension for every audience. Clean configuration and API observations supply content-specific headings and terminology for the remaining reference tasks.",
+          "confidence": "medium",
+          "nextEvidence": "Validate unfamiliar-user comprehension with research if broadening the target audience."
+        },
+        {
+          "checkId": "consistency",
+          "guideline": "2.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6",
+            "probes.json:pages:3",
+            "probes.json:pages:0",
+            "probes.json:pages:5"
+          ],
+          "rationale": "Captured pages repeat the same Home, Getting started, Content state, Migration guide, Guides and Reference names with consistent Search and Clear controls. Configuration is also captured in a later clean state. The repeated task navigation supports sampled interface consistency; it does not establish an owned design system or every interactive state. Clean alternate homepage and engines states preserve the shared navigation names where initial probes failed.",
+          "confidence": "medium",
+          "nextEvidence": "Compare any future custom controls against the existing shared navigation and names."
+        },
+        {
+          "checkId": "motion",
+          "guideline": "2.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6"
+          ],
+          "rationale": "No active animations or media playback appear in the clean desktop, narrow or reduced-motion observations. Thus no observed motion requires playback controls in these reading states. Quiet snapshots do not establish absence of transitions or motion after other actions. However, this does not resolve the entire declared page sample: some normal JavaScript-enabled observations are missing or blocked, so quiet successful states cannot stand in for those unobserved states.",
+          "confidence": "medium",
+          "nextEvidence": "Capture the missing normal documentation states, then review any actual motion, its purpose and controls across the declared sample."
+        },
+        {
+          "checkId": "notifications",
+          "guideline": "2.12",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6"
+          ],
+          "rationale": "The observed pages record zero notification permission request calls and no unsolicited notification flow. Browser permission is denied, so the finding is limited to observed request behavior, not all possible browser/user states. However, this does not resolve the entire declared page sample: some normal JavaScript-enabled observations are missing or blocked, so quiet successful states cannot stand in for those unobserved states.",
+          "confidence": "medium",
+          "nextEvidence": "Capture the missing normal documentation states, then review alerts and permission requests across the declared sample."
+        },
+        {
+          "checkId": "documents",
+          "guideline": "2.13",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6"
+          ],
+          "rationale": "No downloadable document links were recorded on the observed pages. Print emulation keeps installation text and removes navigation in that page, while API and migration print states still report many navigation regions, potentially including technical subsection links. No paginated preview establishes actual page count, duplication or clipping, so these counts cannot prove inefficient paper use.",
+          "confidence": "medium",
+          "nextEvidence": "Check an API/migration print preview with real content before changing print styles; preserve code and upgrade steps."
+        },
+        {
+          "checkId": "unused-code",
+          "guideline": "3.2",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6",
+            "staged.json:runs:0"
+          ],
+          "rationale": "The initial main-target coverage includes unexecuted ranges in the roughly 35 kB compressed documentation bundle and unused CSS rules. Those source-position ranges are not removable transfer bytes. The sample has interactive search, navigation and copy-code needs, but no representative complete coverage of those interactions and no source corroboration.",
+          "confidence": "medium",
+          "nextEvidence": "Cover search, navigation and copy-code actions before removing bundle or CSS content; retain code needed after initial reading."
+        },
+        {
+          "checkId": "components",
+          "guideline": "3.3",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "probes.json:pages:2",
+            "context.json:records:0"
+          ],
+          "rationale": "Initial loading includes a roughly 35 kB compressed bundle and a roughly 64 kB compressed search index. Search is a real and successfully used task in the contextual route, so treating the index as unused would be unjustified. A search worker is not fully accounted for in staged collection. Evidence does not demonstrate a safe on-demand activation path or quantify any deferral savings.",
+          "confidence": "medium",
+          "nextEvidence": "If initial-load optimization is needed, prototype index loading on search activation, then verify immediate typing, result readiness and complete worker accounting before adopting it."
+        },
+        {
+          "checkId": "layout",
+          "guideline": "3.10",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6"
+          ],
+          "rationale": "Captured installation, content-state, API and migration pages retain headings/content and report no document overflow at 360 and 1280 CSS pixels. The responsive menu/search controls were not exercised at the narrow width, and desktop/narrow comparisons are missing for some pages after transport errors. These limits prevent a full scoped functional layout judgment.",
+          "confidence": "medium",
+          "nextEvidence": "Exercise narrow navigation/search and long API/code content on clean pages, with a real mobile task if claiming device compatibility."
+        },
+        {
+          "checkId": "impact-choice",
+          "guideline": "5.4",
+          "outcome": "inapplicable",
+          "evidenceIds": [
+            "context.json:records:0",
+            "context.json:records:2",
+            "probes.json:pages:1"
+          ],
+          "rationale": "The scoped visitor reads installation/usage guidance. There is no established high-transfer media-quality, bulk-export or similar consequential web-service choice. Engine advice describes software speed/dependency/sanitization tradeoffs, without measured environmental comparisons; the reading site does not need carbon labels on ordinary navigation or every engine name.",
+          "confidence": "medium",
+          "nextEvidence": "Reassess if measured operational-impact choices are added; any future environmental comparison needs a comparable workload and boundary."
+        },
+        {
+          "checkId": "journeys",
+          "guideline": "2.4",
+          "outcome": "pass",
+          "evidenceIds": [
+            "context.json:records:0",
+            "probes.json:journeys:0"
+          ],
+          "rationale": "The timestamped setup observation records entering getting started in the documentation search, choosing the matching result, reaching /draftjs_exporter/getting-started/ and reading both the installation command and complete first-render example. The later automated journey failed during initial Page.goto with ERR_NETWORK_CHANGED and executed no actions; it supplies no contradictory task-state evidence and no measured journey result. This pass rests on the attributed contextual walkthrough only, not a claim of optimal length or universal completion.",
+          "confidence": "medium",
+          "nextEvidence": "Repeat the route in a linked session if reproducible measured completion or timing is required; separate local transport errors from site behavior."
+        },
+        {
+          "checkId": "media-delivery",
+          "guideline": "2.9",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "staged.json:runs:0",
+            "probes.json:pages:0",
+            "probes.json:pages:3",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "The actual rendered reading pages use a shared 128-by-128 PNG logo at about 24 CSS pixels, around 3.1 kB transferred, with no heavy article images or video. This small reusable logo preserves branding at the observed sizes; absent srcset does not by itself establish a useful optimization. No speculative rendition or savings claim follows. Clean alternate states for home, configuration and engines, plus migration, show the same small logo rather than additional article media.",
+          "confidence": "medium",
+          "nextEvidence": "Check any future content images at intended sizes and pixel densities; the present logo is not a priority optimization target."
+        },
+        {
+          "checkId": "font-delivery",
+          "guideline": "2.11",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "staged.json:runs:0"
+          ],
+          "rationale": "Observed FontFace lists are empty and body typography uses preinstalled system fonts with Helvetica/Arial/sans-serif fallbacks. No web-font responses are present in the successful homepage resource sample. This supports a font strategy without external font downloads for the sampled English reading content; no subsetting/removal recommendation is warranted.",
+          "confidence": "high",
+          "nextEvidence": "Reassess fallback coverage if supported languages or custom font requirements change."
+        },
+        {
+          "checkId": "semantic-forms",
+          "guideline": "3.6",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "Every sampled page has at least one clean captured state with lang=en, one main and a descriptive primary heading matching its content. Search and Clear carry explicit aria-labels; navigation labels identify drawer sections. Icon-only copy buttons have the title Copy to clipboard, supplying an HTML naming fallback rather than evidence of an unnamed control. This is the bounded document/naming expectation, not a WCAG or full heading-structure verdict.",
+          "confidence": "medium",
+          "nextEvidence": "If extending the review, verify copy-button names/tooltips in an accessibility tree and assess the API heading hierarchy beyond this bounded check."
+        },
+        {
+          "checkId": "metadata",
+          "guideline": "3.8",
+          "outcome": "pass",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "Clean states provide descriptive content-specific titles, absolute self-canonical URLs under /draftjs_exporter/ and purpose-specific descriptions. No structured-data blocks are declared, so no JSON parse failure is present. Alternate clean states are used where the first navigation failed; no canonical claim is made for the rest of wagtail.github.io.",
+          "confidence": "high",
+          "nextEvidence": "Keep canonical URLs aligned with published paths; validate structured data if introduced."
+        },
+        {
+          "checkId": "preference-behavior",
+          "guideline": "3.9",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6"
+          ],
+          "rationale": "The clean pages remain light in desktop, live-dark and cold-dark states while preserving reading content. No actual motion is observed to suppress. Unlike an implemented theme that works only on initial load, these observations do not establish that this service offers a dark theme or its intended preference policy. A fixed light design alone is insufficient to declare a failure under the scoped instruction to consider intentional choices.",
+          "confidence": "medium",
+          "nextEvidence": "Establish the theme configuration/design intent and any user controls; if system-theme following is intended, verify both initial and live changes against that requirement."
+        },
+        {
+          "checkId": "no-js-content",
+          "guideline": "2.17",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:0",
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:3",
+            "probes.json:pages:4",
+            "probes.json:pages:5",
+            "probes.json:pages:6"
+          ],
+          "rationale": "Fresh no-JavaScript home, installation, content-state, engines and migration states retain their reading text/headings/navigation. No-JavaScript configuration and API navigations fail with ERR_NETWORK_CHANGED, so their core reading availability is unresolved. Failed navigation is not proof those static articles require JavaScript, and enhanced search/copy interactions are outside this bounded reading check.",
+          "confidence": "medium",
+          "nextEvidence": "Capture clean no-JavaScript API/configuration pages and compare their complete reading text/navigation with matching normal states."
+        },
+        {
+          "checkId": "api-requests",
+          "guideline": "3.11",
+          "outcome": "fail",
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5",
+            "probes.json:pages:2"
+          ],
+          "rationale": "The homepage loads /draftjs_exporter/sitemap.xml successfully as XML (200, 788 bytes), whereas content-state, configuration, API and engine pages each request a page-relative sitemap.xml and receive 404 HTML, roughly 3.9 kB each. These completed error requests do not provide the sitemap data requested by the reading/navigation enhancement and establish an avoidable failed-request pattern across the sample. Distinct search-index/repository/release requests are not called duplicates; no polling, backend cost or whole-journey savings is inferred.",
+          "confidence": "high",
+          "nextEvidence": "Resolve sitemap fetching against the documentation root and verify root/nested page navigation succeeds with the intended XML; retain useful search/release requests."
+        },
+        {
+          "checkId": "public-cache-policy",
+          "guideline": "4.2",
+          "outcome": "pass",
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5"
+          ],
+          "rationale": "Successful reusable first-party CSS, JavaScript, image and search-index responses expose max-age=600 plus ETags. Public GitHub API responses expose public max-age=60/s-maxage=60 plus ETags. These support bounded reuse or validation policies; missing headers on failed sitemap responses and incomplete worker accounting do not establish a general caching failure. Warm reuse and offline access were not measured.",
+          "confidence": "medium",
+          "nextEvidence": "Use warm-load observations before claiming saved bytes; review longer caching only where versioned assets and platform controls make it appropriate."
+        },
+        {
+          "checkId": "text-compression",
+          "guideline": "4.3",
+          "outcome": "pass",
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5"
+          ],
+          "rationale": "Successful material HTML, CSS, JavaScript, JSON search-index and GitHub API responses use gzip. Compressed delivery is directly supported for these observed text assets. Worker response accounting is incomplete and two staged pages failed navigation; neither their missing bytes nor already-compressed image data is treated as an efficiency success or compression defect.",
+          "confidence": "high",
+          "nextEvidence": "Recheck unobserved responses in a linked complete collection if expanding the transfer claim; no specific compression repair is established."
+        },
+        {
+          "checkId": "keyboard-path",
+          "guideline": "3.6",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "probes.json:pages:1",
+            "probes.json:pages:2",
+            "probes.json:pages:4",
+            "probes.json:pages:6"
+          ],
+          "rationale": "The bounded Tab traces reach skip/home links, named Search where initialized, repository link and task navigation in a meaningful sequence. Most links have focus-visible and auto outlines. Search records outline-style none, and one intermediate search dialog node is marked not visible; borders/shadows or active dialog behavior were not captured enough to verify their actual focus indicators. This is insufficient to fail keyboard support or claim a trap, but prevents a complete discernible-focus pass.",
+          "confidence": "medium",
+          "nextEvidence": "Visually verify focus on the Search input and dialog controls, and capture the skip link and subsequent path; include reverse traversal if broadening keyboard coverage."
+        },
+        {
+          "checkId": "disclosure-scope",
+          "guideline": "2.1",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0",
+            "context.json:records:1"
+          ],
+          "rationale": "The path-scoped exporter homepage defines its library purpose but contains no sustainability impact/mitigation statement. Bounded origin discovery found no records and only two common origin-level disclosure routes, both 404. That does not prove a statement is absent elsewhere or across wagtail.github.io, and no service-linked statement can be judged from this packet.",
+          "confidence": "medium",
+          "nextEvidence": "Provide a public statement explicitly relating to /draftjs_exporter/ and its web-service impact/mitigation boundary if such disclosure is intended."
+        },
+        {
+          "checkId": "carbon-discovery",
+          "guideline": "3.13",
+          "outcome": "fail",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0"
+          ],
+          "rationale": "The origin root and well-known carbon.txt routes return 404, with no Carbon-Location, redirect or DNS discovery relationship available. A parseable file and its declared schema/version/delegation therefore cannot be established for this service through the sampled standard discovery routes. This scoped absence neither establishes high emissions nor authorizes claims about every project hosted on wagtail.github.io.",
+          "confidence": "high",
+          "nextEvidence": "If useful, coordinate origin-level carbon.txt/delegation with the host owner, naming the exporter relationship accurately; validate the retrieved version/schema and substantiation."
+        },
+        {
+          "checkId": "hosting-evidence",
+          "guideline": "4.1",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "staged.json:discovery:0",
+            "disclosures.json:sites:0",
+            "staged.json:runs:0"
+          ],
+          "rationale": "The github.io origin and GitHub response/resource routes identify delivery context, but no service-specific provider sustainability statement or independent operational evidence is retrieved. Provider identity alone cannot establish renewable-energy, hardware or emissions performance for this documentation path. No green-hosting model flag follows.",
+          "confidence": "medium",
+          "nextEvidence": "Supply a dated operational hosting record with a defensible relationship to this origin/path and independently corroborated scope if making a sustainable-hosting claim."
+        },
+        {
+          "checkId": "service-necessity",
+          "assessmentScope": "The documented creation/continuation rationale for the Python Draft.js ContentState-to-HTML exporter capability, limited to the current homepage purpose statement and published alternative-engine tradeoffs. Assess whether these public records establish desirability, feasibility, viability and alternatives; do not infer unpublished business decisions or a site-wide necessity judgment.",
+          "guideline": "5.13",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "context.json:records:1",
+            "context.json:records:2"
+          ],
+          "rationale": "The homepage explains a concrete need for ContentState-to-HTML conversion in Python/Wagtail/Django and ongoing Wagtail contributor maintenance. Engine guidance documents dependency, speed, sanitization and output-stability tradeoffs, supporting partial technical feasibility and alternatives. It does not document a creation/continuation evaluation of desirability and ongoing viability against credible capability-level alternatives or reuse. Public purpose/maintenance claims alone do not complete that decision assessment.",
+          "confidence": "medium",
+          "nextEvidence": "Provide one bounded public creation/continuation decision explaining user demand, viable maintenance/resources and considered alternatives or reuse, and why the chosen exporter capability remains appropriate."
+        },
+        {
+          "checkId": "access-barriers",
+          "assessmentScope": "Anonymous English-reading desktop Chromium visitor, 1280 \u00d7 800 CSS pixels, using keyboard text entry and pointer selection: search from the documentation homepage for getting started, reach the installation command and complete first-render example without account creation, payment or submission. Keyboard-only traversal, assistive technologies, other countries and representative-user testing are outside this task scope.",
+          "guideline": "5.13",
+          "outcome": "pass",
+          "evidenceIds": [
+            "context.json:records:0",
+            "probes.json:journeys:0",
+            "probes.json:pages:1"
+          ],
+          "rationale": "Within the exact anonymous English desktop pointer/text-entry scope, the timestamped walkthrough follows documentation search to Getting started and captures the installation command plus complete render example without account, payment, personal-data fields or external navigation. Later automation failed before reaching the homepage with ERR_NETWORK_CHANGED and performed no task actions, so it does not demonstrate a contrary visitor barrier. This pass is limited to the attributed single environment and task, excluding keyboard-only and representative-user claims.",
+          "confidence": "medium",
+          "nextEvidence": "Repeat with represented users or other constraints only if extending the declared scope; obtain a clean linked run for measured journey reliability."
+        },
+        {
+          "checkId": "content-lifecycle",
+          "assessmentScope": "Public Draft.js exporter documentation under /draftjs_exporter/ as captured for this audit: assess the documented update/review lifecycle and applied compatibility guidance in the current migration guide, including retained upgrade instructions for earlier releases. Date labels alone do not establish a review schedule; repository maintenance and unpublished processes are outside scope.",
+          "guideline": "5.18",
+          "outcome": "cantTell",
+          "evidenceIds": [
+            "context.json:records:3",
+            "context.json:records:1",
+            "probes.json:pages:6"
+          ],
+          "rationale": "The migration guide retains discoverable version-specific upgrade instructions from v0.8 through v7, records concrete changed behavior and compatible releases for obsolete Python versions, and supplies current compatibility guidance. This is useful applied maintenance evidence. The date labels and release-organized sections do not establish an explicit review/expiry schedule, ownership or a documented review decision, so the whole lifecycle expectation remains unresolved. Historical migration content has continuing user value and should not be deleted merely for age.",
+          "confidence": "medium",
+          "nextEvidence": "Publish or supply a release-linked documentation review schedule and one applied review/update record, retaining old upgrade paths while clearly distinguishing historical instructions from current configuration."
+        }
+      ],
+      "topFindings": [
+        {
+          "checkId": "api-requests",
+          "priority": "low",
+          "title": "Resolve sitemap requests from nested documentation pages",
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "staged.json:runs:2",
+            "staged.json:runs:3",
+            "staged.json:runs:4",
+            "staged.json:runs:5"
+          ],
+          "summary": "The documentation-root sitemap returns XML successfully, but four nested pages request their own sitemap.xml paths and receive about 3.9 kB of 404 HTML each. The local request defect is observed; backend cost and journey impact are unmeasured.",
+          "recommendedAction": "Resolve the sitemap URL against /draftjs_exporter/ and verify nested-page navigation uses the intended XML without introducing new failed requests.",
+          "status": "observed defect"
+        },
+        {
+          "checkId": "components",
+          "priority": "low",
+          "title": "Validate search-index deferral before changing the initial bundle",
+          "evidenceIds": [
+            "staged.json:runs:0",
+            "context.json:records:0"
+          ],
+          "summary": "The successful homepage run loads a roughly 64 kB compressed search index during initial loading. Search is a demonstrated useful task, so initial coverage does not establish that its code or data can safely be removed.",
+          "recommendedAction": "If first-load transfer is a priority, test on-demand index activation with immediate typing and complete worker accounting; retain the present behavior unless usability and measured savings improve.",
+          "status": "investigation candidate"
+        },
+        {
+          "checkId": "content-lifecycle",
+          "priority": "low",
+          "title": "Document release-linked review of useful migration guidance",
+          "evidenceIds": [
+            "context.json:records:3",
+            "probes.json:pages:6"
+          ],
+          "summary": "The current migration guide preserves valuable compatibility instructions and past upgrade paths, but this packet contains no explicit review schedule or applied review record.",
+          "recommendedAction": "Record when release documentation is reviewed and one actual maintenance decision, preserving historical upgrade guidance and clear current-versus-historical boundaries.",
+          "status": "evidence gap"
+        }
+      ],
+      "evidenceIndex": {
+        "staged.json:runs:0": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/0",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "staged.json:runs:1": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/1",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "staged.json:runs:2": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/2",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "staged.json:runs:3": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/3",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "staged.json:runs:4": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/4",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "staged.json:runs:5": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/5",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "staged.json:runs:6": {
+          "artifact": "staged.json",
+          "jsonPointer": "/runs/6",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "staged.json:discovery:0": {
+          "artifact": "staged.json",
+          "jsonPointer": "/discovery/0",
+          "sourceSHA256": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de"
+        },
+        "probes.json:pages:0": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/0",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "probes.json:pages:1": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/1",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "probes.json:pages:2": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/2",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "probes.json:pages:3": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/3",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "probes.json:pages:4": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/4",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "probes.json:pages:5": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/5",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "probes.json:pages:6": {
+          "artifact": "probes.json",
+          "jsonPointer": "/pages/6",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "probes.json:journeys:0": {
+          "artifact": "probes.json",
+          "jsonPointer": "/journeys/0",
+          "sourceSHA256": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df"
+        },
+        "disclosures.json:sites:0": {
+          "artifact": "disclosures.json",
+          "jsonPointer": "/sites/0",
+          "sourceSHA256": "9249745688eb449397d126b48613e3e746656782424b3e155a364eefe4c82185"
+        },
+        "context.json:records:0": {
+          "artifact": "context.json",
+          "jsonPointer": "/records/0",
+          "sourceSHA256": "add7db56972ec49be923d1b7808ed22ccc246409353568e9e2e771fdebd9ba0a"
+        },
+        "context.json:records:1": {
+          "artifact": "context.json",
+          "jsonPointer": "/records/1",
+          "sourceSHA256": "add7db56972ec49be923d1b7808ed22ccc246409353568e9e2e771fdebd9ba0a"
+        },
+        "context.json:records:2": {
+          "artifact": "context.json",
+          "jsonPointer": "/records/2",
+          "sourceSHA256": "add7db56972ec49be923d1b7808ed22ccc246409353568e9e2e771fdebd9ba0a"
+        },
+        "context.json:records:3": {
+          "artifact": "context.json",
+          "jsonPointer": "/records/3",
+          "sourceSHA256": "add7db56972ec49be923d1b7808ed22ccc246409353568e9e2e771fdebd9ba0a"
+        },
+        "energy/manifest.json:pages:0": {
+          "artifact": "energy/manifest.json",
+          "jsonPointer": "/pages/0",
+          "sourceSHA256": "ba5850002674921e07d3bf693ec4066d9413a70da42f065112e1f0393d48ef51"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "role": "evidence",
+  "site": "https://docs.wagtail.org",
+  "packetSHA256": "8c129140084d8d89f25e66eb3e5312d4e89a892dd43a306d2feacb9d1e062e5e",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "partial-byte-rating-eligibility",
+      "checkIds": [
+        "api-requests",
+        "media-delivery",
+        "font-delivery"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:2",
+        "staged.json:runs:3",
+        "staged.json:runs:4",
+        "staged.json:runs:5",
+        "staged.json:runs:6",
+        "staged.json:runs:7",
+        "staged.json:runs:8"
+      ],
+      "summary": "Every initial transfer is partial and every rating is not_calculated. EthicalAds decision requests are unresolved on several pages, the images page has ERR_NETWORK_CHANGED for its ad client, and later pages include aborted/rate-limited resources. The observed positive totals remain useful partial-input traffic; they do not support a complete-load Digital Carbon Rating.",
+      "requestedChange": "Preserve exact bytes and partial accounting, describe unresolved transfers separately from fully accounted HTTP errors, and retain unrated status. Any requested annual SWDM scenario must explicitly retain the partial-input boundary and cannot upgrade rating eligibility."
+    },
+    {
+      "id": "failed-main-document-is-not-content-weight",
+      "checkIds": [
+        "journeys",
+        "comprehension",
+        "layout"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:7",
+        "probes.json:pages:7",
+        "context.json:records:1"
+      ],
+      "summary": "The documentation-guidelines initial capture received HTTP 429 and title Just a moment..., totaling 417146 observed bytes for the challenged state. Separate no-JavaScript/cold-dark probes and earlier contextual text reached the intended documentation. This is not a verified normal-content page weight or proof of a persistent site defect.",
+      "requestedChange": "Identify the failed/challenged initial page in the report. If presenting the requested annual sensitivity option, exclude this page through a separate declared eligibility/page-mix option while preserving the raw capture; do not replace its traffic with zero or imply that a successful contextual retrieval repairs the initial measurement."
+    },
+    {
+      "id": "search-journey-conflicting-observations",
+      "checkIds": [
+        "journeys",
+        "access-barriers",
+        "api-requests"
+      ],
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "context.json:records:0",
+        "staged.json:runs:4"
+      ],
+      "summary": "The setup walkthrough completed an embedded search-panel route; the later measured journey submitted to search.html, its result-link click timed out after 5000 ms, and its after-state was a Cloudflare security challenge. The staged search page also generated 220 requests including 31 HTTP 429 subresource responses. These observations describe distinct runs and cannot establish persistent search failure, normal search cost or the cause of the route difference.",
+      "requestedChange": "Report successful setup completion and inconclusive measured completion separately. Treat a readiness/timing difference as a hypothesis only; request a matched readiness-controlled journey if needed. Do not turn collector challenge/rate limiting into a site usability defect or claim verified normal search efficiency."
+    },
+    {
+      "id": "probe-state-representation-contamination",
+      "checkIds": [
+        "distraction",
+        "choice",
+        "comprehension",
+        "consistency",
+        "motion",
+        "notifications",
+        "documents",
+        "components",
+        "layout",
+        "media-delivery",
+        "font-delivery",
+        "semantic-forms",
+        "metadata",
+        "preference-behavior",
+        "no-js-content",
+        "keyboard-path"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6",
+        "probes.json:pages:7",
+        "probes.json:pages:8"
+      ],
+      "summary": "Desktop probes for images, queryset, performance, documentation-guidelines and release-8 captured Cloudflare challenge pages; search lacks a successful desktop snapshot after ERR_NETWORK_CHANGED. Several independent no-JavaScript/cold-dark contexts reached documentation while their comparison state was a challenge, or vice versa. completed status alone therefore does not mean the intended page was reviewed.",
+      "requestedChange": "Judge each state by its actual title/content and document response. Keep comparisons involving a challenged or missing intended representation unresolved; do not score challenge metadata, keyboard traversal, responsiveness, font absence, preferences or no-JavaScript differences as documentation behavior. Retain any successful isolated state as narrowly scoped evidence only."
+    },
+    {
+      "id": "phase-and-consent-interpretation",
+      "checkIds": [
+        "choice",
+        "media-delivery",
+        "impact-choice"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:2",
+        "context.json:records:0"
+      ],
+      "summary": "Runs use branch no_banner with no actions; initial, after_consent and after_scroll totals are cumulative and the later byte deltas are zero. The named after_consent checkpoint does not record accepting or rejecting consent. Zero scroll deltas do not demonstrate media deferral or whole-journey savings.",
+      "requestedChange": "Lead with initial transfer, state no consent action was performed, and label later checkpoints as cumulative. Do not sum the phases or attribute their differences to consent/scroll effects. Require observed request timing and usable activation for any media-deferral conclusion."
+    },
+    {
+      "id": "coverage-does-not-establish-removable-code",
+      "checkIds": [
+        "unused-code"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:7"
+      ],
+      "summary": "The code-coverage artifact contains bounded function/range samples with functionsTruncated flags, and challenged pages cover the challenge representation. Initial unused coverage also cannot establish code that is safe to delete across search, preferences, print or interaction states.",
+      "requestedChange": "Use valid documentation coverage only to identify investigation candidates, retain truncation and captured-state limits, and avoid exact whole-bundle unused percentages from truncated ranges. Do not propose deleting challenge code or claim verified site-wide removal savings."
+    },
+    {
+      "id": "qualitative-probe-coverage-limits",
+      "checkIds": [
+        "motion",
+        "notifications",
+        "documents",
+        "keyboard-path",
+        "comprehension"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "summary": "Successful probes remain bounded: short observations, twelve Tab presses without activation/reverse traversal/trap diagnosis, no representative-reader test, and truncated tutorial text. No observed notification call/motion or exposed download link establishes absence across complete journeys or site-wide adequacy.",
+      "requestedChange": "Keep rationales within the actual observed task/state and state unresolved full-journey, keyboard activation, document-accessibility and audience-comprehension questions. Missing applicability evidence must not become a fabricated site defect or a blanket pass."
+    },
+    {
+      "id": "greenframe-summary-scope-and-boundary",
+      "checkIds": [
+        "impact-choice"
+      ],
+      "evidenceIds": [
+        "energy/manifest.json:pages:0",
+        "energy/manifest.json:pages:1",
+        "energy/manifest.json:pages:2"
+      ],
+      "summary": "GreenFrame covers only home, tutorial and images, with three complete repetitions each, versus nine attempted staged pages. Client-device medians are 0.014105058825055554, 0.01506549585257778 and 0.013017453754566666 Wh/scenario; the top-level metrics values are means. The boundary is modeled browser-container CPU/memory/disk plus synthetic screen, with network separately modeled and remote servers excluded; the scenarios use a different container/browser flag/user-agent setup.",
+      "requestedChange": "Use the three-repetition client-device median explicitly when requested; do not label the means medians or claim full nine-page energy coverage. State the 3/9 coverage, full scenario measurement window, uncontrolled workstation and repetition-range limits. Request missing-page energy through the coordinator if full sample coverage remains required. Never add GreenFrame network/total or device energy to SWDM, or describe these modeled values as measured electricity."
+    },
+    {
+      "id": "contextual-policy-evidence-remains-bounded",
+      "checkIds": [
+        "audience-needs",
+        "content-lifecycle",
+        "sustainability-goals"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4",
+        "context.json:records:5",
+        "context.json:records:6"
+      ],
+      "summary": "Documentation modes supply stated audience rationale but no underlying research study. Release and contributor documents describe policy and publisher-reported applied changes; historical availability alone does not establish current demand. Sustainability considerations advise Wagtail-powered projects and describe CMS-wide activity without documentation-host-specific targets, baselines or progress.",
+      "requestedChange": "Preserve each contextual assessmentScope exactly, separate public intent/self-report from verified implementation, and retain unresolved research/progress evidence. Do not infer absent research/governance, demand-based deletion of historical documentation, or achieved docs.wagtail.org sustainability targets."
+    },
+    {
+      "id": "disclosure-discovery-is-not-absence",
+      "checkIds": [
+        "disclosure-scope",
+        "carbon-discovery",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "context.json:records:6"
+      ],
+      "summary": "Disclosure collection reports presence not established within discovery scope, no verified claims, and root/well-known carbon.txt 404s; an independently captured sustainability-considerations document nevertheless exists. No carbon.txt finding establishes the hosting energy mix or absence of all sustainability policies.",
+      "requestedChange": "Report discovery endpoints/results and the bounded scope separately from known advice. Retain unknown hosting/substantiation rather than converting a missing discovery record into a verified negative claim or a zero-carbon/green-hosting assumption."
+    }
+  ]
+}

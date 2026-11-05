@@ -1,0 +1,112 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://docs.wagtail.org/en/stable/",
+      "task": "Find current stable documentation",
+      "rationale": "Landing and navigation",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "tutorial",
+      "url": "https://docs.wagtail.org/en/stable/getting_started/tutorial.html",
+      "task": "Follow the first-site tutorial and identify prerequisites",
+      "rationale": "Long illustrated tutorial",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "images",
+      "url": "https://docs.wagtail.org/en/stable/topics/images.html",
+      "task": "Find responsive image template examples",
+      "rationale": "Media and code how-to",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "queryset",
+      "url": "https://docs.wagtail.org/en/stable/reference/pages/queryset_reference.html",
+      "task": "Look up a Page QuerySet method",
+      "rationale": "Dense API reference",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "url": "https://docs.wagtail.org/en/stable/search.html?q=images",
+      "task": "Find image documentation in full search results",
+      "rationale": "Search result listing",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "url": "https://docs.wagtail.org/en/stable/advanced_topics/performance.html",
+      "task": "Find deployment performance advice",
+      "rationale": "Technical explanation",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "sustainability",
+      "url": "https://docs.wagtail.org/en/stable/advanced_topics/sustainability_considerations.html",
+      "task": "Understand published sustainability advice",
+      "rationale": "Methodology statement",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "documentation-guidelines",
+      "url": "https://docs.wagtail.org/en/stable/contributing/documentation_guidelines.html",
+      "task": "Find documentation maintenance standards",
+      "rationale": "Contributor guidance",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "release-8",
+      "url": "https://docs.wagtail.org/en/stable/releases/8.0.html",
+      "task": "Understand major release and upgrade changes",
+      "rationale": "Release notes and maintenance example",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ]
+}

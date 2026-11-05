@@ -1,0 +1,299 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://docs.wagtail.org",
+  "purpose": "Audit public docs.wagtail.org with current stable English documentation, search, tutorials, reference, release notes and contributor guidance; evaluate bounded public qualitative evidence.",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://docs.wagtail.org/en/stable/",
+      "task": "Find current stable documentation",
+      "rationale": "Landing and navigation",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "tutorial",
+      "url": "https://docs.wagtail.org/en/stable/getting_started/tutorial.html",
+      "task": "Follow the first-site tutorial and identify prerequisites",
+      "rationale": "Long illustrated tutorial",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "images",
+      "url": "https://docs.wagtail.org/en/stable/topics/images.html",
+      "task": "Find responsive image template examples",
+      "rationale": "Media and code how-to",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "queryset",
+      "url": "https://docs.wagtail.org/en/stable/reference/pages/queryset_reference.html",
+      "task": "Look up a Page QuerySet method",
+      "rationale": "Dense API reference",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "url": "https://docs.wagtail.org/en/stable/search.html?q=images",
+      "task": "Find image documentation in full search results",
+      "rationale": "Search result listing",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "url": "https://docs.wagtail.org/en/stable/advanced_topics/performance.html",
+      "task": "Find deployment performance advice",
+      "rationale": "Technical explanation",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "sustainability",
+      "url": "https://docs.wagtail.org/en/stable/advanced_topics/sustainability_considerations.html",
+      "task": "Understand published sustainability advice",
+      "rationale": "Methodology statement",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "documentation-guidelines",
+      "url": "https://docs.wagtail.org/en/stable/contributing/documentation_guidelines.html",
+      "task": "Find documentation maintenance standards",
+      "rationale": "Contributor guidance",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "release-8",
+      "url": "https://docs.wagtail.org/en/stable/releases/8.0.html",
+      "task": "Understand major release and upgrade changes",
+      "rationale": "Release notes and maintenance example",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "find-responsive-images",
+      "url": "https://docs.wagtail.org/en/stable/",
+      "task": "Search for images from the homepage and reach the complete responsive-image guide",
+      "actions": [
+        {
+          "type": "fill",
+          "selector": "#searchinput",
+          "value": "images"
+        },
+        {
+          "type": "press",
+          "selector": "#searchinput",
+          "key": "Enter"
+        },
+        {
+          "type": "click",
+          "selector": "a.hit-block-heading[href=\"/en/stable/topics/images.html\"]"
+        }
+      ],
+      "success": {
+        "url": "https://docs.wagtail.org/en/stable/topics/images.html",
+        "selector": "#responsive-images",
+        "text": "Responsive images"
+      }
+    }
+  ],
+  "checks": [],
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "audience-needs",
+    "sustainability-goals"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English desktop readers with JavaScript enabled, using pointer interaction and text entry: search from the stable homepage for images and reach complete responsive-image documentation without authentication or personal-data submission. Keyboard-only, assistive-technology, constrained-network and non-English completion are outside this task.",
+    "content-lifecycle": "English Wagtail developer documentation through the publicly documented Wagtail 8.0 release: assess release-linked maintenance policy, a documented applied update/removal, and continued discoverability of v7.0 historical image guidance. Judge lifecycle rather than whether old supported documentation should be deleted.",
+    "audience-needs": "The current public decision to organize Wagtail developer documentation into tutorial, how-to, reference and explanation modes: inspect audience rationale and public evidence that user research informed or validated that decision. No internal research or representative-user testing records supplied.",
+    "sustainability-goals": "Published goals and progress specifically for docs.wagtail.org as available in its current sustainability-considerations page and disclosure collection. Distinguish advice for Wagtail-powered websites and CMS-wide work from documentation-host-specific targets, boundaries and comparable results."
+  },
+  "contextEvidence": [
+    {
+      "id": "search-journey",
+      "kind": "task-observation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/docs-wagtail/current-run/context/search-journey.txt",
+      "source": "https://docs.wagtail.org/en/stable/",
+      "capturedAt": "2026-11-05T07:39:14.760813+00:00",
+      "scope": "Anonymous desktop search-to-responsive-images route",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "One agent walkthrough; not keyboard-only or representative-user testing"
+    },
+    {
+      "id": "documentation-guidelines",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/docs-wagtail/current-run/context/documentation-guidelines.txt",
+      "source": "https://docs.wagtail.org/en/stable/contributing/documentation_guidelines.html",
+      "capturedAt": "2026-11-05T07:38:06.107286+00:00",
+      "scope": "Contributor release-metadata maintenance policy",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Publisher policy, not proof all rules applied"
+    },
+    {
+      "id": "release-process",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/docs-wagtail/current-run/context/release-process.txt",
+      "source": "https://docs.wagtail.org/en/stable/releases/release_process.html",
+      "capturedAt": "2026-11-05T07:39:11.935793+00:00",
+      "scope": "Release cadence, branches and documentation backport policy",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Release policy is not a complete editorial audit schedule"
+    },
+    {
+      "id": "release-8",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/docs-wagtail/current-run/context/release-8.txt",
+      "source": "https://docs.wagtail.org/en/stable/releases/8.0.html",
+      "capturedAt": "2026-11-05T07:39:12.412370+00:00",
+      "scope": "Applied documentation updates and deprecated-setting removal",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Publisher self-report, not independently traced through Git history"
+    },
+    {
+      "id": "historical-images",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/docs-wagtail/current-run/context/historical-images.txt",
+      "source": "https://docs.wagtail.org/en/v7.0/topics/images.html",
+      "capturedAt": "2026-11-05T07:39:13.103712+00:00",
+      "scope": "Public v7.0 image documentation remains accessible",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Availability verified, historical audience not measured"
+    },
+    {
+      "id": "documentation-modes",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/docs-wagtail/current-run/context/documentation-modes.txt",
+      "source": "https://docs.wagtail.org/en/stable/contributing/documentation_modes.html",
+      "capturedAt": "2026-11-05T07:39:12.261348+00:00",
+      "scope": "Four documentation modes and stated audiences",
+      "checkIds": [
+        "audience-needs"
+      ],
+      "limitations": "No underlying research study supplied"
+    },
+    {
+      "id": "sustainability",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/docs-wagtail/current-run/context/sustainability.txt",
+      "source": "https://docs.wagtail.org/en/stable/advanced_topics/sustainability_considerations.html",
+      "capturedAt": "2026-11-05T07:38:04.955928+00:00",
+      "scope": "Sustainability considerations and methodologies",
+      "checkIds": [
+        "sustainability-goals"
+      ],
+      "limitations": "CMS-wide advice does not establish documentation-specific goals"
+    }
+  ],
+  "sourceRoots": [],
+  "sourceFiles": [],
+  "questions": [
+    {
+      "question": "Can maintainers provide docs-host-specific sustainability goals/progress and a research record behind documentation modes?",
+      "required": false,
+      "answer": null,
+      "reason": "Optional evidence; public audit proceeds with unknowns."
+    }
+  ],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "Root resolves to /en/stable/; English stable-version sample for the origin.",
+    "No cookie banner observed in rendered browsing; no_banner branch has no action.",
+    "Only public read-only search/navigation; no accounts or personal data.",
+    "Standard collection records first load, waiting/scroll and repeat phases.",
+    "No matching source checkout selected.",
+    "Exploratory browsing is setup evidence, not measured performance."
+  ],
+  "energy": {
+    "mode": "run",
+    "samples": 3,
+    "pageIds": [
+      "home",
+      "tutorial",
+      "images"
+    ]
+  },
+  "ownerPriorities": [
+    "Fresh per-site report with broader qualitative WSG coverage",
+    "First-load headline with post-interaction and scroll measurements",
+    "Measured client energy sample",
+    "Useful priorities and explicit next evidence requests"
+  ],
+  "sampling": {
+    "discovery": "Live root redirect and rendered navigation; all nine pages returned HTTP200.",
+    "selectedPageCount": 9,
+    "cookieControls": "No banner or blocking consent observed on sampled rendered pages.",
+    "verifiedJourney": "#searchinput images + Enter opened embedded results; unique a.hit-block-heading[href=\"/en/stable/topics/images.html\"] opened responsive-images section.",
+    "omissions": [
+      "All locales/versions/full crawl",
+      "Authenticated Read the Docs/GitHub/CMS operations",
+      "Server energy/backend retention/internal records",
+      "Keyboard-only and representative-user testing"
+    ],
+    "contextOmissions": {
+      "data-minimization": "No personal-data collection task; public search only.",
+      "inclusive-testing": "No selected release and representative-user study.",
+      "governance-practice": "No docs-specific commitment and review period identified.",
+      "impact-business-model": "Funding outside selected documentation task.",
+      "service-necessity": "No selected new-service decision.",
+      "service-end-of-life": "Software support differs from retirement of documentation service."
+    }
+  }
+}

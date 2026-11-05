@@ -1,0 +1,181 @@
+{
+  "role": "evidence",
+  "site": "https://wagtail.github.io",
+  "packetSHA256": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "failed-navigation-is-unavailable",
+      "checkIds": [
+        "journeys",
+        "impact-choice"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:1",
+        "staged.json:runs:6",
+        "probes.json:pages:1",
+        "probes.json:pages:6",
+        "context.json:records:0",
+        "context.json:records:3"
+      ],
+      "summary": "Getting started and migration-guide failed initial navigation with ERR_NETWORK_CHANGED, no HTTP status and zero observed bytes. Their accountingStatus complete_within_protocol describes no unresolved captured requests, not a successful complete page load. Both pages were accessible in independent probes/context. Seven pages were attempted; five staged main documents returned HTTP 200.",
+      "requestedChange": "Display unavailable (failed navigation) for page transfer/emissions cells, not 0 kB or zero carbon. Exclude failed navigations from successful-page averages, low-weight claims and any declared annual page-mix option while retaining raw zero/error records. State 7 attempted / 5 HTTP-200 initial pages; do not infer persistent site failure."
+    },
+    {
+      "id": "search-worker-byte-accounting-partial",
+      "checkIds": [
+        "api-requests",
+        "unused-code",
+        "impact-choice"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:2",
+        "staged.json:runs:3",
+        "staged.json:runs:4",
+        "staged.json:runs:5"
+      ],
+      "summary": "All five HTTP-200 initial captures remain partial: each has an unfinished assets/javascripts/workers/search.2c215733.min.js record with receivedBytes null. Their totals (142700, 148262, 147317, 190118 and 145240 bytes) exclude unresolved transfer accounting, and all ratings are not_calculated. Main-session scope cannot establish whether this is worker-target accounting rather than a functional search failure.",
+      "requestedChange": "Preserve observed bytes as partial and the unrated result. Do not assign the missing worker zero bytes or diagnose broken search/resource loading from the unfinished CDP record. An explicitly partial-input annual scenario is possible only with stated assumptions and cannot establish rating eligibility."
+    },
+    {
+      "id": "journey-failed-before-search",
+      "checkIds": [
+        "journeys",
+        "access-barriers",
+        "semantic-forms"
+      ],
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "context.json:records:0"
+      ],
+      "summary": "Measured search-to-installation failed at the homepage Page.goto with ERR_NETWORK_CHANGED. It performed no actions and has no completion observation; search input, results, selection and installation content were never exercised in that run. The earlier bounded setup task completed successfully.",
+      "requestedChange": "Describe measured journey as unavailable due to initial navigation error, alongside the successful setup walkthrough. Do not call this evidence that search failed, the visitor hit an account/payment barrier, or the documented installation route is unusable. Request a fresh matched journey through the coordinator only if stronger runtime evidence is required."
+    },
+    {
+      "id": "missing-probe-comparisons-are-unknown",
+      "checkIds": [
+        "distraction",
+        "choice",
+        "comprehension",
+        "consistency",
+        "motion",
+        "notifications",
+        "documents",
+        "components",
+        "layout",
+        "media-delivery",
+        "font-delivery",
+        "semantic-forms",
+        "metadata",
+        "preference-behavior",
+        "no-js-content",
+        "keyboard-path"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "summary": "Home, configuration and alternative-engines lack successful primary desktop/narrow/live preference/print/keyboard captures because their primary navigation failed. Home cold-dark, configuration no-JavaScript and API no-JavaScript failed independently. Other isolated contexts succeeded, so absence/difference across missing states cannot establish site behavior.",
+      "requestedChange": "Retain applicability and mark missing comparisons unresolved; cite successful isolated states only within their scope. Do not treat missing metadata/forms/fonts or no-JavaScript failure due to ERR_NETWORK_CHANGED as a site defect or an inapplicable check, and do not inflate whole-sample passes from the four completed primary probes."
+    },
+    {
+      "id": "phase-and-no-banner-meaning",
+      "checkIds": [
+        "choice",
+        "media-delivery",
+        "impact-choice"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:2",
+        "staged.json:runs:3",
+        "staged.json:runs:4",
+        "staged.json:runs:5"
+      ],
+      "summary": "Successful initial runs use no_banner with no consent actions. after_consent and after_scroll repeat cumulative totals with zero deltas. These checkpoints do not provide accept/reject paths, independent loads, complete media activation tests or measured consent savings.",
+      "requestedChange": "Lead with initial captured transfer; label later numbers cumulative and no consent action performed. Do not sum checkpoints or claim that consent/scroll caused zero additional traffic. Establish notification/consent/media applicability from observed features before judging their requirements."
+    },
+    {
+      "id": "fully-accounted-errors-differ-from-byte-gaps",
+      "checkIds": [
+        "api-requests",
+        "metadata",
+        "public-cache-policy"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:2",
+        "staged.json:runs:3",
+        "staged.json:runs:4",
+        "staged.json:runs:5"
+      ],
+      "summary": "Several successful pages requested a page-relative sitemap.xml that returned HTTP 404. These observed resource errors are distinct from the unresolved worker records, and an HTTP error response can still contribute captured traffic. A sitemap error does not alone prove failed visitor tasks, absent metadata across the site, or a deployment-source fix location.",
+      "requestedChange": "Preserve any fully accounted 404 traffic in totals and describe the narrow repeated request observation separately from partial-byte accounting. If recommending a path correction, label it an investigation until request purpose and deployed configuration are established; do not make repairing this resource a prerequisite for the audit."
+    },
+    {
+      "id": "coverage-and-qualitative-bounds",
+      "checkIds": [
+        "unused-code",
+        "keyboard-path",
+        "motion",
+        "notifications",
+        "documents"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:4",
+        "probes.json:pages:6"
+      ],
+      "summary": "Coverage is initial load plus 500 ms in the main CDP target; multiple scripts have functionsTruncated=true. Unused source positions are not transfer bytes or removable code, especially for later search interactions. Twelve Tab presses, short motion/notification windows and collected download links do not test a complete keyboard journey or document accessibility.",
+      "requestedChange": "Keep findings state-specific, avoid precise whole-bundle unused/removal savings from truncated ranges, and preserve unknown later functionality. Do not infer no notifications, no motion, no downloadable documents or full keyboard usability from these bounded probes."
+    },
+    {
+      "id": "greenframe-is-one-page-median3",
+      "checkIds": [
+        "impact-choice"
+      ],
+      "evidenceIds": [
+        "energy/manifest.json:pages:0"
+      ],
+      "summary": "GreenFrame covers only the homepage with three complete repetitions, versus seven attempted staged pages. Its client-device median is 0.01141742601821111 Wh/scenario; top-level clientDeviceEnergy is the mean 0.011471336231618518. This is modeled browser-container CPU/memory/disk and synthetic screen energy, with network separate, remote servers excluded, and a different container/browser flag/user-agent setup.",
+      "requestedChange": "Report the requested three-repetition median with its observed range and explicit 1/7 energy coverage; do not describe it as a full page-sample result or measured electricity. Request missing-page energy through the coordinator if full sample remains required. Preserve full scenario/window and uncontrolled-workstation limits; never add device/network/total energy to SWDM or treat repetition range as a confidence interval."
+    },
+    {
+      "id": "contextual-decisions-and-lifecycle-unknowns",
+      "checkIds": [
+        "service-necessity",
+        "content-lifecycle"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2",
+        "context.json:records:3"
+      ],
+      "summary": "Public purpose and alternative-engine documentation explain a Python ContentState conversion need and engine tradeoffs, but do not establish all desirability/feasibility/viability evidence or unpublished creation/continuation decisions. Migration guidance is applied compatibility content with retained historical upgrade instructions; date labels do not establish review schedules or ownership.",
+      "requestedChange": "Preserve contextual assessmentScope exactly, distinguish publisher statements from verified practice, and retain missing decision/lifecycle evidence as unresolved. Do not infer unnecessary service, absent maintenance processes or a reason to delete historical compatibility instructions from these gaps."
+    },
+    {
+      "id": "path-site-origin-boundaries",
+      "checkIds": [
+        "carbon-discovery",
+        "disclosure-scope",
+        "hosting-evidence",
+        "impact-choice"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "staged.json:runs:0"
+      ],
+      "summary": "The audited documentation lives under /draftjs_exporter/ on the broader wagtail.github.io origin. Disclosure discovery reports only presence not established within scope and no verified claims. Origin-level hosting or traffic estimates can include other projects and cannot silently become project-specific annual utilization.",
+      "requestedChange": "Name the project path in report scope, keep discovery/hosting unknowns explicit, and require matched project traffic or an explicitly declared origin-to-project allocation for annual scenarios. Do not equate missing discovery records with absent policies or assume green hosting from the platform identity."
+    }
+  ]
+}

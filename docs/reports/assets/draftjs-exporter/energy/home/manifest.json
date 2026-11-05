@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "greenframe-client-v1",
+  "preparedAt": "2026-11-05T07:47:14.789375+00:00",
+  "url": "https://wagtail.github.io/draftjs_exporter/",
+  "phase": "initial",
+  "consentSelector": null,
+  "noBannerDeclared": false,
+  "samples": 3,
+  "status": "completed",
+  "requiredCliVersion": "2.0.1",
+  "configSHA256": "e10da3e5445063d0922274b8bd9798760811500c3f09c4227fb9846728689727",
+  "scenarioSHA256": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+  "wrapperSHA256": "82d344437434dbb946364d5177e38a31fe5b5051638200dbef05a6fceec55570",
+  "system": {
+    "platform": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+    "machine": "x86_64"
+  },
+  "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+  "comparisonRule": "Independent complete scenarios, not incremental phase energy; retain first-load result as headline and compare matched repeated scenarios",
+  "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM; annual projection requires explicit traffic, page-mix and electricity assumptions. Runner image/browser versions require separate verification before comparing runs.",
+  "metrics": {
+    "energy": {
+      "value": 0.013534177231618517,
+      "unit": "Wh/scenario",
+      "basis": "GreenFrame resource model"
+    },
+    "clientDeviceEnergy": {
+      "value": 0.011471336231618518,
+      "unit": "Wh/scenario",
+      "basis": "GreenFrame resource model"
+    },
+    "networkEnergy": {
+      "value": 0.002062841,
+      "unit": "Wh/scenario",
+      "basis": "GreenFrame resource model"
+    },
+    "componentsWh": {
+      "cpu": 0.0009109505208333332,
+      "mem": 1.3719044118518518e-05,
+      "disk": 0,
+      "network": 0.002062841,
+      "screen": 0.010546666666666666,
+      "total": 0.013534177231618517
+    },
+    "scenarioSeconds": 4.007666666666666,
+    "reportedPrecisionPercent": 3.740332325462812
+  },
+  "id": "home",
+  "bridgeSHA256": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff",
+  "sourceDigests": {
+    "package.json": "3aaa318f1e6c1a770b8bfac3930588819d89878fcc09f2149f1b5899a552f0f9",
+    "dist/services/container/index.js": "c8e11f563e98222700a5c25809f2f0cba3a131cd50bf89ed514a0517b52e0324",
+    "dist/services/container/execScenarioContainer.js": "3325075487eceb32cc988e760165ae88f0013c9861ee57212ef7afc338648cd5",
+    "dist/model/stat-tools/getConsumption.js": "6277c7c41fadf02035ddb9f45c706cefabed68fb71e6b001a43a0ef3b9a5404e",
+    "dist/model/stat-tools/getWh.js": "c5c34810973314fcab2cb3a54a28f70f6a75ea459b08778aa383ca1543c2a7df"
+  },
+  "argv": [
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/node",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/draftjs-exporter/session/energy/home/bridge.cjs",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe",
+    "https://wagtail.github.io/draftjs_exporter/",
+    "3"
+  ],
+  "startedAt": "2026-11-05T07:47:14.790475+00:00",
+  "finishedAt": "2026-11-05T07:47:41.020548+00:00",
+  "returncode": 0,
+  "sampleMetrics": [
+    {
+      "energy": {
+        "value": 0.012691021200277779,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "clientDeviceEnergy": {
+        "value": 0.010619237200277779,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "networkEnergy": {
+        "value": 0.002071784,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "componentsWh": {
+        "cpu": 0.0009416265625,
+        "mem": 1.3721748888888888e-05,
+        "disk": 0,
+        "network": 0.002071784,
+        "screen": 0.00966388888888889,
+        "total": 0.012691021200277779
+      },
+      "scenarioSeconds": 4.007,
+      "reportedPrecisionPercent": 0
+    },
+    {
+      "energy": {
+        "value": 0.01347036701821111,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "clientDeviceEnergy": {
+        "value": 0.01141742601821111,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "networkEnergy": {
+        "value": 0.002052941,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "componentsWh": {
+        "cpu": 0.0008375359374999999,
+        "mem": 1.37789696e-05,
+        "disk": 0,
+        "network": 0.002052941,
+        "screen": 0.01056611111111111,
+        "total": 0.01347036701821111
+      },
+      "scenarioSeconds": 4.008,
+      "reportedPrecisionPercent": 0
+    },
+    {
+      "energy": {
+        "value": 0.014441143476366667,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "clientDeviceEnergy": {
+        "value": 0.012377345476366666,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "networkEnergy": {
+        "value": 0.002063798,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "componentsWh": {
+        "cpu": 0.0009536890624999999,
+        "mem": 1.3656413866666664e-05,
+        "disk": 0,
+        "network": 0.002063798,
+        "screen": 0.01141,
+        "total": 0.014441143476366667
+      },
+      "scenarioSeconds": 4.007999999999999,
+      "reportedPrecisionPercent": 0
+    }
+  ],
+  "clientDeviceSummaryWh": {
+    "mean": 0.011471336231618518,
+    "median": 0.01141742601821111,
+    "min": 0.010619237200277779,
+    "max": 0.012377345476366666,
+    "rangeMeaning": "Observed repetition range, not a confidence interval"
+  },
+  "networkSummaryWh": {
+    "mean": 0.002062841,
+    "median": 0.002063798,
+    "min": 0.002052941,
+    "max": 0.002071784,
+    "rangeMeaning": "Observed repetition range, not a confidence interval"
+  },
+  "totalSummaryWh": {
+    "mean": 0.01353417723161852,
+    "median": 0.01347036701821111,
+    "min": 0.012691021200277779,
+    "max": 0.014441143476366667,
+    "rangeMeaning": "Observed repetition range, not a confidence interval"
+  },
+  "artifacts": {
+    "raw-counters.json": "64bb5b8a555eb6e2837f262a4f9691cff41bc901795ce6f39a410c5ead22d42e",
+    "model-results.json": "e584e14ef116cb315b1c88bae90149a77b997f899387503d1ee4f26abdc029f5",
+    "runner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff"
+  }
+}

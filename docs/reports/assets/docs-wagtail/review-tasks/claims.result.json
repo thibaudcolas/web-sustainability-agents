@@ -1,0 +1,89 @@
+{
+  "role": "claims",
+  "site": "https://docs.wagtail.org",
+  "packetSHA256": "8c129140084d8d89f25e66eb3e5312d4e89a892dd43a306d2feacb9d1e062e5e",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "claims-document-eligibility",
+      "checkIds": [
+        "layout",
+        "no-js-content",
+        "preference-behavior",
+        "media-delivery",
+        "metadata",
+        "documents"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:5",
+        "probes.json:pages:6",
+        "probes.json:pages:7",
+        "probes.json:pages:8",
+        "staged.json:runs:7"
+      ],
+      "summary": "Several probe baselines are HTTP 429 security challenges titled Just a moment..., while some fresh no-JavaScript or cold-dark states retrieve the intended document. The staged documentation-guidelines load is also HTTP 429. Comparing these as equivalent document states would manufacture findings about missing content, themes, images, print or metadata.",
+      "requestedChange": "Require successful navigation and intended-document identity for every comparison. Exclude challenge states from documentation-feature judgments; report their occurrence as a collection/access limitation. Where the matching clean baseline is absent retain cantTell and request only the affected matched states. The separately captured contextual documentation-guidelines text remains evidence of its published policy, not of the failed staged load."
+    },
+    {
+      "id": "claims-journey-outcomes",
+      "checkIds": [
+        "journeys",
+        "access-barriers"
+      ],
+      "evidenceIds": [
+        "context.json:records:0",
+        "probes.json:journeys:0"
+      ],
+      "summary": "The setup walkthrough reached complete responsive-image guidance; the measured journey later timed out clicking the result and ended at a security challenge. These are distinct observations, not proof of either universal success or a broken search service.",
+      "requestedChange": "Attribute the successful anonymous pointer/text-entry walkthrough to its declared desktop scope and time. Report the measured journey as blocked/incomplete in that run, retain uncertainty about reproducibility, and require a matched successful route before claiming measured efficiency or general completion. Do not extend either observation to keyboard-only, assistive-technology or representative-user testing."
+    },
+    {
+      "id": "claims-service-specific-disclosure",
+      "checkIds": [
+        "disclosure-scope",
+        "sustainability-goals",
+        "hosting-evidence",
+        "carbon-discovery"
+      ],
+      "evidenceIds": [
+        "context.json:records:6",
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "The sustainability page gives advice for Wagtail-powered projects and describes CMS development work. It does not establish docs.wagtail.org-specific impact, mitigation, measurable targets, a comparable baseline or dated progress. Root and well-known carbon.txt attempts returned 404; no independently corroborated hosting claim is captured.",
+      "requestedChange": "Keep docs-service disclosure/goals and hosting execution unresolved where their exact expectations lack evidence. State only that carbon.txt was not found through the captured discovery routes. Do not infer absent sustainability practice, high emissions, verified green hosting or full-guideline failure. The smallest follow-up is a documentation-service statement with scope, metric, target/baseline, dated result and provider/service evidence."
+    },
+    {
+      "id": "claims-audience-research-gap",
+      "checkIds": [
+        "audience-needs"
+      ],
+      "evidenceIds": [
+        "context.json:records:5",
+        "context.json:records:0"
+      ],
+      "summary": "The four documentation modes identify audience purposes and a chosen framework; the agent walkthrough demonstrates one task. Neither record describes user involvement, research findings or how those findings changed or validated this organizational decision.",
+      "requestedChange": "Preserve the declared documentation-mode decision boundary and mark the research link unknown rather than claiming research is absent. Ask for one public or supplied decision/research example identifying affected readers, material constraints, findings and resulting action; internal repository access is not required."
+    },
+    {
+      "id": "claims-bounded-lifecycle-evidence",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4"
+      ],
+      "summary": "The packet contains a two-release rule for short-lived release metadata, release-linked maintenance policy, published 8.0 change/removal and upgrade guidance, and a retrievable v7.0 image reference. These are meaningful bounded public examples; they do not prove that every documentation page receives an editorial review on schedule.",
+      "requestedChange": "Judge the exact declared release-linked lifecycle expectation using these attributed records and name a concrete applied example. Preserve useful historical guidance. Do not turn a scoped supported example into an organization-wide execution claim, and do not prescribe deletion merely because material is old. Any remaining follow-up should identify the specific missing review/action link rather than require source access."
+    }
+  ]
+}

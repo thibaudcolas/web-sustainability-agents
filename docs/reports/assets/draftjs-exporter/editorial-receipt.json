@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "editorial-receipt-v1",
+  "recordedAt": "2026-11-05T08:15:02.978757+00:00",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "execution": "Codex native delegated editorial pass; provenance records the actual writer and file inputs, without a fabricated host trace.",
+  "inputSHA256": {
+    ".audit-work/draftjs-exporter/session/review.json": "046e37618c4b1303237bdbc90ffebbc6625dcdc8169f8e589bc81d38ee82953d",
+    ".audit-work/draftjs-exporter/session/packet.json": "d861f694063fdf480e169e08b65d99039da9d4bf4b08c3d76622695a9ce5f912",
+    ".audit-work/draftjs-exporter/session/rubric.json": "522bace9f23e6615a94b2129a331fde80cd716fa0362685ed7d31de471489873",
+    ".audit-work/draftjs-exporter/session/staged.json": "a3df7185f1df7c2bfb0700e6d68558e751779d12ed30ee2de289baa4a5e1f7de",
+    ".audit-work/draftjs-exporter/session/probes.json": "5e0978d69001775c4e39a613d6614d6277caeb6e7105727ec71fa62accf041df",
+    ".audit-work/draftjs-exporter/session/context.json": "add7db56972ec49be923d1b7808ed22ccc246409353568e9e2e771fdebd9ba0a",
+    ".audit-work/draftjs-exporter/session/source.json": "0c34f341d8f42abe2df05e51c96463cea6b835ace82b671619c04ff418ed1910",
+    ".audit-work/draftjs-exporter/review-tasks/evidence.result.json": "738c63a14fa7b71808d29bdb9934de9d15cad8877a0c9a09b3add539db15c25f",
+    ".audit-work/draftjs-exporter/review-tasks/claims.result.json": "74376211a771f178706038b57b7c8f120fc5ca73a28fe828504d024dce732d48",
+    ".audit-work/draftjs-exporter/review-tasks/resolutions.json": "5406ecf919f35d6aafbe4a7ca57ba9d5d2f14b850e9d9de828e472d4ca74097f",
+    ".agents/skills/sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    ".agents/skills/sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    ".agents/skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    ".agents/skills/sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa"
+  },
+  "output": ".audit-work/draftjs-exporter/editorial.json",
+  "outputSHA256": "328759b3a5d9280f2f16522fc93ac7c6906206ce3ed757e7f57ee77d547937a6",
+  "checkCount": 28,
+  "topFindingIds": [
+    "api-requests",
+    "components",
+    "content-lifecycle"
+  ],
+  "judgmentsChanged": false,
+  "illustrations": "None: the request-path finding is established by network evidence; an unrelated UI screenshot would not clarify it.",
+  "handoff": "Editorial JSON only. Coordinator retains responsibility for scoring validation, annual-unavailable explanation, rendering, themed desktop/narrow and keyboard inspection, and publication. No collection or rendering performed in this editorial pass.",
+  "presentationRevision": "Shortened the overview to two paragraphs, added a coverage-expansion next step, and marked literal hostnames as code for prose linting; no check judgment or finding order changed."
+}
