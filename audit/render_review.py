@@ -430,8 +430,17 @@ def render(
     journey_label = (
         "visitor journey" if len(probes["journeys"]) == 1 else "visitor journeys"
     )
+    site_label = (
+        page_labels.get(
+            scope, urlsplit(scope).netloc + urlsplit(scope).path.rstrip("/")
+        )
+        if path_scope
+        else urlsplit(scope).netloc
+    )
+    if site_label.lower() in {"home", "homepage", "index"}:
+        site_label = urlsplit(scope).netloc + urlsplit(scope).path.rstrip("/")
     lines = [
-        f"# {urlsplit(scope).netloc}{urlsplit(scope).path.rstrip('/') if path_scope else ''}: sustainability audit",
+        f"# {prose(site_label)}: sustainability audit",
         "",
         *(
             [
