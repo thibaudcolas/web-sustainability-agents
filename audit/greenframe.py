@@ -164,7 +164,7 @@ def prepare(
         "system": {"platform": platform.platform(), "machine": platform.machine()},
         "measurementBoundary": BOUNDARY,
         "comparisonRule": "Independent complete scenarios, not incremental phase energy; retain first-load result as headline and compare matched repeated scenarios",
-        "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM or infer annual site footprint directly. Runner image/browser versions require separate verification before comparing runs.",
+        "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM; annual projection requires explicit traffic, page-mix and electricity assumptions. Runner image/browser versions require separate verification before comparing runs.",
         "metrics": None,
     }
 
@@ -477,7 +477,7 @@ def collect_energy(
             "Resource-counter model; not measured electricity, whole device energy or remote server energy",
             "Client-device headline excludes GreenFrame modeled network energy, which is listed separately",
             "Synthetic 45 W CPU and 14 W screen coefficients; CPU counters normalized by available host CPUs",
-            "Never add to SWDM emissions or extrapolate directly to annual site impact",
+            "Never add to SWDM emissions; annual scenarios require explicit traffic, page-mix and electricity assumptions",
             "Bounded energy sample may be smaller than the report's browser page sample",
         ],
         "pages": [],

@@ -26,6 +26,8 @@ TOOLS = {
     "render_review",
     "report",
     "assess",
+    "traffic",
+    "annual",
     "greenframe",
     "energy",
     "orchestrate",

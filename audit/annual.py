@@ -16,9 +16,17 @@ import math
 import shutil
 import statistics
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
+
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
+    energy_rows,
+)
 
 JSON = dict[str, Any]
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,25 +51,8 @@ def nonnegative(value: Any) -> bool:
         return False
 
 
-def annual_scenario(site: str, pages: list[JSON], traffic: JSON) -> JSON:
-    """Apply an explicit equal-page proxy; never imply an observed site-wide mix."""
-    result: JSON = {
-        "site": site,
-        "basis": "scenario",
-        "unit": "kgCO2e/year",
-        "status": "unavailable",
-        "value": None,
-        "functionalUnit": "One estimated year of page views at the audited origin, modeled operational and embodied browsing emissions",
-        "notIncluded": "Not a complete organizational footprint; no site-specific backend/build/office inventory or remote inference energy",
-        "assumptions": {
-            "pageMix": "Equal weights across sampled page URLs; repeated branches averaged within each page first",
-            "realPageMix": "unknown",
-            "visitMix": "100% first visits, 0% returning visits",
-            "hosting": "unknown; model uses non-green scenario",
-            "traffic": "Rank-bucket cohort estimate, not actual analytics",
-            "sensitivity": "All views at the minimum/maximum sampled page intensity; not a confidence interval or bounds on true site emissions",
-        },
-    }
+def pageview_count(site: str, traffic: JSON) -> float | None:
+    """Require the exact origin and an observed rank mapped to a finite count."""
     count = traffic.get("traffic", {}).get("annualPageviews")
     if (
         traffic.get("origin") != site
@@ -72,6 +63,36 @@ def annual_scenario(site: str, pages: list[JSON], traffic: JSON) -> JSON:
         or traffic.get("traffic", {}).get("status") != "scenario"
         or not nonnegative(count)
     ):
+        return None
+    return float(count)
+
+
+def annual_scenario(
+    site: str, pages: list[JSON], traffic: JSON, selection: str = "branch-mean"
+) -> JSON:
+    """Apply an explicit equal-page proxy; never imply an observed site-wide mix."""
+    result: JSON = {
+        "site": site,
+        "basis": "scenario",
+        "unit": "kgCO2e/year",
+        "status": "unavailable",
+        "value": None,
+        "functionalUnit": "One estimated year of page views at the audited origin, modeled operational and embodied browsing emissions",
+        "notIncluded": "Not a complete organizational footprint; no site-specific backend/build/office inventory or remote inference energy",
+        "assumptions": {
+            "pageMix": "Equal weights across sampled page URLs",
+            "visitSelection": "First recorded initial visit per URL"
+            if selection == "first"
+            else "Repeated branches averaged within each page first",
+            "realPageMix": "unknown",
+            "visitMix": "100% first visits, 0% returning visits",
+            "hosting": "unknown; model uses non-green scenario",
+            "traffic": "Rank-bucket cohort estimate, not actual analytics",
+            "sensitivity": "All views at the minimum/maximum sampled page intensity; not a confidence interval or bounds on true site emissions",
+        },
+    }
+    count = pageview_count(site, traffic)
+    if count is None:
         result["reason"] = "Requires a matched-origin bucket and valid traffic scenario"
         return result
     if not pages or len({p["url"] for p in pages}) != len(pages):
@@ -109,10 +130,16 @@ def annual_scenario(site: str, pages: list[JSON], traffic: JSON) -> JSON:
     return result
 
 
-def model_pages(staged: JSON) -> dict[str, list[JSON]]:
+def model_pages(staged: JSON, selection: str = "branch-mean") -> dict[str, list[JSON]]:
     """Use pinned CO2.js without assigning ratings to partial traffic inputs."""
+    if selection not in {"first", "branch-mean"}:
+        raise ValueError("Unsupported initial visit selection")
     samples = []
+    seen = set()
     for run in staged["runs"]:
+        if selection == "first" and run["url"] in seen:
+            continue
+        seen.add(run["url"])
         if (
             run.get("navigationError")
             or not 200 <= (run.get("documentStatus") or 0) < 400
@@ -171,6 +198,128 @@ def model_pages(staged: JSON) -> dict[str, list[JSON]]:
     return sites
 
 
+def client_energy_scenario(
+    site: str, energy: JSON | None, traffic: JSON, sampled_urls: set[str], grid: float
+) -> JSON:
+    """Scale explicit lab scenarios; never imply metered annual site electricity."""
+    result: JSON = {
+        "site": site,
+        "status": "unavailable",
+        "basis": "scenario",
+        "value": None,
+        "unit": "kWh/year",
+        "kgCO2ePerYear": None,
+        "gridIntensity": {
+            "value": grid,
+            "unit": "gCO2e/kWh",
+            "basis": "Assumed comparison factor, not audience electricity data",
+            "defaultFactorReference": "https://sustainablewebdesign.org/estimating-digital-emissions/",
+        },
+        "assumptions": {
+            "pageMix": "Equal weights across energy-sampled URLs; median of three matching repetitions per URL",
+            "visitMix": "Every estimated pageview repeats the recorded initial-load scenario on the tested device/browser",
+            "boundary": "Modeled browser CPU, memory, disk and display operation only; excludes network, remote servers, embodied emissions and later reading/interaction",
+            "measurement": "GreenFrame resource-counter model, not direct electricity metering",
+            "improvement": "A proportional reduction is a sensitivity scenario, not demonstrated achievable savings",
+            "additivity": "Overlaps SWDM device scope; do not add these estimates to SWDM",
+        },
+    }
+    if not nonnegative(grid):
+        raise ValueError("Grid intensity must be finite and nonnegative")
+    if energy is None:
+        return {**result, "reason": "No client-energy experiment supplied"}
+    energy_rows(
+        energy, site
+    )  # Validate scope, three samples, units and recorded medians.
+    urls = [page["url"] for page in energy["pages"]]
+    if len(set(urls)) != len(urls) or not set(urls) <= sampled_urls:
+        raise ValueError("Energy pages must be unique URLs within the audited sample")
+    pages = [
+        {"url": page["url"], "WhPerView": page["clientDeviceSummaryWh"]["median"]}
+        for page in energy["pages"]
+        if page["status"] == "completed"
+    ]
+    if not pages:
+        return {**result, "reason": "No complete client-energy scenarios"}
+    count = pageview_count(site, traffic)
+    if count is None:
+        return {
+            **result,
+            "reason": "Requires a matched-origin bucket and valid traffic scenario",
+        }
+    average = statistics.mean(page["WhPerView"] for page in pages)
+    kwh = average * count / 1000
+    kg = kwh * grid / 1000
+    if not all(nonnegative(value) for value in (average, kwh, kg)):
+        raise ValueError("Annual client-energy scenario exceeds finite numeric range")
+    return {
+        **result,
+        "status": "estimated",
+        "value": kwh,
+        "kgCO2ePerYear": kg,
+        "annualPageviews": count,
+        "rankBucket": traffic["rankBucket"],
+        "WhPerViewProxy": average,
+        "sampledPageCount": len(pages),
+        "auditedPageCount": len(sampled_urls),
+        "pages": [{**page, "pageWeight": 1 / len(pages)} for page in pages],
+    }
+
+
+def annual_document(
+    staged_raw: bytes,
+    traffic_raw: bytes,
+    energy_raw: bytes | None = None,
+    selection: str = "first",
+    grid: float = 494,
+) -> JSON:
+    """Bind both independent projections to exact inputs and calculation settings."""
+    raw = {"staged": staged_raw, "traffic": traffic_raw}
+    if energy_raw is not None:
+        raw["energy"] = energy_raw
+    traffic = json.loads(traffic_raw)
+    energy = json.loads(energy_raw) if energy_raw is not None else None
+    pages = model_pages(json.loads(staged_raw), selection)
+    if energy and (len(pages) != 1 or energy.get("origin") not in pages):
+        raise ValueError(
+            "Client-energy enrichment requires one matching audited origin"
+        )
+    if len({r["origin"] for r in traffic["results"]}) != len(traffic["results"]):
+        raise ValueError("Traffic lookup must contain unique origins")
+    scenarios, client_scenarios = [], []
+    for site, items in pages.items():
+        record: JSON = next((r for r in traffic["results"] if r["origin"] == site), {})
+        scenarios.append(annual_scenario(site, items, record, selection))
+        client_scenarios.append(
+            client_energy_scenario(
+                site, energy, record, {p["url"] for p in items}, grid
+            )
+        )
+    return {
+        "schemaVersion": "0.2.0",
+        "sourceSHA256": {
+            key: hashlib.sha256(value).hexdigest() for key, value in raw.items()
+        },
+        "calculatorSHA256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "energyValidatorSHA256": hashlib.sha256(
+            (ROOT / "audit/report_details.py").read_bytes()
+        ).hexdigest(),
+        "dependencyLockSHA256": hashlib.sha256(
+            (ROOT / "package-lock.json").read_bytes()
+        ).hexdigest(),
+        "model": "CO2.js 0.19.0 / SWDM v4, global model electricity factors, no DCR assigned by this scenario calculator",
+        "visitSelection": selection,
+        "clientGridIntensity": grid,
+        "trafficDatasetMonth": traffic.get("datasetMonth"),
+        "scenarios": scenarios,
+        "clientEnergyScenarios": client_scenarios,
+        "sensitivity": {
+            "reductionFraction": 0.1,
+            "meaning": "Hypothetical 10% reduction in per-view intensity at unchanged traffic; not a forecast of achievable savings",
+        },
+    }
+
+
 def main() -> None:
     """Publish annual scenarios separately from measured energy and DCR eligibility."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -184,35 +333,29 @@ def main() -> None:
         type=Path,
         default=ROOT / "docs/initial-implementation/assets/traffic-scenarios.json",
     )
+    parser.add_argument("--energy", type=Path)
+    parser.add_argument(
+        "--visit-selection", choices=["first", "branch-mean"], default="first"
+    )
+    parser.add_argument(
+        "--client-grid-intensity",
+        type=float,
+        default=494,
+        help="Assumed client electricity gCO2e/kWh; default SWDM v4 comparison factor, not measured audience mix",
+    )
     parser.add_argument(
         "--output",
         type=Path,
         default=ROOT / "docs/initial-implementation/assets/annual-footprints.json",
     )
     args = parser.parse_args()
-    raw = {"staged": args.staged.read_bytes(), "traffic": args.traffic.read_bytes()}
-    traffic = json.loads(raw["traffic"])
-    pages = model_pages(json.loads(raw["staged"]))
-    result = {
-        "schemaVersion": "0.1.0",
-        "sourceSHA256": {
-            key: hashlib.sha256(value).hexdigest() for key, value in raw.items()
-        },
-        "calculatorSHA256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        "dependencyLockSHA256": hashlib.sha256(
-            (ROOT / "package-lock.json").read_bytes()
-        ).hexdigest(),
-        "model": "CO2.js 0.19.0 / SWDM v4, global model electricity factors, no DCR assigned by this scenario calculator",
-        "trafficDatasetMonth": traffic["datasetMonth"],
-        "scenarios": [
-            annual_scenario(
-                site,
-                items,
-                next((r for r in traffic["results"] if r["origin"] == site), {}),
-            )
-            for site, items in pages.items()
-        ],
-    }
+    result = annual_document(
+        args.staged.read_bytes(),
+        args.traffic.read_bytes(),
+        args.energy.read_bytes() if args.energy else None,
+        args.visit_selection,
+        args.client_grid_intensity,
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
 

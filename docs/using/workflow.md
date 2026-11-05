@@ -69,6 +69,23 @@ uv run --locked --script audit/cli.py tool workflow score \
 
 The coordinator writes the final review from the guideline worker's output plus explicit resolutions. The existing scorer validates that final review and calculates once per guideline group. The reconciliation receipt proves that every advisor issue received a response; it does not prove the response was correct. Keep the role outputs and resolutions beside the session for review.
 
+## Estimate annual impact
+
+The agent retrieves an exact-origin CrUX rank and freezes the traffic proxy outside the scored session. It then calculates independent SWDM v4 and optional client-energy scenarios. Keep source month, mapping digest, page weights and electricity assumptions with the result; a missing rank is not zero traffic. These commands are agent-operated tools, not owner setup steps.
+
+```sh
+uv run --locked --script audit/cli.py tool traffic https://example.org \
+  --output /absolute/output/traffic.json
+uv run --locked --script audit/cli.py tool annual \
+  --staged /absolute/output/session/staged.json \
+  --traffic /absolute/output/traffic.json \
+  --energy /absolute/output/energy/manifest.json \
+  --visit-selection first --client-grid-intensity 494 \
+  --output /absolute/output/annual.json
+```
+
+Use the GreenFrame manifest produced by collection. Omit `--energy` when no valid client-energy experiment is available. During report preparation, apply the claims-review skill to these additional inputs and keep the resource-model projection separate from SWDM and electricity-meter readings. A hypothetical improvement percentage illustrates scale without claiming a demonstrated saving.
+
 ## Write and illustrate the report
 
 The report worker applies `sustainability-report` to the scored session and writes a separate editorial file. It keeps the score and check outcomes intact while producing plain-language explanations. Owner feedback may revise priorities through a separate review-bound presentation supplement with an explicit reason. Selected screenshots remain separate illustrations with their own capture time and state.
@@ -77,6 +94,8 @@ The report worker applies `sustainability-report` to the scored session and writ
 uv run --locked --script audit/cli.py tool render_review \
   --session /absolute/output/session \
   --editorial /absolute/output/editorial.json \
+  --annual /absolute/output/annual.json --traffic /absolute/output/traffic.json \
+  --energy /absolute/output/energy/manifest.json \
   --artifact-prefix session --output /absolute/output/report.md
 ```
 

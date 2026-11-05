@@ -164,6 +164,7 @@ def energy_rows(data: JSON, site: str) -> list[list[str]]:
             value = page[key]["median"]
             if (
                 not isinstance(value, (int, float))
+                or isinstance(value, bool)
                 or not math.isfinite(value)
                 or value < 0
             ):
@@ -175,7 +176,10 @@ def energy_rows(data: JSON, site: str) -> list[list[str]]:
             )
             samples = [sample[metric]["value"] for sample in page["sampleMetrics"]]
             if any(
-                not isinstance(v, (int, float)) or not math.isfinite(v) or v < 0
+                not isinstance(v, (int, float))
+                or isinstance(v, bool)
+                or not math.isfinite(v)
+                or v < 0
                 for v in samples
             ):
                 raise ValueError("Energy samples must be finite nonnegative values")

@@ -4,9 +4,9 @@ GreenFrame is useful for repeated user journeys that include rendering, waiting,
 
 Keep three separate quantities in reports: transferred-data SWDM/Digital Carbon Ratings estimates, co2-runner CPU-package observations, and GreenFrame's modeled scenario energy. Their boundaries overlap and their assumptions differ; adding them would double count. A GreenFrame result is not direct electricity-meter evidence.
 
-## The local example
+## Bakerydemo example
 
-The supplied `local/bakerydemo-gold-benchmark` checkout, revision `973b3f7e441ceac867a803924da29cbd2bf42d54`, contains homepage, search, filtering, contact, and admin journeys. Its homepage scenario follows a visitor into a bread index and detail page. That is a useful pattern for task-level auditing, rather than measuring only a landing page.
+The [bakerydemo-gold-benchmark source snapshot](https://github.com/thibaudcolas/bakerydemo-gold-benchmark/tree/973b3f7e441ceac867a803924da29cbd2bf42d54) contains homepage, search, filtering, contact, and admin journeys. Its homepage scenario follows a visitor into a bread index and detail page. That is a useful pattern for task-level auditing, rather than measuring only a landing page.
 
 Its configs include application/database containers, and its JavaScript files use the older standalone-function form. Our client adapter omits those containers and generates the `module.exports` form required by [GreenFrame 2.x scenarios](https://docs.greenframe.io/scenario/). It also uses explicit phases: GreenFrame's default scenario scrolls, so it would not represent the requested first-load headline.
 
@@ -38,6 +38,6 @@ Each phase is a separate complete scenario. Its total is not the incremental ene
 
 The manifest preserves arguments, scenario/config/wrapper hashes, CLI and Docker preflight output, host context, phase, consent choice, timestamps, return code, and log hash. Successful recognized summaries retain Wh/scenario, gCO2e/scenario, and GreenFrame's reported precision. Unrecognized summaries remain unavailable, rather than zero. The raw log is retained privately.
 
-Preparation and prerequisite detection were executed here: Docker responded, but no GreenFrame executable was installed. No GreenFrame energy measurement has been made or added to the pilot reports. The npm registry also did not provide `greenframe-cli@2.0.1`; use the upstream distribution instructions instead of assuming an npm install works.
+The [current example reports](../reports/README.md) include three-page, three-repetition GreenFrame 2.0.1 experiments per site. Their reproduction manifests pin the container digest, Chromium version, scenarios and raw samples. Results are resource-model estimates; they do not measure whole-device electricity or establish savings.
 
-Before accepting comparative results, validate the generated scenario with the installed runner, capture its browser version and container image digest, and freeze them with the hardware/load conditions. This adapter pins the CLI interface but does not yet pin or attest the runner image. Repeat measurements, inspect precision, and verify that milestones and page states match the staged browser collector. These are the remaining integration checks, not evidence of energy savings.
+Before comparing results, retain matching browser versions, container images, hardware/load conditions and scenario milestones. Repeat measurements sequentially and inspect precision. An annual client-only projection additionally requires explicit traffic, page weights and electricity assumptions; see [energy and traffic scenarios](energy-and-traffic.md). It must stay separate from SWDM and cannot be presented as metered annual site consumption.

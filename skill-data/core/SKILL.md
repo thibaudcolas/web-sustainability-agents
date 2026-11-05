@@ -3,7 +3,7 @@ name: sustainability-core
 description: Coordinate the complete sustainability audit through explicit native-agent tasks and deterministic artifact handoffs.
 license: MIT
 metadata:
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Coordinate the audit
@@ -20,7 +20,7 @@ Use the CLI `tool <name> ...` to invoke existing deterministic tools. Pass absol
 3. **Independent reviews** — run `tool orchestrate tasks --session <session> --output <review-tasks> --mode native-subagents`. Dispatch evidence, guideline and claims workers concurrently against the same frozen session. Each receives its task JSON, named skill and output path. If native subagents are unavailable, use `--mode sequential` and apply the same contracts one at a time. Do not fabricate parallel execution.
 4. **Validate and reconcile** — run `tool orchestrate accept --task <role.task.json>` for each result, then `status --tasks <review-tasks>`. Respond to every evidence/claims issue in `resolutions.json` as `{resolutions:[{issue:"role:id",decision:"applied|retained-with-reason|needs-new-evidence",reason:"..."}]}` and validate with `reconcile`. Use the guideline result as the base of `session/review.json`, making explicit, evidence-supported corrections. Preserve unresolved disagreements and missing evidence; reviewer agreement alone adds no site evidence.
 5. **Calculate** — run `tool workflow score --session <session> --review <session/review.json>`. The scorer verifies the final review and calculates outcomes; neither coordinator nor reviewer invents an intuitive score.
-6. **Report** — load `report`, dispatch `sustainability-report` with the scored session, owner's audience and a separate editorial-output path. It writes plain-language findings without changing judgments and selects useful screenshots. The coordinator inspects the final report, resolves any writing/evidence mismatch, renders it, and gives the owner a link with the key priorities.
+6. **Report** — load `report`, dispatch `sustainability-report` with the scored session, owner's audience and a separate editorial-output path. It writes plain-language findings without changing judgments and selects useful screenshots. It also runs the `traffic` and `annual` tools for an exact-origin annual-impact scenario, keeping these additions outside the frozen session. Apply the claims-review guidance to the traffic, page-mix and energy assumptions; pass the annual calculation and its traffic/energy sources to the renderer. Missing inputs produce an explicit unavailable explanation. The coordinator inspects the final report, resolves any writing/evidence mismatch, renders it, and gives the owner a link with the key priorities.
 
 Native Claude agent descriptors ship in `agents/`. Other harnesses dispatch their native subagent primitive with the same skill and task file. Prefer specialist roles to one agent per WSG criterion. If worker capacity is limited, queue independent reviews; do not repeat collection. Workers write only their assigned outputs and never mutate the frozen session.
 

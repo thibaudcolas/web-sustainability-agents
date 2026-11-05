@@ -12,6 +12,10 @@
 
 {One row per page: first-load transfer, cumulative cookie/wait and scroll transfers, estimated gCO₂e, carbon rating, modeled browser and network energy. Mark partial and missing values. Column labels link to methodology at the end.}
 
+## Estimated annual footprint
+
+{Traffic-derived scenario, SWDM v4 annual browsing emissions, separate client-energy and operational-emissions projections, and hypothetical 10% reduction. Explain unavailable inputs; link methodology without narrating tool development.}
+
 ## Priorities
 
 {Short assessment: useful strengths, highest-priority work and the main evidence limit.}

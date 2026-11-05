@@ -23,6 +23,7 @@ from urllib.parse import urlsplit
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from audit.annual import annual_document  # noqa: E402 # ty: ignore[unresolved-import]
 from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
     AREAS,
     area_results,
@@ -300,10 +301,42 @@ def render(
     editorial_link: str | None = None,
     receipt_link: str | None = None,
     presentation: JSON | None = None,
-    energy: JSON | None = None,
+    energy: JSON | Path | None = None,
     supplement_prefix: str | None = None,
+    annual_path: Path | None = None,
+    traffic_path: Path | None = None,
+    annual_link: str | None = None,
+    traffic_link: str | None = None,
 ) -> str:
     """Render readable findings with calculations and provenance kept deterministic."""
+    energy_raw = energy.read_bytes() if isinstance(energy, Path) else None
+    if isinstance(energy, Path):
+        energy = read(energy)
+    annual_data = None
+    traffic_data: JSON = {}
+    if annual_path:
+        if traffic_path is None or (energy is not None and energy_raw is None):
+            raise ValueError(
+                "Annual validation requires traffic and energy source file paths"
+            )
+        annual_data = read(annual_path)
+        if annual_data.get("visitSelection") != "first":
+            raise ValueError(
+                "Annual report must use the same first visits as page measurements"
+            )
+        traffic_data = read(traffic_path)
+        expected = annual_document(
+            (session / "staged.json").read_bytes(),
+            traffic_path.read_bytes(),
+            energy_raw,
+            grid=annual_data["clientGridIntensity"],
+        )
+        if annual_data != expected:
+            raise ValueError(
+                "Annual calculations do not match their source evidence and calculator"
+            )
+    elif traffic_path:
+        raise ValueError("Traffic must accompany an annual calculation")
     packet = read(session / "packet.json")
     review = read(session / "review.json")
     assessment = read(session / "scores.json")
@@ -493,6 +526,92 @@ def render(
             )
         )
     lines += ["</tbody></table></div>", ""]
+    lines += ["## Estimated annual footprint", ""]
+    annual_site: JSON = {}
+    annual_client: JSON = {}
+    traffic_record: JSON = {}
+    if annual_data:
+        annual_site = next(
+            row for row in annual_data["scenarios"] if row["site"] == packet["site"]
+        )
+        annual_client = next(
+            row
+            for row in annual_data["clientEnergyScenarios"]
+            if row["site"] == packet["site"]
+        )
+        traffic_record = next(
+            (row for row in traffic_data["results"] if row["origin"] == packet["site"]),
+            {},
+        )
+        if annual_site["status"] == "estimated":
+            lines += [
+                f"A traffic scenario of **{annual_site['annualPageviews']:,.0f} pageviews/year** gives the estimates below. These are alternative views of overlapping activity, so they should not be added together.",
+                "",
+                *table_start(
+                    "Annual footprint and improvement scale",
+                    ["Scope", "Annual estimate", "If per-view impact fell by 10%"],
+                    {
+                        "Annual estimate": "#measure-annual",
+                        "If per-view impact fell by 10%": "#measure-annual-savings",
+                    },
+                ),
+            ]
+            annual_values = [
+                (
+                    "Site browsing · SWDM v4"
+                    + (
+                        " · partial transfers"
+                        if annual_site["transferInputs"] == "partial"
+                        else ""
+                    ),
+                    annual_site["value"],
+                    "kgCO₂e/year",
+                )
+            ]
+            if annual_client["status"] == "estimated":
+                annual_values += [
+                    (
+                        "Client electricity · GreenFrame scenarios",
+                        annual_client["value"],
+                        "kWh/year",
+                    ),
+                    (
+                        "Client operational emissions · assumed electricity mix",
+                        annual_client["kgCO2ePerYear"],
+                        "kgCO₂e/year",
+                    ),
+                ]
+            for label, value, unit in annual_values:
+                lines.append(
+                    table_row(
+                        [
+                            html.escape(label),
+                            f"{value:,.2f} {unit}",
+                            f"{value * annual_data['sensitivity']['reductionFraction']:,.2f} {unit} less",
+                        ]
+                    )
+                )
+            lines += [
+                "</tbody></table></div>",
+                "",
+                "The 10% column shows the scale of a hypothetical improvement, not a predicted saving from the findings below.",
+                "",
+            ]
+            if annual_client["status"] != "estimated":
+                lines += [
+                    f"**Client-energy projection unavailable:** {prose(annual_client['reason'])}.",
+                    "",
+                ]
+        else:
+            lines += [
+                f"**Annual estimate unavailable:** {prose(annual_site['reason'])}. Obtain traffic evidence for this exact origin; missing rank data does not mean zero visits.",
+                "",
+            ]
+    else:
+        lines += [
+            "Annual impact has not been estimated for this report. Collect an exact-origin CrUX rank and traffic scenario, then combine it with the sampled first loads and any available client-energy scenarios.",
+            "",
+        ]
     lines += ["## Priorities", "", prose(editorial["overview"]), ""]
     used_images: set[str] = set()
     finding_map = {f["checkId"]: f for f in editorial["findings"]}
@@ -669,7 +788,7 @@ def render(
         "",
         f"**Audit judgments:** {prose(reviewer['harness'])}, {prose(reviewer['model'])}, **{prose(reviewer['reasoning'])} reasoning**. **Report wording:** {prose(writer['harness'])}, {prose(writer['model'])}, **{prose(writer['reasoning'])} reasoning**.",
         "",
-        f"The scoring method is `{score['rubricVersion']}`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. {counts['inapplicable']} groups were excluded as not applicable; {counts['untested']} were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.",
+        f"The scoring method is `{score['rubricVersion']}`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. {counts['inapplicable']} groups were excluded as not applicable; {counts['untested']} were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score.",
         "",
         "### First load {#measure-first-load}",
         "",
@@ -726,6 +845,43 @@ def render(
             "The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, independently of the transfer collector. The model assumes a 14 W display; that assumption contributes substantially to these short visits. CPU, memory and disk estimates use the collection host's properties. Background activity on this shared workstation was not independently isolated. These figures support repeat experiments under the same conditions, not device-independent rankings. GreenFrame network energy and SWDM carbon estimates overlap in scope and are not added together.",
             "",
         ]
+    if annual_data:
+        position = lines.index('??? note "Technical files for reproducing this report"')
+        month = str(annual_data.get("trafficDatasetMonth") or "not recorded")
+        if len(month) == 6 and month.isdigit():
+            month = month[:4] + "-" + month[4:]
+        grid = annual_data["clientGridIntensity"]
+        method_lines = [
+            "### Annual footprint {#measure-annual}",
+            "",
+            f"**Traffic:** CrUX dataset month `{month}`, exact origin `{packet['site']}`, popularity bucket {format(traffic_record['rankBucket'], ',') if traffic_record.get('rankBucket') is not None else 'unavailable'}. The [CrUX popularity metric](https://developer.chrome.com/docs/crux/methodology/metrics#popularity) is a coarse navigation-based rank, not a pageview count. The [rank-to-pageviews mapping](https://github.com/thibaudcolas/ranking-to-pageviews) applies medians calibrated on US government sites using 2025 analytics and December 2025 ranks. This population and period differ from this site. No calibrated site-level uncertainty interval is available; these are scenarios, not measured analytics or a forecast.",
+            "",
+            "**SWDM v4:** Annual pageviews × the arithmetic mean of unrounded emissions per sampled URL ÷ 1,000 = kgCO₂e/year. Use the first recorded initial visit per URL, equal page weights and 100% first visits. The actual mix of pages and returning visitors is unknown. [SWDM v4](https://sustainablewebdesign.org/estimating-digital-emissions/) covers modeled operational and embodied browsing emissions across devices, networks and data centers; it is not a complete inventory of this site's backend, builds or organization.",
+            "",
+            "Partial transfer inputs can support this explicitly labeled scenario, but do not establish a complete footprint or qualify for a Digital Carbon Rating. Ratings remain withheld where initial captures are incomplete.",
+            "",
+        ]
+        if annual_client["status"] == "estimated":
+            method_lines += [
+                f"**Client-energy projection:** The {annual_client['sampledPageCount']} energy-sampled URLs out of {annual_client['auditedPageCount']} audited URLs receive equal weights. Take each URL's median of three matching GreenFrame runs, average those unrounded medians, and multiply by estimated pageviews ÷ 1,000 to convert Wh to annual kWh. This assumes every pageview repeats that initial-load desktop scenario; it does not cover later reading, scrolling, other devices, network energy, remote servers or embodied emissions.",
+                "",
+                f"Convert client kWh to operational kgCO₂e using **{grid:g} gCO₂e/kWh** ÷ 1,000. This is an explicit comparison assumption, using the SWDM v4 default unless overridden; the audience's electricity mix is unknown. GreenFrame estimates energy from observed resource use, not an electricity meter. Its fixed display/CPU coefficients and short laboratory duration can dominate these values. Do not add either client projection to SWDM or substitute it for SWDM's entire device segment.",
+                "",
+            ]
+        else:
+            method_lines += [
+                "No valid client-energy projection is available; it is not treated as zero.",
+                "",
+            ]
+        method_lines += [
+            "### Potential improvement scale {#measure-annual-savings}",
+            "",
+            "The illustrative reduction equals each annual estimate × 0.10 at unchanged traffic. It assumes that average per-view impact falls by 10% across the modeled population; it does not establish that any recommended fix will achieve this. A 10% byte reduction is not automatically a 10% reduction in measured client energy. Validate a change with matched before/after scenarios, then apply its measured difference only to the affected share of annual pageviews. Baseline device/display activity is not automatically removable by site changes.",
+            "",
+            "All annual figures scale linearly with the traffic assumption: half as many pageviews halves them; twice as many doubles them. Replace the rank proxy with matching-origin analytics, page weights, repeat-visit proportions and audience device/electricity data to improve the estimate. Sample minimum/maximum intensities in the artifact are sensitivity cases, not confidence bounds.",
+            "",
+        ]
+        lines[position:position] = method_lines
     if supplement_prefix:
         lines += [
             f"    - [Report settings and source links]({supplement_prefix}/presentation.json)",
@@ -755,6 +911,11 @@ def render(
     ]:
         if (session / name).exists():
             lines.append(f"    - [{label}]({prefix}/{name})")
+    if annual_path and traffic_path:
+        lines += [
+            f"    - [Annual calculations and sensitivity assumptions]({annual_link or annual_path.as_posix()})",
+            f"    - [CrUX rank lookup and traffic assumptions]({traffic_link or traffic_path.as_posix()})",
+        ]
     if editorial_link:
         lines.append(f"    - [Report wording and check explanations]({editorial_link})")
     if receipt_link:
@@ -777,6 +938,8 @@ def main() -> None:
     parser.add_argument("--image-prefix", default="")
     parser.add_argument("--presentation", type=Path)
     parser.add_argument("--energy", type=Path)
+    parser.add_argument("--annual", type=Path)
+    parser.add_argument("--traffic", type=Path)
     parser.add_argument("--supplement-prefix")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -796,8 +959,16 @@ def main() -> None:
             if args.editorial.with_name("editorial-receipt.json").exists()
             else None,
             read(args.presentation) if args.presentation else None,
-            read(args.energy) if args.energy else None,
+            args.energy,
             args.supplement_prefix,
+            args.annual,
+            args.traffic,
+            os.path.relpath(args.annual.resolve(), args.output.parent.resolve())
+            if args.annual
+            else None,
+            os.path.relpath(args.traffic.resolve(), args.output.parent.resolve())
+            if args.traffic
+            else None,
         )
     )
 

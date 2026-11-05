@@ -40,6 +40,22 @@ Passing percentages apply to the selected checks. Full-guideline conformance has
 <tr><th scope="row"><a href="https://guide.wagtail.org/en/about/">About</a></th><td>54.2 kB</td><td>54.2 kB</td><td>54.2 kB</td><td>0.01 gCO₂e</td><td>A+</td><td>Not sampled</td><td>Not sampled</td></tr>
 </tbody></table></div>
 
+## Estimated annual footprint
+
+A traffic scenario of **244,734 pageviews/year** gives the estimates below. These are alternative views of overlapping activity, so they should not be added together.
+
+<div class="audit-table-scroll" tabindex="0" role="region" aria-label="Annual footprint and improvement scale">
+<table>
+<caption>Annual footprint and improvement scale</caption>
+<thead><tr><th scope="col">Scope</th><th scope="col"><a href="#measure-annual">Annual estimate</a></th><th scope="col"><a href="#measure-annual-savings">If per-view impact fell by 10%</a></th></tr></thead>
+<tbody>
+<tr><th scope="row">Site browsing · SWDM v4</th><td>4.93 kgCO₂e/year</td><td>0.49 kgCO₂e/year less</td></tr>
+<tr><th scope="row">Client electricity · GreenFrame scenarios</th><td>2.76 kWh/year</td><td>0.28 kWh/year less</td></tr>
+<tr><th scope="row">Client operational emissions · assumed electricity mix</th><td>1.36 kgCO₂e/year</td><td>0.14 kgCO₂e/year less</td></tr>
+</tbody></table></div>
+
+The 10% column shows the scale of a hypothetical improvement, not a predicted saving from the findings below.
+
 ## Priorities
 
 The six-page sample supports focused reading: system fonts avoid font downloads, core content remains available without JavaScript, text compression works, and desktop search reaches the image guide. The clearest visitor-facing defect is that already-open pages do not follow a system theme change, although fresh dark-mode visits work. Priorities also include trials for eager article images, verification of a duplicate CI trigger path in supplied source, and a mobile navigation task. Several wider practices remain unresolved because the needed evidence was outside this sample.
@@ -871,7 +887,7 @@ The browser measurements were captured from **2026-11-04T19:22:46.209106+00:00**
 
 **Audit judgments:** Codex native subagent, gpt-6.1-sol, **high reasoning**. **Report wording:** Codex native subagent, gpt-6.1-sol, **high reasoning**.
 
-The scoring method is `agent-breadth-v2`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. 1 groups were excluded as not applicable; 39 were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.
+The scoring method is `agent-breadth-v2`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. 1 groups were excluded as not applicable; 39 were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score.
 
 ### First load {#measure-first-load}
 
@@ -903,6 +919,24 @@ The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, indepen
 
 Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the checked-out branch. Captured-revision links remain stable if that branch moves.
 
+### Annual footprint {#measure-annual}
+
+**Traffic:** CrUX dataset month `2026-09`, exact origin `https://guide.wagtail.org`, popularity bucket 10,000,000. The [CrUX popularity metric](https://developer.chrome.com/docs/crux/methodology/metrics#popularity) is a coarse navigation-based rank, not a pageview count. The [rank-to-pageviews mapping](https://github.com/thibaudcolas/ranking-to-pageviews) applies medians calibrated on US government sites using 2025 analytics and December 2025 ranks. This population and period differ from this site. No calibrated site-level uncertainty interval is available; these are scenarios, not measured analytics or a forecast.
+
+**SWDM v4:** Annual pageviews × the arithmetic mean of unrounded emissions per sampled URL ÷ 1,000 = kgCO₂e/year. Use the first recorded initial visit per URL, equal page weights and 100% first visits. The actual mix of pages and returning visitors is unknown. [SWDM v4](https://sustainablewebdesign.org/estimating-digital-emissions/) covers modeled operational and embodied browsing emissions across devices, networks and data centers; it is not a complete inventory of this site's backend, builds or organization.
+
+Partial transfer inputs can support this explicitly labeled scenario, but do not establish a complete footprint or qualify for a Digital Carbon Rating. Ratings remain withheld where initial captures are incomplete.
+
+**Client-energy projection:** The 3 energy-sampled URLs out of 6 audited URLs receive equal weights. Take each URL's median of three matching GreenFrame runs, average those unrounded medians, and multiply by estimated pageviews ÷ 1,000 to convert Wh to annual kWh. This assumes every pageview repeats that initial-load desktop scenario; it does not cover later reading, scrolling, other devices, network energy, remote servers or embodied emissions.
+
+Convert client kWh to operational kgCO₂e using **494 gCO₂e/kWh** ÷ 1,000. This is an explicit comparison assumption, using the SWDM v4 default unless overridden; the audience's electricity mix is unknown. GreenFrame estimates energy from observed resource use, not an electricity meter. Its fixed display/CPU coefficients and short laboratory duration can dominate these values. Do not add either client projection to SWDM or substitute it for SWDM's entire device segment.
+
+### Potential improvement scale {#measure-annual-savings}
+
+The illustrative reduction equals each annual estimate × 0.10 at unchanged traffic. It assumes that average per-view impact falls by 10% across the modeled population; it does not establish that any recommended fix will achieve this. A 10% byte reduction is not automatically a 10% reduction in measured client energy. Validate a change with matched before/after scenarios, then apply its measured difference only to the affected share of annual pageviews. Baseline device/display activity is not automatically removable by site changes.
+
+All annual figures scale linearly with the traffic assumption: half as many pageviews halves them; twice as many doubles them. Replace the rank proxy with matching-origin analytics, page weights, repeat-visit proportions and audience device/electricity data to improve the estimate. Sample minimum/maximum intensities in the artifact are sensitivity cases, not confidence bounds.
+
 ??? note "Technical files for reproducing this report"
 
     The report above can be read without these files. They retain exact evidence, original judgments and calculation inputs for independent reproduction.
@@ -923,6 +957,8 @@ Illustrations were captured separately from the transfer measurements. Their cap
     - [Measurement table for charts](assets/fresh-guide/chart-data.csv)
     - [Frozen session, skill snapshots and reproduction instructions](assets/fresh-guide/session.zip)
     - [Publication hashes](assets/fresh-guide/manifest.json)
+    - [Annual calculations and sensitivity assumptions](assets/report-refinement/guide/annual.json)
+    - [CrUX rank lookup and traffic assumptions](assets/report-refinement/traffic.json)
     - [Report wording and check explanations](assets/fresh-guide/editorial.json)
     - [Editorial model and input provenance](assets/fresh-guide/editorial-receipt.json)
 

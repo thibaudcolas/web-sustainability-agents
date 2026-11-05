@@ -3,7 +3,7 @@ name: sustainability-report
 description: Turn a scored sustainability audit into a readable per-site report with clear priorities, illustrated findings, and a human-readable evidence appendix. Use after evidence review and scoring, or when revising report presentation.
 license: MIT
 metadata:
-  version: "0.2.2"
+  version: "0.3.0"
 ---
 
 # Sustainability report
@@ -27,3 +27,7 @@ Prefix check-outcome wording with status symbols (✅ pass, ❌ problem, ❓ inv
 Keep screenshot captions short and descriptive; capture time, dimensions and limitations belong in methodology and the manifest. For useful source findings, show a short exact captured excerpt and link both the checked-out branch and captured commit. Validate the excerpt against the captured file digest and line range. Source availability does not establish the deployed revision.
 
 A `--presentation` JSON supplement may bind caption replacements, priority changes, order and source excerpts to the original review SHA-256. Record each priority change's rationale. `--energy` accepts a separate `greenframe-energy-v2` experiment for the same origin. Keep both outside the original frozen session, link them through `--supplement-prefix`, and preserve a reproduction command. No hidden hand-edited report numbers.
+
+Include an Estimated annual footprint section. Through the installed CLI, run `tool traffic <origin> --output <traffic.json>`, then `tool annual --staged <session/staged.json> --traffic <traffic.json> --energy <energy.json> --visit-selection first --client-grid-intensity 494 --output <annual.json>`. Omit `--energy` when unavailable. Pass `--annual`, `--traffic` and the same `--energy` source to `tool render_review`; it rechecks calculations against these exact inputs. Keep enrichment outside frozen evidence. If traffic is missing, show why the annual estimate is unavailable instead of omitting the section or assigning zero.
+
+Show SWDM v4 annual browsing emissions separately from the GreenFrame client-electricity projection and its operational emissions at the declared electricity factor. These overlap and must not be added. Use first recorded initial visits and equal sampled-page weights unless a separately supported page mix is available; use each energy page's median of three runs. State the smaller energy sample, partial transfers, rank month and calibration population in methodology. An explicitly assumed annual scenario is allowed even when partial transfers make a page rating unavailable. Show a hypothetical 10% reduction to convey scale; it is not an achievable-saving forecast, and byte reductions do not establish client-energy reductions. Do not call resource-model estimates direct electricity measurements.

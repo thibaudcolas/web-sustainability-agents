@@ -12,8 +12,8 @@ Install one entry point, `sustainability-audit`, then ask your agent to audit a 
 | `sustainability-collection`       | 0.2.1   | Execute the accepted plan once and explain incomplete collection                               |
 | `sustainability-evidence-review`  | 0.5.1   | Check measurements, phases and numeric interpretation                                          |
 | `sustainability-guideline-review` | 0.3.0   | Judge selected WSG expectations and preserve unknowns                                          |
-| `sustainability-claims-review`    | 0.3.0   | Review disclosures, estimates and source-informed recommendations                              |
-| `sustainability-report`           | 0.2.2   | Write readable findings, evidence explanations and illustrated reports                         |
+| `sustainability-claims-review`    | 0.3.1   | Review disclosures, estimates and source-informed recommendations                              |
+| `sustainability-report`           | 0.3.0   | Write readable findings, evidence explanations and illustrated reports                         |
 
 The entry point loads the CLI-only `core` orchestration workflow, which assigns the roles. Evidence, guideline and claims reviews can run as native subagents against the same frozen packet, then the coordinator reconciles them before scoring and report writing. A sequential fallback uses identical task contracts and records that execution mode.
 

@@ -1,0 +1,361 @@
+{
+  "schemaVersion": "0.2.0",
+  "sourceSHA256": {
+    "staged": "c41c6e1bb768b84f3b175788e433e424078083fa87e5aa4064c1c302b49d4528",
+    "traffic": "ff7a25ca2ce756baedfbc8c3390f32b78ba9ad9787019b861150160d5da217ee",
+    "energy": "db0d79459d46637b4fdb18eb443602675f80ebe6746f86c33f22decfff853a19"
+  },
+  "calculatorSHA256": "1b4c528c49910668a58a1c4eb43a883b20fca4db1d29c0f3760f7fbc18403bab",
+  "energyValidatorSHA256": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25",
+  "dependencyLockSHA256": "ec953293d1f0ba8dccd1585b196daddb52b351b47f4c6d52958c794088f0519e",
+  "model": "CO2.js 0.19.0 / SWDM v4, global model electricity factors, no DCR assigned by this scenario calculator",
+  "visitSelection": "first",
+  "clientGridIntensity": 494.0,
+  "trafficDatasetMonth": "202609",
+  "scenarios": [
+    {
+      "site": "https://wagtail.org",
+      "basis": "scenario",
+      "unit": "kgCO2e/year",
+      "status": "estimated",
+      "value": 67.89158793957762,
+      "functionalUnit": "One estimated year of page views at the audited origin, modeled operational and embodied browsing emissions",
+      "notIncluded": "Not a complete organizational footprint; no site-specific backend/build/office inventory or remote inference energy",
+      "assumptions": {
+        "pageMix": "Equal weights across sampled page URLs",
+        "visitSelection": "First recorded initial visit per URL",
+        "realPageMix": "unknown",
+        "visitMix": "100% first visits, 0% returning visits",
+        "hosting": "unknown; model uses non-green scenario",
+        "traffic": "Rank-bucket cohort estimate, not actual analytics",
+        "sensitivity": "All views at the minimum/maximum sampled page intensity; not a confidence interval or bounds on true site emissions"
+      },
+      "annualPageviews": 572851.0,
+      "gramsPerViewProxy": 0.11851526477142857,
+      "rankBucket": 5000000,
+      "transferInputs": "partial",
+      "pages": [
+        {
+          "url": "https://wagtail.org/",
+          "gramsPerView": 0.1399642296,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://wagtail.org/",
+              "runId": "home-reject",
+              "bytes": 944428,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.1399642296,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 944428,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://wagtail.org/features/",
+          "gramsPerView": 0.09470172660000001,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://wagtail.org/features/",
+              "runId": "features-reject",
+              "bytes": 639013,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.09470172660000001,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 639013,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://wagtail.org/blog/wagtail-8-1/",
+          "gramsPerView": 0.3002300808,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://wagtail.org/blog/wagtail-8-1/",
+              "runId": "release-article-reject",
+              "bytes": 2025844,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.3002300808,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 2025844,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://wagtail.org/search/?query=sustainability",
+          "gramsPerView": 0.0689891748,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://wagtail.org/search/?query=sustainability",
+              "runId": "search-reject",
+              "bytes": 465514,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.0689891748,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 465514,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://wagtail.org/sustainability/",
+          "gramsPerView": 0.0877778226,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://wagtail.org/sustainability/",
+              "runId": "sustainability-reject",
+              "bytes": 592293,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.0877778226,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 592293,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://wagtail.org/privacy/",
+          "gramsPerView": 0.0689198172,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://wagtail.org/privacy/",
+              "runId": "privacy-reject",
+              "bytes": 465046,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.0689198172,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 465046,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://wagtail.org/contact/",
+          "gramsPerView": 0.06902400180000001,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://wagtail.org/contact/",
+              "runId": "contact-reject",
+              "bytes": 465749,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.06902400180000001,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 465749,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        }
+      ],
+      "sensitivityKgPerYear": {
+        "lowestSampledPage": 39.480786202837194,
+        "highestSampledPage": 171.9871020163608
+      }
+    }
+  ],
+  "clientEnergyScenarios": [
+    {
+      "site": "https://wagtail.org",
+      "status": "estimated",
+      "basis": "scenario",
+      "value": 8.082832296196973,
+      "unit": "kWh/year",
+      "kgCO2ePerYear": 3.9929191543213047,
+      "gridIntensity": {
+        "value": 494.0,
+        "unit": "gCO2e/kWh",
+        "basis": "Assumed comparison factor, not audience electricity data",
+        "defaultFactorReference": "https://sustainablewebdesign.org/estimating-digital-emissions/"
+      },
+      "assumptions": {
+        "pageMix": "Equal weights across energy-sampled URLs; median of three matching repetitions per URL",
+        "visitMix": "Every estimated pageview repeats the recorded initial-load scenario on the tested device/browser",
+        "boundary": "Modeled browser CPU, memory, disk and display operation only; excludes network, remote servers, embodied emissions and later reading/interaction",
+        "measurement": "GreenFrame resource-counter model, not direct electricity metering",
+        "improvement": "A proportional reduction is a sensitivity scenario, not demonstrated achievable savings",
+        "additivity": "Overlaps SWDM device scope; do not add these estimates to SWDM"
+      },
+      "annualPageviews": 572851.0,
+      "rankBucket": 5000000,
+      "WhPerViewProxy": 0.014109833615018517,
+      "sampledPageCount": 3,
+      "auditedPageCount": 7,
+      "pages": [
+        {
+          "url": "https://wagtail.org/",
+          "WhPerView": 0.01207509125361111,
+          "pageWeight": 0.3333333333333333
+        },
+        {
+          "url": "https://wagtail.org/blog/wagtail-8-1/",
+          "WhPerView": 0.016413734991788886,
+          "pageWeight": 0.3333333333333333
+        },
+        {
+          "url": "https://wagtail.org/sustainability/",
+          "WhPerView": 0.013840674599655555,
+          "pageWeight": 0.3333333333333333
+        }
+      ]
+    }
+  ],
+  "sensitivity": {
+    "reductionFraction": 0.1,
+    "meaning": "Hypothetical 10% reduction in per-view intensity at unchanged traffic; not a forecast of achievable savings"
+  }
+}

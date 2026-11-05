@@ -41,6 +41,22 @@ Passing percentages apply to the selected checks. Full-guideline conformance has
 <tr><th scope="row"><a href="https://wagtail.org/contact/">Contact Us</a></th><td>465.7 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.7 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.9 kB · <a href="#measure-completeness">partial</a></td><td>Reject optional cookies: 465.7 kB · <a href="#measure-completeness">partial</a><br>Accept cookies: 464.9 kB · <a href="#measure-completeness">partial</a></td><td>Withheld</td><td>Withheld</td><td>Not sampled</td><td>Not sampled</td></tr>
 </tbody></table></div>
 
+## Estimated annual footprint
+
+A traffic scenario of **572,851 pageviews/year** gives the estimates below. These are alternative views of overlapping activity, so they should not be added together.
+
+<div class="audit-table-scroll" tabindex="0" role="region" aria-label="Annual footprint and improvement scale">
+<table>
+<caption>Annual footprint and improvement scale</caption>
+<thead><tr><th scope="col">Scope</th><th scope="col"><a href="#measure-annual">Annual estimate</a></th><th scope="col"><a href="#measure-annual-savings">If per-view impact fell by 10%</a></th></tr></thead>
+<tbody>
+<tr><th scope="row">Site browsing · SWDM v4 · partial transfers</th><td>67.89 kgCO₂e/year</td><td>6.79 kgCO₂e/year less</td></tr>
+<tr><th scope="row">Client electricity · GreenFrame scenarios</th><td>8.08 kWh/year</td><td>0.81 kWh/year less</td></tr>
+<tr><th scope="row">Client operational emissions · assumed electricity mix</th><td>3.99 kgCO₂e/year</td><td>0.40 kgCO₂e/year less</td></tr>
+</tbody></table></div>
+
+The 10% column shows the scale of a hypothetical improvement, not a predicted saving from the findings below.
+
 ## Priorities
 
 Wagtail.org already delivers compressed text, long-lived public assets, many WebP images and a home video that waits for playback. The clearest fixes are analytics requests sent before the stated measurement choice, contact email that disappears without JavaScript, inconsistent footprint quantities and live theme changes. Test an accessible on-demand YouTube player as the main transfer-reduction experiment. All fourteen measured visits have incomplete transfer measurements: the sizes below show captured data, not complete page weights. This report does not calculate a new emissions estimate or assign a Digital Carbon Rating from those partial measurements.
@@ -887,7 +903,7 @@ The browser measurements were captured from **2026-11-04T19:24:59.321438+00:00**
 
 **Audit judgments:** Codex native subagent, gpt-6.1-sol, **high reasoning**. **Report wording:** Codex native subagent, gpt-6.1-sol, **high reasoning**.
 
-The scoring method is `agent-breadth-v2`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. 0 groups were excluded as not applicable; 39 were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score. No annual footprint is inferred from these sampled visits.
+The scoring method is `agent-breadth-v2`. A guideline group counts once even if it has several checks. Observed problems take precedence over unresolved checks in that group. 0 groups were excluded as not applicable; 39 were untested. Unknowns remain in the passing-percentage denominator; untested and inapplicable groups do not. Area percentages use the same rule as the overall score.
 
 ### First load {#measure-first-load}
 
@@ -919,6 +935,24 @@ The pinned container uses Chromium 110 and a fixed Chrome 89 user-agent, indepen
 
 Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the checked-out branch. Captured-revision links remain stable if that branch moves.
 
+### Annual footprint {#measure-annual}
+
+**Traffic:** CrUX dataset month `2026-09`, exact origin `https://wagtail.org`, popularity bucket 5,000,000. The [CrUX popularity metric](https://developer.chrome.com/docs/crux/methodology/metrics#popularity) is a coarse navigation-based rank, not a pageview count. The [rank-to-pageviews mapping](https://github.com/thibaudcolas/ranking-to-pageviews) applies medians calibrated on US government sites using 2025 analytics and December 2025 ranks. This population and period differ from this site. No calibrated site-level uncertainty interval is available; these are scenarios, not measured analytics or a forecast.
+
+**SWDM v4:** Annual pageviews × the arithmetic mean of unrounded emissions per sampled URL ÷ 1,000 = kgCO₂e/year. Use the first recorded initial visit per URL, equal page weights and 100% first visits. The actual mix of pages and returning visitors is unknown. [SWDM v4](https://sustainablewebdesign.org/estimating-digital-emissions/) covers modeled operational and embodied browsing emissions across devices, networks and data centers; it is not a complete inventory of this site's backend, builds or organization.
+
+Partial transfer inputs can support this explicitly labeled scenario, but do not establish a complete footprint or qualify for a Digital Carbon Rating. Ratings remain withheld where initial captures are incomplete.
+
+**Client-energy projection:** The 3 energy-sampled URLs out of 7 audited URLs receive equal weights. Take each URL's median of three matching GreenFrame runs, average those unrounded medians, and multiply by estimated pageviews ÷ 1,000 to convert Wh to annual kWh. This assumes every pageview repeats that initial-load desktop scenario; it does not cover later reading, scrolling, other devices, network energy, remote servers or embodied emissions.
+
+Convert client kWh to operational kgCO₂e using **494 gCO₂e/kWh** ÷ 1,000. This is an explicit comparison assumption, using the SWDM v4 default unless overridden; the audience's electricity mix is unknown. GreenFrame estimates energy from observed resource use, not an electricity meter. Its fixed display/CPU coefficients and short laboratory duration can dominate these values. Do not add either client projection to SWDM or substitute it for SWDM's entire device segment.
+
+### Potential improvement scale {#measure-annual-savings}
+
+The illustrative reduction equals each annual estimate × 0.10 at unchanged traffic. It assumes that average per-view impact falls by 10% across the modeled population; it does not establish that any recommended fix will achieve this. A 10% byte reduction is not automatically a 10% reduction in measured client energy. Validate a change with matched before/after scenarios, then apply its measured difference only to the affected share of annual pageviews. Baseline device/display activity is not automatically removable by site changes.
+
+All annual figures scale linearly with the traffic assumption: half as many pageviews halves them; twice as many doubles them. Replace the rank proxy with matching-origin analytics, page weights, repeat-visit proportions and audience device/electricity data to improve the estimate. Sample minimum/maximum intensities in the artifact are sensitivity cases, not confidence bounds.
+
 ??? note "Technical files for reproducing this report"
 
     The report above can be read without these files. They retain exact evidence, original judgments and calculation inputs for independent reproduction.
@@ -939,6 +973,8 @@ Illustrations were captured separately from the transfer measurements. Their cap
     - [Measurement table for charts](assets/fresh-wagtail/chart-data.csv)
     - [Frozen session, skill snapshots and reproduction instructions](assets/fresh-wagtail/session.zip)
     - [Publication hashes](assets/fresh-wagtail/manifest.json)
+    - [Annual calculations and sensitivity assumptions](assets/report-refinement/wagtail/annual.json)
+    - [CrUX rank lookup and traffic assumptions](assets/report-refinement/traffic.json)
     - [Report wording and check explanations](assets/fresh-wagtail/editorial.json)
     - [Editorial model and input provenance](assets/fresh-wagtail/editorial-receipt.json)
 
