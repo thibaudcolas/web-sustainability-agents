@@ -80,7 +80,7 @@ Historical artifacts and model outcomes stay frozen. Corrections create a new ru
 
 **B24:** Add carbon.txt schema validation and scoped provider corroboration after the current declaration interpreter. Test DNS/header delegation, conflicting documents, expired reporting periods, unknown versions and parent/subdomain relationships. A schema-valid declaration still cannot establish green hosting by itself.
 
-**B25:** Work through the [101-row assessment crosswalk](../knowledge-base/assessment-crosswalk.md) by check family. Prioritize completed public tasks, keyboard/forms, constrained media/font tests and document alternatives. Then add source/build/dependency evidence and owner records for organizational execution. Manual quantitative and qualitative checks belong in the agent workflow; they are not automatically excluded from automation.
+**B25:** Work through the [current WSG auditability classifications](../knowledge-base/assessment-crosswalk.md) by criterion class, evidence access and check family. Prioritize completed public tasks, keyboard/forms, constrained media/font tests and document alternatives. Then add source/build/dependency evidence and owner records for organizational execution. Manual quantitative and qualitative checks belong in the agent workflow; they are not automatically excluded from automation.
 
 **B26:** Extend the new session packet's provenance resolver to source excerpts, screenshots and independently retrieved proof documents before including them in its score. Retain source revision, dirty status and deployment relationship. Public observations and supplemental source recommendations already remain distinguishable.
 
@@ -103,3 +103,9 @@ The new report skill and renderer separate editorial wording from scored judgmen
 ## Report feedback validation
 
 **B31:** Evaluate proportionate priority, concise explanations and source excerpts with owner judgments. The current reports use visible WSG descriptions, per-area results, first-visit transfer headlines, median-of-three energy, short captions and a low-priority CI investigation. The new benchmark tests the underlying distinctions, but synthetic answer agreement does not measure how useful the finished report is to an owner.
+
+**B32:** Validate the [proposed qualitative batch](../evaluation/design.md#next-qualitative-validation): explicit question modes and independently reviewed references first; then matched positive, problem, missing, conflicting, wrong-scope and applicability cases. Exercise actual discovery, clarifying questions, representative tasks and recovery in three controlled execution tasks. Use Harbor, Sol/high and Neuralwatt DeepSeek/high; measure supported recommendations and useful evidence requests as well as structured-answer agreement.
+
+**B33:** Compare focused experience/content and governance/lifecycle review instructions with the current general roles and a no-skill baseline. Keep model, evidence, tools and budgets fixed. Promote them to separate audit skills only when they improve independently judged evidence support or recommendation usefulness enough to justify orchestration cost. Context selection and claims review remain shared responsibilities; do not create one agent per WSG criterion.
+
+**B34:** Map the 33 browser/disclosure/source expectations to current criterion IDs and the specific clauses they assess; the ten contextual checks already name criteria. Link each method to execution evidence and benchmark cases, keeping full and partial coverage separate. Use the new 197-criterion inventory to prioritize gaps, not to claim implementation or validation coverage. This mapping precedes a reliable criterion-level coverage percentage.

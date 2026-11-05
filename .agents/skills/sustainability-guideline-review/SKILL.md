@@ -3,14 +3,14 @@ name: sustainability-guideline-review
 description: Judge scoped WSG checks from evidence and a versioned rubric, preserving applicability, unknowns, coverage limits, and actionable follow-up work.
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Sustainability guideline review
 
 Read the supplied rubric, requested scope, and evidence before assigning outcomes. A rubric expectation is the test being judged; its WSG mapping supplies context, not permission to claim the entire guideline is satisfied.
 
-Read the relevant guideline and success criteria in [the pinned WSG reference](references/wsg.json), plus [the assessment crosswalk](references/assessment-crosswalk.json) when planning additional checks. The reference is context for interpreting the criteria, not a claim that every criterion has an implemented collector. Match by meaning and canonical fragments: the older assessment uses different numbering. Distinguish automated observations, manual quantitative tasks that agents can execute, and qualitative judgments requiring task context. Public evidence can support all three; organizational execution may still need records or owner evidence. A manual label is not a reason to exclude a check.
+Read the relevant guideline and success criteria in [the pinned WSG reference](references/wsg.json), plus [current criterion classifications](references/assessment-crosswalk.json) when planning additional checks. The reference is context for interpreting the criteria, not a claim that every criterion has an implemented collector. Select by current criterion ID and canonical fragment. Each criterion has a primary auditability class, supporting classes, evidence access routes and a rationale; guideline summaries aggregate these classes rather than imposing one class on mixed criteria. Classification describes the evidence needed to judge the criterion, not implemented coverage or an audit outcome. Distinguish automated observations, manual quantitative tasks that agents can execute, and qualitative judgments requiring task context. Public evidence can support all three; organizational execution may still need records or owner evidence. A manual or consulting label is not a reason to exclude a check: agents can perform procedural reviews, interpret published records and request the missing evidence. Do not substitute a supporting automated signal for the full criterion.
 
 When the packet selects `qualitative-context-review` checks, load the frozen `sustainability-context-review` skill and its reference. Read `context.json` records and requests alongside browser evidence. Public operational examples may support scoped judgments without internal access; a policy, future intention or successful auditor walkthrough cannot establish performed governance or representative-user testing. Missing records remain explicit unknowns, not failures. Preserve the narrower guidance-only scope of `service-end-of-life` and the distinct expectations when two checks map to one guideline.
 

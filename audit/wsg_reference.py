@@ -5,7 +5,7 @@
 # [tool.uv]
 # required-version = ">=0.12.20,<0.13"
 # ///
-"""Extract the pinned WSG draft and validate the older assessment crosswalk."""
+"""Extract the pinned WSG draft and validate current criterion auditability classes."""
 
 from __future__ import annotations
 
@@ -23,8 +23,14 @@ ROOT = Path(__file__).resolve().parent.parent
 REFERENCES = ROOT / ".agents/skills/sustainability-guideline-review/references"
 SOURCE = "https://www.w3.org/TR/2026/DNOTE-web-sustainability-guidelines-20261016/"
 CANONICAL = "https://www.w3.org/TR/web-sustainability-guidelines/"
-ARTICLE = "https://thib.me/assessing-web-sustainability-guidelines-on-automated-testing"
-CATEGORIES = {"automated": 35, "manual, quantitative": 16, "manual, qualitative": 50}
+CLASSES = (
+    "automated",
+    "manual, quantitative",
+    "manual, qualitative",
+    "static analysis",
+    "consulting",
+)
+EVIDENCE_ACCESS = {"public-site", "public-documents", "source", "owner-records"}
 VOID = {
     "area",
     "base",
@@ -82,7 +88,7 @@ class Element:
 
 
 class Document(HTMLParser):
-    """Parse the explicitly closed section/table structures in the two sources."""
+    """Parse the explicitly closed structures of the pinned WSG document."""
 
     def __init__(self, source: str) -> None:
         """Parse an HTML document into a small standard-library-only tree."""
@@ -202,95 +208,128 @@ def extract_wsg(raw: bytes) -> JSON:
     }
 
 
-def extract_assessment(raw: bytes) -> list[JSON]:
-    """Extract every selected assessment row while preserving its original group."""
-    current = ""
-    rows = []
-    for row in Document(raw.decode("utf-8")).root.descendants("tr"):
-        cells = row.descendants("td")
-        if len(cells) != 2:
-            continue
-        category, name = (cell.text() for cell in cells)
-        if not category:
-            current = name
-        elif category in CATEGORIES:
-            number, old_title = current.split(" ", 1)
-            rows.append(
-                {
-                    "oldGuideline": number,
-                    "oldGuidelineTitle": old_title,
-                    "oldCriterion": name,
-                    "classification": category,
-                }
-            )
-    if Counter(r["classification"] for r in rows) != Counter(CATEGORIES):
-        raise ValueError(
-            "Assessment rows differ from the source's 35/16/50 category counts"
-        )
-    return rows
-
-
-def validate_crosswalk(crosswalk: JSON, reference: JSON, rows: list[JSON]) -> None:
-    """Check exhaustive source correspondence and valid current criterion targets."""
+def validate_classifications(data: JSON, reference: JSON) -> None:
+    """Require one justified classification for every current WSG criterion."""
+    if data.get("schemaVersion") != "2.0":
+        raise ValueError("Expected current criterion classification schema 2.0")
     if (
-        crosswalk["wsgSourceVersion"] != reference["sourceVersion"]
-        or crosswalk["wsgSourceSha256"] != reference["sourceSha256"]
+        data.get("wsgSourceVersion") != reference["sourceVersion"]
+        or data.get("wsgSourceSha256") != reference["sourceSha256"]
     ):
-        raise ValueError("Crosswalk and reference must use the same WSG source bytes")
-    expected = [
-        (r["oldGuideline"], r["oldCriterion"], r["classification"]) for r in rows
-    ]
-    actual = [
-        (r["oldGuideline"], r["oldCriterion"], r["classification"])
-        for r in crosswalk["checks"]
-    ]
-    if expected != actual:
         raise ValueError(
-            "Crosswalk must contain each selected original row exactly once in source order"
+            "Classifications and reference must use the same WSG source bytes"
         )
-    criteria = {
-        c["id"]: (g["id"], c["url"])
-        for g in reference["guidelines"]
-        for c in g["criteria"]
+    if "checks" in data:
+        raise ValueError(
+            "Classifications must be keyed to current criteria, not legacy rows"
+        )
+    definitions = data.get("classDefinitions", {})
+    if set(definitions) != set(CLASSES) or not all(definitions.values()):
+        raise ValueError("Define all five auditability classes")
+    expected = {
+        criterion["id"]: (guideline, criterion)
+        for guideline in reference["guidelines"]
+        for criterion in guideline["criteria"]
     }
-    for check in crosswalk["checks"]:
-        if not check["targets"] or not check["probe"] or not check["interpretation"]:
+    rows = data.get("criteria", [])
+    if [row["id"] for row in rows] != list(expected):
+        raise ValueError("Include each current criterion exactly once in WSG order")
+    if data.get("criterionCount") != len(expected) or data.get("guidelineCount") != len(
+        reference["guidelines"]
+    ):
+        raise ValueError("Classification coverage counts differ from the WSG reference")
+    for row in rows:
+        guideline, criterion = expected[row["id"]]
+        if (row.get("guideline"), row.get("title"), row.get("url")) != (
+            guideline["id"],
+            criterion["title"],
+            criterion["url"],
+        ):
+            raise ValueError("Criterion identity must match the current WSG reference")
+        if row.get("classification") not in CLASSES:
+            raise ValueError("Unknown primary classification")
+        supporting = row.get("supportingClasses", [])
+        if len(supporting) != len(set(supporting)) or not set(supporting) <= set(
+            CLASSES
+        ) - {row["classification"]}:
             raise ValueError(
-                "Every old row needs mapping, repeatable probe and interpretation"
+                "Supporting classes must be unique and distinct from the primary class"
             )
-        for target in check["targets"]:
-            if (
-                target["criterion"] not in criteria
-                or (target["guideline"], target["url"]) != criteria[target["criterion"]]
-            ):
-                raise ValueError("Invalid criterion target")
-        if check["status"] not in {"candidate", "partial-existing-evidence"}:
-            raise ValueError("Crosswalk is a capability plan, not an executed result")
+        access = row.get("evidenceAccess", [])
+        if (
+            not access
+            or len(access) != len(set(access))
+            or not set(access) <= EVIDENCE_ACCESS
+        ):
+            raise ValueError(
+                "Each criterion needs explicit valid evidence access routes"
+            )
+        if any(
+            not isinstance(row.get(key), str) or not row[key].strip()
+            for key in ("rationale", "reviewRoute")
+        ):
+            raise ValueError(
+                "Each criterion needs a rationale and repeatable review route"
+            )
+        if set(row) & {"status", "outcome", "oldGuideline", "oldCriterion", "targets"}:
+            raise ValueError(
+                "Classifications describe current auditability, not execution outcomes or legacy mappings"
+            )
+    counts = Counter(row["classification"] for row in rows)
+    if data.get("categoryCounts") != {name: counts[name] for name in CLASSES}:
+        raise ValueError("Primary class counts must reconcile with criterion rows")
+    groups = data.get("guidelines", [])
+    if [group["id"] for group in groups] != [
+        group["id"] for group in reference["guidelines"]
+    ]:
+        raise ValueError("Include each current guideline exactly once in WSG order")
+    for group, guideline in zip(groups, reference["guidelines"], strict=True):
+        members = [row for row in rows if row["guideline"] == guideline["id"]]
+        member_counts = Counter(row["classification"] for row in members)
+        if (group.get("title"), group.get("url"), group.get("criterionCount")) != (
+            guideline["title"],
+            guideline["url"],
+            len(members),
+        ):
+            raise ValueError("Guideline summary must match current WSG membership")
+        classes = group.get("classifications", [])
+        if len(classes) != len(set(classes)) or set(classes) != set(member_counts):
+            raise ValueError(
+                "Guideline classes must summarize their constituent criteria"
+            )
+        if group.get("categoryCounts") != {
+            name: member_counts[name] for name in CLASSES
+        }:
+            raise ValueError(
+                "Guideline class counts must reconcile with criterion rows"
+            )
 
 
 def main() -> None:
-    """Build offline from pinned source bytes and validate the semantic crosswalk."""
+    """Validate maintained classifications; optionally refresh WSG from saved HTML."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--html", type=Path, required=True, help="Saved versioned WSG HTML"
-    )
-    parser.add_argument(
-        "--assessment", type=Path, required=True, help="Saved 2023 assessment HTML"
+        "--html",
+        type=Path,
+        help="Saved versioned WSG HTML; omit to validate the existing reference",
     )
     parser.add_argument("--output", type=Path, default=REFERENCES / "wsg.json")
     parser.add_argument(
-        "--crosswalk", type=Path, default=REFERENCES / "assessment-crosswalk.json"
+        "--classifications", type=Path, default=REFERENCES / "assessment-crosswalk.json"
     )
     args = parser.parse_args()
-    reference = extract_wsg(args.html.read_bytes())
-    assessment = args.assessment.read_bytes()
-    rows = extract_assessment(assessment)
-    crosswalk = json.loads(args.crosswalk.read_text())
-    validate_crosswalk(crosswalk, reference, rows)
-    if crosswalk["sourceSha256"] != hashlib.sha256(assessment).hexdigest():
-        raise ValueError("Assessment source hash differs from the reviewed crosswalk")
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(reference, indent=2, ensure_ascii=False) + "\n")
+    reference = (
+        extract_wsg(args.html.read_bytes())
+        if args.html
+        else json.loads(args.output.read_text())
+    )
+    data = json.loads(args.classifications.read_text())
+    validate_classifications(data, reference)
+    if args.html:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(
+            json.dumps(reference, indent=2, ensure_ascii=False) + "\n"
+        )
 
 
 if __name__ == "__main__":

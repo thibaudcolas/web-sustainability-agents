@@ -2,7 +2,7 @@
 
 **Use Harbor as the primary benchmark runner and task format.** Establish one versioned web sustainability benchmark with separate knowledge, evidence-review, and end-to-end audit tracks. Use narrower skill evaluations to diagnose failures and improve components without changing the overall benchmark's meaning.
 
-This page defines the broader benchmark to build, with a [machine-readable seed plan](../initial-implementation/assets/benchmark-plan.json). The [campaign index](README.md) distinguishes the original six tasks from the three later development families. The twelve families below describe design targets, not a current executed-case inventory. The [evaluation methodology](../feasibility-study/evaluation.md) remains the source for metrics, labeling, and release gates.
+This page defines the broader benchmark to build, with a [machine-readable seed plan](../initial-implementation/assets/benchmark-plan.json). The [campaign index](README.md) distinguishes the original six tasks from the four later development families. The twelve families below describe design targets, not a current executed-case inventory. The [evaluation methodology](../feasibility-study/evaluation.md) remains the source for metrics, labeling, and release gates.
 
 The [test-site shortlist](test-sites.md) maps this design to concrete material: adapted STAR examples, a pinned Wagtail bakerydemo, and a separately reported real-world sample. One site can supply several case families; a published example is not automatically a reviewed reference answer.
 
@@ -125,3 +125,25 @@ Version task inputs, source pack, labels, graders, skills, collectors, browser/c
 Regrade saved artifacts when only the verifier changes, and rerun inference when the task, evidence, prompt, or model meaning changes. Harbor supports separate-verifier regrading, but a new score still needs an explanation and comparison against the previous rubric. [Harbor regrading](https://docs.harborframework.com/jobs/regrade).
 
 Preserve completed campaign results, validate a complete agent-driven task next, then establish an independently reviewed release set. The [validation roadmap](../initial-implementation/validation-roadmap.md) states the evidence needed before choosing the production orchestration or making reliability claims.
+
+## Next qualitative validation
+
+Map each existing and proposed expectation to current criterion IDs and assessed clauses before choosing additional cases; most non-contextual checks currently identify guideline groups only.
+
+The current catalog's [qualitative coverage and gaps](../reference/checks.md#qualitative-coverage-and-gaps) should drive the next cases. The nineteen-case campaign tests bounded interpretation; four collection tasks read frozen bundles. Neither those handoffs nor answer agreement establish live evidence discovery, complete STAR-style evaluation or recommendation usefulness. Do not treat the new 197-criterion classification inventory as evaluated audit coverage.
+
+Before another model campaign, give each question an explicit mode: claim support or criterion outcome. A supported statement that evidence is missing differs from a passed website criterion. Separate recommendation support from its proposed operation, and permit independently adjudicated alternative actions. Resolve these contracts before freezing references, rather than correcting scores after seeing model predictions.
+
+A proposed next batch is **18 evidence-review cases plus three controlled execution tasks**, developed one family at a time:
+
+| Family                         | Judgment to exercise                                                                | Execution task                                                                                                                           |
+| ------------------------------ | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Experience and content         | Task necessity, media/document usefulness, readability and accessibility tradeoffs  | Explore a controlled site, select representative templates, complete a constrained task and recovery path, then justify a recommendation |
+| Research and service decisions | Affected users, representative testing and alternatives to a feature/service        | Discover a public research/decision record, ask a useful scope question, and distinguish research findings from an agent walkthrough     |
+| Governance and lifecycle       | Policy versus execution, comparable progress, content/data retention and retirement | Trace dated public records, resolve a contradiction, request the smallest missing fact, and report only the supported scope              |
+
+For each family, use six evidence conditions: supported practice, demonstrated problem, missing evidence, conflicting evidence, wrong service/period/audience, and unresolved applicability. Use matched cases where only one fact changes. Include public-only and matching/stale/contradictory source context within the batch, not an assumption that more documents always improve the answer. Do not infer backend execution from a browser form or policy. Keep some cases independently authored and held out from skill development.
+
+Deterministic graders should check scope preservation, actual tool calls, artifact provenance, criterion IDs, units, outcome contracts and evidence references. Independently reviewed rubrics should assess evidential support, harmful or unsupported advice, proportional priority, task preservation, and the usefulness of the next evidence request. Allow more than one defensible recommendation. Reviewers should be blind to the model and skill configuration. Penalize needless abstention when valid in-scope evidence supports a judgment, as well as unsupported certainty. Report unsupported passes, missed demonstrated problems, appropriate unknowns, completion, cost and latency separately; do not hide them behind one average.
+
+Use Harbor with the same fixtures, tools, budgets and high reasoning for Codex GPT-6.1 Sol and Neuralwatt DeepSeek V4.1 Flash. Compare the existing general review roles with the proposed specialist references, and add a no-skill baseline to isolate instruction value. Keep the model comparison separate from the skill comparison. Repeat the small pilot to expose instability before expanding the batch. InspectAI is optional for a calibrated qualitative grader; it does not replace independent reference review. No new model campaign or specialist-benefit claim is established by this plan.

@@ -3,7 +3,7 @@ name: sustainability-context-review
 description: Select and collect contextual WSG evidence about service decisions, inclusive research, content and data lifecycles, and governance. Use during audit setup or when judging selected qualitative checks; no internal code access is required.
 license: MIT
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Contextual sustainability review

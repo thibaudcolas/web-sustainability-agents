@@ -4,7 +4,7 @@ The `agent-breadth-v3` catalog contains **43 checks across 40 WSG guideline grou
 
 New audits select relevant contextual checks during setup using visitor tasks, public evidence and owner priorities. The owner does not need to choose IDs or provide internal code. Each selected subset has its own denominator. The low-level workflow preserves the context-free `agent-breadth-v2` default: 25 public checks in 24 groups, with eight source checks joining only when files are explicitly selected. Existing v2 sessions and historical scores remain unchanged.
 
-Across the historical and current catalogs, **46/71 guideline groups (64.8%)** have some defined scoped review method. That is methodology breadth, not the score coverage of one report or complete success-criterion coverage. Scope, page diversity, interaction depth and organizational evidence remain separate dimensions. The [101-row assessment crosswalk](../knowledge-base/assessment-crosswalk.md) remains the broader development map.
+Across the historical and current catalogs, **46/71 guideline groups (64.8%)** have some defined scoped review method. That is methodology breadth, not the score coverage of one report or complete success-criterion coverage. Scope, page diversity, interaction depth and organizational evidence remain separate dimensions. The [current WSG auditability classifications](../knowledge-base/assessment-crosswalk.md) cover all 197 criteria as a planning inventory, independently of implemented checks.
 
 ## Contextual evidence and decisions
 
@@ -32,6 +32,25 @@ A [developer forward-test and separate native review](../reports/assets/report-r
 Public reports, research case studies, issue histories and actual task observations can support scoped judgments without internal access. A policy alone cannot establish performed testing, operational review or lifecycle execution. Missing public evidence remains `cantTell` after review; it is not proof that the practice is absent. The retirement check deliberately judges guidance rather than completed shutdown. Browser form evidence cannot verify retention enforcement or downstream deletion. Historical content and necessary authentication can remain valuable.
 
 Packets include the exact selected expectations, scope and skill snapshots. Workers use the same frozen evidence, request missing facts through the coordinator and return ordinary evidence-linked outcomes. The scorer groups checks by guideline, so two contextual checks in one group do not earn extra weight. Collecting later records requires a linked new session; adding the new catalog does not rescore earlier reports or benchmarks.
+
+## Qualitative coverage and gaps
+
+Criterion-level coverage is not yet fully mapped: the ten contextual checks name current criterion IDs, while the other 33 checks map to guideline groups. The 197-criterion inventory makes that gap explicit, but does not fill it. Map each implemented expectation and benchmark case to the exact criterion clauses it tests before publishing a criterion coverage percentage.
+
+The ten contextual checks are the clearest dedicated qualitative slice, but they are not the only judgment-based work. Browser and disclosure reviews also interpret whether media serves a task, controls respect preferences, an alternative remains usable, or a claim applies to this origin. Deterministic measurements supply evidence for these decisions; they do not settle them.
+
+The current Guide and Wagtail.org reports each assess 33 selected v2 checks. Their scored denominators are 31 and 32 guideline groups respectively. Contextual previews are outside those scores, so the existence of the v3 catalog does not establish that these sites have received the broader audit.
+
+| Review area                         | Current support                                                                                | Main gap to validate                                                                                                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Journeys, content and media         | Browser observations plus evidence/guideline interpretation                                    | Complete constrained tasks, recovery paths, content usefulness and legibility tradeoffs across representative templates |
+| User research and service decisions | Audience needs, inclusive testing, service necessity and access barriers                       | Finding and interpreting executed research/decision records; an agent walkthrough cannot substitute for affected users  |
+| Governance and lifecycle            | Progress reviews, goals, funding impacts, data purpose, content review and retirement guidance | Comparable records over time, contradictory evidence, actual implementation and context-specific recommendations        |
+| Hosting and footprint claims        | Claims-review skill, disclosures and explicit model assumptions                                | Independent scope/provider corroboration and operational evidence beyond published commitments                          |
+
+[STAR's evaluation methodology](https://w3c.github.io/sustainableweb-ig/docs/star.html) addresses scope, exploration, sampling, evaluation and reporting. The workflow implements parts of each, but there is no validated percentage of STAR coverage. In particular, page-count defaults and one successful journey do not establish representative coverage of complete processes, states and audiences. Frozen-evidence benchmark success does not establish that an agent can discover the right evidence on a live site.
+
+Two focused skill candidates are useful to evaluate: **experience and content review** for public task/necessity/tradeoff judgments, and **governance and lifecycle review** for scoped records, execution and progress. Keep context review as the evidence-selection coordinator and retain the existing claims specialist. Start with clearer task-specific references and evaluate the split before adding mandatory agents or one skill per guideline. The [next qualitative benchmark](../evaluation/design.md#next-qualitative-validation) defines the evidence needed to justify it.
 
 ## More browser evidence
 

@@ -6,7 +6,7 @@ Reusable explanations of web sustainability methodology, evidence and tooling. S
 
 - [WSG and STAR](wsg-and-star.md): scope, publication status, source formats and evaluation limits.
 - [Scoped audit scoring](audit-scoring.md): outcome mapping, impact weights, denominators and coverage.
-- [Assessment crosswalk](assessment-crosswalk.md): migration of the older assessment to current WSG evidence routes; planned routes are not implemented checks.
+- [WSG auditability](assessment-crosswalk.md): current criterion classes, evidence needs and review routes; classification is distinct from implemented coverage.
 - [Digital Carbon Ratings](digital-carbon-ratings.md): SWDM v4, thresholds and interpretation alongside WSG findings.
 - [Carbon.txt evidence](carbon-disclosures.md): discovery, provider relationships, declarations and corroboration.
 
