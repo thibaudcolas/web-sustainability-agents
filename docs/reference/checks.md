@@ -4,7 +4,7 @@ The `agent-breadth-v3` catalog contains **43 checks across 40 WSG guideline grou
 
 New audits select relevant contextual checks during setup using visitor tasks, public evidence and owner priorities. The owner does not need to choose IDs or provide internal code. Each selected subset has its own denominator. The low-level workflow preserves the context-free `agent-breadth-v2` default: 25 public checks in 24 groups, with eight source checks joining only when files are explicitly selected. Existing v2 sessions and historical scores remain unchanged.
 
-Across the historical and current catalogs, **46/71 guideline groups (64.8%)** have some defined scoped review method. That is methodology breadth, not the score coverage of one report or complete success-criterion coverage. Scope, page diversity, interaction depth and organizational evidence remain separate dimensions. The [current WSG auditability classifications](../knowledge-base/assessment-crosswalk.md) cover all 197 criteria as a planning inventory, independently of implemented checks.
+The current catalog therefore offers partial methods for **40/71 guideline groups (56.3%)**, or **32/71 (45.1%)** without source checks when all ten contextual checks are selected. The historical/current union of 46 groups includes older methods and is not the current workflow's coverage. None of these counts is the score coverage of one report or complete success-criterion coverage. The [current WSG auditability classifications](../knowledge-base/assessment-crosswalk.md) cover all 197 criteria as a planning inventory, independently of implemented checks.
 
 ## Contextual evidence and decisions
 
@@ -39,7 +39,7 @@ Criterion-level coverage is not yet fully mapped: the ten contextual checks name
 
 The ten contextual checks are the clearest dedicated qualitative slice, but they are not the only judgment-based work. Browser and disclosure reviews also interpret whether media serves a task, controls respect preferences, an alternative remains usable, or a claim applies to this origin. Deterministic measurements supply evidence for these decisions; they do not settle them.
 
-The current Guide and Wagtail.org reports each assess 33 selected v2 checks. Their scored denominators are 31 and 32 guideline groups respectively. Contextual previews are outside those scores, so the existence of the v3 catalog does not establish that these sites have received the broader audit.
+The Guide and Wagtail.org reports each assess 33 selected v2 checks, with scored denominators of 31 and 32 guideline groups. Their contextual previews remain outside those scores. The newer documentation and exporter reports use selected v3 contextual checks and public-only evidence, with denominators of 26 and 24 groups. Catalog availability does not mean every site received every check. The [assessment's coverage table](../initial-implementation/project-assessment.md#coverage-what-the-numbers-actually-mean) summarizes all four reports.
 
 | Review area                         | Current support                                                                                | Main gap to validate                                                                                                    |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
@@ -102,7 +102,7 @@ The [guide review](../initial-implementation/assets/breadth-sessions/guide/revie
 
 ## Review and eval breadth
 
-The [new Harbor family](../initial-implementation/breadth-benchmark.md) adds sixteen controlled cases, including four collection handoffs. It tests many of the distinctions that the broader live checks depend on. Review the synthetic cases separately from the live site judgments: the former have author-created reference labels, while the latter need owner feedback on usefulness, applicability and evidence interpretation.
+The [historical breadth campaign](../initial-implementation/breadth-benchmark.md) contains sixteen controlled cases, including four collection handoffs. It tests many of the distinctions that the broader live checks depend on. Review the synthetic cases separately from the live site judgments: the former have author-created reference labels, while the latter need owner feedback on usefulness, applicability and evidence interpretation.
 
 When providing feedback, name a check ID or case ID and identify whether the problem is the expectation, missing evidence, interpretation, priority or proposed validation. This lets us improve the relevant collector, skill or benchmark without changing historical outcomes. The next validation priorities are complete keyboard/form journeys, constrained font/media experiments, owner-reviewed source recommendations and broader representative page sampling.
 

@@ -45,6 +45,16 @@ Choose `codex`, `claude-code`, `opencode` or `pi`. The installer copies only the
 
 This follows the progressive-disclosure approach in [Wagtail CLI](https://github.com/wagtail/wagtail-cli): a small discovery skill loads version-matched instructions from a CLI. This prototype's CLI is invoked from its checkout with uv; it is not yet a published standalone PyPI package. The provisional name `wsa` in CLI help is not a reserved or released command.
 
+### Compatibility evidence
+
+| Harness       | Supplied integration                                    | What has been demonstrated                                                                                 |
+| ------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Codex         | Plugin/project skill and shared review tasks            | Developer-run complete audits and Harbor review campaigns; fresh install-to-report validation remains open |
+| Claude Code   | Plugin, project skill and native specialist descriptors | Packaging and contract checks; no current complete clean-install audit campaign                            |
+| OpenCode / pi | Project-skill installer and shared task contracts       | Installation targets exist; current complete-workflow compatibility remains experimental                   |
+
+Sequential role execution is the fallback when a host cannot delegate. It uses the same artifact contracts, but should not be described as independent subagent review. See the [project assessment](../initial-implementation/project-assessment.md#orchestration-and-installation) for the remaining gaps.
+
 ## Give it a URL
 
 In your agent, ask:
@@ -85,7 +95,7 @@ New GPT-6.1 Sol audit and report-writing runs use **high reasoning**; Neuralwatt
 
 ## What you receive
 
-The agent delivers one report per origin, with first-load page sizes in kB or MB, a scoped score, priorities, readable evidence explanations and next auditing steps. Cookie choices and scrolling appear separately from the headline numbers. Useful screenshots have alternative text, captions and their own capture context.
+The agent delivers one report per site or scoped service, with first-load page sizes in kB or MB, a scoped score, priorities, readable evidence explanations and next auditing steps. Cookie choices and scrolling appear separately from the headline numbers. Useful screenshots have alternative text, captions and their own capture context. A project under a shared host retains its own service boundary; host-wide traffic cannot establish that project's annual footprint.
 
 A private session under your working project's `.audit-work/` retains the plan, source evidence, command receipts, worker outputs and exact scoring inputs. The report should be understandable without opening JSON. Technical reproduction files remain available in its appendix. Review any captured source, text and images before publishing them.
 
@@ -93,6 +103,6 @@ The score describes the checks attempted, not full WSG conformance or a universa
 
 ## Updates and troubleshooting
 
-Update the plugin through your client's mechanism, or update the checkout and reinstall the project entry point after preserving any local customization. Keep audit outputs outside the plugin cache so an update or removal does not delete them. Existing sessions retain frozen inputs.
+Update the plugin through your client's mechanism. For project-skill installations, the checkout must remain available and the installer refuses to replace an existing entry point. Preserve customizations and explicitly replace the installed skill when refreshing it; there is no automatic upgrade/uninstall command yet. Keep audit outputs outside the plugin cache so an update or removal does not delete them. Existing sessions retain frozen inputs, but scorer changes require an explicitly versioned calculation; a convenient migration command remains unfinished.
 
 If a skill is not discovered, name its `SKILL.md` path explicitly. If the runtime location is missing, refresh the installation. If a prerequisite is unavailable, the agent should identify that exact blocker. Collector or worker failures remain recorded; the agent should not quietly turn them into passes or ask you to become its command runner.

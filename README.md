@@ -25,9 +25,10 @@ See **[installation and your first audit](docs/using/README.md)** for Codex, pro
 
 ## Explore
 
-- [Example reports](docs/reports/README.md): guide.wagtail.org and wagtail.org findings with readable evidence.
+- [Example reports](docs/reports/README.md): four Wagtail ecosystem sites, including public-only and source-assisted audits.
 - [Knowledge base](docs/knowledge-base/README.md): WSG/STAR, carbon, scoring, measurements and tools.
-- [Implementation project](docs/initial-implementation/README.md): capabilities, roadmap and backlog.
+- [Project assessment](docs/initial-implementation/project-assessment.md): what works, what misses the goals and the next milestone.
+- [Implementation project](docs/initial-implementation/README.md): roadmap and prioritized backlog.
 - [Evaluation project](docs/evaluation/README.md): Harbor campaigns, comparisons and reviewable cases.
 - [Feasibility study](docs/feasibility-study/README.md): research and design rationale.
 

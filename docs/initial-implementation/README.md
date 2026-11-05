@@ -18,9 +18,9 @@ The agent selects scope and triggers collection, then reviews a frozen packet us
 
 The [check reference](../reference/checks.md) is the source of truth for implemented breadth and limits. [Workflow and artifacts](../using/workflow.md) describes the current handoffs. [Reporting](../reference/reporting.md) defines human and machine outputs. Reusable measurement and interpretation principles live in the [knowledge base](../knowledge-base/README.md).
 
-## What we are validating next
+## Current assessment and next work
 
-Review the current site recommendations and benchmark reference questions, then test the complete agent workflow on controlled sites. In parallel, define reliable installation and plugin packaging. Cross-harness parity, independently judged recommendation quality, skill/no-skill comparisons, and decision-model routing remain unproven.
+The [project assessment](project-assessment.md) compares the implementation with the intended audit experience. The next milestone is one reliable install-to-report audit, including collection recovery and portable delivery. Plugin manifests exist; clean installation and complete execution under another harness remain unvalidated. Qualitative evidence discovery, independent recommendation review, skill comparisons and Jev/Clef experiments are the other main gaps.
 
 The [roadmap](validation-roadmap.md) states the next gates. The [backlog](backlog.md) keeps detailed ideas and feedback tied to pipeline components. The [evidence record](sources.md) preserves executed experiments and validation results.
 

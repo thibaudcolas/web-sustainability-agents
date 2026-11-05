@@ -1,6 +1,6 @@
 # Decision models before, during, and after collection
 
-This page reviews the newly available local copies of jevotron and jev-ultrafast and extends the [Jev/Clef assessment](decision-models.md).
+This page reviews jevotron and jev-ultrafast source snapshots and extends the [Jev/Clef assessment](decision-models.md). The [current project assessment](../initial-implementation/project-assessment.md#put-jevclef-to-work-in-one-bounded-experiment) selects claim-support review as the first integration experiment; the patterns below remain research inputs.
 
 **The examples suggest two complementary roles: review structured evidence in batches, and select bounded browser actions when discovery needs interpretation.** A decision model can therefore help acquire evidence as well as judge it. Code still defines allowed actions, executes them, checks outcomes, and determines which claims the evidence can support.
 

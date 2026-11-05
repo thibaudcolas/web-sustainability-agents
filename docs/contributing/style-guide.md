@@ -10,6 +10,7 @@ How to write docs pages and posts for this workspace: tone, headings, callouts, 
 - Run `just lint-prose` for the small set of automated terminology and spelling checks. See [Prose rules](quality-assurance.md#prose-rules) for scope and quotation exceptions.
 - Prefer linking to other pages over repeating content.
 - Give each topic one maintained home, following the [content architecture](architecture.md#content-layers). Update current guidance in place; preserve completed experiments as labeled historical evidence. Keep installation instructions separate from proposed plugin behavior.
+- Distinguish implemented capabilities from demonstrated behavior and independently validated quality. Installer targets are not proof of harness compatibility; catalog counts are not completed audit coverage. Keep current status in the implementation assessment, acceptance gates in the roadmap, and actionable items in the backlog. Update related landing-page summaries when status changes.
 - Link WSG guideline and criterion references to their actual fragment identifiers in `https://www.w3.org/TR/web-sustainability-guidelines/`. A bare section number such as “WSG 2.11” is insufficient when the section can be linked directly.
 - Audit reports follow the `sustainability-report` skill's writing guide: use plain action titles, explain technical limits, and link findings to a readable evidence appendix. Show decimal sizes as kB/MB, not KB; keep raw artifact labels in reproduction details.
 - Use [Bulleted lists] when describing more than two comparable things or steps.

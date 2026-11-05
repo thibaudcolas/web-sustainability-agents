@@ -69,6 +69,8 @@ uv run --locked --script audit/cli.py tool workflow score \
 
 The coordinator writes the final review from the guideline worker's output plus explicit resolutions. The existing scorer validates that final review and calculates once per guideline group. The reconciliation receipt proves that every advisor issue received a response; it does not prove the response was correct. Keep the role outputs and resolutions beside the session for review.
 
+The low-level scoring command does not require the reconciliation receipt or accepted worker results. The agent must complete those steps for the full audit workflow. A validated score alone does not establish that specialist review occurred; enforcing this distinction in a whole-audit completion check is tracked as B36 in the [backlog](../initial-implementation/backlog.md#installation-and-report-delivery).
+
 ## Estimate annual impact
 
 The agent retrieves an exact-origin CrUX rank and freezes the traffic proxy outside the scored session. It then calculates independent SWDM v4 and optional client-energy scenarios. Keep source month, mapping digest, page weights and electricity assumptions with the result; a missing rank is not zero traffic. These commands are agent-operated tools, not owner setup steps.

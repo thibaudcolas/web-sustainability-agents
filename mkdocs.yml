@@ -190,6 +190,7 @@ plugins:
           - feasibility-study/*.md
         Implementation project:
           - initial-implementation/README.md
+          - initial-implementation/project-assessment.md
           - initial-implementation/validation-roadmap.md
           - initial-implementation/backlog.md
           - initial-implementation/sources.md
@@ -263,6 +264,7 @@ nav:
   - Projects:
       - Implementation:
           - initial-implementation/README.md
+          - Project assessment: initial-implementation/project-assessment.md
           - Next validation: initial-implementation/validation-roadmap.md
           - Backlog: initial-implementation/backlog.md
           - Evidence record: initial-implementation/sources.md
