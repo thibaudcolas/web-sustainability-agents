@@ -1,6 +1,8 @@
 # Per-site reports and chart data
 
-Each audited origin gets its own report. The [report index](../reports/README.md) separates current examples from earlier experiments. A later comparison can reference reports without merging their evidence, scores, or denominators.
+Each audited site or service gets its own report. The [report index](../reports/README.md) separates current examples from earlier experiments. A later comparison can reference reports without merging their evidence, scores, or denominators.
+
+For a service hosted under a shared origin, set the plan's `auditScope` to its directory URL, including the trailing slash. Selected pages and journey starting URLs must stay within that directory. The report identifies the path and withholds annual footprint projections based on origin-wide CrUX traffic: visits to other projects cannot be assigned to the audited service. This scope check validates selected URLs, not every redirect or interaction destination; reviewers must inspect the completed journeys too.
 
 The structure adapts the local claude-seo audit's summary, prioritized findings, category detail, and structured envelope. Its SEO category weights do not transfer to sustainability. Source: [claude-seo audit skill](https://github.com/AgriciDaniel/claude-seo/blob/6be93f45064ffbadced572b5d5c95f55fd263af0/skills/seo-audit/SKILL.md).
 

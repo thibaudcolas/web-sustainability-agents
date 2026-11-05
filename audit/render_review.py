@@ -67,6 +67,20 @@ def footprint(value: float) -> str:
     return f"{displayed:.2f} gCO₂e"
 
 
+def navigation_unavailable(run: JSON) -> str | None:
+    """Do not present a failed document or challenge response as a normal page."""
+    status = run.get("documentStatus")
+    if run.get("navigationError") or status is None:
+        return "Unavailable (navigation failed)"
+    if (
+        not isinstance(status, int)
+        or isinstance(status, bool)
+        or not 200 <= status < 400
+    ):
+        return f"Unavailable (HTTP {html.escape(str(status))})"
+    return None
+
+
 def validate_inputs(session: Path, score_document: JSON, review: JSON) -> None:
     """Reject changed judgments, expectations or evidence after score calculation."""
     for key, name in {
@@ -346,6 +360,7 @@ def render(
             energy_raw,
             grid=annual_data["clientGridIntensity"],
             audit_scope=plan.get("auditScope"),
+            exclude_failed_pages=annual_data.get("excludeFailedPages", False),
         )
         if annual_data != expected:
             raise ValueError(
@@ -504,6 +519,9 @@ def render(
     )
 
     def phase_size(run: JSON, name: str) -> str:
+        unavailable = navigation_unavailable(run)
+        if unavailable:
+            return unavailable
         phase: JSON = next((p for p in run["phases"] if p["phase"] == name), {})
         if phase.get("receivedBytes") is None:
             return "Not measured"
@@ -528,7 +546,7 @@ def render(
     for run in headline_runs:
         url = run["url"]
         rating = run.get("rating", {})
-        initial_complete = any(
+        initial_complete = navigation_unavailable(run) is None and any(
             p["phase"] == "initial"
             and p.get("accountingStatus") == "complete_within_protocol"
             for p in run["phases"]
@@ -572,6 +590,11 @@ def render(
             {},
         )
         if annual_site["status"] == "estimated":
+            if annual_data.get("excludedNavigations"):
+                lines += [
+                    f"The SWDM scenario uses **{len(annual_site['pages'])} successfully loaded pages**. Failed page loads were excluded from this estimate; [the methodology lists the exclusions](#measure-annual).",
+                    "",
+                ]
             lines += [
                 f"A traffic scenario of **{annual_site['annualPageviews']:,.0f} pageviews/year** gives the estimates below. These are alternative views of overlapping activity, so they should not be added together.",
                 "",
@@ -851,7 +874,7 @@ def render(
         "",
         "### Partial measurements {#measure-completeness}",
         "",
-        "A partial result means some requests failed or did not finish in the observation window, so their transferred size is uncertain. The site is measured as it behaved; a failed analytics request is context, not automatically a priority fix. Carbon estimates and ratings are withheld for incomplete initial captures. Unmarked transfer figures are complete within the test conditions, not a measure of every possible download.",
+        "A partial result means some requests failed or did not finish in the observation window, so their transferred size is uncertain. The site is measured as it behaved; a failed analytics request is context, not automatically a priority fix. Failed document loads and HTTP error responses are shown as unavailable, since their bytes do not represent the requested page. Carbon estimates and ratings are withheld for failed or incomplete initial captures. Unmarked transfer figures are complete within the test conditions, not a measure of every possible download.",
         "",
         "### Estimated footprint and Digital Carbon Rating {#measure-carbon}",
         "",
@@ -908,6 +931,16 @@ def render(
             "Partial transfer inputs can support this explicitly labeled scenario, but do not establish a complete footprint or qualify for a Digital Carbon Rating. Ratings remain withheld where initial captures are incomplete.",
             "",
         ]
+        if annual_data.get("excludedNavigations"):
+            method_lines += [
+                f"**Smaller SWDM sample:** The annual estimate gives equal weight to {len(annual_site.get('pages', []))} successfully loaded URLs. The failed visits below were explicitly excluded; their response bytes are not treated as normal page loads. This sample may underrepresent blocked or failing page types. The original measurements and their file hash are retained, and the client-energy sample is assessed separately against all audited URLs.",
+                "",
+                *[
+                    f"- [{row['url']}]({row['url']}): {prose(row['reason'])}."
+                    for row in annual_data["excludedNavigations"]
+                ],
+                "",
+            ]
         if annual_client["status"] == "estimated":
             method_lines += [
                 f"**Client-energy projection:** The {annual_client['sampledPageCount']} energy-sampled URLs out of {annual_client['auditedPageCount']} audited URLs receive equal weights. Take each URL's median of three matching GreenFrame runs, average those unrounded medians, and multiply by estimated pageviews ÷ 1,000 to convert Wh to annual kWh. This assumes every pageview repeats that initial-load desktop scenario; it does not cover later reading, scrolling, other devices, network energy, remote servers or embodied emissions.",

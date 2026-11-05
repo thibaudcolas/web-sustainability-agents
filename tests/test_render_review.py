@@ -122,6 +122,38 @@ class EditorialContractTests(unittest.TestCase):
         self.assertEqual(traffic(1000), "1.0 kB")
         self.assertEqual(traffic(1000000), "1.000 MB")
 
+    def test_failed_navigation_is_unavailable_even_when_byte_accounting_is_complete(
+        self,
+    ):
+        from unittest.mock import patch
+
+        from audit.render_review import read, render
+
+        staged = read(self.session / "staged.json")
+        for run in staged["runs"]:
+            run["navigationError"] = "net::ERR_FAILED"
+            run["documentStatus"] = None
+            for phase in run["phases"]:
+                phase["receivedBytes"] = 0
+                phase["accountingStatus"] = "complete_within_protocol"
+            run["rating"] = {
+                "status": "calculated",
+                "trace": {"co2": {"total": 0, "rating": "A+"}},
+            }
+
+        def failed_read(path):
+            return staged if path == self.session / "staged.json" else read(path)
+
+        with patch("audit.render_review.read", side_effect=failed_read):
+            output = render(self.session, "evidence", self.editorial)
+        measurements = output.split("## Page measurements")[1].split(
+            "## Estimated annual footprint"
+        )[0]
+        self.assertIn("Unavailable (navigation failed)", measurements)
+        self.assertNotIn("0.0 kB", measurements)
+        self.assertNotIn("0.00 gCO₂e", measurements)
+        self.assertNotIn("A+", measurements)
+
     def test_screenshot_tampering_and_wrong_origin_are_rejected(self):
         import copy
 

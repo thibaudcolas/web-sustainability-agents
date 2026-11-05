@@ -102,6 +102,69 @@ class AnnualProjectionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "inside auditScope"):
                 annual_document(*inputs, audit_scope=self.site + "/other/")
 
+    def test_failed_navigation_exclusion_is_explicit_and_preserves_original_scope(self):
+        run = {
+            "url": self.url,
+            "id": "good",
+            "documentStatus": 200,
+            "phases": [
+                {
+                    "phase": "initial",
+                    "receivedBytes": 1000,
+                    "accountingStatus": "complete_within_protocol",
+                }
+            ],
+        }
+        failed = {
+            **run,
+            "url": self.url + "blocked/",
+            "id": "blocked",
+            "documentStatus": 429,
+        }
+        staged = {
+            "runs": [
+                run,
+                failed,
+                {**failed, "id": "later-success", "documentStatus": 200},
+            ]
+        }
+        traffic = json.dumps({"results": [self.traffic]}).encode()
+        raw = json.dumps(staged).encode()
+        with self.assertRaisesRegex(ValueError, "failed document"):
+            annual_document(raw, traffic)
+        result = annual_document(
+            raw, traffic, json.dumps(self.energy).encode(), exclude_failed_pages=True
+        )
+        self.assertEqual(len(result["scenarios"][0]["pages"]), 1)
+        self.assertEqual(result["excludedNavigations"][0]["runId"], "blocked")
+        self.assertEqual(result["excludedNavigations"][0]["documentStatus"], 429)
+        self.assertEqual(result["clientEnergyScenarios"][0]["auditedPageCount"], 2)
+        import hashlib
+
+        self.assertEqual(
+            result["sourceSHA256"]["staged"], hashlib.sha256(raw).hexdigest()
+        )
+        with self.assertRaisesRegex(ValueError, "No successful"):
+            annual_document(
+                json.dumps({"runs": [failed]}).encode(),
+                traffic,
+                exclude_failed_pages=True,
+            )
+        malformed = copy.deepcopy(staged)
+        malformed["runs"][1]["phases"][0]["receivedBytes"] = -1
+        with self.assertRaisesRegex(ValueError, "Malformed"):
+            annual_document(
+                json.dumps(malformed).encode(), traffic, exclude_failed_pages=True
+            )
+        empty = copy.deepcopy(run)
+        empty["phases"][0]["receivedBytes"] = 0
+        with self.assertRaisesRegex(ValueError, "positive observed traffic"):
+            annual_document(
+                json.dumps({"runs": [empty]}).encode(),
+                traffic,
+                exclude_failed_pages=True,
+            )
+
     def test_report_discloses_path_scope_and_rejects_origin_annual_projection(self):
         session = Path("docs/reports/assets/fresh-guide")
         supplement = Path("docs/reports/assets/report-refinement/guide")

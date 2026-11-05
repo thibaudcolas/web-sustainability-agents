@@ -202,6 +202,39 @@ def model_pages(staged: JSON, selection: str = "branch-mean") -> dict[str, list[
     return sites
 
 
+def exclude_failed_navigations(staged: JSON, selection: str) -> tuple[JSON, list[JSON]]:
+    """Opt into a smaller sample without replacing a failed first visit."""
+    selected, excluded = [], []
+    seen: set[str] = set()
+    for run in staged["runs"]:
+        if selection == "first" and run["url"] in seen:
+            continue
+        seen.add(run["url"])
+        phase = next(p for p in run["phases"] if p["phase"] == "initial")
+        if not nonnegative(phase["receivedBytes"]):
+            raise ValueError(
+                "Malformed transfer bytes cannot be excluded as a failed page"
+            )
+        status = run.get("documentStatus")
+        if run.get("navigationError") or not 200 <= (status or 0) < 400:
+            excluded.append(
+                {
+                    "url": run["url"],
+                    "runId": run["id"],
+                    "documentStatus": status,
+                    "reason": str(
+                        run.get("navigationError")
+                        or f"HTTP {status}; document navigation did not succeed"
+                    ),
+                }
+            )
+        else:
+            selected.append(run)
+    if not selected:
+        raise ValueError("No successful page navigations remain for an annual scenario")
+    return {**staged, "runs": selected}, excluded
+
+
 def client_energy_scenario(
     site: str, energy: JSON | None, traffic: JSON, sampled_urls: set[str], grid: float
 ) -> JSON:
@@ -277,6 +310,7 @@ def annual_document(
     selection: str = "first",
     grid: float = 494,
     audit_scope: str | None = None,
+    exclude_failed_pages: bool = False,
 ) -> JSON:
     """Bind both independent projections to exact inputs and calculation settings."""
     raw = {"staged": staged_raw, "traffic": traffic_raw}
@@ -284,16 +318,29 @@ def annual_document(
         raw["energy"] = energy_raw
     traffic = json.loads(traffic_raw)
     energy = json.loads(energy_raw) if energy_raw is not None else None
-    pages = model_pages(json.loads(staged_raw), selection)
+    staged = json.loads(staged_raw)
+    excluded: list[JSON] = []
+    if exclude_failed_pages:
+        staged, excluded = exclude_failed_navigations(staged, selection)
+    pages = model_pages(staged, selection)
+    audited_urls: dict[str, set[str]] = {
+        site: {page["url"] for page in items} for site, items in pages.items()
+    }
+    for rejected in excluded:
+        parsed = urlsplit(rejected["url"])
+        site = f"{parsed.scheme}://{parsed.netloc}"
+        if site not in pages:
+            raise ValueError("An audited origin has no successful pages for projection")
+        audited_urls[site].add(rejected["url"])
     path_scope = False
     if audit_scope is not None:
         if len(pages) != 1:
             raise ValueError("An auditScope requires exactly one audited origin")
         validate_audit_scope(audit_scope, next(iter(pages)))
         if any(
-            not within_audit_scope(page["url"], audit_scope)
-            for items in pages.values()
-            for page in items
+            not within_audit_scope(url, audit_scope)
+            for urls in audited_urls.values()
+            for url in urls
         ):
             raise ValueError("Annual input pages must remain inside auditScope")
         path_scope = urlsplit(audit_scope).path not in {"", "/"}
@@ -310,9 +357,7 @@ def annual_document(
             record = {}
         scenarios.append(annual_scenario(site, items, record, selection))
         client_scenarios.append(
-            client_energy_scenario(
-                site, energy, record, {p["url"] for p in items}, grid
-            )
+            client_energy_scenario(site, energy, record, audited_urls[site], grid)
         )
         if path_scope:
             reason = "CrUX describes the whole origin; traffic for this audited path is unknown"
@@ -320,6 +365,11 @@ def annual_document(
             client_scenarios[-1]["reason"] = reason
     return {
         "schemaVersion": "0.2.0",
+        **(
+            {"excludeFailedPages": True, "excludedNavigations": excluded}
+            if exclude_failed_pages
+            else {}
+        ),
         **(
             {
                 "auditScope": audit_scope,
@@ -368,6 +418,11 @@ def main() -> None:
     )
     parser.add_argument("--energy", type=Path)
     parser.add_argument(
+        "--exclude-failed-pages",
+        action="store_true",
+        help="Explicitly estimate from a smaller successful-navigation sample; preserve rejected visits in the artifact",
+    )
+    parser.add_argument(
         "--audit-scope",
         help="The plan's auditScope URL; origin traffic cannot estimate a subpath's annual footprint",
     )
@@ -393,6 +448,7 @@ def main() -> None:
         args.visit_selection,
         args.client_grid_intensity,
         args.audit_scope,
+        args.exclude_failed_pages,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")

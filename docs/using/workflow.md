@@ -86,6 +86,10 @@ uv run --locked --script audit/cli.py tool annual \
 
 Use the GreenFrame manifest produced by collection. Omit `--energy` when no valid client-energy experiment is available. During report preparation, apply the claims-review skill to these additional inputs and keep the resource-model projection separate from SWDM and electricity-meter readings. A hypothetical improvement percentage illustrates scale without claiming a demonstrated saving.
 
+If the plan declares `auditScope`, pass that exact URL as `--audit-scope` to the annual calculator. For a service under a shared host, such as `https://example.org/project/`, origin-wide CrUX traffic cannot establish project pageviews. Both annual projections remain unavailable; ask for traffic limited to the service. The renderer verifies the declared scope against the frozen plan and rejects an origin-only annual calculation for a path-scoped audit.
+
+Failed document loads stop annual estimation by default. An explicitly chosen `--exclude-failed-pages` scenario can use the smaller successful-page sample. It retains the original evidence hash and lists excluded URLs, run IDs, HTTP outcomes and reasons. The report discloses the reduced sample; a failed first visit is never replaced silently by a later success. Inspect successful responses too: a security-check page is not representative documentation just because its HTTP status is successful.
+
 ## Write and illustrate the report
 
 The report worker applies `sustainability-report` to the scored session and writes a separate editorial file. It keeps the score and check outcomes intact while producing plain-language explanations. Owner feedback may revise priorities through a separate review-bound presentation supplement with an explicit reason. Selected screenshots remain separate illustrations with their own capture time and state.
