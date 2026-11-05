@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from typing import Any
+from unittest.mock import patch
 
 from audit.annual import annual_document, client_energy_scenario, model_pages
 from audit.render_review import read, render
@@ -76,6 +77,72 @@ class AnnualProjectionTests(unittest.TestCase):
         failed = copy.deepcopy(self.energy)
         failed["pages"][0]["status"] = "failed"
         self.assertIsNone(self.project(energy=failed)["value"])
+
+    def test_origin_traffic_cannot_project_a_shared_host_service(self):
+        page = {
+            "url": self.site + "/project/",
+            "gramsPerView": 0.01,
+            "accountingStatus": "complete",
+        }
+        energy = copy.deepcopy(self.energy)
+        energy["pages"][0]["url"] = page["url"]
+        inputs = (
+            b"{}",
+            json.dumps({"results": [self.traffic]}).encode(),
+            json.dumps(energy).encode(),
+        )
+        with patch("audit.annual.model_pages", return_value={self.site: [page]}):
+            whole_origin = annual_document(*inputs)
+            scoped = annual_document(*inputs, audit_scope=self.site + "/project/")
+            for key in ("scenarios", "clientEnergyScenarios"):
+                self.assertEqual(whole_origin[key][0]["status"], "estimated")
+                self.assertEqual(scoped[key][0]["status"], "unavailable")
+                self.assertIsNone(scoped[key][0]["value"])
+                self.assertIn("whole origin", scoped[key][0]["reason"])
+            with self.assertRaisesRegex(ValueError, "inside auditScope"):
+                annual_document(*inputs, audit_scope=self.site + "/other/")
+
+    def test_report_discloses_path_scope_and_rejects_origin_annual_projection(self):
+        session = Path("docs/reports/assets/fresh-guide")
+        supplement = Path("docs/reports/assets/report-refinement/guide")
+        traffic = supplement.parent / "traffic.json"
+        energy = supplement / "energy.json"
+        original_read = read
+
+        def scoped_read(path):
+            value = original_read(path)
+            if path == session / "plan.json":
+                return {**value, "auditScope": "https://guide.wagtail.org/en/"}
+            return value
+
+        with patch("audit.render_review.read", side_effect=scoped_read):
+            output = render(
+                session, "artifacts", original_read(session / "editorial.json")
+            )
+            self.assertIn("# guide.wagtail.org/en: sustainability audit", output)
+            self.assertIn("Pageviews for this audited path are unknown", output)
+            with tempfile.TemporaryDirectory() as directory:
+                annual = Path(directory) / "annual.json"
+                annual.write_text(
+                    json.dumps(
+                        annual_document(
+                            (session / "staged.json").read_bytes(),
+                            traffic.read_bytes(),
+                            energy.read_bytes(),
+                        )
+                    )
+                )
+                with self.assertRaisesRegex(
+                    ValueError, "inside auditScope|do not match"
+                ):
+                    render(
+                        session,
+                        "artifacts",
+                        original_read(session / "editorial.json"),
+                        energy=energy,
+                        annual_path=annual,
+                        traffic_path=traffic,
+                    )
 
     def test_rejects_scope_sample_and_numeric_errors(self):
         for mutation in ("origin", "duplicate", "outside", "median", "boolean"):

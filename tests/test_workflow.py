@@ -52,6 +52,35 @@ class PlanTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 init_plan("https://example.com", [], path)
 
+    def test_shared_origin_scope_rejects_other_projects_and_traversal(self):
+        self.plan["auditScope"] = "https://example.com/project/"
+        self.plan["pages"][0]["url"] = "https://example.com/project/guide/"
+        validate_plan(self.plan)
+        for path in (
+            "/",
+            "/project-other/",
+            "/project/../other/",
+            "/project/%2e%2e/other/",
+        ):
+            self.plan["pages"][0]["url"] = "https://example.com" + path
+            with (
+                self.subTest(path=path),
+                self.assertRaisesRegex(ValueError, "auditScope"),
+            ):
+                validate_plan(self.plan)
+        self.plan["pages"][0]["url"] = "https://example.com/project/"
+        for scope in (
+            "https://elsewhere.com/project/",
+            "https://example.com/project",
+            "https://example.com/project/?all=1",
+        ):
+            self.plan["auditScope"] = scope
+            with (
+                self.subTest(scope=scope),
+                self.assertRaisesRegex(ValueError, "auditScope"),
+            ):
+                validate_plan(self.plan)
+
     def test_energy_sample_is_bounded_and_explicit(self):
         for settings in [
             {"mode": "silent"},

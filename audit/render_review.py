@@ -32,6 +32,9 @@ from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
     source_excerpt,
     validate_presentation,
 )
+from audit.workflow import (  # noqa: E402 # ty: ignore[unresolved-import]
+    validate_audit_scope,
+)
 
 JSON = dict[str, Any]
 
@@ -309,6 +312,18 @@ def render(
     traffic_link: str | None = None,
 ) -> str:
     """Render readable findings with calculations and provenance kept deterministic."""
+    packet = read(session / "packet.json")
+    plan = read(session / "plan.json")
+    expected_plan = packet.get("frozenFiles", {}).get("plan.json")
+    if (
+        expected_plan
+        and hashlib.sha256((session / "plan.json").read_bytes()).hexdigest()
+        != expected_plan
+    ):
+        raise ValueError("Frozen audit scope changed")
+    scope = plan.get("auditScope", packet["site"])
+    validate_audit_scope(scope, packet["site"])
+    path_scope = urlsplit(scope).path not in {"", "/"}
     energy_raw = energy.read_bytes() if isinstance(energy, Path) else None
     if isinstance(energy, Path):
         energy = read(energy)
@@ -330,6 +345,7 @@ def render(
             traffic_path.read_bytes(),
             energy_raw,
             grid=annual_data["clientGridIntensity"],
+            audit_scope=plan.get("auditScope"),
         )
         if annual_data != expected:
             raise ValueError(
@@ -337,7 +353,6 @@ def render(
             )
     elif traffic_path:
         raise ValueError("Traffic must accompany an annual calculation")
-    packet = read(session / "packet.json")
     review = read(session / "review.json")
     assessment = read(session / "scores.json")
     validate_inputs(session, assessment, review)
@@ -400,14 +415,27 @@ def render(
         "visitor journey" if len(probes["journeys"]) == 1 else "visitor journeys"
     )
     lines = [
-        f"# {urlsplit(packet['site']).netloc}: sustainability audit",
+        f"# {urlsplit(scope).netloc}{urlsplit(scope).path.rstrip('/') if path_scope else ''}: sustainability audit",
         "",
+        *(
+            [
+                f"**Audit scope:** [{scope}]({scope}). Findings apply to this service and its sampled pages, not other projects on the same host.",
+                "",
+            ]
+            if path_scope
+            else []
+        ),
         "## At a glance",
         "",
         '<div class="grid cards" markdown="1">',
         "",
         f"- **{number}** — scoped audit score<br>{counts['pass']} passing, {counts['fail']} with problems, {counts['cantTell']} needing more evidence.",
-        f"- **{len(probes['pages'])} pages** reviewed<br>{len(probes['journeys'])} {journey_label} and {len(source['files'])} selected source files.",
+        f"- **{len(probes['pages'])} pages** reviewed<br>{len(probes['journeys'])} {journey_label}"
+        + (
+            f" and {len(source['files'])} selected source files."
+            if source["files"]
+            else "; public-site evidence."
+        ),
         f"- **{score['checkedGuidelines']} of {score['totalGuidelines']} guideline groups** scored<br>{counts['untested']} untested; {counts['inapplicable']} not applicable. Tests cover selected aspects of each guideline.",
         "",
         "</div>",
@@ -604,12 +632,21 @@ def render(
                 ]
         else:
             lines += [
-                f"**Annual estimate unavailable:** {prose(annual_site['reason'])}. Obtain traffic evidence for this exact origin; missing rank data does not mean zero visits.",
+                f"**Annual estimate unavailable:** {prose(annual_site['reason'])}. "
+                + (
+                    "Use pageviews limited to the audited path before projecting either SWDM emissions or client electricity."
+                    if path_scope
+                    else "Obtain traffic evidence for this exact origin; missing rank data does not mean zero visits."
+                ),
                 "",
             ]
     else:
         lines += [
-            "Annual impact has not been estimated for this report. Collect an exact-origin CrUX rank and traffic scenario, then combine it with the sampled first loads and any available client-energy scenarios.",
+            (
+                "Annual impact is unavailable: CrUX ranks describe the whole origin, including other projects. Pageviews for this audited path are unknown. Obtain traffic limited to this service before projecting either SWDM emissions or client electricity."
+                if path_scope
+                else "Annual impact has not been estimated for this report. Collect an exact-origin CrUX rank and traffic scenario, then combine it with the sampled first loads and any available client-energy scenarios."
+            ),
             "",
         ]
     lines += ["## Priorities", "", prose(editorial["overview"]), ""]
@@ -721,7 +758,12 @@ def render(
         "",
         "## Detailed findings",
         "",
-        "This appendix explains the evidence in ordinary language. Local source files help identify possible fixes, but we have not confirmed that the live site uses the same code revision. A missing selected file or document does not mean the organization has none.",
+        "This appendix explains the evidence in ordinary language. "
+        + (
+            "Selected source files help identify possible fixes, but we have not confirmed that the live site uses the same code revision. A missing selected file or document does not mean the organization has none."
+            if source["files"]
+            else "This audit used public-site evidence without a source checkout. Unavailable documents or internal records do not establish that the organization has none."
+        ),
         "",
     ]
     for section, title in AREAS.items():
@@ -825,7 +867,12 @@ def render(
         "",
         "Energy is shown in milliwatt-hours (mWh = 0.001 Wh). Browser energy includes modeled CPU, memory, disk and display use. Not sampled means no energy experiment was supplied for that page; unavailable means a supplied experiment did not yield a usable result. Neither means zero energy.",
         "",
-        "Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest. Source excerpts reproduce captured text; branch links target the checked-out branch. Captured-revision links remain stable if that branch moves.",
+        "Illustrations were captured separately from the transfer measurements. Their capture dates, viewports, URLs and file hashes are retained in the screenshot manifest."
+        + (
+            " Source excerpts reproduce captured text; branch links target the checked-out branch. Captured-revision links remain stable if that branch moves."
+            if source["files"]
+            else " No source checkout was included in this audit."
+        ),
         "",
         '??? note "Technical files for reproducing this report"',
         "",

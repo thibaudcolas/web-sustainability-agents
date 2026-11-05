@@ -27,6 +27,10 @@ if __package__ in {None, ""}:
 from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
     energy_rows,
 )
+from audit.workflow import (  # noqa: E402 # ty: ignore[unresolved-import]
+    validate_audit_scope,
+    within_audit_scope,
+)
 
 JSON = dict[str, Any]
 ROOT = Path(__file__).resolve().parent.parent
@@ -272,6 +276,7 @@ def annual_document(
     energy_raw: bytes | None = None,
     selection: str = "first",
     grid: float = 494,
+    audit_scope: str | None = None,
 ) -> JSON:
     """Bind both independent projections to exact inputs and calculation settings."""
     raw = {"staged": staged_raw, "traffic": traffic_raw}
@@ -280,6 +285,18 @@ def annual_document(
     traffic = json.loads(traffic_raw)
     energy = json.loads(energy_raw) if energy_raw is not None else None
     pages = model_pages(json.loads(staged_raw), selection)
+    path_scope = False
+    if audit_scope is not None:
+        if len(pages) != 1:
+            raise ValueError("An auditScope requires exactly one audited origin")
+        validate_audit_scope(audit_scope, next(iter(pages)))
+        if any(
+            not within_audit_scope(page["url"], audit_scope)
+            for items in pages.values()
+            for page in items
+        ):
+            raise ValueError("Annual input pages must remain inside auditScope")
+        path_scope = urlsplit(audit_scope).path not in {"", "/"}
     if energy and (len(pages) != 1 or energy.get("origin") not in pages):
         raise ValueError(
             "Client-energy enrichment requires one matching audited origin"
@@ -289,14 +306,30 @@ def annual_document(
     scenarios, client_scenarios = [], []
     for site, items in pages.items():
         record: JSON = next((r for r in traffic["results"] if r["origin"] == site), {})
+        if path_scope:
+            record = {}
         scenarios.append(annual_scenario(site, items, record, selection))
         client_scenarios.append(
             client_energy_scenario(
                 site, energy, record, {p["url"] for p in items}, grid
             )
         )
+        if path_scope:
+            reason = "CrUX describes the whole origin; traffic for this audited path is unknown"
+            scenarios[-1]["reason"] = reason
+            client_scenarios[-1]["reason"] = reason
     return {
         "schemaVersion": "0.2.0",
+        **(
+            {
+                "auditScope": audit_scope,
+                "scopeValidatorSHA256": hashlib.sha256(
+                    (ROOT / "audit/workflow.py").read_bytes()
+                ).hexdigest(),
+            }
+            if audit_scope is not None
+            else {}
+        ),
         "sourceSHA256": {
             key: hashlib.sha256(value).hexdigest() for key, value in raw.items()
         },
@@ -335,6 +368,10 @@ def main() -> None:
     )
     parser.add_argument("--energy", type=Path)
     parser.add_argument(
+        "--audit-scope",
+        help="The plan's auditScope URL; origin traffic cannot estimate a subpath's annual footprint",
+    )
+    parser.add_argument(
         "--visit-selection", choices=["first", "branch-mean"], default="first"
     )
     parser.add_argument(
@@ -355,6 +392,7 @@ def main() -> None:
         args.energy.read_bytes() if args.energy else None,
         args.visit_selection,
         args.client_grid_intensity,
+        args.audit_scope,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")

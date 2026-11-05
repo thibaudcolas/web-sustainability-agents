@@ -18,7 +18,7 @@ import subprocess
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 JSON = dict[str, Any]
@@ -80,6 +80,8 @@ def validate_plan(plan: JSON) -> None:
     origin = plan["origin"]
     if origin_of(origin) != origin or not plan.get("purpose", "").strip():
         raise ValueError("Use one exact origin and a nonempty audit purpose")
+    scope = plan.get("auditScope", origin)
+    validate_audit_scope(scope, origin)
     pages = plan["pages"]
     if not isinstance(pages, list) or not 1 <= len(pages) <= 20:
         raise ValueError("Select 1–20 pages per bounded campaign")
@@ -96,6 +98,8 @@ def validate_plan(plan: JSON) -> None:
         identifiers.add(target["id"])
         if origin_of(target["url"]) != origin:
             raise ValueError("Every starting URL must match the audit origin")
+        if not within_audit_scope(target["url"], scope):
+            raise ValueError("Every starting URL must remain inside auditScope")
         if not target.get("task", "").strip():
             raise ValueError("Name the visitor task for each selected page/journey")
         validate_actions(target.get("actions", []), {"click", "fill", "press"})
@@ -125,6 +129,34 @@ def validate_plan(plan: JSON) -> None:
         )
     validate_context(plan)
     validate_energy(plan)
+
+
+def validate_audit_scope(scope: str, origin: str) -> None:
+    """Keep an optional service directory distinct from its shared origin."""
+    if not isinstance(scope, str) or origin_of(scope) != origin:
+        raise ValueError("auditScope must be an HTTP(S) URL on the audit origin")
+    parsed = urlsplit(scope)
+    path = unquote(parsed.path)
+    if (
+        parsed.query
+        or parsed.fragment
+        or path != parsed.path
+        or "\\" in path
+        or any(part in {".", ".."} for part in path.split("/"))
+        or (path and not path.endswith("/"))
+    ):
+        raise ValueError("auditScope must be an unambiguous directory URL")
+
+
+def within_audit_scope(url: str, scope: str) -> bool:
+    """Compare path segments, rejecting encoded traversal outside a service."""
+    path = unquote(urlsplit(url).path)
+    return (
+        origin_of(url) == origin_of(scope)
+        and "\\" not in path
+        and not any(part in {".", ".."} for part in path.split("/"))
+        and (path or "/").startswith(urlsplit(scope).path or "/")
+    )
 
 
 def validate_energy(plan: JSON) -> None:
