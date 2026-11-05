@@ -126,6 +126,52 @@ class AssessmentTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             assess(self.review, self.rubric, self.weights)
 
+    def test_nested_evidence_is_verified_without_allowing_session_escape(self):
+        raw = b'{"pages": [{"status": "completed"}]}'
+        digest = hashlib.sha256(raw).hexdigest()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            session = root / "session"
+            (session / "energy").mkdir(parents=True)
+            manifest = session / "energy/manifest.json"
+            manifest.write_bytes(raw)
+            outside = root / "outside.json"
+            outside.write_bytes(raw)
+            (session / "escaped.json").symlink_to(outside)
+            (session / "escaped-dir").symlink_to(root, target_is_directory=True)
+
+            def wrapper(name):
+                return {
+                    "rubricSHA256": hashlib.sha256(b"rubric").hexdigest(),
+                    "sourceSHA256": {name: digest},
+                    "reviews": [
+                        {
+                            "evidenceIndex": {
+                                "energy": {
+                                    "artifact": name,
+                                    "jsonPointer": "/pages/0",
+                                    "sourceSHA256": digest,
+                                }
+                            }
+                        }
+                    ],
+                }
+
+            validate_provenance(wrapper("energy/manifest.json"), b"rubric", session)
+            for name in (
+                str(outside),
+                "../outside.json",
+                "energy/../energy/manifest.json",
+                "escaped.json",
+                "escaped-dir/outside.json",
+                "energy\\manifest.json",
+            ):
+                with self.subTest(name=name), self.assertRaises(ValueError):
+                    validate_provenance(wrapper(name), b"rubric", session)
+            manifest.write_bytes(b'{"pages": []}')
+            with self.assertRaisesRegex(ValueError, "provenance changed"):
+                validate_provenance(wrapper("energy/manifest.json"), b"rubric", session)
+
 
 class AnnualTests(unittest.TestCase):
     def setUp(self):

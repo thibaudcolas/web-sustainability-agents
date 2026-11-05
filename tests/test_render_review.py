@@ -55,6 +55,31 @@ class RenderProvenanceTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "source evidence changed"):
                 validate_inputs(session, score, review)
 
+    def test_nested_source_manifest_is_accepted_but_escape_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            session, score, review = self.make_session(directory)
+            (session / "energy").mkdir()
+            nested = session / "energy/manifest.json"
+            nested.write_text('{"pages": []}')
+            wrapper_path = session / "reviews.json"
+            wrapper = json.loads(wrapper_path.read_text())
+
+            def select_source(name):
+                wrapper["sourceSHA256"] = {
+                    name: hashlib.sha256(nested.read_bytes()).hexdigest()
+                }
+                wrapper_path.write_text(json.dumps(wrapper))
+                score["sourceSHA256"]["reviews"] = hashlib.sha256(
+                    wrapper_path.read_bytes()
+                ).hexdigest()
+
+            select_source("energy/manifest.json")
+            validate_inputs(session, score, review)
+            for name in (str(nested), "energy/../energy/manifest.json"):
+                select_source(name)
+                with self.assertRaisesRegex(ValueError, "artifact name"):
+                    validate_inputs(session, score, review)
+
 
 class EditorialContractTests(unittest.TestCase):
     def setUp(self):

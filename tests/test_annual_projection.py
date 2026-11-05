@@ -103,7 +103,7 @@ class AnnualProjectionTests(unittest.TestCase):
                 annual_document(*inputs, audit_scope=self.site + "/other/")
 
     def test_failed_navigation_exclusion_is_explicit_and_preserves_original_scope(self):
-        run = {
+        run: dict[str, Any] = {
             "url": self.url,
             "id": "good",
             "documentStatus": 200,
@@ -121,7 +121,7 @@ class AnnualProjectionTests(unittest.TestCase):
             "id": "blocked",
             "documentStatus": 429,
         }
-        staged = {
+        staged: dict[str, Any] = {
             "runs": [
                 run,
                 failed,

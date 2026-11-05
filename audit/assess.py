@@ -166,15 +166,30 @@ def main() -> None:
     args.output.write_text(json.dumps(result, indent=2) + "\n")
 
 
+def source_artifact(assets: Path, name: str) -> Path:
+    """Resolve a nested evidence file without allowing it outside the session."""
+    if (
+        not isinstance(name, str)
+        or "\\" in name
+        or "\x00" in name
+        or Path(name).is_absolute()
+        or any(part in {"", ".", ".."} for part in name.split("/"))
+    ):
+        raise ValueError("Invalid source artifact name")
+    root = assets.resolve()
+    artifact = (root / name).resolve()
+    if not artifact.is_relative_to(root) or not artifact.is_file():
+        raise ValueError("Source artifact must be a file inside the session")
+    return artifact
+
+
 def validate_provenance(reviews: JSON, rubric_raw: bytes, assets: Path) -> None:
     """Reject stale rubrics, changed evidence, and fabricated indexed locations."""
     if reviews.get("rubricSHA256") != hashlib.sha256(rubric_raw).hexdigest():
         raise ValueError("Reviews were made against a different rubric")
     sources = {}
     for name, expected in reviews["sourceSHA256"].items():
-        if Path(name).name != name:
-            raise ValueError("Invalid source artifact name")
-        raw = (assets / name).read_bytes()
+        raw = source_artifact(assets, name).read_bytes()
         if hashlib.sha256(raw).hexdigest() != expected:
             raise ValueError("Review source provenance changed")
         sources[name] = json.loads(raw)

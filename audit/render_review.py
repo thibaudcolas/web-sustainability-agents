@@ -24,6 +24,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from audit.annual import annual_document  # noqa: E402 # ty: ignore[unresolved-import]
+from audit.assess import source_artifact  # noqa: E402 # ty: ignore[unresolved-import]
 from audit.report_details import (  # noqa: E402 # ty: ignore[unresolved-import]
     AREAS,
     area_results,
@@ -106,8 +107,8 @@ def validate_inputs(session: Path, score_document: JSON, review: JSON) -> None:
         raise ValueError("Review packet changed")
     for name, expected in wrapper["sourceSHA256"].items():
         if (
-            Path(name).name != name
-            or hashlib.sha256((session / name).read_bytes()).hexdigest() != expected
+            hashlib.sha256(source_artifact(session, name).read_bytes()).hexdigest()
+            != expected
         ):
             raise ValueError("Scored source evidence changed")
 
@@ -455,6 +456,8 @@ def render(
         "",
         "</div>",
         "",
+        prose(editorial["overview"]),
+        "",
         "## Results by WSG area",
         "",
         *table_start(
@@ -672,7 +675,7 @@ def render(
             ),
             "",
         ]
-    lines += ["## Priorities", "", prose(editorial["overview"]), ""]
+    lines += ["## Priorities", ""]
     used_images: set[str] = set()
     finding_map = {f["checkId"]: f for f in editorial["findings"]}
     finding_order = presentation.get("findingOrder", list(finding_map))
