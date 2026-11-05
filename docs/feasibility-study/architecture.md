@@ -1,6 +1,6 @@
 # Proposed audit architecture
 
-This is a design proposal informed by the [standards research](../knowledge-base/wsg-and-star.md) and [local project review](../knowledge-base/local-projects.md). It has not been implemented or benchmarked.
+This is a design proposal informed by the [standards research](../knowledge-base/wsg-and-star.md) and [reference project review](../knowledge-base/local-projects.md). It has not been implemented or benchmarked.
 
 ## Workflow and responsibilities
 

@@ -139,4 +139,8 @@ print("Hello")
 
 Link to other docs pages with relative Markdown links (`[Contributing](README.md)`). Avoid root-relative paths such as `/contributing/`: the strict build rejects them, and they omit the repository path on GitHub Pages. Use full URLs for external sources.
 
+Cite external projects using their canonical documentation or upstream repository, even when research uses a local checkout. Public source citations must not rely on `local/` directories, absolute workstation paths or `file://` links. Verify repository ownership from the checkout's remotes and upstream project metadata. For version-specific source claims, prefer a commit permalink and confirm that the commit and file exist in that repository before replacing a fork link.
+
+A fork-only change or dirty working tree is distinct evidence: identify it explicitly and link published artifacts or the actual fork where available. An upstream commit does not prove it contains uncommitted changes. Preserve exact paths and hashes inside frozen evidence artifacts when needed for reproducibility; use clearly labeled placeholders in general source-directory examples.
+
 [Bulleted lists]: https://developers.google.com/tech-writing/one/lists-and-tables

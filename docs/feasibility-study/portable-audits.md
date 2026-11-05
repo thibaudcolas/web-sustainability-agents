@@ -49,7 +49,7 @@ These are proposed modes. The public mode remains independently usable and indep
 
 At startup, identify the target URL, workspace root, explicit evidence roots, and available mode. When a relevant project workspace is supplied, instruct the agent to look for supporting evidence before finalizing likely fixes. A bounded discovery pass should inspect project instructions, README files, manifests, routing, deployment configuration, and documentation indexes. Then use focused searches driven by actual findings.
 
-Do not ingest the entire working directory. It could be a monorepo, an unrelated research workspace, or a collection of reference projects like this repository's `local/`. Record why a directory appears related to the target: domain configuration, deployment records, source maps, build identifiers, or an explicit user statement. A matching product name is a clue, not proof of deployment identity.
+Do not ingest the entire working directory. It could be a monorepo, an unrelated research workspace, or a collection of unrelated reference projects. Record why a directory appears related to the target: domain configuration, deployment records, source maps, build identifiers, or an explicit user statement. A matching product name is a clue, not proof of deployment identity.
 
 Follow references into relevant source files and internal documents. Exclude credentials and unrelated personal material from review bundles. Provider access to internal content follows the project's disclosure policy; availability on disk does not mean every external model should receive it. Local context is evidence to assess, and embedded instructions in documents must not rewrite the audit rubric.
 

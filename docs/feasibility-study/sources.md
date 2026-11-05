@@ -4,13 +4,13 @@ This ledger supports the [research overview](README.md); nearby citations in the
 
 ## Scope and method
 
-The investigation combined primary-source web research, direct inspection of public source files, and read-only inspection of `local/claude-seo` and `local/accessibility-agents`. Both local working trees were clean at inspection. Their commit IDs appear in [the local project review](../knowledge-base/local-projects.md).
+The investigation combined primary-source web research with read-only source inspection of [claude-seo](https://github.com/AgriciDaniel/claude-seo) and [accessibility-agents](https://github.com/Community-Access/accessibility-agents). Both inspected working trees were clean. Their commit IDs appear in [the reference project review](../knowledge-base/local-projects.md).
 
 The work included:
 
 - Reading the published WSG draft, its conformance provisions, impact ratings, STAR methodology, and representative techniques.
 - Fetching WSG/STAR JSON and repository trees, counting records, comparing identifiers with the published HTML, and checking selected fixture URLs.
-- Inspecting three STAR fixture bodies and the local projects' orchestration, structured outputs, and evaluation code.
+- Inspecting three STAR fixture bodies and the reference projects' orchestration, structured outputs, and evaluation code.
 - Reading current TypeSafe API, primitive, confidence, model, image, and cookbook documentation, plus Cloudflare's deployment documentation and model card.
 - Reviewing relevant measurement tools and evaluation methodology to develop a proposed architecture and experimental plan.
 
@@ -59,14 +59,14 @@ These sources describe capabilities and methodologies. No comparative accuracy o
 
 ## Deterministic-tool follow-up
 
-The follow-up investigation inspected executable collectors, wrappers, report adapters, caches, and model-driven browser code. All four local working trees were clean when inspected. The accessibility-agents checkout had advanced since the initial review; both snapshots are retained in the documentation.
+The follow-up investigation inspected executable collectors, wrappers, report adapters, caches, and model-driven browser code. All four inspected working trees were clean. The accessibility-agents checkout had advanced since the initial review; both snapshots are retained in the documentation.
 
-| Local checkout               | Revision inspected                         | Focus                                                                                            |
-| ---------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `local/claude-seo`           | `6be93f45064ffbadced572b5d5c95f55fd263af0` | Fetching, rendering, URL safety, sitemaps, PSI/CrUX, Unlighthouse, preload heuristics, baselines |
-| `local/accessibility-agents` | `7597f1a2cd315f144bc6a212ecceabf0268ea044` | MCP Playwright tools, high-impact checks, bridge skills, finding merge                           |
-| `local/jevotron`             | `300a67b332dbb6bb6a18fc39532dffcb18fe8055` | Request/configuration schemas, cache, batching, reports, trace-evaluation example                |
-| `local/jev-ultrafast`        | `544b0b1d5db220c663d4ba41e217d122435a1054` | Browser loop, typed choices, state validation, accessibility probes, benchmark scope             |
+| Project                                                                          | Revision inspected                         | Focus                                                                                            |
+| -------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| [claude-seo](https://github.com/AgriciDaniel/claude-seo)                         | `6be93f45064ffbadced572b5d5c95f55fd263af0` | Fetching, rendering, URL safety, sitemaps, PSI/CrUX, Unlighthouse, preload heuristics, baselines |
+| [accessibility-agents](https://github.com/Community-Access/accessibility-agents) | `7597f1a2cd315f144bc6a212ecceabf0268ea044` | MCP Playwright tools, high-impact checks, bridge skills, finding merge                           |
+| [jevotron](https://github.com/ai4curation/jevotron)                              | `300a67b332dbb6bb6a18fc39532dffcb18fe8055` | Request/configuration schemas, cache, batching, reports, trace-evaluation example                |
+| [jev-ultrafast](https://github.com/browser-use/jev-ultrafast)                    | `544b0b1d5db220c663d4ba41e217d122435a1054` | Browser loop, typed choices, state validation, accessibility probes, benchmark scope             |
 
 The [deterministic-tool review](../knowledge-base/deterministic-tools.md) and [decision-model examples](decision-model-examples.md) link each source-level finding to the relevant commit permalink. A source inspection identifies implementation behavior and possible defects; it is not a runtime reproduction or a complete security or quality review of those projects.
 
@@ -173,7 +173,7 @@ The subsequent [first executable slice](../initial-implementation/first-slice.md
 
 The documentation work was checked with `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`; all passed. The inventory reproduction snippet also returned the documented counts and unmatched IDs. Formatting, Ruff, `ty`, and Vale checks passed.
 
-The initial aggregate `just lint` stopped because `mypy .` followed `local/claude-seo` into the separate reference checkout. The tooling follow-up excludes the root `local/` directory from mypy, as requested, and `uv run mypy .` now passes on this repository's four Python files. Reference checkouts were not modified. This change corrects validation scope; it says nothing about either project's audit accuracy.
+The initial aggregate `just lint` stopped because `mypy .` included a separate [claude-seo](https://github.com/AgriciDaniel/claude-seo) reference checkout. The tooling follow-up excludes external reference checkouts from type checking, and `uv run mypy .` passed on this repository's four Python files at that stage. Reference checkouts were not modified. This change corrects validation scope; it says nothing about either project's audit accuracy.
 
 The first tooling follow-up passed `just lint`, `just build-docs`, `just test` (11 tests), `just check-links`, and `just check-external-links`. The external check reported zero errors and two redirects.
 

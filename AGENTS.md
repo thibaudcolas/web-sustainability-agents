@@ -35,6 +35,7 @@ See [docs/contributing/README.md#coding-style--conventions](docs/contributing/RE
 - Type annotations required on production code (checked by mypy, ty). Test code is exempt.
 - Formatting: `ruff format` for Python, `prettier` for all other files.
 - Feel free to ignore maximum line length rules for comments. Instead, hard-wrap at punctuation (or rephrase to be more concise).
+- Cite external projects through canonical public documentation or verified upstream commit permalinks; local reference checkouts are research inputs, not reader-facing citations.
 - For prose documentation (README, MkDocs pages), follow the [documentation style guide](docs/contributing/style-guide.md): tone, terminology, headings, linking, and American English spelling.
 
 ## Commit & pull request guidelines

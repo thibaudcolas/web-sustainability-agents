@@ -43,15 +43,15 @@ Journeys can now specify a viewport and a `success` object containing a URL, sel
 
 ## Source evidence in the same packet
 
-The agent selects individual files, rather than treating a whole repository as reviewed:
+The agent selects individual files, rather than treating a whole repository as reviewed. Here, `site-source` is a placeholder for the supplied project checkout:
 
 ```json
 {
-  "sourceRoots": ["local/project"],
+  "sourceRoots": ["site-source"],
   "sourceFiles": [
-    { "root": "local/project", "path": "package.json" },
-    { "root": "local/project", "path": "README.md" },
-    { "root": "local/project", "path": ".github/workflows/ci.yml" }
+    { "root": "site-source", "path": "package.json" },
+    { "root": "site-source", "path": "README.md" },
+    { "root": "site-source", "path": ".github/workflows/ci.yml" }
   ]
 }
 ```

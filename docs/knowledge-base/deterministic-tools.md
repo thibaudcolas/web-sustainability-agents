@@ -1,6 +1,6 @@
 # Deterministic tools for sustainability audits
 
-This extends the [initial local project review](local-projects.md). Tool capabilities were checked against source code and primary documentation; no comparative browser benchmark was run.
+This extends the [initial reference project review](local-projects.md). Tool capabilities were checked against source code and primary documentation; no comparative browser benchmark was run.
 
 **Recommendation: own the capture protocol, evidence format, and WSG rule mappings; reuse established measurement engines.** Start with a small Playwright collector for representative journeys, axe-core for accessibility safeguards, and imported Lighthouse diagnostics. Add other engines only when they answer a question the initial stack cannot. Keep agent-browser and a Jev-driven browser as experimental discovery and journey-authoring options.
 
@@ -47,13 +47,13 @@ The Sitespeed.io sustainability plugin can combine transfer observations and hos
 
 [Green Metrics Tool](https://github.com/green-coding-solutions/green-metrics-tool) is relevant to a later controlled experiment, especially when the application and infrastructure are available. It supports different metric providers, including hardware energy sources and resource counters. Record which provider actually ran: CPU energy, a whole-machine power reading, and a software-derived estimate have different boundaries. It does not reveal the energy use of an arbitrary remote origin simply by browsing it. Check current AGPL/commercial terms for the intended integration. [Measurement introduction](https://docs.green-coding.io/docs/prologue/introduction/).
 
-## What the local projects actually provide
+## What the reference projects provide
 
 ### claude-seo
 
 The follow-up inspection used commit `6be93f45064ffbadced572b5d5c95f55fd263af0`. These are executable scripts and reusable engineering patterns, rather than a ready-made WSG engine.
 
-| Local component                         | Useful behavior                                                                      | Adaptation needed                                                               |
+| Project component                       | Useful behavior                                                                      | Adaptation needed                                                               |
 | --------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
 | `fetch_page.py`, `url_safety.py`        | Bounded fetching, URL checks, shared safety controls                                 | Preserve retrieval failures and distinguish document bytes from journey traffic |
 | `sitemap_discovery.py`                  | Robots and sitemap discovery with bounded responses                                  | Add representative journey and state selection                                  |
@@ -77,7 +77,7 @@ Similarly, lexical “content quality” heuristics do not establish that conten
 
 ### accessibility-agents
 
-This follow-up inspected commit `7597f1a2cd315f144bc6a212ecceabf0268ea044`, which is newer than the snapshot in the initial review. Its MCP server contains executable Playwright tools for axe, accessibility snapshots, keyboard probing, contrast, and viewport behavior. The broader tool catalog also includes supplied-markup checks and document inspection. [Playwright tools](https://github.com/thi-bot/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/mcp-server/tools/playwright-tools.js), [tool metadata](https://github.com/thi-bot/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/mcp-server/tool-metadata.js).
+This follow-up inspected commit `7597f1a2cd315f144bc6a212ecceabf0268ea044`, which is newer than the snapshot in the initial review. Its MCP server contains executable Playwright tools for axe, accessibility snapshots, keyboard probing, contrast, and viewport behavior. The broader tool catalog also includes supplied-markup checks and document inspection. [Playwright tools](https://github.com/Community-Access/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/mcp-server/tools/playwright-tools.js), [tool metadata](https://github.com/Community-Access/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/mcp-server/tool-metadata.js).
 
 These provide valuable safeguards: an image optimization must preserve text alternatives; simplifying a page must preserve keyboard operation; changing a downloadable document must preserve its accessibility. They are related quality evidence, not measures of environmental improvement.
 
@@ -88,9 +88,9 @@ Several implementation details matter before reuse:
 - The keyboard tool assigns `trapped = focusOrder.length < 3` inside a branch requiring `focusOrder.length > 2`. That assignment cannot identify a trap. This is a source-level finding, not a runtime reproduction; its “no trap” output should not be inherited as assurance.
 - A missing CSS outline is not sufficient to establish a missing focus indicator; borders or shadows can provide one. Likewise, repeated focus targets and small target sizes need contextual interpretation.
 
-The separate [high-impact Playwright script](https://github.com/thi-bot/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/mcp-server/scripts/playwright-high-impact-check.mjs) combines responsive checks, axe, and interaction probes. It is useful as a design reference, but its probes change state and its heuristics need individual validation.
+The separate [high-impact Playwright script](https://github.com/Community-Access/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/mcp-server/scripts/playwright-high-impact-check.mjs) combines responsive checks, axe, and interaction probes. It is useful as a design reference, but its probes change state and its heuristics need individual validation.
 
-The Lighthouse and scanner bridges are skills directing an agent to interpret and merge reports. They are not deterministic report parsers merely because the upstream scanner is deterministic. Build a schema-validated adapter for repeatable merging. Two reports containing the same underlying axe finding are correlated evidence, not two independent confirmations. [Lighthouse bridge](https://github.com/thi-bot/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/skills/lighthouse-bridge/SKILL.md), [merge implementation](https://github.com/thi-bot/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/skills/a11y-core/scripts/merge-findings.mjs).
+The Lighthouse and scanner bridges are skills directing an agent to interpret and merge reports. They are not deterministic report parsers merely because the upstream scanner is deterministic. Build a schema-validated adapter for repeatable merging. Two reports containing the same underlying axe finding are correlated evidence, not two independent confirmations. [Lighthouse bridge](https://github.com/Community-Access/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/skills/lighthouse-bridge/SKILL.md), [merge implementation](https://github.com/Community-Access/accessibility-agents/blob/7597f1a2cd315f144bc6a212ecceabf0268ea044/skills/a11y-core/scripts/merge-findings.mjs).
 
 ## Playwright, agent-browser, or an existing harness?
 

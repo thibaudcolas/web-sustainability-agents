@@ -83,6 +83,7 @@ For prose style, tone, terminology, headings, and linking conventions, follow th
 
 - User-facing docs live in `docs/`; the README is the entry point.
 - Track writing and review dates in git, not manual page datelines. Keep source-version dates and measurement timestamps when they are part of the evidence.
+- Cite reference projects through canonical public sources, not checkout paths. Use verified commit permalinks for version-specific claims; see [source linking guidance](style-guide.md#links).
 - Keep language concise and in **Sentence case** (no Title Case).
 - Follow the [documentation style guide](style-guide.md) for tone, terminology, headings, and linking conventions.
 - Run `just format` before committing so prettier formats Markdown files consistently.

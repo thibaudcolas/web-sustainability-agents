@@ -34,7 +34,7 @@ The [energy artifact](assets/energy-experiment.json) records each run, counter s
 
 Linux RAPL permissions and the CPU-package event were already available. No system settings were changed. The shared workstation's temperature, power state, and unrelated activity were not experimentally controlled; no audit tests or model campaigns were deliberately run alongside these measurements. There is no idle subtraction, matched performance baseline, or causal site comparison.
 
-The local co2-runner revision is `cf665f56e0b7db396d0422de1d143559986fa745` with uncommitted changes, including the CPU-package selection fix. The adapter records file hashes in addition to the commit. It leaves the checkout untouched and isolates profiles/HARs under ignored `.audit-work/energy/`. The published artifact excludes those raw files.
+The experiment used [co2-runner revision cf665f5](https://github.com/mrchrisadams/co2-runner/tree/cf665f56e0b7db396d0422de1d143559986fa745) with uncommitted changes, including the CPU-package selection fix. The linked revision identifies the base source; the recorded file hashes identify the modified implementation. The adapter records file hashes in addition to the commit. It leaves the checkout untouched and isolates profiles/HARs under ignored `.audit-work/energy/`. The published artifact excludes those raw files.
 
 The validator accepts one top-level CPU-package series and rejects missing, empty, malformed, nonfinite, negative, or unordered samples. It does not sum overlapping domains. A valid all-zero series is flagged and excluded from the summary. The first sample is included to match co2-runner; excluding it is recorded separately as a sensitivity calculation.
 

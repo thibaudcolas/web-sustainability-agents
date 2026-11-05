@@ -65,7 +65,7 @@ Split by site, template family, and organization where possible. Near-identical 
 
 Have two reviewers independently label semantic cases, then adjudicate disagreements. Include sustainability expertise and relevant UX, accessibility, or infrastructure knowledge. Retain initial labels, disagreement reasons, and unresolved cases. An unresolved normative dispute should not be converted into a fabricated ground truth.
 
-Grade findings by rule, target, state, and evidence, with documented matching rules. Do not require exact wording. Independently inspect unmatched findings before calling them false positives. Test the grader with deliberately duplicated findings, wrong locations, and paraphrases. The [local accessibility evaluation](../knowledge-base/local-projects.md#accessibility-agents) provides a useful starting example and a warning about matching errors.
+Grade findings by rule, target, state, and evidence, with documented matching rules. Do not require exact wording. Independently inspect unmatched findings before calling them false positives. Test the grader with deliberately duplicated findings, wrong locations, and paraphrases. The [accessibility-agents evaluation](../knowledge-base/local-projects.md#accessibility-agents) provides a useful starting example and a warning about matching errors.
 
 ## Controlled comparisons
 
