@@ -30,16 +30,35 @@ def display_bytes(value: float) -> str:
     )
 
 
+def navigation_status(run: JSON) -> tuple[str, str | None]:
+    """Preserve legacy captures with no status field, but never export failed pages as zero."""
+    if run.get("navigationError") or (
+        "documentStatus" in run and run["documentStatus"] is None
+    ):
+        return "failed", "Document navigation failed"
+    if "documentStatus" not in run:
+        return "unrecorded", None
+    status = run["documentStatus"]
+    if (
+        not isinstance(status, int)
+        or isinstance(status, bool)
+        or not 200 <= status < 400
+    ):
+        return "http_error", f"Document returned HTTP {status}"
+    return "succeeded", None
+
+
 def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
     """Separate origins and keep metric units, provenance, and phase semantics."""
     reports: dict[str, JSON] = {}
     for run in evidence["runs"]:
         url = urlsplit(run["url"])
         origin = f"{url.scheme}://{url.netloc}"
+        navigation, unavailable = navigation_status(run)
         report = reports.setdefault(
             origin,
             {
-                "schemaVersion": "0.3.0",
+                "schemaVersion": "0.4.0",
                 "site": origin,
                 "sourceSHA256": digest,
                 "protocol": evidence["protocol"],
@@ -51,6 +70,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                 "headline": [],
                 "observations": [],
                 "ratings": [],
+                "navigationPolicy": "Failed document loads and HTTP errors have null chart metrics, unavailable headlines and no carbon rating. Raw responses remain in the source evidence. Legacy inputs without documentStatus retain their values with navigationStatus=unrecorded; this does not verify navigation success.",
                 "chartContracts": [
                     {
                         "id": "phase-traffic",
@@ -60,7 +80,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                         "x": "phase",
                         "series": ["pageUrl", "branch"],
                         "aggregation": "none",
-                        "note": "Cumulative totals: never stack phases; partial observations must remain labeled.",
+                        "note": "Cumulative totals: never stack phases; partial observations must remain labeled. Null values are unavailable, never zero.",
                     },
                     {
                         "id": "incremental-traffic",
@@ -92,7 +112,10 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                 "branch": run["branch"],
                 "phase": phase["phase"],
                 "capturedAt": phase["capturedAt"],
-                "status": phase["accountingStatus"],
+                "status": "unavailable" if unavailable else phase["accountingStatus"],
+                "navigationStatus": navigation,
+                "documentStatus": run.get("documentStatus"),
+                **({"reason": unavailable} if unavailable else {}),
                 "basis": "observed",
                 "sourceId": f"{run['id']}/{phase['phase']}",
                 "sourceSHA256": digest,
@@ -105,7 +128,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                     {
                         **common,
                         "metric": metric,
-                        "value": phase[field],
+                        "value": None if unavailable else phase[field],
                         "unit": "B",
                         "category": "all",
                     }
@@ -122,7 +145,7 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                     {
                         **common,
                         "metric": "resource_bytes",
-                        "value": value,
+                        "value": None if unavailable else value,
                         "unit": "B",
                         "category": category,
                     }
@@ -131,9 +154,13 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                 report["headline"].append(
                     {
                         **common,
-                        "receivedBytes": phase["receivedBytes"],
-                        "display": display_bytes(phase["receivedBytes"]),
-                        "requestCount": phase["requestCount"],
+                        "receivedBytes": None
+                        if unavailable
+                        else phase["receivedBytes"],
+                        "display": "Unavailable"
+                        if unavailable
+                        else display_bytes(phase["receivedBytes"]),
+                        "requestCount": None if unavailable else phase["requestCount"],
                     }
                 )
         report["ratings"].append(
@@ -141,7 +168,9 @@ def export_reports(evidence: JSON, digest: str) -> dict[str, JSON]:
                 "runId": run["id"],
                 "phase": "initial",
                 "basis": "modeled",
-                "rating": run["rating"],
+                "rating": {"status": "unavailable", "reason": unavailable}
+                if unavailable
+                else run["rating"],
             }
         )
     return reports

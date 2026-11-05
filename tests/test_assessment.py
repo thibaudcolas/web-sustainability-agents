@@ -140,7 +140,7 @@ class AssessmentTests(unittest.TestCase):
             (session / "escaped.json").symlink_to(outside)
             (session / "escaped-dir").symlink_to(root, target_is_directory=True)
 
-            def wrapper(name):
+            def wrapper(name: str) -> dict[str, Any]:
                 return {
                     "rubricSHA256": hashlib.sha256(b"rubric").hexdigest(),
                     "sourceSHA256": {name: digest},

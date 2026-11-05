@@ -64,7 +64,7 @@ class RenderProvenanceTests(unittest.TestCase):
             wrapper_path = session / "reviews.json"
             wrapper = json.loads(wrapper_path.read_text())
 
-            def select_source(name):
+            def select_source(name: str) -> None:
                 wrapper["sourceSHA256"] = {
                     name: hashlib.sha256(nested.read_bytes()).hexdigest()
                 }

@@ -1,3 +1,4 @@
+import copy
 import json
 import unittest
 from pathlib import Path
@@ -12,6 +13,53 @@ from audit.report import (
 
 
 class ReportDataTests(unittest.TestCase):
+    def test_failed_documents_cannot_be_charted_as_zero_or_normal_response_bytes(self):
+        original = json.loads(
+            Path("docs/initial-implementation/assets/staged-audit.json").read_text()
+        )
+        for state in ("navigation", "http"):
+            evidence = copy.deepcopy(original)
+            evidence["runs"] = evidence["runs"][:1]
+            run = evidence["runs"][0]
+            run["documentStatus"] = None if state == "navigation" else 429
+            run["navigationError"] = (
+                "net::ERR_FAILED" if state == "navigation" else None
+            )
+            run["rating"] = {
+                "status": "calculated",
+                "trace": {"co2": {"total": 0, "rating": "A+"}},
+            }
+            for phase in run["phases"]:
+                phase["accountingStatus"] = "complete_within_protocol"
+                if state == "navigation":
+                    phase["receivedBytes"] = 0
+                    phase["additionalBytes"] = 0
+            report = next(iter(export_reports(evidence, "original-evidence").values()))
+            self.assertTrue(all(row["value"] is None for row in report["observations"]))
+            self.assertEqual(
+                {row["status"] for row in report["observations"]}, {"unavailable"}
+            )
+            self.assertEqual(report["headline"][0]["display"], "Unavailable")
+            self.assertIsNone(report["headline"][0]["receivedBytes"])
+            self.assertEqual(report["ratings"][0]["rating"]["status"], "unavailable")
+            self.assertNotIn("trace", report["ratings"][0]["rating"])
+            self.assertEqual(report["sourceSHA256"], "original-evidence")
+
+    def test_legacy_missing_navigation_status_is_explicit_without_changing_values(self):
+        evidence = json.loads(
+            Path("docs/initial-implementation/assets/staged-audit.json").read_text()
+        )
+        evidence["runs"] = evidence["runs"][:1]
+        run = evidence["runs"][0]
+        run.pop("documentStatus", None)
+        run.pop("navigationError", None)
+        report = next(iter(export_reports(evidence, "source").values()))
+        self.assertEqual(report["headline"][0]["navigationStatus"], "unrecorded")
+        self.assertEqual(
+            report["headline"][0]["receivedBytes"], run["phases"][0]["receivedBytes"]
+        )
+        self.assertEqual(report["ratings"][0]["rating"], run["rating"])
+
     def test_scores_and_annual_scenarios_do_not_change_page_ratings(self):
         assets = Path("docs/initial-implementation/assets")
         reports = export_reports(
