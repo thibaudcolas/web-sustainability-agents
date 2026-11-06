@@ -1,0 +1,44 @@
+{
+  "resolutions": [
+    {
+      "issue": "evidence:w3c-evidence-01",
+      "decision": "applied",
+      "reason": "The six complete initial pages retain their provisional ratings; the sustainability iframe gap remains partial despite zero unresolved IDs. Embed deferral is an investigation preserving useful playback."
+    },
+    {
+      "issue": "evidence:w3c-evidence-02",
+      "decision": "applied",
+      "reason": "Media delivery remains unknown; the 488 kB decorative banner is a rendition investigation with density and visual-quality checks, not a proven dimension reduction."
+    },
+    {
+      "issue": "evidence:w3c-evidence-03",
+      "decision": "applied",
+      "reason": "Long text snapshots are explicitly capped. The judgments preserve excerpt limits and require actual catalogue print inspection; equal lengths do not establish whole-document equivalence."
+    },
+    {
+      "issue": "evidence:w3c-evidence-04",
+      "decision": "applied",
+      "reason": "Font policy does not sum unloaded declarations as traffic or remove language support. Cache headers are policy evidence only; advocacy does not verify operational hosting."
+    },
+    {
+      "issue": "claims:w3c-mission-versus-service-results",
+      "decision": "applied",
+      "reason": "Disclosure, operational goals and hosting remain unknown for www.w3.org; wider WSG advocacy is credited without substituting it for service performance."
+    },
+    {
+      "issue": "claims:w3c-carbon-file-scope",
+      "decision": "applied",
+      "reason": "The carbon discovery failure is bounded to the tested endpoints/delegation, without whole-guideline or emissions conclusions."
+    },
+    {
+      "issue": "claims:w3c-history-value-and-review-gap",
+      "decision": "applied",
+      "reason": "Content lifecycle credits actual WCAG publications and useful history, but remains unknown pending a review trigger and applied publication rationale."
+    },
+    {
+      "issue": "claims:w3c-reading-task-and-absent-banner",
+      "decision": "applied",
+      "reason": "The complete catalogue task supports the declared pointer/text-input access scope only. No-banner observations do not imply no tracking or tested consent choices."
+    }
+  ]
+}

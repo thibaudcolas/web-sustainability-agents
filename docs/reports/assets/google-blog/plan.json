@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://blog.google",
+  "purpose": "Fresh public-only sustainability audit of representative English News from Google visitor tasks, rich media and bounded contextual evidence.",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://blog.google/",
+      "task": "Discover recent Google news and choose a topic or story.",
+      "rationale": "Homepage with featured carousel, latest-news listing, newsletter and rich media.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/"
+      ]
+    },
+    {
+      "id": "sustainability",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+      "task": "Find a relevant sustainability announcement in the topic collection.",
+      "rationale": "Topic listing and public sustainability claim discovery.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/"
+      ]
+    },
+    {
+      "id": "stegra-article",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/",
+      "task": "Read the featured sustainability announcement and identify its stated scope.",
+      "rationale": "Long-form corporate sustainability article, authorship, dates and audio summary.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/"
+      ]
+    },
+    {
+      "id": "media-article",
+      "url": "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/",
+      "task": "Read the Fitbit Edge announcement and inspect the embedded demonstration video.",
+      "rationale": "Product article with native MP4 video; playback interaction is outside this setup task.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "url": "https://blog.google/newsletter-subscribe/",
+      "task": "Inspect the newsletter offer, required email field and privacy explanation without submitting.",
+      "rationale": "Public form task with a personal-data request and linked privacy policy.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "url": "https://blog.google/about/",
+      "task": "Understand the publication, authors and available follow/contact routes.",
+      "rationale": "Institutional publication information and contact task without sending a message.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "read-sustainability-article",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+      "task": "From the sustainability listing, open and read the featured Stegra announcement.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actions": [
+        {
+          "type": "click",
+          "selector": ".glue-cookie-notification-bar__accept"
+        },
+        {
+          "type": "click",
+          "selector": "a[href=\"https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/\"] >> nth=0"
+        }
+      ],
+      "success": {
+        "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/",
+        "selector": "h1",
+        "text": "Helping bring the world\u2019s first large-scale, near-zero emissions steel plant online"
+      }
+    }
+  ],
+  "checks": [],
+  "contextChecks": [
+    "access-barriers",
+    "data-minimization",
+    "content-lifecycle",
+    "sustainability-goals"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English-language desktop readers (1440\u00d71000, pointer and ordinary browser, no account): from the sustainability topic listing, acknowledge the visible cookie notice and open the featured Stegra article; completion requires the canonical article URL, its complete headline and readable main article content. Keyboard-only, constrained-device and geographic completion are not represented.",
+    "data-minimization": "The public News from Google newsletter sign-up task at /newsletter-subscribe/ as observed on 2026-11-06: inspect visible requested personal-data categories, mandatory/optional states, purpose and opt-out explanation before entering data or submitting. Retention, downstream deletion and all-system propagation are outside this boundary.",
+    "content-lifecycle": "The English News from Google sustainability article collection, represented by its topic listing, the September 17, 2026 Stegra article and publication about page as available on 2026-11-06: assess public review/expiry scheduling and an applied update/archive/deletion example with useful historical access. No CMS history or organization-wide lifecycle is represented.",
+    "sustainability-goals": "News from Google web publication at https://blog.google, as publicly described on 2026-11-06: assess web-service-specific measurable sustainability goals and dated comparable progress. The sustainability topic listing and selected Stegra article are corporate context only and cannot establish the publication\u2019s own goals or operational results."
+  },
+  "contextEvidence": [
+    {
+      "id": "newsletter-public",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/context/newsletter-public.md",
+      "source": "https://blog.google/newsletter-subscribe/",
+      "capturedAt": "2026-11-06T08:46:36.403865+00:00",
+      "scope": "Rendered public newsletter subscription page before data entry.",
+      "checkIds": [
+        "data-minimization"
+      ],
+      "limitations": "Publisher wording and visible controls only; no subscription or email verification was submitted."
+    },
+    {
+      "id": "google-privacy-excerpt",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/context/google-privacy-excerpt.md",
+      "source": "https://policies.google.com/privacy",
+      "capturedAt": "2026-11-06T08:46:36.403865+00:00",
+      "scope": "First 10,000 characters of the rendered Google Privacy Policy, including effective date and provided email purpose example.",
+      "checkIds": [
+        "data-minimization"
+      ],
+      "limitations": "Explicit excerpt of a broad corporate policy; not evidence of blog-specific retention or actual downstream processing. Remaining policy text omitted."
+    },
+    {
+      "id": "publication-about",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/context/publication-about.md",
+      "source": "https://blog.google/about/",
+      "capturedAt": "2026-11-06T08:46:36.403865+00:00",
+      "scope": "About News from Google, publication purpose, authorship, follow and contact information.",
+      "checkIds": [
+        "content-lifecycle",
+        "sustainability-goals"
+      ],
+      "limitations": "Publisher self-description; no CMS review schedule or publication footprint verified."
+    },
+    {
+      "id": "sustainability-listing",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/context/sustainability-listing.md",
+      "source": "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+      "capturedAt": "2026-11-06T08:46:36.403865+00:00",
+      "scope": "Current English sustainability collection topic page.",
+      "checkIds": [
+        "content-lifecycle",
+        "sustainability-goals"
+      ],
+      "limitations": "Sampled listing only; corporate initiatives do not establish audited publication goals."
+    },
+    {
+      "id": "stegra-article",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/context/stegra-article.md",
+      "source": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/",
+      "capturedAt": "2026-11-06T08:46:36.403865+00:00",
+      "scope": "September 17, 2026 corporate infrastructure announcement published on the audited blog.",
+      "checkIds": [
+        "content-lifecycle",
+        "sustainability-goals"
+      ],
+      "limitations": "Google self-report about industrial materials and data-center construction; not evidence of blog-specific sustainability performance or editorial review execution."
+    },
+    {
+      "id": "article-reading-walkthrough",
+      "kind": "task-observation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/context/article-reading-walkthrough.md",
+      "source": "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+      "capturedAt": "2026-11-06T08:46:36.403865+00:00",
+      "scope": "Complete listing-to-featured-article reading route in anonymous desktop Chromium.",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Auditor walkthrough, not representative-user testing. No keyboard-only, low-bandwidth, assistive-technology or geographic task verification. Browser-harness CDP connection failed, so isolated Playwright Chromium was used."
+    }
+  ],
+  "sourceRoots": [],
+  "sourceFiles": [],
+  "questions": [
+    {
+      "question": "Can the publication supply its editorial review/expiry schedule and one applied update/archive example?",
+      "required": false,
+      "answer": "",
+      "reason": "Optional follow-up; absence from bounded public evidence is unknown, not evidence that no process exists."
+    },
+    {
+      "question": "Are there sustainability targets and comparable progress measurements specifically for blog.google?",
+      "required": false,
+      "answer": "",
+      "reason": "Optional follow-up; corporate infrastructure announcements cannot establish publication-specific goals."
+    }
+  ],
+  "assumptions": [
+    "Public anonymous access to Global (English) content; no internal sources, accounts or submissions.",
+    "Desktop first-load measurements are collected later; setup exploration is not performance evidence.",
+    "No server or electricity-meter measurement.",
+    "Cookie notice exposes one acknowledgment button; no invented reject/accept choice.",
+    "External Google Privacy Policy is contextual evidence only, not an in-origin measured page.",
+    "Energy readiness only in this plan; coordinator owns the later sequential experiment."
+  ],
+  "energy": {
+    "mode": "readiness",
+    "samples": 3,
+    "pageIds": [
+      "home"
+    ]
+  },
+  "ownerPriorities": [
+    "Public-only audit using representative templates and visitor tasks."
+  ]
+}

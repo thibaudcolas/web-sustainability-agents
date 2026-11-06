@@ -1,0 +1,16 @@
+{
+  "baseURL": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+  "scenarios": [
+    {
+      "path": "./scenario.js",
+      "name": "initial"
+    }
+  ],
+  "projectName": "web-sustainability-agents-client",
+  "samples": 3,
+  "distant": false,
+  "useAdblock": false,
+  "ignoreHTTPSErrors": false,
+  "containers": [],
+  "databaseContainers": []
+}

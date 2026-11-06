@@ -1,0 +1,516 @@
+{
+  "site": "https://solar.lowtechmagazine.com",
+  "packetSHA256": "59834bd3db9f8b608ccb57c1e59bd80a601f231bbb833338ffcaef29f89e1681",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "rows": [
+    {
+      "checkId": "distraction",
+      "guideline": "2.5",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "All seven sampled pages keep the article/list/policy task primary, with no recorded moving media, modal interruption or engagement trap. Solar availability/status information explains a real access constraint. Newsletter, donation and book links are identifiable optional support routes rather than blocking prompts.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "choice",
+      "guideline": "2.6",
+      "outcome": "inapplicable",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The declared public reading tasks contain no cookie accept/reject pair, submitted signup, purchase or consequential default selection; captured controls inventory is empty, and links plainly identify archive, support and offline formats. The privacy statement describes cookieless analytics, which is attributed context rather than proof of no processing. There is no applicable accept/reject parity test in this bounded sample.",
+      "confidence": "medium",
+      "nextEvidence": "Reassess choice behavior if a signup, donation or purchase route is added to scope."
+    },
+    {
+      "checkId": "comprehension",
+      "guideline": "2.7",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Titles, dates, article summaries and reference sections identify reading tasks; the availability notice explains occasional offline operation. The methodology separates server electricity, storage and network scope, while the Power page explains the limits of the battery indicator. The oven guide uses sequential illustrated instructions. This is sampled English wording, not independent validation of engineering advice.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "consistency",
+      "guideline": "2.8",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The seven pages repeat the same named navigation and solar-availability/status link. Article/archive titles, translation links and support routes follow recognizable patterns. The evidence supports naming consistency without establishing a documented design system.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "motion",
+      "guideline": "2.10",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Desktop, narrow, reduced-motion, live/cold dark and print states on all seven pages record no animation or audio/video. The battery/status presentation supplies contextual information rather than recorded moving media. This pass is confined to those states; no global no-motion claim is made.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "notifications",
+      "guideline": "2.12",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "No notification permission requests or visible unsolicited alerts are recorded across the seven page-state sets. Optional newsletter links do not subscribe anyone during the reading tasks. Browser notification permission was denied, limiting the conclusion to observed behavior.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "documents",
+      "guideline": "2.13",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Print states suppress navigation and retain main text. Offline Reading clearly distinguishes paperback, hardcover and e-book options, and describes a compressed edition. The methodology and oven references link PDFs, sometimes as bare URLs without format/size labels. Their contents, accessibility and print pagination were not inspected, so format equivalence or physical/document optimization cannot be established.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect task-relevant reference PDFs and book/e-book samples before judging labels, equivalence or print-resource efficiency."
+    },
+    {
+      "checkId": "unused-code",
+      "guideline": "3.2",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Initial coverage contains small shared site and Plausible scripts, with a separate tiny archive-sorting module. Unexecuted functions may serve status, archive sorting or later interaction; no comprehensive task coverage or source corroboration demonstrates dead code. Small size alone cannot prove full minimization.",
+      "confidence": "medium",
+      "nextEvidence": "Use representative archive/status interactions or source evidence before recommending code removal."
+    },
+    {
+      "checkId": "components",
+      "guideline": "3.3",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "There is no observed heavyweight player or widget; archive sorting is already page-specific and the shared script supports solar/status behavior. The packet does not identify a deferred component and usable replacement activation. Further splitting has no evidenced benefit and could add overhead.",
+      "confidence": "medium",
+      "nextEvidence": "Identify a concrete later-use component and validate useful activation before proposing additional splitting; no generic split is warranted."
+    },
+    {
+      "checkId": "layout",
+      "guideline": "3.10",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "At desktop and 360 CSS-pixel width all seven pages retain their task headings, named navigation and core content without horizontal overflow. The navigation remains direct links rather than introducing an untested collapsed control. The exercised desktop archive route and unchanged link-based narrow affordances support the bounded emulated-layout expectation; this is not real-device compatibility.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "impact-choice",
+      "guideline": "5.4",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "context.json:records:0",
+        "context.json:records:1",
+        "context.json:records:2"
+      ],
+      "rationale": "Solar methodology and Power explain weather/energy availability, battery limitations and the server-versus-network boundary. Offline Reading identifies print/e-book choices and their use when the server is unavailable; the methodology explicitly discusses embodied hardware tradeoffs rather than claiming lifecycle zero emissions. This supplies useful contextual information for meaningful reading/availability choices without asserting measured per-control savings.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "journeys",
+      "guideline": "2.4",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "staged.json:runs:5",
+        "context.json:records:5"
+      ],
+      "rationale": "The homepage Archive link and named oven-guide link are activated; the destination matches the exact declared URL and full title. The resulting long illustrated document is available, and a separate staged scroll reaches the bottom with all 22 images recorded and complete-within-protocol accounting. This supports anonymous pointer information completion, not technical correctness of the guide or offline download success.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "media-delivery",
+      "guideline": "2.9",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The site uses compact dithered article images, lazy loading and CSS thumbnail images omitted by the DOM img inventory. The oven staged run loads all 22 illustrations by the bottom (982,132 received bytes for that run). Several 800-pixel instructional images render at 1040 pixels desktop, while narrow images shrink. No visual inspection establishes whether detail remains legible or a better rendition is necessary; low byte count and dithering alone cannot pass useful image quality.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect representative diagrams/assembly photos at desktop/narrow densities and any original-image alternative before changing image size or dithering."
+    },
+    {
+      "checkId": "font-delivery",
+      "guideline": "2.11",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "All seven samples use the browser's Times New Roman/default serif and declare no webfont faces or font responses. Headings and reading remain available across preferences/no-JavaScript states. This meets the bounded typography-delivery expectation without a font download.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "semantic-forms",
+      "guideline": "3.6",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The seven documents declare en-us, a main region and meaningful visible page/article headings. Pages often have both the publication and article H1, which alone is not a failure of the chosen meaning-based expectation. Task navigation is named links and no unnamed form controls are sampled. This is not a full markup-validity or WCAG claim.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "metadata",
+      "guideline": "3.8",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Titles describe each page and no structured-data blocks are declared. The shared description explains availability rather than every article, which is not automatically a defect. Canonicals are absent across the sample; article .html routes can redirect to slash URLs, but the complete indexing/alternative-URL policy is not established, leaving canonical applicability unresolved.",
+      "confidence": "medium",
+      "nextEvidence": "Confirm intended canonical URLs across legacy .html and current article routes before prescribing metadata changes."
+    },
+    {
+      "checkId": "preference-behavior",
+      "guideline": "3.9",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "All sampled pages retain content and record no actual animation before navigation or after preference changes. The unchanged yellow/light palette is a deliberate presentation with a battery-status role; the packet does not establish an applicable promised dark-theme feature. With no recorded motion requiring reduction and no lost task content, the bounded applicable-preference expectation passes; no energy-saving theme claim is inferred.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "no-js-content",
+      "guideline": "2.17",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Fresh no-JavaScript states preserve archive titles/navigation, article text and lazy image markup, methodology, offline-format links and privacy content. On Power, live numerical enhancement is absent but the page still explains power/availability and points to offline options. The reading task does not require live telemetry, archive sorting or analytics; long text snapshots are capped, so this does not certify every paragraph/interaction.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "api-requests",
+      "guideline": "3.11",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Each bounded page observation contains a single /api/stats.json fetch for the visible server/battery/weather display, plus analytics script loading. This purpose is relevant, but the short collection cannot establish any longer polling cadence, update needs or redundancy. No backend-cost or removal claim follows.",
+      "confidence": "medium",
+      "nextEvidence": "Observe a longer bounded Power/status session and compare request cadence to displayed update needs if polling is to be optimized."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "guideline": "4.2",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Public images/scripts/styles expose long max-age plus validators, while current stats has validators and the homepage uses no-store. The shared /css/style.css and /js/script.js URLs have roughly ten-year client freshness without URL versioning. This may be intentional for stable assets, but the packet does not demonstrate invalidation or updated-client behavior; appropriate freshness cannot be fully judged from headers alone.",
+      "confidence": "medium",
+      "nextEvidence": "Verify the deployment/versioning or invalidation strategy for shared asset updates and test both fresh and previously cached clients; do not reduce useful caching indiscriminately."
+    },
+    {
+      "checkId": "text-compression",
+      "guideline": "4.3",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Successful sampled HTML, styles, scripts and stats JSON use gzip or zstd. Dithered PNG/image responses and the small SVG sprite do not establish a missing material-text compression problem. The bounded sample supports beneficial text compression without savings claims.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "keyboard-path",
+      "guideline": "3.6",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Across all seven initial 12-step traces, focus reaches the status link, publication title, availability explanation and named primary navigation in a meaningful order. Each recorded element is onscreen with focusVisible true and a nontransparent native outline. This is the initial path only, without activation, reverse navigation, trap or screen-reader guarantees.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "guideline": "2.1",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "rationale": "The solar methodology explicitly identifies this self-hosted website, its energy/availability tradeoffs, static design, image/font decisions, solar hardware, grid-powered router limitation and historical operational/lifecycle estimates. The evaluation discusses embodied infrastructure and limits geographic/period applicability. This meets disclosure of service impacts and mitigation, not independent verification.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "guideline": "3.13",
+      "outcome": "fail",
+      "evidenceIds": [
+        "staged.json:discovery:0"
+      ],
+      "rationale": "Root and well-known carbon.txt return 404 and no usable header/DNS delegation or parsed document is established. This is the narrow discoverability absence; the substantial solar website methodology remains real disclosure and does not imply high emissions.",
+      "confidence": "high",
+      "nextEvidence": "If useful, publish a valid carbon.txt pointing to the existing methodology and supported relationships without implying lifecycle zero emissions."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "guideline": "4.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:1",
+        "staged.json:discovery:0"
+      ],
+      "rationale": "Publisher records explicitly link this origin to a self-hosted Barcelona server and solar/battery setup, with historical measurements and acknowledged grid-powered networking. They are strong scoped self-report but no independently corroborated operational hosting evidence is frozen. Under the rubric, sustainable-hosting status remains unresolved and cannot set a green-hosting model flag.",
+      "confidence": "medium",
+      "nextEvidence": "Supply independent corroboration of the relevant hosting/energy boundary if an operational sustainable-hosting claim needs verification."
+    },
+    {
+      "checkId": "governance-practice",
+      "assessmentScope": "The solar Low-tech Magazine server commitment to balance low energy use with uptime during the documented December 2018-September 2020 evaluation and configuration decisions. Inspect accountable publisher roles, monitored power/uptime results and resulting solar-panel/battery or software-related decisions. Current operating governance, 2021-2026 execution and independent hardware verification are outside this historical assessment.",
+      "guideline": "5.1",
+      "outcome": "pass",
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "rationale": "For the exact 2018\u2013September 2020 historical scope, named design/hardware/solar/maintenance roles accompany measured power/uptime, a diagnosed software-related rise, battery/panel experiments and a reasoned switch to 30 W/168 Wh. The evaluation also records a broken RSS implementation and measured lower power after fixes. This supplies accountable monitored review and resulting action as attributed public self-report, without claiming 2021\u20132026 governance or hardware verification.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "service-necessity",
+      "assessmentScope": "The 2018 decision to create the low-resource, self-hosted solar website and its documented continuation/configuration evaluation through September 2020: assess the reader problem, static-versus-dynamic and availability/battery alternatives, user desirability, technical feasibility and continuing viability. Public publisher rationale and experiments may inform the bounded judgment; representative reader research and present-day viability are not presumed.",
+      "guideline": "5.13",
+      "outcome": "pass",
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "rationale": "The historical decision identifies readers with older computers/poor connections and a reader base split across Europe/USA, making nightly offline schedules unattractive. It compares static/dynamic publication, energy/storage/uptime configurations and offline formats, documents feasibility experiments, and considers home-space, cost, maintenance and funding constraints. Those scoped alternatives support desirability, feasibility and continuation rationale without representative-user research or present-day viability claims.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "access-barriers",
+      "assessmentScope": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary network access at 1365x900: start at https://solar.lowtechmagazine.com/, open Archive and follow its solar-powered-electric-oven article link. Completion requires the full illustrated guide at the exact declared URL and its visible article title, without account, purchase or personal-data submission. Offline-reading guidance is contextual only; keyboard-only, mobile, impaired-network, actual offline-download completion and geographic access are not represented.",
+      "guideline": "5.13",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "staged.json:runs:5",
+        "context.json:records:5"
+      ],
+      "rationale": "The exact anonymous desktop pointer archive route reaches the declared oven URL and visible title without account, purchase or personal-data entry. The long guide and all 22 images are available by the completed staged scroll. Weather/offline limitations are openly explained but did not block this observed ordinary-network information task; actual offline, keyboard, geography and mobile access remain outside scope.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "assessmentScope": "English Low-tech Magazine historical article collection represented by the public archive and offline chronological book series, 2007-2026 as described at the 2026-11-06 capture. Inspect a stated review schedule and applied editing/update/archive decision while retaining valuable historical online access. Book publication is a related documented update example, not proof that the live article corpus follows a site-wide review schedule.",
+      "guideline": "5.18",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:2",
+        "context.json:records:3"
+      ],
+      "rationale": "The public archive retains historical articles. Offline Reading documents actual reference rewrites and improved images, a 2025 compressed edition, 2026 original-series redesign and new 2022\u20132026 volume. These are applied editorial examples with continuing historical value, but no review/expiry schedule for the live English article collection is supplied. Book publication cannot establish the whole live-corpus lifecycle.",
+      "confidence": "medium",
+      "nextEvidence": "Provide the live collection's review cadence and one dated applied online update/archive decision, retaining useful historical articles."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "assessmentScope": "Solar-powered Low-tech Magazine web-service design introduced in 2018, the 2018-2020 energy/uptime evaluation and the methodology last labeled updated October 21, 2024, as publicly available on 2026-11-06. Assess stated reduction direction, page-weight and server-energy/uptime metrics, baseline and progress with their own periods and boundaries. Do not treat these historical figures as current measured performance, equate solar hosting with lifecycle zero emissions, or include the rest of the internet in the server boundary.",
+      "guideline": "5.6",
+      "outcome": "pass",
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "rationale": "The declared historical service scope has a clear reduction direction, reported sub-0.5 MB average pages versus the prior design, dated 2018\u20132019 server/charge-controller energy and uptime measurements, and configuration/fix outcomes through 2020. Server electricity (9.53 kWh) and system losses (18.10 kWh at controller) are distinguished; later uptime relates to changed hardware and is not a same-configuration comparison. This supports scoped goals/progress reporting as self-report, without presenting historical figures as 2026 performance or solar operation as lifecycle zero emissions.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    }
+  ],
+  "topFindings": [
+    {
+      "checkId": "media-delivery",
+      "priority": "low",
+      "title": "Check instructional image legibility before pursuing further byte reductions.",
+      "evidenceIds": [
+        "probes.json:pages:2",
+        "probes.json:pages:5",
+        "staged.json:runs:5"
+      ],
+      "summary": "Check instructional image legibility before pursuing further byte reductions.",
+      "recommendedAction": "Inspect 800-pixel diagrams/photos displayed at 1040 pixels and any original-image alternative. Keep the useful 22-image illustrated guide and lazy loading; improve detail only where readers need it. This is a quality investigation, not a demonstrated image defect.",
+      "status": "evidence gap"
+    },
+    {
+      "checkId": "public-cache-policy",
+      "priority": "low",
+      "title": "Verify update freshness for shared assets with ten-year cache lifetimes.",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "summary": "Verify update freshness for shared assets with ten-year cache lifetimes.",
+      "recommendedAction": "Demonstrate versioning or invalidation for /css/style.css and /js/script.js with a previously cached client, preserving long caching for stable images and assets.",
+      "status": "evidence gap"
+    }
+  ]
+}

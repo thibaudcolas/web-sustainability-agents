@@ -1,0 +1,91 @@
+[
+  {
+    "argv": [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "/home/thibaudcolas/dev/web-sustainability-agents/audit/cli.py",
+      "tool",
+      "orchestrate",
+      "accept",
+      "--task",
+      "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/review-tasks/evidence.task.json"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "/home/thibaudcolas/dev/web-sustainability-agents/audit/cli.py",
+      "tool",
+      "orchestrate",
+      "accept",
+      "--task",
+      "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/review-tasks/guidelines.task.json"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "/home/thibaudcolas/dev/web-sustainability-agents/audit/cli.py",
+      "tool",
+      "orchestrate",
+      "accept",
+      "--task",
+      "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/review-tasks/claims.task.json"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "/home/thibaudcolas/dev/web-sustainability-agents/audit/cli.py",
+      "tool",
+      "orchestrate",
+      "reconcile",
+      "--tasks",
+      "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/review-tasks",
+      "--resolutions",
+      "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/review-tasks/resolutions.json"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "/home/thibaudcolas/dev/web-sustainability-agents/audit/cli.py",
+      "tool",
+      "workflow",
+      "score",
+      "--session",
+      "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session",
+      "--review",
+      "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/review.json"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://www.tate.org.uk/",
+      "task": "Find Tate Modern visitor information from the public homepage.",
+      "sampleRationale": "Rich gallery/exhibition entry and navigation.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "tate-modern",
+      "url": "https://www.tate.org.uk/visit/tate-modern",
+      "task": "Find opening times, free admission and accessible-parking information without making a booking.",
+      "sampleRationale": "Visitor-information template with maps, tabs and long-form practical details.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "whats-on",
+      "url": "https://www.tate.org.uk/whats-on",
+      "task": "Browse the public exhibition and event listing without selecting a purchase.",
+      "sampleRationale": "Listing/filter template.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "julio-le-parc",
+      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+      "task": "Read the exhibition description, dates and visitor details without entering ticket purchase.",
+      "sampleRationale": "Image-rich exhibition detail template, discovered from current homepage links.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "stories",
+      "url": "https://www.tate.org.uk/art/stories",
+      "task": "Browse editorial stories and identify video, audio and reading choices without media playback.",
+      "sampleRationale": "Mixed editorial/media discovery template.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "greener-website",
+      "url": "https://www.tate.org.uk/about-us/digital/green-website",
+      "task": "Read the website-specific sustainability commitment and reported actions.",
+      "sampleRationale": "Distinct lightweight policy template and service-specific impact claims; HTTP200 text retrieved, one exploratory browser navigation timed out.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "cookie-policy",
+      "url": "https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use/cookie-policy",
+      "task": "Read the public cookie policy and identify available controls.",
+      "sampleRationale": "Privacy/consent policy template; sampled because homepage offered no visible cookie banner.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "plan": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/plan.json",
+  "status": "ready",
+  "reviewerModel": "gpt-6.1-sol",
+  "reviewerReasoningEffort": "high",
+  "prerequisites": {
+    "doctor": "uv, Node, npm, Python environment and node dependencies present",
+    "browser": "Chromium launched and completed the scoped journey"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://www.nhs.uk/",
+      "rationale": "Broad service entry and navigation."
+    },
+    {
+      "id": "healthy-living",
+      "url": "https://www.nhs.uk/live-well/",
+      "rationale": "Topic-directory landing template."
+    },
+    {
+      "id": "exercise",
+      "url": "https://www.nhs.uk/live-well/exercise/",
+      "rationale": "Nested subject listing with mixed links to articles and media."
+    },
+    {
+      "id": "walking",
+      "url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+      "rationale": "Long-form evergreen advice with review dates; no diagnosis task."
+    },
+    {
+      "id": "exercise-videos",
+      "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+      "rationale": "Media-rich educational template."
+    },
+    {
+      "id": "cookie-settings",
+      "url": "https://www.nhs.uk/our-policies/choose-your-cookie-settings/",
+      "rationale": "Interactive consent settings template."
+    },
+    {
+      "id": "content-policy",
+      "url": "https://www.nhs.uk/our-policies/content-policy/",
+      "rationale": "Governance and content-lifecycle policy."
+    }
+  ],
+  "verifiedTask": {
+    "record": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/journey.json",
+    "destination": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+    "actions": [
+      {
+        "selector": "#nhsuk-cookie-banner__link_accept",
+        "count": 1,
+        "urlAfter": "https://www.nhs.uk/",
+        "heading": [
+          "\n              NHS website for England\n              \n                Find information and services to help you manage your health\n              \n            "
+        ]
+      },
+      {
+        "selector": "header a[href=\"/live-well/\"]",
+        "count": 1,
+        "urlAfter": "https://www.nhs.uk/live-well/",
+        "heading": [
+          "Healthy living"
+        ]
+      },
+      {
+        "selector": "main a[href=\"https://www.nhs.uk/live-well/exercise/\"]",
+        "count": 1,
+        "urlAfter": "https://www.nhs.uk/live-well/exercise/",
+        "heading": [
+          "\n   Exercise \n"
+        ]
+      },
+      {
+        "selector": "main a[href=\"https://www.nhs.uk/live-well/exercise/walking-for-health/\"]",
+        "count": 1,
+        "urlAfter": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+        "heading": [
+          "\n   Walking for health \n"
+        ]
+      }
+    ],
+    "completion": "h1 Walking for health and article reading content observed"
+  },
+  "cookieControls": {
+    "reject": "#nhsuk-cookie-banner__link_accept",
+    "accept": "#nhsuk-cookie-banner__link_accept_analytics",
+    "bothVerified": true
+  },
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "data-minimization"
+  ],
+  "contextOmissions": "No recent bounded feature-decision/research record, service creation/retirement decision or service-specific sustainability-progress series selected. Audience-needs, inclusive-testing, service-necessity, impact-business-model, sustainability-goals, governance-practice and service-end-of-life are outside this bounded sample.",
+  "unresolvedEvidenceRequests": [
+    "Applied editorial review/update rationale or version record for the two sampled exercise articles; policy and visible dates alone are insufficient.",
+    "Analytics category purposes can be read publicly; downstream retention and cross-service enforcement remain unverified and outside the bounded judgment."
+  ],
+  "omissions": [
+    "Symptom diagnosis, NHS 111, booking, accounts, service search with location input, NHS App and health-data forms excluded.",
+    "Video playback and external websites excluded.",
+    "No keyboard-only or representative-user completion claim."
+  ],
+  "energy": {
+    "mode": "readiness",
+    "samples": 3,
+    "pageIds": [
+      "home"
+    ]
+  },
+  "blockers": [],
+  "validation": {
+    "validate_plan": "passed",
+    "probes.validate_plan": "passed",
+    "selected_checks": "passed",
+    "checkCount": 28
+  }
+}

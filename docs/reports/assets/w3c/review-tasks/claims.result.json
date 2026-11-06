@@ -1,0 +1,65 @@
+{
+  "role": "claims",
+  "site": "https://www.w3.org",
+  "packetSHA256": "a0da6424ef1d07534366cb66f8c431999cce074883d69a691a44d7fff3b14393",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "w3c-mission-versus-service-results",
+      "checkIds": [
+        "disclosure-scope",
+        "sustainability-goals",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "context.json:records:0",
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "The mission page and linked WSG material document W3C sustainability advocacy, standards development and intended measurement of implementations. They do not provide impacts/mitigation for operation of www.w3.org, a service-specific metric with comparable dated baseline/progress, or corroborated hosting-provider operations. Publishing WSG cannot establish that the host service meets WSG or has achieved operational targets.",
+      "requestedChange": "Retain exact operational-service sustainability-goals scope and cantTell for service disclosure/goals/hosting. Attribute advocacy accurately. Request one www.w3.org-specific operational footprint/mitigation statement and baseline/progress note; do not substitute wider-web goals, a named sustainability director or standards publication counts for service performance."
+    },
+    {
+      "id": "w3c-carbon-file-scope",
+      "checkIds": [
+        "carbon-discovery"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "Both tested carbon.txt endpoints returned 404 and no Carbon-Location header was recorded. Discovery retrieved W3C sustainability mission and standards content, but no usable carbon-file relationships for this origin. Six document attempts do not establish six substantiated operational claims.",
+      "requestedChange": "Limit the missing-file result to this discovery sample; syntax/schema assessment is unavailable because no file was retrieved. Do not infer high emissions, absence of sustainability practice or whole-guideline failure from carbon.txt absence, and do not derive a green-hosting flag."
+    },
+    {
+      "id": "w3c-history-value-and-review-gap",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2"
+      ],
+      "summary": "WCAG history records actual staged publications from the 2020 first draft through the December 2024 Recommendation. The report names its responsible working group/editors, feedback route, errata and dated/current/history URLs, and explains why earlier Recommendations retain value. This demonstrates actual publication and discoverable historical reference routes rather than merely a policy. The supplied excerpt does not explain the 2024 update decision or a review/expiry schedule sufficient to verify the full lifecycle expectation.",
+      "requestedChange": "Credit the executed publication/history evidence and preserve older standards for ongoing legal/reference needs. Retain the precise 2020\u20132024 WCAG collection scope; leave any unsupported review-schedule/decision-rationale part unresolved, rather than claiming absent maintenance. Request the smallest public change/errata or publication decision note and review trigger for the December 2024 update before a full implementation pass."
+    },
+    {
+      "id": "w3c-reading-task-and-absent-banner",
+      "checkIds": [
+        "access-barriers",
+        "journeys",
+        "choice"
+      ],
+      "evidenceIds": [
+        "context.json:records:3",
+        "probes.json:journeys:0"
+      ],
+      "summary": "The contextual walkthrough records the complete homepage-to-catalogue filtering route and exact visible WCAG 2.2 title/URL, supporting the declared pointer/text-input completion condition even though the generic probe truncates this long report text. No cookie banner was observed in the sampled states; that does not prove absent tracking, consent obligations or a preference pair.",
+      "requestedChange": "Use the raw completed task for a bounded access-barriers pass with exact declared assessmentScope; do not generalize to keyboard, constrained networks, geographic access or full accessibility. Describe absent choice controls as bounded observation, with evidenced applicability reasoning for choice rather than inventing consent behavior. The task only required report identity/title, so probe body truncation is not itself a task failure."
+    }
+  ]
+}

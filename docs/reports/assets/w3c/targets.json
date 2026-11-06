@@ -1,0 +1,88 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://www.w3.org/",
+      "task": "Discover W3C standards, missions and public resources.",
+      "rationale": "Public institutional homepage and navigation entry point.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "standards-catalogue",
+      "url": "https://www.w3.org/TR/",
+      "task": "Find a technical report by title or shortname using the public catalogue.",
+      "rationale": "Interactive searchable/filterable catalogue; substantively different from reading pages.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "wcag22",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "task": "Read WCAG 2.2 normative requirements and locate publication status and historical versions.",
+      "rationale": "Long technical-report template, references and versioning.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "accessibility-fundamentals",
+      "url": "https://www.w3.org/WAI/fundamentals/",
+      "task": "Find introductory accessibility resources for a new practitioner.",
+      "rationale": "WAI overview template and audience-oriented resource discovery.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "images-tutorial",
+      "url": "https://www.w3.org/WAI/tutorials/images/",
+      "task": "Learn how to provide appropriate text alternatives for different image purposes.",
+      "rationale": "Instructional tutorial with examples and distinct WAI navigation.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "sustainability",
+      "url": "https://www.w3.org/mission/sustainability/",
+      "task": "Understand W3C sustainability work and follow its published guideline resources.",
+      "rationale": "Public mission and sustainability claims; no presumption of site-level progress.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "url": "https://www.w3.org/contact/",
+      "task": "Find the appropriate public contact route without sending a message.",
+      "rationale": "Practical organizational task distinct from standards reading.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ]
+}

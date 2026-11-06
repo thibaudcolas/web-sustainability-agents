@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--locked",
+    "--script",
+    "audit/assess.py",
+    "--reviews",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/reviews.json",
+    "--rubric",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/rubric.json",
+    "--weights",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/impact-weights.json",
+    "--assets",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session",
+    "--output",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/scores.json"
+  ],
+  "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+  "startedAt": "2026-11-06T09:14:19.773513+00:00",
+  "finishedAt": "2026-11-06T09:14:19.950805+00:00",
+  "exitCode": 0,
+  "logs": [
+    "score.stdout.txt",
+    "score.stderr.txt"
+  ],
+  "scorerSHA256": "684de88ad6bf3494d51ced65b8a9f8efde767e52882df539b467932daa2f02af",
+  "scorerLockSHA256": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235"
+}

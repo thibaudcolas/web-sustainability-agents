@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--locked",
+    "--script",
+    "/home/thibaudcolas/dev/web-sustainability-agents/audit/cli.py",
+    "tool",
+    "greenframe",
+    "--plan",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/energy-plan.json",
+    "--output-dir",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/energy",
+    "--mode",
+    "run",
+    "--binary",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/greenframe"
+  ],
+  "exitCode": 0
+}

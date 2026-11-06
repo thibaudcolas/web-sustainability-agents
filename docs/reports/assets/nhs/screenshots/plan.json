@@ -1,0 +1,20 @@
+{
+  "origin": "https://www.nhs.uk",
+  "captures": [
+    {
+      "id": "exercise-player",
+      "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "Exercise video page showing the warm-up player with its play button, review date and safety-information link.",
+      "caption": "Exercise information surrounds the paused warm-up player.",
+      "checkIds": [
+        "components"
+      ],
+      "selector": "video >> nth=0"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "role": "claims",
+  "site": "https://solar.lowtechmagazine.com",
+  "packetSHA256": "59834bd3db9f8b608ccb57c1e59bd80a601f231bbb833338ffcaef29f89e1681",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "lowtech-historical-execution-supported",
+      "checkIds": [
+        "governance-practice",
+        "service-necessity"
+      ],
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "summary": "The public records name hardware/software/solar/maintenance contributors and describe actual 2018\u20132020 monitoring, a kernel-upgrade power/uptime problem, configuration experiments, and continuation with a 30 W panel and 168 Wh battery. They consider static versus dynamic delivery, smaller batteries and nighttime availability against a geographically split readership. This supports a bounded attributed historical governance/necessity implementation judgment, stronger than a generic policy; representative reader testing and current execution are not established.",
+      "requestedChange": "Preserve the exact historical assessmentScopes. A bounded pass may credit the documented measurements, alternatives and reasoned configuration response without demanding internal records or inventing representative research. Attribute the evidence to Low-tech Magazine and do not extend it to 2021\u20132026 operating governance, current viability or independently verified hardware."
+    },
+    {
+      "id": "lowtech-footprint-metric-boundaries",
+      "checkIds": [
+        "sustainability-goals",
+        "disclosure-scope",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "summary": "The service-specific methodology/evaluation supports public disclosure and a historical reduction direction with dated energy/uptime results. Reported 9.53 kWh server electricity and 18.10 kWh including solar-system losses refer to 3 December 2018\u201324 November 2019; 95.26% uptime uses a different 351-day period. The 0.021 Wh figure is per unique visitor, not per pageview or complete browsing lifecycle. Solar electricity removes neither manufacturing impacts nor client/network impacts; the publisher explicitly models embodied energy separately. A page labeled updated October 21, 2024 does not make its 2018\u20132020 measurements current.",
+      "requestedChange": "Credit service disclosure and scoped historical goals evidence while preserving each metric period, denominator and modeled-versus-measured boundary. Do not compare these historical values directly with current SWDM or client-only GreenFrame, present lifecycle-zero emissions, or treat the fivefold historical page-weight claim as a matched audit result. Hosting remains cantTell for independently corroborated current operations; do not set a green-hosting flag from self-report alone. Request current independent operational corroboration only if current hosting status is needed."
+    },
+    {
+      "id": "lowtech-book-edits-versus-live-lifecycle",
+      "checkIds": [
+        "content-lifecycle",
+        "documents"
+      ],
+      "evidenceIds": [
+        "context.json:records:2",
+        "context.json:records:3",
+        "staged.json:discovery:0"
+      ],
+      "summary": "The archive preserves historically useful online articles; offline-reading text describes actual rewritten stories, updated references, 2025 compressed books and a 2026 redesigned series/new volume. These are concrete publisher-reported editorial/book decisions. They do not establish a live-site review schedule or systematic updates to the online collection, and no downloaded book equivalence/optimization was inspected. The asserted near-threefold paper/carbon reduction in the compressed-book discovery excerpt is a publisher claim, not an independent lifecycle comparison.",
+      "requestedChange": "Credit the related executed book-editing example and valuable archive access, but keep the full online content-lifecycle expectation cantTell until a review trigger/schedule and one online applied decision are captured. Do not prescribe removal of historical articles or label paid offline books an equivalent completed reading alternative without inspecting them. Attribute book-footprint claims and retain readability/distribution assumptions."
+    },
+    {
+      "id": "lowtech-reading-and-privacy-boundaries",
+      "checkIds": [
+        "access-barriers",
+        "journeys",
+        "choice",
+        "no-js-content"
+      ],
+      "evidenceIds": [
+        "context.json:records:4",
+        "context.json:records:5",
+        "probes.json:journeys:0",
+        "probes.json:pages:5"
+      ],
+      "summary": "The recorded anonymous pointer route reaches the oven-guide title and exact URL. Generic probe body text is truncated on the long illustrated guide, so the record alone must not become a claim that every illustration and full reading content were verified. Offline book options are contextual; neither purchase/download nor actual offline completion was attempted. The privacy page states cookie-free analytics/server logs and Plausible use, while absent cookie banners establish only an observed UI state, not absent collection or compliance.",
+      "requestedChange": "Preserve the exact full-illustrated-guide assessmentScope. Confirm full-guide/image completion from bounded available browser facts before a full access-barriers pass; if not established, retain that part as unknown and request one complete reading/image trace through the article end. Do not silently narrow completion to a title selector. Attribute privacy claims, avoid equating no banner with no tracking, and assess no-JavaScript content from its actual probe rather than the design description."
+    },
+    {
+      "id": "lowtech-carbon-discovery-scope",
+      "checkIds": [
+        "carbon-discovery"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "Both tested carbon.txt routes return 404 and discovery contains no usable carbon-file relationship. Independently captured service-specific methodology remains available, so missing carbon.txt does not establish absent sustainability disclosure or high-emissions hosting.",
+      "requestedChange": "Report only the scoped missing-file outcome, with syntax/schema assessment unavailable; preserve separate public disclosure and independent operational-verification judgments."
+    }
+  ]
+}

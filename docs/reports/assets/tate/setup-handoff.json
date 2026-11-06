@@ -1,0 +1,112 @@
+{
+  "plan": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/plan.json",
+  "status": "ready-with-access-limitations",
+  "reviewerModel": "gpt-6.1-sol",
+  "reviewerReasoningEffort": "high",
+  "prerequisites": {
+    "doctor": "uv, Node, npm, Python environment and node dependencies present",
+    "browser": "Chromium launched; homepage and meaningful visitor journey completed against intended Tate content"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://www.tate.org.uk/",
+      "rationale": "Rich gallery/exhibition entry and navigation."
+    },
+    {
+      "id": "tate-modern",
+      "url": "https://www.tate.org.uk/visit/tate-modern",
+      "rationale": "Visitor-information template with maps, tabs and long-form practical details."
+    },
+    {
+      "id": "whats-on",
+      "url": "https://www.tate.org.uk/whats-on",
+      "rationale": "Listing/filter template."
+    },
+    {
+      "id": "julio-le-parc",
+      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+      "rationale": "Image-rich exhibition detail template, discovered from current homepage links."
+    },
+    {
+      "id": "stories",
+      "url": "https://www.tate.org.uk/art/stories",
+      "rationale": "Mixed editorial/media discovery template."
+    },
+    {
+      "id": "greener-website",
+      "url": "https://www.tate.org.uk/about-us/digital/green-website",
+      "rationale": "Distinct lightweight policy template and service-specific impact claims; HTTP200 text retrieved, one exploratory browser navigation timed out."
+    },
+    {
+      "id": "cookie-policy",
+      "url": "https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use/cookie-policy",
+      "rationale": "Privacy/consent policy template; sampled because homepage offered no visible cookie banner."
+    }
+  ],
+  "verifiedTask": {
+    "record": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/captures/journey.json",
+    "destination": "https://www.tate.org.uk/visit/tate-modern",
+    "actions": [
+      {
+        "selector": "a[href=\"/visit/tate-modern\"][aria-label=\"Tate Modern\"]",
+        "count": 1,
+        "urlAfter": "https://www.tate.org.uk/visit/tate-modern",
+        "h1": [
+          "\n                        \n                        Tate Modern\n                        \n                    "
+        ]
+      },
+      {
+        "selector": "a[href=\"#accessibility\"]",
+        "count": 1,
+        "urlAfter": "https://www.tate.org.uk/visit/tate-modern",
+        "h1": [
+          "\n                        \n                        Tate Modern\n                        \n                    "
+        ]
+      }
+    ],
+    "completion": "There are twelve parking spaces for disabled visitors, accessed via Park Street.",
+    "successPostconditionsVerified": true
+  },
+  "cookieControls": {
+    "observed": "Fresh homepage and visitor journey displayed no banner or accept/reject controls. Cookie policy text includes consent wording and OneTrust list placeholders.",
+    "branches": [
+      "initial_no_banner_observed"
+    ],
+    "limitations": "Do not infer tracking absence. Live policy-page browser verification was not completed after a separate sustainability-page timeout."
+  },
+  "contextChecks": [
+    "access-barriers",
+    "sustainability-goals",
+    "governance-practice"
+  ],
+  "contextOmissions": "Audience-needs and inclusive-testing require an executed bounded feature/research decision rather than Digital team policy. Content lifecycle has no selected review decision; commerce funding, creation and retirement decisions are outside public visitor task. Data minimization omitted because no personal-data collecting task is authorized or necessary.",
+  "unresolvedEvidenceRequests": [
+    "Published methodology and comparable scope for estimated 2019 and 2023 web emissions.",
+    "Dated Green Team review and resulting action/continuation record linking the same web-service metric and reporting period."
+  ],
+  "omissions": [
+    "Ticket purchases, accounts, shop.tate.org.uk and newsletters excluded.",
+    "No media playback, external archival crawl, exhaustive artwork or exhibition crawl.",
+    "No keyboard-only, assistive-technology or physical accessibility claim."
+  ],
+  "energy": {
+    "mode": "readiness",
+    "samples": 3,
+    "pageIds": [
+      "home"
+    ]
+  },
+  "blockers": [],
+  "accessLimitations": [
+    "Root web search fetch reported Tate403 while local HTTP and Chromium homepage and visitor route rendered intended content200. Treat these as route/tool differences.",
+    "One Chromium navigation to Creating a greener website timed out at30seconds. A single subsequent HTTP retrieval returned200, title and complete intended sustainability text. No further retry.",
+    "Public privacy notice HTTP fetch timed out once; it was not selected as contextual evidence or a sampled page."
+  ],
+  "validation": {
+    "validate_plan": "passed",
+    "probes.validate_plan": "passed",
+    "selected_checks": "passed",
+    "checkCount": 28
+  }
+}

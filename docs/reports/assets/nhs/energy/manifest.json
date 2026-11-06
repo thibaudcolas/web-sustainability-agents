@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "greenframe-energy-v2",
+  "origin": "https://www.nhs.uk",
+  "capturedAt": "2026-11-06T08:48:47.412206+00:00",
+  "mode": "readiness",
+  "tool": "GreenFrame",
+  "toolVersion": "2.0.1",
+  "preflight": {
+    "ready": true,
+    "cli": {
+      "argv": [
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/run",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "greenframe-cli/2.0.1 linux-x64 node-v26.8.1\n"
+    },
+    "docker": {
+      "argv": [
+        "/usr/bin/docker",
+        "version",
+        "--format",
+        "{{.Server.Version}}"
+      ],
+      "returncode": 0,
+      "output": "29.9.2\n"
+    },
+    "image": {
+      "Id": "sha256:9e6eddb08b8566076ef778007859096bc90f8984236061c086eaede2fb60430b",
+      "RepoDigests": [
+        "mcr.microsoft.com/playwright@sha256:9e6eddb08b8566076ef778007859096bc90f8984236061c086eaede2fb60430b"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    "libraryPresent": true,
+    "runnerNameOccupied": false,
+    "libraryRoot": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe",
+    "requiredCliVersion": "2.0.1",
+    "requiredImage": "mcr.microsoft.com/playwright:v1.30.0-focal",
+    "browser": {
+      "name": "chromium",
+      "revision": "1045",
+      "installByDefault": true,
+      "browserVersion": "110.0.5481.38"
+    },
+    "remediation": "Install pinned GreenFrame CLI 2.0.1 locally and pull the required image; no host permission changes are performed"
+  },
+  "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+  "protocol": {
+    "phase": "initial",
+    "samples": 3,
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "browser": "Chromium in pinned Playwright container",
+    "journey": "Fresh browser context; initial navigation waits for load then 3000 ms; no consent action or scrolling",
+    "baselineSubtracted": false,
+    "measurementWindow": "Starts after browser/context startup and upstream 2000 ms warm-up; ends after scenario and browser close; fresh context per repetition, same browser container across repetitions",
+    "execution": "Sequential; shared workstation, uncontrolled ambient activity",
+    "upstreamBrowserFlags": [
+      "--disable-web-security"
+    ],
+    "userAgent": "GreenFrame fixed Chrome/89 user agent; not the actual browser version"
+  },
+  "limitations": [
+    "Resource-counter model; not measured electricity, whole device energy or remote server energy",
+    "Client-device headline excludes GreenFrame modeled network energy, which is listed separately",
+    "Synthetic 45 W CPU and 14 W screen coefficients; CPU counters normalized by available host CPUs",
+    "Never add to SWDM emissions; annual scenarios require explicit traffic, page-mix and electricity assumptions",
+    "Bounded energy sample may be smaller than the report's browser page sample"
+  ],
+  "pages": [
+    {
+      "schemaVersion": "greenframe-client-v1",
+      "preparedAt": "2026-11-06T08:48:47.412539+00:00",
+      "url": "https://www.nhs.uk/",
+      "phase": "initial",
+      "consentSelector": null,
+      "noBannerDeclared": false,
+      "samples": 3,
+      "status": "ready_not_measured",
+      "requiredCliVersion": "2.0.1",
+      "configSHA256": "998aca472df566593792fb64d29b11d5194ee3947afb2329cf343e6649327c70",
+      "scenarioSHA256": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+      "wrapperSHA256": "82d344437434dbb946364d5177e38a31fe5b5051638200dbef05a6fceec55570",
+      "system": {
+        "platform": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+        "machine": "x86_64"
+      },
+      "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+      "comparisonRule": "Independent complete scenarios, not incremental phase energy; retain first-load result as headline and compare matched repeated scenarios",
+      "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM; annual projection requires explicit traffic, page-mix and electricity assumptions. Runner image/browser versions require separate verification before comparing runs.",
+      "metrics": null,
+      "id": "home"
+    }
+  ],
+  "status": "ready_not_measured"
+}

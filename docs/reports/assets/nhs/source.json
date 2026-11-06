@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "source-evidence-v1",
+  "site": "https://www.nhs.uk",
+  "capturedAt": "2026-11-06T08:45:29.521509+00:00",
+  "repositories": [],
+  "files": [],
+  "scope": "Only explicitly selected text files; no code execution, installed-package inventory, vulnerability scan, complete dependency audit or deployment attestation",
+  "planSHA256": "eed3971ffb8d53ff37d3726ba961ca7db8bd0192e6de183926e3052b39182cb9",
+  "collectorSHA256": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a"
+}

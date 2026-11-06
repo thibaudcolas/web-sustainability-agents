@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "report-editorial-receipt-v1",
+  "site": "https://www.w3.org",
+  "createdAt": "2026-11-06T09:22:52.480900+00:00",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "scope": "Editorial pass over the scored frozen audit and separate annual/energy/claims supplements; no audit judgments, priorities, evidence or scores changed.",
+  "inputSHA256": {
+    ".audit-work/diversity/w3c/session/review.json": "155fe68c6fc27938766f79d97bbf62656a1fa905d15d9edda3dbca977da67966",
+    ".audit-work/diversity/w3c/session/scores.json": "b8439e41ac65d35940f70fefb7703065659d72856a1f22dd8392005fe3ddb0f4",
+    ".audit-work/diversity/w3c/session/score-receipt.json": "56b9885d20e842110f0fb370767e4ae36f562ad3c61138d17d8503ee9e82a20e",
+    ".audit-work/diversity/w3c/session/packet.json": "a0da6424ef1d07534366cb66f8c431999cce074883d69a691a44d7fff3b14393",
+    ".audit-work/diversity/w3c/session/plan.json": "7b1cdfa4b1c730bff8f6bb70a708a5b0acf267beff32af01abb0ea558b546720",
+    ".audit-work/diversity/w3c/session/staged.json": "db5abe9991996ffd59f6aa5ed1ed275be805a71b606419b1eeb986d545ffadd6",
+    ".audit-work/diversity/w3c/session/probes.json": "38b19569dcfd935e5ed401f4e7e79476d8b34d0c423b4e43c1b977f959ad5472",
+    ".audit-work/diversity/w3c/session/context.json": "fe34251306e1d33f7d44272c7a2899ba0d9c2b75a97431242d01ae1dcb445329",
+    ".audit-work/diversity/w3c/session/checks.json": "618c28575c780beef9610747c12997da552945d7e805d7d4f98aec3afccd7993",
+    ".audit-work/diversity/w3c/session/rubric.json": "9363f3ceea8e70ada01d7e174448515c53de94326d9b207e7a90c71fe92f7c1b",
+    ".audit-work/diversity/w3c/review-tasks/claims.result.json": "9e92a87bad34f191fb193e4168f9884d86b9926caf45cd107a6ddc4b693a40b4",
+    ".audit-work/diversity/w3c/review-tasks/evidence.result.json": "17c549cda639a0c5621f80c955431e928f1ee66e1d6e1df447c5970b9e7dcf74",
+    ".audit-work/diversity/w3c/review-tasks/guidelines.result.json": "155fe68c6fc27938766f79d97bbf62656a1fa905d15d9edda3dbca977da67966",
+    ".audit-work/diversity/w3c/review-tasks/resolutions.json": "c79ad005c78ce5e38a6d392028fa45da374734c5967cdebbf466b199b4d91c22",
+    ".audit-work/diversity/w3c/energy/manifest.json": "471a0c537c11218ca712a639a1a165fe6135d9576d792f6c25f4c4ddc576b8c2",
+    ".audit-work/diversity/w3c/annual.json": "d35c53802e517e4165ad365dded3ac20f713c0413db54b44b3d58df10d750a94",
+    ".audit-work/diversity/w3c/claims-supplement.json": "ea8a905d71de8ed55b297e78060ef0e1c908067d5b39894c4411c296216d3b86",
+    ".audit-work/diversity/traffic.json": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    ".agents/skills/sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    ".agents/skills/sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    ".agents/skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    ".agents/skills/sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa",
+    "audit/render_review.py": "d12f003de37419c72f9fdade5aacb299f7136c386a87061286786ae03b3ddb8e",
+    "audit/report_details.py": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25"
+  },
+  "outputs": {
+    ".audit-work/diversity/w3c/editorial.json": "b4934146057fcc4f0f25a45c1257c69ebbe25537d2b2a4b398394d0dbf7549d0",
+    ".audit-work/diversity/w3c/work/report-preview.md": "ba37d8a23e1d1183400f17430028433a8b06e5227475c06f96d3cff1cfbb934b"
+  },
+  "commands": [
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/cli.py",
+        "tool",
+        "render_review",
+        "--session",
+        ".audit-work/diversity/w3c/session",
+        "--artifact-prefix",
+        "../session",
+        "--editorial",
+        ".audit-work/diversity/w3c/editorial.json",
+        "--energy",
+        ".audit-work/diversity/w3c/energy/manifest.json",
+        "--annual",
+        ".audit-work/diversity/w3c/annual.json",
+        "--traffic",
+        ".audit-work/diversity/traffic.json",
+        "--supplement-prefix",
+        "..",
+        "--output",
+        ".audit-work/diversity/w3c/work/report-preview.md"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "validation": {
+    "editorialSchema": "passed",
+    "reviewHashBinding": "passed",
+    "everyCheckExactlyOnce": 28,
+    "topFindingIdsAndOrder": "preserved",
+    "markdownInternalAnchors": "passed",
+    "readablePriorityAndMeasurementSections": "inspected"
+  },
+  "screenshots": {
+    "included": false,
+    "reason": "The priorities concern hidden resource delivery, semantic structure and uninspected print output; a page screenshot would not substantiate those findings."
+  },
+  "preview": {
+    "kind": "Private Markdown render",
+    "themedDesktopAndNarrowPreview": "Delegated to publishing coordinator",
+    "supplementDownloadLinks": "Publishing coordinator supplies final artifact paths."
+  }
+}

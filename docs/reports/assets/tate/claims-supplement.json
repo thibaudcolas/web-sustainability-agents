@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "claims-supplement-v1",
+  "site": "https://www.tate.org.uk",
+  "reviewedAt": "2026-11-06T09:08:48.056966+00:00",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "reviewScope": "Read-only review of finalized annual and GreenFrame supplements, their declared source inputs and selected raw modeled outputs; separate from the scored frozen packet and main claims result.",
+  "inputSHA256": {
+    "tate/annual.json": "ff13f92aab1612fcf8896941c2c07956942bccb40e2013838d9ad27675ba0608",
+    "tate/energy/manifest.json": "f1b2aabd9ff436587e19f9e9d493f2e5081f1984bf533de24a91f44974d09c6c",
+    "tate/session/staged.json": "7e9e2db1e958fd389aa850d2da06d1242ad408eb23b99dda825c6ebe40670e37",
+    "traffic.json": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    "tate/session/skills/sustainability-claims-review/SKILL.md": "299e37c2dc01e9ee08be913a61b5dc69e78cc52d4e64909ef9dbdbb71227ce9f",
+    "tate/energy/home/scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "tate/energy/home/model-results.json": "f73d5fb878ac3e006bb46aeec016e177c68972625f39da5f670433ed2d1b0d61",
+    "tate/energy/julio-le-parc/scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "tate/energy/julio-le-parc/model-results.json": "133b8534795a0cfc2f29d7e8242762d908c781431c677d70e445ffd1adde212b"
+  },
+  "judgment": {
+    "status": "usable_as_explicit_scenarios",
+    "summary": "Source hashes, matched-origin traffic, first-initial byte selection, page weighting and unit arithmetic are consistent. Raw GreenFrame sample medians match the client annual projection where completed. No numerical correction found. Model accuracy and raw-counter instrumentation were not independently remeasured."
+  },
+  "validation": {
+    "annualSourceHashesMatch": true,
+    "trafficOriginMatches": true,
+    "firstRecordedInitialBytesMatch": true,
+    "equalPageWeightsAndGramsToKgArithmeticMatch": true,
+    "rawClientMediansAndWhToKWhArithmeticMatch": true,
+    "model": "CO2.js 0.19.0 / SWDM v4 as declared; model implementation not independently rerun",
+    "swdmKgCO2ePerYear": 19152.20395413083,
+    "swdmSampledPageCount": 7,
+    "transferInputs": "partial",
+    "clientKWhPerYear": 491.30476931021514,
+    "clientKgCO2ePerYear": 242.70455603924626,
+    "clientGridIntensityGPerKWh": 494,
+    "energyPages": [
+      {
+        "id": "home",
+        "url": "https://www.tate.org.uk/",
+        "repetitions": 3,
+        "clientMedianWh": 0.019422196617733332,
+        "sampleRangeWh": [
+          0.019130016413,
+          0.020406363540666664
+        ]
+      },
+      {
+        "id": "julio-le-parc",
+        "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+        "repetitions": 3,
+        "clientMedianWh": 0.01998004591272222,
+        "sampleRangeWh": [
+          0.019045485137444442,
+          0.020930914231744445
+        ]
+      }
+    ]
+  },
+  "trafficScope": {
+    "datasetMonth": "202609",
+    "capturedAt": "2026-11-06T08:42:55.157380+00:00",
+    "rankBucket": 100000,
+    "annualPageviewsProxy": 24937909.0,
+    "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+    "limitation": "September 2026 CrUX origin popularity bucket, not exact ordinal or measured site analytics; cohort median extrapolation has no calibrated site-level interval. Period and population differ. All five origins were found, so no unranked extrapolation or parent-domain substitution is involved."
+  },
+  "limitations": [
+    "All seven SWDM page inputs are partial, with child-frame coverage gaps, 12\u201313 unresolved requests and 11\u201312 resource errors per initial run. Positive observed bytes can support this explicitly partial scenario, not complete site transfer accounting.",
+    "The two-page client sample is homepage plus Julio Le Parc. Do not interpret its annual scenario or current SWDM scenario as a comparable follow-up measurement to Tate\u2019s published 2019/2023 estimates.",
+    "SWDM initial loads use fresh-context CDP main-session received bytes at 1280\u00d7800 with a three-second observation window; partial/unfinished transfers remain explicit. Equal weights across the selected editorial sample are not measured popularity.",
+    "GreenFrame 2.0.1 uses Chromium 110 in the pinned Playwright image and a fixed Chrome/89 user agent, unlike the Chromium 156 transfer collector. Fresh contexts load then wait three seconds, without consent action or scrolling; startup warm-up is excluded, shutdown remains inside the window.",
+    "GreenFrame estimates CPU, memory, disk and display from resource counters using synthetic 45 W CPU and 14 W screen coefficients. No baseline subtraction; shared workstation activity was uncontrolled. It is not wall-meter electricity, whole-device energy, network/server/embodied energy or full reading-session energy.",
+    "Client annual scenario uses each page\u2019s median of three repetitions and a 50/50 mix of only two pages. Manifest aggregate metrics are means and must not be substituted for medians. Default 494 gCO2e/kWh is an assumed comparison factor, not measured audience electricity; raw GreenFrame built-in CO2 figures use their own factor and are not the annual headline."
+  ],
+  "corrections": [
+    "Label both annual results as model scenarios based on estimated pageviews, never measured annual emissions, a forecast, a complete organizational footprint or a DCR badge.",
+    "Keep SWDM operational and embodied browsing scope separate from GreenFrame client operation. Never add the two values or substitute GreenFrame for SWDM device emissions.",
+    "Preserve the 100% first-visit assumption and equal sampled-page proxy; actual page mix, repeat-visit share and audience electricity are unknown. Minimum/maximum sampled-page sensitivities and repetition ranges are not confidence intervals or bounds on true footprint.",
+    "Do not turn the 10% sensitivity parameter into estimated achievable savings. Any savings attribution needs a matched before/after measurement and affected traffic share."
+  ],
+  "savingsClaimSupported": false
+}

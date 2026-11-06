@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://www.tate.org.uk",
+  "reviewSHA256": "a0c0a0c284495c365411b45a9281ed9591f79de9e1a0caf2ad24935129e39bb4",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "overview": "Tate’s visitor information supports the sampled parking task, and its public website statement describes concrete sustainability work. The first investigation is the shared TateDraw image fetched while its promotion is hidden or offscreen. Two specific fixes concern cookie-policy content without JavaScript and uncompressed consent-provider text. Every page’s transfer count is incomplete, so the displayed sizes are incomplete, the annual footprint scenario uses partial transfers, and page footprints and Digital Carbon Ratings are withheld. Separate browser-energy modeling covers only the homepage and Julio Le Parc page; annual figures are assumption-based scenarios, distinct from Tate’s historical estimates.",
+  "nextSteps": [
+    "Trace and test the shared TateDraw promotion before changing its loading; preserve image quality and accessible activation.",
+    "Provide an HTML cookie inventory and usable preference alternative, then test the fresh no-JavaScript policy-reading task and the actual privacy choices.",
+    "Recheck the skip link after focus and screen layout settle, exercise narrow controls, and inspect the recorded reduced-motion transitions.",
+    "Complete the missing transfer coverage and repeat any changed page under matching conditions. Keep annual scenarios separate from historical claims and browser-energy modeling.",
+    "Publish comparable methods for the 2019/2023 website estimates, one dated review-to-action example and corroborated hosting evidence."
+  ],
+  "findings": [
+    {
+      "checkId": "media-delivery",
+      "title": "Check when the shared TateDraw image is needed",
+      "summary": "A roughly 859 kB TateDraw JPG is fetched across the sampled templates, including homepage and greener-website states where its promotion is hidden or offscreen. The evidence establishes a useful investigation target; it does not yet establish a safe change.",
+      "whyItMatters": "A shared request can affect visitors arriving on many different pages. Checking this promotion’s activation offers a focused way to investigate avoidable initial transfer while preserving useful art and navigation.",
+      "action": "Trace the request to the shared promotion, open it with pointer and keyboard controls, and test loading a suitable rendition only when needed. Check image detail at intended screen densities and compare matched complete visits before claiming savings."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Keep the cookie inventory readable without JavaScript",
+      "summary": "The cookie policy loses its vendor/cookie list and Manage Preferences material when JavaScript is unavailable. Other sampled reading content remains accessible, but no equivalent policy alternative is provided for this missing information.",
+      "whyItMatters": "Visitors with unavailable or failed scripts cannot inspect the same cookie details or find the same preference material.",
+      "action": "Render the inventory in HTML or link an equivalent static policy and usable preference-management alternative. Confirm a fresh visit without JavaScript can read the policy information and reach the alternative."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Compress the consent-provider script and document",
+      "summary": "On What's on, consenTag.js and popup_silent.html return successful text responses without a content-encoding, at roughly 6.6 kB and 12.0 kB. Core Tate scripts and styles are already compressed.",
+      "whyItMatters": "These specific text responses are candidates for smaller transfers through beneficial compression. The achievable change and its effect on energy have not been measured.",
+      "action": "Ask the provider to enable compression through content negotiation. Verify the delivered encoding and preference-manager behavior, then measure a matched visit to establish the transfer change."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "title": "Explain how the historical website estimates compare",
+      "summary": "Tate reports website estimates of 45 metric tons CO₂e in 2019 and 27 metric tons in 2023. Its website-specific statement and Digital Green Team provide useful context, but the captured evidence does not document comparable calculation methods and boundaries.",
+      "whyItMatters": "Readers need to know whether changes in traffic, scope or calculation methods explain part of the difference before treating it as like-for-like progress. These historical estimates also use a different basis from this audit’s current scenarios.",
+      "action": "Publish a concise method note for both years covering service boundary, traffic, model inputs and any recalculations. Add one dated review showing how the team used a result to choose its next action."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Visitor information stays accessible",
+      "summary": "Gallery, exhibition, editorial and policy content remains available across the seven pages. Ticket, membership and newsletter prompts relate to Tate, and the parking-information route completes without a modal interruption. No autoplay is recorded in these states.",
+      "nextStep": "Retain clear separation between visitor information and optional promotions when changing these templates."
+    },
+    {
+      "checkId": "choice",
+      "title": "Check cookie choices and defaults",
+      "summary": "No cookie banner was observed or operated. The cookie policy offers Manage Preferences and third-party tracking requests occur, but the defaults and accept/reject routes were not tested. This leaves the fairness of the choices unresolved.",
+      "nextStep": "Open Manage Preferences in a fresh visit, inspect the defaults and compare the visibility and operation of accept and reject choices."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Visitor information explains the next step",
+      "summary": "Opening times, admission, exhibition dates and ticket routes are labeled. Stories distinguishes reading, listening and watching, while the parking section gives a location and advance-booking contact details. This supports the sampled English information tasks.",
+      "nextStep": "Keep these concrete labels and confirm comprehension with the intended audience when changing visitor instructions."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Navigation names remain consistent",
+      "summary": "The seven pages repeat What's on, Visit, Art, Learn, Shop and membership navigation, with recognizable Search and footer patterns. Section headings distinguish each page's purpose.",
+      "nextStep": "Keep shared navigation names consistent as content and templates change."
+    },
+    {
+      "checkId": "motion",
+      "title": "Check the shared interface transitions",
+      "summary": "No initial video or animation was recorded. Several short interface transitions appear in narrow and reduced-motion states, but the capture does not show which properties move or whether the effects are visible. Harmful motion has not been established.",
+      "nextStep": "Inspect the transitions while opening navigation with reduced motion enabled, and suppress any nonessential movement that the preference should affect."
+    },
+    {
+      "checkId": "notifications",
+      "title": "No unsolicited notification request was observed",
+      "summary": "The seven pages make no recorded notification-permission request and show no unsolicited alert dialog. Newsletter signup is optional. Browser notification permission was already denied, which limits this result to the captured states.",
+      "nextStep": "Recheck alert and permission behavior when introducing messaging features."
+    },
+    {
+      "checkId": "documents",
+      "title": "Inspect the map and accessible document alternatives",
+      "summary": "The gallery labels its PDF map and size, and offers print and digital communication cards; the exhibition links a large-print guide. Print emulation retains page text and removes navigation. The files and actual pagination were not inspected.",
+      "nextStep": "Inspect the map, communication cards and large-print guide for readability, useful content, file size and printed output before changing their formats."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Check code use across visitor interactions",
+      "summary": "The initial-load sample includes shared interface, vendor, page, experimentation and tracking scripts. It does not cover enough menus, filters, gallery disclosures or ticket routes to establish which code can be removed.",
+      "nextStep": "Record code use while completing representative interactions, then identify a specific removable module with source or deployment evidence."
+    },
+    {
+      "checkId": "components",
+      "title": "Trace an optional component before changing its loading",
+      "summary": "The site already separates shared scripts from page-specific modules. The evidence does not show which optional components are needed later or whether they can be activated reliably after being deferred.",
+      "nextStep": "Trace one substantial optional component from its first request to visitor activation, then test a deferred version against the same task."
+    },
+    {
+      "checkId": "layout",
+      "title": "Check the narrow cookie-policy layout",
+      "summary": "Main headings and task text remain at 360 CSS pixels, and most pages avoid measured horizontal overflow. The cookie policy does overflow, but its tables and controls were not exercised enough to establish the cause or visitor impact.",
+      "nextStep": "Inspect the cookie tables at narrow widths and complete policy reading, navigation and gallery-disclosure tasks using their controls."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "Check whether format guidance would help visitors",
+      "summary": "Stories identifies text, audio and video, and gallery resources distinguish digital and print options. The website statement also describes its dark design. No measured comparison establishes the impact of a visitor choosing one format over another; its OLED percentage is conditional on the device and maximum brightness.",
+      "nextStep": "Compare the usefulness and delivery of one meaningful media or document choice before offering impact guidance."
+    },
+    {
+      "checkId": "journeys",
+      "title": "Parking instructions are reachable from the homepage",
+      "summary": "The captured route opens Tate Modern from the homepage and then its Accessibility section. The page gives twelve disabled parking spaces via Park Street and advance phone/email booking instructions. The task ends at finding that information.",
+      "nextStep": "Retain this discoverable route and recheck it after gallery-page changes."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Investigate the shared TateDraw image",
+      "summary": "A roughly 859 kB TateDraw JPG is delivered across the sampled templates. On the homepage and Creating a greener website page, the associated image has no rendered size and is not visible in the captured desktop state. Other art images use responsive WebP and plausible card dimensions, but rendition quality has not been inspected.",
+      "nextStep": "Find what initiates the TateDraw request and when visitors expose the promotion. Test conditional loading and a proportionate rendition, checking artwork detail, keyboard activation and the same visitor tasks before making a change."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "Body fonts have a readable fallback",
+      "summary": "Tate body faces use a swap loading policy with Arial/Helvetica fallbacks. Light and bold variants appear where used, while several declared faces remain unloaded. The captured controls have names; this does not establish that any language or glyph support is removable.",
+      "nextStep": "Keep the body-text fallback and verify readability and required characters before changing font delivery."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "Pages identify their language and main content",
+      "summary": "All seven pages declare English, include a main region and provide meaningful visible page headings. Search has an accessible name, the footer email field has a label, and sampled filters and disclosure controls have visible text. This is a bounded semantics check, not a complete accessibility audit.",
+      "nextStep": "Retain these landmarks and naming relationships when updating shared controls."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Page titles and canonical URLs are useful",
+      "summary": "Each sampled document has a descriptive title and a usable absolute canonical URL matching the page. Optional descriptions and structured data were not required to complete these information tasks.",
+      "nextStep": "Keep titles and canonical URLs aligned with the live page when publishing or moving content."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Check reduced-motion behavior in the shared interface",
+      "summary": "Task text remains available when device preferences change and in fresh dark/reduced-motion visits. The greener-website page deliberately stays dark and other pages stay light. Recorded interface transitions lack the detail needed to judge whether reduced motion should change them.",
+      "nextStep": "Inspect the transition effects with reduced motion enabled before deciding which need to be suppressed."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Keep the cookie inventory readable without JavaScript",
+      "summary": "Gallery, exhibition, Stories and sustainability text remains available without JavaScript. On the cookie policy, however, the vendor/cookie inventory and Manage Preferences material disappear, leaving only a short policy text without an equivalent alternative. JavaScript-on policy excerpts are capped, so they do not establish every inventory entry.",
+      "nextStep": "Render the inventory in HTML or link an equivalent static policy, and provide a usable preference-management alternative. Confirm a fresh visit without JavaScript can read the same policy information."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "Check the purpose of repeated third-party calls",
+      "summary": "The sample includes experiment, location/device, analytics, advertising and listing requests. Some addresses repeat for different events. Their purpose, necessity and response to privacy choices are unresolved, so repetition alone does not identify safe removals.",
+      "nextStep": "Trace request initiators and events while operating cookie choices and the relevant visitor tasks; remove or defer only calls shown to be unnecessary."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Reusable public assets declare cache policies",
+      "summary": "Versioned Tate styles and scripts expose long public cache lifetimes and validators. Images and external helpers also provide lifetimes or validators. These headers support reuse in principle; a repeat visit was not measured.",
+      "nextStep": "Retain appropriate cache policies for versioned public assets and measure a repeat visit if checking actual reuse."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Compress the consent-provider text responses",
+      "summary": "Core Tate scripts and styles use gzip. On What's on, successful responses for consenTag.js and popup_silent.html carry roughly 6.6 kB and 12.0 kB without a content-encoding. These specific third-party text responses fail the selected compression check.",
+      "nextStep": "Ask the provider to enable beneficial compression, then verify compressed delivery and successful preference management. Measure the resulting transfer change before claiming savings."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "Recheck the skip link after focus settles",
+      "summary": "The initial keyboard trace reaches meaningful navigation links with blue outlines. The first skip-link position was captured immediately after resetting print media, before a settled frame; it remains offscreen in that instant. That snapshot cannot establish a persistent invisible-focus defect.",
+      "nextStep": "Let the screen layout settle, focus Skip navigation, inspect its final position and indicator, then activate it and confirm the main content is reached. Repeat without preceding print emulation."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "Tate publishes website-specific sustainability information",
+      "summary": "Creating a greener website identifies tate.org.uk, describes device, server and production impacts, and lists changes to the CMS, image delivery, editorial guidance, code and data. This supports the public-disclosure check; it does not independently verify delivery or savings.",
+      "nextStep": "Keep the statement discoverable and distinguish completed actions, ongoing work and estimates."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "A discoverable carbon.txt was not found",
+      "summary": "The tested root and well-known carbon.txt addresses return 404, and no usable delegation or parseable file was established. This is a narrow discovery failure; the separate website sustainability statement exists.",
+      "nextStep": "If adopting carbon.txt, publish a valid file linking the existing disclosure and supported provider relationships, then test discovery."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Establish the website hosting evidence",
+      "summary": "The website statement discusses server electricity and cooling, but the captured evidence does not connect this origin to a named hosting service with independently corroborated operational evidence.",
+      "nextStep": "Identify the service hosting this origin and link current supporting evidence for the same operational boundary."
+    },
+    {
+      "checkId": "governance-practice",
+      "title": "Show how a website review informs the next action",
+      "summary": "Tate names a Digital Green Team, reports regular meetings since 2019, and lists website results and actions. The captured statement does not link one dated review of a monitored result to a resulting decision. This leaves that specific governance check unresolved.",
+      "nextStep": "Publish one short, dated example naming the responsible team, the result it reviewed and the action or reasoned continuation it chose."
+    },
+    {
+      "checkId": "access-barriers",
+      "title": "The sampled parking-information task needs no account",
+      "summary": "An anonymous desktop visitor using pointer controls reaches the parking location and booking contact instructions without signing in, making contact or purchasing. The audit does not test booking, physical gallery access or unrepresented access needs.",
+      "nextStep": "Extend task testing to keyboard and assistive-technology users before drawing wider accessibility conclusions."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "title": "Explain the basis of the reported website reduction",
+      "summary": "Tate estimates website emissions of 45 metric tons CO₂e in 2019 and 27 metric tons in 2023, and attributes part of the change to its CMS. The captured statement does not document comparable traffic, service boundaries or calculation methods. These are historical Tate estimates, separate from this audit’s current model scenarios.",
+      "nextStep": "Add the calculation boundary, traffic and model assumptions for both years, explain method changes or recalculations, and show how a dated review informed the next action."
+    }
+  ]
+}

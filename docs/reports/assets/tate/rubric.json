@@ -1,0 +1,577 @@
+{
+  "schemaVersion": "0.1.0",
+  "rubricVersion": "agent-breadth-v3",
+  "source": "https://www.w3.org/TR/web-sustainability-guidelines/",
+  "sourceVersion": "https://www.w3.org/TR/2026/DNOTE-web-sustainability-guidelines-20261016/",
+  "scoreMeaning": "Project-owned scoped checks grouped by WSG guideline; not full-guideline conformance. Unknowns earn no points but are not failures.",
+  "guidelines": [
+    {
+      "number": "2.1",
+      "title": "Identify, assess, disclose, review, and mitigate sustainability impacts",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#identify-assess-disclose-review-and-mitigate-sustainability-impacts",
+      "role": "agent-review",
+      "expectation": "A retrieved public sustainability statement identifies the audited service and describes its impacts and mitigation. Judge disclosure only, not execution; an unresolved relationship is cantTell.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.2",
+      "title": "Understand user requirements or constraints",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#understand-user-requirements-or-constraints",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.3",
+      "title": "Integrate sustainability into every stage of the ideation process",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#integrate-sustainability-into-every-stage-of-the-ideation-process",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.4",
+      "title": "Design efficient and streamlined user journeys",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-efficient-and-streamlined-user-journeys",
+      "role": "agent-review",
+      "expectation": "Execute declared task actions and inspect completion evidence; an expected selector is one observable, not proof of user success or optimal journey length.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.5",
+      "title": "Design to assist and not to distract",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#design-to-assist-and-not-to-distract",
+      "role": "agent-review",
+      "expectation": "Assess visible distractions against the declared visitor task; distinguish useful prompts from interruptions.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.6",
+      "title": "Avoid being manipulative or deceptive",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-being-manipulative-or-deceptive",
+      "role": "agent-review",
+      "expectation": "Inspect choice wording, defaults, prominence and the observed accept/reject paths for undue steering. DOM text alone does not establish visual parity.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.7",
+      "title": "Make deliverables understandable and reusable",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#make-deliverables-understandable-and-reusable",
+      "role": "agent-review",
+      "expectation": "Assess the sampled task's wording, headings and terminology for its stated audience; retain uncertainty about unrepresented users.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.8",
+      "title": "Use a design system for interface consistency",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-a-design-system-for-interface-consistency",
+      "role": "agent-review",
+      "expectation": "Compare repeated navigation and control names across sampled pages; consistent samples do not prove a documented design system.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.9",
+      "title": "Optimize media to reduce resource use",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-media-to-reduce-resource-use",
+      "role": "agent-review",
+      "expectation": "The sampled task images preserve useful content and provide proportionate intrinsic dimensions and delivery choices for their rendered size and pixel density. A large image is an investigation candidate until legibility and task value are checked; absent srcset alone is not a failure.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.10",
+      "title": "Ensure animation is proportionate and easy to control",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-animation-is-proportionate-and-easy-to-control",
+      "role": "agent-review",
+      "expectation": "Assess observed animation purpose, playback controls and reduced-motion behavior. A quiet snapshot does not prove no motion occurs elsewhere.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.11",
+      "title": "Use optimized web typography",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-optimized-web-typography",
+      "role": "agent-review",
+      "expectation": "Observed web fonts and variants serve the sampled content, with a declared fallback/loading strategy where needed. Do not fail a site merely for using a web font; recommend removal or subsetting only after language and readability requirements are established.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.12",
+      "title": "Avoid unwanted notifications",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-unwanted-notifications",
+      "role": "agent-review",
+      "expectation": "Assess observed alerts and notification permission requests for user value and choice; absence is limited to observed states.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.13",
+      "title": "Reduce the impact of downloadable and physical documents",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-impact-of-downloadable-and-physical-documents",
+      "role": "agent-review",
+      "expectation": "Review print layout visibility and download labels for the declared task. Fetch and inspect document content before asserting optimization or equivalence.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.14",
+      "title": "Involve users early in the project",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#involve-users-early-in-the-project",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.15",
+      "title": "Audit and test for bugs or issues requiring resolution",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#audit-and-test-for-bugs-or-issues-requiring-resolution",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.16",
+      "title": "Validate usability through testing and real-world usage",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#validate-usability-through-testing-and-real-world-usage",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "2.17",
+      "title": "Provide cross-platform compatibility support",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-cross-platform-compatibility-support",
+      "role": "agent-review",
+      "expectation": "The sampled core reading content and navigation remain available without JavaScript, or an explicit alternative supports the task. This bounded check does not establish no-JavaScript search, every interaction, or all browser compatibility.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.1",
+      "title": "Set goals based on performance and energy impact",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#set-goals-based-on-performance-and-energy-impact",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.2",
+      "title": "Minify and remove unused code",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#minify-and-remove-unused-code",
+      "role": "agent-review",
+      "expectation": "Use initial JS/CSS execution observations to nominate investigation targets; require representative journeys or source corroboration before recommending removal.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.3",
+      "title": "Modularize bandwidth-heavy components",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#modularize-bandwidth-heavy-components",
+      "role": "agent-review",
+      "expectation": "Relate initial script resources to visible components and later task needs; recommend splitting only when a component's deferred use and usable activation are corroborated.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.4",
+      "title": "Avoid redundancy and duplication in code",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-redundancy-and-duplication-in-code",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.5",
+      "title": "Treat third parties the same as first parties",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#treat-third-parties-the-same-as-first-parties",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.6",
+      "title": "Ensure code follows good semantic practices",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-code-follows-good-semantic-practices",
+      "role": "agent-review",
+      "expectation": "The sampled document has a meaningful language, primary heading and main region, and task controls have visible labels or an explicit naming relationship. Count/attribute presence alone does not establish semantic correctness or WCAG compliance. The sampled initial keyboard path reaches visible task navigation/controls in a meaningful order with a discernible focus indicator. A bounded Tab trace cannot establish complete keyboard support, reverse navigation, traps or screen-reader accessibility.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.7",
+      "title": "Defer the loading of non-critical resources",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#defer-the-loading-of-non-critical-resources",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.8",
+      "title": "Structure metadata for machine readability",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#structure-metadata-for-machine-readability",
+      "role": "agent-review",
+      "expectation": "The sampled content has a descriptive title and usable canonical metadata when applicable; declared structured-data blocks parse as JSON. Judge description and other optional metadata according to page purpose, not a mandatory-field checklist.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.9",
+      "title": "Use media queries that support sustainability goals",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-media-queries-that-support-sustainability-goals",
+      "role": "agent-review",
+      "expectation": "The sampled page respects applicable dark/reduced-motion preferences both before navigation and when they change in-page, without losing task content. Distinguish intentional design choices and absence of applicable motion from unsupported behavior.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.10",
+      "title": "Ensure layouts work for different devices and requirements",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-layouts-work-for-different-devices-and-requirements",
+      "role": "agent-review",
+      "expectation": "Compare narrow and desktop task content and overflow, then exercise affected controls; width emulation alone is not real-device compatibility.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.11",
+      "title": "Use sustainable JavaScript and APIs",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-javascript-and-apis",
+      "role": "agent-review",
+      "expectation": "Repeated observed API requests are justified by the sampled task and its update needs. Identify redundant-looking requests for investigation without inferring backend cost or safe removal from URL repetition alone.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.12",
+      "title": "Use dependencies sparingly and maintain them",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-dependencies-sparingly-and-maintain-them",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.13",
+      "title": "Include expected and beneficial files",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#include-expected-and-beneficial-files",
+      "role": "agent-review",
+      "expectation": "The sampled service exposes a discoverable, parseable carbon.txt with usable declared relationships. Missing carbon.txt is a scoped absence, not proof of high emissions or failure of the entire guideline. Judge redirects, delegation, supported versions and schema findings explicitly.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.14",
+      "title": "Use the most efficient solution for your service",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-most-efficient-solution-for-your-service",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.15",
+      "title": "Use the latest stable language version",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-the-latest-stable-language-version",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "3.16",
+      "title": "Reduce the number and complexity of database queries",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-the-number-and-complexity-of-database-queries",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.1",
+      "title": "Use sustainable hosting",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-sustainable-hosting",
+      "role": "agent-review",
+      "expectation": "Hosting claims identify provider, service and supporting evidence with a relationship to this origin. Self-declaration without independently corroborated operational scope remains cantTell for sustainable hosting; do not set SWDM green-hosting flags from this check.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.2",
+      "title": "Optimize caching and support offline access",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#optimize-caching-and-support-offline-access",
+      "role": "agent-review",
+      "expectation": "Reusable public scripts/styles/media expose an appropriate caching or validation policy in the sample. Distinguish dynamic/private responses and note that headers alone do not prove cache reuse or offline support.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.3",
+      "title": "Reduce data transfer with compression",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#reduce-data-transfer-with-compression",
+      "role": "agent-review",
+      "expectation": "Material sampled text assets are delivered with compression where beneficial. Do not demand compression for already-compressed images, tiny bodies or error responses without context.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.4",
+      "title": "Setup necessary error pages and redirection links",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#setup-necessary-error-pages-and-redirection-links",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.5",
+      "title": "Avoid maintaining unnecessary virtualized environments or containers",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#avoid-maintaining-unnecessary-virtualized-environments-or-containers",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.6",
+      "title": "Use automation wisely",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-automation-wisely",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.7",
+      "title": "Define the frequency of data refreshes",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-the-frequency-of-data-refreshes",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.8",
+      "title": "Back up critical data at routine intervals",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#back-up-critical-data-at-routine-intervals",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.9",
+      "title": "Assess the impact and requirements of data processing",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#assess-the-impact-and-requirements-of-data-processing",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.10",
+      "title": "Use Content Delivery Networks (CDNs) when beneficial",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-content-delivery-networks-cdns-when-beneficial",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.11",
+      "title": "Ensure infrastructure fits project requirements",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#ensure-infrastructure-fits-project-requirements",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "4.12",
+      "title": "Store data according to the needs of your users",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#store-data-according-to-the-needs-of-your-users",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.1",
+      "title": "Have an ethical and sustainable product strategy",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#have-an-ethical-and-sustainable-product-strategy",
+      "role": "agent-review",
+      "expectation": "For a declared sustainability commitment and period, records show accountable review, a monitored result and a resulting action or reasoned continuation over time. A published policy, named lead or future review date alone cannot pass this implementation check.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.2",
+      "title": "Assign a sustainability advocate",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#assign-a-sustainability-advocate",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.3",
+      "title": "Inform, raise awareness, and train for sustainability",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#inform-raise-awareness-and-train-for-sustainability",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.4",
+      "title": "Communicate the environmental impact of user choices",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#communicate-the-environmental-impact-of-user-choices",
+      "role": "agent-review",
+      "expectation": "Identify consequential user choices in the sample and assess whether contextual impact information is useful and supported. Do not prescribe carbon labels on every control.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.5",
+      "title": "Calculate the environmental impact",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#calculate-the-environmental-impact",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.6",
+      "title": "Define clear organizational sustainability goals and metrics",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-clear-organizational-sustainability-goals-and-metrics",
+      "role": "agent-review",
+      "expectation": "Published goals for the audited web service define a measurable target or direction, relevant metric and boundary, and communicate dated progress against a comparable baseline. A corporate net-zero ambition or isolated low-carbon badge cannot establish service-specific goals and progress.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.7",
+      "title": "Validate web sustainability efforts through external verification",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#validate-web-sustainability-efforts-through-external-verification",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.8",
+      "title": "Support mandatory disclosures and reporting",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#support-mandatory-disclosures-and-reporting",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.9",
+      "title": "Create one or more impact business models",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#create-one-or-more-impact-business-models",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.10",
+      "title": "Follow a product management and maintenance strategy",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#follow-a-product-management-and-maintenance-strategy",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.11",
+      "title": "Implement continuous improvement procedures",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#implement-continuous-improvement-procedures",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.12",
+      "title": "Document updates and evolutions",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#document-updates-and-evolutions",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.13",
+      "title": "Evaluate if a digital product or service is necessary",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#evaluate-if-a-digital-product-or-service-is-necessary",
+      "role": "agent-review",
+      "expectation": "For the declared visitor task and represented access constraints, inspect material accessibility, technical, geographic or fairness barriers and verify the sampled route or alternative supports task completion while preserving necessary security and safety. Do not demand removal of justified authentication or infer all-user accessibility from one successful route.",
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.14",
+      "title": "Provide a supplier standards of practice document",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#provide-a-supplier-standards-of-practice-document",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.15",
+      "title": "Share economic benefits",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#share-economic-benefits",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.16",
+      "title": "Share decision-making power with affected parties",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#share-decision-making-power-with-affected-parties",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.17",
+      "title": "Use Diversity, Equity, Justice, Inclusion (DEJI) practices",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-diversity-equity-justice-inclusion-deji-practices",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.18",
+      "title": "Promote responsible data practices",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#promote-responsible-data-practices",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.19",
+      "title": "Establish responsible practices around AI and emerging or disruptive technologies",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#establish-responsible-practices-around-ai-and-emerging-or-disruptive-technologies",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.20",
+      "title": "Adopt responsible financial practices",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-responsible-financial-practices",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.21",
+      "title": "Adopt organizational philanthropy practices",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-organizational-philanthropy-practices",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.22",
+      "title": "Plan for a digital product or service's care and end-of-life",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#plan-for-a-digital-product-or-service-s-care-and-end-of-life",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.23",
+      "title": "Repair, reuse, refurbish, recycle or reduce e-waste",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#repair-reuse-refurbish-recycle-or-reduce-e-waste",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.24",
+      "title": "Define performance, environmental, and human budgets",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#define-performance-environmental-and-human-budgets",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.25",
+      "title": "Use and contribute to open source",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#use-and-contribute-to-open-source",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    },
+    {
+      "number": "5.26",
+      "title": "Create a business continuity and disaster recovery plan",
+      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#create-a-business-continuity-and-disaster-recovery-plan",
+      "role": "unsupported",
+      "expectation": null,
+      "fullGuidelineCoverage": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "greenframe-client-v1",
+  "preparedAt": "2026-11-06T08:51:17.711963+00:00",
+  "url": "https://www.tate.org.uk/",
+  "phase": "initial",
+  "consentSelector": null,
+  "noBannerDeclared": false,
+  "samples": 3,
+  "status": "ready_not_measured",
+  "requiredCliVersion": "2.0.1",
+  "configSHA256": "c0f7077b947444c6b949441b717fa701a2be1826843093cbc0fd32159eba81eb",
+  "scenarioSHA256": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+  "wrapperSHA256": "82d344437434dbb946364d5177e38a31fe5b5051638200dbef05a6fceec55570",
+  "system": {
+    "platform": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+    "machine": "x86_64"
+  },
+  "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+  "comparisonRule": "Independent complete scenarios, not incremental phase energy; retain first-load result as headline and compare matched repeated scenarios",
+  "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM; annual projection requires explicit traffic, page-mix and electricity assumptions. Runner image/browser versions require separate verification before comparing runs.",
+  "metrics": null,
+  "id": "home"
+}

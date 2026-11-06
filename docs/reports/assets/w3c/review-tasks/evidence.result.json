@@ -1,0 +1,71 @@
+{
+  "role": "evidence",
+  "site": "https://www.w3.org",
+  "packetSHA256": "a0da6424ef1d07534366cb66f8c431999cce074883d69a691a44d7fff3b14393",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "w3c-evidence-01",
+      "checkIds": [
+        "media-delivery",
+        "components"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:2",
+        "staged.json:runs:5",
+        "probes.json:pages:5"
+      ],
+      "summary": "Six initial captures are complete within the protocol and have calculated byte-based ratings, including 532,543 B for home and 120,794 B for WCAG 2.2. The sustainability page instead observes 1,350,347 B initially with a YouTube iframe coverage gap despite zero unresolved request IDs; its rating is correctly withheld. At least three initial embed scripts contribute 529,368, 247,918 and 176,666 B.",
+      "requestedChange": "Preserve per-page completeness: zero unresolved requests does not remove iframe coverage uncertainty. Prioritize examining initial embed loading and a usable deferred alternative; retain partial traffic/no rating for that page. Keep calculated ratings as provisional SWDM cold-load estimates with assumed non-green hosting, separate from WSG assessment or measured electricity."
+    },
+    {
+      "id": "w3c-evidence-02",
+      "checkIds": [
+        "media-delivery"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:3",
+        "probes.json:pages:3"
+      ],
+      "summary": "Accessibility Fundamentals initial traffic is 641,592 B, of which banner-with-blur.png contributes 488,239 B (about 76.1%). It is a 1833-by-279 decorative image rendered about 832-by-127 CSS pixels in the desktop probe.",
+      "requestedChange": "Nominate this specific rendition for visual comparison and an appropriately encoded alternative. Test appearance and intended pixel densities before asserting safe dimension reduction, exact savings or deletion; 1833 pixels can support approximately double-density rendering at the observed width."
+    },
+    {
+      "id": "w3c-evidence-03",
+      "checkIds": [
+        "no-js-content",
+        "documents",
+        "comprehension"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "context.json:records:1",
+        "context.json:records:2"
+      ],
+      "summary": "Standards catalogue and WCAG probe text is capped at 20,000 characters in every state, including no-JavaScript and print. These are successful documents, but equal captured lengths do not show equality of their complete long-form content or pagination. Separate contextual history/status captures support selected lifecycle observations.",
+      "requestedChange": "Keep conclusions bounded to observed headings, navigation and excerpts. Do not claim whole-document no-JavaScript or print equivalence from identical capped lengths, or treat truncation as missing site content. Use the history/status records only for the publication decisions and versions they actually describe."
+    },
+    {
+      "id": "w3c-evidence-04",
+      "checkIds": [
+        "font-delivery",
+        "public-cache-policy",
+        "disclosure-scope",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:4",
+        "staged.json:discovery:0",
+        "context.json:records:0"
+      ],
+      "summary": "The font inventory includes both loaded and unloaded font faces (including Arabic faces), not an inventory of transferred font payloads. The public sustainability mission page is retrieved, while carbon.txt discovery remains unestablished; it describes W3C mission/work rather than verifying renewable hosting for these responses.",
+      "requestedChange": "Do not sum every declared font as transferred or recommend deleting language support without audience/readability evidence. Treat response headers as cache-policy evidence without measured warm reuse, and keep the retrieved mission statement distinct from verified hosting or current publication-footprint measurements."
+    }
+  ]
+}

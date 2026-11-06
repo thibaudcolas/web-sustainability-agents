@@ -1,0 +1,49 @@
+{
+  "resolutions": [
+    {
+      "issue": "evidence:tate-evidence-01",
+      "decision": "applied",
+      "reason": "All seven partial initial captures retain unknown omitted traffic and withheld ratings; resource errors are not classified as site defects."
+    },
+    {
+      "issue": "evidence:tate-evidence-02",
+      "decision": "applied",
+      "reason": "Choice remains unknown: no banner was operated. Equal consent checkpoints will be labeled no action, not a successful rejection or compliance claim."
+    },
+    {
+      "issue": "evidence:tate-evidence-03",
+      "decision": "applied",
+      "reason": "The first priority investigates the repeated hidden 859 kB TateDraw asset, requiring activation and visual-quality validation before conditional loading. No exact savings or automatic art removal is claimed."
+    },
+    {
+      "issue": "evidence:tate-evidence-04",
+      "decision": "applied",
+      "reason": "The captured website statement supports disclosure pass while historical estimates, OLED conditions and current measurements stay separate. Goals/governance/hosting retain the specific evidence gaps."
+    },
+    {
+      "issue": "evidence:tate-evidence-05",
+      "decision": "applied",
+      "reason": "Keyboard outcome was changed to cantTell; immediate geometry after media reset cannot establish a persistent invisible focus indicator. The original attempt is retained."
+    },
+    {
+      "issue": "claims:tate-public-disclosure-is-present",
+      "decision": "applied",
+      "reason": "Disclosure passes from actual frozen context, carbon discovery remains a scoped missing-file result, and hosting remains unknown."
+    },
+    {
+      "issue": "claims:tate-estimated-progress-comparability",
+      "decision": "applied",
+      "reason": "Goals remain unknown pending comparable methodology for Tate\u2019s attributed 2019/2023 estimates. No achieved 40% matched audit reduction or CMS causality is claimed."
+    },
+    {
+      "issue": "claims:tate-governance-review-chain",
+      "decision": "applied",
+      "reason": "Governance remains unknown for the exact review-to-action expectation, with one public dated decision requested rather than internal minutes."
+    },
+    {
+      "issue": "claims:tate-design-claims-and-task-boundary",
+      "decision": "applied",
+      "reason": "The visitor task is only finding parking instructions; no booking or physical access is inferred. OLED statements remain attributed and conditional."
+    }
+  ]
+}

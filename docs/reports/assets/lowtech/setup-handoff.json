@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "ready",
+  "origin": "https://solar.lowtechmagazine.com",
+  "plan": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/plan.json",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://solar.lowtechmagazine.com/",
+      "rationale": "Magazine landing page and newest-content cards."
+    },
+    {
+      "id": "archive",
+      "url": "https://solar.lowtechmagazine.com/archives/",
+      "rationale": "Large chronological article index with theme-filter control."
+    },
+    {
+      "id": "solar-methodology",
+      "url": "https://solar.lowtechmagazine.com/about/the-solar-website/",
+      "rationale": "Long methodology/about document with diagrams and public technical claims."
+    },
+    {
+      "id": "power",
+      "url": "https://solar.lowtechmagazine.com/power/",
+      "rationale": "Operational status/power view distinct from editorial content."
+    },
+    {
+      "id": "offline-reading",
+      "url": "https://solar.lowtechmagazine.com/offline-reading/",
+      "rationale": "Alternative-format catalogue and continuity guidance for intermittent hosting."
+    },
+    {
+      "id": "solar-oven",
+      "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+      "rationale": "Representative illustrated long-form how-to article; no construction advice evaluated."
+    },
+    {
+      "id": "privacy",
+      "url": "https://solar.lowtechmagazine.com/privacy/",
+      "rationale": "Short public policy template; attribution retained rather than assumed enforcement."
+    }
+  ],
+  "journeyVerification": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/journey-verification.json",
+  "journeyAllPostconditionsMatch": true,
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "sustainability-goals",
+    "governance-practice",
+    "service-necessity"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary network access at 1365x900: start at https://solar.lowtechmagazine.com/, open Archive and follow its solar-powered-electric-oven article link. Completion requires the full illustrated guide at the exact declared URL and its visible article title, without account, purchase or personal-data submission. Offline-reading guidance is contextual only; keyboard-only, mobile, impaired-network, actual offline-download completion and geographic access are not represented.",
+    "content-lifecycle": "English Low-tech Magazine historical article collection represented by the public archive and offline chronological book series, 2007-2026 as described at the 2026-11-06 capture. Inspect a stated review schedule and applied editing/update/archive decision while retaining valuable historical online access. Book publication is a related documented update example, not proof that the live article corpus follows a site-wide review schedule.",
+    "sustainability-goals": "Solar-powered Low-tech Magazine web-service design introduced in 2018, the 2018-2020 energy/uptime evaluation and the methodology last labeled updated October 21, 2024, as publicly available on 2026-11-06. Assess stated reduction direction, page-weight and server-energy/uptime metrics, baseline and progress with their own periods and boundaries. Do not treat these historical figures as current measured performance, equate solar hosting with lifecycle zero emissions, or include the rest of the internet in the server boundary.",
+    "governance-practice": "The solar Low-tech Magazine server commitment to balance low energy use with uptime during the documented December 2018-September 2020 evaluation and configuration decisions. Inspect accountable publisher roles, monitored power/uptime results and resulting solar-panel/battery or software-related decisions. Current operating governance, 2021-2026 execution and independent hardware verification are outside this historical assessment.",
+    "service-necessity": "The 2018 decision to create the low-resource, self-hosted solar website and its documented continuation/configuration evaluation through September 2020: assess the reader problem, static-versus-dynamic and availability/battery alternatives, user desirability, technical feasibility and continuing viability. Public publisher rationale and experiments may inform the bounded judgment; representative reader research and present-day viability are not presumed."
+  },
+  "contextEvidenceCount": 6,
+  "cookieControls": {
+    "observed": false,
+    "branches": [
+      "no_banner"
+    ],
+    "limitations": "Seven pages; visible controls in fresh anonymous Chromium context and bounded waits. No accept/reject control discovered."
+  },
+  "prerequisites": {
+    "doctor": "Runtime Python environment, Node/npm and node dependencies present; doctor records readiness only.",
+    "browser": "Headless Playwright Chromium successfully launched and completed both sample navigation and journey verification.",
+    "prepareNeeded": false,
+    "energy": "Readiness only; 3 repetitions of home planned; coordinator will run later sequentially."
+  },
+  "validation": [
+    "audit.workflow.validate_plan passed",
+    "audit.probes.validate_plan passed",
+    "all contextual files exist, decode as UTF-8 and are smaller than 64 KiB",
+    "all seven sampled starting URLs remain on the exact origin and returned HTTP 200",
+    "all journey postconditions verified against live browser"
+  ],
+  "scopeOmissions": [
+    "Newsletter on sibforms.com, payment, Patreon/Lulu/Payhip checkout, email, donation and third-party account flows; no submissions or purchases.",
+    "Other languages, mobile and keyboard-only routes, full article archive and actual offline media acquisition.",
+    "Data-minimization omitted: the selected reading tasks do not ask for personal data; external subscription/checkout is excluded.",
+    "Audience-needs and inclusive-testing omitted: the public design rationale mentions older devices and limited connections, but no selected executed representative-user research or pre-release test record is in scope.",
+    "Impact-business-model omitted: funding links exist but no bounded funding-to-impact review selected.",
+    "Service-end-of-life omitted: intermittent availability and offline-reading alternatives do not establish a service-retirement plan."
+  ],
+  "unansweredRequiredScopeQuestions": [],
+  "unresolvedOptionalEvidenceRequests": [
+    "For content-lifecycle: publication/maintenance schedule and one applied review decision for the live English article collection; book editing does not establish live-site maintenance.",
+    "For service-necessity: any public reader-research findings explaining desirability and the alternatives considered; publisher observations alone do not establish representative research.",
+    "For goals/governance: retain the historical 2018-2020 assessment boundary. Any claim about current service progress needs a separately dated, comparable measurement and boundary."
+  ],
+  "collectionPerformed": false,
+  "productionEdits": false
+}

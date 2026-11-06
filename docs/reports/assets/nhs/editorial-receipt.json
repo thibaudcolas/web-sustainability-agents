@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "report-editorial-receipt-v1",
+  "site": "https://www.nhs.uk",
+  "createdAt": "2026-11-06T09:20:35.902616+00:00",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "auditReviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "reviewSHA256": "64a65ac5a60fae947376cc7ed558dda20f586c68b9d85f262d90802b2063e0e5",
+  "method": "Native Codex editorial pass using sustainability-report skill, writing guide, schema and report template. Scored judgments and top-finding priorities/order remain unchanged.",
+  "inputSHA256": {
+    "AGENTS.md": "ef5c19e67207fad9f2f8d659e4cc268d0197d021881e8efcf492acc6af2f078a",
+    "docs/contributing/style-guide.md": "caaaee515f1d502b0a935d3a4608d7f0a5c476e83c909e90c42b6fc0485f9599",
+    ".agents/skills/sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    ".agents/skills/sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    ".agents/skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    ".agents/skills/sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa",
+    "audit/render_review.py": "2ea50d8f9952957b7e9cbb47d78fa4807c1653ab8d0a3f6865caba03bb14be5e",
+    "audit/render_review.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/report_details.py": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25",
+    "audit/screenshots.py": "9543f6b3b2ce60c8e26a391bc7147b5e2e76f0cdc0dc345570b20c512841cea7",
+    ".audit-work/diversity/nhs/session/review.json": "64a65ac5a60fae947376cc7ed558dda20f586c68b9d85f262d90802b2063e0e5",
+    ".audit-work/diversity/nhs/session/reviews.json": "4ffcd7ea40a7ecd7f35a4d0edc3be59df494f2e3ea74d47e8946d01e8230ac27",
+    ".audit-work/diversity/nhs/session/scores.json": "c65084653a5dcd607790a94ba85c0228ab4da8c938771200311941a59e986d6b",
+    ".audit-work/diversity/nhs/session/packet.json": "00391b37631387be8a4df161c5b4b6877e86c48588a4dbac55885b30fb784eda",
+    ".audit-work/diversity/nhs/session/rubric.json": "e965c340cbf52e097b7f8d2221f7eae6f403398956a6f81a44613dff96612aa7",
+    ".audit-work/diversity/nhs/session/probes.json": "928deab2b994d08e9a982843a5d2bd05bdf1e0edbf20c00c4fae11eb27e0e7ee",
+    ".audit-work/diversity/nhs/session/staged.json": "38072714fd9c724b1fcefd0f290a8fdf442a89b0a72e3a6ef6d2ede1060a336f",
+    ".audit-work/diversity/nhs/session/context.json": "8b10ac399edb4ce291c83ed217787638baa54ef2e96bc7f46a86b974cd3033c7",
+    ".audit-work/diversity/nhs/session/source.json": "69d35d16db58cd0e94fe89b512c5a814927bf0a3f553a07d80531348a9dda270",
+    ".audit-work/diversity/nhs/review-tasks/evidence.result.json": "67bc472d0e48929c559e53add199eda0b301367e8cd7b76d1a65baa4375054c0",
+    ".audit-work/diversity/nhs/review-tasks/guidelines.result.json": "64a65ac5a60fae947376cc7ed558dda20f586c68b9d85f262d90802b2063e0e5",
+    ".audit-work/diversity/nhs/review-tasks/claims.result.json": "d6a14f1c668c082d7542489664ee6f58c2ab374ee64b6e4d2805d07c0d58c8bd",
+    ".audit-work/diversity/nhs/review-tasks/resolutions.json": "2707266ef588c7e6ca0e227faa9349bf5071dd1a99da80311fa6cffcf6365310",
+    ".audit-work/diversity/nhs/energy/manifest.json": "05cd70473620f34fa7f55ab462a7da5deb074446a150d2ad45454d21bff3cf8c",
+    ".audit-work/diversity/nhs/annual.json": "7d492363365dea8bf89f7dec2de84df3c0a350403ce122d5ab2833dac0239a5e",
+    ".audit-work/diversity/nhs/claims-supplement.json": "95835c33eb1dc00fc4665c7d2fa22915cd41445c2d4759ee503463b3284d283e",
+    ".audit-work/diversity/traffic.json": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    ".audit-work/diversity/nhs/screenshots/manifest.json": "5c2ca512c064396226e70970c1d01c0e353d0f1549b7b90dee5dcd4c42291dea"
+  },
+  "output": {
+    "file": "editorial.json",
+    "sha256": "bf71ff5ca317303b4167fa45fefc00f007b892544efd4597a5642c2ee6659381"
+  },
+  "preview": {
+    "file": "report-preview.md",
+    "sha256": "7e0fd1353f39ed74970c1c7b123c406cf678bf6345dc16280ad2cb79d5acdfb2",
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "audit/cli.py",
+      "tool",
+      "render_review",
+      "--session",
+      ".audit-work/diversity/nhs/session",
+      "--artifact-prefix",
+      "session",
+      "--editorial",
+      ".audit-work/diversity/nhs/editorial.json",
+      "--screenshots",
+      ".audit-work/diversity/nhs/screenshots/manifest.json",
+      "--image-prefix",
+      "screenshots",
+      "--energy",
+      ".audit-work/diversity/nhs/energy/manifest.json",
+      "--annual",
+      ".audit-work/diversity/nhs/annual.json",
+      "--traffic",
+      ".audit-work/diversity/traffic.json",
+      "--supplement-prefix",
+      ".",
+      "--output",
+      ".audit-work/diversity/nhs/report-preview.md"
+    ],
+    "exitCode": 0
+  },
+  "illustrations": {
+    "manifest": "screenshots/manifest.json",
+    "count": 1,
+    "actualImagesInspected": true,
+    "captureMethod": "audit/screenshots.py via installed CLI; later passive illustration; no scored evidence recollected",
+    "limitations": "Supplemental visual illustrations captured separately from the scored audit. They do not establish historic appearance, transfer sizes, accessibility semantics, task completion or energy savings."
+  },
+  "validation": {
+    "editorialSchema": "passed all supplied constraints",
+    "everyCheckExactlyOnce": true,
+    "checkCount": 28,
+    "topFindingOrderPreserved": true,
+    "frozenFileDigestsVerified": true,
+    "rendererEditorialAndAnnualValidation": "passed",
+    "internalAnchorLinks": "passed",
+    "screenshotDigestsVerified": true
+  },
+  "handoff": {
+    "status": "editorial-and-illustrations-validated-awaiting-themed-preview-and-publication",
+    "outstanding": [
+      "Themed desktop/narrow page preview, keyboard behavior and publication packaging are delegated to the coordinator and were not performed in this editorial pass.",
+      "The preview renderer hardcodes presentation.json and energy.json supplement links; the coordinator must supply correctly bound files or adjust paths. It also lists the earlier frozen failed energy experiment separately from the completed supplemental experiment.",
+      "The preview measurement table labels unsuccessful cookie-settings banner-button checkpoints as reject/accept choices. Editorial wording identifies the failure correctly; the coordinator must label these table checkpoints as unsuccessful before publication."
+    ]
+  },
+  "limitations": "No source checkout was supplied. Findings use frozen evidence and reconciled reviews. Screenshot captures are later illustrations only. Writer settings record this actual native subagent; there is no separate host trace."
+}

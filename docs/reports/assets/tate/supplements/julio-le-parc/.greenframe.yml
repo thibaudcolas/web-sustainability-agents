@@ -1,0 +1,16 @@
+{
+  "baseURL": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+  "scenarios": [
+    {
+      "path": "./scenario.js",
+      "name": "initial"
+    }
+  ],
+  "projectName": "web-sustainability-agents-client",
+  "samples": 3,
+  "distant": false,
+  "useAdblock": false,
+  "ignoreHTTPSErrors": false,
+  "containers": [],
+  "databaseContainers": []
+}

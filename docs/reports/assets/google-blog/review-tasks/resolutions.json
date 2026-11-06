@@ -1,0 +1,54 @@
+{
+  "resolutions": [
+    {
+      "issue": "evidence:google-evidence-01",
+      "decision": "applied",
+      "reason": "All incomplete initial measurements and ineligible ratings are preserved. Homepage partial video traffic is a high-priority investigation, not a complete total or guaranteed saving."
+    },
+    {
+      "issue": "evidence:google-evidence-02",
+      "decision": "applied",
+      "reason": "The plan and review describe notice acknowledgement, not a consent choice. Later cumulative totals cannot establish causal tracking costs."
+    },
+    {
+      "issue": "evidence:google-evidence-03",
+      "decision": "applied",
+      "reason": "The final priorities separate demonstrated live reduced-motion failure from the homepage media-loading investigation; they preserve usable playback and avoid assuming missing custom controls."
+    },
+    {
+      "issue": "evidence:google-evidence-04",
+      "decision": "applied",
+      "reason": "Documents remain unknown, with no claim about PDF contents, optimization or equivalence from link counts."
+    },
+    {
+      "issue": "evidence:google-evidence-05",
+      "decision": "applied",
+      "reason": "Blog-service disclosure/goals/hosting remain unknown. Corporate steel estimates do not enter page or annual calculations."
+    },
+    {
+      "issue": "claims:google-publication-versus-corporate-impact",
+      "decision": "applied",
+      "reason": "The exact publication-specific scopes remain unchanged; corporate material/infrastructure figures are excluded from service emissions and hosting conclusions."
+    },
+    {
+      "issue": "claims:google-scoped-carbon-discovery",
+      "decision": "applied",
+      "reason": "The missing-file outcome is scoped to tested carbon.txt discovery only and is not a claim about total WSG compliance or corporate sustainability."
+    },
+    {
+      "issue": "claims:google-newsletter-bounded-purpose",
+      "decision": "applied",
+      "reason": "The pass is limited to observed required email and stated purpose before submission. Delivery, unsubscribe execution, retention and downstream processing are untested."
+    },
+    {
+      "issue": "claims:google-editorial-lifecycle-unknown",
+      "decision": "applied",
+      "reason": "Lifecycle remains unknown pending a schedule/trigger and actual applied decision. Existing historical news is not labeled waste."
+    },
+    {
+      "issue": "claims:google-reading-route-and-cookie-semantics",
+      "decision": "applied",
+      "reason": "The access pass uses full observed article completion within the exact pointer scope; cookie notice is acknowledged, not described as an accepted/rejected consent pair."
+    }
+  ]
+}

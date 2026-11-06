@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "report-editorial-receipt-v1",
+  "site": "https://blog.google",
+  "createdAt": "2026-11-06T09:20:35.914134+00:00",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "auditReviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "reviewSHA256": "45a1408e38618fa826a6203561de9c0ef3c17e55994da2f2f90522d360da36ab",
+  "method": "Native Codex editorial pass using sustainability-report skill, writing guide, schema and report template. Scored judgments and top-finding priorities/order remain unchanged.",
+  "inputSHA256": {
+    "AGENTS.md": "ef5c19e67207fad9f2f8d659e4cc268d0197d021881e8efcf492acc6af2f078a",
+    "docs/contributing/style-guide.md": "caaaee515f1d502b0a935d3a4608d7f0a5c476e83c909e90c42b6fc0485f9599",
+    ".agents/skills/sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    ".agents/skills/sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    ".agents/skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    ".agents/skills/sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa",
+    "audit/render_review.py": "2ea50d8f9952957b7e9cbb47d78fa4807c1653ab8d0a3f6865caba03bb14be5e",
+    "audit/render_review.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/report_details.py": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25",
+    "audit/screenshots.py": "9543f6b3b2ce60c8e26a391bc7147b5e2e76f0cdc0dc345570b20c512841cea7",
+    ".audit-work/diversity/google-blog/session/review.json": "45a1408e38618fa826a6203561de9c0ef3c17e55994da2f2f90522d360da36ab",
+    ".audit-work/diversity/google-blog/session/reviews.json": "607435a74f28b5cb48eebeabd2b1af67101a161e788cb7d0b3a508f98390d6a4",
+    ".audit-work/diversity/google-blog/session/scores.json": "39baea623f02ccbb5f90662cac95878495363f186ad86dabdf2bcea235b812a8",
+    ".audit-work/diversity/google-blog/session/packet.json": "d569e5824bb9b537f656e2fce0c313026d3b6fa9444d95d85261eb22ed47a761",
+    ".audit-work/diversity/google-blog/session/rubric.json": "5b05cf06abcad1b8645d3582785ae313e97ea6920f76f212dd6403b40758566a",
+    ".audit-work/diversity/google-blog/session/probes.json": "4966d36b4cf09eca64415a9c3a4a20d10e99dfb8502052d75d57f9d575c18261",
+    ".audit-work/diversity/google-blog/session/staged.json": "a1f8355dbba754fae349ea75864a20c6abc3b021ef4a8f75a59142ee2d6c988c",
+    ".audit-work/diversity/google-blog/session/context.json": "ebd9415d1bad9d70e0394a2642a9347ed89c7ae47fb1e0a6be078fcaf2db1c0c",
+    ".audit-work/diversity/google-blog/session/source.json": "7fa2d08065ae65f100c5f1abb2a723a059fb377677b0c1b7c8c0f26623439a9b",
+    ".audit-work/diversity/google-blog/review-tasks/evidence.result.json": "1f3e2b3a0fb8376b303e3942dba73b1496ee0b964333417249516ae941ff4dbc",
+    ".audit-work/diversity/google-blog/review-tasks/guidelines.result.json": "45a1408e38618fa826a6203561de9c0ef3c17e55994da2f2f90522d360da36ab",
+    ".audit-work/diversity/google-blog/review-tasks/claims.result.json": "de7dd4315e1b3f74cfa543405754bed1a6ab5c4f2cb5261f13efc5fee0e1bd6d",
+    ".audit-work/diversity/google-blog/review-tasks/resolutions.json": "edeeb80a5231537e3b268b086fa65d8582083c9e592b4583a678e8f481ef16a9",
+    ".audit-work/diversity/google-blog/energy/manifest.json": "7b6d7141d14b04ec8708f05c6a0e513cf25be2c0352afb24403842646d92655e",
+    ".audit-work/diversity/google-blog/annual.json": "8cbdfa57ca0c538b841e4ebc295ce6ebc6d7651912e4a717a25bc9af179a635a",
+    ".audit-work/diversity/google-blog/claims-supplement.json": "e9a0b763021d7896b6728a6a8ccc85229fb398e3f0d5fa7414e8f5495f7f1178",
+    ".audit-work/diversity/traffic.json": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    ".audit-work/diversity/google-blog/screenshots/manifest.json": "70939b813a93129a66f7d8f7779879540c339bfa4c5f681e1b9b300126498b78"
+  },
+  "output": {
+    "file": "editorial.json",
+    "sha256": "c914b07804f3fba071d9e29a3cbcd006c48d2b12ea656fd390fd55732d57ed66"
+  },
+  "preview": {
+    "file": "report-preview.md",
+    "sha256": "34a81fdfba8b303b5b961384a0776a3f922b8c18fd97ddb73d1bf3e588fdf315",
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--script",
+      "audit/cli.py",
+      "tool",
+      "render_review",
+      "--session",
+      ".audit-work/diversity/google-blog/session",
+      "--artifact-prefix",
+      "session",
+      "--editorial",
+      ".audit-work/diversity/google-blog/editorial.json",
+      "--screenshots",
+      ".audit-work/diversity/google-blog/screenshots/manifest.json",
+      "--image-prefix",
+      "screenshots",
+      "--energy",
+      ".audit-work/diversity/google-blog/energy/manifest.json",
+      "--annual",
+      ".audit-work/diversity/google-blog/annual.json",
+      "--traffic",
+      ".audit-work/diversity/traffic.json",
+      "--supplement-prefix",
+      ".",
+      "--output",
+      ".audit-work/diversity/google-blog/report-preview.md"
+    ],
+    "exitCode": 0
+  },
+  "illustrations": {
+    "manifest": "screenshots/manifest.json",
+    "count": 1,
+    "actualImagesInspected": true,
+    "captureMethod": "audit/screenshots.py via installed CLI; later passive illustration; no scored evidence recollected",
+    "limitations": "Supplemental visual illustrations captured separately from the scored audit. They do not establish historic appearance, transfer sizes, accessibility semantics, task completion or energy savings."
+  },
+  "validation": {
+    "editorialSchema": "passed all supplied constraints",
+    "everyCheckExactlyOnce": true,
+    "checkCount": 29,
+    "topFindingOrderPreserved": true,
+    "frozenFileDigestsVerified": true,
+    "rendererEditorialAndAnnualValidation": "passed",
+    "internalAnchorLinks": "passed",
+    "screenshotDigestsVerified": true
+  },
+  "handoff": {
+    "status": "editorial-and-illustrations-validated-awaiting-themed-preview-and-publication",
+    "outstanding": [
+      "Themed desktop/narrow page preview, keyboard behavior and publication packaging are delegated to the coordinator and were not performed in this editorial pass.",
+      "The preview renderer hardcodes presentation.json and energy.json supplement links; the coordinator must supply correctly bound files or adjust paths. It also lists the earlier frozen failed energy experiment separately from the completed supplemental experiment."
+    ]
+  },
+  "limitations": "No source checkout was supplied. Findings use frozen evidence and reconciled reviews. Screenshot captures are later illustrations only. Writer settings record this actual native subagent; there is no separate host trace."
+}

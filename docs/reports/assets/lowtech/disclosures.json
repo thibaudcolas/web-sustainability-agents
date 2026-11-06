@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "carbon-review-v1",
+  "sourceSHA256": "5e0b909dddc2ef59dd2ca33c6269eff4234a9af754f1ec48917abef50e271e2a",
+  "scriptSHA256": "cb57ab2b96ca9fb4d05a907ba4d4269274f31318e32244dcfdf8bc4877c9dd60",
+  "sites": [
+    {
+      "site": "https://solar.lowtechmagazine.com",
+      "presence": "not_established_within_discovery_scope",
+      "records": [],
+      "documentCount": 6,
+      "claimsVerified": false,
+      "scopeNote": "Presence, parseability, declared relationships, retrieval, and substantiation are separate results. Missing carbon.txt does not establish absence of a sustainability policy."
+    }
+  ]
+}

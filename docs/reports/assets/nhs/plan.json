@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://www.nhs.uk",
+  "purpose": "Audit varied public NHS website templates and an anonymous navigation route to general walking information; exclude diagnosis, accounts, booking and personal health submissions.",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://www.nhs.uk/",
+      "task": "Find the Healthy living navigation from the NHS homepage.",
+      "sampleRationale": "Broad service entry and navigation.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healthy-living",
+      "url": "https://www.nhs.uk/live-well/",
+      "task": "Browse public Healthy living topics and find exercise information.",
+      "sampleRationale": "Topic-directory landing template.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "url": "https://www.nhs.uk/live-well/exercise/",
+      "task": "Find the Walking for health guide in the exercise listing.",
+      "sampleRationale": "Nested subject listing with mixed links to articles and media.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "walking",
+      "url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+      "task": "Read the public walking information page without giving symptoms or personal data.",
+      "sampleRationale": "Long-form evergreen advice with review dates; no diagnosis task.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exercise-videos",
+      "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+      "task": "Find the Strength and Flex instructional videos and their accompanying information without playing media.",
+      "sampleRationale": "Media-rich educational template.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cookie-settings",
+      "url": "https://www.nhs.uk/our-policies/choose-your-cookie-settings/",
+      "task": "Read analytics-cookie purposes and available settings; no personal information entry.",
+      "sampleRationale": "Interactive consent settings template.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "content-policy",
+      "url": "https://www.nhs.uk/our-policies/content-policy/",
+      "task": "Find the editorial review process and responsibility for published health information.",
+      "sampleRationale": "Governance and content-lifecycle policy.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "find-walking-information",
+      "url": "https://www.nhs.uk/",
+      "task": "Reject analytics cookies, navigate through Healthy living and Exercise, and reach the complete Walking for health article as an anonymous English desktop reader.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actions": [
+        {
+          "type": "click",
+          "selector": "#nhsuk-cookie-banner__link_accept"
+        },
+        {
+          "type": "click",
+          "selector": "header a[href=\"/live-well/\"]"
+        },
+        {
+          "type": "click",
+          "selector": "main a[href=\"https://www.nhs.uk/live-well/exercise/\"]"
+        },
+        {
+          "type": "click",
+          "selector": "main a[href=\"https://www.nhs.uk/live-well/exercise/walking-for-health/\"]"
+        }
+      ],
+      "success": {
+        "url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+        "selector": "h1",
+        "text": "Walking for health"
+      }
+    }
+  ],
+  "checks": [],
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "data-minimization"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English readers using a desktop browser with pointer input and JavaScript, 1440 by 1000 CSS pixels: start at https://www.nhs.uk/, reject analytics cookies, follow Healthy living > Exercise > Walking for health, and reach the article heading and full reading content. No account, symptom input, booking or submitted health data. Keyboard-only, assistive-technology and constrained-device completion are outside this assessment scope.",
+    "content-lifecycle": "NHS Healthy living exercise editorial collection, specifically Walking for health and Strength and Flex how-to videos, as publicly presented on 2026-11-06: assess the published review schedule, responsible editorial/clinical roles and evidence of an applied review/update/archive decision; retain historical material when it has continuing user value. No CMS history or backend deletion scope.",
+    "data-minimization": "Anonymous visitor analytics-cookie choice on the public NHS website on 2026-11-06: inspect accept/reject and settings choices, analytics-data categories and stated purpose across the homepage banner, cookie details and public privacy notice. No health-data task, identity form submission, NHS login or NHS App processing. Retention enforcement and cross-service propagation cannot be established by this observation."
+  },
+  "contextEvidence": [
+    {
+      "id": "walking-task",
+      "kind": "task-observation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-walking-task.md",
+      "source": "https://www.nhs.uk/",
+      "capturedAt": "2026-11-06T08:43:27.977707+00:00",
+      "scope": "Anonymous English readers using a desktop browser with pointer input and JavaScript, 1440 by 1000 CSS pixels: start at https://www.nhs.uk/, reject analytics cookies, follow Healthy living > Exercise > Walking for health, and reach the article heading and full reading content. No account, symptom input, booking or submitted health data. Keyboard-only, assistive-technology and constrained-device completion are outside this assessment scope.",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Agent pointer walkthrough; not representative-user research, keyboard-only test or full accessibility audit."
+    },
+    {
+      "id": "editorial-policy",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-editorial-policy.md",
+      "source": "https://www.nhs.uk/our-policies/content-policy/",
+      "capturedAt": "2026-11-06T08:44:34.028017+00:00",
+      "scope": "Content policy - NHS",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Public publisher self-report and visible text only; a policy or date alone does not establish implementation."
+    },
+    {
+      "id": "walking-example",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-walking-example.md",
+      "source": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+      "capturedAt": "2026-11-06T08:43:23.281489+00:00",
+      "scope": "Walking for health - NHS",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Public publisher self-report and visible text only; a policy or date alone does not establish implementation."
+    },
+    {
+      "id": "video-example",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-video-example.md",
+      "source": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+      "capturedAt": "2026-11-06T08:43:23.390120+00:00",
+      "scope": "Strength and Flex exercise plan: How-to videos - NHS",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Public publisher self-report and visible text only; a policy or date alone does not establish implementation."
+    },
+    {
+      "id": "cookie-controls",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-cookie-controls.md",
+      "source": "https://www.nhs.uk/our-policies/choose-your-cookie-settings/",
+      "capturedAt": "2026-11-06T08:44:34.028017+00:00",
+      "scope": "Choose your cookie settings on the NHS website - NHS",
+      "checkIds": [
+        "data-minimization"
+      ],
+      "limitations": "Public publisher self-report and visible text only; a policy or date alone does not establish implementation."
+    },
+    {
+      "id": "cookie-details",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-cookie-details.md",
+      "source": "https://www.nhs.uk/our-policies/choose-your-cookie-settings/details-about-cookies-on-the-nhs-website/",
+      "capturedAt": "2026-11-06T08:43:23.498967+00:00",
+      "scope": "Details about cookies on the NHS website - NHS",
+      "checkIds": [
+        "data-minimization"
+      ],
+      "limitations": "Public publisher self-report and visible text only; a policy or date alone does not establish implementation."
+    },
+    {
+      "id": "privacy-notice",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-privacy-notice.md",
+      "source": "https://www.nhs.uk/our-policies/privacy-policy/",
+      "capturedAt": "2026-11-06T08:43:23.587852+00:00",
+      "scope": "Your privacy on the NHS website - NHS",
+      "checkIds": [
+        "data-minimization"
+      ],
+      "limitations": "Public publisher self-report and visible text only; a policy or date alone does not establish implementation."
+    },
+    {
+      "id": "accessibility-statement",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/captures/context-accessibility-statement.md",
+      "source": "https://www.nhs.uk/accessibility-statement/",
+      "capturedAt": "2026-11-06T08:44:34.028017+00:00",
+      "scope": "Accessibility statement - NHS website - NHS",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Public publisher self-report and visible text only; a policy or date alone does not establish implementation."
+    }
+  ],
+  "sourceRoots": [],
+  "sourceFiles": [],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "Only public information navigation; no diagnosis, accounts, bookings, transactions or personal/health data submission.",
+    "Both observed analytics choices are collected in fresh anonymous contexts. Banner setting synchronization beyond this website is a public claim, not tested.",
+    "Public policy text may retain old organizational names or review dates; capture verbatim and preserve uncertainty."
+  ],
+  "energy": {
+    "mode": "readiness",
+    "samples": 3,
+    "pageIds": [
+      "home"
+    ]
+  },
+  "ownerPriorities": [
+    "Fresh varied-site audit sample; no copied findings from prior runs."
+  ]
+}

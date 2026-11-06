@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://solar.lowtechmagazine.com",
+  "reviewSHA256": "3d7f5194de6e931ff31aa35c19df8bf2902ccb868c9d93d0a9043df84a50f656",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "overview": "Low-tech Magazine combines a restrained reading interface with useful public explanations of its resource choices. The seven-page sample uses system fonts, compressed text, direct navigation and no recorded moving media; the oven guide remains illustrated as the reader scrolls. Historical publisher records also connect monitoring to concrete service decisions in 2018–2020. The two priorities are low-priority investigations into instructional image detail and shared-asset freshness. Independent current hosting evidence and several wider practices remain unresolved, so the scoped score should be read alongside those evidence limits.",
+  "nextSteps": [
+    "Check representative oven assembly images at desktop and narrow screen densities, including any original-image option. Make an image change only when the comparison identifies detail readers need.",
+    "Demonstrate how an updated shared stylesheet or script reaches a client that already cached its ten-year-fresh URL. Keep useful caching for stable resources.",
+    "For a present-day organizational or hosting assessment, provide current accountable monitoring/decision records and independent evidence for the server and electricity boundary. Retain the 2018–2020 records as historical evidence.",
+    "Broaden evidence only where it supports a real decision: inspect important offline documents, exercise keyboard and real-device reading routes, and document an applied online content review. The separate annual and client-energy figures are model scenarios using a rank-derived traffic proxy, not measured annual emissions or demonstrated savings."
+  ],
+  "findings": [
+    {
+      "checkId": "media-delivery",
+      "title": "Check that compact illustrations retain the detail readers need",
+      "summary": "The oven guide loads its 22 illustrations during the completed scroll rather than requiring every image on first load. Several 800-pixel photos or diagrams are displayed at 1040 pixels on desktop. The frozen measurements establish image availability, but do not establish whether every construction detail is legible.",
+      "whyItMatters": "The images explain a practical assembly task, so readers need enough detail to follow the instructions. A comparison can establish whether an improvement is needed; the current evidence does not demonstrate an image defect.",
+      "action": "Compare a small representative set of construction photos and diagrams at desktop and narrow screen densities, alongside any original-image option. Keep the illustrated guide and lazy loading, and adjust an image only where the comparison shows a reader needs more detail."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Verify that shared asset updates reach returning readers",
+      "summary": "The shared stylesheet and script have roughly ten-year client freshness at unversioned URLs. Long caching can avoid repeat downloads, but the captured headers do not show how a reader with a cached version receives a changed asset.",
+      "whyItMatters": "Returning readers need current page behavior and styling when an update matters. No stale-page incident was observed; this is a small verification task for an unusually long freshness policy.",
+      "action": "Demonstrate the deployment versioning or invalidation process for /css/style.css and /js/script.js using both fresh and previously cached clients. Confirm both receive the intended update while stable images and other unchanged assets retain useful caching."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Reading stays the main task",
+      "summary": "The seven sampled pages keep articles, archive listings and service explanations in view without recorded moving media or blocking prompts. Newsletter, donation and book links offer identifiable, optional support routes; the solar-status notice explains an access constraint.",
+      "nextStep": "Retain the direct reading experience when changing support links or availability notices."
+    },
+    {
+      "checkId": "choice",
+      "title": "No consequential choice was exercised",
+      "summary": "The public reading sample contains no cookie accept/reject pair, submitted signup or purchase. The publisher describes cookieless analytics, but that statement does not prove that no data processing occurs. Choice parity is inapplicable to these bounded tasks.",
+      "nextStep": "Include the actual signup, donation or purchase flow if a later audit needs to assess consequential choices."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Headings explain the reading task and availability",
+      "summary": "Article titles, dates, summaries and references make the English reading tasks identifiable. The oven guide uses sequential illustrated instructions, while the methodology and Power page explain server availability and battery-indicator limits. The audit did not validate the engineering advice.",
+      "nextStep": "Keep availability limits and instructional structure clear as the content changes."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Navigation names stay consistent across the sample",
+      "summary": "The seven pages repeat named navigation and the solar-status route. Article and archive titles, translation links and support routes use recognizable patterns. This observed consistency does not establish a documented design system.",
+      "nextStep": "Retain familiar navigation names across new articles and service pages."
+    },
+    {
+      "checkId": "motion",
+      "title": "Observed page states remain quiet",
+      "summary": "The sampled desktop, narrow, reduced-motion, dark-preference and print states record no animation, audio or video. The solar-status presentation provides contextual information. These observations cover the tested states, rather than every possible interaction.",
+      "nextStep": "Recheck motion controls and reduced-motion behavior if animated content is introduced."
+    },
+    {
+      "checkId": "notifications",
+      "title": "No unsolicited alerts interrupted reading",
+      "summary": "No notification prompts or visible unsolicited alerts were recorded on the seven pages. Newsletter links did not subscribe the reader during the task. Browser notification permission was denied, so the finding is limited to behavior observed under that setting.",
+      "nextStep": "Keep newsletter subscriptions and any future notification requests tied to an explicit reader action."
+    },
+    {
+      "checkId": "documents",
+      "title": "Offline formats are described, but their usability is untested",
+      "summary": "Print states retain main text and suppress navigation. Offline Reading distinguishes paperback, hardcover and e-book editions and describes a compressed edition. Linked reference PDFs and book samples were not inspected; some PDF links lack visible format or size labels, and print pagination remains untested.",
+      "nextStep": "Inspect the reference documents and representative book/e-book samples before judging format equivalence, accessibility or print-resource use."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Small scripts are not evidence of removable code",
+      "summary": "The initial observations contain small shared site and Plausible scripts, plus a separate archive-sorting module. Functions not executed during that short window may support status displays, sorting or later actions. No representative execution coverage or source review establishes dead code.",
+      "nextStep": "Exercise the archive and status functions before deciding whether any code can be removed."
+    },
+    {
+      "checkId": "components",
+      "title": "No useful component split has been established",
+      "summary": "The sample contains no observed heavyweight player or widget, and archive sorting is already loaded separately. The shared script supports solar-status behavior. The evidence identifies no later-use component whose deferral would bring a demonstrated benefit.",
+      "nextStep": "Identify a specific substantial component and verify its later activation before proposing additional splitting."
+    },
+    {
+      "checkId": "layout",
+      "title": "Reading content fits desktop and narrow layouts",
+      "summary": "At desktop and 360 CSS-pixel width, all seven pages retain task headings, navigation and core content without horizontal overflow. Navigation stays as direct links. The archive route was exercised on desktop; width emulation does not establish compatibility on real devices.",
+      "nextStep": "Include representative real devices and narrow-screen task completion if broader compatibility evidence is needed."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "Readers can understand availability and offline alternatives",
+      "summary": "The methodology and Power page explain weather-dependent access, battery limitations and the distinction between server and network energy. Offline Reading identifies book and e-book alternatives for unavailable periods. The publisher also discusses embodied hardware impacts, providing useful context without measured savings for individual controls.",
+      "nextStep": "Keep the availability explanation, offline options and stated energy boundaries together and easy to find."
+    },
+    {
+      "checkId": "journeys",
+      "title": "The archive route reaches the illustrated oven guide",
+      "summary": "Following Archive from the homepage and selecting the named oven article reached the declared URL and full article title. A separate completed scroll recorded all 22 article images available by the bottom of the guide. This supports the anonymous desktop pointer reading task; it does not validate the construction advice, illustration detail or offline downloads.",
+      "nextStep": "Retain the discoverable article route and image loading as the archive grows."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Check instructional detail before reducing image bytes",
+      "summary": "The oven guide combines compact dithered images with lazy loading. The completed scroll recorded all 22 images and 982.13 kB cumulatively, showing that later image loading supports the long reading task. Several 800-pixel instructional images are displayed at 1040 pixels on desktop; the frozen evidence does not establish whether all required detail remains legible.",
+      "nextStep": "Compare representative assembly photos and diagrams at desktop and narrow screen densities, including any original-image alternative. Change delivery only where readers need better detail."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "Reading uses available system typography",
+      "summary": "All seven pages use the browser serif font and declare no downloadable webfont faces or font responses. Headings and reading content remain available in the sampled preference and no-JavaScript states. This avoids a font download for the bounded reading sample.",
+      "nextStep": "Keep the existing readable fallback behavior when adjusting typography."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "The sampled documents have meaningful reading structure",
+      "summary": "Each document declares English, a main region and meaningful page or article headings. Task navigation uses named links and no unnamed form controls were sampled. Publication and article headings can both use H1; that count alone does not establish a defect. This is a bounded structural check, not a full accessibility assessment.",
+      "nextStep": "Recheck heading meaning and control names when adding templates or interactive forms."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Confirm the intended article URL policy",
+      "summary": "The sampled page titles describe their content. Canonical metadata is absent, and some legacy .html article routes redirect to slash URLs; the intended indexing and alternative-URL policy is unknown. No structured-data blocks are declared, which alone is not a defect.",
+      "nextStep": "Confirm the preferred URLs and any duplicate routes before prescribing canonical or other metadata changes."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Preference changes preserve the reading task",
+      "summary": "The sampled content remains available before navigation and after dark or reduced-motion preference changes, with no recorded animation needing reduction. The light/yellow presentation has a battery-status role, and no promised dark-theme feature is established. The pass concerns applicable behavior and retained content, without an energy-saving theme claim.",
+      "nextStep": "Recheck applicable preferences if theme switching or motion is introduced."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Core reading remains available without JavaScript",
+      "summary": "Fresh visits with JavaScript disabled retain sampled article text, archive titles, navigation, lazy-image markup, methodology, privacy content and offline-format links. Power still explains availability even though live numbers are absent. Long text snapshots are capped, so this supports core reading availability rather than every paragraph or interaction.",
+      "nextStep": "Retain the reading fallback; separately test sorting, live telemetry or other enhancements only if they become essential to the task."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "The status request has a purpose; longer behavior is unknown",
+      "summary": "Each bounded page observation records one stats request supporting the server, battery and weather display, alongside analytics loading. The short window does not establish later polling frequency, redundancy or backend cost.",
+      "nextStep": "If status updates are being optimized, observe a longer Power session and compare request frequency with the information readers need."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Check how long-cached shared assets receive updates",
+      "summary": "Images, scripts and styles expose long cache lifetimes and validators; current stats and the homepage use different policies. Shared /css/style.css and /js/script.js have roughly ten years of client freshness at unversioned URLs. The capture does not establish how an existing reader receives a changed version.",
+      "nextStep": "Demonstrate the update or invalidation process using both a fresh client and one that already cached the shared assets, while retaining useful caching for stable resources."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Sampled text resources arrive compressed",
+      "summary": "Successful sampled HTML, styles, scripts and stats JSON use gzip or zstd compression. The dithered PNGs and small SVG sprite do not establish a material missing-text-compression problem.",
+      "nextStep": "Retain beneficial text compression when changing the server configuration."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "The initial keyboard route shows visible focus",
+      "summary": "The first 12 Tab steps on each page reach the status link, publication title, availability explanation and primary navigation in a meaningful order. Recorded focus is onscreen with a visible native outline. Activation, reverse navigation, traps and screen-reader use were outside this initial-path check.",
+      "nextStep": "Extend keyboard testing through article selection and any new controls when broader task coverage is needed."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "The publisher explains the service and its tradeoffs",
+      "summary": "The public solar methodology identifies this website and describes its static design, image and font choices, hardware, availability and grid-powered router limitation. Its historical evaluation discusses operational and embodied impacts with period and location limits. This is substantive attributed disclosure, rather than independent verification of present operation.",
+      "nextStep": "Keep historical measurement periods and system boundaries visible when updating the methodology."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "A machine-readable carbon disclosure file was not found",
+      "summary": "Both checked carbon.txt locations returned 404, with no usable delegation or parsed document established. This is a narrow discoverability failure. The substantial public solar methodology remains available and the missing file says nothing about whether emissions are high.",
+      "nextStep": "If machine-readable discovery is useful, publish a valid carbon.txt linking the existing methodology and supported relationships, with the same limits on hosting and lifecycle claims."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Independent operational hosting evidence is still missing",
+      "summary": "The publisher explicitly connects this origin with a Barcelona server, solar panels and batteries, supported by historical measurements and an acknowledged grid-powered networking boundary. These records are useful self-report. Independent corroboration of the operational hosting scope is absent, so hosting remains unknown and does not enable a green-hosting model assumption.",
+      "nextStep": "Provide independent corroboration of the relevant service and electricity boundary if the operational sustainable-hosting claim needs verification."
+    },
+    {
+      "checkId": "governance-practice",
+      "title": "Historical monitoring led to documented decisions",
+      "summary": "For December 2018 through September 2020, the publisher identifies design, hardware, solar and maintenance roles and reports power and uptime monitoring. It describes software fixes, battery and panel experiments, and a reasoned change to a 30 W panel with 168 Wh storage. This pass applies to those attributed historical review and action records; it establishes neither current governance nor independent hardware verification.",
+      "nextStep": "Use dated accountable decisions and monitored results from the current operating period if a present-day governance assessment is required."
+    },
+    {
+      "checkId": "service-necessity",
+      "title": "The historical service decision considered credible alternatives",
+      "summary": "The 2018 launch decision and evaluation through September 2020 discuss readers with older computers or poor connections, static versus dynamic publishing, offline formats and energy/storage/uptime alternatives. Reader locations, space, cost, maintenance and funding informed the continuation rationale. This historical pass does not establish representative reader research or present-day viability.",
+      "nextStep": "For a current continuation or major feature decision, record the contemporary reader need, alternatives and operating constraints."
+    },
+    {
+      "checkId": "access-barriers",
+      "title": "The sampled anonymous reading route completes without signup",
+      "summary": "The declared desktop pointer route from homepage to Archive to the oven guide reached the exact URL and visible title without an account, purchase or personal-data submission. The separate completed scroll records all 22 article images available. Actual offline reading, keyboard-only completion, mobile devices, impaired networks and geographic constraints were not represented.",
+      "nextStep": "Retain anonymous access and expand task testing to the readers and access conditions relevant to future decisions."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "title": "Book revisions do not establish the online review schedule",
+      "summary": "The archive retains historical articles, while Offline Reading describes reference rewrites, image improvements, a 2025 compressed edition and 2026 book changes. These are concrete editorial examples. They do not establish a review or expiry schedule for the live English article collection, whose lifecycle remains unresolved.",
+      "nextStep": "Provide the live collection review cadence and one dated applied online update or archive decision, retaining useful historical articles."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "title": "Historical goals and progress have explicit boundaries",
+      "summary": "The publisher reports a lower-resource design direction, average pages below 0.5 MB relative to the previous design, and dated energy/uptime results from 2018–2020. Reported server electricity of 9.53 kWh is distinguished from 18.10 kWh at the charge controller, and later uptime involves changed hardware. This pass covers attributed historical goals and progress, not current performance or lifecycle zero emissions.",
+      "nextStep": "If reporting current progress, publish comparable dated measurements with the same configuration, period and electricity boundary made explicit."
+    }
+  ]
+}

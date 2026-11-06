@@ -1,0 +1,118 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://blog.google/",
+      "task": "Discover recent Google news and choose a topic or story.",
+      "rationale": "Homepage with featured carousel, latest-news listing, newsletter and rich media.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/"
+      ]
+    },
+    {
+      "id": "sustainability",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+      "task": "Find a relevant sustainability announcement in the topic collection.",
+      "rationale": "Topic listing and public sustainability claim discovery.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/"
+      ]
+    },
+    {
+      "id": "stegra-article",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/",
+      "task": "Read the featured sustainability announcement and identify its stated scope.",
+      "rationale": "Long-form corporate sustainability article, authorship, dates and audio summary.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ],
+      "statementUrls": [
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+        "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/"
+      ]
+    },
+    {
+      "id": "media-article",
+      "url": "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/",
+      "task": "Read the Fitbit Edge announcement and inspect the embedded demonstration video.",
+      "rationale": "Product article with native MP4 video; playback interaction is outside this setup task.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "url": "https://blog.google/newsletter-subscribe/",
+      "task": "Inspect the newsletter offer, required email field and privacy explanation without submitting.",
+      "rationale": "Public form task with a personal-data request and linked privacy policy.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "url": "https://blog.google/about/",
+      "task": "Understand the publication, authors and available follow/contact routes.",
+      "rationale": "Institutional publication information and contact task without sending a message.",
+      "branches": [
+        {
+          "name": "acknowledge_notice",
+          "actions": [
+            {
+              "type": "click",
+              "selector": ".glue-cookie-notification-bar__accept"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

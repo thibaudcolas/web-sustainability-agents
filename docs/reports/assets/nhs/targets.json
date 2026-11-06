@@ -1,0 +1,186 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://www.nhs.uk/",
+      "task": "Find the Healthy living navigation from the NHS homepage.",
+      "sampleRationale": "Broad service entry and navigation.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healthy-living",
+      "url": "https://www.nhs.uk/live-well/",
+      "task": "Browse public Healthy living topics and find exercise information.",
+      "sampleRationale": "Topic-directory landing template.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "url": "https://www.nhs.uk/live-well/exercise/",
+      "task": "Find the Walking for health guide in the exercise listing.",
+      "sampleRationale": "Nested subject listing with mixed links to articles and media.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "walking",
+      "url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+      "task": "Read the public walking information page without giving symptoms or personal data.",
+      "sampleRationale": "Long-form evergreen advice with review dates; no diagnosis task.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exercise-videos",
+      "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+      "task": "Find the Strength and Flex instructional videos and their accompanying information without playing media.",
+      "sampleRationale": "Media-rich educational template.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cookie-settings",
+      "url": "https://www.nhs.uk/our-policies/choose-your-cookie-settings/",
+      "task": "Read analytics-cookie purposes and available settings; no personal information entry.",
+      "sampleRationale": "Interactive consent settings template.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "content-policy",
+      "url": "https://www.nhs.uk/our-policies/content-policy/",
+      "task": "Find the editorial review process and responsibility for published health information.",
+      "sampleRationale": "Governance and content-lifecycle policy.",
+      "branches": [
+        {
+          "name": "reject_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept"
+            }
+          ]
+        },
+        {
+          "name": "accept_analytics",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#nhsuk-cookie-banner__link_accept_analytics"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

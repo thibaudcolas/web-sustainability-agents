@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "source-evidence-v1",
+  "site": "https://blog.google",
+  "capturedAt": "2026-11-06T08:48:23.965650+00:00",
+  "repositories": [],
+  "files": [],
+  "scope": "Only explicitly selected text files; no code execution, installed-package inventory, vulnerability scan, complete dependency audit or deployment attestation",
+  "planSHA256": "340dfa0d7729000b970a38fae304f307fa9e0f5cec6ecfed277e77a5f80c67dd",
+  "collectorSHA256": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a"
+}

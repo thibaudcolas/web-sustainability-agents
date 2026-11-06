@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://solar.lowtechmagazine.com",
+  "purpose": "Review Low-tech Magazine public article discovery, reading and offline alternatives, solar-methodology claims and power information; assess public self-reporting without assuming the sustainability brand proves good results.",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://solar.lowtechmagazine.com/",
+      "task": "Discover recent articles and the public reading routes.",
+      "rationale": "Magazine landing page and newest-content cards.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "url": "https://solar.lowtechmagazine.com/archives/",
+      "task": "Browse dated article titles and categories to locate an older practical guide.",
+      "rationale": "Large chronological article index with theme-filter control.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "solar-methodology",
+      "url": "https://solar.lowtechmagazine.com/about/the-solar-website/",
+      "task": "Understand solar-hosting design, uptime tradeoffs and published measurement boundaries.",
+      "rationale": "Long methodology/about document with diagrams and public technical claims.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "url": "https://solar.lowtechmagazine.com/power/",
+      "task": "Read publicly displayed power and availability information.",
+      "rationale": "Operational status/power view distinct from editorial content.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "offline-reading",
+      "url": "https://solar.lowtechmagazine.com/offline-reading/",
+      "task": "Find offline formats and understand available historical book collections without purchasing.",
+      "rationale": "Alternative-format catalogue and continuity guidance for intermittent hosting.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "solar-oven",
+      "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+      "task": "Read a complete practical solar-electric-oven guide, including images and references.",
+      "rationale": "Representative illustrated long-form how-to article; no construction advice evaluated.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "url": "https://solar.lowtechmagazine.com/privacy/",
+      "task": "Understand stated analytics and personal-data practices.",
+      "rationale": "Short public policy template; attribution retained rather than assumed enforcement.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "find-solar-oven",
+      "url": "https://solar.lowtechmagazine.com/",
+      "task": "Find the solar-electric-oven guide from the homepage through the chronological archive.",
+      "actions": [
+        {
+          "type": "click",
+          "selector": "a[href=\" https://solar.lowtechmagazine.com/archives/ \"]"
+        },
+        {
+          "type": "click",
+          "selector": "main a[href=\"https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/\"]"
+        }
+      ],
+      "viewport": {
+        "width": 1365,
+        "height": 900
+      },
+      "success": {
+        "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+        "selector": "main h1",
+        "text": "How to Build a Solar Powered Electric Oven"
+      }
+    }
+  ],
+  "checks": [],
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "sustainability-goals",
+    "governance-practice",
+    "service-necessity"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary network access at 1365x900: start at https://solar.lowtechmagazine.com/, open Archive and follow its solar-powered-electric-oven article link. Completion requires the full illustrated guide at the exact declared URL and its visible article title, without account, purchase or personal-data submission. Offline-reading guidance is contextual only; keyboard-only, mobile, impaired-network, actual offline-download completion and geographic access are not represented.",
+    "content-lifecycle": "English Low-tech Magazine historical article collection represented by the public archive and offline chronological book series, 2007-2026 as described at the 2026-11-06 capture. Inspect a stated review schedule and applied editing/update/archive decision while retaining valuable historical online access. Book publication is a related documented update example, not proof that the live article corpus follows a site-wide review schedule.",
+    "sustainability-goals": "Solar-powered Low-tech Magazine web-service design introduced in 2018, the 2018-2020 energy/uptime evaluation and the methodology last labeled updated October 21, 2024, as publicly available on 2026-11-06. Assess stated reduction direction, page-weight and server-energy/uptime metrics, baseline and progress with their own periods and boundaries. Do not treat these historical figures as current measured performance, equate solar hosting with lifecycle zero emissions, or include the rest of the internet in the server boundary.",
+    "governance-practice": "The solar Low-tech Magazine server commitment to balance low energy use with uptime during the documented December 2018-September 2020 evaluation and configuration decisions. Inspect accountable publisher roles, monitored power/uptime results and resulting solar-panel/battery or software-related decisions. Current operating governance, 2021-2026 execution and independent hardware verification are outside this historical assessment.",
+    "service-necessity": "The 2018 decision to create the low-resource, self-hosted solar website and its documented continuation/configuration evaluation through September 2020: assess the reader problem, static-versus-dynamic and availability/battery alternatives, user desirability, technical feasibility and continuing viability. Public publisher rationale and experiments may inform the bounded judgment; representative reader research and present-day viability are not presumed."
+  },
+  "contextEvidence": [
+    {
+      "id": "solar-methodology",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/context/solar-methodology.md",
+      "source": "https://solar.lowtechmagazine.com/about/the-solar-website/",
+      "capturedAt": "2026-11-06T08:44:53.938Z",
+      "kind": "public-document",
+      "scope": "Publisher design rationale, dated energy/uptime claims, alternatives and operational decisions; methodology states last update October 21, 2024.",
+      "checkIds": [
+        "sustainability-goals",
+        "governance-practice",
+        "service-necessity"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "solar-evaluation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/context/solar-evaluation.md",
+      "source": "https://solar.lowtechmagazine.com/2020/01/how-sustainable-is-a-solar-powered-website/",
+      "capturedAt": "2026-11-06T08:44:54.258Z",
+      "kind": "public-document",
+      "scope": "January 28, 2020 publisher article evaluating the first 15 months of solar hosting, embodied energy and availability tradeoffs.",
+      "checkIds": [
+        "sustainability-goals",
+        "governance-practice",
+        "service-necessity"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "offline-reading",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/context/offline-reading.md",
+      "source": "https://solar.lowtechmagazine.com/offline-reading/",
+      "capturedAt": "2026-11-06T08:44:54.337Z",
+      "kind": "public-document",
+      "scope": "Public offline formats, historical book series and descriptions of 2025-2026 editing and republishing decisions; no purchase/download tested.",
+      "checkIds": [
+        "content-lifecycle",
+        "access-barriers"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "archive",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/context/archive.md",
+      "source": "https://solar.lowtechmagazine.com/archives/",
+      "capturedAt": "2026-11-06T08:44:54.426Z",
+      "kind": "public-document",
+      "scope": "Dated article index as captured 2026-11-06, retaining historical article links; not a stated review schedule.",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "privacy",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/context/privacy.md",
+      "source": "https://solar.lowtechmagazine.com/privacy/",
+      "capturedAt": "2026-11-06T08:44:54.493Z",
+      "kind": "public-document",
+      "scope": "Current publisher privacy and analytics statements; no proof of technical enforcement, deletion or retention.",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "visitor-task",
+      "kind": "task-observation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/lowtech/context/visitor-task.md",
+      "source": "https://solar.lowtechmagazine.com/",
+      "capturedAt": "2026-11-06T08:44:54.802Z",
+      "scope": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary network access at 1365x900: start at https://solar.lowtechmagazine.com/, open Archive and follow its solar-powered-electric-oven article link. Completion requires the full illustrated guide at the exact declared URL and its visible article title, without account, purchase or personal-data submission. Offline-reading guidance is contextual only; keyboard-only, mobile, impaired-network, actual offline-download completion and geographic access are not represented.",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Agent walkthrough only; keyboard-only, mobile, impaired-network, geographic and representative user testing were not performed. Cookie inspection is limited to visible controls during the setup observation window."
+    }
+  ],
+  "sourceRoots": [],
+  "sourceFiles": [],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "Setup browsing verifies reachability and journey mechanics only; it provides no transfer, energy or conformance measurement.",
+    "No cookie controls observed on sampled pages in fresh anonymous Chromium context; explicit no_banner branches selected.",
+    "Energy experiment will be run later, sequentially with competing local work paused; planned homepage sample has three repetitions.",
+    "Public self-reporting is attributed; current sustainability performance is not inferred from brand, mission or historical studies."
+  ],
+  "energy": {
+    "mode": "readiness",
+    "samples": 3,
+    "pageIds": [
+      "home"
+    ]
+  },
+  "ownerPriorities": [
+    "Public-only fresh audit across varied site types; evidence-backed findings and explicit unknowns."
+  ],
+  "auditScope": "https://solar.lowtechmagazine.com",
+  "scopeOmissions": [
+    "Newsletter on sibforms.com, payment, Patreon/Lulu/Payhip checkout, email, donation and third-party account flows; no submissions or purchases.",
+    "Other languages, mobile and keyboard-only routes, full article archive and actual offline media acquisition.",
+    "Data-minimization omitted: the selected reading tasks do not ask for personal data; external subscription/checkout is excluded.",
+    "Audience-needs and inclusive-testing omitted: the public design rationale mentions older devices and limited connections, but no selected executed representative-user research or pre-release test record is in scope.",
+    "Impact-business-model omitted: funding links exist but no bounded funding-to-impact review selected.",
+    "Service-end-of-life omitted: intermittent availability and offline-reading alternatives do not establish a service-retirement plan."
+  ],
+  "unresolvedEvidenceRequests": [
+    "For content-lifecycle: publication/maintenance schedule and one applied review decision for the live English article collection; book editing does not establish live-site maintenance.",
+    "For service-necessity: any public reader-research findings explaining desirability and the alternatives considered; publisher observations alone do not establish representative research.",
+    "For goals/governance: retain the historical 2018-2020 assessment boundary. Any claim about current service progress needs a separately dated, comparable measurement and boundary."
+  ]
+}

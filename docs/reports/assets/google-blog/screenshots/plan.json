@@ -1,0 +1,21 @@
+{
+  "origin": "https://blog.google",
+  "captures": [
+    {
+      "id": "homepage-media",
+      "url": "https://blog.google/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "Google publication homepage media cards with video thumbnails and adjacent story links.",
+      "caption": "Video cards appear among homepage story links.",
+      "checkIds": [
+        "components",
+        "motion"
+      ],
+      "selector": "video >> nth=1"
+    }
+  ]
+}

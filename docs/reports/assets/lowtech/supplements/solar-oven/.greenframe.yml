@@ -1,0 +1,16 @@
+{
+  "baseURL": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+  "scenarios": [
+    {
+      "path": "./scenario.js",
+      "name": "initial"
+    }
+  ],
+  "projectName": "web-sustainability-agents-client",
+  "samples": 3,
+  "distant": false,
+  "useAdblock": false,
+  "ignoreHTTPSErrors": false,
+  "containers": [],
+  "databaseContainers": []
+}

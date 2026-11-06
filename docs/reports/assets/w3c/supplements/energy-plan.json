@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://www.w3.org",
+  "purpose": "Review public W3C discovery, technical-standard reading, accessibility guidance and contact routes across varied templates; distinguish W3C sustainability advocacy from evidence about operating www.w3.org.",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://www.w3.org/",
+      "task": "Discover W3C standards, missions and public resources.",
+      "rationale": "Public institutional homepage and navigation entry point.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "standards-catalogue",
+      "url": "https://www.w3.org/TR/",
+      "task": "Find a technical report by title or shortname using the public catalogue.",
+      "rationale": "Interactive searchable/filterable catalogue; substantively different from reading pages.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "wcag22",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "task": "Read WCAG 2.2 normative requirements and locate publication status and historical versions.",
+      "rationale": "Long technical-report template, references and versioning.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "accessibility-fundamentals",
+      "url": "https://www.w3.org/WAI/fundamentals/",
+      "task": "Find introductory accessibility resources for a new practitioner.",
+      "rationale": "WAI overview template and audience-oriented resource discovery.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "images-tutorial",
+      "url": "https://www.w3.org/WAI/tutorials/images/",
+      "task": "Learn how to provide appropriate text alternatives for different image purposes.",
+      "rationale": "Instructional tutorial with examples and distinct WAI navigation.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "sustainability",
+      "url": "https://www.w3.org/mission/sustainability/",
+      "task": "Understand W3C sustainability work and follow its published guideline resources.",
+      "rationale": "Public mission and sustainability claims; no presumption of site-level progress.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "url": "https://www.w3.org/contact/",
+      "task": "Find the appropriate public contact route without sending a message.",
+      "rationale": "Practical organizational task distinct from standards reading.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "find-wcag22",
+      "url": "https://www.w3.org/",
+      "task": "Find and open WCAG 2.2 from the homepage through the searchable standards catalogue.",
+      "actions": [
+        {
+          "type": "click",
+          "selector": "main a[href=\"https://www.w3.org/standards/\"]:text-is(\"standards and guidelines\")"
+        },
+        {
+          "type": "click",
+          "selector": "main a[href=\"/TR/\"]"
+        },
+        {
+          "type": "fill",
+          "selector": "input[name=\"filter-tr-name\"]",
+          "value": "WCAG"
+        },
+        {
+          "type": "click",
+          "selector": "button:has-text(\"Show results\")"
+        },
+        {
+          "type": "click",
+          "selector": "a[href=\"https://www.w3.org/TR/WCAG22/\"]"
+        }
+      ],
+      "viewport": {
+        "width": 1365,
+        "height": 900
+      },
+      "success": {
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "selector": "h1",
+        "text": "Web Content Accessibility Guidelines (WCAG) 2.2"
+      }
+    }
+  ],
+  "checks": [],
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "sustainability-goals"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary text input at 1365x900: start at https://www.w3.org/, follow standards to the public technical-report catalogue, filter for WCAG and open the full WCAG 2.2 report. Completion requires its exact URL and visible full report title, with no account or personal-data submission. Keyboard-only, mobile, impaired-network and geographic access are not represented.",
+    "content-lifecycle": "Public English WCAG 2.2 technical-report collection, from the first 2020 working draft through the December 2024 Recommendation and its currently published history as captured on 2026-11-06: review stated maintenance/review arrangements, an applied publication/update decision and discoverable historical reports. The broader WAI collection and organization-wide CMS practices are excluded; continuing reference value of historical standards is retained.",
+    "sustainability-goals": "Operation and delivery of the public www.w3.org web service as described by its sustainability mission page at the 2026-11-06 capture. Assess whether published direction, metrics, service boundary and dated comparable baseline/progress refer to this service. W3C advocacy for the wider web and development of WSG are context, not evidence of this service achieving operational targets."
+  },
+  "contextEvidence": [
+    {
+      "id": "sustainability-mission",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/w3c/context/sustainability-mission.md",
+      "source": "https://www.w3.org/mission/sustainability/",
+      "capturedAt": "2026-11-06T08:44:47.715Z",
+      "kind": "public-document",
+      "scope": "Published W3C sustainability mission and work descriptions, captured 2026-11-06.",
+      "checkIds": [
+        "sustainability-goals"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "wcag-history",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/w3c/context/wcag-history.md",
+      "source": "https://www.w3.org/standards/history/WCAG22/",
+      "capturedAt": "2026-11-06T08:44:47.825Z",
+      "kind": "public-document",
+      "scope": "Dated WCAG 2.2 publication history, 2020-2024, as currently linked publicly.",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "wcag-status",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/w3c/context/wcag-status.md",
+      "source": "https://www.w3.org/TR/WCAG22/",
+      "capturedAt": "2026-11-06T08:44:48.031Z",
+      "kind": "public-document",
+      "scope": "Excerpt of WCAG 2.2 including status, publication/version information and introductory normative context.",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "limitations": "Attributed publisher self-report and rendered public-document capture; no internal or independent operational verification. Excerpt limits, publication dates and source URLs are recorded in the capture."
+    },
+    {
+      "id": "visitor-task",
+      "kind": "task-observation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/w3c/context/visitor-task.md",
+      "source": "https://www.w3.org/",
+      "capturedAt": "2026-11-06T08:44:49.127Z",
+      "scope": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary text input at 1365x900: start at https://www.w3.org/, follow standards to the public technical-report catalogue, filter for WCAG and open the full WCAG 2.2 report. Completion requires its exact URL and visible full report title, with no account or personal-data submission. Keyboard-only, mobile, impaired-network and geographic access are not represented.",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Agent walkthrough only; keyboard-only, mobile, impaired-network, geographic and representative user testing were not performed. Cookie inspection is limited to visible controls during the setup observation window."
+    }
+  ],
+  "sourceRoots": [],
+  "sourceFiles": [],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "Setup browsing verifies reachability and journey mechanics only; it provides no transfer, energy or conformance measurement.",
+    "No cookie controls observed on sampled pages in fresh anonymous Chromium context; explicit no_banner branches selected.",
+    "Energy experiment will be run later, sequentially with competing local work paused; planned homepage sample has three repetitions.",
+    "Public self-reporting is attributed; current sustainability performance is not inferred from brand, mission or historical studies.",
+    "Separate initial-load energy supplement: homepage and one contrasting content page, three repetitions per page; not a representative whole-site energy average."
+  ],
+  "energy": {
+    "mode": "run",
+    "samples": 3,
+    "pageIds": [
+      "home",
+      "wcag22"
+    ]
+  },
+  "ownerPriorities": [
+    "Public-only fresh audit across varied site types; evidence-backed findings and explicit unknowns."
+  ],
+  "auditScope": "https://www.w3.org",
+  "scopeOmissions": [
+    "Member-only, account, invited-expert and authenticated areas; no form submission or email sending.",
+    "Other languages, mobile and keyboard-only journeys, comprehensive standards coverage, events, membership and external subdomains.",
+    "Data-minimization omitted: selected tasks read public information and filter a catalogue, without collecting personal data.",
+    "Audience-needs and inclusive-testing omitted: WAI guidance about inclusive practice does not document representative testing of a selected www.w3.org interface decision.",
+    "Governance-practice, impact-business-model and service-necessity omitted: no bounded operational commitment or creation/funding decision selected; a mission statement alone cannot establish implementation.",
+    "Service-end-of-life omitted: no selected retirement/continuity task."
+  ],
+  "unresolvedEvidenceRequests": [
+    "For content-lifecycle: a public review/maintenance schedule and a reasoned WCAG 2.2 update example; visible publication history alone may not establish review cadence.",
+    "For sustainability-goals: any dated operational metric, comparable baseline and progress for www.w3.org itself; WSG publishing activity alone does not meet this boundary."
+  ]
+}

@@ -1,0 +1,493 @@
+{
+  "site": "https://blog.google",
+  "packetSHA256": "d569e5824bb9b537f656e2fce0c313026d3b6fa9444d95d85261eb22ed47a761",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "rows": [
+    {
+      "checkId": "distraction",
+      "guideline": "2.5",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "The six page samples retain their headings and main tasks, and the article/newsletter prompts are identifiable. The homepage contains multiple simultaneously playing muted videos and a rotating feature area while readers browse; pause controls are exposed, but their effectiveness and the visibility of moving content throughout the task are not exercised. A reading interruption is plausible but not established by isolated snapshots.",
+      "confidence": "medium",
+      "nextEvidence": "Observe the homepage browsing task with moving tiles and activate its pause controls; assess whether movement competes with choosing a story."
+    },
+    {
+      "checkId": "choice",
+      "guideline": "2.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "The cookie banner says OK, got it and links to further information. The captured task correctly treats this as notice acknowledgement, not a tested accept/reject consent pair. Newsletter signup is optional and its opt-out wording is clear. No visual prominence, consent default comparison or rejection route is established, so neither manipulation nor fair consent parity is proven.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect the linked cookie controls and actual choice behavior in the represented context, with screenshots if judging visual steering."
+    },
+    {
+      "checkId": "comprehension",
+      "guideline": "2.7",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "All six pages have identifiable topic, article, newsletter or about headings with plain task labels. The Stegra announcement identifies authors, date and a short main body; its EAC explanation distinguishes the purchasing arrangement from manufacturing itself. Newsletter wording describes weekly updates and opt-out. This judgment covers sampled English wording, not independent verification of corporate claims.",
+      "confidence": "high",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "consistency",
+      "guideline": "2.8",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Repeated Innovation & AI, Products & platforms, Company news, Feed and Newsletter navigation, Search title and region controls retain their names across the six templates. Article topic breadcrumbs and follow/share controls recur consistently. No documented design system is inferred.",
+      "confidence": "high",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "motion",
+      "guideline": "2.10",
+      "outcome": "fail",
+      "evidenceIds": [
+        "probes.json:pages:0"
+      ],
+      "rationale": "Two visible homepage videos continue playing after the in-page reduced-motion change, despite being paused in the cold reduced-motion/dark observation. Several one-iteration transitions also remain, but their purpose and effect are not diagnosed. Named pause controls are present, so this finding concerns the demonstrated preference-change response, not a claim that playback is impossible to control.",
+      "confidence": "high",
+      "nextEvidence": "Pause active autoplay tiles when reduced motion becomes active, and verify manual replay and pause still work."
+    },
+    {
+      "checkId": "notifications",
+      "guideline": "2.12",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "No notification permission calls are recorded on any of the six pages. Newsletter entry is offered as an explicit user choice with opt-out text; the captured page states show no unsolicited notification dialog. Browser permission was already denied and no subscription was submitted, limiting this pass to observed states.",
+      "confidence": "medium",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "documents",
+      "guideline": "2.13",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Article and about pages load a print stylesheet and preserve headings and main text in print emulation. The homepage still has horizontal overflow and several templates retain navigation. No physical pagination or document-content inspection establishes an efficient full-sample print route; download presence alone would not establish optimization.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect printed output for the homepage and article templates, including overflow/page breaks; inspect any task-relevant downloadable document before judging equivalence."
+    },
+    {
+      "checkId": "unused-code",
+      "guideline": "3.2",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Initial coverage is bounded to 500 ms and function/range samples are truncated. It can nominate the common bundle, page chunks and carousel/player code for investigation, but search, menu, feed expansion, playback and signup are not comprehensively exercised. No safe code deletion follows from unexecuted ranges.",
+      "confidence": "medium",
+      "nextEvidence": "Collect representative journey coverage and identify concrete modules before recommending removal."
+    },
+    {
+      "checkId": "components",
+      "guideline": "3.3",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "The network already shows separate CSS/JS chunks. Homepage media, article audio and newsletter widgets are identifiable later-use components, but the packet does not correlate each module with activation or test an on-demand replacement. Additional splitting could introduce overhead and is not justified merely by script count.",
+      "confidence": "medium",
+      "nextEvidence": "Trace component initiators and activation for one expensive optional feature; compare existing chunks before proposing further splitting."
+    },
+    {
+      "checkId": "layout",
+      "guideline": "3.10",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Five page templates show no desktop/narrow overflow and retain task text. The homepage records a 2368-pixel document in a 1280-pixel viewport, while narrow emulation removes that overflow. Its carousel/offscreen content may explain the measurement; no screenshot or affected navigation activation establishes a clipped task or safe operation. Narrow menu behavior is also unexercised.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect homepage horizontal scroll and feature controls, then complete navigation through the narrow menu."
+    },
+    {
+      "checkId": "impact-choice",
+      "guideline": "5.4",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:2",
+        "probes.json:pages:3"
+      ],
+      "rationale": "The Stegra article offers reading and optional audio, and the Fitbit page offers a selected video. The homepage autoplays some media. These are more consequential than routine link clicks, but no measured data comparison, effective disable-all choice or tested transcript alternative establishes appropriate impact guidance. Corporate steel claims are unrelated to the impact of reading this publication.",
+      "confidence": "medium",
+      "nextEvidence": "Test media alternatives and measure their relative transfer before offering contextual data-use information."
+    },
+    {
+      "checkId": "journeys",
+      "guideline": "2.4",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "context.json:records:5"
+      ],
+      "rationale": "The declared listing-to-Stegra journey acknowledges the cookie notice, opens the featured article and reaches its canonical URL, full headline and readable main body. Captured postconditions and the independent walkthrough support completion without login; they do not establish optimum journey length.",
+      "confidence": "high",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "media-delivery",
+      "guideline": "2.9",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "The sample mixes responsive WebP cards and lazy loading with oversized homepage assets and undersized author headshots (100 pixels displayed at 240). A Stegra related-story image is 2784 pixels at roughly 283 rendered pixels. These are useful rendition candidates, but no visual inspection at intended density establishes acceptable detail or a task-affecting quality defect; absent srcset alone does not fail.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect the cited large card and headshot renditions at intended pixel densities, then choose dimensions that preserve editorial image detail."
+    },
+    {
+      "checkId": "font-delivery",
+      "guideline": "2.11",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Observed loaded Google Sans regular/medium faces serve sampled body and heading text with font-display:swap and Roboto/Arial/Helvetica fallbacks. Numerous declared language-range faces are unloaded; declarations are not downloads. The evidence supports a fallback/loading strategy without establishing unused-language removal or every possible state.",
+      "confidence": "medium",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "semantic-forms",
+      "guideline": "3.6",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "All six pages have en-us, a main region and meaningful task headings. The homepage uses several feature H1s, which is not automatically a failure of this narrow check. Search has a Search title; menu, media, region and newsletter controls have text/title/ARIA names, including the labeled required email field. This is not a WCAG or complete accessible-name audit.",
+      "confidence": "medium",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "metadata",
+      "guideline": "3.8",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "All six pages have task-descriptive titles and matching absolute canonicals. Declared JSON-LD parses, including NewsArticle/WebSite/AboutPage. Newsletter has a sufficient title/canonical for its simple signup purpose; a missing optional description is not failed. Schema validity and eligibility remain outside scope.",
+      "confidence": "high",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "preference-behavior",
+      "guideline": "3.9",
+      "outcome": "fail",
+      "evidenceIds": [
+        "probes.json:pages:0"
+      ],
+      "rationale": "In-page reduced motion pauses one homepage video but leaves two visible autoplay videos running; cold navigation with the preference active leaves them paused. This directly distinguishes incomplete live preference handling from initialization. Light colors alone do not establish a theme defect, and task text remains available.",
+      "confidence": "high",
+      "nextEvidence": "Apply the same reduced-motion media logic on a live change as on initial navigation, and verify all visible autoplay tiles stop."
+    },
+    {
+      "checkId": "no-js-content",
+      "guideline": "2.17",
+      "outcome": "fail",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "The Stegra article, Fitbit reading text, newsletter explanation and about page retain core text without JavaScript. However the sustainability listing loses the featured article and latest story links entirely, and the homepage loses most feed content. No explicit alternative route for that core collection discovery task is captured. This fails the full declared page sample, without requiring no-JavaScript search or playback.",
+      "confidence": "high",
+      "nextEvidence": "Render core topic/story links in HTML or provide a discoverable lightweight index available without scripts."
+    },
+    {
+      "checkId": "api-requests",
+      "guideline": "3.11",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Page states include analytics and dynamically loaded article collections. The bounded record does not establish whether repeated endpoints are redundant requests, pagination or required update events, and it omits backend cost. Successful article navigation cannot justify every background call.",
+      "confidence": "medium",
+      "nextEvidence": "Trace the homepage and topic collection requests by initiator and update event; identify any repeat with unchanged parameters and no task need before changing it."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "guideline": "4.2",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Reusable versioned publication scripts/styles have long public cache lifetimes. Font styles and external helpers expose shorter private lifetimes; media responses have validators/lifetimes. This supports reusable public-resource policy, while HTML and analytics responses have different purposes. Neither warm-load reuse nor offline support was tested.",
+      "confidence": "medium",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "text-compression",
+      "guideline": "4.3",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "The sampled successful material HTML, scripts, styles and JSON/text responses use gzip or Brotli. No material successful text response without content-encoding appears in the six bounded network records. This does not demand further compression of video, WebP or fonts.",
+      "confidence": "high",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "keyboard-path",
+      "guideline": "3.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5"
+      ],
+      "rationale": "The initial Tab traces reach meaningful cookie, skip, logo and navigation controls; skip and logo have solid blue outlines. The first cookie link/button outlines are transparent and other focus styling was not captured. Their discernible indicator is unresolved, not a demonstrated invisible focus defect.",
+      "confidence": "medium",
+      "nextEvidence": "Capture the focused cookie controls and remaining initial controls to establish visible background, border or shadow changes."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "guideline": "2.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4"
+      ],
+      "rationale": "The retrieved sustainability listing and Stegra announcement describe Google products, operations, partnerships and construction materials. They do not identify blog.google resource use or mitigation. Their existence is corporate context, not this web publication's service disclosure; lack of a matching statement in the bounded search is not proof none exists.",
+      "confidence": "medium",
+      "nextEvidence": "Supply a public statement identifying this publication and its environmental impacts and mitigation."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "guideline": "3.13",
+      "outcome": "fail",
+      "evidenceIds": [
+        "staged.json:discovery:0"
+      ],
+      "rationale": "The root and well-known carbon.txt attempts return 404, and no usable header/DNS delegation or parsed document is established. There is no supported version/schema to judge. This is scoped absence of carbon.txt, not evidence of high publication emissions.",
+      "confidence": "high",
+      "nextEvidence": "Publish a discoverable parseable carbon.txt only with useful verifiable relationships."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "guideline": "4.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "rationale": "Google Cloud/storage and corporate energy statements cannot alone identify the operational hosting boundary and independently corroborate sustainable hosting for this origin. The discovery supplies no such chain of evidence.",
+      "confidence": "medium",
+      "nextEvidence": "Link the audited origin to its hosting service and provide independently corroborated operational evidence; do not infer a green-hosting model flag."
+    },
+    {
+      "checkId": "access-barriers",
+      "assessmentScope": "Anonymous English-language desktop readers (1440\u00d71000, pointer and ordinary browser, no account): from the sustainability topic listing, acknowledge the visible cookie notice and open the featured Stegra article; completion requires the canonical article URL, its complete headline and readable main article content. Keyboard-only, constrained-device and geographic completion are not represented.",
+      "guideline": "5.13",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "context.json:records:4",
+        "context.json:records:5"
+      ],
+      "rationale": "The anonymous English desktop pointer journey from sustainability listing to Stegra completes after acknowledging the notice, without account or personal-data entry. The canonical article, complete headline and main body are captured. No material barrier blocks this exact represented task; keyboard, geography and constrained-device success are excluded by the frozen scope.",
+      "confidence": "high",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "data-minimization",
+      "assessmentScope": "The public News from Google newsletter sign-up task at /newsletter-subscribe/ as observed on 2026-11-06: inspect visible requested personal-data categories, mandatory/optional states, purpose and opt-out explanation before entering data or submitting. Retention, downstream deletion and all-system propagation are outside this boundary.",
+      "guideline": "5.18",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:4",
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "rationale": "The signup asks only for a required email address, explicitly to receive weekly Google news/stories, and explains opt-out before entry. That category is necessary for the chosen email delivery task; no account, name or other personal fields are requested in this observation. The linked broad privacy excerpt supports email-updates purpose without proving blog-specific downstream processing. No submission, retention or deletion behavior is inferred.",
+      "confidence": "high",
+      "nextEvidence": ""
+    },
+    {
+      "checkId": "content-lifecycle",
+      "assessmentScope": "The English News from Google sustainability article collection, represented by its topic listing, the September 17, 2026 Stegra article and publication about page as available on 2026-11-06: assess public review/expiry scheduling and an applied update/archive/deletion example with useful historical access. No CMS history or organization-wide lifecycle is represented.",
+      "guideline": "5.18",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4"
+      ],
+      "rationale": "The sampled article date, author attribution, historical publication description and current listing establish useful published news content. They do not identify a review/expiry schedule or an executed update/archive/deletion decision for this collection. Historical announcements can retain research value, so age is not a removal defect.",
+      "confidence": "medium",
+      "nextEvidence": "Supply one collection-specific review schedule and dated applied decision, with historical access where readers need it."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "assessmentScope": "News from Google web publication at https://blog.google, as publicly described on 2026-11-06: assess web-service-specific measurable sustainability goals and dated comparable progress. The sustainability topic listing and selected Stegra article are corporate context only and cannot establish the publication\u2019s own goals or operational results.",
+      "guideline": "5.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4"
+      ],
+      "rationale": "The Stegra estimates and construction-project examples concern corporate materials procurement, while the about page describes the publication. None supplies a web-publication metric, baseline, target and comparable progress for blog.google. Missing evidence is an unknown rather than a failed corporate target.",
+      "confidence": "medium",
+      "nextEvidence": "Provide a publication-specific resource/impact goal, measurement boundary and comparable dated baseline and progress."
+    }
+  ],
+  "topFindings": [
+    {
+      "id": "google-live-motion",
+      "checkIds": [
+        "motion",
+        "preference-behavior"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0"
+      ],
+      "summary": "Stop homepage autoplay tiles when reduced motion is enabled during the visit.",
+      "requestedChange": "Reuse the cold-navigation preference logic for live changes and verify each visible video pauses; retain manual play controls."
+    },
+    {
+      "id": "google-html-discovery",
+      "checkIds": [
+        "no-js-content"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1"
+      ],
+      "summary": "Core story discovery disappears from the homepage and sustainability listing without JavaScript.",
+      "requestedChange": "Serve featured/latest article links in HTML or add an explicit lightweight index, preserving the already-readable article pages."
+    },
+    {
+      "id": "google-media-renditions",
+      "checkIds": [
+        "media-delivery"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:2",
+        "probes.json:pages:5"
+      ],
+      "summary": "Check disproportionate story-card renditions and low-resolution author images.",
+      "requestedChange": "Visually compare the large related-story image and 100-pixel headshots at intended densities before changing sizes; preserve detail and avoid an unsupported savings claim."
+    },
+    {
+      "id": "google-service-goals",
+      "checkIds": [
+        "disclosure-scope",
+        "sustainability-goals"
+      ],
+      "evidenceIds": [
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4",
+        "staged.json:discovery:0"
+      ],
+      "summary": "Separate publication sustainability evidence from Google corporate announcements.",
+      "requestedChange": "If communicating the publication's own impact, provide a service boundary, resource metric and comparable baseline/progress instead of treating the Stegra story as operational proof."
+    }
+  ]
+}

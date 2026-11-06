@@ -1,0 +1,9 @@
+{
+  "resolutionsSHA256": "dad20500494599110004492b471b98bd538f1982793c2bc172cc0f84ee3632da",
+  "acceptedSHA256": {
+    "evidence": "986af355595af42cea348f28fba6653c49ebe416f03de565c0e139ede95ee062",
+    "guidelines": "b35b11652506d9bbf771b2ade51d28c7e5f54914b7c836f12a0b1232bb575583",
+    "claims": "f3ddb8f45e922018aadad395adad531b583b9d10cc0a7805c66b3474f13e5824"
+  },
+  "next": "Coordinator writes review.json, preserving unresolved evidence; workflow score validates the final review. This receipt validates coverage of responses, not their semantic correctness."
+}

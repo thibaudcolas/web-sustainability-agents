@@ -5,7 +5,19 @@ search:
 
 # Example audit reports
 
-Read one report per site:
+## Wider content sample
+
+- [Tate](tate.md): seven gallery, exhibition, editorial and policy pages, including its website sustainability statement.
+- [NHS](nhs.md): seven public health-information pages, including exercise videos and analytics choices. No diagnosis, account or booking tasks.
+- [Google Blog](google-blog.md): six editorial, media and newsletter pages, including reduced-motion behavior and corporate sustainability claims.
+- [W3C](w3c.md): seven standards, accessibility and organizational pages, with a catalogue-to-WCAG reading task.
+- [Low-tech Magazine](lowtech.md): seven solar-powered publishing pages, including an illustrated guide and historical design decisions.
+
+These audits cover 34 pages with public contextual evidence, separate evidence/guideline/claims reviews, and report-writing agents. All reviewers used GPT-6.1 Sol with high reasoning. Four reports include a separate two-page GreenFrame sample with three repetitions per page; W3C's energy attempts failed and remain unavailable. Each report includes a CrUX-based annual footprint scenario, with its assumptions and limits.
+
+This is broader live experience, not a validated benchmark or site league table. The sites have different purposes, selected checks and evidence periods. In particular, Low-tech Magazine's historical design and governance evidence does not establish current operating practice. Transactional completion, multilingual tasks and representative user research remain outside this sample.
+
+## Wagtail examples
 
 - [guide.wagtail.org](guide.md): the Wagtail editor guide.
 - [wagtail.org](wagtail.md): the Wagtail project website.

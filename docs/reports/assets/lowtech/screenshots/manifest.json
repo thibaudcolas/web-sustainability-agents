@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "origin": "https://solar.lowtechmagazine.com",
+  "startedAt": "2026-11-06T09:18:37.928575+00:00",
+  "status": "completed",
+  "planSHA256": "1529f07e88a5baef1e48f79c086865a1041c8fd1fbdcd231d9961e9260669ba0",
+  "collectorSHA256": "9543f6b3b2ce60c8e26a391bc7147b5e2e76f0cdc0dc345570b20c512841cea7",
+  "playwrightVersion": "1.64.1",
+  "captures": [
+    {
+      "id": "oven-illustration",
+      "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+      "selector": "img[src$=\"oven-open_dithered.png\"]",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Dithered photograph of the insulated solar oven with its front door open, followed by its descriptive caption.",
+      "caption": "The oven guide uses dithered photographs to explain its construction.",
+      "checkIds": [
+        "media-delivery"
+      ],
+      "captureMode": "viewport",
+      "status": "completed",
+      "capturedAt": "2026-11-06T09:18:39.870707+00:00",
+      "finalUrl": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+      "documentStatus": 200,
+      "pageTitle": "How to Build a Solar Powered Electric Oven | LOW\u2190TECH MAGAZINE",
+      "file": "oven-illustration.png",
+      "fileSHA256": "51f261bc98ca6b62ce5add6416c337e9dacb47fdf4c975347767889ea2b0af54"
+    }
+  ],
+  "interpretation": "Supplemental visual illustrations captured separately from the scored audit. They do not establish historic appearance, transfer sizes, accessibility semantics, task completion or energy savings.",
+  "protocol": {
+    "captureMode": "viewport",
+    "deviceScaleFactor": 1,
+    "reducedMotion": "reduce",
+    "animations": "disabled",
+    "waitAfterLoadMs": 750,
+    "waitAfterScrollMs": 250,
+    "perCaptureDeadlineSeconds": 35,
+    "freshContextPerCapture": true,
+    "actions": "none"
+  },
+  "browserVersion": "156.0.8078.4",
+  "finishedAt": "2026-11-06T09:18:39.980080+00:00"
+}

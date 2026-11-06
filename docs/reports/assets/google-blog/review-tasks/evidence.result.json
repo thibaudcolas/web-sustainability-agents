@@ -1,0 +1,86 @@
+{
+  "role": "evidence",
+  "site": "https://blog.google",
+  "packetSHA256": "d569e5824bb9b537f656e2fce0c313026d3b6fa9444d95d85261eb22ed47a761",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "google-evidence-01",
+      "checkIds": [
+        "media-delivery",
+        "api-requests"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:2",
+        "staged.json:runs:3",
+        "staged.json:runs:4",
+        "staged.json:runs:5"
+      ],
+      "summary": "All six initial documents return HTTP 200, but every traffic capture is partial and has no calculated Digital Carbon Rating. Homepage initial received traffic is 49,376,436 B (49.376 MB decimal); unresolved records include an active video with 26,474,837 partial body bytes, aborted video ranges and analytics requests. The Stegra after-scroll capture also records child-frame coverage uncertainty.",
+      "requestedChange": "Keep the positive observed partial traffic as useful evidence and preserve all incompleteness labels. Do not present complete totals or eligible ratings, substitute missing values with zero, assume every aborted range is a site fault, or promote analytics repair as the sustainability priority. Any byte-based scenario must explicitly retain its partial-input status."
+    },
+    {
+      "id": "google-evidence-02",
+      "checkIds": [
+        "choice",
+        "data-minimization"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:2",
+        "probes.json:pages:0"
+      ],
+      "summary": "The captured control says OK, got it and acknowledges a cookie notice; it is not an observed accept/reject analytics choice. Homepage traffic rises cumulatively from 49,376,436 to 50,398,585 B after acknowledgement, while the Stegra article gains 1,456,409 B only by the scroll checkpoint.",
+      "requestedChange": "Name the action acknowledgement, retain initial as headline, and show subsequent cumulative totals/deltas separately. Do not interpret these deltas as consent-induced tracking costs or measured savings; late video completions and background activity share these windows."
+    },
+    {
+      "id": "google-evidence-03",
+      "checkIds": [
+        "media-delivery",
+        "motion",
+        "preference-behavior",
+        "components"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "probes.json:pages:0"
+      ],
+      "summary": "Homepage media materially loads and plays before interaction: three muted looping autoplay videos are unpaused at desktop capture, including one zero-size hidden element and others below the viewport. Two remain unpaused after the live reduced-motion change. Large initial resources include an 8,032,362 B PNG and completed MP4 ranges of 5,880,996 and 3,608,390 B.",
+      "requestedChange": "Prioritize investigating offscreen/hidden player activation and image delivery while preserving content and usable playback. Describe the observed reduced-motion behavior precisely; do not generalize to every video or assert no controls from native controls=false, because custom controls may exist. Verify any changed rendition and activation before promising exact savings."
+    },
+    {
+      "id": "google-evidence-04",
+      "checkIds": [
+        "documents"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:3"
+      ],
+      "summary": "The homepage download inventory mixes six hidden video fallback links with three references to the same GoogleWhentoBuy2026.pdf. The Fitbit article has one hidden video fallback. No downloaded PDF content, size or pagination audit is supplied.",
+      "requestedChange": "Distinguish link count, unique downloadable files and visible fallback states. Limit document findings to observed labeling/print behavior; leave PDF optimization, accessible content and equivalence unresolved until the actual file is inspected."
+    },
+    {
+      "id": "google-evidence-05",
+      "checkIds": [
+        "disclosure-scope",
+        "hosting-evidence",
+        "sustainability-goals"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "context.json:records:3",
+        "context.json:records:4"
+      ],
+      "summary": "The retrieved sustainability listing and Stegra article describe corporate products, industrial steel and data-center construction. They do not measure the blog publication footprint, and the structured disclosure review has no verified records. documentCount=6 includes attempted discovery documents rather than six validated statements.",
+      "requestedChange": "Separate the published corporate claim scope from the audited blog and this cold-load protocol. Do not use the steel reduction percentage or corporate initiatives as blog emissions savings, renewable hosting substantiation or publication goals without an explicit service relationship and matching boundary."
+    }
+  ]
+}

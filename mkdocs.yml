@@ -184,6 +184,11 @@ plugins:
           - reports/wagtail.md
           - reports/wagtail-docs.md
           - reports/draftjs-exporter.md
+          - reports/tate.md
+          - reports/nhs.md
+          - reports/google-blog.md
+          - reports/w3c.md
+          - reports/lowtech.md
         Knowledge base:
           - knowledge-base/*.md
         Feasibility study:
@@ -245,6 +250,11 @@ nav:
       - Wagtail.org audit: reports/wagtail.md
       - Wagtail documentation audit: reports/wagtail-docs.md
       - Draft.js exporter audit: reports/draftjs-exporter.md
+      - Tate audit: reports/tate.md
+      - NHS audit: reports/nhs.md
+      - Google Blog audit: reports/google-blog.md
+      - W3C audit: reports/w3c.md
+      - Low-tech Magazine audit: reports/lowtech.md
   - Knowledge base:
       - knowledge-base/README.md
       - Methodology:

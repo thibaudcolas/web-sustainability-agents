@@ -1,0 +1,483 @@
+{
+  "site": "https://www.w3.org",
+  "packetSHA256": "a0da6424ef1d07534366cb66f8c431999cce074883d69a691a44d7fff3b14393",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "rows": [
+    {
+      "checkId": "distraction",
+      "guideline": "2.5",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The seven samples present task headings, indexes, side navigation and relevant status information. No autoplay media or disruptive visible modal is recorded; WCAG permalink dialogs remain hidden. Catalogue result counts assist filtering and mission sponsorship links are recognizable. This is limited to the sampled states, not every interaction.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "choice",
+      "guideline": "2.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "No cookie banner or accept/reject pair is observed in the seven fresh page states; the walkthrough records that limit explicitly. Reading and catalogue filtering require no account, while membership/sign-in routes are identifiable. Defaults, visual choice prominence and any applicable consent route are not sufficiently tested to establish the whole choice expectation or a deceptive defect.",
+      "confidence": "medium",
+      "nextEvidence": "If judging consent/choice parity, capture the applicable controls and defaults in the represented context; do not infer tracking absence from no banner."
+    },
+    {
+      "checkId": "comprehension",
+      "guideline": "2.7",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Headings and introductory summaries distinguish standards, normative WCAG requirements and beginner WAI resources. Catalogue examples, report status/version links and contact categories explain the tasks in context. Specialist WCAG terms suit the normative-document audience and introductory alternatives are supplied. This does not prove comprehension by unrepresented readers.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "consistency",
+      "guideline": "2.8",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Corporate pages repeat the same named navigation and catalogue controls. WAI pages share their own consistent resource navigation, while the normative report uses a document-specific table of contents and version metadata. These recognizable template differences serve distinct tasks and are not inconsistent control naming; no maintained design system is inferred.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "motion",
+      "guideline": "2.10",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "No screen animations or moving media are observed in desktop, narrow, reduced-motion and dark states. Two one-iteration link animations appear on each WAI print transition, without effect properties or visible purpose. This is insufficient to judge every recorded motion as proportionate or controlled, and does not demonstrate harmful animation.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect the WAI link-transition effects during print/preference changes; assess visible purpose and reduced-motion response."
+    },
+    {
+      "checkId": "notifications",
+      "guideline": "2.12",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "No Notification permission calls occur on the seven samples. Catalogue live result counts and empty status nodes support task feedback, while WCAG dialogs are hidden. With notification permission already denied, the pass is bounded to observed states rather than all messaging behavior.",
+      "confidence": "medium",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "documents",
+      "guideline": "2.13",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The sampled content is directly readable HTML and no document download links are listed. Print emulation retains content and suppresses much navigation. However catalogue print text expands from about 46,687 to 177,697 characters; whether that prints useful historical entries or unnecessary pages is unresolved without pagination inspection. No paper-saving or optimized-document equivalence claim is made.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect catalogue print pagination and hidden/expanded report details, retaining necessary version/status context."
+    },
+    {
+      "checkId": "unused-code",
+      "guideline": "3.2",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The report and WAI templates have small distinct enhancement scripts; corporate/catalogue templates load shared and page modules. Initial 500 ms coverage cannot establish safe removal across menus, filters, translations and report navigation. Unexecuted offsets are investigation candidates only.",
+      "confidence": "medium",
+      "nextEvidence": "Capture representative interactions or source corroboration before identifying any removable module."
+    },
+    {
+      "checkId": "components",
+      "guideline": "3.3",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Corporate, catalogue, WAI and report scripts already differ by template. The sustainability page loads an embedded external video environment and has a partial 1,350,347-byte initial staged count, while its main reading content is immediately useful. No tested facade or usable activation comparison establishes safe further splitting or deferral.",
+      "confidence": "medium",
+      "nextEvidence": "Compare initial embed with a user-activated video facade and verify playback, captions and accessible activation before recommending it."
+    },
+    {
+      "checkId": "layout",
+      "guideline": "3.10",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "All seven desktop/narrow samples retain task headings and avoid measured horizontal overflow. Narrow corporate/WAI menus and the WCAG table of contents differ from desktop, but their affected controls were not activated in narrow state. Emulated width alone cannot establish complete task operation.",
+      "confidence": "medium",
+      "nextEvidence": "Use the narrow menus and report navigation to complete the relevant information tasks."
+    },
+    {
+      "checkId": "impact-choice",
+      "guideline": "5.4",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:5"
+      ],
+      "rationale": "Reading HTML, printing the catalogue/report, and choosing an embedded mission video have different potential resource implications. The mission discusses web-wide impacts, not measured differences between these choices. No tested media alternative or print-output comparison establishes what contextual guidance would be useful and supported.",
+      "confidence": "medium",
+      "nextEvidence": "Compare one meaningful media/print choice for task value and transfer/page count before adding impact guidance."
+    },
+    {
+      "checkId": "journeys",
+      "guideline": "2.4",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "context.json:records:3"
+      ],
+      "rationale": "The declared route follows standards to the catalogue, enters WCAG, activates Show results and opens the exact WCAG 2.2 URL with its full visible title. The after state contains the full report body, and the independent task trace corroborates it. This supports desktop pointer completion without asserting shortest route or all-user usability.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "media-delivery",
+      "guideline": "2.9",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Most task content is text with modest logos/icons and selected homepage images. Responsive 640-pixel cards and 250-pixel member logos have plausible rendered sizes; a WAI 1833-pixel graphic displayed around 832 is compatible with higher density. Some SVG intrinsic-size comparisons are not raster waste. No visual quality/rendition inspection supports specific reductions or full proportionality across the sample.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect representative raster graphics at intended densities and task detail before reducing dimensions."
+    },
+    {
+      "checkId": "font-delivery",
+      "guideline": "2.11",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Corporate and WAI content use loaded Noto Sans regular/semibold with fallback display and system fallback families; WAI code examples can use Noto Sans Mono. WCAG uses system sans-serif and downloads no webfont in the observation. Unloaded Arabic/icon declarations are not evidence of transfer. This meets the bounded observed strategy without assuming removable language support.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "semantic-forms",
+      "guideline": "3.6",
+      "outcome": "fail",
+      "evidenceIds": [
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4"
+      ],
+      "rationale": "The full WCAG report has meaningful en language and H1, but the recorded semantics find zero main elements or role=main regions, unlike the six other documents. This contradicts the selected main-region expectation for the full page sample. WAI Search inputs are named; the empty submit-button record needs a resolved accessible name before any separate naming defect. This is not a full WCAG assessment.",
+      "confidence": "high",
+      "nextEvidence": "Provide a main landmark around the normative report content while preserving its table-of-contents navigation, and verify landmark traversal."
+    },
+    {
+      "checkId": "metadata",
+      "guideline": "3.8",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Titles are descriptive and WAI/WCAG canonicals are usable; declared WAI JSON-LD parses. Corporate home, catalogue, mission and contact pages omit canonical metadata. Missing optional metadata is not automatically a defect, but catalogue query/filter variants make canonical applicability and the intended representative URL unresolved.",
+      "confidence": "medium",
+      "nextEvidence": "Clarify the canonical/indexing policy for catalogue filter URLs and confirm when canonical metadata is applicable."
+    },
+    {
+      "checkId": "preference-behavior",
+      "guideline": "3.9",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "All seven pages preserve task content during live/cold preferences. Their persistent light colors alone do not establish an applicable theme failure; WAI offers a Change Text Size or Colors route. Screen snapshots have no motion, but WAI print transitions record two running link animations without effect information. Full applicable preference behavior remains unresolved.",
+      "confidence": "medium",
+      "nextEvidence": "Inspect the recorded link effects under reduced motion and exercise any documented preference controls before prescribing theme changes."
+    },
+    {
+      "checkId": "no-js-content",
+      "guideline": "2.17",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Fresh no-JavaScript states preserve the catalogue list/filter markup, complete WCAG text, WAI summaries/navigation and corporate mission/contact reading. No account or script-dependent player is required for the declared reading tasks. This supports the HTML baseline without claiming every search/menu interaction works without scripts.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "api-requests",
+      "guideline": "3.11",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "The small corporate member-logo lookup and catalogue requests have plausible task purposes; the mission page also loads external video requests. Bounded snapshots do not establish sustained polling, freshness requirements or redundant API traffic. Repeated service endpoints cannot alone establish removal or backend savings.",
+      "confidence": "medium",
+      "nextEvidence": "Trace recurring member/catalogue/embed calls by initiator and event, checking unchanged repeats against actual task needs."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "guideline": "4.2",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Reusable assets expose validation or caching policies: corporate CSS/JS use ETag and Last-Modified, catalogue fingerprinted assets use long public lifetimes, and WAI/TR styles/scripts have bounded lifetimes with validators where applicable. Missing max-age alone is not failed when validation exists. This does not establish actual warm reuse or offline access.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "text-compression",
+      "guideline": "4.3",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Successful material text documents, scripts and styles use gzip or Brotli in all seven bounded response sets. The mission video-related zero-length text response is not material text needing compression. Already-compressed graphics/fonts/media are outside this demand.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "keyboard-path",
+      "guideline": "3.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "rationale": "Initial paths reach meaningful skip, language, navigation and report contents links. WAI focus outlines are solid blue and WCAG uses visible native outlines. Corporate skip/language controls have transparent outlines with no background/border/shadow comparison captured, so the full-sample discernible-indicator expectation remains unresolved rather than failed.",
+      "confidence": "medium",
+      "nextEvidence": "Capture the corporate focused controls and their complete focus styling to confirm an indicator; retain the supported WAI/report behavior."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "guideline": "2.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "context.json:records:0"
+      ],
+      "rationale": "The mission statement discusses broad web impacts, WSG development, implementation measurement and outreach. It does not identify www.w3.org operational impacts and mitigation. It is genuine mission context but cannot establish the narrow audited-service disclosure, nor does bounded absence prove such a statement does not exist.",
+      "confidence": "medium",
+      "nextEvidence": "Supply a service-specific statement for the public W3C website operation/delivery if available."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "guideline": "3.13",
+      "outcome": "fail",
+      "evidenceIds": [
+        "staged.json:discovery:0"
+      ],
+      "rationale": "Root and well-known carbon.txt return 404 and no usable header/DNS delegation or parseable document is established. This is the narrow discovery absence only, not a statement about emissions or the usefulness of W3C sustainability work.",
+      "confidence": "high",
+      "nextEvidence": "If useful, publish a valid carbon.txt with supported service/provider relationships."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "guideline": "4.1",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "context.json:records:0"
+      ],
+      "rationale": "The frozen evidence does not relate this origin to a named hosting service with independently corroborated operational sustainability evidence. W3C sustainability advocacy and standards work are not hosting evidence.",
+      "confidence": "medium",
+      "nextEvidence": "Provide an origin-to-hosting relationship and independent operational evidence for that service; do not set a green-hosting model flag from mission text."
+    },
+    {
+      "checkId": "access-barriers",
+      "assessmentScope": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary text input at 1365x900: start at https://www.w3.org/, follow standards to the public technical-report catalogue, filter for WCAG and open the full WCAG 2.2 report. Completion requires its exact URL and visible full report title, with no account or personal-data submission. Keyboard-only, mobile, impaired-network and geographic access are not represented.",
+      "guideline": "5.13",
+      "outcome": "pass",
+      "evidenceIds": [
+        "probes.json:journeys:0",
+        "context.json:records:3"
+      ],
+      "rationale": "The represented anonymous 1365 by 900 desktop pointer/text-input route reaches the exact WCAG 2.2 report and visible full title without account or personal data. The full after text and independent trace establish the declared completion. This does not imply keyboard, network, geography or representative-user success.",
+      "confidence": "high",
+      "nextEvidence": "No further evidence is needed for this bounded expectation; recheck after relevant changes."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "assessmentScope": "Public English WCAG 2.2 technical-report collection, from the first 2020 working draft through the December 2024 Recommendation and its currently published history as captured on 2026-11-06: review stated maintenance/review arrangements, an applied publication/update decision and discoverable historical reports. The broader WAI collection and organization-wide CMS practices are excluded; continuing reference value of historical standards is retained.",
+      "guideline": "5.18",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2",
+        "probes.json:pages:2"
+      ],
+      "rationale": "WCAG 2.2 has an actual staged publication history from 2020 drafts through the 2024 Recommendation, current/versioned/editor/history/errata links, named editors and a feedback route. These are useful applied publication and historical-access evidence. The captured status excerpt does not identify a review/expiry schedule; later-version intentions are not a maintenance cadence. Consequently the exact combined expectation remains incomplete, without treating old standards as waste.",
+      "confidence": "medium",
+      "nextEvidence": "Capture the collection's maintenance/review arrangement or cadence and one applicable update decision; preserve dated reports for continuing normative reference value."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "assessmentScope": "Operation and delivery of the public www.w3.org web service as described by its sustainability mission page at the 2026-11-06 capture. Assess whether published direction, metrics, service boundary and dated comparable baseline/progress refer to this service. W3C advocacy for the wider web and development of WSG are context, not evidence of this service achieving operational targets.",
+      "guideline": "5.6",
+      "outcome": "cantTell",
+      "evidenceIds": [
+        "context.json:records:0"
+      ],
+      "rationale": "The mission describes a sustainable web direction, developing guidance and measuring implementations. It does not supply an operational metric, boundary and comparable dated baseline/progress for www.w3.org. Standards advocacy cannot establish achievement of the website's own targets; missing evidence is an unknown.",
+      "confidence": "medium",
+      "nextEvidence": "Provide any public service-operation target, measurement boundary and comparable baseline/progress, if established."
+    }
+  ],
+  "topFindings": [
+    {
+      "checkId": "semantic-forms",
+      "priority": "medium",
+      "title": "Give the long WCAG report a main-content landmark.",
+      "evidenceIds": [
+        "probes.json:pages:2"
+      ],
+      "summary": "Give the long WCAG report a main-content landmark.",
+      "recommendedAction": "Wrap or identify the normative content as main while keeping its contents navigation separate, then validate landmark traversal; preserve the complete HTML text.",
+      "status": "observed defect"
+    },
+    {
+      "checkId": "components",
+      "priority": "medium",
+      "title": "Investigate a user-activated facade for the sustainability video.",
+      "evidenceIds": [
+        "probes.json:pages:5",
+        "staged.json:runs:5"
+      ],
+      "summary": "Investigate a user-activated facade for the sustainability video.",
+      "recommendedAction": "Compare the existing partial 1.35 MB initial embed state with a lightweight activation route that preserves captions and usable playback. This is an investigation, not a proven saving or a need to remove the explanatory video.",
+      "status": "evidence gap"
+    },
+    {
+      "checkId": "documents",
+      "priority": "medium",
+      "title": "Check the catalogue print expansion against the reader's intended report list.",
+      "evidenceIds": [
+        "probes.json:pages:1"
+      ],
+      "summary": "Check the catalogue print expansion against the reader's intended report list.",
+      "recommendedAction": "Inspect actual pages and expanded report/history details before choosing print defaults; preserve any entries users need for standards reference.",
+      "status": "evidence gap"
+    }
+  ]
+}

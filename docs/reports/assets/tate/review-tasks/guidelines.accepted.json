@@ -1,0 +1,7 @@
+{
+  "role": "guidelines",
+  "taskSHA256": "113c59f7780fd254db14638dbd92aac21f8f3885d645409fdacd640e98ed3fbf",
+  "resultSHA256": "a0c0a0c284495c365411b45a9281ed9591f79de9e1a0caf2ad24935129e39bb4",
+  "packetSHA256": "bf02b066f3771a13659474cc28a0d825ce55edbfacae31593b5c072129886d5b",
+  "executionMode": "native-subagents"
+}

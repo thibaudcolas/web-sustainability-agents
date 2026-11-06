@@ -1,0 +1,356 @@
+{
+  "schemaVersion": "0.2.0",
+  "sourceSHA256": {
+    "staged": "7e9e2db1e958fd389aa850d2da06d1242ad408eb23b99dda825c6ebe40670e37",
+    "traffic": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    "energy": "f1b2aabd9ff436587e19f9e9d493f2e5081f1984bf533de24a91f44974d09c6c"
+  },
+  "calculatorSHA256": "67ae055f01459f2962320088180f9ee48e9cf820bc9c123e45145cb4c388c075",
+  "energyValidatorSHA256": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25",
+  "dependencyLockSHA256": "ec953293d1f0ba8dccd1585b196daddb52b351b47f4c6d52958c794088f0519e",
+  "model": "CO2.js 0.19.0 / SWDM v4, global model electricity factors, no DCR assigned by this scenario calculator",
+  "visitSelection": "first",
+  "clientGridIntensity": 494.0,
+  "trafficDatasetMonth": "202609",
+  "scenarios": [
+    {
+      "site": "https://www.tate.org.uk",
+      "basis": "scenario",
+      "unit": "kgCO2e/year",
+      "status": "estimated",
+      "value": 19152.20395413083,
+      "functionalUnit": "One estimated year of page views at the audited origin, modeled operational and embodied browsing emissions",
+      "notIncluded": "Not a complete organizational footprint; no site-specific backend/build/office inventory or remote inference energy",
+      "assumptions": {
+        "pageMix": "Equal weights across sampled page URLs",
+        "visitSelection": "First recorded initial visit per URL",
+        "realPageMix": "unknown",
+        "visitMix": "100% first visits, 0% returning visits",
+        "hosting": "unknown; model uses non-green scenario",
+        "traffic": "Rank-bucket cohort estimate, not actual analytics",
+        "sensitivity": "All views at the minimum/maximum sampled page intensity; not a confidence interval or bounds on true site emissions"
+      },
+      "annualPageviews": 24937909.0,
+      "gramsPerViewProxy": 0.7679955827142857,
+      "rankBucket": 100000,
+      "transferInputs": "partial",
+      "pages": [
+        {
+          "url": "https://www.tate.org.uk/",
+          "gramsPerView": 0.8562360222,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.tate.org.uk/",
+              "runId": "home-initial_no_banner_observed",
+              "bytes": 5777571,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.8562360222,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 5777571,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.tate.org.uk/visit/tate-modern",
+          "gramsPerView": 0.8917767534000001,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.tate.org.uk/visit/tate-modern",
+              "runId": "tate-modern-initial_no_banner_observed",
+              "bytes": 6017387,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.8917767534000001,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 6017387,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.tate.org.uk/whats-on",
+          "gramsPerView": 1.0046495784,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.tate.org.uk/whats-on",
+              "runId": "whats-on-initial_no_banner_observed",
+              "bytes": 6779012,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 1.0046495784,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 6779012,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+          "gramsPerView": 0.6615464232,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+              "runId": "julio-le-parc-initial_no_banner_observed",
+              "bytes": 4463876,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.6615464232,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 4463876,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.tate.org.uk/art/stories",
+          "gramsPerView": 0.7639471398,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.tate.org.uk/art/stories",
+              "runId": "stories-initial_no_banner_observed",
+              "bytes": 5154839,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.7639471398,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 5154839,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.tate.org.uk/about-us/digital/green-website",
+          "gramsPerView": 0.5944425006,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.tate.org.uk/about-us/digital/green-website",
+              "runId": "greener-website-initial_no_banner_observed",
+              "bytes": 4011083,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.5944425006,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 4011083,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use/cookie-policy",
+          "gramsPerView": 0.6033706614,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use/cookie-policy",
+              "runId": "cookie-policy-initial_no_banner_observed",
+              "bytes": 4071327,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 0.6033706614,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 4071327,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        }
+      ],
+      "sensitivityKgPerYear": {
+        "lowestSampledPage": 14824.152985695247,
+        "highestSampledPage": 25053.859763027565
+      }
+    }
+  ],
+  "clientEnergyScenarios": [
+    {
+      "site": "https://www.tate.org.uk",
+      "status": "estimated",
+      "basis": "scenario",
+      "value": 491.30476931021514,
+      "unit": "kWh/year",
+      "kgCO2ePerYear": 242.70455603924626,
+      "gridIntensity": {
+        "value": 494.0,
+        "unit": "gCO2e/kWh",
+        "basis": "Assumed comparison factor, not audience electricity data",
+        "defaultFactorReference": "https://sustainablewebdesign.org/estimating-digital-emissions/"
+      },
+      "assumptions": {
+        "pageMix": "Equal weights across energy-sampled URLs; median of three matching repetitions per URL",
+        "visitMix": "Every estimated pageview repeats the recorded initial-load scenario on the tested device/browser",
+        "boundary": "Modeled browser CPU, memory, disk and display operation only; excludes network, remote servers, embodied emissions and later reading/interaction",
+        "measurement": "GreenFrame resource-counter model, not direct electricity metering",
+        "improvement": "A proportional reduction is a sensitivity scenario, not demonstrated achievable savings",
+        "additivity": "Overlaps SWDM device scope; do not add these estimates to SWDM"
+      },
+      "annualPageviews": 24937909.0,
+      "rankBucket": 100000,
+      "WhPerViewProxy": 0.019701121265227776,
+      "sampledPageCount": 2,
+      "auditedPageCount": 7,
+      "pages": [
+        {
+          "url": "https://www.tate.org.uk/",
+          "WhPerView": 0.019422196617733332,
+          "pageWeight": 0.5
+        },
+        {
+          "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+          "WhPerView": 0.01998004591272222,
+          "pageWeight": 0.5
+        }
+      ]
+    }
+  ],
+  "sensitivity": {
+    "reductionFraction": 0.1,
+    "meaning": "Hypothetical 10% reduction in per-view intensity at unchanged traffic; not a forecast of achievable savings"
+  }
+}

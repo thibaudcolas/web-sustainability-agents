@@ -1,0 +1,356 @@
+{
+  "schemaVersion": "0.2.0",
+  "sourceSHA256": {
+    "staged": "38072714fd9c724b1fcefd0f290a8fdf442a89b0a72e3a6ef6d2ede1060a336f",
+    "traffic": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    "energy": "05cd70473620f34fa7f55ab462a7da5deb074446a150d2ad45454d21bff3cf8c"
+  },
+  "calculatorSHA256": "67ae055f01459f2962320088180f9ee48e9cf820bc9c123e45145cb4c388c075",
+  "energyValidatorSHA256": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25",
+  "dependencyLockSHA256": "ec953293d1f0ba8dccd1585b196daddb52b351b47f4c6d52958c794088f0519e",
+  "model": "CO2.js 0.19.0 / SWDM v4, global model electricity factors, no DCR assigned by this scenario calculator",
+  "visitSelection": "first",
+  "clientGridIntensity": 494.0,
+  "trafficDatasetMonth": "202609",
+  "scenarios": [
+    {
+      "site": "https://www.nhs.uk",
+      "basis": "scenario",
+      "unit": "kgCO2e/year",
+      "status": "estimated",
+      "value": 223721.27401831234,
+      "functionalUnit": "One estimated year of page views at the audited origin, modeled operational and embodied browsing emissions",
+      "notIncluded": "Not a complete organizational footprint; no site-specific backend/build/office inventory or remote inference energy",
+      "assumptions": {
+        "pageMix": "Equal weights across sampled page URLs",
+        "visitSelection": "First recorded initial visit per URL",
+        "realPageMix": "unknown",
+        "visitMix": "100% first visits, 0% returning visits",
+        "hosting": "unknown; model uses non-green scenario",
+        "traffic": "Rank-bucket cohort estimate, not actual analytics",
+        "sensitivity": "All views at the minimum/maximum sampled page intensity; not a confidence interval or bounds on true site emissions"
+      },
+      "annualPageviews": 455186749.0,
+      "gramsPerViewProxy": 0.4914933804857143,
+      "rankBucket": 5000,
+      "transferInputs": "partial",
+      "pages": [
+        {
+          "url": "https://www.nhs.uk/",
+          "gramsPerView": 0.0931820838,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://www.nhs.uk/",
+              "runId": "home-reject_analytics",
+              "bytes": 628759,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0931820838,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 628759,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.nhs.uk/live-well/",
+          "gramsPerView": 0.0225822714,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://www.nhs.uk/live-well/",
+              "runId": "healthy-living-reject_analytics",
+              "bytes": 152377,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0225822714,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 152377,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.nhs.uk/live-well/exercise/",
+          "gramsPerView": 0.0225366258,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://www.nhs.uk/live-well/exercise/",
+              "runId": "exercise-reject_analytics",
+              "bytes": 152069,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0225366258,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 152069,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+          "gramsPerView": 0.022927873799999998,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+              "runId": "walking-reject_analytics",
+              "bytes": 154709,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.022927873799999998,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 154709,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+          "gramsPerView": 3.2344666302,
+          "accountingStatus": "partial",
+          "branches": [
+            {
+              "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+              "runId": "exercise-videos-reject_analytics",
+              "bytes": 21825011,
+              "accountingStatus": "partial",
+              "trace": {
+                "co2": 3.2344666302,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 21825011,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.nhs.uk/our-policies/choose-your-cookie-settings/",
+          "gramsPerView": 0.021660319199999997,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://www.nhs.uk/our-policies/choose-your-cookie-settings/",
+              "runId": "cookie-settings-reject_analytics",
+              "bytes": 146156,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.021660319199999997,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 146156,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://www.nhs.uk/our-policies/content-policy/",
+          "gramsPerView": 0.0230978592,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://www.nhs.uk/our-policies/content-policy/",
+              "runId": "content-policy-reject_analytics",
+              "bytes": 155856,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0230978592,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 155856,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        }
+      ],
+      "sensitivityKgPerYear": {
+        "lowestSampledPage": 9859.49027895028,
+        "highestSampledPage": 1472286.3501497232
+      }
+    }
+  ],
+  "clientEnergyScenarios": [
+    {
+      "site": "https://www.nhs.uk",
+      "status": "estimated",
+      "basis": "scenario",
+      "value": 8547.879959583735,
+      "unit": "kWh/year",
+      "kgCO2ePerYear": 4222.652700034365,
+      "gridIntensity": {
+        "value": 494.0,
+        "unit": "gCO2e/kWh",
+        "basis": "Assumed comparison factor, not audience electricity data",
+        "defaultFactorReference": "https://sustainablewebdesign.org/estimating-digital-emissions/"
+      },
+      "assumptions": {
+        "pageMix": "Equal weights across energy-sampled URLs; median of three matching repetitions per URL",
+        "visitMix": "Every estimated pageview repeats the recorded initial-load scenario on the tested device/browser",
+        "boundary": "Modeled browser CPU, memory, disk and display operation only; excludes network, remote servers, embodied emissions and later reading/interaction",
+        "measurement": "GreenFrame resource-counter model, not direct electricity metering",
+        "improvement": "A proportional reduction is a sensitivity scenario, not demonstrated achievable savings",
+        "additivity": "Overlaps SWDM device scope; do not add these estimates to SWDM"
+      },
+      "annualPageviews": 455186749.0,
+      "rankBucket": 5000,
+      "WhPerViewProxy": 0.018778841823411108,
+      "sampledPageCount": 2,
+      "auditedPageCount": 7,
+      "pages": [
+        {
+          "url": "https://www.nhs.uk/",
+          "WhPerView": 0.010918195378488888,
+          "pageWeight": 0.5
+        },
+        {
+          "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+          "WhPerView": 0.02663948826833333,
+          "pageWeight": 0.5
+        }
+      ]
+    }
+  ],
+  "sensitivity": {
+    "reductionFraction": 0.1,
+    "meaning": "Hypothetical 10% reduction in per-view intensity at unchanged traffic; not a forecast of achievable savings"
+  }
+}

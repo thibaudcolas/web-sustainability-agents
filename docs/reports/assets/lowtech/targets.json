@@ -1,0 +1,88 @@
+{
+  "targets": [
+    {
+      "id": "home",
+      "url": "https://solar.lowtechmagazine.com/",
+      "task": "Discover recent articles and the public reading routes.",
+      "rationale": "Magazine landing page and newest-content cards.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "url": "https://solar.lowtechmagazine.com/archives/",
+      "task": "Browse dated article titles and categories to locate an older practical guide.",
+      "rationale": "Large chronological article index with theme-filter control.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "solar-methodology",
+      "url": "https://solar.lowtechmagazine.com/about/the-solar-website/",
+      "task": "Understand solar-hosting design, uptime tradeoffs and published measurement boundaries.",
+      "rationale": "Long methodology/about document with diagrams and public technical claims.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "url": "https://solar.lowtechmagazine.com/power/",
+      "task": "Read publicly displayed power and availability information.",
+      "rationale": "Operational status/power view distinct from editorial content.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "offline-reading",
+      "url": "https://solar.lowtechmagazine.com/offline-reading/",
+      "task": "Find offline formats and understand available historical book collections without purchasing.",
+      "rationale": "Alternative-format catalogue and continuity guidance for intermittent hosting.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "solar-oven",
+      "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+      "task": "Read a complete practical solar-electric-oven guide, including images and references.",
+      "rationale": "Representative illustrated long-form how-to article; no construction advice evaluated.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "url": "https://solar.lowtechmagazine.com/privacy/",
+      "task": "Understand stated analytics and personal-data practices.",
+      "rationale": "Short public policy template; attribution retained rather than assumed enforcement.",
+      "branches": [
+        {
+          "name": "no_banner",
+          "actions": []
+        }
+      ]
+    }
+  ]
+}

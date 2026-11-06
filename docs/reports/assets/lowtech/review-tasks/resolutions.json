@@ -1,0 +1,49 @@
+{
+  "resolutions": [
+    {
+      "issue": "evidence:lowtech-evidence-01",
+      "decision": "applied",
+      "reason": "Initial totals remain headline values and scroll totals cumulative. Later illustrated-guide image loading is positive scoped behavior, with no consent action claimed."
+    },
+    {
+      "issue": "evidence:lowtech-evidence-02",
+      "decision": "applied",
+      "reason": "CSS thumbnails and intentional dithering are recognized; image legibility remains an investigation and no generic format conversion/removal or savings is claimed."
+    },
+    {
+      "issue": "evidence:lowtech-evidence-03",
+      "decision": "applied",
+      "reason": "Solar hosting and historical power are attributed, not independently verified; the unknown/non-green SWDM assumption remains and energy boundaries stay separate."
+    },
+    {
+      "issue": "evidence:lowtech-evidence-04",
+      "decision": "applied",
+      "reason": "Long excerpts and uninspected downloads remain bounded. The report does not certify full no-script/print equivalence or actual offline-book usability."
+    },
+    {
+      "issue": "claims:lowtech-historical-execution-supported",
+      "decision": "applied",
+      "reason": "Historical governance and necessity passes preserve exact 2018\u20132020 scope and attributed measured experiments/decisions; no present-day execution or representative research is inferred."
+    },
+    {
+      "issue": "claims:lowtech-footprint-metric-boundaries",
+      "decision": "applied",
+      "reason": "Goals/disclosure passes retain historical periods and denominators. Hosting remains unknown and current modeled energy is distinct from historical server measurements."
+    },
+    {
+      "issue": "claims:lowtech-book-edits-versus-live-lifecycle",
+      "decision": "applied",
+      "reason": "Online lifecycle remains unknown despite concrete book-editing examples. Useful archives are preserved and offline books are not represented as tested equivalent routes."
+    },
+    {
+      "issue": "claims:lowtech-reading-and-privacy-boundaries",
+      "decision": "applied",
+      "reason": "The title/URL journey is corroborated by the separate completed staged scroll: all 22 article image URLs have finished responses, with complete accounting at the bottom. This supports bounded available illustrated reading, not image legibility, correctness or actual offline use; privacy statements remain attributed."
+    },
+    {
+      "issue": "claims:lowtech-carbon-discovery-scope",
+      "decision": "applied",
+      "reason": "The missing carbon.txt result stays separate from substantial retrieved public sustainability disclosure and unverified operational hosting."
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "role": "evidence",
+  "site": "https://www.tate.org.uk",
+  "packetSHA256": "bf02b066f3771a13659474cc28a0d825ce55edbfacae31593b5c072129886d5b",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "tate-evidence-01",
+      "checkIds": [
+        "media-delivery",
+        "api-requests",
+        "components"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:2",
+        "staged.json:runs:3",
+        "staged.json:runs:4",
+        "staged.json:runs:5",
+        "staged.json:runs:6"
+      ],
+      "summary": "All seven initial documents are HTTP 200, while every traffic capture is partial with unresolved requests and explicit child-frame gaps (six or seven frames initially). Observed initial totals range from 4,011,083 to 6,779,012 B; every rating is correctly not_calculated. Initial errors include aborted analytics/ad responses, some with 200/204 status.",
+      "requestedChange": "Report the observed totals as partial decimal MB, not complete website transfers or eligible carbon ratings. Do not substitute unknown traffic with zero or identify these resource errors as confirmed site faults. Preserve the protocol and frame limitations in any modeled scenario."
+    },
+    {
+      "id": "tate-evidence-02",
+      "checkIds": [
+        "choice"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:6",
+        "probes.json:pages:6"
+      ],
+      "summary": "No banner action was declared or executed. after_consent is marked not_applicable_or_not_present and repeats the initial total; the cookie policy probe text is truncated in JavaScript states.",
+      "requestedChange": "Describe the observed no-banner state and no consent action. Do not present equal checkpoints as rejection savings or infer consent compliance, absence of choices, or a broken banner from this sample. A policy review must acknowledge the excerpt and any unresolved applicable control behavior."
+    },
+    {
+      "id": "tate-evidence-03",
+      "checkIds": [
+        "media-delivery",
+        "components"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:5",
+        "probes.json:pages:0",
+        "probes.json:pages:5"
+      ],
+      "summary": "The TateDraw-20230127-4864-WEB.original_1.jpg resource contributes approximately 859 kB on all sampled pages. On both homepage and greener-website desktop observations it has natural size 1706 by 1280 but zero rendered width/height and visible=false. The 420-pixel Ana Mendieta WebP also contributes approximately 940 kB on several templates.",
+      "requestedChange": "Prioritize investigating delivery of the hidden shared image and heavy repeated art renditions. Preserve art detail and content needs; establish whether and when the hidden component is activated before recommending conditional loading. Do not fail the WebP merely because of format or assume every high-byte art image is oversized without visual/pixel-density review."
+    },
+    {
+      "id": "tate-evidence-04",
+      "checkIds": [
+        "disclosure-scope",
+        "sustainability-goals",
+        "governance-practice",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0",
+        "context.json:records:1",
+        "context.json:records:2",
+        "probes.json:pages:5"
+      ],
+      "summary": "Automated common-path discovery does not establish a disclosure, but frozen context and page probes retrieve the real Creating a greener website statement. Its 45 tonnes CO2e in 2019 and 27 tonnes in 2023 estimates, Digital Green Team meetings and OLED savings statement are publisher self-reports; underlying baseline comparability and hardware conditions are unverified.",
+      "requestedChange": "Reconcile automated discovery with the successfully retrieved statement and cite it for disclosed intent/practice. Do not label Tate as having no statement. Keep historical annual estimates, the current bounded byte capture and conditional maximum-brightness OLED claim separate; do not infer a measured 40% improvement in this run, universal dark-mode savings, verified execution or green hosting."
+    },
+    {
+      "id": "tate-evidence-05",
+      "checkIds": [
+        "keyboard-path"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:1",
+        "probes.json:pages:2",
+        "probes.json:pages:3",
+        "probes.json:pages:4",
+        "probes.json:pages:5",
+        "probes.json:pages:6"
+      ],
+      "summary": "Across all seven pages the first Tab trace records Skip navigation at y=-42.24375 with height=35.203125, exactly matching the unfocused desktop geometry. It reports focusVisible=true and a 3px solid blue outline, but captures only the immediate geometry. No frozen stylesheet bodies, transition values, settled focused screenshot or repeated delayed geometry are supplied; CSS coverage records contain offsets only.",
+      "requestedChange": "Change a persistent-invisible-focus failure to cantTell pending a settled focus recheck. Retain the observed offscreen first snapshot as an investigation, not proof of lasting invisibility. Recheck after screen-media reset has settled, Tab to the skip link, allow frame/transition completion, verify visible geometry/focus indicator and activation, and repeat without preceding print emulation. Repeated identical immediate snapshots across shared templates do not resolve the shared timing limitation."
+    }
+  ]
+}

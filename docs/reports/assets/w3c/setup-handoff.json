@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "ready",
+  "origin": "https://www.w3.org",
+  "plan": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/w3c/plan.json",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://www.w3.org/",
+      "rationale": "Public institutional homepage and navigation entry point."
+    },
+    {
+      "id": "standards-catalogue",
+      "url": "https://www.w3.org/TR/",
+      "rationale": "Interactive searchable/filterable catalogue; substantively different from reading pages."
+    },
+    {
+      "id": "wcag22",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "rationale": "Long technical-report template, references and versioning."
+    },
+    {
+      "id": "accessibility-fundamentals",
+      "url": "https://www.w3.org/WAI/fundamentals/",
+      "rationale": "WAI overview template and audience-oriented resource discovery."
+    },
+    {
+      "id": "images-tutorial",
+      "url": "https://www.w3.org/WAI/tutorials/images/",
+      "rationale": "Instructional tutorial with examples and distinct WAI navigation."
+    },
+    {
+      "id": "sustainability",
+      "url": "https://www.w3.org/mission/sustainability/",
+      "rationale": "Public mission and sustainability claims; no presumption of site-level progress."
+    },
+    {
+      "id": "contact",
+      "url": "https://www.w3.org/contact/",
+      "rationale": "Practical organizational task distinct from standards reading."
+    }
+  ],
+  "journeyVerification": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/w3c/journey-verification.json",
+  "journeyAllPostconditionsMatch": true,
+  "contextChecks": [
+    "access-barriers",
+    "content-lifecycle",
+    "sustainability-goals"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English desktop readers with JavaScript enabled, a pointer and ordinary text input at 1365x900: start at https://www.w3.org/, follow standards to the public technical-report catalogue, filter for WCAG and open the full WCAG 2.2 report. Completion requires its exact URL and visible full report title, with no account or personal-data submission. Keyboard-only, mobile, impaired-network and geographic access are not represented.",
+    "content-lifecycle": "Public English WCAG 2.2 technical-report collection, from the first 2020 working draft through the December 2024 Recommendation and its currently published history as captured on 2026-11-06: review stated maintenance/review arrangements, an applied publication/update decision and discoverable historical reports. The broader WAI collection and organization-wide CMS practices are excluded; continuing reference value of historical standards is retained.",
+    "sustainability-goals": "Operation and delivery of the public www.w3.org web service as described by its sustainability mission page at the 2026-11-06 capture. Assess whether published direction, metrics, service boundary and dated comparable baseline/progress refer to this service. W3C advocacy for the wider web and development of WSG are context, not evidence of this service achieving operational targets."
+  },
+  "contextEvidenceCount": 4,
+  "cookieControls": {
+    "observed": false,
+    "branches": [
+      "no_banner"
+    ],
+    "limitations": "Seven pages; visible controls in fresh anonymous Chromium context and bounded waits. No accept/reject control discovered."
+  },
+  "prerequisites": {
+    "doctor": "Runtime Python environment, Node/npm and node dependencies present; doctor records readiness only.",
+    "browser": "Headless Playwright Chromium successfully launched and completed both sample navigation and journey verification.",
+    "prepareNeeded": false,
+    "energy": "Readiness only; 3 repetitions of home planned; coordinator will run later sequentially."
+  },
+  "validation": [
+    "audit.workflow.validate_plan passed",
+    "audit.probes.validate_plan passed",
+    "all contextual files exist, decode as UTF-8 and are smaller than 64 KiB",
+    "all seven sampled starting URLs remain on the exact origin and returned HTTP 200",
+    "all journey postconditions verified against live browser"
+  ],
+  "scopeOmissions": [
+    "Member-only, account, invited-expert and authenticated areas; no form submission or email sending.",
+    "Other languages, mobile and keyboard-only journeys, comprehensive standards coverage, events, membership and external subdomains.",
+    "Data-minimization omitted: selected tasks read public information and filter a catalogue, without collecting personal data.",
+    "Audience-needs and inclusive-testing omitted: WAI guidance about inclusive practice does not document representative testing of a selected www.w3.org interface decision.",
+    "Governance-practice, impact-business-model and service-necessity omitted: no bounded operational commitment or creation/funding decision selected; a mission statement alone cannot establish implementation.",
+    "Service-end-of-life omitted: no selected retirement/continuity task."
+  ],
+  "unansweredRequiredScopeQuestions": [],
+  "unresolvedOptionalEvidenceRequests": [
+    "For content-lifecycle: a public review/maintenance schedule and a reasoned WCAG 2.2 update example; visible publication history alone may not establish review cadence.",
+    "For sustainability-goals: any dated operational metric, comparable baseline and progress for www.w3.org itself; WSG publishing activity alone does not meet this boundary."
+  ],
+  "collectionPerformed": false,
+  "productionEdits": false
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "role": "claims",
+  "site": "https://www.nhs.uk",
+  "session": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/session",
+  "packetSHA256": "00391b37631387be8a4df161c5b4b6877e86c48588a4dbac55885b30fb784eda",
+  "executionMode": "native-subagents",
+  "skill": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/session/skills/sustainability-claims-review/SKILL.md",
+  "supportingSkills": [
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/session/skills/sustainability-context-review/SKILL.md"
+  ],
+  "instruction": "Check disclosures, footprint assumptions, source corroboration and recommendation prerequisites. Return issues; distinguish unknown practice from absent documentation. Load any supportingSkills listed in this task before judging contextual records.",
+  "output": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/nhs/review-tasks/claims.result.json",
+  "checkIds": [
+    "distraction",
+    "choice",
+    "comprehension",
+    "consistency",
+    "motion",
+    "notifications",
+    "documents",
+    "unused-code",
+    "components",
+    "layout",
+    "impact-choice",
+    "journeys",
+    "media-delivery",
+    "font-delivery",
+    "semantic-forms",
+    "metadata",
+    "preference-behavior",
+    "no-js-content",
+    "api-requests",
+    "public-cache-policy",
+    "text-compression",
+    "keyboard-path",
+    "disclosure-scope",
+    "carbon-discovery",
+    "hosting-evidence",
+    "access-barriers",
+    "data-minimization",
+    "content-lifecycle"
+  ],
+  "modelPolicy": {
+    "gpt-6.1-sol": "high",
+    "deepseek-v4.1-flash": "high"
+  },
+  "contract": "guidelines: original review-template.json shape; evidence/claims: {role, site, packetSHA256, reviewer:{harness,model,reasoning}, issues:[{id,checkIds,evidenceIds,summary,requestedChange}]}. Every issue needs real check/evidence IDs. No additional browsing or mutable source access; request missing evidence through the coordinator."
+}

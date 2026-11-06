@@ -1,0 +1,75 @@
+{
+  "role": "evidence",
+  "site": "https://solar.lowtechmagazine.com",
+  "packetSHA256": "59834bd3db9f8b608ccb57c1e59bd80a601f231bbb833338ffcaef29f89e1681",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "lowtech-evidence-01",
+      "checkIds": [
+        "media-delivery",
+        "choice"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:2",
+        "staged.json:runs:5"
+      ],
+      "summary": "All seven initial HTTP 200 captures are complete within protocol. Initial traffic ranges from 18,769 to 484,989 B. Solar-methodology rises from 129,767 to 373,728 B after scroll; solar-oven rises from 277,772 to 982,132 B, with 704,360 additional bytes and observed later image requests. No consent action occurs.",
+      "requestedChange": "Retain initial as headline, show cumulative scroll totals separately, and describe observed later image loading as a positive scoped result. Do not add cumulative checkpoints together, call the additional images a first-load defect, claim all imagery is deferred from loading=lazy alone, or present after_consent as a completed choice."
+    },
+    {
+      "id": "lowtech-evidence-02",
+      "checkIds": [
+        "media-delivery",
+        "components"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "probes.json:pages:0",
+        "probes.json:pages:2",
+        "probes.json:pages:5",
+        "context.json:records:0"
+      ],
+      "summary": "The homepage DOM image inventory is empty while its measured traffic includes multiple dithered PNG image resources (largest 60,354 B). The article images deliberately use dithered PNGs and provide links to original images; no changed-rendition legibility test or original-image activation journey is captured.",
+      "requestedChange": "Do not characterize the homepage as image-free or count only img elements as media traffic. Preserve the intentional dithered-image approach and original-image option when discussing optimization; no generic PNG-to-WebP prescription, safe source removal or precise savings is established by these observations."
+    },
+    {
+      "id": "lowtech-evidence-03",
+      "checkIds": [
+        "hosting-evidence",
+        "disclosure-scope",
+        "sustainability-goals"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:3",
+        "context.json:records:0",
+        "context.json:records:1"
+      ],
+      "summary": "The publisher describes solar self-hosting, 1\u20132.5 W server power and historical energy/uptime analysis; live stats are requested in the power-page capture. These are not independent measurements of current electricity, whole-device energy or embodied impacts. The deterministic SWDM scenario explicitly assumes unknown/non-green hosting.",
+      "requestedChange": "Present the solar claim and historical period with attribution and retain the supplied SWDM assumptions. Do not convert a stats request into verified green hosting, replace missing energy with zero, claim zero website emissions, or sum model estimates with any later browser-container energy supplement. Historical evaluation is not the measurement of this capture."
+    },
+    {
+      "id": "lowtech-evidence-04",
+      "checkIds": [
+        "documents",
+        "no-js-content",
+        "content-lifecycle"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:2",
+        "probes.json:pages:5",
+        "context.json:records:1",
+        "context.json:records:2",
+        "context.json:records:3"
+      ],
+      "summary": "Solar-methodology and solar-oven probe text is capped at 20,000 characters across JavaScript/no-JavaScript/print states; the historical evaluation context is explicitly an excerpt truncated at 29,000 characters. The download inventory includes external cited PDFs, while Offline Reading describes available formats rather than an inspected downloadable artifact.",
+      "requestedChange": "Limit content comparisons to retained excerpts and declared tasks; equal capped lengths do not establish complete document equivalence. Distinguish linked references and published offline-reading options from fetched/tested files. Do not infer PDF optimization, accessibility, full archival lifecycle or actual offline usability without inspecting the relevant artifact and version."
+    }
+  ]
+}

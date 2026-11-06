@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "carbon-review-v1",
+  "sourceSHA256": "7e9e2db1e958fd389aa850d2da06d1242ad408eb23b99dda825c6ebe40670e37",
+  "scriptSHA256": "cb57ab2b96ca9fb4d05a907ba4d4269274f31318e32244dcfdf8bc4877c9dd60",
+  "sites": [
+    {
+      "site": "https://www.tate.org.uk",
+      "presence": "not_established_within_discovery_scope",
+      "records": [],
+      "documentCount": 2,
+      "claimsVerified": false,
+      "scopeNote": "Presence, parseability, declared relationships, retrieval, and substantiation are separate results. Missing carbon.txt does not establish absence of a sustainability policy."
+    }
+  ]
+}

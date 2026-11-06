@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "greenframe-client-v1",
+  "preparedAt": "2026-11-06T08:56:27.934758+00:00",
+  "url": "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/",
+  "phase": "initial",
+  "consentSelector": null,
+  "noBannerDeclared": false,
+  "samples": 3,
+  "status": "completed",
+  "requiredCliVersion": "2.0.1",
+  "configSHA256": "597843ab2f1e1627a76730fcad30c64522dbd4d20dfed5ff05cec5dc0b93fd5c",
+  "scenarioSHA256": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+  "wrapperSHA256": "82d344437434dbb946364d5177e38a31fe5b5051638200dbef05a6fceec55570",
+  "system": {
+    "platform": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+    "machine": "x86_64"
+  },
+  "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+  "comparisonRule": "Independent complete scenarios, not incremental phase energy; retain first-load result as headline and compare matched repeated scenarios",
+  "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM; annual projection requires explicit traffic, page-mix and electricity assumptions. Runner image/browser versions require separate verification before comparing runs.",
+  "metrics": {
+    "energy": {
+      "value": 0.04462327011334815,
+      "unit": "Wh/scenario",
+      "basis": "GreenFrame resource model"
+    },
+    "clientDeviceEnergy": {
+      "value": 0.017508647780014812,
+      "unit": "Wh/scenario",
+      "basis": "GreenFrame resource model"
+    },
+    "networkEnergy": {
+      "value": 0.027114622333333338,
+      "unit": "Wh/scenario",
+      "basis": "GreenFrame resource model"
+    },
+    "componentsWh": {
+      "cpu": 0.001820072916666667,
+      "mem": 2.153782631111111e-05,
+      "disk": 0,
+      "network": 0.027114622333333338,
+      "screen": 0.015667037037037035,
+      "total": 0.04462327011334815
+    },
+    "scenarioSeconds": 5.008666666666667,
+    "reportedPrecisionPercent": 1.7007109434453684
+  },
+  "id": "media-article",
+  "bridgeSHA256": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff",
+  "sourceDigests": {
+    "package.json": "3aaa318f1e6c1a770b8bfac3930588819d89878fcc09f2149f1b5899a552f0f9",
+    "dist/services/container/index.js": "c8e11f563e98222700a5c25809f2f0cba3a131cd50bf89ed514a0517b52e0324",
+    "dist/services/container/execScenarioContainer.js": "3325075487eceb32cc988e760165ae88f0013c9861ee57212ef7afc338648cd5",
+    "dist/model/stat-tools/getConsumption.js": "6277c7c41fadf02035ddb9f45c706cefabed68fb71e6b001a43a0ef3b9a5404e",
+    "dist/model/stat-tools/getWh.js": "c5c34810973314fcab2cb3a54a28f70f6a75ea459b08778aa383ca1543c2a7df"
+  },
+  "argv": [
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/node",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/energy/media-article/bridge.cjs",
+    "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe",
+    "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/",
+    "3"
+  ],
+  "startedAt": "2026-11-06T08:56:27.934985+00:00",
+  "finishedAt": "2026-11-06T08:56:55.073842+00:00",
+  "returncode": 0,
+  "sampleMetrics": [
+    {
+      "energy": {
+        "value": 0.04326702523294445,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "clientDeviceEnergy": {
+        "value": 0.015992294232944446,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "networkEnergy": {
+        "value": 0.027274731000000003,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "componentsWh": {
+        "cpu": 0.0018244328125000002,
+        "mem": 2.0083642666666663e-05,
+        "disk": 0,
+        "network": 0.027274731000000003,
+        "screen": 0.014147777777777778,
+        "total": 0.04326702523294445
+      },
+      "scenarioSeconds": 5.009999999999999,
+      "reportedPrecisionPercent": 0
+    },
+    {
+      "energy": {
+        "value": 0.04471122651253333,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "clientDeviceEnergy": {
+        "value": 0.01774632151253333,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "networkEnergy": {
+        "value": 0.026964905,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "componentsWh": {
+        "cpu": 0.0018084,
+        "mem": 2.4588179200000002e-05,
+        "disk": 0,
+        "network": 0.026964905,
+        "screen": 0.01591333333333333,
+        "total": 0.04471122651253333
+      },
+      "scenarioSeconds": 5.009,
+      "reportedPrecisionPercent": 0
+    },
+    {
+      "energy": {
+        "value": 0.045891558594566666,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "clientDeviceEnergy": {
+        "value": 0.018787327594566666,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "networkEnergy": {
+        "value": 0.027104231,
+        "unit": "Wh/scenario",
+        "basis": "GreenFrame resource model"
+      },
+      "componentsWh": {
+        "cpu": 0.0018273859374999999,
+        "mem": 1.9941657066666668e-05,
+        "disk": 0,
+        "network": 0.027104231,
+        "screen": 0.01694,
+        "total": 0.045891558594566666
+      },
+      "scenarioSeconds": 5.007000000000001,
+      "reportedPrecisionPercent": 0
+    }
+  ],
+  "clientDeviceSummaryWh": {
+    "mean": 0.017508647780014815,
+    "median": 0.01774632151253333,
+    "min": 0.015992294232944446,
+    "max": 0.018787327594566666,
+    "rangeMeaning": "Observed repetition range, not a confidence interval"
+  },
+  "networkSummaryWh": {
+    "mean": 0.027114622333333335,
+    "median": 0.027104231,
+    "min": 0.026964905,
+    "max": 0.027274731000000003,
+    "rangeMeaning": "Observed repetition range, not a confidence interval"
+  },
+  "totalSummaryWh": {
+    "mean": 0.04462327011334815,
+    "median": 0.04471122651253333,
+    "min": 0.04326702523294445,
+    "max": 0.045891558594566666,
+    "rangeMeaning": "Observed repetition range, not a confidence interval"
+  },
+  "artifacts": {
+    "raw-counters.json": "df0b185da82f28296e2c5645c3742e8cff9abc38d9ae86051197e5e449f431f8",
+    "model-results.json": "080b7de7eeb53a6c145be4cf38ef6819129a338cf043f3f79c8e74c11945444e",
+    "runner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff"
+  }
+}

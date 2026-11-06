@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://www.w3.org",
+  "reviewSHA256": "155fe68c6fc27938766f79d97bbf62656a1fa905d15d9edda3dbca977da67966",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "overview": "W3C’s standards and introductory resources provide a useful HTML reading baseline, and the sampled catalog route reaches WCAG 2.2 without an account. Add a main-content landmark to the long WCAG report, then investigate video activation on the sustainability page and the catalog’s expanded print output. Six initial transfer captures are complete within the protocol; the sustainability page remains incomplete because its embedded frame may be missing traffic. Browser-energy collection failed, so browser/network energy and the annual client-energy projection are unavailable. The public sustainability mission provides wider context but does not establish operational results for www.w3.org.",
+  "nextSteps": [
+    "Add the WCAG main-content landmark and verify landmark navigation through the complete report.",
+    "Test a user-activated video preview with usable playback and captions, then compare complete initial-transfer captures.",
+    "Inspect actual catalog print pages and test narrow menus, filters and report navigation against the same visitor tasks.",
+    "Resolve the embedded-frame transfer gap and obtain a successful independent energy run before reporting client energy; keep unavailable measurements unfilled.",
+    "Clarify operational website disclosure and targets, hosting evidence, catalog indexing rules and the standards collection’s review triggers."
+  ],
+  "findings": [
+    {
+      "checkId": "semantic-forms",
+      "title": "Give the WCAG report a main-content landmark",
+      "summary": "The full WCAG 2.2 page has a primary heading and language declaration, but no main-content landmark was recorded. The other six sampled pages provide one.",
+      "whyItMatters": "A main landmark gives people using assistive navigation a direct way to locate the report’s primary content, especially in a long normative document.",
+      "action": "Wrap or identify the normative content as main, keep its table of contents as navigation, and verify landmark traversal reaches the report. Retain the complete HTML text."
+    },
+    {
+      "checkId": "components",
+      "title": "Check a lighter way to open the sustainability video",
+      "summary": "The sustainability page starts loading an external video environment before the visitor chooses playback. Its initial transfer is incomplete at about 1.35 MB, so the full cost and a tested alternative remain unresolved.",
+      "whyItMatters": "Visitors can read the page without playing the video. Loading the player on request could reduce initial work, but only a functional comparison can establish whether that approach serves readers and saves transfer.",
+      "action": "Test a lightweight preview with an explicit play control. Verify keyboard access, captions and playback, then compare matched complete visits with the current embed before deciding whether to adopt it."
+    },
+    {
+      "checkId": "documents",
+      "title": "Check the catalog’s expanded print output",
+      "summary": "The catalog’s print state includes substantially more text than its screen state. The audit did not inspect printed pagination or determine whether the expanded report and history details belong in the reader’s intended list.",
+      "whyItMatters": "Unexpected expansion may make a printed list harder to use, while historical report details may have continuing reference value. Text length alone does not establish wasted pages.",
+      "action": "Inspect the actual printed pages for representative filtered and unfiltered lists. Retain necessary version/status details and select print defaults that match the reader’s task; verify the revised output before claiming a paper reduction."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Reading tasks remain in view",
+      "summary": "The seven pages present useful headings, indexes, navigation and status information. No autoplay or disruptive visible modal is recorded, and catalog result counts support filtering. This result covers the sampled states.",
+      "nextStep": "Keep reading and filtering tasks clear of disruptive prompts when changing the templates."
+    },
+    {
+      "checkId": "choice",
+      "title": "Check applicable choices before judging their fairness",
+      "summary": "No cookie banner or accept/reject pair was observed or operated. Reading and catalog filtering work without an account, while sign-in and membership routes are identifiable. The evidence does not establish all applicable defaults or visual choice prominence.",
+      "nextStep": "Identify the applicable privacy controls and test their defaults and choices in the represented context. No observed banner does not establish absence of tracking."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Resources explain their audience and purpose",
+      "summary": "Headings and summaries distinguish standards, normative WCAG requirements and introductory WAI resources. Catalog examples, report version information and contact categories explain the next step. Specialist terminology is appropriate to the normative report, with introductory alternatives available.",
+      "nextStep": "Keep introductory routes and clear status/version labels alongside specialist documents."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Different templates support recognizable tasks",
+      "summary": "Corporate pages share navigation names and catalog controls. WAI has consistent resource navigation, while WCAG uses a document table of contents and version details. These task-specific differences do not establish inconsistent controls.",
+      "nextStep": "Keep names consistent within each template and explain transitions between introductory guidance and normative reports."
+    },
+    {
+      "checkId": "motion",
+      "title": "Inspect the WAI link-transition effects",
+      "summary": "No screen animation or moving media is observed in the sampled desktop and preference states. Two brief link animations appear during WAI print transitions, but their properties and visible purpose were not captured. Their impact remains unresolved.",
+      "nextStep": "Inspect those effects while changing print and reduced-motion preferences, then decide whether any visible movement needs suppression."
+    },
+    {
+      "checkId": "notifications",
+      "title": "No unsolicited permission request was observed",
+      "summary": "The seven pages make no recorded notification-permission request. Catalog result counts provide task feedback and report dialogs remain hidden. Browser permission was already denied, so the result covers these observed states.",
+      "nextStep": "Recheck permission and alert behavior when adding notifications or new status messages."
+    },
+    {
+      "checkId": "documents",
+      "title": "Check what the catalog includes when printed",
+      "summary": "The sampled resources are readable HTML. Print emulation retains content and removes much navigation, but catalog text expands substantially, from about 46,700 to 177,700 characters. Actual printed pages and the value of the expanded entries were not inspected; long text snapshots elsewhere are capped.",
+      "nextStep": "Preview the catalog’s printed pages, identify which report/history details expand, and compare them with the reader’s intended list before changing print defaults."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Check code use during the relevant interactions",
+      "summary": "WAI and the report load distinct enhancement scripts; corporate and catalog pages use shared and page modules. A short initial execution sample does not cover menus, filters, translations or report navigation sufficiently to identify removable code.",
+      "nextStep": "Record representative interactions and corroborate a specific unused module before removing it."
+    },
+    {
+      "checkId": "components",
+      "title": "Investigate loading the sustainability video on request",
+      "summary": "The sustainability page loads an external video environment during its initial visit. Its recorded initial transfer is incomplete at about 1.35 MB, while the explanatory reading content is already available. A working alternative activation route was not tested.",
+      "nextStep": "Compare the current embed with a lightweight preview that loads the player on request. Verify keyboard activation, playback and captions, and measure matched complete visits before claiming a reduction."
+    },
+    {
+      "checkId": "layout",
+      "title": "Complete the tasks at narrow widths",
+      "summary": "All seven pages retain their task headings at 360 CSS pixels and avoid measured horizontal overflow. Narrow menus and the WCAG table of contents differ from desktop, but their controls were not operated in those states.",
+      "nextStep": "Use the narrow menus, catalog controls and report navigation to complete the same tasks on an appropriate device."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "Check whether media or print guidance would be useful",
+      "summary": "Reading HTML, printing reports and choosing the mission video may have different resource implications. The mission discusses wider web impacts, but no tested format or print comparison supports advice about those specific visitor choices.",
+      "nextStep": "Compare one consequential media or print choice for task usefulness, transfer and printed page count before adding contextual guidance."
+    },
+    {
+      "checkId": "journeys",
+      "title": "The catalog route reaches WCAG 2.2",
+      "summary": "The recorded desktop route follows Standards to the catalog, enters WCAG, activates Show results and opens the exact WCAG 2.2 URL with its full visible title. The separate task trace corroborates completion. This does not establish the shortest route or success for every visitor.",
+      "nextStep": "Retain the clear filtering and exact report link when changing catalog navigation."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Inspect image detail before reducing renditions",
+      "summary": "Most task content is text. Homepage cards, member logos and the larger WAI graphic have plausible display sizes, including possible higher-density use. The sample does not include the visual rendition checks needed to establish a safe size reduction.",
+      "nextStep": "Compare representative raster graphics at intended screen densities and preserve necessary detail before selecting smaller versions."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "Typography includes fallback strategies",
+      "summary": "Corporate and WAI content load regular and semibold Noto Sans with fallback behavior; WAI examples can use Noto Sans Mono. WCAG uses system sans-serif with no webfont observed. Unloaded language and icon declarations do not establish extra downloads.",
+      "nextStep": "Keep readable fallbacks and required language coverage when changing font files or subsets."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "Give the WCAG report a main-content landmark",
+      "summary": "The WCAG report has a meaningful language declaration and primary heading, but no main element or main role was recorded. The other six pages have a main region. This is a specific failure of the selected semantic expectation, not a complete WCAG conformance judgment.",
+      "nextStep": "Identify the normative report content with a main landmark, keep its table-of-contents navigation distinct, and verify that landmark navigation reaches the report."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Clarify canonical URLs for catalog filters",
+      "summary": "Titles are descriptive, WAI/WCAG canonical URLs are usable, and captured WAI structured data parses. Corporate, catalog, mission and contact pages omit canonical metadata. Whether catalog filter/query URLs need a declared representative URL remains unresolved.",
+      "nextStep": "Document the catalog indexing policy and test representative filter URLs; add canonical metadata where that policy requires it."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Check the applicable preference controls and effects",
+      "summary": "Task content remains available during preference changes and fresh dark/reduced-motion visits. Light page colors alone do not establish a defect, and WAI offers Change Text Size or Colors guidance. Recorded WAI link effects need inspection before their reduced-motion behavior can be judged.",
+      "nextStep": "Inspect the link effects under reduced motion and exercise documented preference controls before prescribing a theme change."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Core reading content remains without JavaScript",
+      "summary": "Fresh visits without JavaScript retain catalog list/filter markup, WCAG text, WAI summaries and navigation, and mission/contact reading content. The sampled reading tasks do not require an account or player. Capped excerpts do not prove word-for-word equivalence of long documents.",
+      "nextStep": "Retain the HTML reading baseline and test individual enhanced controls separately when changing them."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "Trace repeated requests to their purpose",
+      "summary": "Member-logo, catalog and external-video requests have plausible purposes. The limited capture does not establish sustained polling, freshness needs or unnecessary repeats, so it cannot support a removal or backend-cost claim.",
+      "nextStep": "Trace recurring requests by initiator and event, then compare unchanged repeats with actual visitor needs."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Reusable assets provide caching or validation",
+      "summary": "Corporate styles and scripts expose validators, catalog fingerprinted assets have long public lifetimes, and WAI/report assets have bounded lifetimes or validators. These policies support reuse; actual warm-cache behavior was not measured.",
+      "nextStep": "Retain appropriate asset policies and use a matched repeat visit to check actual reuse if needed."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Material text responses are compressed",
+      "summary": "Successful material documents, scripts and styles use gzip or Brotli across the seven sampled response sets. Already-compressed graphics, fonts and media are outside this check.",
+      "nextStep": "Keep compression enabled when deploying new text assets or changing delivery services."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "Verify focus indicators on corporate controls",
+      "summary": "Initial keyboard paths reach meaningful skip, language, navigation and report links. WAI and WCAG show supported outline behavior. Corporate skip/language controls have transparent outlines, but other focus styling was not fully captured, leaving their visible indicator unresolved.",
+      "nextStep": "Inspect the complete focused appearance of the corporate skip and language controls, then verify activation and navigation."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "Look for a statement about operating www.w3.org",
+      "summary": "The sustainability mission describes WSG, research, implementation measurement and outreach. This provides useful context for W3C’s wider work, but does not identify the operational impacts and mitigation of the audited website. The limited search cannot establish that no such statement exists.",
+      "nextStep": "Link a website-specific operational sustainability statement, if available, with its service boundary and mitigation actions."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "A discoverable carbon.txt was not found",
+      "summary": "The tested root and well-known carbon.txt addresses return 404, and no usable delegation or parseable file was established. This failure is limited to discovery and does not measure the site’s emissions or the value of W3C’s sustainability work.",
+      "nextStep": "If adopting carbon.txt, publish a valid file with supported service/provider relationships and verify discovery."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Establish operational hosting evidence for this origin",
+      "summary": "The captured evidence does not connect www.w3.org to a named hosting service with independently corroborated operational sustainability evidence. Sustainability standards and advocacy do not supply that relationship.",
+      "nextStep": "Identify the hosting service for this origin and link independent evidence covering the same service and operational scope."
+    },
+    {
+      "checkId": "access-barriers",
+      "title": "The sampled report-reading route needs no account",
+      "summary": "The anonymous desktop pointer/text-input route reaches the exact WCAG 2.2 report and full visible title without an account or personal-data request. The task trace confirms the declared completion; other input methods and access constraints were not tested.",
+      "nextStep": "Extend the route to keyboard, assistive-technology and relevant constrained-access testing before making wider usability claims."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "title": "Keep useful standards history and explain review triggers",
+      "summary": "WCAG 2.2 has dated drafts and Recommendations from 2020–2024, version/history/errata links, named editors and a feedback route. These support publication and continued reference use. The captured status excerpt is capped and does not establish a review schedule or applicable update decision.",
+      "nextStep": "Document the collection’s review triggers or cadence and one resulting update decision, while retaining historical standards that readers still need."
+    },
+    {
+      "checkId": "sustainability-goals",
+      "title": "Separate the sustainability mission from website targets",
+      "summary": "The mission describes a sustainable-web direction, guidance and implementation measurement. It does not supply an operational target, measurement boundary and comparable dated baseline/progress for www.w3.org. The website’s own goals remain unresolved.",
+      "nextStep": "Publish any established website-operation target with its metric, service boundary and comparable baseline/progress, or clarify what is still being established."
+    }
+  ]
+}

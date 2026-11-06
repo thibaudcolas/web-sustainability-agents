@@ -1,0 +1,83 @@
+{
+  "role": "evidence",
+  "site": "https://www.nhs.uk",
+  "packetSHA256": "00391b37631387be8a4df161c5b4b6877e86c48588a4dbac55885b30fb784eda",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "nhs-evidence-01",
+      "checkIds": [
+        "media-delivery",
+        "components"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:8",
+        "staged.json:runs:9",
+        "probes.json:pages:4"
+      ],
+      "summary": "The video page records 21,825,011 and 21,825,454 initial received bytes (21.825 MB decimal), including 30 completed video/mp2t responses totaling 19,354,179 B in the reject branch, before any playback, consent action or scrolling. Both captures remain partial because 60 blob: Script requests are unresolved; the artifact correctly withholds the carbon rating.",
+      "requestedChange": "Prioritize investigating initial player/segment fetching while retaining the instructional content. Label these byte observations partial and retain rating.status=not_calculated; do not present them as complete cold-load totals, fabricate unresolved bytes, infer autoplay from traffic, or promise an exact saving. A deferred-player implementation needs an activation and content-preservation test."
+    },
+    {
+      "id": "nhs-evidence-02",
+      "checkIds": [
+        "choice",
+        "data-minimization"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "staged.json:runs:10",
+        "staged.json:runs:11",
+        "probes.json:pages:5"
+      ],
+      "summary": "Homepage consent branches complete: reject cumulative traffic changes from 628,759 to 628,898 B; accept changes from 628,752 to 919,789 B. Cookie-settings branches instead fail because the configured banner buttons are absent; the page exposes radio settings.",
+      "requestedChange": "Keep initial traffic as the headline, show post-choice cumulative traffic and actual completed choice separately, and describe approximately 291 kB after acceptance as additional observed traffic rather than proven causal savings. Mark settings-page post-consent checkpoints as no successful action; do not treat their zero delta as an effective reject/accept result or a site defect."
+    },
+    {
+      "id": "nhs-evidence-03",
+      "checkIds": [
+        "media-delivery"
+      ],
+      "evidenceIds": [
+        "staged.json:runs:0",
+        "probes.json:pages:0"
+      ],
+      "summary": "The homepage image list is empty, but its initial network capture includes a CSS background PNG at assets.nhs.uk/nhsuk-cms/images/test5_4nG3bKJ.width-1000.png accounting for 475,879 B, about 75.7% of the 628,759 B initial total. The image-element probe does not describe its rendered CSS dimensions or visual task value.",
+      "requestedChange": "Include this background resource in the quantitative media discussion and nominate it for inspection. Do not infer an image-free homepage from images.total=0 or claim oversized dimensions, a safe replacement format, or exact savings without inspecting rendered background size, legibility and required pixel densities."
+    },
+    {
+      "id": "nhs-evidence-04",
+      "checkIds": [
+        "disclosure-scope",
+        "carbon-discovery",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "Both conventional carbon.txt paths and both common-path sustainability document guesses return HTTP 404. disclosures.documentCount=2 counts discovery attempts; records is empty and presence is not established within discovery scope.",
+      "requestedChange": "Describe four bounded unsuccessful retrieval attempts, not two retrieved policies. Preserve unknown disclosure/hosting substantiation outside this discovery scope; do not turn these responses into proof that the NHS has no sustainability policy or that a hosting claim is false."
+    },
+    {
+      "id": "nhs-evidence-05",
+      "checkIds": [
+        "unused-code",
+        "components",
+        "public-cache-policy"
+      ],
+      "evidenceIds": [
+        "probes.json:pages:0",
+        "probes.json:pages:4",
+        "staged.json:runs:0"
+      ],
+      "summary": "Code coverage is initial load plus 500 ms in the main CDP target, and its ranges are source positions rather than compressed network bytes. Resource cache headers are visible, but no warm-load test or deployed source is supplied.",
+      "requestedChange": "Use unexecuted ranges only to nominate investigations; do not equate coverage offsets with removable transfer bytes, guarantee removal, or name verified source locations. Describe cache-control/validation observations as policy evidence and retain measured cache reuse as untested."
+    }
+  ]
+}

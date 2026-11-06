@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "report-editorial-receipt-v1",
+  "site": "https://www.tate.org.uk",
+  "createdAt": "2026-11-06T09:22:52.455737+00:00",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "scope": "Editorial pass over the scored frozen audit and separate annual/energy/claims supplements; no audit judgments, priorities, evidence or scores changed.",
+  "inputSHA256": {
+    ".audit-work/diversity/tate/session/review.json": "a0c0a0c284495c365411b45a9281ed9591f79de9e1a0caf2ad24935129e39bb4",
+    ".audit-work/diversity/tate/session/scores.json": "4d1fc8d825adaf26e246c1e6238d7f5f3b10cc6f113c6c9c5a6fc469f45e2fe9",
+    ".audit-work/diversity/tate/session/score-receipt.json": "a3a5b3a557a43e11188126b6726918f66b72240fa916409782ad185aa7d59308",
+    ".audit-work/diversity/tate/session/packet.json": "bf02b066f3771a13659474cc28a0d825ce55edbfacae31593b5c072129886d5b",
+    ".audit-work/diversity/tate/session/plan.json": "f18372f2c3c991350898484e05e889a1e9e6146dd62666a7f2a76c9fd6fe35d6",
+    ".audit-work/diversity/tate/session/staged.json": "7e9e2db1e958fd389aa850d2da06d1242ad408eb23b99dda825c6ebe40670e37",
+    ".audit-work/diversity/tate/session/probes.json": "0e2c87356e869947506074f76a90d0ec4bfaa294d1c236617169d2328c3da4c6",
+    ".audit-work/diversity/tate/session/context.json": "810fbb1ae407b8a7d8bbcabf7d86aee2340368181eec8e3db818b528912088d1",
+    ".audit-work/diversity/tate/session/checks.json": "618c28575c780beef9610747c12997da552945d7e805d7d4f98aec3afccd7993",
+    ".audit-work/diversity/tate/session/rubric.json": "7ecff068e224c8c8055cb28a0bc053f038a3200f27e545ba4b4c6d3b61ad5088",
+    ".audit-work/diversity/tate/review-tasks/claims.result.json": "06e1f1a4f635b7c3de02f6504a30a828c7d53df375cdcfa589499a73547541aa",
+    ".audit-work/diversity/tate/review-tasks/evidence.result.json": "5a0beccf54114e7439f1a3abe8c95773f5b184387cdd1426e23ce7762d32f6be",
+    ".audit-work/diversity/tate/review-tasks/guidelines.result.json": "a0c0a0c284495c365411b45a9281ed9591f79de9e1a0caf2ad24935129e39bb4",
+    ".audit-work/diversity/tate/review-tasks/resolutions.json": "e6011d0a402f3bd2edbd6ec8cf7d26391ce9fc8a57347cf69afdaf225104c0f4",
+    ".audit-work/diversity/tate/energy/manifest.json": "f1b2aabd9ff436587e19f9e9d493f2e5081f1984bf533de24a91f44974d09c6c",
+    ".audit-work/diversity/tate/annual.json": "ff13f92aab1612fcf8896941c2c07956942bccb40e2013838d9ad27675ba0608",
+    ".audit-work/diversity/tate/claims-supplement.json": "8000729f0210ee09b6491cd73d59dc5465f3988ef5f06194b7f3e9370bb5b501",
+    ".audit-work/diversity/traffic.json": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    ".agents/skills/sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    ".agents/skills/sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    ".agents/skills/sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    ".agents/skills/sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa",
+    "audit/render_review.py": "d12f003de37419c72f9fdade5aacb299f7136c386a87061286786ae03b3ddb8e",
+    "audit/report_details.py": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25"
+  },
+  "outputs": {
+    ".audit-work/diversity/tate/editorial.json": "f89cf49f4e76b133f10168b945b5f0568d8b0b50462ceb8ecfd70ace6412f390",
+    ".audit-work/diversity/tate/work/report-preview.md": "3c26da00f2211f4da1108e5537d9f09506c27e4a8fcb21a0e59ef319162bde35"
+  },
+  "commands": [
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/cli.py",
+        "tool",
+        "render_review",
+        "--session",
+        ".audit-work/diversity/tate/session",
+        "--artifact-prefix",
+        "../session",
+        "--editorial",
+        ".audit-work/diversity/tate/editorial.json",
+        "--energy",
+        ".audit-work/diversity/tate/energy/manifest.json",
+        "--annual",
+        ".audit-work/diversity/tate/annual.json",
+        "--traffic",
+        ".audit-work/diversity/traffic.json",
+        "--supplement-prefix",
+        "..",
+        "--output",
+        ".audit-work/diversity/tate/work/report-preview.md"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "validation": {
+    "editorialSchema": "passed",
+    "reviewHashBinding": "passed",
+    "everyCheckExactlyOnce": 28,
+    "topFindingIdsAndOrder": "preserved",
+    "markdownInternalAnchors": "passed",
+    "readablePriorityAndMeasurementSections": "inspected"
+  },
+  "screenshots": {
+    "included": false,
+    "reason": "The priorities concern hidden resource delivery, semantic structure and uninspected print output; a page screenshot would not substantiate those findings."
+  },
+  "preview": {
+    "kind": "Private Markdown render",
+    "themedDesktopAndNarrowPreview": "Delegated to publishing coordinator",
+    "supplementDownloadLinks": "Publishing coordinator supplies final artifact paths."
+  }
+}

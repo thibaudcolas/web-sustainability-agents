@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "origin": "https://blog.google",
+  "startedAt": "2026-11-06T09:15:01.409699+00:00",
+  "status": "completed",
+  "planSHA256": "195f8fb5356787979a87d669235b69784887b5adcebd3d5e0a0fd04733aea23e",
+  "collectorSHA256": "9543f6b3b2ce60c8e26a391bc7147b5e2e76f0cdc0dc345570b20c512841cea7",
+  "playwrightVersion": "1.64.1",
+  "captures": [
+    {
+      "id": "homepage-media",
+      "url": "https://blog.google/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "colorScheme": "light",
+      "alt": "Google publication homepage media cards with video thumbnails and adjacent story links.",
+      "caption": "Video cards appear among homepage story links.",
+      "checkIds": [
+        "components",
+        "motion"
+      ],
+      "selector": "video >> nth=1",
+      "captureMode": "viewport",
+      "status": "completed",
+      "capturedAt": "2026-11-06T09:15:05.278271+00:00",
+      "finalUrl": "https://blog.google/",
+      "documentStatus": 200,
+      "pageTitle": "News from Google | Google Product and Technology News and Stories",
+      "file": "homepage-media.png",
+      "fileSHA256": "1684561d3a0e859cf2005551c8d3dde583990f4db09ca2e4a038b770825ae9b8"
+    }
+  ],
+  "interpretation": "Supplemental visual illustrations captured separately from the scored audit. They do not establish historic appearance, transfer sizes, accessibility semantics, task completion or energy savings.",
+  "protocol": {
+    "captureMode": "viewport",
+    "deviceScaleFactor": 1,
+    "reducedMotion": "reduce",
+    "animations": "disabled",
+    "waitAfterLoadMs": 750,
+    "waitAfterScrollMs": 250,
+    "perCaptureDeadlineSeconds": 35,
+    "freshContextPerCapture": true,
+    "actions": "none"
+  },
+  "browserVersion": "156.0.8078.4",
+  "finishedAt": "2026-11-06T09:15:05.468417+00:00"
+}

@@ -1,0 +1,131 @@
+{
+  "plan": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/plan.json",
+  "capturedAt": "2026-11-06T08:46:36.403865+00:00",
+  "origin": "https://blog.google",
+  "canonicalObservation": "curl https://blog.google returned HTTP200 at https://blog.google/; homepage canonical https://blog.google/. No origin-changing redirect observed.",
+  "runtimeDoctor": {
+    "root": "/home/thibaudcolas/dev/web-sustainability-agents",
+    "uv": true,
+    "node": true,
+    "npm": true,
+    "pythonEnvironmentPresent": true,
+    "nodeDependenciesPresent": true,
+    "prepareRequired": false,
+    "chromiumLaunch": "passed"
+  },
+  "observationsFile": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/setup/verification.json",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://blog.google/",
+      "rationale": "Homepage with featured carousel, latest-news listing, newsletter and rich media."
+    },
+    {
+      "id": "sustainability",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/",
+      "rationale": "Topic listing and public sustainability claim discovery."
+    },
+    {
+      "id": "stegra-article",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/",
+      "rationale": "Long-form corporate sustainability article, authorship, dates and audio summary."
+    },
+    {
+      "id": "media-article",
+      "url": "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/",
+      "rationale": "Product article with native MP4 video; playback interaction is outside this setup task."
+    },
+    {
+      "id": "newsletter",
+      "url": "https://blog.google/newsletter-subscribe/",
+      "rationale": "Public form task with a personal-data request and linked privacy policy."
+    },
+    {
+      "id": "about",
+      "url": "https://blog.google/about/",
+      "rationale": "Institutional publication information and contact task without sending a message."
+    }
+  ],
+  "consent": {
+    "notice": "Google delivery/quality/traffic cookie notice",
+    "observedButton": "OK, got it",
+    "selector": ".glue-cookie-notification-bar__accept",
+    "branches": "acknowledge_notice only",
+    "rejectAcceptPairObserved": false,
+    "limitations": "Button is notice acknowledgment; no claim that it grants an optional tracking consent choice."
+  },
+  "contextChecks": [
+    "access-barriers",
+    "data-minimization",
+    "content-lifecycle",
+    "sustainability-goals"
+  ],
+  "unansweredScopeQuestions": "No required questions; optional publication lifecycle and service-specific goals requests retained in plan.",
+  "omissions": [
+    "Other regional languages and full article archive omitted for a bounded six-template/function sample.",
+    "External Google product, store and support journeys omitted; no accounts or submissions authorized.",
+    "Keyboard-only, assistive-technology and constrained-network completion not represented by the setup walkthrough.",
+    "Audience-needs, inclusive-testing and service-necessity omitted: no sampled feature decision/research record.",
+    "Governance-practice and impact-business-model omitted: corporate infrastructure statements do not define accountable review for the blog service.",
+    "Service-end-of-life omitted: no blog retirement scenario or guidance in selected sample."
+  ],
+  "failures": [
+    {
+      "operation": "browser-harness CDP connection",
+      "result": "BU_CDP_URL=http://127.0.0.1:9222 unreachable after30s; connection refused. Processes ended; no site defect inferred.",
+      "fallback": "Isolated Playwright Chromium successfully launched and completed the public route."
+    },
+    {
+      "operation": "Initial exploratory script parsing",
+      "result": "Node SyntaxError in private helper; corrected before actual observation. No site defect inferred."
+    },
+    {
+      "operation": "Initial HTML parser dependency",
+      "result": "System Python lacked bs4; used stdlib HTMLParser, no dependency installation."
+    }
+  ],
+  "energy": {
+    "mode": "readiness",
+    "samples": 3,
+    "pageIds": [
+      "home"
+    ]
+  },
+  "collectionRun": false,
+  "productionFilesEdited": false,
+  "model": {
+    "name": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "validation": {
+    "status": "passed",
+    "artifact": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/google-blog/setup/validation.json",
+    "checks": [
+      "workflow.validate_plan",
+      "probes.validate_plan",
+      "All six selected pages returned HTTP200 at the intended URL.",
+      "Fresh anonymous cookie acknowledgment selector unique and functional on all six pages.",
+      "Exact journey URL, unique h1 and expected text all matched; readable main contained Stegra."
+    ]
+  },
+  "screenshotCandidates": [
+    {
+      "pageId": "home",
+      "url": "https://blog.google/",
+      "selector": "main",
+      "reason": "Homepage carousel, rich media and latest stories."
+    },
+    {
+      "pageId": "media-article",
+      "url": "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/",
+      "selector": "video[aria-label=\"Demo video of Fitbit Edge tracker\"]",
+      "reason": "Native MP4 with preload metadata and user media controls; capture later without starting playback."
+    },
+    {
+      "pageId": "newsletter",
+      "url": "https://blog.google/newsletter-subscribe/",
+      "selector": "#uni_subscribe_email",
+      "reason": "Required email and adjacent purpose/privacy wording; keep blank and do not submit."
+    }
+  ]
+}

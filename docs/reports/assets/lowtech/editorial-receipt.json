@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "sustainability-report-receipt-v1",
+  "site": "https://solar.lowtechmagazine.com",
+  "createdAt": "2026-11-06T09:22:48.000932+00:00",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "reviewSHA256": "3d7f5194de6e931ff31aa35c19df8bf2902ccb868c9d93d0a9043df84a50f656",
+  "inputSHA256": {
+    "session/review.json": "3d7f5194de6e931ff31aa35c19df8bf2902ccb868c9d93d0a9043df84a50f656",
+    "session/scores.json": "16e5cdc1dec132f7196bb9a7b6faa25ad65d5758618bbee4f62f3df7a980da16",
+    "session/rubric.json": "da4a17e27df4108e39486e15f6b2f38402df975be3d91b4b139132bde5a84156",
+    "session/checks.json": "618c28575c780beef9610747c12997da552945d7e805d7d4f98aec3afccd7993",
+    "session/staged.json": "5e0b909dddc2ef59dd2ca33c6269eff4234a9af754f1ec48917abef50e271e2a",
+    "session/probes.json": "56b907910845274874288439a03a46192155a36c0bb8c58eb5fee310eeb2b416",
+    "session/context.json": "8e2e44e0fe68ea5e57e95fd328d7e9259105afdc3a9728ae81419f46dc364b2a",
+    "session/packet.json": "59834bd3db9f8b608ccb57c1e59bd80a601f231bbb833338ffcaef29f89e1681",
+    "session/reviews.json": "7624770398a057fc8b7228539394b86b1795c6b04f410efa2734ec0ab8a30caa",
+    "review-tasks/evidence.result.json": "39d8dfaaa4403667a4449288b19a9250dc4f8deca701b75b7e10368100f00d62",
+    "review-tasks/guidelines.result.json": "3d7f5194de6e931ff31aa35c19df8bf2902ccb868c9d93d0a9043df84a50f656",
+    "review-tasks/claims.result.json": "7ac38c2dad27b17bdd65edd502ef76237ee2fefde15fe5c74c4a5b1580bfc9d3",
+    "review-tasks/resolutions.json": "dad20500494599110004492b471b98bd538f1982793c2bc172cc0f84ee3632da",
+    "claims-supplement.json": "25ac0308845ec518ab8b7c29168e2cb79476229ffd6d19cbba209ed640754a68",
+    "energy/manifest.json": "a6a5365a585a8796a2c03d45c8cef5e7960821f7eca4072025f9dae4aafba0b9",
+    "annual.json": "c42a980b68cf2b53139ad25979817b3e89447239a89572e5d4398a15da41e681"
+  },
+  "sharedInputSHA256": {
+    "traffic.json": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f"
+  },
+  "skillSHA256": {
+    "SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    "references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    "references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    "assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa"
+  },
+  "outputSHA256": {
+    "editorial.json": "0d152869719476ff5bac08348d22d83ec2115efb61f95c6a193ff0d2bc3e1620",
+    "screenshots/manifest.json": "d3b7013a1cffffe88a1ead895fc660a5a649d348ace6f2d7be4db9ede74c4328",
+    "screenshots/oven-illustration.png": "51f261bc98ca6b62ce5add6416c337e9dacb47fdf4c975347767889ea2b0af54",
+    "work/report-preview.md": "12484568fe70bbd4fd73e7b01739704f79e27b8bbd6ded271f1cfbca7a15c758",
+    "work/annual-preview.json": "c42a980b68cf2b53139ad25979817b3e89447239a89572e5d4398a15da41e681"
+  },
+  "validation": {
+    "reviewBinding": "passed",
+    "everyCheckExactlyOnce": true,
+    "checkCount": 30,
+    "topFindingIdsAndOrderPreserved": true,
+    "judgmentOrPriorityChanges": false,
+    "screenshotInspected": true,
+    "screenshotDescription": "Open insulated oven photograph and caption; illustrates dithering at desktop display size without certifying instructional legibility.",
+    "screenshotDigestVerified": true,
+    "privateMarkdownRender": "passed using current annual.json, energy manifest and exact traffic source; numerical values unchanged after provenance refresh",
+    "internalEvidenceAndMethodAnchors": "passed",
+    "themedDesktopAndNarrowPreview": "root publishing coordinator to perform",
+    "annualPublishedInputRender": "passed after root regenerated annual provenance with exact audit scope; original attempt retained and scenario values unchanged"
+  },
+  "illustrationAttempts": {
+    "retainedOutsidePublishBundle": [
+      "work/screenshots/manifest.json",
+      "work/illustrations/manifest.json"
+    ],
+    "reason": "Initial alternative text mentioned nearby content not visible in the inspected viewport; final capture uses a descriptive image-and-caption alternative."
+  },
+  "reproductionCommand": [
+    "uv",
+    "run",
+    "python",
+    "audit/render_review.py",
+    "--session",
+    ".audit-work/diversity/lowtech/session",
+    "--artifact-prefix",
+    "../session",
+    "--editorial",
+    ".audit-work/diversity/lowtech/editorial.json",
+    "--screenshots",
+    ".audit-work/diversity/lowtech/screenshots/manifest.json",
+    "--image-prefix",
+    "../screenshots",
+    "--energy",
+    ".audit-work/diversity/lowtech/energy/manifest.json",
+    "--annual",
+    ".audit-work/diversity/lowtech/annual.json",
+    "--traffic",
+    ".audit-work/diversity/traffic.json",
+    "--supplement-prefix",
+    "..",
+    "--output",
+    ".audit-work/diversity/lowtech/work/report-preview.md"
+  ],
+  "limitations": [
+    "Report wording does not change frozen judgments or priorities.",
+    "Historical public governance, service-necessity and goal records cover the declared 2018–2020 decisions; current operational governance and independently verified hosting remain unresolved.",
+    "Client energy covers two initial-load page scenarios with three repetitions each using a resource-counter model, not direct electricity metering or full reading sessions.",
+    "Annual SWDM and client energy projections use a rank-derived traffic scenario and overlapping scopes; they must not be added."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "role": "claims",
+  "taskSHA256": "e9c3df76bb237f0a031c9839b8985d88e1d91435fc3ebed2a0323db8da4f8235",
+  "resultSHA256": "7ac38c2dad27b17bdd65edd502ef76237ee2fefde15fe5c74c4a5b1580bfc9d3",
+  "packetSHA256": "59834bd3db9f8b608ccb57c1e59bd80a601f231bbb833338ffcaef29f89e1681",
+  "executionMode": "native-subagents"
+}

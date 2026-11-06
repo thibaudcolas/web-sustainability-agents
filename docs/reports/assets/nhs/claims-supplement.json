@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "claims-supplement-v1",
+  "site": "https://www.nhs.uk",
+  "reviewedAt": "2026-11-06T09:08:48.032697+00:00",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "reviewScope": "Read-only review of finalized annual and GreenFrame supplements, their declared source inputs and selected raw modeled outputs; separate from the scored frozen packet and main claims result.",
+  "inputSHA256": {
+    "nhs/annual.json": "7d492363365dea8bf89f7dec2de84df3c0a350403ce122d5ab2833dac0239a5e",
+    "nhs/energy/manifest.json": "05cd70473620f34fa7f55ab462a7da5deb074446a150d2ad45454d21bff3cf8c",
+    "nhs/session/staged.json": "38072714fd9c724b1fcefd0f290a8fdf442a89b0a72e3a6ef6d2ede1060a336f",
+    "traffic.json": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    "nhs/session/skills/sustainability-claims-review/SKILL.md": "299e37c2dc01e9ee08be913a61b5dc69e78cc52d4e64909ef9dbdbb71227ce9f",
+    "nhs/energy/home/scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "nhs/energy/home/model-results.json": "deb2eb6d7cbb08e5b6b53aebfe7d4c16a89276b2bcaa15eb3427756956ca6ce9",
+    "nhs/energy/exercise-videos/scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+    "nhs/energy/exercise-videos/model-results.json": "c196a937bbfe993c5d49c3cc1b654a8b312d8f8ce09c2df80ab47f270b206e2e",
+    "nhs/energy/home/bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff"
+  },
+  "judgment": {
+    "status": "usable_as_explicit_scenarios",
+    "summary": "Source hashes, matched-origin traffic, first-initial byte selection, page weighting and unit arithmetic are consistent. Raw GreenFrame sample medians match the client annual projection where completed. No numerical correction found. Model accuracy and raw-counter instrumentation were not independently remeasured."
+  },
+  "validation": {
+    "annualSourceHashesMatch": true,
+    "trafficOriginMatches": true,
+    "firstRecordedInitialBytesMatch": true,
+    "equalPageWeightsAndGramsToKgArithmeticMatch": true,
+    "rawClientMediansAndWhToKWhArithmeticMatch": true,
+    "model": "CO2.js 0.19.0 / SWDM v4 as declared; model implementation not independently rerun",
+    "swdmKgCO2ePerYear": 223721.27401831234,
+    "swdmSampledPageCount": 7,
+    "transferInputs": "partial",
+    "clientKWhPerYear": 8547.879959583735,
+    "clientKgCO2ePerYear": 4222.652700034365,
+    "clientGridIntensityGPerKWh": 494,
+    "energyPages": [
+      {
+        "id": "home",
+        "url": "https://www.nhs.uk/",
+        "repetitions": 3,
+        "clientMedianWh": 0.010918195378488888,
+        "sampleRangeWh": [
+          0.009998124989944445,
+          0.01347362174761111
+        ]
+      },
+      {
+        "id": "exercise-videos",
+        "url": "https://www.nhs.uk/live-well/exercise/strength-and-flex-exercise-plan-how-to-videos/",
+        "repetitions": 3,
+        "clientMedianWh": 0.02663948826833333,
+        "sampleRangeWh": [
+          0.025572366459633334,
+          0.027110551228
+        ]
+      }
+    ]
+  },
+  "trafficScope": {
+    "datasetMonth": "202609",
+    "capturedAt": "2026-11-06T08:42:55.157380+00:00",
+    "rankBucket": 5000,
+    "annualPageviewsProxy": 455186749.0,
+    "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+    "limitation": "September 2026 CrUX origin popularity bucket, not exact ordinal or measured site analytics; cohort median extrapolation has no calibrated site-level interval. Period and population differ. All five origins were found, so no unranked extrapolation or parent-domain substitution is involved."
+  },
+  "limitations": [
+    "One of seven SWDM inputs is partial: exercise-videos initial capture has 60 unresolved request IDs; the other six are complete within protocol. The video-page proxy dominates this equal-page mix; it is not an observed traffic share.",
+    "The two-page client sample is homepage plus exercise videos. It includes only initial loading, with no cookie, playback or scrolling action; do not call the extrapolation annual video-viewing energy.",
+    "SWDM initial loads use fresh-context CDP main-session received bytes at 1280\u00d7800 with a three-second observation window; partial/unfinished transfers remain explicit. Equal weights across the selected editorial sample are not measured popularity.",
+    "GreenFrame 2.0.1 uses Chromium 110 in the pinned Playwright image and a fixed Chrome/89 user agent, unlike the Chromium 156 transfer collector. Fresh contexts load then wait three seconds, without consent action or scrolling; startup warm-up is excluded, shutdown remains inside the window.",
+    "GreenFrame estimates CPU, memory, disk and display from resource counters using synthetic 45 W CPU and 14 W screen coefficients. No baseline subtraction; shared workstation activity was uncontrolled. It is not wall-meter electricity, whole-device energy, network/server/embodied energy or full reading-session energy.",
+    "Client annual scenario uses each page\u2019s median of three repetitions and a 50/50 mix of only two pages. Manifest aggregate metrics are means and must not be substituted for medians. Default 494 gCO2e/kWh is an assumed comparison factor, not measured audience electricity; raw GreenFrame built-in CO2 figures use their own factor and are not the annual headline."
+  ],
+  "corrections": [
+    "Label both annual results as model scenarios based on estimated pageviews, never measured annual emissions, a forecast, a complete organizational footprint or a DCR badge.",
+    "Keep SWDM operational and embodied browsing scope separate from GreenFrame client operation. Never add the two values or substitute GreenFrame for SWDM device emissions.",
+    "Preserve the 100% first-visit assumption and equal sampled-page proxy; actual page mix, repeat-visit share and audience electricity are unknown. Minimum/maximum sampled-page sensitivities and repetition ranges are not confidence intervals or bounds on true footprint.",
+    "Do not turn the 10% sensitivity parameter into estimated achievable savings. Any savings attribution needs a matched before/after measurement and affected traffic share."
+  ],
+  "savingsClaimSupported": false
+}

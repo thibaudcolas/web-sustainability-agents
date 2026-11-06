@@ -1,0 +1,20 @@
+{
+  "origin": "https://solar.lowtechmagazine.com",
+  "captures": [
+    {
+      "id": "oven-illustration",
+      "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+      "selector": "img[src$=\"oven-open_dithered.png\"]",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "alt": "Dithered photograph of the insulated solar oven with its front door open, followed by its descriptive caption.",
+      "caption": "The oven guide uses dithered photographs to explain its construction.",
+      "checkIds": [
+        "media-delivery"
+      ]
+    }
+  ]
+}

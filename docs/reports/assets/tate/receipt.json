@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "0.1.0",
+  "executionStatus": "completed",
+  "commands": [
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/source.py",
+        "--plan",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/plan.json",
+        "--output",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/source.json"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-06T08:48:23.909252+00:00",
+      "finishedAt": "2026-11-06T08:48:23.976853+00:00",
+      "exitCode": 0,
+      "logs": [
+        "source.stdout.txt",
+        "source.stderr.txt"
+      ]
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/run.py",
+        "--targets",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/targets.json",
+        "--output",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/staged.json"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-06T08:48:23.977143+00:00",
+      "finishedAt": "2026-11-06T08:50:07.559392+00:00",
+      "exitCode": 0,
+      "logs": [
+        "staged.stdout.txt",
+        "staged.stderr.txt"
+      ]
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/probes.py",
+        "--plan",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/plan.json",
+        "--output",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/probes.json"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-06T08:50:07.559679+00:00",
+      "finishedAt": "2026-11-06T08:51:17.314847+00:00",
+      "exitCode": 0,
+      "logs": [
+        "probes.stdout.txt",
+        "probes.stderr.txt"
+      ]
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/disclosures.py",
+        "--input",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/staged.json",
+        "--output",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/disclosures.json"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-06T08:51:17.315188+00:00",
+      "finishedAt": "2026-11-06T08:51:17.414035+00:00",
+      "exitCode": 0,
+      "logs": [
+        "disclosures.stdout.txt",
+        "disclosures.stderr.txt"
+      ]
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--locked",
+        "--script",
+        "audit/greenframe.py",
+        "--plan",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/plan.json",
+        "--output-dir",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/session/energy",
+        "--mode",
+        "readiness",
+        "--binary",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/run"
+      ],
+      "cwd": "/home/thibaudcolas/dev/web-sustainability-agents",
+      "startedAt": "2026-11-06T08:51:17.414422+00:00",
+      "finishedAt": "2026-11-06T08:51:17.731750+00:00",
+      "exitCode": 0,
+      "logs": [
+        "energy.stdout.txt",
+        "energy.stderr.txt"
+      ]
+    }
+  ],
+  "sourceSHA256": {
+    "audit/cli.py": "c070de759152f396a8eded55b61918043819d5ad3c3ce84d9985e716146a1996",
+    "audit/cli.py.lock": "f6bc7e9b0a374da09500415e92fff8c920165f99f75bf457f99ad1cf2559a34f",
+    "audit/orchestrate.py": "67e16d6bea22bdd119b410120a97eafae5dfaa01f993d76d72a4250124a83c90",
+    "audit/orchestrate.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/run.py": "be6ed209d107f91af87b7d60d94c840138252d41b347009e3f4c254eb4674ef0",
+    "audit/run.py.lock": "9b59f14a8d346545a9b45f9523bf16896f315e225c8f3913a47bfb6f8964e455",
+    "audit/probes.py": "5e5b8b55948a5795e77ccee5369ff883fae43366ca8383f5ea1be817f1efc6ee",
+    "audit/probes.py.lock": "cebd7ae29b5c8c6d65ede2ca2854b241b70345dd653ba295a4de220ffd5e660e",
+    "audit/workflow.py": "5e2ec830860341ebef9a66ff45d9dbbf1c3c5e0ac74f8a603ba9301688c5606f",
+    "audit/workflow.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/assess.py": "684de88ad6bf3494d51ced65b8a9f8efde767e52882df539b467932daa2f02af",
+    "audit/assess.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/disclosures.py": "cb57ab2b96ca9fb4d05a907ba4d4269274f31318e32244dcfdf8bc4877c9dd60",
+    "audit/disclosures.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/source.py": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a",
+    "audit/source.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "audit/greenframe.py": "82d344437434dbb946364d5177e38a31fe5b5051638200dbef05a6fceec55570",
+    "audit/greenframe.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235"
+  },
+  "skillSHA256": {
+    "research-workspace/SKILL.md": "1168556394ddc34c9b51172bb1648bbae2132592b6c5401c3edf763f586cba08",
+    "sustainability-audit/SKILL.md": "fc0f2d7ba4d455446c361e7affb3b17de9f64cc2a37bd1366a28faf2c7ea3bb1",
+    "sustainability-audit/references/agent-workflow.md": "1dfb719b7ec70d77608c79aca82fecee8163a7e69b5939d9b9f63e2ba8f534b9",
+    "sustainability-audit/scripts/runtime.py": "9e2ba52b683c4483f9f87151007c680bec02c7b2c343933b1f995d5d13d2f34f",
+    "sustainability-audit/scripts/runtime.py.lock": "c2a90b695d57b6bcaae4a4ccc4f8fef3334730758bd6ad0d7bda65c51ffd6235",
+    "sustainability-claims-review/SKILL.md": "299e37c2dc01e9ee08be913a61b5dc69e78cc52d4e64909ef9dbdbb71227ce9f",
+    "sustainability-collection/SKILL.md": "d2b3a73c03b0e758a0c9a604ced7a1649a42a1d6422a2f3292fb716ccbd49a5d",
+    "sustainability-context-review/SKILL.md": "bf3d3672c6e7342a83ad0f362f23ba7e60ad6756836f4a86504eab96d3163c4c",
+    "sustainability-context-review/references/review.md": "ff4a7b8573044c2dac7d23f5539d722de471ec60b4f8826bc2c7bd053b88b022",
+    "sustainability-core/SKILL.md": "470699eaa4f80134422121a5e356e6bb45feadbd1e71f763efccd5f761385f1f",
+    "sustainability-evidence-review/SKILL.md": "1a35f7bcf1f62f25903ac487dff0458d6ce35d6ba569b16d851f1fce69dad97f",
+    "sustainability-guideline-review/SKILL.md": "d89a9f472c0dab3c76efca05119246c2b9d5ecf2dfa52d110f4ae04d72243d3d",
+    "sustainability-guideline-review/references/WSG-LICENSE.txt": "f2f50e6475ed83590a5ea3e30c301914980404b77b1affbac025288bb5cdf174",
+    "sustainability-guideline-review/references/assessment-crosswalk.json": "4e958ed93d946ad8ec17ed4d80ef02929b522749a8d66e208baeb1918dbfc736",
+    "sustainability-guideline-review/references/wsg.json": "426533f660e4ee013542d93c1451dabad20cdd4053ee52a8c63b4776c0e035d1",
+    "sustainability-report/SKILL.md": "f8a8e3ff72f54ee62bab226acc8aa9ed3265e60871846f837e3d4c131c11bcc3",
+    "sustainability-report/assets/report-template.md": "a7718f74d3fc4349cdf89f971587799c9c22d6feef2488085798873954fcffaa",
+    "sustainability-report/references/editorial.schema.json": "88d1eea853e7808a59996b6e3a4d6d76f6f34f39000dfb9d708e6dc78c319d8c",
+    "sustainability-report/references/writing.md": "dad2da5fa3679dab7ec78210647c97ad9ae8e994de7b326108f70a3b22346766",
+    "sustainability-setup/SKILL.md": "604fca8fd420d42cbd8ace835fbf7179e16ba6a9773c5c70df04e3f471b13e61"
+  },
+  "gitRevision": "b1bad88a52e9e4a16e9b88a7577781691d8f4f05",
+  "planSHA256": "f18372f2c3c991350898484e05e889a1e9e6146dd62666a7f2a76c9fd6fe35d6",
+  "limitations": [
+    "Live responses and LLM judgments can vary",
+    "Only selected sourceFiles are captured; source roots alone do not trigger a scan and deployment identity remains unknown",
+    "Energy readiness is recorded by default; measurements require an explicit run mode and a quiet local workload window",
+    "Inspect captured text and logs before publishing; the session is private"
+  ]
+}

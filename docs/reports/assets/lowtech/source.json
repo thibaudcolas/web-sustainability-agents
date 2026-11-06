@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "source-evidence-v1",
+  "site": "https://solar.lowtechmagazine.com",
+  "capturedAt": "2026-11-06T08:50:58.097559+00:00",
+  "repositories": [],
+  "files": [],
+  "scope": "Only explicitly selected text files; no code execution, installed-package inventory, vulnerability scan, complete dependency audit or deployment attestation",
+  "planSHA256": "eb1d20e42a804903a20f02d8b011662b706c67cfdcef394921d1ca287a11c169",
+  "collectorSHA256": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a"
+}

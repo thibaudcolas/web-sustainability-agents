@@ -1,0 +1,358 @@
+{
+  "schemaVersion": "0.2.0",
+  "auditScope": "https://solar.lowtechmagazine.com",
+  "scopeValidatorSHA256": "5e2ec830860341ebef9a66ff45d9dbbf1c3c5e0ac74f8a603ba9301688c5606f",
+  "sourceSHA256": {
+    "staged": "5e0b909dddc2ef59dd2ca33c6269eff4234a9af754f1ec48917abef50e271e2a",
+    "traffic": "d7d5606a51e2316e395333b007de2108fff6312946203a35fb881be46657201f",
+    "energy": "a6a5365a585a8796a2c03d45c8cef5e7960821f7eca4072025f9dae4aafba0b9"
+  },
+  "calculatorSHA256": "67ae055f01459f2962320088180f9ee48e9cf820bc9c123e45145cb4c388c075",
+  "energyValidatorSHA256": "ce1445b9962919eb3d025ac6b8514ce7b40abb44297aaf1bad7ff3f4b57e0c25",
+  "dependencyLockSHA256": "ec953293d1f0ba8dccd1585b196daddb52b351b47f4c6d52958c794088f0519e",
+  "model": "CO2.js 0.19.0 / SWDM v4, global model electricity factors, no DCR assigned by this scenario calculator",
+  "visitSelection": "first",
+  "clientGridIntensity": 494.0,
+  "trafficDatasetMonth": "202609",
+  "scenarios": [
+    {
+      "site": "https://solar.lowtechmagazine.com",
+      "basis": "scenario",
+      "unit": "kgCO2e/year",
+      "status": "estimated",
+      "value": 16.728628477903456,
+      "functionalUnit": "One estimated year of page views at the audited origin, modeled operational and embodied browsing emissions",
+      "notIncluded": "Not a complete organizational footprint; no site-specific backend/build/office inventory or remote inference energy",
+      "assumptions": {
+        "pageMix": "Equal weights across sampled page URLs",
+        "visitSelection": "First recorded initial visit per URL",
+        "realPageMix": "unknown",
+        "visitMix": "100% first visits, 0% returning visits",
+        "hosting": "unknown; model uses non-green scenario",
+        "traffic": "Rank-bucket cohort estimate, not actual analytics",
+        "sensitivity": "All views at the minimum/maximum sampled page intensity; not a confidence interval or bounds on true site emissions"
+      },
+      "annualPageviews": 572851.0,
+      "gramsPerViewProxy": 0.029202407742857144,
+      "rankBucket": 5000000,
+      "transferInputs": "complete_within_protocol",
+      "pages": [
+        {
+          "url": "https://solar.lowtechmagazine.com/",
+          "gramsPerView": 0.0718753698,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://solar.lowtechmagazine.com/",
+              "runId": "home-no_banner",
+              "bytes": 484989,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0718753698,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 484989,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://solar.lowtechmagazine.com/archives/",
+          "gramsPerView": 0.0054164136,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://solar.lowtechmagazine.com/archives/",
+              "runId": "archive-no_banner",
+              "bytes": 36548,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0054164136,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 36548,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://solar.lowtechmagazine.com/about/the-solar-website/",
+          "gramsPerView": 0.0192314694,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://solar.lowtechmagazine.com/about/the-solar-website/",
+              "runId": "solar-methodology-no_banner",
+              "bytes": 129767,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0192314694,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 129767,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://solar.lowtechmagazine.com/power/",
+          "gramsPerView": 0.0059638644,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://solar.lowtechmagazine.com/power/",
+              "runId": "power-no_banner",
+              "bytes": 40242,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0059638644,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 40242,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://solar.lowtechmagazine.com/offline-reading/",
+          "gramsPerView": 0.0579823608,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://solar.lowtechmagazine.com/offline-reading/",
+              "runId": "offline-reading-no_banner",
+              "bytes": 391244,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0579823608,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 391244,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+          "gramsPerView": 0.0411658104,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+              "runId": "solar-oven-no_banner",
+              "bytes": 277772,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0411658104,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 277772,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        },
+        {
+          "url": "https://solar.lowtechmagazine.com/privacy/",
+          "gramsPerView": 0.0027815658,
+          "accountingStatus": "complete",
+          "branches": [
+            {
+              "url": "https://solar.lowtechmagazine.com/privacy/",
+              "runId": "privacy-no_banner",
+              "bytes": 18769,
+              "accountingStatus": "complete_within_protocol",
+              "trace": {
+                "co2": 0.0027815658,
+                "green": false,
+                "variables": {
+                  "description": "Below are the variables used to calculate this CO2 estimate.",
+                  "bytes": 18769,
+                  "gridIntensity": {
+                    "description": "The grid intensity (grams per kilowatt-hour) used to calculate this CO2 estimate.",
+                    "device": {
+                      "value": 494
+                    },
+                    "dataCenter": {
+                      "value": 494
+                    },
+                    "network": {
+                      "value": 494
+                    }
+                  },
+                  "greenHostingFactor": 0,
+                  "dataReloadRatio": 0.02,
+                  "firstVisitPercentage": 1,
+                  "returnVisitPercentage": 0
+                }
+              }
+            }
+          ],
+          "pageWeight": 0.14285714285714285
+        }
+      ],
+      "sensitivityKgPerYear": {
+        "lowestSampledPage": 1.5934227500958,
+        "highestSampledPage": 41.1738774652998
+      }
+    }
+  ],
+  "clientEnergyScenarios": [
+    {
+      "site": "https://solar.lowtechmagazine.com",
+      "status": "estimated",
+      "basis": "scenario",
+      "value": 6.4183893830317835,
+      "unit": "kWh/year",
+      "kgCO2ePerYear": 3.170684355217701,
+      "gridIntensity": {
+        "value": 494.0,
+        "unit": "gCO2e/kWh",
+        "basis": "Assumed comparison factor, not audience electricity data",
+        "defaultFactorReference": "https://sustainablewebdesign.org/estimating-digital-emissions/"
+      },
+      "assumptions": {
+        "pageMix": "Equal weights across energy-sampled URLs; median of three matching repetitions per URL",
+        "visitMix": "Every estimated pageview repeats the recorded initial-load scenario on the tested device/browser",
+        "boundary": "Modeled browser CPU, memory, disk and display operation only; excludes network, remote servers, embodied emissions and later reading/interaction",
+        "measurement": "GreenFrame resource-counter model, not direct electricity metering",
+        "improvement": "A proportional reduction is a sensitivity scenario, not demonstrated achievable savings",
+        "additivity": "Overlaps SWDM device scope; do not add these estimates to SWDM"
+      },
+      "annualPageviews": 572851.0,
+      "rankBucket": 5000000,
+      "WhPerViewProxy": 0.011204291138588889,
+      "sampledPageCount": 2,
+      "auditedPageCount": 7,
+      "pages": [
+        {
+          "url": "https://solar.lowtechmagazine.com/",
+          "WhPerView": 0.011028266190233333,
+          "pageWeight": 0.5
+        },
+        {
+          "url": "https://solar.lowtechmagazine.com/2025/10/how-to-build-a-solar-powered-electric-oven/",
+          "WhPerView": 0.011380316086944444,
+          "pageWeight": 0.5
+        }
+      ]
+    }
+  ],
+  "sensitivity": {
+    "reductionFraction": 0.1,
+    "meaning": "Hypothetical 10% reduction in per-view intensity at unchanged traffic; not a forecast of achievable savings"
+  }
+}

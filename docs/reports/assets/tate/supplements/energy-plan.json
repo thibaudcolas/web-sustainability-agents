@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "0.1.0",
+  "origin": "https://www.tate.org.uk",
+  "purpose": "Audit varied public Tate pages, including an anonymous route to accessible visitor information, and examine website-specific sustainability claims; exclude purchasing, accounts and form submissions.",
+  "pages": [
+    {
+      "id": "home",
+      "url": "https://www.tate.org.uk/",
+      "task": "Find Tate Modern visitor information from the public homepage.",
+      "sampleRationale": "Rich gallery/exhibition entry and navigation.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "tate-modern",
+      "url": "https://www.tate.org.uk/visit/tate-modern",
+      "task": "Find opening times, free admission and accessible-parking information without making a booking.",
+      "sampleRationale": "Visitor-information template with maps, tabs and long-form practical details.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "whats-on",
+      "url": "https://www.tate.org.uk/whats-on",
+      "task": "Browse the public exhibition and event listing without selecting a purchase.",
+      "sampleRationale": "Listing/filter template.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "julio-le-parc",
+      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+      "task": "Read the exhibition description, dates and visitor details without entering ticket purchase.",
+      "sampleRationale": "Image-rich exhibition detail template, discovered from current homepage links.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "stories",
+      "url": "https://www.tate.org.uk/art/stories",
+      "task": "Browse editorial stories and identify video, audio and reading choices without media playback.",
+      "sampleRationale": "Mixed editorial/media discovery template.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "greener-website",
+      "url": "https://www.tate.org.uk/about-us/digital/green-website",
+      "task": "Read the website-specific sustainability commitment and reported actions.",
+      "sampleRationale": "Distinct lightweight policy template and service-specific impact claims; HTTP200 text retrieved, one exploratory browser navigation timed out.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "cookie-policy",
+      "url": "https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use/cookie-policy",
+      "task": "Read the public cookie policy and identify available controls.",
+      "sampleRationale": "Privacy/consent policy template; sampled because homepage offered no visible cookie banner.",
+      "branches": [
+        {
+          "name": "initial_no_banner_observed",
+          "actions": []
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "find-accessible-parking",
+      "url": "https://www.tate.org.uk/",
+      "task": "Follow the Tate Modern gallery card from the homepage, open the Accessibility section and read the accessible-parking location and advance-booking contact information; stop before booking or contacting anyone.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "actions": [
+        {
+          "type": "click",
+          "selector": "a[href=\"/visit/tate-modern\"][aria-label=\"Tate Modern\"]"
+        },
+        {
+          "type": "click",
+          "selector": "a[href=\"#accessibility\"]"
+        }
+      ],
+      "success": {
+        "url": "https://www.tate.org.uk/visit/tate-modern",
+        "selector": "body",
+        "text": "There are twelve parking spaces for disabled visitors, accessed via Park Street."
+      }
+    }
+  ],
+  "checks": [],
+  "contextChecks": [
+    "access-barriers",
+    "sustainability-goals",
+    "governance-practice"
+  ],
+  "contextScopes": {
+    "access-barriers": "Anonymous English readers using desktop Chromium with pointer input and JavaScript, 1440 by 1000 CSS pixels: start at https://www.tate.org.uk/, follow the Tate Modern gallery card, open Accessibility, and read the accessible-parking location plus advance-booking phone/email instructions. Completion is obtaining public information; no parking booking, ticket purchase, account, contact or form submission. Keyboard-only, assistive-technology, constrained-device and physical-gallery accessibility are outside this assessment scope.",
+    "sustainability-goals": "The tate.org.uk web service and Tate Digital Green Team commitments described in Creating a greener website: assess the stated 2019 estimated 45 tonnes CO2e baseline, reported 2023 estimated 27 tonnes CO2e result, metric/boundary comparability and ongoing reduction direction as published on 2026-11-06. Exclude Tate buildings, collection transport, commercial shop origin and total organizational emissions; published estimates are self-report, not verified measurement.",
+    "governance-practice": "Tate Digital Green Team governance for reducing the tate.org.uk website footprint over the reported 2019\u20132023 baseline/progress period, plus continuing actions described on the public Digital and Creating a greener website pages captured 2026-11-06. Assess accountable review, monitored result and consequent action or reasoned continuation for that web-service commitment. No organization-wide governance or unpublished meeting evidence is in scope."
+  },
+  "contextEvidence": [
+    {
+      "id": "accessible-parking-task",
+      "kind": "task-observation",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/captures/context-accessible-parking-task.md",
+      "source": "https://www.tate.org.uk/",
+      "capturedAt": "2026-11-06T08:45:06.828643+00:00",
+      "scope": "Anonymous English readers using desktop Chromium with pointer input and JavaScript, 1440 by 1000 CSS pixels: start at https://www.tate.org.uk/, follow the Tate Modern gallery card, open Accessibility, and read the accessible-parking location plus advance-booking phone/email instructions. Completion is obtaining public information; no parking booking, ticket purchase, account, contact or form submission. Keyboard-only, assistive-technology, constrained-device and physical-gallery accessibility are outside this assessment scope.",
+      "checkIds": [
+        "access-barriers"
+      ],
+      "limitations": "Agent desktop pointer walkthrough, not representative-user testing or proof of physical access. No booking was attempted."
+    },
+    {
+      "id": "green-website",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/captures/context-green-website.md",
+      "source": "https://www.tate.org.uk/about-us/digital/green-website",
+      "capturedAt": "2026-11-06T08:46:02.171075+00:00",
+      "scope": "Creating a greener website | Tate",
+      "checkIds": [
+        "sustainability-goals",
+        "governance-practice"
+      ],
+      "limitations": "Attributed public self-report only. No independent emissions methodology, baseline comparability, meeting minutes or documented review-to-action chain verified. Browser navigation to green-website timed out once while separate HTTP retrieval returned intended page HTTP200."
+    },
+    {
+      "id": "digital-team",
+      "kind": "public-document",
+      "path": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/captures/context-digital-team.md",
+      "source": "https://www.tate.org.uk/about-us/digital",
+      "capturedAt": "2026-11-06T08:43:02.149608+00:00",
+      "scope": "Digital | Tate",
+      "checkIds": [
+        "sustainability-goals",
+        "governance-practice"
+      ],
+      "limitations": "Attributed public self-report only. No independent emissions methodology, baseline comparability, meeting minutes or documented review-to-action chain verified. Browser navigation to green-website timed out once while separate HTTP retrieval returned intended page HTTP200."
+    }
+  ],
+  "sourceRoots": [],
+  "sourceFiles": [],
+  "questions": [],
+  "assumptions": [
+    "Public anonymous access",
+    "Desktop first-load headline; narrow viewport and preferences are supplementary",
+    "No server measurement",
+    "No form submission or account change unless explicitly scoped",
+    "No cookie banner or accept/reject button appeared during the fresh anonymous homepage visit and verified visitor journey; branches preserve the observed initial state, without claiming absence of tracking or a site-wide consent guarantee.",
+    "Cookie policy HTTP text mentions consent and OneTrust placeholders; those are not verified working accept/reject controls.",
+    "Public information only: no shop origin, ticket purchase, account, newsletter submission, booking, email or telephone contact.",
+    "Exploratory browser timeout for the greener-website page is an access/measurement limitation, not a site failure; do not repeatedly probe blocked routes.",
+    "Separate initial-load energy supplement: homepage and one contrasting content page, three repetitions per page; not a representative whole-site energy average."
+  ],
+  "energy": {
+    "mode": "run",
+    "samples": 3,
+    "pageIds": [
+      "home",
+      "julio-le-parc"
+    ]
+  },
+  "ownerPriorities": [
+    "Fresh varied-site audit sample; no copied findings from prior runs."
+  ]
+}

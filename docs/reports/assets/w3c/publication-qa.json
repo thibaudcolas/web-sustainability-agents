@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "width": 1440,
+      "documentWidth": 1440,
+      "brokenAnchors": [],
+      "brokenImages": [],
+      "measurementRows": null,
+      "tables": 4,
+      "guidelineLinks": 31,
+      "keyboardTooltipAndDetails": "passed"
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "brokenAnchors": [],
+      "brokenImages": [],
+      "measurementRows": null,
+      "tables": 4,
+      "guidelineLinks": 31,
+      "keyboardTooltipAndDetails": "passed"
+    }
+  ]
+}

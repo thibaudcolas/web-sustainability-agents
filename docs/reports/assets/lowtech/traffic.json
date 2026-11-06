@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "0.1.0",
+  "capturedAt": "2026-11-06T08:42:55.157380+00:00",
+  "rankSource": "https://github.com/crissyfield/crux-dumps",
+  "rankSemantics": "coarse popularity bucket, not exact ordinal; exact protocol and full origin",
+  "mappingSource": "https://github.com/thibaudcolas/ranking-to-pageviews",
+  "mappingSHA256": "cff265890c59a22d0da5485bbf6fca3446c9f5cb15e0740a943be9f8225834dc",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/1000.txt.xz",
+      "rankBucket": 1000,
+      "rows": 1000,
+      "compressedSHA256": "67d1b037fa67c9ac89375855e2cd22643f4b89bf25a5c71edf4b934c590033f9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/5000.txt.xz",
+      "rankBucket": 5000,
+      "rows": 4000,
+      "compressedSHA256": "e0d32779922c88cc0fa674e9edf5ecc68d32f93257664b474e26056220f1647d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/10000.txt.xz",
+      "rankBucket": 10000,
+      "rows": 5000,
+      "compressedSHA256": "f807f1ad38b89c53ca089983acd4b901348d939a1a71fd7e0e3d8d4f16d99b30"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/50000.txt.xz",
+      "rankBucket": 50000,
+      "rows": 40000,
+      "compressedSHA256": "661c2eaede770c95edde177541d3883b81856786a17a6ca5b95ba31d9496256e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/100000.txt.xz",
+      "rankBucket": 100000,
+      "rows": 50000,
+      "compressedSHA256": "888b9aec11f205e13a53d43dc0b7eab1e8c9a8872e3093658eef8eb5d2d2510c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/500000.txt.xz",
+      "rankBucket": 500000,
+      "rows": 400000,
+      "compressedSHA256": "a4dd1ca3383974d40347e7bfa28c734eaeeb99c0fb6156a248fe259172b6b196"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/1000000.txt.xz",
+      "rankBucket": 1000000,
+      "rows": 500000,
+      "compressedSHA256": "a05ffc3db26b364a3e278d4b0949c521d6ccfd83500e68a786a6a213b95b1b6c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/crissyfield/crux-dumps/5493dd425c47fc7895d7d92df688d70638fb2aa7/2026/09/5000000.txt.xz",
+      "rankBucket": 5000000,
+      "rows": 4000000,
+      "compressedSHA256": "0922af2460a536e9b2bcae4d28b9e646bad1f3861c67a54619a23d13e493e262"
+    }
+  ],
+  "results": [
+    {
+      "origin": "https://blog.google",
+      "rankBucket": 50000,
+      "status": "found",
+      "traffic": {
+        "status": "scenario",
+        "annualPageviews": 79445520,
+        "unit": "pageviews/year",
+        "rankBucket": 50000,
+        "method": "rank-to-pageviews bucket median",
+        "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+        "uncertainty": "No calibrated site-level interval; population and period differ. This is not measured site analytics or a forecast.",
+        "annualEmissions": null,
+        "annualEmissionsReason": "Calculated separately by audit/annual.py under explicit page-mix, visit, and emissions-model assumptions"
+      }
+    },
+    {
+      "origin": "https://solar.lowtechmagazine.com",
+      "rankBucket": 5000000,
+      "status": "found",
+      "traffic": {
+        "status": "scenario",
+        "annualPageviews": 572851,
+        "unit": "pageviews/year",
+        "rankBucket": 5000000,
+        "method": "rank-to-pageviews bucket median",
+        "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+        "uncertainty": "No calibrated site-level interval; population and period differ. This is not measured site analytics or a forecast.",
+        "annualEmissions": null,
+        "annualEmissionsReason": "Calculated separately by audit/annual.py under explicit page-mix, visit, and emissions-model assumptions"
+      }
+    },
+    {
+      "origin": "https://www.nhs.uk",
+      "rankBucket": 5000,
+      "status": "found",
+      "traffic": {
+        "status": "scenario",
+        "annualPageviews": 455186749,
+        "unit": "pageviews/year",
+        "rankBucket": 5000,
+        "method": "rank-to-pageviews bucket median",
+        "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+        "uncertainty": "No calibrated site-level interval; population and period differ. This is not measured site analytics or a forecast.",
+        "annualEmissions": null,
+        "annualEmissionsReason": "Calculated separately by audit/annual.py under explicit page-mix, visit, and emissions-model assumptions"
+      }
+    },
+    {
+      "origin": "https://www.tate.org.uk",
+      "rankBucket": 100000,
+      "status": "found",
+      "traffic": {
+        "status": "scenario",
+        "annualPageviews": 24937909,
+        "unit": "pageviews/year",
+        "rankBucket": 100000,
+        "method": "rank-to-pageviews bucket median",
+        "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+        "uncertainty": "No calibrated site-level interval; population and period differ. This is not measured site analytics or a forecast.",
+        "annualEmissions": null,
+        "annualEmissionsReason": "Calculated separately by audit/annual.py under explicit page-mix, visit, and emissions-model assumptions"
+      }
+    },
+    {
+      "origin": "https://www.w3.org",
+      "rankBucket": 100000,
+      "status": "found",
+      "traffic": {
+        "status": "scenario",
+        "annualPageviews": 24937909,
+        "unit": "pageviews/year",
+        "rankBucket": 100000,
+        "method": "rank-to-pageviews bucket median",
+        "calibrationPopulation": "US government websites, 2025 analytics and December 2025 CrUX ranks",
+        "uncertainty": "No calibrated site-level interval; population and period differ. This is not measured site analytics or a forecast.",
+        "annualEmissions": null,
+        "annualEmissionsReason": "Calculated separately by audit/annual.py under explicit page-mix, visit, and emissions-model assumptions"
+      }
+    }
+  ],
+  "lookupStatus": "completed",
+  "mirrorCommit": "5493dd425c47fc7895d7d92df688d70638fb2aa7",
+  "datasetMonth": "202609",
+  "metadataSHA256": "0e55e583b2ccbde4776d691e1a2affc016df086e2e569fc7f1b14c7904eceb70",
+  "lookupMaxRank": 5000000
+}

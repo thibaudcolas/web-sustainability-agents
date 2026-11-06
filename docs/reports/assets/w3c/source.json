@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "source-evidence-v1",
+  "site": "https://www.w3.org",
+  "capturedAt": "2026-11-06T08:49:15.764896+00:00",
+  "repositories": [],
+  "files": [],
+  "scope": "Only explicitly selected text files; no code execution, installed-package inventory, vulnerability scan, complete dependency audit or deployment attestation",
+  "planSHA256": "7b1cdfa4b1c730bff8f6bb70a708a5b0acf267beff32af01abb0ea558b546720",
+  "collectorSHA256": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a"
+}

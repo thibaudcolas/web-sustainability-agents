@@ -1,0 +1,69 @@
+{
+  "role": "claims",
+  "site": "https://www.tate.org.uk",
+  "packetSHA256": "bf02b066f3771a13659474cc28a0d825ce55edbfacae31593b5c072129886d5b",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "tate-public-disclosure-is-present",
+      "checkIds": [
+        "disclosure-scope",
+        "carbon-discovery",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2",
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "The automated common-path discovery did not retrieve a sustainability statement, but the frozen context independently captures Creating a greener website and its Digital-team linking page. This is a service-specific public statement describing tate.org.uk impacts and mitigation, sufficient for the disclosure-only expectation. Root and well-known carbon.txt still returned 404, with no usable delegation. The statement does not identify corroborated hosting-provider operational evidence.",
+      "requestedChange": "Reconcile all frozen records: allow disclosure-scope pass based on the captured service statement, retain scoped carbon.txt absence and hosting-evidence cantTell. Do not report that Tate lacks a sustainability statement because the discovery fallback missed its route, or set an SWDM green-hosting flag from this disclosure."
+    },
+    {
+      "id": "tate-estimated-progress-comparability",
+      "checkIds": [
+        "sustainability-goals",
+        "disclosure-scope"
+      ],
+      "evidenceIds": [
+        "context.json:records:1"
+      ],
+      "summary": "Tate reports website emissions estimates of 45 tonnes CO2e in 2019 and 27 tonnes in 2023, an arithmetic 40% decrease between stated estimates, and attributes a contribution to a more efficient CMS. The captured statement does not document comparable traffic, service boundaries, emission factors or methods across those years, nor isolate the CMS effect. The quantified sector share and OLED power percentage are contextual publisher claims, not measurements of the sampled browser or website.",
+      "requestedChange": "Retain the exact 2019\u20132023 web-service assessmentScope and explicitly label both values as Tate estimates, not audit measurements or whole-Tate emissions. Keep baseline comparability unresolved for the full sustainability-goals expectation. Request a short method/boundary note for both years and any recalculation before presenting 40% as a like-for-like achieved reduction; do not assign all change to the CMS or compare it directly with current SWDM/GreenFrame scenarios."
+    },
+    {
+      "id": "tate-governance-review-chain",
+      "checkIds": [
+        "governance-practice"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2"
+      ],
+      "summary": "The Digital Green Team is named, meetings since 2019 are reported, and the statement lists implemented optimizations, 2019/2023 estimates and continuing activities. This is stronger than a generic policy, but the captured text does not link a dated accountable review of the reported result to a consequent action or reasoned continuation. Regular-meeting assertions and a list of actions alone leave that exact implementation requirement unresolved.",
+      "requestedChange": "Keep governance-practice cantTell for the declared period without implying the team does not perform reviews. Request one public dated review/progress decision tying the website metric to a responsible team and a resulting action or explicit reason to continue. Internal minutes or source access are not prerequisites if an adequate public summary exists."
+    },
+    {
+      "id": "tate-design-claims-and-task-boundary",
+      "checkIds": [
+        "preference-behavior",
+        "impact-choice",
+        "access-barriers",
+        "journeys"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:0",
+        "probes.json:journeys:0",
+        "probes.json:pages:5"
+      ],
+      "summary": "The green page describes dark-mode OLED savings of 70\u201380% at maximum brightness and reduced decoration, but no matched display-energy measurement is supplied. The parking walkthrough reaches public location and advance-booking contact instructions; it does not test a booking, physical-gallery access or completion under unrepresented access constraints.",
+      "requestedChange": "Attribute the OLED statement with its device/brightness conditions; do not quantify savings for all visitors, mandate dark mode from that percentage, or equate visual darkness with measured energy. Preserve the exact desktop pointer access-barriers assessmentScope; a bounded information-task pass must not claim successful parking booking, representative-user research or full accessibility."
+    }
+  ]
+}

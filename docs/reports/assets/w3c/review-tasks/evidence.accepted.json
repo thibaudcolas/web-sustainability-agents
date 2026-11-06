@@ -1,0 +1,7 @@
+{
+  "role": "evidence",
+  "taskSHA256": "dbd68fed298e78c6b32189587353be38262dcacd55489e127f9d544e21fb3ea7",
+  "resultSHA256": "17c549cda639a0c5621f80c955431e928f1ee66e1d6e1df447c5970b9e7dcf74",
+  "packetSHA256": "a0da6424ef1d07534366cb66f8c431999cce074883d69a691a44d7fff3b14393",
+  "executionMode": "native-subagents"
+}

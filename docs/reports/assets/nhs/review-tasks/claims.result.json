@@ -1,0 +1,70 @@
+{
+  "role": "claims",
+  "site": "https://www.nhs.uk",
+  "packetSHA256": "00391b37631387be8a4df161c5b4b6877e86c48588a4dbac55885b30fb784eda",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "nhs-discovery-boundary",
+      "checkIds": [
+        "disclosure-scope",
+        "carbon-discovery",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "Both tested carbon.txt routes and the two common-path sustainability URLs returned 404; DNS returned NoAnswer and no Carbon-Location header was recorded. These bounded discovery failures establish no usable carbon.txt in this discovery sample. They do not establish that NHS sustainability policies are absent, that hosting is high carbon, or that organization-wide NHS commitments apply to www.nhs.uk. documentCount=2 counts attempted document URLs, not retrieved sustainability statements.",
+      "requestedChange": "Report carbon-discovery as the scoped missing-file result; retain cantTell for service disclosure and hosting substantiation. Request one final public service-specific statement and an explicit provider/service-to-origin relationship with dated operational evidence before strengthening claims. Do not derive an SWDM green-hosting flag from these records."
+    },
+    {
+      "id": "nhs-lifecycle-execution-gap",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "evidenceIds": [
+        "context.json:records:1",
+        "context.json:records:2",
+        "context.json:records:3"
+      ],
+      "summary": "The publisher policy specifies review at least every three years and editorial/clinical roles. Walking for health displays last review 15 December 2022 and next review due 15 December 2025, already past at capture. The video page displays page review 19 August 2026 and individual media review dates in 2025. These labels and the policy do not identify an applied update/archive decision or its rationale; they neither establish effective lifecycle execution nor establish that the advice is clinically inaccurate.",
+      "requestedChange": "Preserve the declared Healthy living exercise collection assessmentScope exactly. Treat the full implementation expectation as cantTell while noting the visibly overdue Walking review label. Request one dated review decision for either sampled article/video, including responsible role, keep/update/archive rationale and resulting public route; retain useful older content rather than prescribing deletion from its age."
+    },
+    {
+      "id": "nhs-analytics-evidence-boundary",
+      "checkIds": [
+        "data-minimization",
+        "choice"
+      ],
+      "evidenceIds": [
+        "context.json:records:4",
+        "context.json:records:5",
+        "context.json:records:6",
+        "staged.json:runs:0",
+        "staged.json:runs:1",
+        "probes.json:pages:5"
+      ],
+      "summary": "The public records describe optional analytics, separate pop-up/campaign choices, purposes and cookie lifetimes. The observed homepage reject branch stays at 628898 cumulative bytes after consent/scroll, while accept reaches 919789 and includes Adobe and Qualtrics requests. This supports a meaningful sampled branch distinction, with the reject button correctly identified despite its legacy ID ending link_accept. Policy-described lifetimes and cross-service choice sharing remain publisher statements; the capture does not verify retention enforcement, downstream deletion or NHS App propagation.",
+      "requestedChange": "Preserve the analytics-only assessmentScope, purpose explanations and working rejection path. Attribute published cookie lifetimes/sharing; avoid extending a bounded pass to backend processing or health-data forms. If settings-save or reversal behavior is necessary to resolve the row, request one saved-settings round trip showing actual selected controls and resulting analytics traffic, rather than inferring it from option labels."
+    },
+    {
+      "id": "nhs-access-task-boundary",
+      "checkIds": [
+        "access-barriers",
+        "journeys"
+      ],
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:7",
+        "probes.json:journeys:0"
+      ],
+      "summary": "The pointer walkthrough reaches the complete Walking for health content anonymously after rejecting analytics. This supports only the declared English desktop pointer/JavaScript reading route. The accessibility statement separately reports partial WCAG 2.2 AA conformance and identified barriers in other tools and formats; it is publisher self-report and does not convert this route into an all-user accessibility result.",
+      "requestedChange": "A bounded access-barriers pass can use actual completion evidence, retaining the exact declared assessmentScope and exclusions. Do not claim representative-user research, keyboard-only completion, full accessibility, or successful clinical/service tasks. Further access constraints require a linked new scope and complete task trace."
+    }
+  ]
+}

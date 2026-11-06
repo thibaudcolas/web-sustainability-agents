@@ -1,0 +1,49 @@
+{
+  "resolutions": [
+    {
+      "issue": "evidence:nhs-evidence-01",
+      "decision": "applied",
+      "reason": "The components/API judgments remain unknown pending a usable deferred-player test. The first priority identifies the large partial pre-play capture without calling it autoplay, a complete footprint or proven savings."
+    },
+    {
+      "issue": "evidence:nhs-evidence-02",
+      "decision": "applied",
+      "reason": "The review credits completed homepage cookie choices only; choice remains unknown for visual parity. The failed settings-page banner actions are a collector limitation and must be described as unsuccessful in report wording."
+    },
+    {
+      "issue": "evidence:nhs-evidence-03",
+      "decision": "applied",
+      "reason": "The media row and second priority now identify the 475879-byte CSS background as a candidate needing visual and rendition validation; no image-free homepage or exact savings claim remains."
+    },
+    {
+      "issue": "evidence:nhs-evidence-04",
+      "decision": "applied",
+      "reason": "Disclosure and hosting remain unknown; carbon discovery fails only its explicit bounded missing-file expectation. No count of attempted URLs is treated as retrieved policies."
+    },
+    {
+      "issue": "evidence:nhs-evidence-05",
+      "decision": "applied",
+      "reason": "Unused-code/components remain unknown and cache policy passes only the header expectation. No warm-cache performance, removable bytes or deployed-source claim is made."
+    },
+    {
+      "issue": "claims:nhs-discovery-boundary",
+      "decision": "applied",
+      "reason": "The final disclosure/hosting/carbon rows preserve bounded discovery and the unknown provider relationship; no green-hosting flag is inferred."
+    },
+    {
+      "issue": "claims:nhs-lifecycle-execution-gap",
+      "decision": "applied",
+      "reason": "Content lifecycle remains unknown. The report will identify the overdue public label without diagnosing clinical correctness or recommending deletion, and request an applied review decision."
+    },
+    {
+      "issue": "claims:nhs-analytics-evidence-boundary",
+      "decision": "applied",
+      "reason": "The bounded data-purpose/choice pass retains public claims as attributed and excludes enforcement, NHS App propagation and health-data tasks."
+    },
+    {
+      "issue": "claims:nhs-access-task-boundary",
+      "decision": "applied",
+      "reason": "Access and journey passes retain the exact anonymous desktop pointer scope and complete trace; excluded user constraints and wider accessibility remain unverified."
+    }
+  ]
+}

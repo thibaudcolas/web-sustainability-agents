@@ -1,0 +1,81 @@
+{
+  "role": "claims",
+  "site": "https://blog.google",
+  "packetSHA256": "d569e5824bb9b537f656e2fce0c313026d3b6fa9444d95d85261eb22ed47a761",
+  "reviewer": {
+    "harness": "Codex native subagent",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high"
+  },
+  "issues": [
+    {
+      "id": "google-publication-versus-corporate-impact",
+      "checkIds": [
+        "disclosure-scope",
+        "sustainability-goals",
+        "hosting-evidence"
+      ],
+      "evidenceIds": [
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4",
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "The sustainability listing, Stegra announcement and linked sustainability.google page are retrieved public corporate disclosures. They do not identify measurable goals, a comparable baseline/progress series or operational hosting evidence specifically for the News from Google publication at blog.google. The Stegra text attributes up to 95% production-emissions reductions to a Stegra estimate; up to 40% embodied-carbon reduction is a Google estimate for data-center infrastructure materials. EAC purchasing and a 2025 construction-project count are publisher statements, not independent blog footprint measurements.",
+      "requestedChange": "Keep the exact publication-specific sustainability-goals assessmentScope and cantTell for service-specific disclosure/goals/hosting. Attribute corporate estimates and retain their industrial, construction and temporal boundaries if discussed. Request one publication-specific impact statement and goal/progress record; request a dated provider/service relationship to blog.google before judging sustainable hosting. Never transfer the steel percentages to page-load or annual browsing savings."
+    },
+    {
+      "id": "google-scoped-carbon-discovery",
+      "checkIds": [
+        "carbon-discovery"
+      ],
+      "evidenceIds": [
+        "staged.json:discovery:0",
+        "disclosures.json:sites:0"
+      ],
+      "summary": "Root and well-known carbon.txt returned 404 with no Carbon-Location header or usable declared relationships in the frozen discovery. Six retrieved document records include corporate material and an RSS response; this count is not six verified sustainability policies. No parseable carbon file was available for syntax/schema assessment.",
+      "requestedChange": "State missing carbon.txt within the tested discovery scope only. Do not infer absence of corporate sustainability work, high emissions or failure of all WSG 3.13 from that result. A new delegated record needs an explicit origin relationship and independently corroborated claims."
+    },
+    {
+      "id": "google-newsletter-bounded-purpose",
+      "checkIds": [
+        "data-minimization"
+      ],
+      "evidenceIds": [
+        "context.json:records:0",
+        "context.json:records:1",
+        "probes.json:pages:4"
+      ],
+      "summary": "The pre-submission newsletter page requests one visible required email-address field with a weekly-news purpose, privacy-policy link and stated opt-out. This supports proportionality for the declared visible sign-up scope. No email was entered, no subscription/verification completed and no opt-out was exercised; the broad corporate privacy excerpt cannot verify publication-specific retention, downstream deletion or execution of unsubscribe.",
+      "requestedChange": "A scoped visible-form pass may cite the required email control and purpose text while retaining the exact assessmentScope and pre-submission boundary. Attribute opt-out as a stated choice, avoid claiming successful delivery/unsubscription or complete processing compliance, and do not request internal source merely to resolve this visible-form check."
+    },
+    {
+      "id": "google-editorial-lifecycle-unknown",
+      "checkIds": [
+        "content-lifecycle"
+      ],
+      "evidenceIds": [
+        "context.json:records:2",
+        "context.json:records:3",
+        "context.json:records:4"
+      ],
+      "summary": "The publication about page explains authorship and purpose; the listing and September 17, 2026 announcement show current publication and older content routes. These records do not document a review/expiry schedule or an applied archive/update/deletion decision with rationale. Publication date and continuing availability alone do not establish a lifecycle practice or justify removal of an announcement with historical value.",
+      "requestedChange": "Keep content-lifecycle cantTell for the declared collection. Request one public correction/update/archive example and the applicable review trigger or schedule, decision rationale and resulting live/historical routes. Do not label old announcements wasteful merely for remaining discoverable."
+    },
+    {
+      "id": "google-reading-route-and-cookie-semantics",
+      "checkIds": [
+        "access-barriers",
+        "journeys",
+        "choice"
+      ],
+      "evidenceIds": [
+        "context.json:records:5",
+        "probes.json:journeys:0"
+      ],
+      "summary": "The recorded desktop pointer journey reaches the canonical Stegra article with its complete heading and body. The sole visible cookie-notice button says OK, got it; the accept class name is an implementation identifier, not proof of an accept/reject preference model or informed analytics consent. The route is an auditor walkthrough and excludes keyboard-only, constrained-device and geographic completion.",
+      "requestedChange": "Use actual URL/headline/content completion for a bounded access-barriers pass and preserve its exact assessmentScope. Describe cookie action as acknowledgment; do not invent reject/accept parity or infer legal compliance from the notice. Any stronger preference judgment needs a separately captured control/state path, and broader accessibility needs a linked new assessment."
+    }
+  ]
+}

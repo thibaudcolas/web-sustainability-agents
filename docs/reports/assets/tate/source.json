@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "source-evidence-v1",
+  "site": "https://www.tate.org.uk",
+  "capturedAt": "2026-11-06T08:48:23.965539+00:00",
+  "repositories": [],
+  "files": [],
+  "scope": "Only explicitly selected text files; no code execution, installed-package inventory, vulnerability scan, complete dependency audit or deployment attestation",
+  "planSHA256": "f18372f2c3c991350898484e05e889a1e9e6146dd62666a7f2a76c9fd6fe35d6",
+  "collectorSHA256": "cd3442b3889a0c1ce65485e312008fbcbd5a72908eb1fcf38bd1fb728f4bfb1a"
+}

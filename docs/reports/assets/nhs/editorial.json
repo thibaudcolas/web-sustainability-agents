@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "1.0",
+  "site": "https://www.nhs.uk",
+  "reviewSHA256": "64a65ac5a60fae947376cc7ed558dda20f586c68b9d85f262d90802b2063e0e5",
+  "writer": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "harness": "Codex native subagent"
+  },
+  "overview": "The seven-page sample supports a useful, readable NHS exercise journey: Walking for health is reachable after rejecting analytics, and core reading remains available without JavaScript. The largest resource question is the Strength and Flex video collection, where all 15 paused players initialize and video segments arrive before anyone selects playback. Investigate that loading behavior first, then the homepage background image and a small set of delivery and editorial questions. The video transfer is incomplete, and several checks need further observation; these uncertainties are separate from the two demonstrated problems in compression and carbon.txt discovery.",
+  "nextSteps": [
+    "Prototype loading one selected exercise player on demand. Test Play, Pause, captions, transcripts and safety information with pointer and keyboard input, then repeat the same initial-load measurement before estimating any reduction.",
+    "Locate the homepage CSS background and compare useful image renditions at desktop and narrow widths, including high-density screens. Inspect exercise posters alongside it before choosing changes.",
+    "Complete the narrow Browse/More route and inspect visible keyboard focus, cookie-choice appearance and the video animation effects. The cookie-settings page uses radio controls; the failed banner-button actions there need a corrected test, not a consent-defect diagnosis.",
+    "Resolve the Walking review-date discrepancy with the editorial owner and obtain one dated exercise-content decision. Request service-specific sustainability and hosting evidence to resolve the remaining disclosure questions."
+  ],
+  "findings": [
+    {
+      "checkId": "components",
+      "title": "Investigate loading exercise videos only when selected",
+      "summary": "The Strength and Flex page initializes all 15 players while they remain paused. Its first visit records 21.83 MB before cookie choice or playback, including streaming segments; some transfers are unmeasured. This is early loading, not evidence of autoplay.",
+      "whyItMatters": "Readers seeking an exercise summary encounter substantial media transfer before choosing a video. A lighter activation path is worth testing, but its usability and potential savings are unresolved.",
+      "action": "Prototype initializing only the chosen player. Keep summaries, safety information, transcripts and captions usable, verify Play and Pause, then compare matched loading and activation tasks before estimating a reduction."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Check the homepage background image’s role",
+      "summary": "The homepage downloads a 475.9 kB CSS background PNG. It is absent from the image-element inventory, and the scored capture does not establish its rendered dimensions, purpose or necessary detail.",
+      "whyItMatters": "The background accounts for a substantial part of the observed homepage transfer. Its size makes it a useful investigation target; useful visual content and display density must guide any replacement.",
+      "action": "Locate the background in the homepage and inspect its visible contribution. Compare suitable renditions at desktop and narrow widths, including high-density displays, before resizing or removing it."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Ask the video provider to compress playback JSON",
+      "summary": "Fifteen successful Brightcove playback metadata responses, each about 8.6 kB, arrive without a compression header. The NHS page assets and player script already use gzip or Brotli.",
+      "whyItMatters": "These material text responses can be reviewed independently of the video files. Beneficial negotiated compression would reduce their transfer, although the achievable reduction has not been measured.",
+      "action": "Ask Brightcove or the media delivery owner to check content negotiation for playback JSON. Verify compression headers and transferred sizes on the same exercise task after a change."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "title": "Confirm the Walking article’s current review status",
+      "summary": "Walking for health shows a review due on December 15, 2025, which was past at capture. NHS policy describes review at least every three years, but the evidence does not show whether this review occurred or what decision was made.",
+      "whyItMatters": "A stale public review label makes the content’s current status harder to judge. The date alone does not establish a clinical problem or a reason to delete the article.",
+      "action": "Ask the editorial owner whether the review was completed, update the public label accurately, and retain one dated review or retention decision for the exercise collection with its rationale."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "distraction",
+      "title": "Reading stays in view during the sampled tasks",
+      "summary": "Headings and navigation remain available across all seven pages. The cookie notice supports a privacy choice and is dismissed during the walking journey; exercise videos are paused until selected. Hidden player dialogs were not observed interrupting reading.",
+      "nextStep": "Recheck the reading journey after changes to prompts or video players, including any dialog introduced during playback."
+    },
+    {
+      "checkId": "choice",
+      "title": "Check the appearance and focus of both cookie choices",
+      "summary": "The homepage presents plainly worded, adjacent accept and reject buttons, and both actions complete in the recorded visits. Optional categories start off. The evidence does not establish equal visual prominence or default-focus behavior. Banner-button actions on the separate cookie-settings page failed because those buttons were absent; that page exposes radio settings.",
+      "nextStep": "Compare both banner choices at desktop and narrow widths, including default focus, contrast and prominence. Test the actual radio settings separately and verify the saved choice."
+    },
+    {
+      "checkId": "comprehension",
+      "title": "Exercise information uses clear task headings",
+      "summary": "The sampled pages use descriptive headings, familiar navigation and practical explanations. Walking uses questions and examples; the videos have exercise names, summaries and safety links. This is a judgment of the captured English wording, without representative-user or clinical validation.",
+      "nextStep": "Retain the descriptive headings and short exercise explanations when revising content; use audience research for broader comprehension claims."
+    },
+    {
+      "checkId": "consistency",
+      "title": "Navigation names remain consistent",
+      "summary": "The seven pages repeat the NHS home link, labeled search and primary navigation names. Content pages use familiar breadcrumbs and topic links. This consistency in the sample does not establish a documented design system.",
+      "nextStep": "Check these shared labels when adding templates or changing the Healthy living navigation."
+    },
+    {
+      "checkId": "motion",
+      "title": "Check video effects and playback controls",
+      "summary": "All 15 instructional videos are paused with autoplay off, and the screen observations record no running animations. A later print state records short DIV animations whose purpose and visibility are unresolved. Playback controls were identified but not activated in this task.",
+      "nextStep": "Inspect those effects under reduced motion and print emulation, then play and pause one representative exercise video to verify the controls."
+    },
+    {
+      "checkId": "notifications",
+      "title": "No unsolicited notification request was observed",
+      "summary": "No notification-permission request occurs in the seven captured page states. The cookie notice offers a relevant choice; player status regions and hidden dialogs do not establish an interruption. Browser notification permission was already denied, limiting what this observation can show.",
+      "nextStep": "Recheck any future notification feature in a fresh context where permission has not already been decided."
+    },
+    {
+      "checkId": "documents",
+      "title": "Core exercise text remains in print views",
+      "summary": "The sample lists no document downloads. Print emulation retains headings, Walking article text and exercise summaries, and removes primary navigation. It does not establish physical page counts or a complete text equivalent for every video.",
+      "nextStep": "Keep the print reading content when changing templates; inspect actual printed output if pagination or transcript equivalence becomes part of the task."
+    },
+    {
+      "checkId": "unused-code",
+      "title": "Check code use across real interactions",
+      "summary": "The initial-load coverage leaves parts of the consent, main and player scripts unexecuted. The brief capture does not cover search, account actions, settings updates or playback, and some function lists are truncated. These ranges do not identify safely removable downloads.",
+      "nextStep": "Record coverage while completing those interactions and identify specific unused modules before removing code."
+    },
+    {
+      "checkId": "components",
+      "title": "Investigate loading only the selected exercise player",
+      "summary": "All 15 paused players initialize before playback, loading a roughly 316.6 kB compressed player script, individual video metadata and streaming segments. The first video-page visit records 21.83 MB before consent or playback, with some transfer unmeasured. This supports testing deferral; a usable replacement and achievable reduction have not been demonstrated.",
+      "nextStep": "Prototype one player that initializes on request. Confirm summaries, safety information, transcripts, captions and playback remain usable, then compare the same initial-load and activation tasks."
+    },
+    {
+      "checkId": "layout",
+      "title": "Complete the narrow navigation route",
+      "summary": "All seven pages keep their task headings and core text at desktop and 360 CSS pixels without recorded horizontal overflow. Narrow layouts replace primary navigation with Browse/More, which the collection did not open. Readable text alone does not establish that route works.",
+      "nextStep": "Open Browse/More on the sampled templates at narrow widths and follow the intended exercise link through to its full content."
+    },
+    {
+      "checkId": "impact-choice",
+      "title": "Check whether text offers a useful lower-data route",
+      "summary": "An exercise-video choice may benefit from useful data-use guidance or a text alternative. The players already initialize before selection, and transcript controls were not exercised, so a working lower-data alternative is unresolved.",
+      "nextStep": "Open a transcript and compare it with the chosen exercise video, then measure each route before adding a supported data-use cue."
+    },
+    {
+      "checkId": "journeys",
+      "title": "The Walking article is reachable after rejecting analytics",
+      "summary": "The recorded pointer journey rejects analytics, follows Healthy living, Exercise and Walking for health, then reaches the correct URL, heading and full article. It establishes completion of that route, without proving the shortest route or success for other audiences.",
+      "nextStep": "Include this anonymous reading route in regression checks when navigation or cookie controls change."
+    },
+    {
+      "checkId": "media-delivery",
+      "title": "Inspect the homepage background and exercise posters",
+      "summary": "The homepage requests a CSS background PNG of 475.9 kB even though the image-element inventory is empty. Its visible role and necessary detail were not established. Exercise posters are near 1280 × 720, displayed at about 629 × 354 on desktop and 328 × 185 at narrow width; high-density desktop displays may justify the larger source.",
+      "nextStep": "Locate the background and inspect its task value. Compare poster and background renditions at intended display densities, choosing smaller versions only after checking useful detail and legibility."
+    },
+    {
+      "checkId": "font-delivery",
+      "title": "Two small font faces support the sampled text",
+      "summary": "The pages use regular and semibold Frutiger WOFF2 faces of about 17 kB each, with a fallback loading policy and Arial/sans-serif alternatives. The observed faces serve body text and headings and have cache information. Constrained-loading behavior was not tested.",
+      "nextStep": "Retain the fallback strategy and test readability before changing font variants or language coverage."
+    },
+    {
+      "checkId": "semantic-forms",
+      "title": "Task headings and controls have meaningful names",
+      "summary": "Each initial document declares English, has one meaningful main heading and one main region. Search has its Search the NHS website label; cookie radios and visible Play and Transcript controls have naming relationships. This is a limited document/control check, not a full accessibility assessment.",
+      "nextStep": "Retain these document landmarks and labels when changing templates; verify interactive player states in a separate accessibility check."
+    },
+    {
+      "checkId": "metadata",
+      "title": "Page titles and canonical addresses match their tasks",
+      "summary": "All seven pages provide descriptive titles, matching absolute canonical URLs and purpose-specific descriptions. Structured-data blocks parse where present; the homepage declares none. Search eligibility and schema correctness were outside the check.",
+      "nextStep": "Keep titles, descriptions and canonicals aligned when updating or moving exercise content."
+    },
+    {
+      "checkId": "preference-behavior",
+      "title": "Check the unresolved video preference effects",
+      "summary": "Task text remains available after device-preference changes and when preferences are active before opening the page. The NHS light palette alone establishes no theme defect. The video print state records running effects under reduced motion without enough detail to judge their purpose or response.",
+      "nextStep": "Inspect those animation effects with reduced motion active. Establish a relevant user need or intended theme behavior before prescribing a dark theme."
+    },
+    {
+      "checkId": "no-js-content",
+      "title": "Exercise reading survives without JavaScript",
+      "summary": "Fresh visits with JavaScript disabled preserve headings, reading text and navigation on all seven pages. Walking stays complete, and the video collection retains exercise summaries, review dates and safety links. Enhanced playback, account actions and settings submission were outside this reading check.",
+      "nextStep": "Keep this reading fallback when revising the video collection, and test player enhancements separately."
+    },
+    {
+      "checkId": "api-requests",
+      "title": "Trace what each player requests before playback",
+      "summary": "Ordinary pages request a small emergency-banner update with a plausible safety purpose. The video page requests metadata for 15 distinct videos, streaming resources and tracking events before playback. Repeated endpoint names alone do not establish duplicate polling or safely removable work.",
+      "nextStep": "Trace one player from initialization to playback, recording initiators and timing. Separate necessary metadata and captions from any avoidable pre-play segments or analytics."
+    },
+    {
+      "checkId": "public-cache-policy",
+      "title": "Reusable resources provide cache information",
+      "summary": "Sampled scripts, styles, fonts and posters expose cache lifetimes or validators. Fingerprinted assets have long public lifetimes; player metadata and tracking responses serve different purposes. The headers support reuse policy, while actual repeat-visit reuse and offline availability remain unmeasured.",
+      "nextStep": "Retain appropriate cache lifetimes and validators; use a matched repeat visit to assess reuse if changing delivery policy."
+    },
+    {
+      "checkId": "text-compression",
+      "title": "Compress the player metadata responses",
+      "summary": "NHS text assets and the player script use gzip or Brotli, but 15 successful Brightcove playback JSON responses of about 8.6 kB each have no compression header. The uncompressed text is corroborated in the transfer record; achievable byte or energy savings were not measured.",
+      "nextStep": "Ask the media provider to verify content negotiation and enable beneficial compression for playback JSON. Confirm response headers and transferred sizes afterward."
+    },
+    {
+      "checkId": "keyboard-path",
+      "title": "Inspect the visible keyboard-focus treatment",
+      "summary": "The initial Tab traces reach consent, skip, home, search, account and navigation controls in a meaningful order. Their recorded outlines are transparent, but other focus styling was not captured. This establishes neither an invisible indicator nor a sufficient one.",
+      "nextStep": "Capture focused links, buttons and search fields, including border, background and shadow changes. Confirm the current focus can be seen throughout the route."
+    },
+    {
+      "checkId": "disclosure-scope",
+      "title": "Find a sustainability statement for the NHS website",
+      "summary": "Two guessed sustainability URLs return 404 and the bounded search provides no usable statement for this service. That does not establish that the NHS lacks a statement elsewhere, or that organization-wide commitments describe this website.",
+      "nextStep": "Provide a public statement naming the NHS website and explaining its environmental impacts and mitigation."
+    },
+    {
+      "checkId": "carbon-discovery",
+      "title": "Publish a verifiable carbon.txt record if useful",
+      "summary": "The root and well-known carbon.txt routes return 404, with no header or DNS route to a usable document in the tested discovery. This is a missing-file result within that scope; it says nothing about the magnitude of website emissions.",
+      "nextStep": "If carbon.txt would help visitors discover service evidence, publish a valid record with verifiable relationships and check the advertised discovery route."
+    },
+    {
+      "checkId": "hosting-evidence",
+      "title": "Connect hosting evidence to this website",
+      "summary": "No captured evidence links this origin to a hosting service and independently supports that service’s sustainability claims. CDN or asset-host names do not establish operational electricity sourcing.",
+      "nextStep": "Document the origin-to-provider relationship and provide dated, independently corroborated operational evidence for the hosting service."
+    },
+    {
+      "checkId": "access-barriers",
+      "title": "Anonymous desktop readers can reach the Walking article",
+      "summary": "The complete desktop pointer walkthrough rejects analytics and reaches the full English Walking article without login, health-data entry or an access gate. Keyboard-only, assistive-technology and constrained-device completion were outside this task.",
+      "nextStep": "Retain anonymous access and assess excluded audience constraints through dedicated tasks before extending the conclusion."
+    },
+    {
+      "checkId": "data-minimization",
+      "title": "Analytics choices have an explained purpose",
+      "summary": "The observed settings start optional analytics, pop-up and campaign categories off. Public cookie information explains purposes and durations, and rejecting analytics leaves reading available. The successful homepage accept visit adds analytics resources; settings-page banner actions did not succeed, and cross-service propagation or retention enforcement was not verified.",
+      "nextStep": "Keep direct choices and purpose explanations. Test saved radio settings on the settings page and verify downstream retention or cross-service behavior before making stronger claims."
+    },
+    {
+      "checkId": "content-lifecycle",
+      "title": "Resolve the Walking review-date discrepancy",
+      "summary": "The content policy describes review at least every three years and editorial/clinical responsibilities. Walking still shows December 15, 2022 as last reviewed and December 15, 2025 as next due, while the video collection has newer review labels. The labels do not establish whether an actual review occurred or justify removing useful health information.",
+      "nextStep": "Confirm the Walking review status with its owner, correct the public dates accurately, and provide one dated exercise-content update or retention decision with its rationale."
+    }
+  ]
+}

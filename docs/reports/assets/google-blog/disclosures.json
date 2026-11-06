@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "carbon-review-v1",
+  "sourceSHA256": "a1f8355dbba754fae349ea75864a20c6abc3b021ef4a8f75a59142ee2d6c988c",
+  "scriptSHA256": "cb57ab2b96ca9fb4d05a907ba4d4269274f31318e32244dcfdf8bc4877c9dd60",
+  "sites": [
+    {
+      "site": "https://blog.google",
+      "presence": "not_established_within_discovery_scope",
+      "records": [],
+      "documentCount": 6,
+      "claimsVerified": false,
+      "scopeNote": "Presence, parseability, declared relationships, retrieval, and substantiation are separate results. Missing carbon.txt does not establish absence of a sustainability policy."
+    }
+  ]
+}

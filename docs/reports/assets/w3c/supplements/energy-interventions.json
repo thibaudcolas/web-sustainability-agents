@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "at": "2026-11-06T09:01:52.176381+00:00",
+      "pid": 1199213,
+      "action": "SIGTERM",
+      "reason": "Runner logged terminal SCENARIO_FAILED / unsuccessful initial HTTP response, then remained alive for more than three minutes. Terminated only this task-owned bridge so collector records failure and continues."
+    },
+    {
+      "at": "2026-11-06T09:03:53.009307+00:00",
+      "pid": 1201055,
+      "action": "SIGTERM",
+      "reason": "WCAG22 energy bridge logged terminal SCENARIO_FAILED / unsuccessful initial HTTP response and remained alive; terminate task-owned bridge to preserve failed measurement and continue."
+    }
+  ]
+}

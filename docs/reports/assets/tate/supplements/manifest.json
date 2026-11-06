@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "greenframe-energy-v2",
+  "origin": "https://www.tate.org.uk",
+  "capturedAt": "2026-11-06T08:55:05.220703+00:00",
+  "mode": "run",
+  "tool": "GreenFrame",
+  "toolVersion": "2.0.1",
+  "preflight": {
+    "ready": true,
+    "cli": {
+      "argv": [
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/greenframe",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "greenframe-cli/2.0.1 linux-x64 node-v18.20.4\n"
+    },
+    "docker": {
+      "argv": [
+        "/usr/bin/docker",
+        "version",
+        "--format",
+        "{{.Server.Version}}"
+      ],
+      "returncode": 0,
+      "output": "29.9.2\n"
+    },
+    "image": {
+      "Id": "sha256:9e6eddb08b8566076ef778007859096bc90f8984236061c086eaede2fb60430b",
+      "RepoDigests": [
+        "mcr.microsoft.com/playwright@sha256:9e6eddb08b8566076ef778007859096bc90f8984236061c086eaede2fb60430b"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    "libraryPresent": true,
+    "runnerNameOccupied": false,
+    "libraryRoot": "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe",
+    "requiredCliVersion": "2.0.1",
+    "requiredImage": "mcr.microsoft.com/playwright:v1.30.0-focal",
+    "browser": {
+      "name": "chromium",
+      "revision": "1045",
+      "installByDefault": true,
+      "browserVersion": "110.0.5481.38"
+    },
+    "remediation": "Install pinned GreenFrame CLI 2.0.1 locally and pull the required image; no host permission changes are performed"
+  },
+  "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+  "protocol": {
+    "phase": "initial",
+    "samples": 3,
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "browser": "Chromium in pinned Playwright container",
+    "journey": "Fresh browser context; initial navigation waits for load then 3000 ms; no consent action or scrolling",
+    "baselineSubtracted": false,
+    "measurementWindow": "Starts after browser/context startup and upstream 2000 ms warm-up; ends after scenario and browser close; fresh context per repetition, same browser container across repetitions",
+    "execution": "Sequential; shared workstation, uncontrolled ambient activity",
+    "upstreamBrowserFlags": [
+      "--disable-web-security"
+    ],
+    "userAgent": "GreenFrame fixed Chrome/89 user agent; not the actual browser version"
+  },
+  "limitations": [
+    "Resource-counter model; not measured electricity, whole device energy or remote server energy",
+    "Client-device headline excludes GreenFrame modeled network energy, which is listed separately",
+    "Synthetic 45 W CPU and 14 W screen coefficients; CPU counters normalized by available host CPUs",
+    "Never add to SWDM emissions; annual scenarios require explicit traffic, page-mix and electricity assumptions",
+    "Bounded energy sample may be smaller than the report's browser page sample"
+  ],
+  "pages": [
+    {
+      "schemaVersion": "greenframe-client-v1",
+      "preparedAt": "2026-11-06T08:55:05.220917+00:00",
+      "url": "https://www.tate.org.uk/",
+      "phase": "initial",
+      "consentSelector": null,
+      "noBannerDeclared": false,
+      "samples": 3,
+      "status": "completed",
+      "requiredCliVersion": "2.0.1",
+      "configSHA256": "c0f7077b947444c6b949441b717fa701a2be1826843093cbc0fd32159eba81eb",
+      "scenarioSHA256": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+      "wrapperSHA256": "82d344437434dbb946364d5177e38a31fe5b5051638200dbef05a6fceec55570",
+      "system": {
+        "platform": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+        "machine": "x86_64"
+      },
+      "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+      "comparisonRule": "Independent complete scenarios, not incremental phase energy; retain first-load result as headline and compare matched repeated scenarios",
+      "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM; annual projection requires explicit traffic, page-mix and electricity assumptions. Runner image/browser versions require separate verification before comparing runs.",
+      "metrics": {
+        "energy": {
+          "value": 0.0826491145238,
+          "unit": "Wh/scenario",
+          "basis": "GreenFrame resource model"
+        },
+        "clientDeviceEnergy": {
+          "value": 0.01965285885713333,
+          "unit": "Wh/scenario",
+          "basis": "GreenFrame resource model"
+        },
+        "networkEnergy": {
+          "value": 0.06299625566666667,
+          "unit": "Wh/scenario",
+          "basis": "GreenFrame resource model"
+        },
+        "componentsWh": {
+          "cpu": 0.004980026041666666,
+          "mem": 3.1166148800000004e-05,
+          "disk": 0,
+          "network": 0.06299625566666667,
+          "screen": 0.014641666666666662,
+          "total": 0.0826491145238
+        },
+        "scenarioSeconds": 5.010333333333333,
+        "reportedPrecisionPercent": 0.4683032012646345
+      },
+      "id": "home",
+      "bridgeSHA256": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff",
+      "sourceDigests": {
+        "package.json": "3aaa318f1e6c1a770b8bfac3930588819d89878fcc09f2149f1b5899a552f0f9",
+        "dist/services/container/index.js": "c8e11f563e98222700a5c25809f2f0cba3a131cd50bf89ed514a0517b52e0324",
+        "dist/services/container/execScenarioContainer.js": "3325075487eceb32cc988e760165ae88f0013c9861ee57212ef7afc338648cd5",
+        "dist/model/stat-tools/getConsumption.js": "6277c7c41fadf02035ddb9f45c706cefabed68fb71e6b001a43a0ef3b9a5404e",
+        "dist/model/stat-tools/getWh.js": "c5c34810973314fcab2cb3a54a28f70f6a75ea459b08778aa383ca1543c2a7df"
+      },
+      "argv": [
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/node",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/energy/home/bridge.cjs",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe",
+        "https://www.tate.org.uk/",
+        "3"
+      ],
+      "startedAt": "2026-11-06T08:55:05.222037+00:00",
+      "finishedAt": "2026-11-06T08:55:32.452572+00:00",
+      "returncode": 0,
+      "sampleMetrics": [
+        {
+          "energy": {
+            "value": 0.082103091413,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "clientDeviceEnergy": {
+            "value": 0.019130016413,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "networkEnergy": {
+            "value": 0.062973075,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "componentsWh": {
+            "cpu": 0.0050294781249999995,
+            "mem": 3.0538288e-05,
+            "disk": 0,
+            "network": 0.062973075,
+            "screen": 0.01407,
+            "total": 0.082103091413
+          },
+          "scenarioSeconds": 5.01,
+          "reportedPrecisionPercent": 0
+        },
+        {
+          "energy": {
+            "value": 0.08244692761773334,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "clientDeviceEnergy": {
+            "value": 0.019422196617733332,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "networkEnergy": {
+            "value": 0.063024731,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "componentsWh": {
+            "cpu": 0.00498259375,
+            "mem": 3.12695344e-05,
+            "disk": 0,
+            "network": 0.063024731,
+            "screen": 0.014408333333333334,
+            "total": 0.08244692761773334
+          },
+          "scenarioSeconds": 5.013,
+          "reportedPrecisionPercent": 0
+        },
+        {
+          "energy": {
+            "value": 0.08339732454066666,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "clientDeviceEnergy": {
+            "value": 0.020406363540666664,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "networkEnergy": {
+            "value": 0.062990961,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "componentsWh": {
+            "cpu": 0.00492800625,
+            "mem": 3.1690624000000003e-05,
+            "disk": 0,
+            "network": 0.062990961,
+            "screen": 0.015446666666666664,
+            "total": 0.08339732454066666
+          },
+          "scenarioSeconds": 5.008,
+          "reportedPrecisionPercent": 0
+        }
+      ],
+      "clientDeviceSummaryWh": {
+        "mean": 0.019652858857133332,
+        "median": 0.019422196617733332,
+        "min": 0.019130016413,
+        "max": 0.020406363540666664,
+        "rangeMeaning": "Observed repetition range, not a confidence interval"
+      },
+      "networkSummaryWh": {
+        "mean": 0.06299625566666667,
+        "median": 0.062990961,
+        "min": 0.062973075,
+        "max": 0.063024731,
+        "rangeMeaning": "Observed repetition range, not a confidence interval"
+      },
+      "totalSummaryWh": {
+        "mean": 0.0826491145238,
+        "median": 0.08244692761773334,
+        "min": 0.082103091413,
+        "max": 0.08339732454066666,
+        "rangeMeaning": "Observed repetition range, not a confidence interval"
+      },
+      "artifacts": {
+        "raw-counters.json": "995395696fb823f45c0e3bf51dc6b517441389625fdb6b72b3579d25def5f73d",
+        "model-results.json": "f73d5fb878ac3e006bb46aeec016e177c68972625f39da5f670433ed2d1b0d61",
+        "runner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+        "bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff"
+      }
+    },
+    {
+      "schemaVersion": "greenframe-client-v1",
+      "preparedAt": "2026-11-06T08:55:32.456745+00:00",
+      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+      "phase": "initial",
+      "consentSelector": null,
+      "noBannerDeclared": false,
+      "samples": 3,
+      "status": "completed",
+      "requiredCliVersion": "2.0.1",
+      "configSHA256": "e9b148cb0797d161656b07929a977b008058db651c7dfb88479c9bd228cf3048",
+      "scenarioSHA256": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+      "wrapperSHA256": "82d344437434dbb946364d5177e38a31fe5b5051638200dbef05a6fceec55570",
+      "system": {
+        "platform": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+        "machine": "x86_64"
+      },
+      "measurementBoundary": "GreenFrame modeled browser-container CPU, memory, disk and screen energy; network modeled separately; remote servers excluded",
+      "comparisonRule": "Independent complete scenarios, not incremental phase energy; retain first-load result as headline and compare matched repeated scenarios",
+      "limitations": "Modeled Wh and gCO2e, not RAPL or wall-meter energy; never add to SWDM; annual projection requires explicit traffic, page-mix and electricity assumptions. Runner image/browser versions require separate verification before comparing runs.",
+      "metrics": {
+        "energy": {
+          "value": 0.06828806576063703,
+          "unit": "Wh/scenario",
+          "basis": "GreenFrame resource model"
+        },
+        "clientDeviceEnergy": {
+          "value": 0.019985481760637035,
+          "unit": "Wh/scenario",
+          "basis": "GreenFrame resource model"
+        },
+        "networkEnergy": {
+          "value": 0.048302583999999996,
+          "unit": "Wh/scenario",
+          "basis": "GreenFrame resource model"
+        },
+        "componentsWh": {
+          "cpu": 0.004921602083333334,
+          "mem": 2.943523285925926e-05,
+          "disk": 0,
+          "network": 0.048302583999999996,
+          "screen": 0.015034444444444442,
+          "total": 0.06828806576063703
+        },
+        "scenarioSeconds": 5.0073333333333325,
+        "reportedPrecisionPercent": 0.7760159473152752
+      },
+      "id": "julio-le-parc",
+      "bridgeSHA256": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff",
+      "sourceDigests": {
+        "package.json": "3aaa318f1e6c1a770b8bfac3930588819d89878fcc09f2149f1b5899a552f0f9",
+        "dist/services/container/index.js": "c8e11f563e98222700a5c25809f2f0cba3a131cd50bf89ed514a0517b52e0324",
+        "dist/services/container/execScenarioContainer.js": "3325075487eceb32cc988e760165ae88f0013c9861ee57212ef7afc338648cd5",
+        "dist/model/stat-tools/getConsumption.js": "6277c7c41fadf02035ddb9f45c706cefabed68fb71e6b001a43a0ef3b9a5404e",
+        "dist/model/stat-tools/getWh.js": "c5c34810973314fcab2cb3a54a28f70f6a75ea459b08778aa383ca1543c2a7df"
+      },
+      "argv": [
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe/bin/node",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/diversity/tate/energy/julio-le-parc/bridge.cjs",
+        "/home/thibaudcolas/dev/web-sustainability-agents/.audit-work/tools/greenframe",
+        "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+        "3"
+      ],
+      "startedAt": "2026-11-06T08:55:32.456930+00:00",
+      "finishedAt": "2026-11-06T08:55:59.493648+00:00",
+      "returncode": 0,
+      "sampleMetrics": [
+        {
+          "energy": {
+            "value": 0.06737190613744444,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "clientDeviceEnergy": {
+            "value": 0.019045485137444442,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "networkEnergy": {
+            "value": 0.048326420999999994,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "componentsWh": {
+            "cpu": 0.004876403125,
+            "mem": 2.908201244444444e-05,
+            "disk": 0,
+            "network": 0.048326420999999994,
+            "screen": 0.01414,
+            "total": 0.06737190613744444
+          },
+          "scenarioSeconds": 5.007999999999999,
+          "reportedPrecisionPercent": 0
+        },
+        {
+          "energy": {
+            "value": 0.06828467591272222,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "clientDeviceEnergy": {
+            "value": 0.01998004591272222,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "networkEnergy": {
+            "value": 0.048304629999999994,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "componentsWh": {
+            "cpu": 0.0050251515625,
+            "mem": 2.933879466666667e-05,
+            "disk": 0,
+            "network": 0.048304629999999994,
+            "screen": 0.014925555555555553,
+            "total": 0.06828467591272222
+          },
+          "scenarioSeconds": 5.007,
+          "reportedPrecisionPercent": 0
+        },
+        {
+          "energy": {
+            "value": 0.06920761523174446,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "clientDeviceEnergy": {
+            "value": 0.020930914231744445,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "networkEnergy": {
+            "value": 0.048276701000000005,
+            "unit": "Wh/scenario",
+            "basis": "GreenFrame resource model"
+          },
+          "componentsWh": {
+            "cpu": 0.0048632515624999996,
+            "mem": 2.9884891466666664e-05,
+            "disk": 0,
+            "network": 0.048276701000000005,
+            "screen": 0.01603777777777778,
+            "total": 0.06920761523174446
+          },
+          "scenarioSeconds": 5.007,
+          "reportedPrecisionPercent": 0
+        }
+      ],
+      "clientDeviceSummaryWh": {
+        "mean": 0.019985481760637035,
+        "median": 0.01998004591272222,
+        "min": 0.019045485137444442,
+        "max": 0.020930914231744445,
+        "rangeMeaning": "Observed repetition range, not a confidence interval"
+      },
+      "networkSummaryWh": {
+        "mean": 0.048302583999999996,
+        "median": 0.048304629999999994,
+        "min": 0.048276701000000005,
+        "max": 0.048326420999999994,
+        "rangeMeaning": "Observed repetition range, not a confidence interval"
+      },
+      "totalSummaryWh": {
+        "mean": 0.06828806576063703,
+        "median": 0.06828467591272222,
+        "min": 0.06737190613744444,
+        "max": 0.06920761523174446,
+        "rangeMeaning": "Observed repetition range, not a confidence interval"
+      },
+      "artifacts": {
+        "raw-counters.json": "384591f488fdd257026b73942b80864b16e5553439040e79d5fc01698d7c26c6",
+        "model-results.json": "133b8534795a0cfc2f29d7e8242762d908c781431c677d70e445ffd1adde212b",
+        "runner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario.js": "01e8f50c6608626785d5e6799fc1c6d5e3115493560eda2f86fe4d4f019807c0",
+        "bridge.cjs": "f3ec721b1a204b9a3bfa868cded910919ad6122dc2da334224ea369961e1d8ff"
+      }
+    }
+  ],
+  "status": "completed"
+}
