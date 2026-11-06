@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from typing import Any, cast
 
-from audit.render_review import render
+from audit.render_review import interaction_label, render
 from audit.report_details import (
     area_results,
     energy_rows,
@@ -16,6 +16,30 @@ from audit.report_details import (
 
 
 class ReportDetailsTests(unittest.TestCase):
+    def test_cookie_labels_preserve_failed_and_unverified_actions(self):
+        failed: dict[str, Any] = {
+            "branch": "reject_analytics",
+            "actions": [{"status": "failed"}],
+            "phases": [{"phase": "after_consent", "interactionStatus": "failed"}],
+        }
+        self.assertEqual(interaction_label(failed), "Reject analytics (action failed)")
+        failed["actions"].insert(0, {"status": "completed"})
+        self.assertIn("action failed", interaction_label(failed))
+        self.assertEqual(
+            interaction_label({"branch": "accept_analytics"}),
+            "Accept analytics (action unverified)",
+        )
+        self.assertEqual(
+            interaction_label({"branch": "initial_no_banner_observed", "actions": []}),
+            "",
+        )
+        self.assertEqual(
+            interaction_label(
+                {"branch": "acknowledge_notice", "actions": [{"status": "completed"}]}
+            ),
+            "Acknowledge cookie notice",
+        )
+
     def setUp(self):
         self.session = Path("docs/reports/assets/fresh-guide")
         self.review = json.loads((self.session / "review.json").read_text())

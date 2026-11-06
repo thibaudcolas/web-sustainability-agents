@@ -40,6 +40,37 @@ from audit.workflow import (  # noqa: E402 # ty: ignore[unresolved-import]
 JSON = dict[str, Any]
 
 
+def interaction_label(run: JSON) -> str:
+    """Describe the attempted choice without presenting a failed action as success."""
+    branch = str(run.get("branch", ""))
+    actions = run.get("actions", [])
+    label = {
+        "accept": "Accept cookies",
+        "reject": "Reject optional cookies",
+        "accept_analytics": "Accept analytics",
+        "reject_analytics": "Reject analytics",
+        "acknowledge_notice": "Acknowledge cookie notice",
+    }.get(branch, branch.replace("_", " ").capitalize())
+    status = next(
+        (
+            phase.get("interactionStatus")
+            for phase in run.get("phases", [])
+            if phase.get("phase") == "after_consent"
+        ),
+        None,
+    )
+    if status == "failed" or any(a.get("status") == "failed" for a in actions):
+        return f"{label} (action failed)"
+    if status == "not_applicable_or_not_present" or branch in {
+        "no_banner",
+        "initial_no_banner_observed",
+    }:
+        return ""
+    if status == "completed" or any(a.get("status") == "completed" for a in actions):
+        return label
+    return f"{label} (action unverified)" if label else ""
+
+
 def read(path: Path) -> JSON:
     """Read session JSON."""
     value = json.loads(path.read_text())
@@ -418,7 +449,7 @@ def render(
     source = read(session / "source.json")
     documents = {"staged.json": staged, "probes.json": probes, "source.json": source}
     headline_runs = first_visits(staged["runs"])
-    has_consent = any(run["branch"] != "no_banner" for run in staged["runs"])
+    has_consent = any(interaction_label(run) for run in staged["runs"])
     page_labels = {
         run["url"]: page_name(
             run["url"],
@@ -559,10 +590,7 @@ def render(
         for run in staged["runs"]:
             if run["url"] != url:
                 continue
-            label = {
-                "accept": "Accept cookies",
-                "reject": "Reject optional cookies",
-            }.get(run["branch"], "" if run["branch"] == "no_banner" else run["branch"])
+            label = interaction_label(run)
             value = phase_size(run, phase)
             values.append(f"{html.escape(label)}: {value}" if label else value)
         return "<br>".join(values) or "Not measured"
